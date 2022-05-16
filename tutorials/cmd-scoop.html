@@ -1,0 +1,1126 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>搭建 Windows 统一开发环境（Scoop） &#8212; 生物狗学编程</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://ivaquero.github.io/blog-bio/tutorials/cmd-scoop.html" />
+    <link rel="shortcut icon" href="../_static/doge.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="打造 macOS/Linux 优雅终端" href="cmd-zsh.html" />
+    <link rel="prev" title="打造 Windows 优雅终端" href="cmd-posh.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/doge.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">生物狗学编程</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   生物狗学编程
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  综合生命科学
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../biotechs/01-%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%9F%BA%E7%A1%80.html">
+   生物信息学基础
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../biotechs/02-%E5%88%86%E5%AD%90%E7%94%9F%E7%89%A9%E5%AD%A6%E5%9F%BA%E7%A1%80.html">
+   分子生物学基础
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../biotechs/03-%E6%BC%94%E5%8C%96%E8%AE%BA%E5%9F%BA%E7%A1%80.html">
+   演化论基础
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../biotechs/04-%E7%97%85%E7%90%86%E5%AD%A6%E5%9F%BA%E7%A1%80.html">
+   病理学基础
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../biotechs/%E5%9F%BA%E5%9B%A0%E5%B7%A5%E7%A8%8B.html">
+   基因工程
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../biotechs/%E7%B3%96%E7%94%9F%E5%8C%96%E6%B5%8B%E5%AE%9A.html">
+   糖生化测定
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../biotechs/%E8%9B%8B%E7%99%BD%E8%B4%A8%E7%94%9F%E5%8C%96%E6%B5%8B%E5%AE%9A.html">
+   蛋白质生化测定
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../biotechs/%E9%87%8D%E7%BB%84%E9%AB%98%E6%8B%B7%E8%B4%9D%E9%85%B5%E6%AF%8D.html">
+   重组高拷贝酵母
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  环境搭建
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="cmd-homebrew.html">
+   搭建 macOS/Linux 统一开发环境
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cmd-posh.html">
+   打造 Windows 优雅终端
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   搭建 Windows 统一开发环境（Scoop）
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cmd-zsh.html">
+   打造 macOS/Linux 优雅终端
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cmd-alacritty.html">
+   逐步搭建现代大一统终端
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="md-env.html">
+   搭建 Markdown 强大写作环境（VSCode）
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="md-markdown.html">
+   Markdown 语法
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="md-mermaid.html">
+   Mermaid 绘图
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prog-cpp.html">
+   搭建 C++ 轻量级编写环境（VSCode）
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prog-latex.html">
+   搭建 LaTeX 舒适写作环境
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prog-julia.html">
+   搭建 Julia 舒适编写环境
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prog-matlab.html">
+   搭建 MATLAB 轻量级编写环境
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prog-python.html">
+   搭建 Python 轻量级编写环境
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prog-r.html">
+   搭建 R 舒适编写环境
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prog-rust.html">
+   搭建 Rust 舒适编写环境（VSCode）
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prog-wsl2.html">
+   搭建 WSL2 舒适开发环境
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="rev-pyviz.html">
+   Python 可视化库盘点
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  绘图
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../plots/correlation.html">
+   Correlation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../plots/deviation.html">
+   Deviation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../plots/distribution.html">
+   Distribution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../plots/group.html">
+   Group
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../plots/proportion.html">
+   Proportion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../plots/ranking.html">
+   Ranking
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../plots/time_series.html">
+   Time Series
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../plots/tricks.html">
+   Tricks
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  分析
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis/pandas.html">
+   Pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis/pandas2.html">
+   Pandas 2
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  机器学习
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sklearn/01-data-processing.html">
+   Data Processing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sklearn/02-classification.html">
+   Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sklearn/03-linear-models.html">
+   Linear Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sklearn/04-decision-trees.html">
+   Decision Trees
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sklearn/05-ensemble-learning.html">
+   Ensemble Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sklearn/06-dimensionality-reduction.html">
+   Dimensionality Reduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sklearn/07-unsupervised-learning.html">
+   Unsupervised Learning
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  深度学习
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pytorch/1-intro-pytorch.html">
+   Parallelizing Neural Network Training with PyTorch
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pytorch/2-pytorch-deeper.html">
+   Going Deeper – the Mechanics of PyTorch
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pytorch/3-cnn.html">
+   Classifying Images with Deep Convolutional Neural Networks
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/tutorials/cmd-scoop.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   包管理器
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scoop">
+   Scoop 的安装
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#powershell">
+     步骤 1：在 PowerShell 中打开远程权限
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     步骤 2：自定义 Scoop 安装目录
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     步骤 3：下载并安装 Scoop
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     步骤 4：安装包（主要是命令行程序）
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scoop-help">
+     步骤 5：通过
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       scoop
+      </span>
+      <span class="pre">
+       help
+      </span>
+     </code>
+     查看使用简介
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   Scoop 的使用（加载扩展库）
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aria2">
+     步骤 1：安装 Aria2 来加速下载
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#git">
+     步骤 2：安装 Git 来添加新仓库
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     步骤 3：添加仓库并更新
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scoopet">
+     可选步骤：添加我创建并维护的 scoopet 库（专注服务科研）
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#app">
+     步骤 4：安装 App
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     步骤 5：查看官方推荐仓库
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id8">
+   Scoop 的管理与配置
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     更新
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     命令行推荐
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     Aria2 的参数
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     杀毒
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     代理
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bucket">
+   建立自己的 Bucket
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     bucket
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     脚本结构
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#hash">
+       hash
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#url">
+       url
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>搭建 Windows 统一开发环境（Scoop）</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   包管理器
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scoop">
+   Scoop 的安装
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#powershell">
+     步骤 1：在 PowerShell 中打开远程权限
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     步骤 2：自定义 Scoop 安装目录
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     步骤 3：下载并安装 Scoop
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     步骤 4：安装包（主要是命令行程序）
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scoop-help">
+     步骤 5：通过
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       scoop
+      </span>
+      <span class="pre">
+       help
+      </span>
+     </code>
+     查看使用简介
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   Scoop 的使用（加载扩展库）
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aria2">
+     步骤 1：安装 Aria2 来加速下载
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#git">
+     步骤 2：安装 Git 来添加新仓库
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     步骤 3：添加仓库并更新
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scoopet">
+     可选步骤：添加我创建并维护的 scoopet 库（专注服务科研）
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#app">
+     步骤 4：安装 App
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     步骤 5：查看官方推荐仓库
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id8">
+   Scoop 的管理与配置
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     更新
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     命令行推荐
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     Aria2 的参数
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     杀毒
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     代理
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bucket">
+   建立自己的 Bucket
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     bucket
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     脚本结构
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#hash">
+       hash
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#url">
+       url
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="windows-scoop">
+<h1>搭建 Windows 统一开发环境（Scoop）<a class="headerlink" href="#windows-scoop" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>包管理器<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>包管理器（package manager）是开发人员常用的生产力工具，Ubuntu 上的 <strong>Apt-Get</strong> 和 macOS 上的 <strong>Homebrew</strong> 等的使用都让开发环境的搭建变得无比丝滑。这里的包，可理解成广义上的软件，不仅包含常见的基于图形用户界面（GUI）的软件，还包含基于命令行界面（CLI）的开发工具。简单说，包管理器就是一个软件自动化管理工具。</p>
+<p>作为一款以 GUI 见长的大众操作系统，Windows 的包管理器长期被忽视。如今，随着 Windows 的迭代和编程技术的日益普及，Windows 也有了经过时间检验的包管理器：<strong>WinGet</strong> 和 <strong>Scoop</strong>。</p>
+<p>总的来看，上述两者各有长短。</p>
+<ul class="simple">
+<li><p><strong>Scoop</strong></p>
+<ul>
+<li><p>优点：</p>
+<ul>
+<li><p>自定义程度高，脚本基于 JSON，可读性较强</p></li>
+<li><p>不需要管理员权限</p></li>
+</ul>
+</li>
+<li><p>缺点：</p>
+<ul>
+<li><p>默认涵盖的 GUI 软件少</p></li>
+<li><p>依赖社区及个人维护</p></li>
+</ul>
+</li>
+<li><p>试用人群：喜欢折腾的程序员</p></li>
+<li><p>展望：因为不需要管理员权限，故在未来相当长的时间，仍会占有一席之地。</p></li>
+</ul>
+</li>
+<li><p><strong>WinGet</strong></p>
+<ul>
+<li><p>优点：</p>
+<ul>
+<li><p>涵盖大量 GUI 软件</p></li>
+<li><p>微软官方维护</p></li>
+</ul>
+</li>
+<li><p>缺点：</p>
+<ul>
+<li><p>命令行工具少</p></li>
+<li><p>需要管理员权限</p></li>
+</ul>
+</li>
+<li><p>试用人群：一般程序员，及没有编程基础的人</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="scoop">
+<h2>Scoop 的安装<a class="headerlink" href="#scoop" title="Permalink to this headline">¶</a></h2>
+<p><strong>Scoop</strong> 由澳洲程序员 Luke Sampson 于 2015 年创建，其特色之一就是其安装管理不依赖”管理员权限”，这对使用有权限限制的公共计算机的使用者是一大利好。其的安装步骤如下：</p>
+<div class="section" id="powershell">
+<h3>步骤 1：在 PowerShell 中打开远程权限<a class="headerlink" href="#powershell" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Set-ExecutionPolicy</span> <span class="n">RemoteSigned</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>步骤 2：自定义 Scoop 安装目录<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nv">$env:SCOOP</span><span class="p">=</span><span class="s1">&#39;Your_Scoop_Path&#39;</span><span class="p">;</span>
+<span class="c"># $env:SCOOP = &#39;C:\Scoop&#39;;</span>
+<span class="no">[Environment]</span><span class="p">::</span><span class="n">SetEnvironmentVariable</span><span class="p">(</span><span class="s1">&#39;SCOOP&#39;</span><span class="p">,</span> <span class="nv">$env:SCOOP</span><span class="p">,</span> <span class="s1">&#39;User&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>若跳过该步骤，<strong>Scoop</strong> 将默认把所有用户安装的 App 和 <strong>Scoop</strong> 本身置于<code class="docutils literal notranslate"><span class="pre">c:/users/user_name/scoop</span></code></p>
+</div>
+<div class="section" id="id3">
+<h3>步骤 3：下载并安装 Scoop<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">iwr </span><span class="n">-useb</span> <span class="n">get</span><span class="p">.</span><span class="n">scoop</span><span class="p">.</span><span class="n">sh</span> <span class="p">|</span> <span class="nb">iex</span>
+<span class="n">scoop</span> <span class="n">update</span>
+</pre></div>
+</div>
+<p>国内镜像</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">iwr </span><span class="n">-useb</span> <span class="n">gitee</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">glsnames</span><span class="p">/</span><span class="n">scoop-installer</span><span class="p">/</span><span class="n">raw</span><span class="p">/</span><span class="n">master</span><span class="p">/</span><span class="n">bin</span><span class="p">/</span><span class="n">install</span><span class="p">.</span><span class="n">ps1</span> <span class="p">|</span> <span class="nb">iex</span>
+<span class="n">scoop</span> <span class="n">config</span> <span class="n">SCOOP_REPO</span> <span class="s1">&#39;https://gitee.com/glsnames/scoop-installer&#39;</span>
+<span class="n">scoop</span> <span class="n">update</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>步骤 4：安装包（主要是命令行程序）<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">scoop</span> <span class="n">install</span> <span class="p">&lt;</span><span class="n">app_name</span><span class="p">&gt;</span>
+<span class="n">scoop</span> <span class="n">install</span> <span class="n">sudo</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="scoop-help">
+<h3>步骤 5：通过 <code class="docutils literal notranslate"><span class="pre">scoop</span> <span class="pre">help</span></code> 查看使用简介<a class="headerlink" href="#scoop-help" title="Permalink to this headline">¶</a></h3>
+<p><img alt="help" src="../_images/scoop3.png" /></p>
+<p>更多信息，请访问 <a class="reference external" href="https://scoop.sh/">Scoop 官网</a></p>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>Scoop 的使用（加载扩展库）<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="aria2">
+<h3>步骤 1：安装 Aria2 来加速下载<a class="headerlink" href="#aria2" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">scoop</span> <span class="n">install</span> <span class="n">aria2</span>
+</pre></div>
+</div>
+<p>若使用代理，有时需要通过如下命令关闭 aria2</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">scoop</span> <span class="n">config</span> <span class="n">aria2-enabled</span> <span class="n">false</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="git">
+<h3>步骤 2：安装 Git 来添加新仓库<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">scoop</span> <span class="n">install</span> <span class="n">git</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>步骤 3：添加仓库并更新<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>添加官方维护的 extras 库（含大量 GUI 程序）</p></li>
+</ul>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">scoop</span> <span class="n">bucket</span> <span class="n">add</span> <span class="n">extras</span>
+<span class="c"># 国内镜像</span>
+<span class="c"># scoop bucket add extras https://gitee.com/scoop-bucket/extras.git</span>
+<span class="n">scoop</span> <span class="n">update</span>
+</pre></div>
+</div>
+<p>git 下载若使用 Scoop 原生的下载协议可能比较慢，建议使用如下迂回方案：</p>
+<ul class="simple">
+<li><p>用第三方下载器，如 Motrix 下载；</p></li>
+<li><p>然后将文件复制到 <code class="docutils literal notranslate"><span class="pre">pathtoscoop/cache</span></code>；</p></li>
+<li><p>输入 scoop install git，此时会产生一个扩展名为.download 的文件；</p></li>
+<li><p>输入 scoop uninstall git；</p></li>
+<li><p>重命名自己下载的文件名为 3 中的文件名，但取代 .download 文件；</p></li>
+<li><p>输入 scoop install git；</p></li>
+</ul>
+</div>
+<div class="section" id="scoopet">
+<h3>可选步骤：添加我创建并维护的 scoopet 库（专注服务科研）<a class="headerlink" href="#scoopet" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">scoop</span> <span class="n">bucket</span> <span class="n">add</span> <span class="n">scoopet</span> <span class="n">https</span><span class="p">://</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">ivaquro</span><span class="p">/</span><span class="n">scoopet</span>
+<span class="n">scoop</span> <span class="n">update</span>
+</pre></div>
+</div>
+<p>scoopet 库包含的安装脚本分为如下四类：</p>
+<ul class="simple">
+<li><p>科研工具：如 miniconda（国内镜像），julia（国内镜像），copytranslator，gephi，geogebra，mendeley</p></li>
+<li><p>开发辅助：如 cyberduck，virtualbox，vmware</p></li>
+<li><p>日常办公：如 WPS（国内版），百度网盘，灵格斯词霸</p></li>
+<li><p>社交休闲：如 you-get，网易云音乐，微信</p></li>
+</ul>
+<blockquote>
+<div><p>详情见 <a class="reference external" href="https://github.com/ivaquro/scoopet/blob/master/README_CN.md">README_CN</a></p>
+</div></blockquote>
+<p><img alt="scoopet" src="../_images/scoop2.png" /></p>
+</div>
+<div class="section" id="app">
+<h3>步骤 4：安装 App<a class="headerlink" href="#app" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>使用 <code class="docutils literal notranslate"><span class="pre">scoop</span> <span class="pre">search</span></code> 命令搜索 App 的具体名称</p></li>
+</ul>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">scoop</span> <span class="n">search</span> <span class="p">&lt;</span><span class="n">app_name</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>利用插件 <code class="docutils literal notranslate"><span class="pre">scoop-completion</span></code> 协助安装</p></li>
+</ul>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">scoop</span> <span class="n">install</span> <span class="n">scoop-completion</span>
+<span class="n">scoop</span> <span class="n">install</span> <span class="p">&lt;</span><span class="n">app_name</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>使用 <code class="docutils literal notranslate"><span class="pre">scoop-completion</span></code>：键入 App 名称的前几个字母后敲击 <code class="docutils literal notranslate"><span class="pre">tab</span></code> 键进行补全</p>
+</div></blockquote>
+</div>
+<div class="section" id="id7">
+<h3>步骤 5：查看官方推荐仓库<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">scoop</span> <span class="n">bucket</span> <span class="n">known</span>
+
+<span class="n">main</span> <span class="p">[</span><span class="n">默认</span><span class="p">]</span>
+<span class="n">extras</span> <span class="p">[</span><span class="n">墙裂推荐</span><span class="p">]</span>
+<span class="n">versions</span>
+<span class="n">nightlies</span>
+<span class="n">nirsoft</span>
+<span class="n">php</span>
+<span class="n">nerd-fonts</span>
+<span class="n">nonportable</span>
+<span class="n">java</span>
+<span class="n">games</span>
+<span class="n">jetbrains</span>
+</pre></div>
+</div>
+<p>这里，推荐 <a class="reference external" href="https://scoop.netlify.app/apps/">Apps | Scoop</a>，方便全网查询安装脚本所在 bucket。</p>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>Scoop 的管理与配置<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id9">
+<h3>更新<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="c"># 查看已安装程序</span>
+<span class="n">scoop</span> <span class="n">list</span>
+<span class="c"># 查看更新</span>
+<span class="n">scoop</span> <span class="n">status</span>
+<span class="c"># 删除旧版本</span>
+<span class="n">scoop</span> <span class="n">cleanup</span>
+<span class="c"># 自身诊断</span>
+<span class="n">scoop</span> <span class="n">checkup</span>
+</pre></div>
+</div>
+<p><img alt="list" src="../_images/scoop3.png" /></p>
+</div>
+<div class="section" id="id10">
+<h3>命令行推荐<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="c"># 使用 Linux 命令行</span>
+<span class="n">scoop</span> <span class="n">install</span> <span class="n">gow</span>
+<span class="c"># 调用管理员权限</span>
+<span class="n">scoop</span> <span class="n">install</span> <span class="n">sudo</span>
+<span class="c"># windows 终端</span>
+<span class="n">scoop</span> <span class="n">install</span> <span class="n">windows-terminal</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id11">
+<h3>Aria2 的参数<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>打开<code class="docutils literal notranslate"><span class="pre">~\.config\scoop\config.json</span></code>，加入以下内容</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;alias&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// aria2 在 Scoop 中默认开启</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;aria2-enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// 关于以下参数的作用，详见aria2的相关资料</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;aria2-retry-wait&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;aria2-split&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;aria2-max-connection-per-server&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;aria2-min-split-size&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4M&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;proxy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;none&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id12">
+<h3>杀毒<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="c"># 开启</span>
+<span class="n">sudo</span> <span class="nb">Add-MpPreference</span> <span class="n">-ExclusionPath</span> <span class="s2">&quot;</span><span class="p">$(</span><span class="nv">$env:programdata</span><span class="p">)</span><span class="s2">\scoop&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="p">$(</span><span class="nv">$env:scoop</span><span class="p">)</span><span class="s2">&quot;</span>
+<span class="c"># 关闭</span>
+<span class="n">sudo</span> <span class="nb">Remove-MpPreference</span> <span class="n">-ExclusionPath</span> <span class="s2">&quot;</span><span class="p">$(</span><span class="nv">$env:programdata</span><span class="p">)</span><span class="s2">\scoop&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="p">$(</span><span class="nv">$env:scoop</span><span class="p">)</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id13">
+<h3>代理<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">scoop</span> <span class="n">config</span> <span class="n">proxy</span> <span class="n">proxy</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">org</span><span class="p">:</span><span class="n">8080</span>
+<span class="c"># 认证</span>
+<span class="n">scoop</span> <span class="n">config</span> <span class="n">proxy</span> <span class="p">[</span><span class="n">username</span><span class="p">:</span><span class="n">password</span><span class="p">@]</span><span class="n">host</span><span class="p">:</span><span class="n">port</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="bucket">
+<h2>建立自己的 Bucket<a class="headerlink" href="#bucket" title="Permalink to this headline">¶</a></h2>
+<p>由于没有自己的公司，Scoop 当前是完全社区化的，核心代码除了增加了 aria 集成，其他没有太多明显的变化，只有不断扩大的扩展库，也称 bucket。当然由于软件繁多，社区里目前主要维护的 bucket 还是 main 和 extras，姑且算是官方库。故，难免有自己需要，而官方库里有没有的软件。不过，Scoop 的简洁，使用户自定义 bucket 的技术门槛非常低，这亦为我一直以来推崇 Scoop 远胜于 Chocolatey 的主要原因之一。</p>
+<p>Scoop bucket 的创建的关键步骤有如下两个：</p>
+<ul class="simple">
+<li><p>创建 git 仓库</p></li>
+<li><p>编写脚本</p></li>
+</ul>
+<blockquote>
+<div><p>大家均是成年人了，github 这个同性交友网站的使用在这里就不做赘述了。</p>
+</div></blockquote>
+<div class="section" id="id14">
+<h3>bucket<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<p>推荐 fork 我的仓库 <a class="reference external" href="https://github.com/ivaquero/scoopet">Scoopet</a></p>
+<p>或者这个仓库，<a class="reference external" href="https://github.com/Ash258/GenericBucket"></a>。</p>
+<p>其他文件基本不用改动，将自定义的脚本放在 bucket 文件夹里面就行。</p>
+</div>
+<div class="section" id="id15">
+<h3>脚本结构<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<p>Scoop 脚本的大致结构如下：</p>
+<p><img alt="manifest" src="../_images/scoop-manifest.png" /></p>
+<p>需要做的就是将其中的各项替换。现对各个项目做一下介绍，加 <code class="docutils literal notranslate"><span class="pre">*</span></code> 的是必填项：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">*homepage</span></code>：主页链接；</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">license</span></code>：软件发布遵循的协议；</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*version</span></code>：软件的版本；</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*url</span></code>：软件下载链接；</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hash</span></code>：软件的校验码；</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bin</span></code>：安装完毕后的可执行文件（.exe 等）的相对路径；</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">shortcuts</span></code>：开始菜单里的快捷方式，上下分别为文件名、文件夹名；</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">checkver</span></code>：版本校对；</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">autoupdate</span></code>：自动升级，涉及持续集成；</p></li>
+</ul>
+<div class="section" id="hash">
+<h4>hash<a class="headerlink" href="#hash" title="Permalink to this headline">¶</a></h4>
+<p>脚本开始构建的时候，需要到官网，把软件下载下来，然后本机查看 hash，默认为 sha256 码，也有 md5 和 sha1 形式的，命令如下：</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">certutil</span> <span class="n">-hashfile</span> <span class="no">[file]</span> <span class="n">sha256</span>
+<span class="n">certutil</span> <span class="n">-hashfile</span> <span class="no">[file]</span> <span class="n">md5</span>
+<span class="n">certutil</span> <span class="n">-hashfile</span> <span class="no">[file]</span> <span class="n">sha1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="url">
+<h4>url<a class="headerlink" href="#url" title="Permalink to this headline">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">url</span></code>是比较难处理的。简单说，开源软件最方便，很多可开箱即用，而非开源的不少就特别繁琐，有的甚至处理不了，如 QQ（处理不了 QQ Protect）。这个叙述起来都特别麻烦，需要具体情况具体分析，这里只简述一般情况，后面慢慢补充。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.msi</span></code>类：往往不需要变更；</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.zip</span></code>类：往往不需要变更，部分需要在下载链接末尾添加<code class="docutils literal notranslate"><span class="pre">#/dl.7z</span></code>；</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.exe</span></code>类：</p>
+<ul>
+<li><p>大部分都需要在下载链接末尾添加<code class="docutils literal notranslate"><span class="pre">#/dl.7z</span></code>（Scoop 默认使用 7zip 进行解压安装）；</p></li>
+<li><p>不能直接解压的，若内置有 <code class="docutils literal notranslate"><span class="pre">innosetup</span></code>，需要在脚本里添加，<code class="docutils literal notranslate"><span class="pre">&quot;innosetup&quot;:</span> <span class="pre">true</span></code>；</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="Scoop script" src="../_images/scoop-manifest2.png" /></p>
+<p>祝愿感兴趣的朋友早日拥有自己的 bucket，方便自己，也方便他人。</p>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./tutorials"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="cmd-posh.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">打造 Windows 优雅终端</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="cmd-zsh.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">打造 macOS/Linux 优雅终端</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By ivaquero<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

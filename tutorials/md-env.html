@@ -1,0 +1,807 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>搭建 Markdown 强大写作环境（VSCode） &#8212; 生物狗学编程</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://ivaquero.github.io/blog-bio/tutorials/md-env.html" />
+    <link rel="shortcut icon" href="../_static/doge.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Markdown 语法" href="md-markdown.html" />
+    <link rel="prev" title="逐步搭建现代大一统终端" href="cmd-alacritty.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/doge.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">生物狗学编程</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   生物狗学编程
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  综合生命科学
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../biotechs/01-%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%9F%BA%E7%A1%80.html">
+   生物信息学基础
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../biotechs/02-%E5%88%86%E5%AD%90%E7%94%9F%E7%89%A9%E5%AD%A6%E5%9F%BA%E7%A1%80.html">
+   分子生物学基础
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../biotechs/03-%E6%BC%94%E5%8C%96%E8%AE%BA%E5%9F%BA%E7%A1%80.html">
+   演化论基础
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../biotechs/04-%E7%97%85%E7%90%86%E5%AD%A6%E5%9F%BA%E7%A1%80.html">
+   病理学基础
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../biotechs/%E5%9F%BA%E5%9B%A0%E5%B7%A5%E7%A8%8B.html">
+   基因工程
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../biotechs/%E7%B3%96%E7%94%9F%E5%8C%96%E6%B5%8B%E5%AE%9A.html">
+   糖生化测定
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../biotechs/%E8%9B%8B%E7%99%BD%E8%B4%A8%E7%94%9F%E5%8C%96%E6%B5%8B%E5%AE%9A.html">
+   蛋白质生化测定
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../biotechs/%E9%87%8D%E7%BB%84%E9%AB%98%E6%8B%B7%E8%B4%9D%E9%85%B5%E6%AF%8D.html">
+   重组高拷贝酵母
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  环境搭建
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="cmd-homebrew.html">
+   搭建 macOS/Linux 统一开发环境
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cmd-posh.html">
+   打造 Windows 优雅终端
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cmd-scoop.html">
+   搭建 Windows 统一开发环境（Scoop）
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cmd-zsh.html">
+   打造 macOS/Linux 优雅终端
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cmd-alacritty.html">
+   逐步搭建现代大一统终端
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   搭建 Markdown 强大写作环境（VSCode）
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="md-markdown.html">
+   Markdown 语法
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="md-mermaid.html">
+   Mermaid 绘图
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prog-cpp.html">
+   搭建 C++ 轻量级编写环境（VSCode）
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prog-latex.html">
+   搭建 LaTeX 舒适写作环境
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prog-julia.html">
+   搭建 Julia 舒适编写环境
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prog-matlab.html">
+   搭建 MATLAB 轻量级编写环境
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prog-python.html">
+   搭建 Python 轻量级编写环境
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prog-r.html">
+   搭建 R 舒适编写环境
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prog-rust.html">
+   搭建 Rust 舒适编写环境（VSCode）
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prog-wsl2.html">
+   搭建 WSL2 舒适开发环境
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="rev-pyviz.html">
+   Python 可视化库盘点
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  绘图
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../plots/correlation.html">
+   Correlation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../plots/deviation.html">
+   Deviation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../plots/distribution.html">
+   Distribution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../plots/group.html">
+   Group
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../plots/proportion.html">
+   Proportion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../plots/ranking.html">
+   Ranking
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../plots/time_series.html">
+   Time Series
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../plots/tricks.html">
+   Tricks
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  分析
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis/pandas.html">
+   Pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis/pandas2.html">
+   Pandas 2
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  机器学习
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sklearn/01-data-processing.html">
+   Data Processing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sklearn/02-classification.html">
+   Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sklearn/03-linear-models.html">
+   Linear Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sklearn/04-decision-trees.html">
+   Decision Trees
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sklearn/05-ensemble-learning.html">
+   Ensemble Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sklearn/06-dimensionality-reduction.html">
+   Dimensionality Reduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sklearn/07-unsupervised-learning.html">
+   Unsupervised Learning
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  深度学习
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pytorch/1-intro-pytorch.html">
+   Parallelizing Neural Network Training with PyTorch
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pytorch/2-pytorch-deeper.html">
+   Going Deeper – the Mechanics of PyTorch
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pytorch/3-cnn.html">
+   Classifying Images with Deep Convolutional Neural Networks
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/tutorials/md-env.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#markdown">
+   1. Markdown 编写环境概览
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   2. 语法扩展
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#markdown-all-in-one">
+     2.1. Markdown All in One
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#markdownlint">
+     2.2. markdownlint
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#markdown-preview-mermaid-support">
+     2.3. Markdown Preview Mermaid Support
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   3. 编辑扩展
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     3.1. 表格编辑
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     3.2. 章节编号
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     3.3. 文档绘图
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     3.4. 字数统计
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#wysiwyg">
+     3.5. WYSIWYG 模式
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   4. 输出扩展
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     4.1. 导出
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     4.2. 知乎发布
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>搭建 Markdown 强大写作环境（VSCode）</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#markdown">
+   1. Markdown 编写环境概览
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   2. 语法扩展
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#markdown-all-in-one">
+     2.1. Markdown All in One
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#markdownlint">
+     2.2. markdownlint
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#markdown-preview-mermaid-support">
+     2.3. Markdown Preview Mermaid Support
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   3. 编辑扩展
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     3.1. 表格编辑
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     3.2. 章节编号
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     3.3. 文档绘图
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     3.4. 字数统计
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#wysiwyg">
+     3.5. WYSIWYG 模式
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   4. 输出扩展
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     4.1. 导出
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     4.2. 知乎发布
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="markdown-vscode">
+<h1>搭建 Markdown 强大写作环境（VSCode）<a class="headerlink" href="#markdown-vscode" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="markdown">
+<h2>1. Markdown 编写环境概览<a class="headerlink" href="#markdown" title="Permalink to this headline">¶</a></h2>
+<p>Markdown 是一种易于读写的轻量级的标记语言，编写出的作品简洁美观，近年来受到了越来越多的追捧，被广泛地用于日常写作，乃至电子书发表。与此同时，一系列优秀 Markdown 编辑器应运而生。其中较为著名的有，Typora（免费，跨平台）、MarkText（开源，跨平台）、Zettlr（开源，跨平台）、MacDown（开源，macOS）等等。</p>
+<p>VSCode 是当下最流行的代码编辑器，拥有丰富的扩展，这也使其成为最强大的文本编辑器之一（拒绝伤害 Vim 党人及 Emacs 党人），搞定 Markdown 自然不在话下。与上面提到的编辑器相比，VSCode 的明显优势有：</p>
+<ul class="simple">
+<li><p>集成的布局：大纲（outline）、工作区（workspace）；</p></li>
+<li><p>强大的补全：LaTeX 公式；</p></li>
+<li><p>丰富的扩展：方便整合其他工具（详见下文的功能扩展部分）；</p></li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2>2. 语法扩展<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>VSCode 默认是支持 Markdown 的，但还是有必装下面 3 个插件提高写作效率。</p>
+<ul class="simple">
+<li><p>Markdown All in One</p></li>
+<li><p>mardownlint</p></li>
+<li><p>Markdown Preview Mermaid Support</p></li>
+</ul>
+<div class="section" id="markdown-all-in-one">
+<h3>2.1. Markdown All in One<a class="headerlink" href="#markdown-all-in-one" title="Permalink to this headline">¶</a></h3>
+<p>如名称所述，这是个大一统型的扩展，集成了撰写 Markdown 时所需要的大部分功能，是 Markdown 类插件中下载榜榜首。可认为是 VSCode 中的 Markdown 必备扩展。其功能涵盖：</p>
+<ul class="simple">
+<li><p>快捷键自</p></li>
+<li><p>动生成并更新目录</p></li>
+<li><p>自动格式化表格</p></li>
+<li><p>LaTeX 数学公式支持</p></li>
+</ul>
+<p><img alt="Markdown All in One" src="../_images/md-allinone.png" /></p>
+</div>
+<div class="section" id="markdownlint">
+<h3>2.2. markdownlint<a class="headerlink" href="#markdownlint" title="Permalink to this headline">¶</a></h3>
+<p>这是个功能强大的 Markdown 语法检查器，可以帮助你书写出规范的文档，同时避免书写错误导致文档无法渲染。个人观点，认为这个也是必装扩展。</p>
+<p><img alt="markdownlint" src="../_images/md-lint.png" /></p>
+</div>
+<div class="section" id="markdown-preview-mermaid-support">
+<h3>2.3. Markdown Preview Mermaid Support<a class="headerlink" href="#markdown-preview-mermaid-support" title="Permalink to this headline">¶</a></h3>
+<p>很多时候，写文档难免需要绘制一些用于说明的插图，如流程图、甘特图等，这个时候，若另开一个应用画图，再导入文档，则略显繁琐。前文提到的 MPE 扩展支持的 mermaid.js 可轻松解决这一难题。简单说，mermaid.js 就是一个 Markdown 的绘图工具包</p>
+<p>Markdown Preview Mermaid Support 支持 mermaid 预览。</p>
+<p><img alt="mermaid" src="../_images/md-mermaid.png" /></p>
+<blockquote>
+<div><p>mermaid 语法介绍，可参考本专栏姊妹篇[Markdown 绘图]。</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>3. 编辑扩展<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>3.1. 表格编辑<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>安装 MdTableEditor 扩展，火箭提升表格编辑效率</p>
+<p><img alt="md-table" src="../_images/md-table.png" /></p>
+</div>
+<div class="section" id="id4">
+<h3>3.2. 章节编号<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>安装 Auto Markdown TOC By AX1，实现章节自动编号，及生成目录</p>
+<p><img alt="md-toc" src="../_images/md-toc.png" /></p>
+</div>
+<div class="section" id="id5">
+<h3>3.3. 文档绘图<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>虽然有 mermaid，但有时候我们总会需要绘制一些复杂的图形。这时，可以使用 VSCode 商店里大名鼎鼎的 <a class="reference external" href="https://app.diagrams.net/">Draw.io</a> 的内嵌扩展，安装完毕后三连：➡️ 新建 .drawio 文件 ➡️ 傻瓜绘图 ➡️ 导出为需要的格式。</p>
+<p><img alt="draw.io" src="../_images/drawio.png" /></p>
+</div>
+<div class="section" id="id6">
+<h3>3.4. 字数统计<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>这里推荐 Word Count CJK，可对各种字符进行统计，安装扩展后，在 setting.json 中修改</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;wordcount_cjk.activateLanguages&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;markdown&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;plaintext&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;latex&quot;</span><span class="p">],</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;wordcount_cjk.statusBarTextTemplate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;中文：${cjk} 字 + 英文：${en_words} 词&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;wordcount_cjk.statusBarTooltipTemplate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;中文字数：${cjk} \\n 非 ASCII 字符数：\\t${total - ascii} \\n 英文单词数：${en_words} \\n 非空白字符数：${total - whitespace} \\n 总字符数：${total}&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>至此，VSCode 已经实现了 Typora 等 Markdown 编辑器除所见即所得（WYSIWYG）之外的全部功能。</p>
+</div>
+<div class="section" id="wysiwyg">
+<h3>3.5. WYSIWYG 模式<a class="headerlink" href="#wysiwyg" title="Permalink to this headline">¶</a></h3>
+<p>Typora 往往被当作 markdown 的首选，这很大程度上得益于所见即所得（WYSIWYG）模式，如今 VSCode 社区也提供了相应的，虽然还不够成熟，但已经迈出了重要的一步。个人推荐微软出品的基于 notebook 的扩展 Markdown Notebook。</p>
+<p><img alt="wysiwyg" src="../_images/md-wysiwyg.png" /></p>
+<p>这个扩展目前还处于开发早期，不能显示图片，但微软出品 + Notebook 框架，前景很好，后续有希望增加运行代码块等功能。</p>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>4. 输出扩展<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h3>4.1. 导出<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>Pandoc 是文档格式领域的瑞士军刀，几乎实现了常见文档格式所有变换，像 .docx，.md，.html，.pdf 这些格式更是不在话下。</p>
+<p>Pandoc 的下载可去<a class="reference external" href="https://pandoc.org/">官网</a>手动下载</p>
+<p>也可使用包管理器自动下载。</p>
+<p>对 Windows 用户，有 Scoop</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">scoop</span> <span class="n">install</span> <span class="n">pandoc</span>
+</pre></div>
+</div>
+<p>对 macOS 用户，有 Homebrew</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew install pandoc
+</pre></div>
+</div>
+<p>安装完毕后，在 VSCode 中安装相关扩展，这里首推 vscode-pandoc，可实现 .md 到 .docx 以及.pdf 和.html 的变换。</p>
+<p>对于.pdf 的变换，需要在 <code class="docutils literal notranslate"><span class="pre">settings.json</span></code> 中添加：</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;pandoc.docxOptString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;pandoc.htmlOptString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;--standalone --mathjax --shift-heading-level-by=-1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;pandoc.pdfOptString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;--pdf-engine=xelatex -V CJKmainfont=\&quot;Arial Unicode MS\&quot;&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p><img alt="pandoc" src="../_images/pandoc.png" /></p>
+</div>
+<div class="section" id="id9">
+<h3>4.2. 知乎发布<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>WPL/s 继承于 Zhihu On VSCode，可用于 Markdown 在知乎上一键发布，尤其适合存在<strong>大量图片和代码块</strong>的帖子，当然也在 VSCode 里<strong>看帖摸鱼</strong>。</p>
+<p>比之曾经的初代扩展，其最有特色的功能之一是，支持元数据，可以在本地修改已经发布的帖子，只需在题头添加</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span><span class="w"></span>
+<span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">文章题目</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="nt">zhihu-url</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">文章链接</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="nt">zhihu-title-image</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">题图</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="nt">zhihu-tags</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">知乎标签</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="nn">---</span><span class="w"></span>
+</pre></div>
+</div>
+<p>而且，作者非常人性化的把之前的扩展链接，从文章开头放在了文章结尾。之前讨厌的开篇一句话“本文使用。。。发布”不见了。</p>
+<p>详情可参看其作者的介绍。</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./tutorials"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="cmd-alacritty.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">逐步搭建现代大一统终端</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="md-markdown.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Markdown 语法</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By ivaquero<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

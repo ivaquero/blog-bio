@@ -1,0 +1,1501 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>演化论基础 &#8212; 生物狗学编程</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="canonical" href="https://ivaquero.github.io/blog-bio/biotechs/03-演化论基础.html" />
+    <link rel="shortcut icon" href="../_static/doge.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="病理学基础" href="04-%E7%97%85%E7%90%86%E5%AD%A6%E5%9F%BA%E7%A1%80.html" />
+    <link rel="prev" title="分子生物学基础" href="02-%E5%88%86%E5%AD%90%E7%94%9F%E7%89%A9%E5%AD%A6%E5%9F%BA%E7%A1%80.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/doge.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">生物狗学编程</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   生物狗学编程
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  综合生命科学
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%9F%BA%E7%A1%80.html">
+   生物信息学基础
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-%E5%88%86%E5%AD%90%E7%94%9F%E7%89%A9%E5%AD%A6%E5%9F%BA%E7%A1%80.html">
+   分子生物学基础
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   演化论基础
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-%E7%97%85%E7%90%86%E5%AD%A6%E5%9F%BA%E7%A1%80.html">
+   病理学基础
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="%E5%9F%BA%E5%9B%A0%E5%B7%A5%E7%A8%8B.html">
+   基因工程
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="%E7%B3%96%E7%94%9F%E5%8C%96%E6%B5%8B%E5%AE%9A.html">
+   糖生化测定
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="%E8%9B%8B%E7%99%BD%E8%B4%A8%E7%94%9F%E5%8C%96%E6%B5%8B%E5%AE%9A.html">
+   蛋白质生化测定
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="%E9%87%8D%E7%BB%84%E9%AB%98%E6%8B%B7%E8%B4%9D%E9%85%B5%E6%AF%8D.html">
+   重组高拷贝酵母
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  环境搭建
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/cmd-homebrew.html">
+   搭建 macOS/Linux 统一开发环境
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/cmd-posh.html">
+   打造 Windows 优雅终端
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/cmd-scoop.html">
+   搭建 Windows 统一开发环境（Scoop）
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/cmd-zsh.html">
+   打造 macOS/Linux 优雅终端
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/cmd-alacritty.html">
+   逐步搭建现代大一统终端
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/md-env.html">
+   搭建 Markdown 强大写作环境（VSCode）
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/md-markdown.html">
+   Markdown 语法
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/md-mermaid.html">
+   Mermaid 绘图
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/prog-cpp.html">
+   搭建 C++ 轻量级编写环境（VSCode）
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/prog-latex.html">
+   搭建 LaTeX 舒适写作环境
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/prog-julia.html">
+   搭建 Julia 舒适编写环境
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/prog-matlab.html">
+   搭建 MATLAB 轻量级编写环境
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/prog-python.html">
+   搭建 Python 轻量级编写环境
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/prog-r.html">
+   搭建 R 舒适编写环境
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/prog-rust.html">
+   搭建 Rust 舒适编写环境（VSCode）
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/prog-wsl2.html">
+   搭建 WSL2 舒适开发环境
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/rev-pyviz.html">
+   Python 可视化库盘点
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  绘图
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../plots/correlation.html">
+   Correlation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../plots/deviation.html">
+   Deviation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../plots/distribution.html">
+   Distribution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../plots/group.html">
+   Group
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../plots/proportion.html">
+   Proportion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../plots/ranking.html">
+   Ranking
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../plots/time_series.html">
+   Time Series
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../plots/tricks.html">
+   Tricks
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  分析
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis/pandas.html">
+   Pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis/pandas2.html">
+   Pandas 2
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  机器学习
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sklearn/01-data-processing.html">
+   Data Processing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sklearn/02-classification.html">
+   Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sklearn/03-linear-models.html">
+   Linear Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sklearn/04-decision-trees.html">
+   Decision Trees
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sklearn/05-ensemble-learning.html">
+   Ensemble Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sklearn/06-dimensionality-reduction.html">
+   Dimensionality Reduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sklearn/07-unsupervised-learning.html">
+   Unsupervised Learning
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  深度学习
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pytorch/1-intro-pytorch.html">
+   Parallelizing Neural Network Training with PyTorch
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pytorch/2-pytorch-deeper.html">
+   Going Deeper – the Mechanics of PyTorch
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pytorch/3-cnn.html">
+   Classifying Images with Deep Convolutional Neural Networks
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/biotechs/03-演化论基础.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   1. 选择
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     1.1. 自然选择
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hardy-weinberg">
+     1.2. Hardy-Weinberg 平衡
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     1.3. 适应
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   2. 中性演化学说
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     2.1. 遗传变异
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     2.2. 中性演化理论
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     2.3. 近中性演化理论
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id9">
+   3. 蛋白演化
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     3.1. 氨基酸替代速率
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     3.2. 分子钟
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id12">
+   4. 核酸演化
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     4.1. 碱基替代模型
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#jukes-cantor">
+       4.1.1. 单参数模型（Jukes-Cantor）
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#kimura">
+       4.1.2. 双参数模型（Kimura）
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     4.2. 非编码区
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#j-c">
+       4.2.1. J-C 模型
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#k-2">
+       4.2.2. K-2 模型
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     4.3. 编码区
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     4.4. 基因组
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id17">
+   5. 物种的形成和灭绝
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id18">
+     5.1. 物种定义
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id19">
+     5.2. 隔离
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id20">
+       5.2.1. 地理隔离
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id21">
+       5.2.2. 有性生殖隔离
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id22">
+     5.3. 物种灭绝
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id23">
+       5.3.1. 灭绝类型
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id24">
+     5.4. 灭绝原因
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id25">
+     5.5. 学说与假说
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id26">
+   6. 物种起源
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id27">
+     6.1. 人造生命
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id28">
+       6.1.1. 进展
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id29">
+     6.2. 生物分子起源
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id30">
+       6.2.1. 生物大分子起源
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id31">
+       6.2.2. 线粒体起源
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id32">
+       6.2.3. 叶绿体起源
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id33">
+     6.3. 适应度景观
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id35">
+     6.4. 证据
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id36">
+       6.4.1. 极性的确定
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>演化论基础</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   1. 选择
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     1.1. 自然选择
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hardy-weinberg">
+     1.2. Hardy-Weinberg 平衡
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     1.3. 适应
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   2. 中性演化学说
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     2.1. 遗传变异
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     2.2. 中性演化理论
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     2.3. 近中性演化理论
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id9">
+   3. 蛋白演化
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     3.1. 氨基酸替代速率
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     3.2. 分子钟
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id12">
+   4. 核酸演化
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     4.1. 碱基替代模型
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#jukes-cantor">
+       4.1.1. 单参数模型（Jukes-Cantor）
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#kimura">
+       4.1.2. 双参数模型（Kimura）
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     4.2. 非编码区
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#j-c">
+       4.2.1. J-C 模型
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#k-2">
+       4.2.2. K-2 模型
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     4.3. 编码区
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     4.4. 基因组
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id17">
+   5. 物种的形成和灭绝
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id18">
+     5.1. 物种定义
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id19">
+     5.2. 隔离
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id20">
+       5.2.1. 地理隔离
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id21">
+       5.2.2. 有性生殖隔离
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id22">
+     5.3. 物种灭绝
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id23">
+       5.3.1. 灭绝类型
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id24">
+     5.4. 灭绝原因
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id25">
+     5.5. 学说与假说
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id26">
+   6. 物种起源
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id27">
+     6.1. 人造生命
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id28">
+       6.1.1. 进展
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id29">
+     6.2. 生物分子起源
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id30">
+       6.2.1. 生物大分子起源
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id31">
+       6.2.2. 线粒体起源
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id32">
+       6.2.3. 叶绿体起源
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id33">
+     6.3. 适应度景观
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id35">
+     6.4. 证据
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id36">
+       6.4.1. 极性的确定
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1>演化论基础<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>1. 选择<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>1.1. 自然选择<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p><strong>定义</strong>：生物在自然界竞争中，适应者能<strong>生存</strong>和<strong>生殖</strong>，不适应者被淘汰。</p>
+<ul class="simple">
+<li><p>定向选择（directional selection）：某些等位基因的频率或性状向”单一”方向移动。</p></li>
+<li><p>稳定选择（stabilizing selection）：处于中间的性状被保留，处于两端的性状被淘汰。</p></li>
+<li><p>间断选择（disruption selection）：处于两端的性状被保留，处于中间的性状被淘汰</p></li>
+<li><p>频率依赖选择（frequency-dependent selection）：某种基因型能否被保留，取决于其频率</p></li>
+</ul>
+</div>
+<div class="section" id="hardy-weinberg">
+<h3>1.2. Hardy-Weinberg 平衡<a class="headerlink" href="#hardy-weinberg" title="Permalink to this headline">¶</a></h3>
+<p>无突变、无自然选择、无迁徙、随机交配、大种群情况下，基因频率符合：</p>
+<div class="math notranslate nohighlight">
+\[
+p^2 + 2pq + q^2 = 1
+\]</div>
+</div>
+<div class="section" id="id4">
+<h3>1.3. 适应<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>适应（adapt）：生物的某种结构、行为及基因或蛋白质等生物大分子的功能有利于该生物顺利地在自然环境中<strong>成功繁殖</strong>。</p>
+<p>适合度（fitness，f）：某类生物实体（基因型）繁殖的平均能力，即被自然所”选留”的程度。</p>
+<p>选择系数（selection coefficient，s）: 与适合度相反，用于度量自然选择对某种基因型及其后代的淘汰的作用。</p>
+<div class="math notranslate nohighlight">
+\[
+f + s = 1
+\]</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>2. 中性演化学说<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>由日本进化生物学家木村资生（Kimura Motoo，1924∼1994）</p>
+<div class="section" id="id6">
+<h3>2.1. 遗传变异<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>变异方式</p>
+<ul>
+<li><p>染色体重组：父本、母本染色体片段互换</p></li>
+<li><p>染色体突变：染色体片段重复、插入、丢失、重排等 基因组（整套染色体）的加倍</p></li>
+</ul>
+</li>
+<li><p>等位基因：同一物种的某个基因座（locus）上序列有所差异的基因</p>
+<ul>
+<li><p>等位酶（allozyme）：由等位基因编码的酶</p></li>
+<li><p>同工酶（isozyme）：生物体内催化相同反应而分子结构不同的酶</p></li>
+</ul>
+</li>
+<li><p>多态性</p>
+<ul>
+<li><p>固定（fixation）: 某个等位基因在种群中的频率为 100%。</p></li>
+<li><p>蛋白质的多态性是由选择上中性的等位基因被遗传漂变随机固定的，多态性是分子演化的一个阶段</p></li>
+</ul>
+</li>
+<li><p>度量</p>
+<ul>
+<li><p>一致性（identity）：指两个或两个以上的序列中组成完全相同的部分</p></li>
+<li><p>相似性（Similarity）：特征相像，来源不确定（用在分子生物学上主要是指理化性质相似的氨基酸）</p></li>
+<li><p>同源性（Homology）：来源于一个共同祖先若两个基因或蛋白质的序列一致性或相似性很高</p></li>
+<li><p>DNA 核苷酸序列的一致性 &gt; 60%</p></li>
+<li><p>蛋白质氨基酸序列的一致性 &gt; 30%，则它们具有相同或相似的生物学功能，且很可能是同源的</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h3>2.2. 中性演化理论<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>突变得到的等位基因并未带来正面、负面影响，即中性的<span class="math notranslate nohighlight">\(s = 0\)</span></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(s&gt;0\)</span>，被选择保留；</p></li>
+<li><p><span class="math notranslate nohighlight">\(s&lt;0\)</span>，被选择淘汰</p></li>
+</ul>
+<p>演化速率</p>
+<p><span class="math notranslate nohighlight">\(k = ν\)</span></p>
+<p>其中，<span class="math notranslate nohighlight">\(ν\)</span>为每代、每个配子的突变速率</p>
+<blockquote>
+<div><p>与种群大小无关</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>观点</p>
+<ul>
+<li><p>承认负选择（negative selection）</p></li>
+<li><p>强调功能约束（functional constrain）</p></li>
+<li><p>承认正选择（positive selection），但力量很小</p></li>
+<li><p>功能的约束造成不同的基因突变速率不一样：功能重要的部分变化会影响其功能，这部分的变化均受负选择的作用；功能不很重要的部分变化不影响其功能，被随机保留</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h3>2.3. 近中性演化理论<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>有效种群：一个种群中能将其基因连续传递到下一代的个体均值。</p>
+<blockquote>
+<div><p>相当于理想状态下（种群大小稳定，世代间没有重叠，所有个体以相同的概率给下一代贡献配子）种群的大小。</p>
+</div></blockquote>
+<p><span class="math notranslate nohighlight">\(|s| ≤ 1/N_e\)</span></p>
+<p><span class="math notranslate nohighlight">\(N_e\)</span>为有效种群大小</p>
+<p><strong>影响<span class="math notranslate nohighlight">\(N_e\)</span>的主要因素</strong></p>
+<ul class="simple">
+<li><p>参与生殖个体性别的比例相差很大</p></li>
+<li><p>参与生殖个体贡献给下一代的配子数有差异：交配权掌握在少数个体手中</p></li>
+<li><p>种群中个体数在短期内呈周期性变化</p></li>
+<li><p>不同世代之间有重叠</p></li>
+<li><p>一个物种由多个遗传相对隔离的亚种群构成</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>3. 蛋白演化<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id10">
+<h3>3.1. 氨基酸替代速率<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>设：不同位点上的氨基酸替代速率相同，即使不相同，平均替代速率也很小</p>
+<p>令</p>
+<p><span class="math notranslate nohighlight">\(n_{aa}\)</span>：所比较序列的氨基酸数目
+<span class="math notranslate nohighlight">\(d_{aa}\)</span>：所比较两个序列中差异的氨基酸数目</p>
+<p>则两个序列氨基酸相差的程度</p>
+<p><span class="math notranslate nohighlight">\(p_d = d_{aa}/n_{aa}\)</span></p>
+<p>又</p>
+<p><span class="math notranslate nohighlight">\(K_{aa}\)</span>：两个同源序列中每个位点氨基酸的平均替代数</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(K_{aa} = -\ln(1 - p_d)\)</span></p>
+</div></blockquote>
+<p><span class="math notranslate nohighlight">\(T\)</span>：两个同源序列分歧的时间</p>
+<p>可得，每年每个位点氨基酸的替代速率</p>
+<p><span class="math notranslate nohighlight">\(k_{aa} = K_{aa} / (2T)\)</span></p>
+</div>
+<div class="section" id="id11">
+<h3>3.2. 分子钟<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p><strong>定义</strong>：一个特定的大分子（蛋白质或 DNA）在所有的演化谱系中具有恒定的演化速率，即线性演化。</p>
+<ul class="simple">
+<li><p>两个大分子（物种）分歧的时间</p>
+<ul>
+<li><p>时间很难预测</p></li>
+<li><p>最准的是用化石或地质事件</p></li>
+<li><p>相对速率 : 用一分歧时间早于所研究的物种作参考</p></li>
+<li><p>先决条件: 演化速率恒定（必须事先验证）</p></li>
+</ul>
+</li>
+<li><p>分子钟的局限性</p>
+<ul>
+<li><p>并非所有的核酸或蛋白质分子都符合分子钟学说</p></li>
+<li><p>并非基因的所有部分都符合分子钟学说</p></li>
+<li><p>不同的修复系统</p></li>
+<li><p>生命周期的不同</p></li>
+<li><p>代谢速率</p></li>
+<li><p>同一个分子不同的部位速率不同</p></li>
+<li><p>密码子的三个碱基演化速率有差异</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id12">
+<h2>4. 核酸演化<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id13">
+<h3>4.1. 碱基替代模型<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<p>置换（Transition）：嘌呤 ↔ 嘌呤，嘧啶 ↔ 嘧啶
+颠换（Transversion）：嘌呤 ↔ 嘧啶
+同义替代（synonymous substitution）：不影响所编码氨基酸的碱基改变
+非同义替代（non-synonymous substitution）：影响所编码氨基酸 的碱基改变</p>
+<div class="section" id="jukes-cantor">
+<h4>4.1.1. 单参数模型（Jukes-Cantor）<a class="headerlink" href="#jukes-cantor" title="Permalink to this headline">¶</a></h4>
+<p>设：每种碱基被另一种碱基替代的速率为<span class="math notranslate nohighlight">\(α\)</span>，则每种碱基被其他碱基的替代速率<span class="math notranslate nohighlight">\(λ\)</span>有</p>
+<div class="math notranslate nohighlight">
+\[
+λ = 3α
+\]</div>
+</div>
+<div class="section" id="kimura">
+<h4>4.1.2. 双参数模型（Kimura）<a class="headerlink" href="#kimura" title="Permalink to this headline">¶</a></h4>
+<p>设：碱基置换和颠换的速率不一样</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(α\)</span>：碱基置换的速率</p></li>
+<li><p><span class="math notranslate nohighlight">\(β\)</span>：碱基颠换的速率</p></li>
+</ul>
+<p>![nuc-models](images/ch3/nuc-models.png）</p>
+<blockquote>
+<div><p>当时间无穷大时，两个模型趋于一致</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="id14">
+<h3>4.2. 非编码区<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="j-c">
+<h4>4.2.1. J-C 模型<a class="headerlink" href="#j-c" title="Permalink to this headline">¶</a></h4>
+<p>令<span class="math notranslate nohighlight">\(p\)</span>为两序列中发生变化的碱基的比例，则</p>
+<div class="math notranslate nohighlight">
+\[
+K = -\frac34 \ln(1 - \frac43 p)
+\]</div>
+</div>
+<div class="section" id="k-2">
+<h4>4.2.2. K-2 模型<a class="headerlink" href="#k-2" title="Permalink to this headline">¶</a></h4>
+<p>令</p>
+<p><span class="math notranslate nohighlight">\(𝐏\)</span>：置换碱基的比例
+<span class="math notranslate nohighlight">\(Q\)</span>：颠换碱基的比例</p>
+<p>则</p>
+<p><span class="math notranslate nohighlight">\(x= 1/(1– 2P – Q), y = 1/(1 - 2Q)\)</span></p>
+<p>可得</p>
+<div class="math notranslate nohighlight">
+\[
+K = \frac12\ln(x) + \frac14\ln(y)
+\]</div>
+</div>
+</div>
+<div class="section" id="id15">
+<h3>4.3. 编码区<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<p>一般 start 和 stop codon 不予考虑</p>
+<ul class="simple">
+<li><p>三类碱基</p>
+<ul>
+<li><p>兼并性（0）: 无论替代哪个碱基，编码的氨基酸都变，如编码 Pro 的第一二个碱基</p></li>
+<li><p>兼并性（2）: 有两个碱基可替代，编码的氨基酸不变，如编码 His 的第三个碱基</p></li>
+<li><p>兼并性（4）: 无论替代四个碱基中的哪一个，编码的氨基酸不变，编码 Pro 的第三个碱基</p></li>
+</ul>
+</li>
+<li><p>每类位点的总替代数</p>
+<ul>
+<li><p>0 兼并性位点: K0（全部非同义替代）</p></li>
+<li><p>4 兼并性位点: K4（全部同义替代）</p></li>
+<li><p>2 兼并性位点: K2（一半为同义替代，一半为非同义替代）</p></li>
+</ul>
+</li>
+<li><p>核酸的演化速率</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+r= \frac{K}{(2T)}
+\]</div>
+<p><span class="math notranslate nohighlight">\(K\)</span>为每个位点碱基的平均替代数
+<span class="math notranslate nohighlight">\(K_S\)</span>（同义替代位点的平均替代数）
+<span class="math notranslate nohighlight">\(K_A\)</span>（非同义替代位点的平均替代数）</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(K = K_0 +K_2+K_4\)</span></p>
+</div></blockquote>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(K_A/K_S\)</span>值</p></li>
+</ul>
+<p>根据中性演化理论，在中性选择下，同义替代位点和非同义替代位点上发生的替代被固定的概率相同。故，<span class="math notranslate nohighlight">\(K_A/K_S = 1\)</span></p>
+<p>由此可推测</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(K_A/K_S &lt; 1\)</span>：造成氨基酸改变的替代少，为负选择</p></li>
+<li><p><span class="math notranslate nohighlight">\(K_A/K_S &gt; 1\)</span>：造成氨基酸改变的替代多，为正选择</p></li>
+</ul>
+</div>
+<div class="section" id="id16">
+<h3>4.4. 基因组<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>生物</p></th>
+<th class="text-align:center head"><p>ORF</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p><em>Mycoplasma genitalium</em></p></td>
+<td class="text-align:center"><p>480</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><em>E. coli</em></p></td>
+<td class="text-align:center"><p>4, 277</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>yeasts</p></td>
+<td class="text-align:center"><p>6, 246</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>roundworms</p></td>
+<td class="text-align:center"><p>19, 223</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><em>Arabidopsis thaliana</em></p></td>
+<td class="text-align:center"><p>25, 498</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><em>Orhithorhychus anatinus</em></p></td>
+<td class="text-align:center"><p>18, 527</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><em>Homo sapiens</em></p></td>
+<td class="text-align:center"><p>&gt; 30, 000</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><em>Glycine max</em></p></td>
+<td class="text-align:center"><p>&gt; 50, 000</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="id17">
+<h2>5. 物种的形成和灭绝<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id18">
+<h3>5.1. 物种定义<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>表征种：形态上相似的一类生物</p>
+<ul>
+<li><p>没有一个一致公认的标准</p></li>
+<li><p>较为实用</p></li>
+</ul>
+</li>
+<li><p>生物种：有潜在的相互交配能力的自然种群，且其后代可育。</p>
+<ul>
+<li><p>不能用于快速鉴定物种</p></li>
+<li><p>不适用于无性繁殖的物种及化石物种</p></li>
+</ul>
+</li>
+<li><p>生态种：生存在相同的一个生态位（niche）的个体之和</p>
+<ul>
+<li><p>强调生境对生物的作用</p></li>
+<li><p>可能存在平行演化</p></li>
+<li><p>将不同生境的同一物种称为不同的”生态型”</p></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<div><p>不同的物种代表了演化过程中的不同阶段</p>
+</div></blockquote>
+<p>谱系（lineage）：由一个祖先（物种）所产生 的所有后代（物种）及其相互关系</p>
+</div>
+<div class="section" id="id19">
+<h3>5.2. 隔离<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id20">
+<h4>5.2.1. 地理隔离<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p>异域隔离：自然灾害造成的新的生境，被分开的种群、新迁移而来的种群中产生的变异被随机固定，或被不同的选择压力固定</p>
+<blockquote>
+<div><p>在自然界无法杂交，在人工干预下，杂种可育</p>
+</div></blockquote>
+</li>
+<li><p>邻域隔离：生境的逐渐变化，居群两端的个体也发生分化，中间的过渡带即杂种带受到自然选择压力</p></li>
+<li><p>同域隔离：分化的两个物种在同一区域。原理上说是可能的，但在现实中更少，主要存在于昆虫和寄生动物中，宿主的改变可能会造成新物种的产生。</p></li>
+</ul>
+</div>
+<div class="section" id="id21">
+<h4>5.2.2. 有性生殖隔离<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>合子前隔离</p>
+<ul>
+<li><p>时间隔离：发情期或花期在不同的季节</p></li>
+<li><p>行为隔离：性行为分化，导致不能相互吸引</p></li>
+<li><p>机械隔离：生殖器或花器官的结构不允许</p></li>
+<li><p>配子隔离：卵细胞和精子不能相互吸引</p></li>
+</ul>
+</li>
+<li><p>合子后隔离</p>
+<ul>
+<li><p>受精卵不能发育</p></li>
+<li><p>杂种不育</p></li>
+<li><p>杂种后代生存力或生育力降低</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id22">
+<h3>5.3. 物种灭绝<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
+<p>狭义：过去的 50 年里，在野外再也未被发现的物种</p>
+<p>广义：一个物种最后一个个体的死亡</p>
+<div class="section" id="id23">
+<h4>5.3.1. 灭绝类型<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>谱系</p>
+<ul>
+<li><p>真灭绝：一个谱系的灭绝</p></li>
+<li><p>假灭绝：由于新物种的产生而造成的</p></li>
+</ul>
+</li>
+<li><p>种群遗传学</p>
+<ul>
+<li><p>生态灭绝：数量太少，遗传变异丧失</p></li>
+</ul>
+</li>
+<li><p>物种</p>
+<ul>
+<li><p>全部灭绝：地球上任何地方均没有该物种的存在</p></li>
+<li><p>野外灭绝：人工饲养，但野外不存在</p></li>
+<li><p>局部灭绝：某个地区不存在，而其他地区存在</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id24">
+<h3>5.4. 灭绝原因<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>内部：物种固有的特性所决定的</p>
+<ul>
+<li><p>遗传多样性低</p></li>
+<li><p>繁殖力弱</p></li>
+<li><p>遗传漂变 + 人类活动</p></li>
+<li><p>定向选择 + 人类造成的环境变化</p></li>
+</ul>
+</li>
+<li><p>外部</p>
+<ul>
+<li><p>物种所需要的生境的消失</p></li>
+<li><p>高度特化的生物</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id25">
+<h3>5.5. 学说与假说<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>间断平衡学说</p>
+<ul>
+<li><p>物种的演化由长期的”静止”状态和短暂的”变化”状态交替完成，变化产生新的物种</p></li>
+<li><p>物种的形成是”直线”分支式的</p></li>
+<li><p>缺少分子遗传机制</p></li>
+</ul>
+</li>
+<li><p>Gaia 假说</p>
+<ul>
+<li><p>地球是一个有生命的、能自我调节的大系统</p></li>
+<li><p>地球上的生物产生了使自己适于生存的环境，并不断调节该环境使之更适于生存</p></li>
+<li><p>生命在积极地控制外界条件，包括生物圈中纯物理的方面，如温度、海水酸度、大气组成，以至于地球最好地保持可居住性</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id26">
+<h2>6. 物种起源<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id27">
+<h3>6.1. 人造生命<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>生命的定义</p>
+<ul>
+<li><p>能进行新陈代谢、生长、繁殖、变异、应激反应等等的一个复杂系统</p></li>
+<li><p>自然选择驱动的演化是生命的最重要的特征之一</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="id28">
+<h4>6.1.1. 进展<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>细菌中存在限制性内切酶（Hamilton Smith，Nobel Prize for 1978）：切断外源 DNA</p></li>
+<li><p><em>Mycoplasma genitalium</em>，480 个不重复基因（1995）</p></li>
+<li><p>最简单的原核细胞：需要约 300 个基因（1999）</p></li>
+<li><p>“合成”噬菌体 ΦX174 （5, 386 bp，2003）</p></li>
+<li><p>合成了一种细菌的基因组 <em>Mycoplasma mycoides</em> JCVI-syn1.0，1079 kb，将其”组装”进了 <em>Mycoplasma capricolum</em> 的”壳”中（2010）</p></li>
+<li><p>对已合成的细菌的基因组 <em>Mycoplasma mycoides</em> JCVI-syn1.0 进行基因突变，然后将其”组装”进 <em>Mycoplasma capricolum</em> 的”壳”中（2016）</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id29">
+<h3>6.2. 生物分子起源<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id30">
+<h4>6.2.1. 生物大分子起源<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>第一个有信息的分子是 RNA（Francis Crick，1968）</p></li>
+<li><p>发现有催化作用的 RNA（Thomas Cech，1986）</p>
+<ul>
+<li><p>磷酸化</p></li>
+<li><p>氨酰转移</p></li>
+<li><p>肽键的形成</p></li>
+<li><p>碳键的形成</p></li>
+<li><p>形成 RNA 聚合体</p></li>
+</ul>
+</li>
+<li><p>被脂膜包裹着的”原细胞”（protocell）模型中，在 Mg²⁺ 和柠檬酸盐的存在下，核酶可催化 RNA 的复制（2013）</p></li>
+<li><p>到目前为止，只发现 7 种核酶，自然的核酶催化速率很慢</p></li>
+<li><p>最早的原核细胞：LUCA，含有两类细菌的基因</p>
+<ul>
+<li><p>固定 CO₂、N₂</p></li>
+<li><p>喜热，生活在和氧气隔绝的地方</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id31">
+<h4>6.2.2. 线粒体起源<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>内共生学说：真核生物吞食原核生物后，后者与寄主细胞不断磨合，最终与之共生。</p></li>
+<li><p>最接近原核生物的真核生物线粒体为 <em>Reclinomonas americana</em>（1997）</p>
+<ul>
+<li><p>来自不同谱系生物物种的线粒体中所有 gene 均能在 <em>Reclinomonas americana</em> 中找着</p></li>
+<li><p>很可能单系</p></li>
+</ul>
+</li>
+<li><p>最接近真核生物线粒体的原核生物为 <em>Rickettsia prowazekii</em>（1998）</p></li>
+</ul>
+</div>
+<div class="section" id="id32">
+<h4>6.2.3. 叶绿体起源<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>内共生起源：蓝细菌</p></li>
+<li><p>单系起源</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id33">
+<h3>6.3. 适应度景观<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h3>
+<p>根据演化理论，以下特征足以产生演化：</p>
+<ul class="simple">
+<li><p>复制者：一批能够以某种方式复制的智能体。</p></li>
+<li><p>突变：一些种群中的变化，也就是个体之间的差异。</p></li>
+<li><p>生存和繁殖差异：个体之间的差异必须影响其生存或繁殖的能力。</p></li>
+</ul>
+<p>为了模拟这些特征，需要定义智能体种群，智能体代表个体。每个智能体都有遗传信息，称为基因型，这是智能体繁殖时复制的信息。在 NK 模型中 <a class="footnote-reference brackets" href="#id37" id="id34">1</a>，基因型由 N 个二进制数字的序列表示，K 表示景观的凸凹度（landscape ruggedness）。为了产生突变，创建具有多种基因型的种群。最后，为了产生生存和繁殖差异，定义一个函数，将每个基因型映射为一个适应度（fitness），其中适应度是一个关于智能体的生存或繁殖能力的度量。</p>
+</div>
+<div class="section" id="id35">
+<h3>6.4. 证据<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>化石</p>
+<ul>
+<li><p>客观、直观、真实地反映生物的过去</p></li>
+<li><p>可遇不可求</p></li>
+<li><p>质地年代的确定</p></li>
+</ul>
+</li>
+<li><p>地理位置</p></li>
+</ul>
+<div class="section" id="id36">
+<h4>6.4.1. 极性的确定<a class="headerlink" href="#id36" title="Permalink to this headline">¶</a></h4>
+<p>特征的一些状态，谁先谁后，即祖征还是衍征</p>
+<ol class="simple">
+<li><p>纵向对比法：化石资料</p></li>
+<li><p>横向对比法: 外类群（out-group）分析法：设外类群的特征状态较为古老</p></li>
+<li><p>最简约树：用 bootstrap 等方法检查，若 70％以上的树都支持一种分支，应较为可靠；100％为最好，50％以下则不太可信</p></li>
+</ol>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id37"><span class="brackets"><a class="fn-backref" href="#id34">1</a></span></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/NK_model">https://en.wikipedia.org/wiki/NK_model</a>.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./biotechs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="02-%E5%88%86%E5%AD%90%E7%94%9F%E7%89%A9%E5%AD%A6%E5%9F%BA%E7%A1%80.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">分子生物学基础</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="04-%E7%97%85%E7%90%86%E5%AD%A6%E5%9F%BA%E7%A1%80.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">病理学基础</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By ivaquero<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

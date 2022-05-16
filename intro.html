@@ -1,0 +1,1022 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>生物狗学编程 &#8212; 生物狗学编程</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="canonical" href="https://ivaquero.github.io/blog-bio/intro.html" />
+    <link rel="shortcut icon" href="_static/doge.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="生物信息学基础" href="biotechs/01-%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%9F%BA%E7%A1%80.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/doge.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">生物狗学编程</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 current">
+  <a class="reference internal" href="#">
+   生物狗学编程
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  综合生命科学
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="biotechs/01-%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%9F%BA%E7%A1%80.html">
+   生物信息学基础
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="biotechs/02-%E5%88%86%E5%AD%90%E7%94%9F%E7%89%A9%E5%AD%A6%E5%9F%BA%E7%A1%80.html">
+   分子生物学基础
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="biotechs/03-%E6%BC%94%E5%8C%96%E8%AE%BA%E5%9F%BA%E7%A1%80.html">
+   演化论基础
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="biotechs/04-%E7%97%85%E7%90%86%E5%AD%A6%E5%9F%BA%E7%A1%80.html">
+   病理学基础
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="biotechs/%E5%9F%BA%E5%9B%A0%E5%B7%A5%E7%A8%8B.html">
+   基因工程
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="biotechs/%E7%B3%96%E7%94%9F%E5%8C%96%E6%B5%8B%E5%AE%9A.html">
+   糖生化测定
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="biotechs/%E8%9B%8B%E7%99%BD%E8%B4%A8%E7%94%9F%E5%8C%96%E6%B5%8B%E5%AE%9A.html">
+   蛋白质生化测定
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="biotechs/%E9%87%8D%E7%BB%84%E9%AB%98%E6%8B%B7%E8%B4%9D%E9%85%B5%E6%AF%8D.html">
+   重组高拷贝酵母
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  环境搭建
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorials/cmd-homebrew.html">
+   搭建 macOS/Linux 统一开发环境
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorials/cmd-posh.html">
+   打造 Windows 优雅终端
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorials/cmd-scoop.html">
+   搭建 Windows 统一开发环境（Scoop）
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorials/cmd-zsh.html">
+   打造 macOS/Linux 优雅终端
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorials/cmd-alacritty.html">
+   逐步搭建现代大一统终端
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorials/md-env.html">
+   搭建 Markdown 强大写作环境（VSCode）
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorials/md-markdown.html">
+   Markdown 语法
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorials/md-mermaid.html">
+   Mermaid 绘图
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorials/prog-cpp.html">
+   搭建 C++ 轻量级编写环境（VSCode）
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorials/prog-latex.html">
+   搭建 LaTeX 舒适写作环境
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorials/prog-julia.html">
+   搭建 Julia 舒适编写环境
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorials/prog-matlab.html">
+   搭建 MATLAB 轻量级编写环境
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorials/prog-python.html">
+   搭建 Python 轻量级编写环境
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorials/prog-r.html">
+   搭建 R 舒适编写环境
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorials/prog-rust.html">
+   搭建 Rust 舒适编写环境（VSCode）
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorials/prog-wsl2.html">
+   搭建 WSL2 舒适开发环境
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorials/rev-pyviz.html">
+   Python 可视化库盘点
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  绘图
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="plots/correlation.html">
+   Correlation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plots/deviation.html">
+   Deviation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plots/distribution.html">
+   Distribution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plots/group.html">
+   Group
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plots/proportion.html">
+   Proportion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plots/ranking.html">
+   Ranking
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plots/time_series.html">
+   Time Series
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plots/tricks.html">
+   Tricks
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  分析
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="analysis/pandas.html">
+   Pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="analysis/pandas2.html">
+   Pandas 2
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  机器学习
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="sklearn/01-data-processing.html">
+   Data Processing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sklearn/02-classification.html">
+   Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sklearn/03-linear-models.html">
+   Linear Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sklearn/04-decision-trees.html">
+   Decision Trees
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sklearn/05-ensemble-learning.html">
+   Ensemble Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sklearn/06-dimensionality-reduction.html">
+   Dimensionality Reduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sklearn/07-unsupervised-learning.html">
+   Unsupervised Learning
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  深度学习
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="pytorch/1-intro-pytorch.html">
+   Parallelizing Neural Network Training with PyTorch
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pytorch/2-pytorch-deeper.html">
+   Going Deeper – the Mechanics of PyTorch
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pytorch/3-cnn.html">
+   Classifying Images with Deep Convolutional Neural Networks
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/intro.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-style">
+   1. Basic Style
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#string">
+     1.1. String
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iteration">
+     1.2. Iteration
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#condition">
+     1.3. Condition
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matplotlib-style">
+   2. Matplotlib Style
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#objects">
+     2.1. Objects
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#subplots">
+     2.2. Subplots
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#decoration">
+     2.3. Decoration
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pandas-style">
+   3. Pandas Style
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#latex-style">
+   4. LaTeX Style
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-lines">
+     4.1. Multiple lines
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#brackets">
+     4.2. Brackets
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#expressions">
+     4.3. Expressions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fonts">
+     4.4. Fonts
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>生物狗学编程</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-style">
+   1. Basic Style
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#string">
+     1.1. String
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iteration">
+     1.2. Iteration
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#condition">
+     1.3. Condition
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matplotlib-style">
+   2. Matplotlib Style
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#objects">
+     2.1. Objects
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#subplots">
+     2.2. Subplots
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#decoration">
+     2.3. Decoration
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pandas-style">
+   3. Pandas Style
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#latex-style">
+   4. LaTeX Style
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-lines">
+     4.1. Multiple lines
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#brackets">
+     4.2. Brackets
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#expressions">
+     4.3. Expressions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fonts">
+     4.4. Fonts
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1>生物狗学编程<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="basic-style">
+<h2>1. Basic Style<a class="headerlink" href="#basic-style" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="string">
+<h3>1.1. String<a class="headerlink" href="#string" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Prefer <code class="docutils literal notranslate"><span class="pre">f-string</span></code> to <code class="docutils literal notranslate"><span class="pre">.format()</span></code></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># good</span>
+<span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Titanic&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Scatter Plot of = </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># bad</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Scatter Plot of </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">title</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="iteration">
+<h3>1.2. Iteration<a class="headerlink" href="#iteration" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Prefer <code class="docutils literal notranslate"><span class="pre">enumerate()</span></code> to <code class="docutils literal notranslate"><span class="pre">range(len())</span></code></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">xs</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># good</span>
+<span class="k">for</span> <span class="n">ind</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">xs</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">ind</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># bad</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">xs</span><span class="p">)):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="n">xs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Prefer <code class="docutils literal notranslate"><span class="pre">product</span></code> to nested <code class="docutils literal notranslate"><span class="pre">for</span></code> loops</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># good</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">product</span>
+
+<span class="k">for</span> <span class="n">item1</span><span class="p">,</span> <span class="n">item2</span><span class="p">,</span> <span class="n">item3</span> <span class="ow">in</span> <span class="n">product</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">,</span> <span class="n">list3</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item1</span> <span class="o">+</span> <span class="n">item2</span> <span class="o">+</span> <span class="n">item3</span><span class="p">)</span>
+
+<span class="c1"># bad</span>
+<span class="k">for</span> <span class="n">item1</span> <span class="ow">in</span> <span class="n">list1</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">item2</span> <span class="ow">in</span> <span class="n">list2</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">item3</span> <span class="ow">in</span> <span class="n">list3</span><span class="p">:</span>
+              <span class="nb">print</span><span class="p">(</span><span class="n">item1</span> <span class="o">+</span> <span class="n">item2</span> <span class="o">+</span> <span class="n">item3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="condition">
+<h3>1.3. Condition<a class="headerlink" href="#condition" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Prefer <code class="docutils literal notranslate"><span class="pre">any()</span></code> or <code class="docutils literal notranslate"><span class="pre">all()</span></code> to <code class="docutils literal notranslate"><span class="pre">for...if</span></code></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># good</span>
+<span class="n">found</span> <span class="o">=</span> <span class="nb">any</span><span class="p">(</span><span class="n">thing</span> <span class="o">==</span> <span class="n">other_thing</span> <span class="k">for</span> <span class="n">thing</span> <span class="ow">in</span> <span class="n">things</span><span class="p">)</span>
+
+<span class="c1"># bad</span>
+<span class="n">found</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">for</span> <span class="n">thing</span> <span class="ow">in</span> <span class="n">things</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">thing</span> <span class="o">==</span> <span class="n">other_thing</span><span class="p">:</span>
+        <span class="n">found</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="matplotlib-style">
+<h2>2. Matplotlib Style<a class="headerlink" href="#matplotlib-style" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="objects">
+<h3>2.1. Objects<a class="headerlink" href="#objects" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Prefer <code class="docutils literal notranslate"><span class="pre">Axes</span></code> object to <code class="docutils literal notranslate"><span class="pre">Figure</span></code> object</p></li>
+<li><p>use <code class="docutils literal notranslate"><span class="pre">constrained_layout=True</span></code> when draw subplots</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># good</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">)</span>
+
+<span class="c1"># bad</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="subplots">
+<h3>2.2. Subplots<a class="headerlink" href="#subplots" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Prefer <code class="docutils literal notranslate"><span class="pre">axes.flatten()</span></code> to <code class="docutils literal notranslate"><span class="pre">plt.subplot()</span></code> in cases where subplots’ data is iterable</p></li>
+<li><p>Prefer <code class="docutils literal notranslate"><span class="pre">zip()</span></code> or <code class="docutils literal notranslate"><span class="pre">enumerate()</span></code> to <code class="docutils literal notranslate"><span class="pre">range()</span></code> for iterable objects</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># good</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">):</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># bad</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+  <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="decoration">
+<h3>2.3. Decoration<a class="headerlink" href="#decoration" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Prefer <code class="docutils literal notranslate"><span class="pre">set()</span></code> method to <code class="docutils literal notranslate"><span class="pre">set_*()</span></code> method when there is no need to tweak many parameters</p></li>
+<li><p>Prefer use <code class="docutils literal notranslate"><span class="pre">plt.setp()</span></code> to tweak parameters.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># good</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+
+<span class="c1"># bad</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Prefer <code class="docutils literal notranslate"><span class="pre">ax.axis</span></code> to <code class="docutils literal notranslate"><span class="pre">ax.set(xlim,</span> <span class="pre">ylim)</span></code></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># good</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># bad</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Prefer <code class="docutils literal notranslate"><span class="pre">ax.spines[loc_list]</span></code> to <code class="docutils literal notranslate"><span class="pre">ax.spines[loc]</span></code></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># good</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[[</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="s1">&#39;bottom&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="c1"># bad</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;right&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;bottom&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="pandas-style">
+<h2>3. Pandas Style<a class="headerlink" href="#pandas-style" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Prefer <code class="docutils literal notranslate"><span class="pre">df['col']</span></code> to <code class="docutils literal notranslate"><span class="pre">df.col</span></code></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># good</span>
+<span class="n">movies</span><span class="p">[</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span>
+
+<span class="c1"># bad</span>
+<span class="n">movies</span><span class="o">.</span><span class="n">duration</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Prefer <code class="docutils literal notranslate"><span class="pre">df.query</span></code> to <code class="docutils literal notranslate"><span class="pre">df[]</span></code> or <code class="docutils literal notranslate"><span class="pre">df.loc[]</span></code> in simple-selection</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># good</span>
+<span class="n">movies</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;duration &gt;= 200&#39;</span><span class="p">)</span>
+
+<span class="c1"># bad</span>
+<span class="n">movies</span><span class="p">[</span><span class="n">movies</span><span class="p">[</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">200</span><span class="p">]</span>
+<span class="n">movies</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">movies</span><span class="p">[</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">200</span><span class="p">,</span> <span class="p">:]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Prefer <code class="docutils literal notranslate"><span class="pre">df.loc</span></code> and <code class="docutils literal notranslate"><span class="pre">df.iloc</span></code> to <code class="docutils literal notranslate"><span class="pre">df[]</span></code> in multiple-selection</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># good</span>
+<span class="n">movies</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">movies</span><span class="p">[</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;genre&#39;</span><span class="p">]</span>
+<span class="n">movies</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span>
+
+<span class="c1"># bad</span>
+<span class="n">movies</span><span class="p">[</span><span class="n">movies</span><span class="p">[</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">200</span><span class="p">]</span><span class="o">.</span><span class="n">genre</span>
+<span class="n">movies</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Prefer <code class="docutils literal notranslate"><span class="pre">.astype('category')</span></code> to <code class="docutils literal notranslate"><span class="pre">.factorize()</span></code></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="latex-style">
+<h2>4. LaTeX Style<a class="headerlink" href="#latex-style" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="multiple-lines">
+<h3>4.1. Multiple lines<a class="headerlink" href="#multiple-lines" title="Permalink to this headline">¶</a></h3>
+<p>Reduce the use of <code class="docutils literal notranslate"><span class="pre">begin{array}...end{array}</span></code></p>
+<ul class="simple">
+<li><p>equations: <code class="docutils literal notranslate"><span class="pre">begin{aligned}...end{aligned}</span></code></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+  y_1 &amp;= x^2 + 2*x \\
+  y_2 &amp;= x^3 + x
+\end{aligned}
+\end{split}\]</div>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="sb">$$</span><span class="nb"></span>
+<span class="nv">\begin</span><span class="nb">{aligned}</span>
+<span class="nb">  y_</span><span class="m">1</span><span class="nb"> &amp;</span><span class="o">=</span><span class="nb"> x^</span><span class="m">2</span><span class="nb"> </span><span class="o">+</span><span class="nb"> </span><span class="m">2</span><span class="o">*</span><span class="nb">x </span><span class="nv">\\</span><span class="nb"></span>
+<span class="nb">  y_</span><span class="m">2</span><span class="nb"> &amp;</span><span class="o">=</span><span class="nb"> x^</span><span class="m">3</span><span class="nb"> </span><span class="o">+</span><span class="nb"> x</span>
+<span class="nv">\end</span><span class="nb">{aligned}</span>
+<span class="s">$$</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>equations with conditions: <code class="docutils literal notranslate"><span class="pre">begin{cases}...end{cases}</span></code></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+  y = x^2 + 2*x &amp; x &gt; 0 \\
+  y = x^3 + x &amp; x ≤ 0
+\end{cases}
+\end{split}\]</div>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="sb">$$</span><span class="nb"></span>
+<span class="nv">\begin</span><span class="nb">{cases}</span>
+<span class="nb">  y </span><span class="o">=</span><span class="nb"> x^</span><span class="m">2</span><span class="nb"> </span><span class="o">+</span><span class="nb"> </span><span class="m">2</span><span class="o">*</span><span class="nb">x &amp; x &gt; </span><span class="m">0</span><span class="nb"> </span><span class="nv">\\</span><span class="nb"></span>
+<span class="nb">  y </span><span class="o">=</span><span class="nb"> x^</span><span class="m">3</span><span class="nb"> </span><span class="o">+</span><span class="nb"> x &amp; x ≤ </span><span class="m">0</span><span class="nb"></span>
+<span class="nv">\end</span><span class="nb">{cases}</span>
+<span class="s">$$</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>matrix: <code class="docutils literal notranslate"><span class="pre">begin{matrix}...end{matrix}</span></code></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{vmatrix}
+  a + a^{′} &amp; b + b^{′} \\ c &amp; d
+  \end{vmatrix} = \begin{vmatrix}
+  a &amp; b \\ c &amp; d
+  \end{vmatrix} + \begin{vmatrix}
+  a^{′} &amp; b^{′} \\ c &amp; d
+\end{vmatrix}
+\end{split}\]</div>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="sb">$$</span><span class="nb"></span>
+<span class="nv">\begin</span><span class="nb">{vmatrix}</span>
+<span class="nb">  a </span><span class="o">+</span><span class="nb"> a^{′} &amp; b </span><span class="o">+</span><span class="nb"> b^{′} </span><span class="nv">\\</span><span class="nb"> c &amp; d</span>
+<span class="nb">  </span><span class="nv">\end</span><span class="nb">{vmatrix} </span><span class="o">=</span><span class="nb"> </span><span class="nv">\begin</span><span class="nb">{vmatrix}</span>
+<span class="nb">  a &amp; b </span><span class="nv">\\</span><span class="nb"> c &amp; d</span>
+<span class="nb">  </span><span class="nv">\end</span><span class="nb">{vmatrix} </span><span class="o">+</span><span class="nb"> </span><span class="nv">\begin</span><span class="nb">{vmatrix}</span>
+<span class="nb">  a^{′} &amp; b^{′} </span><span class="nv">\\</span><span class="nb"> c &amp; d</span>
+<span class="nv">\end</span><span class="nb">{vmatrix}</span>
+<span class="s">$$</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="brackets">
+<h3>4.2. Brackets<a class="headerlink" href="#brackets" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Prefer <code class="docutils literal notranslate"><span class="pre">\Big...\Big</span></code> to <code class="docutils literal notranslate"><span class="pre">\left...\right</span></code></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+A\Big[\frac12\ \frac13\ ⋯\ \frac1{99}\Big]
+\]</div>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="sb">$$</span><span class="nb"></span>
+<span class="nb">A</span><span class="nv">\Big</span><span class="o">[</span><span class="nv">\frac</span><span class="m">12</span><span class="nv">\ \frac</span><span class="m">13</span><span class="nv">\ </span><span class="nb">⋯</span><span class="nv">\ \frac</span><span class="m">1</span><span class="nb">{</span><span class="m">99</span><span class="nb">}</span><span class="nv">\Big</span><span class="o">]</span><span class="nb"></span>
+<span class="s">$$</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Prefer <code class="docutils literal notranslate"><span class="pre">\underset{}{}</span></code> to <code class="docutils literal notranslate"><span class="pre">\underset{}</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="expressions">
+<h3>4.3. Expressions<a class="headerlink" href="#expressions" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Prefer <code class="docutils literal notranslate"><span class="pre">^{\top}</span></code> to <code class="docutils literal notranslate"><span class="pre">^T</span></code> for transpose</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+𝐀^⊤
+\]</div>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="sb">$$</span><span class="nb"></span>
+<span class="nb">𝐀^{</span><span class="nv">\top</span><span class="nb">}</span>
+<span class="s">$$</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Prefer <code class="docutils literal notranslate"><span class="pre">\to</span></code> to <code class="docutils literal notranslate"><span class="pre">\rightarrow</span></code> for limit</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\lim_{n → ∞}
+\]</div>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="sb">$$</span><span class="nb"></span>
+<span class="nv">\lim</span><span class="nb">_{n</span><span class="nv">\to</span><span class="nb"> </span><span class="nv">\infty</span><span class="nb">}</span>
+<span class="s">$$</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Prefer <code class="docutils literal notranslate"><span class="pre">underset{}{}</span></code> to <code class="docutils literal notranslate"><span class="pre">\limits_</span></code></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\underset{w}{\mathrm{argmin}}(wx +b)
+\]</div>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="sb">$$</span><span class="nb"></span>
+<span class="nv">\underset</span><span class="nb">{w}{</span><span class="nv">\mathrm</span><span class="nb">{argmin}}</span><span class="o">(</span><span class="nb">wx </span><span class="o">+</span><span class="nb">b</span><span class="o">)</span><span class="nb"></span>
+<span class="s">$$</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="fonts">
+<h3>4.4. Fonts<a class="headerlink" href="#fonts" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Prefer <code class="docutils literal notranslate"><span class="pre">mathrm{}</span></code> to <code class="docutils literal notranslate"><span class="pre">{\rm</span> <span class="pre">}</span></code> or <code class="docutils literal notranslate"><span class="pre">\mathop{}</span></code> or <code class="docutils literal notranslate"><span class="pre">\operatorname{}</span></code></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+θ_\mathrm{MLE} = \underset{θ}{\mathrm{argmax}}∑_{i = 1}^{N}\log p(x_i ∣ θ)
+\]</div>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="sb">$$</span><span class="nb"></span>
+<span class="nb">θ_</span><span class="nv">\mathrm</span><span class="nb">{MLE} </span><span class="o">=</span><span class="nb"> </span><span class="nv">\underset</span><span class="nb">{θ}{</span><span class="nv">\mathrm</span><span class="nb">{argmax}}∑_{i </span><span class="o">=</span><span class="nb"> </span><span class="m">1</span><span class="nb">}^{N}</span><span class="nv">\log</span><span class="nb"> p</span><span class="o">(</span><span class="nb">x_i ∣ θ</span><span class="o">)</span><span class="nb"></span>
+<span class="s">$$</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Prefer <code class="docutils literal notranslate"><span class="pre">\mathbf{}</span></code> to <code class="docutils literal notranslate"><span class="pre">{\bf</span> <span class="pre">}</span></code></p></li>
+<li><p>Prefer <code class="docutils literal notranslate"><span class="pre">\mathit{}</span></code> to <code class="docutils literal notranslate"><span class="pre">{\it</span> <span class="pre">}</span></code></p></li>
+</ul>
+</div>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='right-next' id="next-link" href="biotechs/01-%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%9F%BA%E7%A1%80.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">生物信息学基础</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By ivaquero<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

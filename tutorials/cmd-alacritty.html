@@ -1,0 +1,975 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>逐步搭建现代大一统终端 &#8212; 生物狗学编程</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://ivaquero.github.io/blog-bio/tutorials/cmd-alacritty.html" />
+    <link rel="shortcut icon" href="../_static/doge.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="搭建 Markdown 强大写作环境（VSCode）" href="md-env.html" />
+    <link rel="prev" title="打造 macOS/Linux 优雅终端" href="cmd-zsh.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/doge.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">生物狗学编程</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   生物狗学编程
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  综合生命科学
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../biotechs/01-%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%9F%BA%E7%A1%80.html">
+   生物信息学基础
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../biotechs/02-%E5%88%86%E5%AD%90%E7%94%9F%E7%89%A9%E5%AD%A6%E5%9F%BA%E7%A1%80.html">
+   分子生物学基础
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../biotechs/03-%E6%BC%94%E5%8C%96%E8%AE%BA%E5%9F%BA%E7%A1%80.html">
+   演化论基础
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../biotechs/04-%E7%97%85%E7%90%86%E5%AD%A6%E5%9F%BA%E7%A1%80.html">
+   病理学基础
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../biotechs/%E5%9F%BA%E5%9B%A0%E5%B7%A5%E7%A8%8B.html">
+   基因工程
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../biotechs/%E7%B3%96%E7%94%9F%E5%8C%96%E6%B5%8B%E5%AE%9A.html">
+   糖生化测定
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../biotechs/%E8%9B%8B%E7%99%BD%E8%B4%A8%E7%94%9F%E5%8C%96%E6%B5%8B%E5%AE%9A.html">
+   蛋白质生化测定
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../biotechs/%E9%87%8D%E7%BB%84%E9%AB%98%E6%8B%B7%E8%B4%9D%E9%85%B5%E6%AF%8D.html">
+   重组高拷贝酵母
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  环境搭建
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="cmd-homebrew.html">
+   搭建 macOS/Linux 统一开发环境
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cmd-posh.html">
+   打造 Windows 优雅终端
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cmd-scoop.html">
+   搭建 Windows 统一开发环境（Scoop）
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cmd-zsh.html">
+   打造 macOS/Linux 优雅终端
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   逐步搭建现代大一统终端
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="md-env.html">
+   搭建 Markdown 强大写作环境（VSCode）
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="md-markdown.html">
+   Markdown 语法
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="md-mermaid.html">
+   Mermaid 绘图
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prog-cpp.html">
+   搭建 C++ 轻量级编写环境（VSCode）
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prog-latex.html">
+   搭建 LaTeX 舒适写作环境
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prog-julia.html">
+   搭建 Julia 舒适编写环境
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prog-matlab.html">
+   搭建 MATLAB 轻量级编写环境
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prog-python.html">
+   搭建 Python 轻量级编写环境
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prog-r.html">
+   搭建 R 舒适编写环境
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prog-rust.html">
+   搭建 Rust 舒适编写环境（VSCode）
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prog-wsl2.html">
+   搭建 WSL2 舒适开发环境
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="rev-pyviz.html">
+   Python 可视化库盘点
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  绘图
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../plots/correlation.html">
+   Correlation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../plots/deviation.html">
+   Deviation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../plots/distribution.html">
+   Distribution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../plots/group.html">
+   Group
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../plots/proportion.html">
+   Proportion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../plots/ranking.html">
+   Ranking
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../plots/time_series.html">
+   Time Series
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../plots/tricks.html">
+   Tricks
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  分析
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis/pandas.html">
+   Pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis/pandas2.html">
+   Pandas 2
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  机器学习
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sklearn/01-data-processing.html">
+   Data Processing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sklearn/02-classification.html">
+   Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sklearn/03-linear-models.html">
+   Linear Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sklearn/04-decision-trees.html">
+   Decision Trees
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sklearn/05-ensemble-learning.html">
+   Ensemble Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sklearn/06-dimensionality-reduction.html">
+   Dimensionality Reduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sklearn/07-unsupervised-learning.html">
+   Unsupervised Learning
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  深度学习
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pytorch/1-intro-pytorch.html">
+   Parallelizing Neural Network Training with PyTorch
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pytorch/2-pytorch-deeper.html">
+   Going Deeper – the Mechanics of PyTorch
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pytorch/3-cnn.html">
+   Classifying Images with Deep Convolutional Neural Networks
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/tutorials/cmd-alacritty.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#starship">
+   1. Starship
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#alacritty">
+   2. Alacritty
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     2.1. 基本配置
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     2.2. 字体
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zellij">
+   3. Zellij
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     3.1. 整合 Alacritty
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     3.2. 键位绑定
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   4. 命令行替代
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   5. 后续计划
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#helix-editor">
+     5.1. Helix Editor
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nushell">
+     5.2. NuShell
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id8">
+   6. 个人项目
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>逐步搭建现代大一统终端</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#starship">
+   1. Starship
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#alacritty">
+   2. Alacritty
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     2.1. 基本配置
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     2.2. 字体
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zellij">
+   3. Zellij
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     3.1. 整合 Alacritty
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     3.2. 键位绑定
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   4. 命令行替代
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   5. 后续计划
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#helix-editor">
+     5.1. Helix Editor
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nushell">
+     5.2. NuShell
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id8">
+   6. 个人项目
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1>逐步搭建现代大一统终端<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>目标：统一主流操作系统的终端配置</p></li>
+<li><p>策略：尽量使用 Rust 编写的工具链</p></li>
+<li><p>Rust 工具链优势</p>
+<ul>
+<li><p>配置文件为 TOML 或 YAML，声明式配置，可读性强</p></li>
+<li><p>多使用系统原生工具进行编译，需要下载安装的依赖少</p></li>
+<li><p>速度上较快，有时可能不如 C 工具链，但比其他语言的工具往往要快</p></li>
+<li><p>跨平台性优于 C</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="starship">
+<h2>1. Starship<a class="headerlink" href="#starship" title="Permalink to this headline">¶</a></h2>
+<p>Starship 是由 Rust 编写的命令行主题，简单高效、容易配置（基本不用配置），而且跨平台。</p>
+<p>macOS/Linux 用户使用 Homebrew</p>
+<p>打开 <code class="docutils literal notranslate"><span class="pre">~/.zshrc</span></code>，添加：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span>starship init zsh<span class="k">)</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>Windows 用户使用 Scoop</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scoop install starship
+</pre></div>
+</div>
+<p>打开配置文件</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">code</span> <span class="nv">$PROFILE</span>
+</pre></div>
+</div>
+<p>添加</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Invoke-Expression</span> <span class="p">(&amp;</span><span class="n">starship</span> <span class="n">init</span> <span class="n">powershell</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="alacritty">
+<h2>2. Alacritty<a class="headerlink" href="#alacritty" title="Permalink to this headline">¶</a></h2>
+<p>Alacritty 使用 Rust 编写，是一款极简主义风格的跨平台终端模拟器，目前可以说是全网最快。其安装包发布于各个包管理器仓库</p>
+<p>macOS/Linux 用户使用 Homebrew</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew install alacritty
+</pre></div>
+</div>
+<p>Windows 用户使用 Scoop</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">scoop</span> <span class="n">install</span> <span class="n">alacritty</span>
+</pre></div>
+</div>
+<div class="section" id="id2">
+<h3>2.1. 基本配置<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>手动建立配置文件</p>
+<ul class="simple">
+<li><p>macOS &amp; Linux: <code class="docutils literal notranslate"><span class="pre">~/.config/alacritty/alacritty.yml</span></code></p></li>
+<li><p>Windows: <code class="docutils literal notranslate"><span class="pre">%APPDATA%\alacritty\alacritty.yml</span></code></p></li>
+</ul>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># 自动刷新</span><span class="w"></span>
+<span class="nt">live_config_reload</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="c1"># Tab 缩进</span><span class="w"></span>
+<span class="nt">tabspaces</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span><span class="w"></span>
+<span class="c1"># 背景透明度</span><span class="w"></span>
+<span class="nt">window.opacity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.9</span><span class="w"></span>
+
+<span class="nt">shell</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">program</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/bin/zsh</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># windows</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># program: c:\windows\system32\windowspowershell\v1.0\powershell.exe</span><span class="w"></span>
+<span class="w">  </span><span class="nt">args</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># login</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-l</span><span class="w"></span>
+
+<span class="nt">window</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># 窗口大小</span><span class="w"></span>
+<span class="w">  </span><span class="nt">dimensions</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">columns</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">120</span><span class="w"></span>
+<span class="w">    </span><span class="nt">lines</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">60</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1"># 边缘空白</span><span class="w"></span>
+<span class="w">  </span><span class="nt">padding</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">x</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class="w"></span>
+<span class="w">    </span><span class="nt">y</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">15</span><span class="w"></span>
+<span class="w">  </span><span class="nt">dynamic_padding</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<span class="w">  </span><span class="nt">startup_mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Maximized</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># 窗口修饰</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># - full: 有边界+标题栏</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># - none: 无边界+标题栏</span><span class="w"></span>
+<span class="w">  </span><span class="nt">decorations</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">none</span><span class="w"></span>
+
+<span class="nt">scrolling</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># 历史保留行数</span><span class="w"></span>
+<span class="w">  </span><span class="nt">history</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2000</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1"># 每次滚动行数</span><span class="w"></span>
+<span class="w">  </span><span class="nt">multiplier</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1"># 每次滚动行数（分屏时）</span><span class="w"></span>
+<span class="w">  </span><span class="nt">faux_multiplier</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1"># 自动滚动至最新行</span><span class="w"></span>
+<span class="w">  </span><span class="nt">auto_scroll</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>2.2. 字体<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>这里推荐 FiraCode，当然，目前 Alacritty 还不支持连字。</p>
+<p>macOS/Linux 用户使用 Homebrew</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew tap homebrew/cask-fonts
+brew install font-fira-code-nerd-font
+</pre></div>
+</div>
+<p>Windows 用户使用 Scoop</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">scoop</span> <span class="n">bucket</span> <span class="n">add</span> <span class="n">nerd-fonts</span>
+<span class="n">scoop</span> <span class="n">install</span> <span class="n">firacode-nf</span>
+</pre></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">font</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># 字体</span><span class="w"></span>
+<span class="w">  </span><span class="nt">normal</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">family</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;FiraCode</span><span class="nv"> </span><span class="s">Nerd</span><span class="nv"> </span><span class="s">Font&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">style</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Regular</span><span class="w"></span>
+<span class="w">  </span><span class="nt">bold</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">family</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;FiraCode</span><span class="nv"> </span><span class="s">Nerd</span><span class="nv"> </span><span class="s">Font&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">style</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Bold</span><span class="w"></span>
+<span class="w">  </span><span class="nt">italic</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">family</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;FiraCode</span><span class="nv"> </span><span class="s">Nerd</span><span class="nv"> </span><span class="s">Font&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">style</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Italic</span><span class="w"></span>
+<span class="w">  </span><span class="nt">bold_italic</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">family</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;FiraCode</span><span class="nv"> </span><span class="s">Nerd</span><span class="nv"> </span><span class="s">Font&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">style</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Bold Italic</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1"># 细描边</span><span class="w"></span>
+<span class="w">  </span><span class="nt">use_thin_strokes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="zellij">
+<h2>3. Zellij<a class="headerlink" href="#zellij" title="Permalink to this headline">¶</a></h2>
+<p>Alacritty 不支持多窗口（需要等待下一个版本，即 0.11.0）或多标签（未来也不会），所以需要开启终端复用器（multiplexer）来配合。</p>
+<p>由于 TMux 基于 C，不支持 Windows，而且开发者明确表示未来也不会支持，这里我们选用基于 Rust 的 Zellij 。</p>
+<blockquote>
+<div><p>最新版本的 Zellij 已经整合了 TMux 的键位，消除了迁移的顾虑。</p>
+</div></blockquote>
+<p>虽然 Zellij 目前也不支持 Windows，但 Windows 的 PR 已经提上日程。另外，Zellij 的配置也明显比 TMux 简单，也不需要记忆那么多快捷键。</p>
+<p><strong>需要强调的是</strong>，Alacritty 目前已经可以将 <code class="docutils literal notranslate"><span class="pre">command</span> <span class="pre">/</span> <span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">C</span></code> 复制的内容直接传给系统剪切板，不必再为终端复用器的 copy 模式烦心了，但其他终端模拟器或多或少都还有点问题。</p>
+<p>macOS/Linux 用户使用 Homebrew</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew install zellij
+</pre></div>
+</div>
+<p>基本配置文件位于 <code class="docutils literal notranslate"><span class="pre">~/.config/zellij/config.yaml</span></code></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">default_shell</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">zsh</span><span class="w"></span>
+<span class="nt">on_force_close</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">detach</span><span class="w"></span>
+
+<span class="nt">simplified_ui</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"> </span><span class="c1"># 简单 UI（不包含提示字体）</span><span class="w"></span>
+<span class="nt">pane_frames</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"> </span><span class="c1"># pane 之间的边框</span><span class="w"></span>
+<span class="nt">theme</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span><span class="w"></span>
+
+<span class="nt">default_mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">normal</span><span class="w"> </span><span class="c1"># 启动时的模式，locked 可选</span><span class="w"></span>
+<span class="nt">mouse_mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"> </span><span class="c1"># 鼠标模式（选取）</span><span class="w"></span>
+<span class="nt">scroll_buffer_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10000</span><span class="w"> </span><span class="c1"># 缓冲大小</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Zellij 支持自定义启动布局，将布局文件存在 <code class="docutils literal notranslate"><span class="pre">~/.config/zellij/layouts</span></code> 下，使用如下命令启动即可</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>zellij --layout <span class="o">[</span>layout-name<span class="o">]</span>
+</pre></div>
+</div>
+<p><img alt="zellij-layout" src="../_images/zellij-layout.png" /></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span><span class="w"></span>
+<span class="nt">template</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">direction</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Horizontal</span><span class="w"> </span><span class="c1"># 排布方向</span><span class="w"></span>
+<span class="w">  </span><span class="nt">parts</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">direction</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Vertical</span><span class="w"> </span><span class="c1"># part 1，垂直分割</span><span class="w"></span>
+<span class="w">      </span><span class="nt">borderless</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"> </span><span class="c1"># 边框</span><span class="w"></span>
+<span class="w">      </span><span class="nt">split_size</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">Fixed</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+<span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">plugin</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nt">location</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;zellij:tab-bar&#39;</span><span class="w"> </span><span class="c1"># 加载标签栏</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">direction</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Vertical</span><span class="w"> </span><span class="c1"># part 2</span><span class="w"></span>
+<span class="w">      </span><span class="nt">body</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"> </span><span class="c1"># 加载主体</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">direction</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Vertical</span><span class="w"> </span><span class="c1"># part 3</span><span class="w"></span>
+<span class="w">      </span><span class="nt">borderless</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">      </span><span class="nt">split_size</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">Fixed</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
+<span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">plugin</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nt">location</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;zellij:status-bar&#39;</span><span class="w"> </span><span class="c1"># 加载状态栏</span><span class="w"></span>
+
+<span class="nt">tabs</span><span class="p">:</span><span class="w"> </span><span class="c1"># 每个标签 pane 的排布</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Tab</span><span class="nv"> </span><span class="s">1&#39;</span><span class="w"> </span><span class="c1"># 每个标签的名字</span><span class="w"></span>
+<span class="w">    </span><span class="nt">direction</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Horizontal</span><span class="w"> </span><span class="c1"># 水平排布</span><span class="w"></span>
+<span class="w">    </span><span class="nt">parts</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">direction</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Vertical</span><span class="w"> </span><span class="c1"># 垂直分割</span><span class="w"></span>
+<span class="w">        </span><span class="nt">split_size</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nt">Percent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">60</span><span class="w"> </span><span class="c1"># 上半部分占比</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">direction</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Vertical</span><span class="w"></span>
+<span class="w">        </span><span class="nt">parts</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">direction</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Horizontal</span><span class="w"> </span><span class="c1"># 水平分割</span><span class="w"></span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">direction</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Horizontal</span><span class="w"></span>
+</pre></div>
+</div>
+<p><img alt="zellij-h12" src="../_images/zellij-h12.png" /></p>
+<p>其他配置说明，参见官网 <a class="reference external" href="https://zellij.dev/documentation/">zellij</a></p>
+<div class="section" id="id4">
+<h3>3.1. 整合 Alacritty<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>在 <code class="docutils literal notranslate"><span class="pre">alacritty.yml</span></code> 中，加入</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">shell</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">program</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/bin/zsh</span><span class="w"></span>
+<span class="w">  </span><span class="nt">args</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># login</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-l</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-c</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;zellij</span><span class="nv"> </span><span class="s">attach</span><span class="nv"> </span><span class="s">--index</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">--create&#39;</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>3.2. 键位绑定<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>在 <code class="docutils literal notranslate"><span class="pre">zellij/config.yaml</span></code> 中，加入</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">keybinds</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">resize</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">Resize</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">Left</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">      </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">Char</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;h&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Alt</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;h&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">Resize</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">Right</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">      </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">Char</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;l&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Alt</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;l&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">Resize</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">Down</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">      </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">Char</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;j&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Alt</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;j&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">Resize</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">Up</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">      </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">Char</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;k&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Alt</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;k&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>4. 命令行替代<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>Rust 规避了 C++ 项目的弊病，同时保证了良好的跨平台性质，被广泛用于命令行工具的重写。</p>
+<ul class="simple">
+<li><p>[x] 使用 <code class="docutils literal notranslate"><span class="pre">bat</span></code> 替换 <code class="docutils literal notranslate"><span class="pre">cat</span></code></p></li>
+<li><p>[x] 使用 <code class="docutils literal notranslate"><span class="pre">bottom</span></code> 替换 <code class="docutils literal notranslate"><span class="pre">top</span></code> 和 <code class="docutils literal notranslate"><span class="pre">htop</span></code></p></li>
+<li><p>[x] 使用 <code class="docutils literal notranslate"><span class="pre">du</span></code> 替换 <code class="docutils literal notranslate"><span class="pre">dust</span></code></p></li>
+<li><p>[x] 使用 <code class="docutils literal notranslate"><span class="pre">fd</span></code> 替换 <code class="docutils literal notranslate"><span class="pre">find</span></code></p></li>
+<li><p>[x] 使用 <code class="docutils literal notranslate"><span class="pre">gitui</span></code> 替换 <code class="docutils literal notranslate"><span class="pre">lazygit</span></code></p></li>
+<li><p>[x] 使用 <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">--tree</span></code> 替换 <code class="docutils literal notranslate"><span class="pre">tree</span></code></p></li>
+<li><p>[x] 使用 <code class="docutils literal notranslate"><span class="pre">lsd</span></code> 替换 <code class="docutils literal notranslate"><span class="pre">ls</span></code></p></li>
+<li><p>[x] 使用 <code class="docutils literal notranslate"><span class="pre">ripgrep</span></code> 替换 <code class="docutils literal notranslate"><span class="pre">grep</span></code></p></li>
+<li><p>[x] 使用 <code class="docutils literal notranslate"><span class="pre">sd</span></code> 替换 <code class="docutils literal notranslate"><span class="pre">sed</span></code></p></li>
+<li><p>[x] 使用 <code class="docutils literal notranslate"><span class="pre">tealdeer</span></code> 替换 <code class="docutils literal notranslate"><span class="pre">tldr</span></code> 和 <code class="docutils literal notranslate"><span class="pre">man</span></code></p></li>
+<li><p>[x] 使用 <code class="docutils literal notranslate"><span class="pre">zoxide</span></code> 替换 <code class="docutils literal notranslate"><span class="pre">cd</span></code> 和 <code class="docutils literal notranslate"><span class="pre">z.lua</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h2>5. 后续计划<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>以下两个项目都已经实现全平台，且被用于实践</p>
+<div class="section" id="helix-editor">
+<h3>5.1. Helix Editor<a class="headerlink" href="#helix-editor" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>目标：取代 Vim 和 NeoVim</p></li>
+<li><p>优势</p>
+<ul>
+<li><p>已实现全平台，配置远比 Vim 方便</p></li>
+<li><p>内置 LSP，响应速度快</p></li>
+<li><p>借鉴了 Vim 的键位，迁移成本低</p></li>
+</ul>
+</li>
+<li><p>劣势：</p>
+<ul>
+<li><p>功能不够全面</p></li>
+<li><p>尚未形成生态</p></li>
+</ul>
+</li>
+</ul>
+<p>macOS / Linux 用户</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew install helix-editor/helix
+</pre></div>
+</div>
+<p>Windows 用户</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">scoop</span> <span class="n">install</span> <span class="n">helix</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://helix-editor.com/">helix</a></p>
+</div>
+<div class="section" id="nushell">
+<h3>5.2. NuShell<a class="headerlink" href="#nushell" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>目标：取代 PowerShell 和 ZSh</p></li>
+<li><p>优势</p>
+<ul>
+<li><p>借鉴了 SQL，方便数据化管理</p></li>
+<li><p>目前仅有的全平台，高性能 Shell</p></li>
+</ul>
+</li>
+<li><p>劣势</p>
+<ul>
+<li><p>扩展性弱，且配置和扩展使用是一套新的 Shell 语言</p></li>
+</ul>
+</li>
+</ul>
+<p>macOS / Linux 用户</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew install nushell
+</pre></div>
+</div>
+<p>Windows 用户</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">scoop</span> <span class="n">install</span> <span class="n">nu</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.nushell.sh/">nushell</a></p>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>6. 个人项目<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/ivaquero/oxidizer.sh">Oxidizer</a></p>
+<p><img alt="Oxidizer" src="../_images/oxidizer.png" /></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./tutorials"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="cmd-zsh.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">打造 macOS/Linux 优雅终端</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="md-env.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">搭建 Markdown 强大写作环境（VSCode）</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By ivaquero<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
