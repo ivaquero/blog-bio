@@ -486,29 +486,29 @@ const thebe_selector_output = ".output, .cell_output"
        随机森林
       </a>
      </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id6">
+       袋外评估
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id7">
+       特征重要性
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#out-of-bag-evaluation">
-     Out-of-Bag evaluation
+    <a class="reference internal nav-link" href="#id8">
+     梯度提升
     </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#feature-importance">
-     Feature importance
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#gradient-boosting">
-   Gradient Boosting
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#gradient-boosting-with-early-stopping">
-     Gradient Boosting with Early stopping
-    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id9">
+       早停
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -564,29 +564,29 @@ const thebe_selector_output = ".output, .cell_output"
        随机森林
       </a>
      </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id6">
+       袋外评估
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id7">
+       特征重要性
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#out-of-bag-evaluation">
-     Out-of-Bag evaluation
+    <a class="reference internal nav-link" href="#id8">
+     梯度提升
     </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#feature-importance">
-     Feature importance
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#gradient-boosting">
-   Gradient Boosting
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#gradient-boosting-with-early-stopping">
-     Gradient Boosting with Early stopping
-    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id9">
+       早停
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -1181,9 +1181,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="out-of-bag-evaluation">
-<h2>Out-of-Bag evaluation<a class="headerlink" href="#out-of-bag-evaluation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h3>袋外评估<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bag_clf</span> <span class="o">=</span> <span class="n">BaggingClassifier</span><span class="p">(</span><span class="n">DecisionTreeClassifier</span><span class="p">(),</span>
@@ -1250,8 +1249,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="feature-importance">
-<h2>Feature importance<a class="headerlink" href="#feature-importance" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h3>特征重要性<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mnist_784</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;../../datasets/handson/mnist_784.npz&#39;</span><span class="p">,</span> <span class="n">allow_pickle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -1331,8 +1330,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="gradient-boosting">
-<h1>Gradient Boosting<a class="headerlink" href="#gradient-boosting" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id8">
+<h2>梯度提升<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
@@ -1619,8 +1618,8 @@ const thebe_selector_output = ".output, .cell_output"
 <img alt="../_images/05-ensemble-learning_52_1.png" src="../_images/05-ensemble-learning_52_1.png" />
 </div>
 </div>
-<div class="section" id="gradient-boosting-with-early-stopping">
-<h2>Gradient Boosting with Early stopping<a class="headerlink" href="#gradient-boosting-with-early-stopping" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id9">
+<h3>早停<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
@@ -1802,6 +1801,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <span class="ne">NameError</span>: name &#39;min_val_error&#39; is not defined
 </pre></div>
+</div>
 </div>
 </div>
 </div>
