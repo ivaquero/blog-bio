@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Linear Models &#8212; 生物狗学编程</title>
+    <title>线性模型 &#8212; 生物狗学编程</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -57,7 +57,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/doge.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Decision Trees" href="04-decision-trees.html" />
+    <link rel="next" title="决策树" href="04-decision-trees.html" />
     <link rel="prev" title="分类" href="02-classification.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -323,27 +323,27 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Linear Models
+   线性模型
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="04-decision-trees.html">
-   Decision Trees
+   决策树
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="05-ensemble-learning.html">
-   Ensemble Learning
+   集成学习
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="06-dimensionality-reduction.html">
-   Dimensionality Reduction
+   降维
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="07-unsupervised-learning.html">
-   Unsupervised Learning
+   非监督学习
   </a>
  </li>
 </ul>
@@ -461,61 +461,93 @@ const thebe_selector_output = ".output, .cell_output"
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Linear Models
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   规范方程
   </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#normal-equation">
-   Normal Equation
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#batch-gradient-descent">
-   Batch gradient descent
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#stochastic-gradient-descent">
-   Stochastic gradient descent
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mini-batch-gradient-descent">
-   Mini-batch gradient descent
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#polynomial-regression">
-   Polynomial regression
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#regularized-models">
-   Regularized models
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#early-stopping">
-     Early stopping
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     伪逆
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#logistic-regression">
-   Logistic regression
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   批量梯度下降
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-solutions">
-   Exercise solutions
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   随机梯度下降
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#batch-gradient-descent-with-early-stopping-for-softmax-regression">
-     Batch Gradient Descent with early stopping for Softmax Regression
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   小批量梯度下降
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   多项式回归
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id8">
+   正则化
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     早停
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id10">
+   逻辑回归
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id11">
+   练习
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#softmax">
+     Softmax 回归
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     热一编码
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     Softmax 方程
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     梯度下降
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     学习率
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     正则化
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id17">
+     预测
     </a>
    </li>
   </ul>
@@ -530,7 +562,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Linear Models</h1>
+                <h1>线性模型</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -540,61 +572,93 @@ const thebe_selector_output = ".output, .cell_output"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Linear Models
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   规范方程
   </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#normal-equation">
-   Normal Equation
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#batch-gradient-descent">
-   Batch gradient descent
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#stochastic-gradient-descent">
-   Stochastic gradient descent
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mini-batch-gradient-descent">
-   Mini-batch gradient descent
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#polynomial-regression">
-   Polynomial regression
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#regularized-models">
-   Regularized models
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#early-stopping">
-     Early stopping
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     伪逆
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#logistic-regression">
-   Logistic regression
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   批量梯度下降
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-solutions">
-   Exercise solutions
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   随机梯度下降
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#batch-gradient-descent-with-early-stopping-for-softmax-regression">
-     Batch Gradient Descent with early stopping for Softmax Regression
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   小批量梯度下降
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   多项式回归
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id8">
+   正则化
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     早停
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id10">
+   逻辑回归
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id11">
+   练习
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#softmax">
+     Softmax 回归
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     热一编码
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     Softmax 方程
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     梯度下降
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     学习率
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     正则化
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id17">
+     预测
     </a>
    </li>
   </ul>
@@ -608,8 +672,8 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="linear-models">
-<h1>Linear Models<a class="headerlink" href="#linear-models" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1>线性模型<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -618,9 +682,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="normal-equation">
-<h1>Normal Equation<a class="headerlink" href="#normal-equation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>规范方程<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
@@ -717,7 +780,6 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">LinearRegression</span></code> class is based on the <code class="docutils literal notranslate"><span class="pre">scipy.linalg.lstsq()</span></code> function (the name stands for “least squares”), which you could call directly:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta_best_svd</span><span class="p">,</span> <span class="n">residuals</span><span class="p">,</span> <span class="n">rank</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">X_b</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">rcond</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">)</span>
@@ -732,7 +794,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>This function computes <span class="math notranslate nohighlight">\(\mathbf{X}^+\mathbf{y}\)</span>, where <span class="math notranslate nohighlight">\(\mathbf{X}^{+}\)</span> is the <em>pseudoinverse</em> of <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> (specifically the Moore-Penrose inverse). You can use <code class="docutils literal notranslate"><span class="pre">np.linalg.pinv()</span></code> to compute the pseudoinverse directly:</p>
+<div class="section" id="id3">
+<h3>伪逆<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">pinv</span><span class="p">(</span><span class="n">X_b</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
@@ -747,8 +810,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="batch-gradient-descent">
-<h1>Batch gradient descent<a class="headerlink" href="#batch-gradient-descent" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="id4">
+<h2>批量梯度下降<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eta</span> <span class="o">=</span> <span class="mf">0.1</span>  <span class="c1"># learning rate</span>
@@ -826,12 +890,12 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/03-linear-models_16_0.png" src="../_images/03-linear-models_16_0.png" />
+<img alt="../_images/03-linear-models_15_0.png" src="../_images/03-linear-models_15_0.png" />
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="stochastic-gradient-descent">
-<h1>Stochastic gradient descent<a class="headerlink" href="#stochastic-gradient-descent" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id5">
+<h2>随机梯度下降<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">product</span>
@@ -895,7 +959,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/03-linear-models_21_0.png" src="../_images/03-linear-models_21_0.png" />
+<img alt="../_images/03-linear-models_20_0.png" src="../_images/03-linear-models_20_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -973,8 +1037,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="mini-batch-gradient-descent">
-<h1>Mini-batch gradient descent<a class="headerlink" href="#mini-batch-gradient-descent" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id6">
+<h2>小批量梯度下降<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
@@ -1034,12 +1098,12 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/03-linear-models_28_0.png" src="../_images/03-linear-models_28_0.png" />
+<img alt="../_images/03-linear-models_27_0.png" src="../_images/03-linear-models_27_0.png" />
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="polynomial-regression">
-<h1>Polynomial regression<a class="headerlink" href="#polynomial-regression" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id7">
+<h2>多项式回归<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
@@ -1062,7 +1126,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/03-linear-models_31_0.png" src="../_images/03-linear-models_31_0.png" />
+<img alt="../_images/03-linear-models_30_0.png" src="../_images/03-linear-models_30_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1236,7 +1300,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="ne">NameError</span>: name &#39;PolynomialFeatures&#39; is not defined
 </pre></div>
 </div>
-<img alt="../_images/03-linear-models_38_1.png" src="../_images/03-linear-models_38_1.png" />
+<img alt="../_images/03-linear-models_37_1.png" src="../_images/03-linear-models_37_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1336,8 +1400,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="regularized-models">
-<h1>Regularized models<a class="headerlink" href="#regularized-models" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id8">
+<h2>正则化<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">SGDRegressor</span><span class="p">,</span> <span class="n">Lasso</span><span class="p">,</span> <span class="n">Ridge</span><span class="p">,</span> <span class="n">ElasticNet</span>
@@ -1468,7 +1532,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="ne">NameError</span>: name &#39;Lasso&#39; is not defined
 </pre></div>
 </div>
-<img alt="../_images/03-linear-models_49_1.png" src="../_images/03-linear-models_49_1.png" />
+<img alt="../_images/03-linear-models_48_1.png" src="../_images/03-linear-models_48_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1543,8 +1607,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="early-stopping">
-<h2>Early stopping<a class="headerlink" href="#early-stopping" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id9">
+<h3>早停<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
@@ -1599,7 +1663,6 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Create the graph:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sgd_reg</span> <span class="o">=</span> <span class="n">SGDRegressor</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
@@ -1687,7 +1750,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="ne">NameError</span>: name &#39;best_epoch&#39; is not defined
 </pre></div>
 </div>
-<img alt="../_images/03-linear-models_58_1.png" src="../_images/03-linear-models_58_1.png" />
+<img alt="../_images/03-linear-models_56_1.png" src="../_images/03-linear-models_56_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1824,13 +1887,13 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/03-linear-models_64_0.png" src="../_images/03-linear-models_64_0.png" />
+<img alt="../_images/03-linear-models_62_0.png" src="../_images/03-linear-models_62_0.png" />
 </div>
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="logistic-regression">
-<h1>Logistic regression<a class="headerlink" href="#logistic-regression" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id10">
+<h2>逻辑回归<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
@@ -1850,10 +1913,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1213b3b20&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x134346aa0&gt;
 </pre></div>
 </div>
-<img alt="../_images/03-linear-models_66_1.png" src="../_images/03-linear-models_66_1.png" />
+<img alt="../_images/03-linear-models_64_1.png" src="../_images/03-linear-models_64_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2190,7 +2253,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="ne">IndexError</span>: too many indices for array: array is 2-dimensional, but 3 were indexed
 </pre></div>
 </div>
-<img alt="../_images/03-linear-models_81_1.png" src="../_images/03-linear-models_81_1.png" />
+<img alt="../_images/03-linear-models_79_1.png" src="../_images/03-linear-models_79_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2228,11 +2291,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="exercise-solutions">
-<h1>Exercise solutions<a class="headerlink" href="#exercise-solutions" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="batch-gradient-descent-with-early-stopping-for-softmax-regression">
-<h2>Batch Gradient Descent with early stopping for Softmax Regression<a class="headerlink" href="#batch-gradient-descent-with-early-stopping-for-softmax-regression" title="Permalink to this headline">¶</a></h2>
-<p>Let’s start by loading the data. We will just reuse the Iris dataset we loaded earlier.</p>
+<div class="section" id="id11">
+<h2>练习<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="softmax">
+<h3>Softmax 回归<a class="headerlink" href="#softmax" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][:,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]</span>  <span class="c1"># petal length, petal width</span>
@@ -2252,7 +2314,6 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>We need to add the bias term for every instance (<span class="math notranslate nohighlight">\(x_0 = 1\)</span>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_with_bias</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="mi">1</span><span class="p">]),</span> <span class="n">X</span><span class="p">]</span>
@@ -2260,7 +2321,6 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>And let’s set the random seed so the output of this exercise solution is reproducible:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">2042</span><span class="p">)</span>
@@ -2268,7 +2328,6 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>The easiest option to split the dataset into a training set, a validation set and a test set would be to use Scikit-Learn’s <code class="docutils literal notranslate"><span class="pre">train_test_split()</span></code> function, but the point of this exercise is to try understand the algorithms by implementing them manually. So here is one possible implementation:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_ratio</span> <span class="o">=</span> <span class="mf">0.2</span>
@@ -2291,7 +2350,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>The targets are currently class indices (0, 1 or 2), but we need target class probabilities to train the Softmax Regression model. Each instance will have target class probabilities equal to 0.0 for all classes except for the target class which will have a probability of 1.0 (in other words, the vector of class probabilities for ay given instance is a one-hot vector). Let’s write a small function to convert the vector of class indices into a matrix containing a one-hot vector for each instance:</p>
+</div>
+<div class="section" id="id12">
+<h3>热一编码<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">to_one_hot</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
@@ -2304,7 +2365,6 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Let’s test this function on the first 10 instances:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_train</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
@@ -2350,7 +2410,6 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Looks good, so let’s create the target class probabilities matrix for the training set and the test set:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Y_train_one_hot</span> <span class="o">=</span> <span class="n">to_one_hot</span><span class="p">(</span><span class="n">y_train</span><span class="p">)</span>
@@ -2379,7 +2438,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Now let’s implement the Softmax function. Recall that it is defined by the following equation:</p>
+</div>
+<div class="section" id="id13">
+<h3>Softmax 方程<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
 <p><span class="math notranslate nohighlight">\(σ\left(\mathbf{s}(\mathbf{x})\right)_k = \dfrac{\exp\left(s_k(\mathbf{x})\right)}{∑\limits_{j=1}^{K}{\exp\left(s_j(\mathbf{x})\right)}}\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2391,7 +2452,6 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>We are almost ready to start training. Let’s define the number of inputs and outputs:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_inputs</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># == 3 (2 features plus the bias term)</span>
@@ -2400,14 +2460,16 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Now here comes the hardest part: training! Theoretically, it’s simple: it’s just a matter of translating the math equations into Python code. But in practice, it can be quite tricky: in particular, it’s easy to mix up the order of the terms, or the indices. You can even end up with code that looks like it’s working but is actually not computing exactly the right thing. When unsure, you should write down the shape of each term in the equation and make sure the corresponding terms in your code match closely. It can also help to evaluate each term independently and print them out. The good news it that you won’t have to do this everyday, since all this is well implemented by Scikit-Learn, but it will help you understand what’s going on under the hood.</p>
-<p>So the equations we will need are the cost function:</p>
-<p>$J(\mathbf{Θ}) =</p>
-<ul class="simple">
-<li><p>\dfrac{1}{m}∑\limits_{i=1}^{m}∑\limits_{k=1}^{K}{y_k^{(i)}\log\left(\hat{p}_k^{(i)}\right)}$</p></li>
-</ul>
+</div>
+<div class="section" id="id14">
+<h3>梯度下降<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[
+J(Θ) =
+- \dfrac{1}{m}∑\limits_{i=1}^{m}∑\limits_{k=1}^{K}{y_k^{(i)}\log\left(\hat{p}_k^{(i)}\right)}
+\]</div>
 <p>And the equation for the gradients:</p>
-<p><span class="math notranslate nohighlight">\(\nabla_{\mathbf{θ}^{(k)}} \, J(\mathbf{Θ}) = \dfrac{1}{m} ∑\limits_{i=1}^{m}{ \left ( \hat{p}^{(i)}_k - y_k^{(i)} \right ) \mathbf{x}^{(i)}}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\nabla_{θ^{(k)}} \, J(Θ) = \dfrac{1}{m} ∑\limits_{i=1}^{m}{ \left ( \hat{p}^{(i)}_k - y_k^{(i)} \right ) \mathbf{x}^{(i)}}\)</span></p>
 <p>Note that <span class="math notranslate nohighlight">\(\log\left(\hat{p}_k^{(i)}\right)\)</span> may not be computable if <span class="math notranslate nohighlight">\(\hat{p}_k^{(i)} = 0\)</span>. So we will add a tiny value <span class="math notranslate nohighlight">\(ϵ\)</span> to <span class="math notranslate nohighlight">\(\log\left(\hat{p}_k^{(i)}\right)\)</span> to avoid getting <code class="docutils literal notranslate"><span class="pre">nan</span></code> values.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2445,7 +2507,6 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>And that’s it! The Softmax model is trained. Let’s look at the model parameters:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Theta</span>
@@ -2497,7 +2558,6 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Let’s make predictions for the validation set and check the accuracy score:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">logits</span> <span class="o">=</span> <span class="n">X_valid</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Theta</span><span class="p">)</span>
@@ -2515,7 +2575,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Well, this model looks pretty good. For the sake of the exercise, let’s add a bit of <span class="math notranslate nohighlight">\(ℓ_2\)</span> regularization. The following training code is similar to the one above, but the loss now has an additional <span class="math notranslate nohighlight">\(ℓ_2\)</span> penalty, and the gradients have the proper additional term (note that we don’t regularize the first element of <code class="docutils literal notranslate"><span class="pre">Theta</span></code> since this corresponds to the bias term). Also, let’s try increasing the learning rate <code class="docutils literal notranslate"><span class="pre">eta</span></code>.</p>
+</div>
+<div class="section" id="id15">
+<h3>学习率<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eta</span> <span class="o">=</span> <span class="mf">0.1</span>
@@ -2555,7 +2617,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Because of the additional <span class="math notranslate nohighlight">\(ℓ_2\)</span> penalty, the loss seems greater than earlier, but perhaps this model will perform better? Let’s find out:</p>
+</div>
+<div class="section" id="id16">
+<h3>正则化<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">logits</span> <span class="o">=</span> <span class="n">X_valid</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Theta</span><span class="p">)</span>
@@ -2573,8 +2637,6 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Cool, perfect accuracy! We probably just got lucky with this validation set, but still, it’s pleasant.</p>
-<p>Now let’s add early stopping. For this we just need to measure the loss on the validation set at every iteration and stop when the error starts growing.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eta</span> <span class="o">=</span> <span class="mf">0.1</span> 
@@ -2624,6 +2686,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="id17">
+<h3>预测<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">logits</span> <span class="o">=</span> <span class="n">X_valid</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Theta</span><span class="p">)</span>
@@ -2641,8 +2706,6 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Still perfect, but faster.</p>
-<p>Now let’s plot the model’s predictions on the whole dataset:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
@@ -2678,10 +2741,9 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="ne">IndexError</span>: too many indices for array: array is 2-dimensional, but 3 were indexed
 </pre></div>
 </div>
-<img alt="../_images/03-linear-models_121_1.png" src="../_images/03-linear-models_121_1.png" />
+<img alt="../_images/03-linear-models_107_1.png" src="../_images/03-linear-models_107_1.png" />
 </div>
 </div>
-<p>And now let’s measure the final model’s accuracy on the test set:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">logits</span> <span class="o">=</span> <span class="n">X_test</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Theta</span><span class="p">)</span>
@@ -2699,7 +2761,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Our perfect model turns out to have slight imperfections. This variability is likely due to the very small size of the dataset: depending on how you sample the training set, validation set and the test set, you can get quite different results. Try changing the random seed and running the code again a few times, you will see that the results will vary.</p>
+</div>
 </div>
 </div>
 
@@ -2738,7 +2800,7 @@ const thebe_selector_output = ".output, .cell_output"
     <a class='right-next' id="next-link" href="04-decision-trees.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Decision Trees</p>
+        <p class="prev-next-title">决策树</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

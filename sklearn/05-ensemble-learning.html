@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ensemble Learning &#8212; 生物狗学编程</title>
+    <title>集成学习 &#8212; 生物狗学编程</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/doge.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Dimensionality Reduction" href="06-dimensionality-reduction.html" />
-    <link rel="prev" title="Decision Trees" href="04-decision-trees.html" />
+    <link rel="next" title="降维" href="06-dimensionality-reduction.html" />
+    <link rel="prev" title="决策树" href="04-decision-trees.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -321,27 +321,27 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03-linear-models.html">
-   Linear Models
+   线性模型
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="04-decision-trees.html">
-   Decision Trees
+   决策树
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Ensemble Learning
+   集成学习
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="06-dimensionality-reduction.html">
-   Dimensionality Reduction
+   降维
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="07-unsupervised-learning.html">
-   Unsupervised Learning
+   非监督学习
   </a>
  </li>
 </ul>
@@ -461,23 +461,32 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Ensemble Learning
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#voting-classifiers">
-   Voting classifiers
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bagging-ensembles">
-   Bagging ensembles
+   集成学习
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#random-forests">
-     Random Forests
+    <a class="reference internal nav-link" href="#id2">
+     投票分类器
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       软投票
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     袋装
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
+       随机森林
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#out-of-bag-evaluation">
@@ -518,7 +527,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Ensemble Learning</h1>
+                <h1>集成学习</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -530,23 +539,32 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Ensemble Learning
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#voting-classifiers">
-   Voting classifiers
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bagging-ensembles">
-   Bagging ensembles
+   集成学习
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#random-forests">
-     Random Forests
+    <a class="reference internal nav-link" href="#id2">
+     投票分类器
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       软投票
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     袋装
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
+       随机森林
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#out-of-bag-evaluation">
@@ -586,8 +604,8 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="ensemble-learning">
-<h1>Ensemble Learning<a class="headerlink" href="#ensemble-learning" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1>集成学习<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -604,9 +622,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="voting-classifiers">
-<h1>Voting classifiers<a class="headerlink" href="#voting-classifiers" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>投票分类器<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heads_proba</span> <span class="o">=</span> <span class="mf">0.51</span>
@@ -780,7 +797,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Soft voting:</p>
+<div class="section" id="id3">
+<h3>软投票<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">log_clf</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="s2">&quot;lbfgs&quot;</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
@@ -830,8 +848,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="bagging-ensembles">
-<h1>Bagging ensembles<a class="headerlink" href="#bagging-ensembles" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="id4">
+<h2>袋装<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">BaggingClassifier</span>
@@ -964,8 +983,8 @@ const thebe_selector_output = ".output, .cell_output"
 <img alt="../_images/05-ensemble-learning_22_1.png" src="../_images/05-ensemble-learning_22_1.png" />
 </div>
 </div>
-<div class="section" id="random-forests">
-<h2>Random Forests<a class="headerlink" href="#random-forests" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h3>随机森林<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bag_clf</span> <span class="o">=</span> <span class="n">BaggingClassifier</span><span class="p">(</span>
@@ -1159,6 +1178,7 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 <img alt="../_images/05-ensemble-learning_32_1.png" src="../_images/05-ensemble-learning_32_1.png" />
+</div>
 </div>
 </div>
 </div>
@@ -2071,13 +2091,13 @@ const thebe_selector_output = ".output, .cell_output"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Decision Trees</p>
+            <p class="prev-next-title">决策树</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="06-dimensionality-reduction.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Dimensionality Reduction</p>
+        <p class="prev-next-title">降维</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

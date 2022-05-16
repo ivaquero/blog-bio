@@ -51,13 +51,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="canonical" href="https://ivaquero.github.io/blog-bio/sklearn/02-classification.html" />
     <link rel="shortcut icon" href="../_static/doge.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Linear Models" href="03-linear-models.html" />
+    <link rel="next" title="线性模型" href="03-linear-models.html" />
     <link rel="prev" title="数据处理" href="01-data-processing.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -323,27 +321,27 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03-linear-models.html">
-   Linear Models
+   线性模型
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="04-decision-trees.html">
-   Decision Trees
+   决策树
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="05-ensemble-learning.html">
-   Ensemble Learning
+   集成学习
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="06-dimensionality-reduction.html">
-   Dimensionality Reduction
+   降维
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="07-unsupervised-learning.html">
-   Unsupervised Learning
+   非监督学习
   </a>
  </li>
 </ul>
@@ -461,76 +459,111 @@ const thebe_selector_output = ".output, .cell_output"
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   分类
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mnist">
+   MNIST
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mnist">
-     MNIST
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   二元分类器
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pr">
+     PR 曲线
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     二元分类器
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#pr">
-       PR 曲线
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#roc">
-       ROC 曲线
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     多类别分类
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
-       误差分析
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     多标签分类
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
-     多输出分类
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#roc">
+     ROC 曲线
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#random-classifier">
-   Random classifier
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   多类别分类
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     误差分析
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   多标签分类
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#knn-classifier">
-   KNN classifier
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   多输出分类
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#data-augmentation">
-   Data Augmentation
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   随机分类器
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tackle-the-titanic-dataset">
-   Tackle the Titanic dataset
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#knn">
+   KNN 分类器
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id8">
+   数据放大
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id9">
+   泰坦尼克数据集
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     数据介绍
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     缺失值
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     数值特征
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     类别特征
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     构建管线
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     处理标签
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     模型评估
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id17">
+     箱线图
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -552,76 +585,111 @@ const thebe_selector_output = ".output, .cell_output"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   分类
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mnist">
+   MNIST
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mnist">
-     MNIST
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   二元分类器
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pr">
+     PR 曲线
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     二元分类器
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#pr">
-       PR 曲线
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#roc">
-       ROC 曲线
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     多类别分类
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
-       误差分析
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     多标签分类
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
-     多输出分类
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#roc">
+     ROC 曲线
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#random-classifier">
-   Random classifier
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   多类别分类
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     误差分析
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   多标签分类
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#knn-classifier">
-   KNN classifier
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   多输出分类
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#data-augmentation">
-   Data Augmentation
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   随机分类器
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tackle-the-titanic-dataset">
-   Tackle the Titanic dataset
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#knn">
+   KNN 分类器
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id8">
+   数据放大
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id9">
+   泰坦尼克数据集
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     数据介绍
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     缺失值
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     数值特征
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     类别特征
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     构建管线
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     处理标签
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     模型评估
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id17">
+     箱线图
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -2067,9 +2135,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="random-classifier">
-<h1>Random classifier<a class="headerlink" href="#random-classifier" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id7">
+<h2>随机分类器<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.dummy</span> <span class="kn">import</span> <span class="n">DummyClassifier</span>
@@ -2159,8 +2226,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="knn-classifier">
-<h1>KNN classifier<a class="headerlink" href="#knn-classifier" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="knn">
+<h2>KNN 分类器<a class="headerlink" href="#knn" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
@@ -2381,8 +2448,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="data-augmentation">
-<h1>Data Augmentation<a class="headerlink" href="#data-augmentation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id8">
+<h2>数据放大<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.ndimage</span> <span class="kn">import</span> <span class="n">shift</span>
@@ -2477,7 +2544,6 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p><strong>Warning</strong>: the following cell may take close to an hour to run, depending on your hardware.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># y_pred = knn_clf.predict(X_test)</span>
@@ -2486,11 +2552,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>By simply augmenting the data, we got a 0.5% accuracy boost. :)</p>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="tackle-the-titanic-dataset">
-<h1>Tackle the Titanic dataset<a class="headerlink" href="#tackle-the-titanic-dataset" title="Permalink to this headline">¶</a></h1>
-<p>The goal is to predict whether or not a passenger survived based on attributes such as their age, sex, passenger class, where they embarked and so on.</p>
+<div class="section" id="id9">
+<h2>泰坦尼克数据集<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../../datasets/handson/titanic_train.csv&quot;</span><span class="p">)</span>
@@ -2499,8 +2563,6 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>The data is already split into a training set and a test set. However, the test data does <em>not</em> contain the labels: your goal is to train the best model you can using the training data, then make your predictions on the test data and upload them to Kaggle to see your final score.</p>
-<p>Let’s take a peek at the top few rows of the training set:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -2620,7 +2682,8 @@ const thebe_selector_output = ".output, .cell_output"
 </table>
 </div></div></div>
 </div>
-<p>The attributes have the following meaning:</p>
+<div class="section" id="id10">
+<h3>数据介绍<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Survived</strong>: that’s the target, 0 means the passenger did not survive, while 1 means he/she survived.</p></li>
 <li><p><strong>Pclass</strong>: passenger class.</p></li>
@@ -2632,7 +2695,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><strong>Cabin</strong>: passenger’s cabin number</p></li>
 <li><p><strong>Embarked</strong>: where the passenger embarked the Titanic</p></li>
 </ul>
-<p>Let’s get more info to see how much data is missing:</p>
+</div>
+<div class="section" id="id11">
+<h3>缺失值<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
@@ -2663,9 +2728,9 @@ memory usage: 83.7+ KB
 </div>
 </div>
 </div>
-<p>Okay, the <strong>Age</strong>, <strong>Cabin</strong> and <strong>Embarked</strong> attributes are sometimes null (less than 891 non-null), especially the <strong>Cabin</strong> (77% are null). We will ignore the <strong>Cabin</strong> for now and focus on the rest. The <strong>Age</strong> attribute has about 19% null values, so we will need to decide what to do with them. Replacing null values with the median age seems reasonable.</p>
-<p>The <strong>Name</strong> and <strong>Ticket</strong> attributes may have some value, but they will be a bit tricky to convert into useful numbers that a model can consume. So for now, we will ignore them.</p>
-<p>Let’s take a look at the numerical attributes:</p>
+</div>
+<div class="section" id="id12">
+<h3>数值特征<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
@@ -2785,12 +2850,6 @@ memory usage: 83.7+ KB
 </table>
 </div></div></div>
 </div>
-<ul class="simple">
-<li><p>Yikes, only 38% <strong>Survived</strong>. :( That’s close enough to 40%, so accuracy will be a reasonable metric to evaluate our model.</p></li>
-<li><p>The mean <strong>Fare</strong> was £32.20, which does not seem so expensive (but it was probably a lot of money back then).</p></li>
-<li><p>The mean <strong>Age</strong> was less than 30 years old.</p></li>
-</ul>
-<p>Let’s check that the target is indeed 0 or 1:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_data</span><span class="p">[</span><span class="s2">&quot;Survived&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
@@ -2805,7 +2864,9 @@ Name: Survived, dtype: int64
 </div>
 </div>
 </div>
-<p>Now let’s take a quick look at all the categorical attributes:</p>
+</div>
+<div class="section" id="id13">
+<h3>类别特征<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_data</span><span class="p">[</span><span class="s2">&quot;Pclass&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
@@ -2850,8 +2911,9 @@ Name: Embarked, dtype: int64
 </div>
 </div>
 </div>
-<p>The Embarked attribute tells us where the passenger embarked: C=Cherbourg, Q=Queenstown, S=Southampton.</p>
-<p>Now let’s build our preprocessing pipelines. We will reuse the <code class="docutils literal notranslate"><span class="pre">DataframeSelector</span></code> we built in the previous chapter to select specific attributes from the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>:</p>
+</div>
+<div class="section" id="id14">
+<h3>构建管线<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.base</span> <span class="kn">import</span> <span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span>
@@ -2883,7 +2945,6 @@ Name: Embarked, dtype: int64
 </div>
 </div>
 </div>
-<p>Let’s build the pipeline for the numerical attributes:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
@@ -2943,7 +3004,6 @@ Name: Embarked, dtype: int64
 </div>
 </div>
 </div>
-<p>We will also need an imputer for the string categorical columns (the regular <code class="docutils literal notranslate"><span class="pre">SimpleImputer</span></code> does not work on those):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MostFrequentImputer</span><span class="p">(</span><span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span><span class="p">):</span>
@@ -2989,7 +3049,6 @@ Name: Embarked, dtype: int64
 </div>
 </div>
 </div>
-<p>Now we can build the pipeline for the categorical attributes:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat_pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
@@ -3032,7 +3091,6 @@ Name: Embarked, dtype: int64
 </div>
 </div>
 </div>
-<p>Finally, let’s join the numerical and categorical pipelines:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">FeatureUnion</span>
@@ -3073,7 +3131,6 @@ Name: Embarked, dtype: int64
 </div>
 </div>
 </div>
-<p>Cool! Now we have a nice preprocessing pipeline that takes the raw data and outputs numerical input features that we can feed to any Machine Learning model we want.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span> <span class="o">=</span> <span class="n">preprocess_pipeline</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">train_data</span><span class="p">)</span>
@@ -3093,7 +3150,9 @@ Name: Embarked, dtype: int64
 </div>
 </div>
 </div>
-<p>Let’s not forget to get the labels:</p>
+</div>
+<div class="section" id="id15">
+<h3>处理标签<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_train</span> <span class="o">=</span> <span class="n">train_data</span><span class="p">[</span><span class="s2">&quot;Survived&quot;</span><span class="p">]</span>
@@ -3101,7 +3160,6 @@ Name: Embarked, dtype: int64
 </div>
 </div>
 </div>
-<p>We are now ready to train a classifier. Let’s start with an <code class="docutils literal notranslate"><span class="pre">SVC</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
@@ -3124,7 +3182,6 @@ Name: Embarked, dtype: int64
 </div>
 </div>
 </div>
-<p>Great, our model is trained, let’s use it to make predictions on the test set:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_test</span> <span class="o">=</span> <span class="n">preprocess_pipeline</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">test_data</span><span class="p">)</span>
@@ -3144,7 +3201,9 @@ Name: Embarked, dtype: int64
 </div>
 </div>
 </div>
-<p>And now we could just build a CSV file with these predictions (respecting the format excepted by Kaggle), then upload it and hope for the best. But wait! We can do better than hope. Why don’t we use cross-validation to have an idea of how good our model is?</p>
+</div>
+<div class="section" id="id16">
+<h3>模型评估<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span>
@@ -3181,8 +3240,6 @@ Name: Embarked, dtype: int64
 </div>
 </div>
 </div>
-<p>Okay, over 73% accuracy, clearly better than random chance, but it’s not a great score. Looking at the <a class="reference external" href="https://www.kaggle.com/c/titanic/leaderboard">leaderboard</a> for the Titanic competition on Kaggle, you can see that you need to reach above 80% accuracy to be within the top 10% Kagglers. Some reached 100%, but since you can easily find the <a class="reference external" href="https://www.encyclopedia-titanica.org/titanic-victims/">list of victims</a> of the Titanic, it seems likely that there was little Machine Learning involved in their performance! ;-) So let’s try to build a model that reaches 80% accuracy.</p>
-<p>Let’s try a <code class="docutils literal notranslate"><span class="pre">RandomForestClassifier</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
@@ -3221,8 +3278,9 @@ Name: Embarked, dtype: int64
 </div>
 </div>
 </div>
-<p>That’s much better!</p>
-<p>Instead of just looking at the mean accuracy across the 10 cross-validation folds, let’s plot all 10 scores for each model, along with a box plot highlighting the lower and upper quartiles, and “whiskers” showing the extent of the scores (thanks to Nevin Yilmaz for suggesting this visualization). Note that the <code class="docutils literal notranslate"><span class="pre">boxplot()</span></code> function detects outliers (called “fliers”) and does not include them within the whiskers. Specifically, if the lower quartile is <span class="math notranslate nohighlight">\(Q_1\)</span> and the upper quartile is <span class="math notranslate nohighlight">\(Q_3\)</span>, then the interquartile range <span class="math notranslate nohighlight">\(IQR = Q_3 - Q_1\)</span> (this is the box’s height), and any score lower than <span class="math notranslate nohighlight">\(Q_1 - 1.5 × IQR\)</span> is a flier, and so is any score greater than <span class="math notranslate nohighlight">\(Q3 + 1.5 × IQR\)</span>.</p>
+</div>
+<div class="section" id="id17">
+<h3>箱线图<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
@@ -3247,20 +3305,9 @@ Name: Embarked, dtype: int64
 <span class="ne">NameError</span>: name &#39;svm_scores&#39; is not defined
 </pre></div>
 </div>
-<img alt="../_images/02-classification_170_1.png" src="../_images/02-classification_170_1.png" />
+<img alt="../_images/02-classification_150_1.png" src="../_images/02-classification_150_1.png" />
 </div>
 </div>
-<p>To improve this result further, you could:</p>
-<ul class="simple">
-<li><p>Compare many more models and tune hyperparameters using cross validation and grid search,</p></li>
-<li><p>Do more feature engineering, for example:</p>
-<ul>
-<li><p>replace <strong>SibSp</strong> and <strong>Parch</strong> with their sum,</p></li>
-<li><p>try to identify parts of names that correlate well with the <strong>Survived</strong> attribute (e.g. if the name contains “Countess”, then survival seems more likely),</p></li>
-</ul>
-</li>
-<li><p>try to convert numerical attributes to categorical attributes: for example, different age groups had very different survival rates (see below), so it may help to create an age bucket category and use it instead of the age. Similarly, it may be useful to have a special category for people traveling alone since only 30% of them survived (see below).</p></li>
-</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_data</span><span class="p">[</span><span class="s2">&quot;AgeBucket&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">train_data</span><span class="p">[</span><span class="s2">&quot;Age&quot;</span><span class="p">]</span> <span class="o">//</span> <span class="mi">15</span> <span class="o">*</span> <span class="mi">15</span>
@@ -3399,6 +3446,8 @@ Name: Embarked, dtype: int64
 </div></div></div>
 </div>
 </div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -3435,7 +3484,7 @@ Name: Embarked, dtype: int64
     <a class='right-next' id="next-link" href="03-linear-models.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Linear Models</p>
+        <p class="prev-next-title">线性模型</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

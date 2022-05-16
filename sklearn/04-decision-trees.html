@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Decision Trees &#8212; 生物狗学编程</title>
+    <title>决策树 &#8212; 生物狗学编程</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/doge.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Ensemble Learning" href="05-ensemble-learning.html" />
-    <link rel="prev" title="Linear Models" href="03-linear-models.html" />
+    <link rel="next" title="集成学习" href="05-ensemble-learning.html" />
+    <link rel="prev" title="线性模型" href="03-linear-models.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -321,27 +321,27 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03-linear-models.html">
-   Linear Models
+   线性模型
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Decision Trees
+   决策树
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="05-ensemble-learning.html">
-   Ensemble Learning
+   集成学习
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="06-dimensionality-reduction.html">
-   Dimensionality Reduction
+   降维
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="07-unsupervised-learning.html">
-   Unsupervised Learning
+   非监督学习
   </a>
  </li>
 </ul>
@@ -461,28 +461,30 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Decision Trees
+   决策树
   </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#training-and-visualizing">
-   Training and visualizing
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#predicting">
-   Predicting
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#high-variance">
-   High Variance
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#regression-trees">
-   Regression trees
-  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     训练
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     预测
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     高方差
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     回归树
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise-solutions">
@@ -506,7 +508,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Decision Trees</h1>
+                <h1>决策树</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -518,28 +520,30 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Decision Trees
+   决策树
   </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#training-and-visualizing">
-   Training and visualizing
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#predicting">
-   Predicting
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#high-variance">
-   High Variance
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#regression-trees">
-   Regression trees
-  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     训练
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     预测
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     高方差
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     回归树
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise-solutions">
@@ -562,8 +566,8 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="decision-trees">
-<h1>Decision Trees<a class="headerlink" href="#decision-trees" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1>决策树<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -572,9 +576,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="training-and-visualizing">
-<h1>Training and visualizing<a class="headerlink" href="#training-and-visualizing" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>训练<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
@@ -727,8 +730,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="predicting">
-<h1>Predicting<a class="headerlink" href="#predicting" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id3">
+<h2>预测<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tree_clf</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">]])</span>
@@ -764,10 +767,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="high-variance">
-<h1>High Variance<a class="headerlink" href="#high-variance" title="Permalink to this headline">¶</a></h1>
-<p>We’ve seen that small changes in the dataset (such as a rotation) may produce a very different Decision Tree.
-Now let’s show that training the same model on the same data may produce a very different model every time, since the CART training algorithm used by Scikit-Learn is stochastic. To show this, we will set <code class="docutils literal notranslate"><span class="pre">random_state</span></code> to a different value than earlier:</p>
+<div class="section" id="id4">
+<h2>高方差<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tree_clf_tweaked</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
@@ -818,7 +819,7 @@ Now let’s show that training the same model on the same data may produce a ver
 <span class="ne">NameError</span>: name &#39;plot_decision_regions&#39; is not defined
 </pre></div>
 </div>
-<img alt="../_images/04-decision-trees_15_1.png" src="../_images/04-decision-trees_15_1.png" />
+<img alt="../_images/04-decision-trees_14_1.png" src="../_images/04-decision-trees_14_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -954,8 +955,8 @@ Now let’s show that training the same model on the same data may produce a ver
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="regression-trees">
-<h1>Regression trees<a class="headerlink" href="#regression-trees" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id5">
+<h2>回归树<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
@@ -1132,6 +1133,7 @@ Now let’s show that training the same model on the same data may produce a ver
 
 <span class="ne">NameError</span>: name &#39;DecisionTreeRegressor&#39; is not defined
 </pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -1496,13 +1498,13 @@ Now let’s show that training the same model on the same data may produce a ver
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Linear Models</p>
+            <p class="prev-next-title">线性模型</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="05-ensemble-learning.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Ensemble Learning</p>
+        <p class="prev-next-title">集成学习</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

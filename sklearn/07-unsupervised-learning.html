@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Unsupervised Learning &#8212; 生物狗学编程</title>
+    <title>非监督学习 &#8212; 生物狗学编程</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -58,7 +58,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="PyTorch 初探" href="../pytorch/1-pytorch-intro.html" />
-    <link rel="prev" title="Dimensionality Reduction" href="06-dimensionality-reduction.html" />
+    <link rel="prev" title="降维" href="06-dimensionality-reduction.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -323,27 +323,27 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03-linear-models.html">
-   Linear Models
+   线性模型
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="04-decision-trees.html">
-   Decision Trees
+   决策树
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="05-ensemble-learning.html">
-   Ensemble Learning
+   集成学习
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="06-dimensionality-reduction.html">
-   Dimensionality Reduction
+   降维
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Unsupervised Learning
+   非监督学习
   </a>
  </li>
 </ul>
@@ -463,12 +463,12 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Unsupervised Learning
+   非监督学习
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#clustering">
-   Clustering
+  <a class="reference internal nav-link" href="#id2">
+   聚类
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -616,7 +616,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Unsupervised Learning</h1>
+                <h1>非监督学习</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -628,12 +628,12 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Unsupervised Learning
+   非监督学习
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#clustering">
-   Clustering
+  <a class="reference internal nav-link" href="#id2">
+   聚类
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -780,12 +780,11 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="unsupervised-learning">
-<h1>Unsupervised Learning<a class="headerlink" href="#unsupervised-learning" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1>非监督学习<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="clustering">
-<h1>Clustering<a class="headerlink" href="#clustering" title="Permalink to this headline">¶</a></h1>
-<p><strong>Introduction – Classification <em>vs</em> Clustering</strong></p>
+<div class="tex2jax_ignore mathjax_ignore section" id="id2">
+<h1>聚类<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -865,7 +864,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="ne">NameError</span>: name &#39;X&#39; is not defined
 </pre></div>
 </div>
-<img alt="../_images/07-unsupervised-learning_6_1.png" src="../_images/07-unsupervised-learning_6_1.png" />
+<img alt="../_images/07-unsupervised-learning_5_1.png" src="../_images/07-unsupervised-learning_5_1.png" />
 </div>
 </div>
 <p>A Gaussian mixture model (explained below) can actually separate these clusters pretty well (using all 4 features: petal length &amp; width, and sepal length &amp; width).</p>
@@ -975,7 +974,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="ne">NameError</span>: name &#39;X&#39; is not defined
 </pre></div>
 </div>
-<img alt="../_images/07-unsupervised-learning_13_1.png" src="../_images/07-unsupervised-learning_13_1.png" />
+<img alt="../_images/07-unsupervised-learning_12_1.png" src="../_images/07-unsupervised-learning_12_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1097,7 +1096,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="ne">NameError</span>: name &#39;X&#39; is not defined
 </pre></div>
 </div>
-<img alt="../_images/07-unsupervised-learning_24_1.png" src="../_images/07-unsupervised-learning_24_1.png" />
+<img alt="../_images/07-unsupervised-learning_23_1.png" src="../_images/07-unsupervised-learning_23_1.png" />
 </div>
 </div>
 <p><strong>Fit and predict</strong></p>
@@ -1320,7 +1319,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="ne">NameError</span>: name &#39;kmeans&#39; is not defined
 </pre></div>
 </div>
-<img alt="../_images/07-unsupervised-learning_41_1.png" src="../_images/07-unsupervised-learning_41_1.png" />
+<img alt="../_images/07-unsupervised-learning_40_1.png" src="../_images/07-unsupervised-learning_40_1.png" />
 </div>
 </div>
 <p>Not bad! Some of the instances near the edges were probably assigned to the wrong cluster, but overall it looks pretty good.</p>
@@ -1492,7 +1491,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="ne">NameError</span>: name &#39;X&#39; is not defined
 </pre></div>
 </div>
-<img alt="../_images/07-unsupervised-learning_54_1.png" src="../_images/07-unsupervised-learning_54_1.png" />
+<img alt="../_images/07-unsupervised-learning_53_1.png" src="../_images/07-unsupervised-learning_53_1.png" />
 </div>
 </div>
 <p><strong>K-Means Variability</strong></p>
@@ -1710,7 +1709,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="ne">NameError</span>: name &#39;kmeans_rnd_10_inits&#39; is not defined
 </pre></div>
 </div>
-<img alt="../_images/07-unsupervised-learning_74_1.png" src="../_images/07-unsupervised-learning_74_1.png" />
+<img alt="../_images/07-unsupervised-learning_73_1.png" src="../_images/07-unsupervised-learning_73_1.png" />
 </div>
 </div>
 </div>
@@ -2234,7 +2233,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/07-unsupervised-learning_110_0.png" src="../_images/07-unsupervised-learning_110_0.png" />
+<img alt="../_images/07-unsupervised-learning_109_0.png" src="../_images/07-unsupervised-learning_109_0.png" />
 </div>
 </div>
 </div>
@@ -2387,7 +2386,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="ne">ValueError</span>: x and y must have same first dimension, but have shapes (9,) and (50, 2)
 </pre></div>
 </div>
-<img alt="../_images/07-unsupervised-learning_119_1.png" src="../_images/07-unsupervised-learning_119_1.png" />
+<img alt="../_images/07-unsupervised-learning_118_1.png" src="../_images/07-unsupervised-learning_118_1.png" />
 </div>
 </div>
 <p>As you can see, there is an elbow at <span class="math notranslate nohighlight">\(k=4\)</span>, which means that less clusters than that would be bad, and more clusters would not help much and might cut clusters in half. So <span class="math notranslate nohighlight">\(k=4\)</span> is a pretty good choice. Of course in this example it is not perfect since it means that the two blobs in the lower left will be considered as just a single cluster, but it’s a pretty good clustering nonetheless.</p>
@@ -2411,7 +2410,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="ne">NameError</span>: name &#39;kmeans_per_k&#39; is not defined
 </pre></div>
 </div>
-<img alt="../_images/07-unsupervised-learning_121_1.png" src="../_images/07-unsupervised-learning_121_1.png" />
+<img alt="../_images/07-unsupervised-learning_120_1.png" src="../_images/07-unsupervised-learning_120_1.png" />
 </div>
 </div>
 <p>Another approach is to look at the <em>silhouette score</em>, which is the mean <em>silhouette coefficient</em> over all the instances. An instance’s silhouette coefficient is equal to <span class="math notranslate nohighlight">\((b - a)/\max(a, b)\)</span> where <span class="math notranslate nohighlight">\(a\)</span> is the mean distance to the other instances in the same cluster (it is the <em>mean intra-cluster distance</em>), and <span class="math notranslate nohighlight">\(b\)</span> is the <em>mean nearest-cluster distance</em>, that is the mean distance to the instances of the next closest cluster (defined as the one that minimizes <span class="math notranslate nohighlight">\(b\)</span>, excluding the instance’s own cluster). The silhouette coefficient can vary between -1 and +1: a coefficient close to +1 means that the instance is well inside its own cluster and far from other clusters, while a coefficient close to 0 means that it is close to a cluster boundary, and finally a coefficient close to -1 means that the instance may have been assigned to the wrong cluster.</p>
@@ -2496,7 +2495,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="ne">NameError</span>: name &#39;silhouette_scores&#39; is not defined
 </pre></div>
 </div>
-<img alt="../_images/07-unsupervised-learning_127_1.png" src="../_images/07-unsupervised-learning_127_1.png" />
+<img alt="../_images/07-unsupervised-learning_126_1.png" src="../_images/07-unsupervised-learning_126_1.png" />
 </div>
 </div>
 <p>As you can see, this visualization is much richer than the previous one: in particular, although it confirms that <span class="math notranslate nohighlight">\(k=4\)</span> is a very good choice, but it also underlines the fact that <span class="math notranslate nohighlight">\(k=5\)</span> is quite good as well.</p>
@@ -2610,7 +2609,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="ne">NameError</span>: name &#39;X&#39; is not defined
 </pre></div>
 </div>
-<img alt="../_images/07-unsupervised-learning_134_1.png" src="../_images/07-unsupervised-learning_134_1.png" />
+<img alt="../_images/07-unsupervised-learning_133_1.png" src="../_images/07-unsupervised-learning_133_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2667,7 +2666,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="ne">NameError</span>: name &#39;kmeans_good&#39; is not defined
 </pre></div>
 </div>
-<img alt="../_images/07-unsupervised-learning_136_1.png" src="../_images/07-unsupervised-learning_136_1.png" />
+<img alt="../_images/07-unsupervised-learning_135_1.png" src="../_images/07-unsupervised-learning_135_1.png" />
 </div>
 </div>
 </div>
@@ -2768,7 +2767,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="ne">IndexError</span>: list index out of range
 </pre></div>
 </div>
-<img alt="../_images/07-unsupervised-learning_141_1.png" src="../_images/07-unsupervised-learning_141_1.png" />
+<img alt="../_images/07-unsupervised-learning_140_1.png" src="../_images/07-unsupervised-learning_140_1.png" />
 </div>
 </div>
 </div>
@@ -3170,7 +3169,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="ne">NameError</span>: name &#39;X_representative_digits&#39; is not defined
 </pre></div>
 </div>
-<img alt="../_images/07-unsupervised-learning_175_1.png" src="../_images/07-unsupervised-learning_175_1.png" />
+<img alt="../_images/07-unsupervised-learning_174_1.png" src="../_images/07-unsupervised-learning_174_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3651,7 +3650,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="ne">NameError</span>: name &#39;dbscan&#39; is not defined
 </pre></div>
 </div>
-<img alt="../_images/07-unsupervised-learning_206_1.png" src="../_images/07-unsupervised-learning_206_1.png" />
+<img alt="../_images/07-unsupervised-learning_205_1.png" src="../_images/07-unsupervised-learning_205_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3766,7 +3765,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="ne">NameError</span>: name &#39;knn&#39; is not defined
 </pre></div>
 </div>
-<img alt="../_images/07-unsupervised-learning_212_1.png" src="../_images/07-unsupervised-learning_212_1.png" />
+<img alt="../_images/07-unsupervised-learning_211_1.png" src="../_images/07-unsupervised-learning_211_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3933,7 +3932,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="ne">NameError</span>: name &#39;sc1&#39; is not defined
 </pre></div>
 </div>
-<img alt="../_images/07-unsupervised-learning_221_1.png" src="../_images/07-unsupervised-learning_221_1.png" />
+<img alt="../_images/07-unsupervised-learning_220_1.png" src="../_images/07-unsupervised-learning_220_1.png" />
 </div>
 </div>
 </div>
@@ -4362,7 +4361,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="ne">NameError</span>: name &#39;gm&#39; is not defined
 </pre></div>
 </div>
-<img alt="../_images/07-unsupervised-learning_254_1.png" src="../_images/07-unsupervised-learning_254_1.png" />
+<img alt="../_images/07-unsupervised-learning_253_1.png" src="../_images/07-unsupervised-learning_253_1.png" />
 </div>
 </div>
 <p>You can impose constraints on the covariance matrices that the algorithm looks for by setting the <code class="docutils literal notranslate"><span class="pre">covariance_type</span></code> hyperparameter:</p>
@@ -4524,7 +4523,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="ne">NameError</span>: name &#39;gm&#39; is not defined
 </pre></div>
 </div>
-<img alt="../_images/07-unsupervised-learning_263_1.png" src="../_images/07-unsupervised-learning_263_1.png" />
+<img alt="../_images/07-unsupervised-learning_262_1.png" src="../_images/07-unsupervised-learning_262_1.png" />
 </div>
 </div>
 </div>
@@ -4715,7 +4714,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="ne">NameError</span>: name &#39;bics&#39; is not defined
 </pre></div>
 </div>
-<img alt="../_images/07-unsupervised-learning_276_1.png" src="../_images/07-unsupervised-learning_276_1.png" />
+<img alt="../_images/07-unsupervised-learning_275_1.png" src="../_images/07-unsupervised-learning_275_1.png" />
 </div>
 </div>
 <p>Let’s search for best combination of values for both the number of clusters and the <code class="docutils literal notranslate"><span class="pre">covariance_type</span></code> hyperparameter:</p>
@@ -4866,7 +4865,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="ne">NameError</span>: name &#39;bgm&#39; is not defined
 </pre></div>
 </div>
-<img alt="../_images/07-unsupervised-learning_287_1.png" src="../_images/07-unsupervised-learning_287_1.png" />
+<img alt="../_images/07-unsupervised-learning_286_1.png" src="../_images/07-unsupervised-learning_286_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -4968,7 +4967,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="ne">NameError</span>: name &#39;bgm_low&#39; is not defined
 </pre></div>
 </div>
-<img alt="../_images/07-unsupervised-learning_291_1.png" src="../_images/07-unsupervised-learning_291_1.png" />
+<img alt="../_images/07-unsupervised-learning_290_1.png" src="../_images/07-unsupervised-learning_290_1.png" />
 </div>
 </div>
 <p>Note: the fact that you see only 3 regions in the right plot although there are 4 centroids is not a bug. The weight of the top-right cluster is much larger than the weight of the lower-right cluster, so the probability that any given point in this region belongs to the top right cluster is greater than the probability that it belongs to the lower-right cluster.</p>
@@ -5034,7 +5033,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="ne">NameError</span>: name &#39;X_moons&#39; is not defined
 </pre></div>
 </div>
-<img alt="../_images/07-unsupervised-learning_295_1.png" src="../_images/07-unsupervised-learning_295_1.png" />
+<img alt="../_images/07-unsupervised-learning_294_1.png" src="../_images/07-unsupervised-learning_294_1.png" />
 </div>
 </div>
 <p>Oops, not great… instead of detecting 2 moon-shaped clusters, the algorithm detected 8 ellipsoidal clusters. However, the density plot does not look too bad, so it might be usable for anomaly detection.</p>
@@ -5127,7 +5126,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/07-unsupervised-learning_300_0.png" src="../_images/07-unsupervised-learning_300_0.png" />
+<img alt="../_images/07-unsupervised-learning_299_0.png" src="../_images/07-unsupervised-learning_299_0.png" />
 </div>
 </div>
 </div>
@@ -5871,7 +5870,7 @@ const thebe_selector_output = ".output, .cell_output"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Dimensionality Reduction</p>
+            <p class="prev-next-title">降维</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../pytorch/1-pytorch-intro.html" title="next page">
