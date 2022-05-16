@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Going Deeper – the Mechanics of PyTorch &#8212; 生物狗学编程</title>
+    <title>PyTorch 原理 &#8212; 生物狗学编程</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/doge.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Classifying Images with Deep Convolutional Neural Networks" href="3-cnn.html" />
+    <link rel="next" title="卷积神经网络" href="3-cnn.html" />
     <link rel="prev" title="PyTorch" href="1-pytorch-intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -358,12 +358,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Going Deeper – the Mechanics of PyTorch
+   PyTorch 原理
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="3-cnn.html">
-   Classifying Images with Deep Convolutional Neural Networks
+   卷积神经网络
   </a>
  </li>
 </ul>
@@ -460,62 +460,52 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-key-features-of-pytorch">
-   The key features of PyTorch
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pytorch-s-computation-graphs">
-   PyTorch’s computation graphs
+  <a class="reference internal nav-link" href="#id1">
+   PyTorch 计算图
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#understanding-computation-graphs">
-     Understanding computation graphs
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-a-graph-in-pytorch">
-     Creating a graph in PyTorch
+    <a class="reference internal nav-link" href="#id2">
+     创建图
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pytorch-tensor-objects-for-storing-and-updating-model-parameters">
-   PyTorch Tensor objects for storing and updating model parameters
+  <a class="reference internal nav-link" href="#id3">
+   张量对象
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#computing-gradients-via-automatic-differentiation-and-gradienttape">
-   Computing gradients via automatic differentiation and GradientTape
+  <a class="reference internal nav-link" href="#id4">
+   自动微分
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#computing-the-gradients-of-the-loss-with-respect-to-trainable-variables">
-     Computing the gradients of the loss with respect to trainable variables
+    <a class="reference internal nav-link" href="#id5">
+     计算损失梯度
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#simplifying-implementations-of-common-architectures-via-the-torch-nn-module">
-   Simplifying implementations of common architectures via the torch.nn module
+  <a class="reference internal nav-link" href="#torch-nn">
+   torch.nn
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#implementing-models-based-on-nn-sequential">
-     Implementing models based on nn.Sequential
+    <a class="reference internal nav-link" href="#nn-sequential">
+     nn.Sequential
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#configuring-layers">
-       Configuring layers
+      <a class="reference internal nav-link" href="#id6">
+       配置层
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#compiling-a-model">
-       Compiling a model
+      <a class="reference internal nav-link" href="#id7">
+       编译模型
       </a>
      </li>
     </ul>
@@ -523,35 +513,28 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#solving-an-xor-classification-problem">
-   Solving an XOR classification problem
+  <a class="reference internal nav-link" href="#id8">
+   互斥分类
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#making-model-building-more-flexible-with-nn-module">
-   Making model building more flexible with nn.Module
+  <a class="reference internal nav-link" href="#nn-module">
+   nn.Module
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#writing-custom-layers-in-pytorch">
-   Writing custom layers in PyTorch
+  <a class="reference internal nav-link" href="#id9">
+   自定义层
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#project-one-predicting-the-fuel-efficiency-of-a-car">
-   Project one - predicting the fuel efficiency of a car
+  <a class="reference internal nav-link" href="#id10">
+   工程1 - 预测汽车燃料效率
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#working-with-feature-columns">
-     Working with feature columns
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#project-two-classifying-mnist-hand-written-digits">
-   Project two - classifying MNIST hand-written digits
+  <a class="reference internal nav-link" href="#mnist">
+   工程2 - MNIST 手写体识别
   </a>
  </li>
 </ul>
@@ -564,7 +547,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Going Deeper – the Mechanics of PyTorch</h1>
+                <h1>PyTorch 原理</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -575,62 +558,52 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-key-features-of-pytorch">
-   The key features of PyTorch
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pytorch-s-computation-graphs">
-   PyTorch’s computation graphs
+  <a class="reference internal nav-link" href="#id1">
+   PyTorch 计算图
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#understanding-computation-graphs">
-     Understanding computation graphs
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-a-graph-in-pytorch">
-     Creating a graph in PyTorch
+    <a class="reference internal nav-link" href="#id2">
+     创建图
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pytorch-tensor-objects-for-storing-and-updating-model-parameters">
-   PyTorch Tensor objects for storing and updating model parameters
+  <a class="reference internal nav-link" href="#id3">
+   张量对象
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#computing-gradients-via-automatic-differentiation-and-gradienttape">
-   Computing gradients via automatic differentiation and GradientTape
+  <a class="reference internal nav-link" href="#id4">
+   自动微分
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#computing-the-gradients-of-the-loss-with-respect-to-trainable-variables">
-     Computing the gradients of the loss with respect to trainable variables
+    <a class="reference internal nav-link" href="#id5">
+     计算损失梯度
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#simplifying-implementations-of-common-architectures-via-the-torch-nn-module">
-   Simplifying implementations of common architectures via the torch.nn module
+  <a class="reference internal nav-link" href="#torch-nn">
+   torch.nn
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#implementing-models-based-on-nn-sequential">
-     Implementing models based on nn.Sequential
+    <a class="reference internal nav-link" href="#nn-sequential">
+     nn.Sequential
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#configuring-layers">
-       Configuring layers
+      <a class="reference internal nav-link" href="#id6">
+       配置层
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#compiling-a-model">
-       Compiling a model
+      <a class="reference internal nav-link" href="#id7">
+       编译模型
       </a>
      </li>
     </ul>
@@ -638,35 +611,28 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#solving-an-xor-classification-problem">
-   Solving an XOR classification problem
+  <a class="reference internal nav-link" href="#id8">
+   互斥分类
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#making-model-building-more-flexible-with-nn-module">
-   Making model building more flexible with nn.Module
+  <a class="reference internal nav-link" href="#nn-module">
+   nn.Module
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#writing-custom-layers-in-pytorch">
-   Writing custom layers in PyTorch
+  <a class="reference internal nav-link" href="#id9">
+   自定义层
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#project-one-predicting-the-fuel-efficiency-of-a-car">
-   Project one - predicting the fuel efficiency of a car
+  <a class="reference internal nav-link" href="#id10">
+   工程1 - 预测汽车燃料效率
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#working-with-feature-columns">
-     Working with feature columns
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#project-two-classifying-mnist-hand-written-digits">
-   Project two - classifying MNIST hand-written digits
+  <a class="reference internal nav-link" href="#mnist">
+   工程2 - MNIST 手写体识别
   </a>
  </li>
 </ul>
@@ -678,8 +644,8 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="going-deeper-the-mechanics-of-pytorch">
-<h1>Going Deeper – the Mechanics of PyTorch<a class="headerlink" href="#going-deeper-the-mechanics-of-pytorch" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="pytorch">
+<h1>PyTorch 原理<a class="headerlink" href="#pytorch" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -690,13 +656,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="the-key-features-of-pytorch">
-<h2>The key features of PyTorch<a class="headerlink" href="#the-key-features-of-pytorch" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="pytorch-s-computation-graphs">
-<h2>PyTorch’s computation graphs<a class="headerlink" href="#pytorch-s-computation-graphs" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="understanding-computation-graphs">
-<h3>Understanding computation graphs<a class="headerlink" href="#understanding-computation-graphs" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id1">
+<h2>PyTorch 计算图<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;figures/13_01.png&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
@@ -707,9 +668,8 @@ const thebe_selector_output = ".output, .cell_output"
 <img alt="../_images/2-pytorch-deeper_3_0.png" src="../_images/2-pytorch-deeper_3_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="creating-a-graph-in-pytorch">
-<h3>Creating a graph in PyTorch<a class="headerlink" href="#creating-a-graph-in-pytorch" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h3>创建图<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
@@ -771,8 +731,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="pytorch-tensor-objects-for-storing-and-updating-model-parameters">
-<h2>PyTorch Tensor objects for storing and updating model parameters<a class="headerlink" href="#pytorch-tensor-objects-for-storing-and-updating-model-parameters" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h2>张量对象<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="mf">3.14</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -903,10 +863,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="computing-gradients-via-automatic-differentiation-and-gradienttape">
-<h2>Computing gradients via automatic differentiation and GradientTape<a class="headerlink" href="#computing-gradients-via-automatic-differentiation-and-gradienttape" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="computing-the-gradients-of-the-loss-with-respect-to-trainable-variables">
-<h3>Computing the gradients of the loss with respect to trainable variables<a class="headerlink" href="#computing-the-gradients-of-the-loss-with-respect-to-trainable-variables" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h2>自动微分<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h3>计算损失梯度<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -959,10 +919,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="simplifying-implementations-of-common-architectures-via-the-torch-nn-module">
-<h2>Simplifying implementations of common architectures via the torch.nn module<a class="headerlink" href="#simplifying-implementations-of-common-architectures-via-the-torch-nn-module" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="implementing-models-based-on-nn-sequential">
-<h3>Implementing models based on nn.Sequential<a class="headerlink" href="#implementing-models-based-on-nn-sequential" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="torch-nn">
+<h2>torch.nn<a class="headerlink" href="#torch-nn" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="nn-sequential">
+<h3>nn.Sequential<a class="headerlink" href="#nn-sequential" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">16</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">32</span><span class="p">),</span>
@@ -985,13 +945,13 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="configuring-layers">
-<h4>Configuring layers<a class="headerlink" href="#configuring-layers" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id6">
+<h4>配置层<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li><p>Initializers <code class="docutils literal notranslate"><span class="pre">nn.init</span></code>: <a class="reference external" href="https://pytorch.org/docs/stable/nn.init.html">https://pytorch.org/docs/stable/nn.init.html</a></p></li>
-<li><p>L1 Regularizers <code class="docutils literal notranslate"><span class="pre">nn.L1Loss</span></code>: <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.nn.L1Loss.html#torch.nn.L1Loss">https://pytorch.org/docs/stable/generated/torch.nn.L1Loss.html#torch.nn.L1Loss</a></p></li>
-<li><p>L2 Regularizers <code class="docutils literal notranslate"><span class="pre">weight_decay</span></code>: <a class="reference external" href="https://pytorch.org/docs/stable/optim.html">https://pytorch.org/docs/stable/optim.html</a></p></li>
-<li><p>Activations: <a class="reference external" href="https://pytorch.org/docs/stable/nn.html#non-linear-activations-weighted-sum-nonlinearity">https://pytorch.org/docs/stable/nn.html#non-linear-activations-weighted-sum-nonlinearity</a></p></li>
+<li><p>初始化器 <code class="docutils literal notranslate"><span class="pre">nn.init</span></code>: <a class="reference external" href="https://pytorch.org/docs/stable/nn.init.html">https://pytorch.org/docs/stable/nn.init.html</a></p></li>
+<li><p>L1 正则化器 <code class="docutils literal notranslate"><span class="pre">nn.L1Loss</span></code>: <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.nn.L1Loss.html#torch.nn.L1Loss">https://pytorch.org/docs/stable/generated/torch.nn.L1Loss.html#torch.nn.L1Loss</a></p></li>
+<li><p>L2 正则化器 <code class="docutils literal notranslate"><span class="pre">weight_decay</span></code>: <a class="reference external" href="https://pytorch.org/docs/stable/optim.html">https://pytorch.org/docs/stable/optim.html</a></p></li>
+<li><p>激活: <a class="reference external" href="https://pytorch.org/docs/stable/nn.html#non-linear-activations-weighted-sum-nonlinearity">https://pytorch.org/docs/stable/nn.html#non-linear-activations-weighted-sum-nonlinearity</a></p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1016,11 +976,11 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="compiling-a-model">
-<h4>Compiling a model<a class="headerlink" href="#compiling-a-model" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id7">
+<h4>编译模型<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li><p>Optimizers <code class="docutils literal notranslate"><span class="pre">torch.optim</span></code>: <a class="reference external" href="https://pytorch.org/docs/stable/optim.html#algorithms">https://pytorch.org/docs/stable/optim.html#algorithms</a></p></li>
-<li><p>Loss Functins <code class="docutils literal notranslate"><span class="pre">tf.keras.losses</span></code>: <a class="reference external" href="https://pytorch.org/docs/stable/nn.html#loss-functions">https://pytorch.org/docs/stable/nn.html#loss-functions</a></p></li>
+<li><p>优化器 <code class="docutils literal notranslate"><span class="pre">torch.optim</span></code>: <a class="reference external" href="https://pytorch.org/docs/stable/optim.html#algorithms">https://pytorch.org/docs/stable/optim.html#algorithms</a></p></li>
+<li><p>损失函数 <code class="docutils literal notranslate"><span class="pre">tf.keras.losses</span></code>: <a class="reference external" href="https://pytorch.org/docs/stable/nn.html#loss-functions">https://pytorch.org/docs/stable/nn.html#loss-functions</a></p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1044,8 +1004,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="solving-an-xor-classification-problem">
-<h2>Solving an XOR classification problem<a class="headerlink" href="#solving-an-xor-classification-problem" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h2>互斥分类<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -1302,8 +1262,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="making-model-building-more-flexible-with-nn-module">
-<h2>Making model building more flexible with nn.Module<a class="headerlink" href="#making-model-building-more-flexible-with-nn-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="nn-module">
+<h2>nn.Module<a class="headerlink" href="#nn-module" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyModule</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
@@ -1412,8 +1372,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="writing-custom-layers-in-pytorch">
-<h2>Writing custom layers in PyTorch<a class="headerlink" href="#writing-custom-layers-in-pytorch" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id9">
+<h2>自定义层<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">NoisyLinear</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
@@ -1614,10 +1574,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="project-one-predicting-the-fuel-efficiency-of-a-car">
-<h2>Project one - predicting the fuel efficiency of a car<a class="headerlink" href="#project-one-predicting-the-fuel-efficiency-of-a-car" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="working-with-feature-columns">
-<h3>Working with feature columns<a class="headerlink" href="#working-with-feature-columns" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id10">
+<h2>工程1 - 预测汽车燃料效率<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;figures/13_07.png&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">)</span>
@@ -1625,7 +1583,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2-pytorch-deeper_47_0.png" src="../_images/2-pytorch-deeper_47_0.png" />
+<img alt="../_images/2-pytorch-deeper_46_0.png" src="../_images/2-pytorch-deeper_46_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2121,9 +2079,8 @@ dtype: int64
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="project-two-classifying-mnist-hand-written-digits">
-<h2>Project two - classifying MNIST hand-written digits<a class="headerlink" href="#project-two-classifying-mnist-hand-written-digits" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="mnist">
+<h2>工程2 - MNIST 手写体识别<a class="headerlink" href="#mnist" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torchvision</span>
@@ -2288,7 +2245,7 @@ dtype: int64
     <a class='right-next' id="next-link" href="3-cnn.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Classifying Images with Deep Convolutional Neural Networks</p>
+        <p class="prev-next-title">卷积神经网络</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

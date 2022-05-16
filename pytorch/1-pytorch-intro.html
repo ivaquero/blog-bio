@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/doge.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Going Deeper – the Mechanics of PyTorch" href="2-pytorch-deeper.html" />
+    <link rel="next" title="PyTorch 原理" href="2-pytorch-deeper.html" />
     <link rel="prev" title="Unsupervised Learning" href="../sklearn/07-unsupervised-learning.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -358,12 +358,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="2-pytorch-deeper.html">
-   Going Deeper – the Mechanics of PyTorch
+   PyTorch 原理
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="3-cnn.html">
-   Classifying Images with Deep Convolutional Neural Networks
+   卷积神经网络
   </a>
  </li>
 </ul>
@@ -512,79 +512,74 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-a-dataset-from-files-on-your-local-storage-disk">
-     Creating a dataset from files on your local storage disk
+    <a class="reference internal nav-link" href="#id9">
+     创建数据集
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#fetching-available-datasets-from-the-torchvision-datasets-library">
-     Fetching available datasets from the torchvision.datasets library
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#building-a-neural-network-model-in-pytorch">
-   Building a neural network model in PyTorch
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-pytorch-neural-network-module-torch-nn">
-     The PyTorch neural network module (torch.nn)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#building-a-linear-regression-model">
-     Building a linear regression model
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#model-training-via-the-torch-nn-and-torch-optim-modules">
-     Model training via the torch.nn and torch.optim modules
+    <a class="reference internal nav-link" href="#id10">
+     加载数据集
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#building-a-multilayer-perceptron-for-classifying-flowers-in-the-iris-dataset">
-   Building a multilayer perceptron for classifying flowers in the Iris dataset
+  <a class="reference internal nav-link" href="#id11">
+   搭建网络
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#evaluating-the-trained-model-on-the-test-dataset">
-     Evaluating the trained model on the test dataset
+    <a class="reference internal nav-link" href="#id12">
+     线性模型
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#saving-and-reloading-the-trained-model">
-     Saving and reloading the trained model
+    <a class="reference internal nav-link" href="#id13">
+     训练
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#choosing-activation-functions-for-multilayer-neural-networks">
-   Choosing activation functions for multilayer neural networks
+  <a class="reference internal nav-link" href="#id14">
+   搭建多层感知机
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#logistic-function-recap">
-     Logistic function recap
+    <a class="reference internal nav-link" href="#id15">
+     评估模型
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#estimating-class-probabilities-in-multiclass-classification-via-the-softmax-function">
-     Estimating class probabilities in multiclass classification via the softmax function
+    <a class="reference internal nav-link" href="#id16">
+     保存、加载模型
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id17">
+   选择激活函数
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logistic">
+     Logistic 方程
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#broadening-the-output-spectrum-using-a-hyperbolic-tangent">
-     Broadening the output spectrum using a hyperbolic tangent
+    <a class="reference internal nav-link" href="#softmax">
+     Softmax 方程
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#rectified-linear-unit-activation">
-     Rectified linear unit activation
+    <a class="reference internal nav-link" href="#id18">
+     抛物正切
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#relu">
+     ReLU
     </a>
    </li>
   </ul>
@@ -662,79 +657,74 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-a-dataset-from-files-on-your-local-storage-disk">
-     Creating a dataset from files on your local storage disk
+    <a class="reference internal nav-link" href="#id9">
+     创建数据集
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#fetching-available-datasets-from-the-torchvision-datasets-library">
-     Fetching available datasets from the torchvision.datasets library
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#building-a-neural-network-model-in-pytorch">
-   Building a neural network model in PyTorch
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-pytorch-neural-network-module-torch-nn">
-     The PyTorch neural network module (torch.nn)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#building-a-linear-regression-model">
-     Building a linear regression model
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#model-training-via-the-torch-nn-and-torch-optim-modules">
-     Model training via the torch.nn and torch.optim modules
+    <a class="reference internal nav-link" href="#id10">
+     加载数据集
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#building-a-multilayer-perceptron-for-classifying-flowers-in-the-iris-dataset">
-   Building a multilayer perceptron for classifying flowers in the Iris dataset
+  <a class="reference internal nav-link" href="#id11">
+   搭建网络
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#evaluating-the-trained-model-on-the-test-dataset">
-     Evaluating the trained model on the test dataset
+    <a class="reference internal nav-link" href="#id12">
+     线性模型
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#saving-and-reloading-the-trained-model">
-     Saving and reloading the trained model
+    <a class="reference internal nav-link" href="#id13">
+     训练
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#choosing-activation-functions-for-multilayer-neural-networks">
-   Choosing activation functions for multilayer neural networks
+  <a class="reference internal nav-link" href="#id14">
+   搭建多层感知机
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#logistic-function-recap">
-     Logistic function recap
+    <a class="reference internal nav-link" href="#id15">
+     评估模型
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#estimating-class-probabilities-in-multiclass-classification-via-the-softmax-function">
-     Estimating class probabilities in multiclass classification via the softmax function
+    <a class="reference internal nav-link" href="#id16">
+     保存、加载模型
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id17">
+   选择激活函数
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logistic">
+     Logistic 方程
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#broadening-the-output-spectrum-using-a-hyperbolic-tangent">
-     Broadening the output spectrum using a hyperbolic tangent
+    <a class="reference internal nav-link" href="#softmax">
+     Softmax 方程
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#rectified-linear-unit-activation">
-     Rectified linear unit activation
+    <a class="reference internal nav-link" href="#id18">
+     抛物正切
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#relu">
+     ReLU
     </a>
    </li>
   </ul>
@@ -762,6 +752,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;PyTorch version: </span><span class="si">{</span><span class="n">torch</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -774,8 +765,8 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
 <span class="nn">Input In [2],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">torch</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;PyTorch version: </span><span class="si">{</span><span class="n">torch</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="ne">ModuleNotFoundError</span>: No module named &#39;torch&#39;
 </pre></div>
@@ -1385,14 +1376,13 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="creating-a-dataset-from-files-on-your-local-storage-disk">
-<h3>Creating a dataset from files on your local storage disk<a class="headerlink" href="#creating-a-dataset-from-files-on-your-local-storage-disk" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id9">
+<h3>创建数据集<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pathlib</span>
 
 <span class="n">imgdir_path</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="s1">&#39;cat_dog_images&#39;</span><span class="p">)</span>
-
 <span class="n">file_list</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">imgdir_path</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*.jpg&#39;</span><span class="p">)])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">file_list</span><span class="p">)</span>
 </pre></div>
@@ -1406,8 +1396,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
 
 <span class="n">_</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
@@ -1426,17 +1415,15 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [32],</span> in <span class="ni">&lt;cell line: 6&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="k">for</span> <span class="n">file</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">file_list</span><span class="p">,</span> <span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">()):</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">8</span>     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Image shape: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">img</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xticks</span><span class="o">=</span><span class="p">[],</span> <span class="n">yticks</span><span class="o">=</span><span class="p">[])</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<span class="nn">Input In [32],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">_</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">for</span> <span class="n">file</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">file_list</span><span class="p">,</span> <span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">()):</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
 
-<span class="ne">NameError</span>: name &#39;np&#39; is not defined
+<span class="ne">NameError</span>: name &#39;plt&#39; is not defined
 </pre></div>
 </div>
-<img alt="../_images/1-pytorch-intro_43_1.png" src="../_images/1-pytorch-intro_43_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1569,21 +1556,19 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [37],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">_</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="k">for</span> <span class="n">example</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">image_dataset</span><span class="p">,</span> <span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">()):</span>
+<span class="nn">Input In [37],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">_</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">for</span> <span class="n">example</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">image_dataset</span><span class="p">,</span> <span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">()):</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xticks</span><span class="o">=</span><span class="p">[],</span> <span class="n">yticks</span><span class="o">=</span><span class="p">[])</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">example</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)))</span>
 
-<span class="ne">NameError</span>: name &#39;image_dataset&#39; is not defined
+<span class="ne">NameError</span>: name &#39;plt&#39; is not defined
 </pre></div>
 </div>
-<img alt="../_images/1-pytorch-intro_48_1.png" src="../_images/1-pytorch-intro_48_1.png" />
 </div>
 </div>
 </div>
-<div class="section" id="fetching-available-datasets-from-the-torchvision-datasets-library">
-<h3>Fetching available datasets from the torchvision.datasets library<a class="headerlink" href="#fetching-available-datasets-from-the-torchvision-datasets-library" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id10">
+<h3>加载数据集<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">torchvision</span> <span class="kn">import</span> <span class="n">datasets</span>
@@ -1648,17 +1633,15 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [40],</span> in <span class="ni">&lt;cell line: 5&gt;</span><span class="nt">()</span>
+<span class="nn">Input In [40],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">islice</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">_</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="k">for</span> <span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">attributes</span><span class="p">),</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">islice</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">celeba_dataset</span><span class="p">,</span> <span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">()),</span> <span class="mi">18</span><span class="p">):</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">_</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">for</span> <span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">attributes</span><span class="p">),</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">islice</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">celeba_dataset</span><span class="p">,</span> <span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">()),</span> <span class="mi">18</span><span class="p">):</span>
 <span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xticks</span><span class="o">=</span><span class="p">[],</span> <span class="n">yticks</span><span class="o">=</span><span class="p">[])</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 
-<span class="ne">NameError</span>: name &#39;celeba_dataset&#39; is not defined
+<span class="ne">NameError</span>: name &#39;plt&#39; is not defined
 </pre></div>
 </div>
-<img alt="../_images/1-pytorch-intro_52_1.png" src="../_images/1-pytorch-intro_52_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1694,13 +1677,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="building-a-neural-network-model-in-pytorch">
-<h2>Building a neural network model in PyTorch<a class="headerlink" href="#building-a-neural-network-model-in-pytorch" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="the-pytorch-neural-network-module-torch-nn">
-<h3>The PyTorch neural network module (torch.nn)<a class="headerlink" href="#the-pytorch-neural-network-module-torch-nn" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="building-a-linear-regression-model">
-<h3>Building a linear regression model<a class="headerlink" href="#building-a-linear-regression-model" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id11">
+<h2>搭建网络<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id12">
+<h3>线性模型<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;float32&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
@@ -1846,8 +1826,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="model-training-via-the-torch-nn-and-torch-optim-modules">
-<h3>Model training via the torch.nn and torch.optim modules<a class="headerlink" href="#model-training-via-the-torch-nn-and-torch-optim-modules" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id13">
+<h3>训练<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
@@ -1933,8 +1913,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="building-a-multilayer-perceptron-for-classifying-flowers-in-the-iris-dataset">
-<h2>Building a multilayer perceptron for classifying flowers in the Iris dataset<a class="headerlink" href="#building-a-multilayer-perceptron-for-classifying-flowers-in-the-iris-dataset" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id14">
+<h2>搭建多层感知机<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
@@ -1965,9 +1945,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">TensorDataset</span><span class="p">,</span> <span class="n">DataLoader</span>
-
-<span class="n">X_train_norm</span> <span class="o">=</span> <span class="p">(</span><span class="n">X_train</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">X_train</span><span class="p">))</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train_norm</span> <span class="o">=</span> <span class="p">(</span><span class="n">X_train</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">X_train</span><span class="p">))</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
 <span class="n">X_train_norm</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">X_train_norm</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
 <span class="n">y_train</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">y_train</span><span class="p">)</span>
 
@@ -1981,13 +1959,13 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
 <span class="nn">Input In [49],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">TensorDataset</span><span class="p">,</span> <span class="n">DataLoader</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">X_train_norm</span> <span class="o">=</span> <span class="p">(</span><span class="n">X_train</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">X_train</span><span class="p">))</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">X_train_norm</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">X_train_norm</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">X_train_norm</span> <span class="o">=</span> <span class="p">(</span><span class="n">X_train</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">X_train</span><span class="p">))</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">X_train_norm</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">X_train_norm</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">y_train</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">y_train</span><span class="p">)</span>
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;torch&#39;
+<span class="ne">NameError</span>: name &#39;X_train&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -2114,11 +2092,20 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1-pytorch-intro_70_0.png" src="../_images/1-pytorch-intro_70_0.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [53],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">_</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">loss_hist</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Training loss&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;medium&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;plt&#39; is not defined
+</pre></div>
 </div>
 </div>
-<div class="section" id="evaluating-the-trained-model-on-the-test-dataset">
-<h3>Evaluating the trained model on the test dataset<a class="headerlink" href="#evaluating-the-trained-model-on-the-test-dataset" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id15">
+<h3>评估模型<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_test_norm</span> <span class="o">=</span> <span class="p">(</span><span class="n">X_test</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">X_train</span><span class="p">))</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
@@ -2147,8 +2134,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="saving-and-reloading-the-trained-model">
-<h3>Saving and reloading the trained model<a class="headerlink" href="#saving-and-reloading-the-trained-model" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id16">
+<h3>保存、加载模型<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;../../datasets/torch/iris_classifier.pt&#39;</span>
@@ -2251,20 +2238,14 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="choosing-activation-functions-for-multilayer-neural-networks">
-<h2>Choosing activation functions for multilayer neural networks<a class="headerlink" href="#choosing-activation-functions-for-multilayer-neural-networks" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="logistic-function-recap">
-<h3>Logistic function recap<a class="headerlink" href="#logistic-function-recap" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id17">
+<h2>选择激活函数<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="logistic">
+<h3>Logistic 方程<a class="headerlink" href="#logistic" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">])</span>  <span class="c1">## first value must be 1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">])</span>  <span class="c1">## first value must be 1</span>
 <span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">])</span>
-
-
-<span class="k">def</span> <span class="nf">net_input</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">w</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">logistic</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
@@ -2272,7 +2253,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <span class="k">def</span> <span class="nf">logistic_activation</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">w</span><span class="p">):</span>
-    <span class="n">z</span> <span class="o">=</span> <span class="n">net_input</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">logistic</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 
 
@@ -2281,7 +2262,14 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>P(y=1|x) = 0.888
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [60],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">])</span>  <span class="c1">## first value must be 1</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">def</span> <span class="nf">logistic</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
+
+<span class="ne">NameError</span>: name &#39;np&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -2306,8 +2294,18 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Net Input: [1.78 0.76 1.65]
-Output Units: [0.85569687 0.68135373 0.83889105]
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [61],</span> in <span class="ni">&lt;cell line: 4&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># W : array with shape = (n_output_units, n_hidden_units+1)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># note that the first column are the bias units</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">W</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>                                                            <span class="mf">0.7</span><span class="p">]])</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="c1"># A : data array with shape = (n_hidden_units + 1, n_samples)</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="c1"># note that the first column of this array must be 1</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">]])</span>
+
+<span class="ne">NameError</span>: name &#39;np&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -2320,14 +2318,20 @@ Output Units: [0.85569687 0.68135373 0.83889105]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Predicted class label: 0
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [62],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">y_class</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Predicted class label: </span><span class="si">{</span><span class="n">y_class</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;np&#39; is not defined
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="section" id="estimating-class-probabilities-in-multiclass-classification-via-the-softmax-function">
-<h3>Estimating class probabilities in multiclass classification via the softmax function<a class="headerlink" href="#estimating-class-probabilities-in-multiclass-classification-via-the-softmax-function" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="softmax">
+<h3>Softmax 方程<a class="headerlink" href="#softmax" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">softmax</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
@@ -2340,7 +2344,15 @@ Output Units: [0.85569687 0.68135373 0.83889105]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Probabilities: [0.44668973 0.16107406 0.39223621], Sum: 1.0
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [63],</span> in <span class="ni">&lt;cell line: 5&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">softmax</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">y_probas</span> <span class="o">=</span> <span class="n">softmax</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Probabilities: </span><span class="si">{</span><span class="n">y_probas</span><span class="si">}</span><span class="s1">, Sum: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">y_probas</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;Z&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -2363,14 +2375,11 @@ Output Units: [0.85569687 0.68135373 0.83889105]
 </div>
 </div>
 </div>
-<div class="section" id="broadening-the-output-spectrum-using-a-hyperbolic-tangent">
-<h3>Broadening the output spectrum using a hyperbolic tangent<a class="headerlink" href="#broadening-the-output-spectrum-using-a-hyperbolic-tangent" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id18">
+<h3>抛物正切<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-
-<span class="k">def</span> <span class="nf">tanh</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tanh</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
     <span class="n">e_p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
     <span class="n">e_m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">z</span><span class="p">)</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">e_p</span> <span class="o">-</span> <span class="n">e_m</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">e_p</span> <span class="o">+</span> <span class="n">e_m</span><span class="p">)</span>
@@ -2398,7 +2407,18 @@ Output Units: [0.85569687 0.68135373 0.83889105]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1-pytorch-intro_88_0.png" src="../_images/1-pytorch-intro_88_0.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [65],</span> in <span class="ni">&lt;cell line: 7&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">e_m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">z</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="k">return</span> <span class="p">(</span><span class="n">e_p</span> <span class="o">-</span> <span class="n">e_m</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">e_p</span> <span class="o">+</span> <span class="n">e_m</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">0.005</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">log_act</span> <span class="o">=</span> <span class="n">logistic</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">tanh_act</span> <span class="o">=</span> <span class="n">tanh</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;np&#39; is not defined
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -2410,8 +2430,13 @@ Output Units: [0.85569687 0.68135373 0.83889105]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.00669285, 0.00672617, 0.00675966, ..., 0.99320669, 0.99324034,
-       0.99327383])
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [66],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">expit</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">expit</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;z&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -2434,8 +2459,8 @@ Output Units: [0.85569687 0.68135373 0.83889105]
 </div>
 </div>
 </div>
-<div class="section" id="rectified-linear-unit-activation">
-<h3>Rectified linear unit activation<a class="headerlink" href="#rectified-linear-unit-activation" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="relu">
+<h3>ReLU<a class="headerlink" href="#relu" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">torch</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
@@ -2460,7 +2485,7 @@ Output Units: [0.85569687 0.68135373 0.83889105]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1-pytorch-intro_93_0.png" src="../_images/1-pytorch-intro_93_0.png" />
+<img alt="../_images/1-pytorch-intro_92_0.png" src="../_images/1-pytorch-intro_92_0.png" />
 </div>
 </div>
 </div>
@@ -2502,7 +2527,7 @@ Output Units: [0.85569687 0.68135373 0.83889105]
     <a class='right-next' id="next-link" href="2-pytorch-deeper.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Going Deeper – the Mechanics of PyTorch</p>
+        <p class="prev-next-title">PyTorch 原理</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
