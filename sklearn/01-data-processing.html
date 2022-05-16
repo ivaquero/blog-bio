@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Data Processing &#8212; 生物狗学编程</title>
+    <title>数据处理 &#8212; 生物狗学编程</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/doge.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Classification" href="02-classification.html" />
+    <link rel="next" title="分类" href="02-classification.html" />
     <link rel="prev" title="Pandas 2" href="../analysis/pandas2.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -311,12 +311,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Data Processing
+   数据处理
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02-classification.html">
-   Classification
+   分类
   </a>
  </li>
  <li class="toctree-l1">
@@ -353,7 +353,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../pytorch/1-pytorch-intro.html">
-   PyTorch
+   PyTorch 初探
   </a>
  </li>
  <li class="toctree-l1">
@@ -459,61 +459,51 @@ const thebe_selector_output = ".output, .cell_output"
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Data Processing
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   加载数据
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#get-the-data">
-   Get the data
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   探索
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#discover-and-visualize-the-data">
-   Discover and visualize the data
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   准备数据
   </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#prepare-the-data">
-   Prepare the data
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#select-and-train-a-model">
-   Select and train a model
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fine-tune-your-model">
-   Fine-tune your model
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#extra-material">
-   Extra material
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-full-pipeline-with-both-preparation-and-prediction">
-     A full pipeline with both preparation and prediction
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     处理类别数据
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-scipy-distributions-for-randomizedsearchcv">
-     Example SciPy distributions for
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       RandomizedSearchCV
-      </span>
-     </code>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     自定义转换器
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     处理数值数据
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     整合管线
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-solutions">
-   Exercise solutions
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id9">
+   训练模型
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id10">
+   调试模型
   </a>
  </li>
 </ul>
@@ -526,7 +516,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Data Processing</h1>
+                <h1>数据处理</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -536,61 +526,51 @@ const thebe_selector_output = ".output, .cell_output"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Data Processing
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   加载数据
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#get-the-data">
-   Get the data
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   探索
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#discover-and-visualize-the-data">
-   Discover and visualize the data
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   准备数据
   </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#prepare-the-data">
-   Prepare the data
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#select-and-train-a-model">
-   Select and train a model
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fine-tune-your-model">
-   Fine-tune your model
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#extra-material">
-   Extra material
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-full-pipeline-with-both-preparation-and-prediction">
-     A full pipeline with both preparation and prediction
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     处理类别数据
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-scipy-distributions-for-randomizedsearchcv">
-     Example SciPy distributions for
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       RandomizedSearchCV
-      </span>
-     </code>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     自定义转换器
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     处理数值数据
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     整合管线
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-solutions">
-   Exercise solutions
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id9">
+   训练模型
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id10">
+   调试模型
   </a>
  </li>
 </ul>
@@ -602,8 +582,8 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="data-processing">
-<h1>Data Processing<a class="headerlink" href="#data-processing" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1>数据处理<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -613,9 +593,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="get-the-data">
-<h1>Get the data<a class="headerlink" href="#get-the-data" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>加载数据<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">housing</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../../datasets/handson/housing.csv&#39;</span><span class="p">)</span>
@@ -1120,8 +1099,8 @@ Name: income_cat, dtype: int64
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="discover-and-visualize-the-data">
-<h1>Discover and visualize the data<a class="headerlink" href="#discover-and-visualize-the-data" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id3">
+<h2>探索<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">housing</span> <span class="o">=</span> <span class="n">strat_train_set</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -1146,7 +1125,6 @@ Name: income_cat, dtype: int64
 </div>
 </div>
 </div>
-<p>The argument <code class="docutils literal notranslate"><span class="pre">sharex=False</span></code> fixes a display bug (the x-axis values and legend were not displayed). This is a temporary fix (see: <a class="reference external" href="https://github.com/pandas-dev/pandas/issues/10611">https://github.com/pandas-dev/pandas/issues/10611</a> ). Thanks to Wilmer Arellano for pointing it out.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">california_img</span> <span class="o">=</span> <span class="n">mpimg</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;../../datasets/handson/california.png&#39;</span><span class="p">)</span>
@@ -1183,7 +1161,7 @@ Name: income_cat, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/01-data-processing_22_0.png" src="../_images/01-data-processing_22_0.png" />
+<img alt="../_images/01-data-processing_21_0.png" src="../_images/01-data-processing_21_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1237,7 +1215,7 @@ Name: median_house_value, dtype: float64
       dtype=object)
 </pre></div>
 </div>
-<img alt="../_images/01-data-processing_24_1.png" src="../_images/01-data-processing_24_1.png" />
+<img alt="../_images/01-data-processing_23_1.png" src="../_images/01-data-processing_23_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1254,7 +1232,7 @@ Name: median_house_value, dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 16.0, 0.0, 550000.0)
 </pre></div>
 </div>
-<img alt="../_images/01-data-processing_25_1.png" src="../_images/01-data-processing_25_1.png" />
+<img alt="../_images/01-data-processing_24_1.png" src="../_images/01-data-processing_24_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1305,7 +1283,7 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/01-data-processing_28_0.png" src="../_images/01-data-processing_28_0.png" />
+<img alt="../_images/01-data-processing_27_0.png" src="../_images/01-data-processing_27_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1473,8 +1451,8 @@ Name: median_house_value, dtype: float64
 </div></div></div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="prepare-the-data">
-<h1>Prepare the data<a class="headerlink" href="#prepare-the-data" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id4">
+<h2>准备数据<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">housing</span> <span class="o">=</span> <span class="n">strat_train_set</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;median_house_value&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -1691,7 +1669,8 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 </div>
-<p>Now let’s preprocess the categorical input feature</p>
+<div class="section" id="id5">
+<h3>处理类别数据<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">housing_cat</span> <span class="o">=</span> <span class="n">housing</span><span class="p">[[</span><span class="s2">&quot;ocean_proximity&quot;</span><span class="p">]]</span>
@@ -1821,7 +1800,9 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 </div>
-<p>Let’s create a custom transformer to add extra attributes:</p>
+</div>
+<div class="section" id="id6">
+<h3>自定义转换器<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.base</span> <span class="kn">import</span> <span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span>
@@ -1883,7 +1864,6 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 </div>
-<p>Note that I hard coded the indices (3, 4, 5, 6) for concision and clarity in the book, but it would be much cleaner to get them dynamically, like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">col_names</span> <span class="o">=</span> <span class="s2">&quot;total_rooms&quot;</span><span class="p">,</span> <span class="s2">&quot;total_bedrooms&quot;</span><span class="p">,</span> <span class="s2">&quot;population&quot;</span><span class="p">,</span> <span class="s2">&quot;households&quot;</span>
@@ -1894,7 +1874,6 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 </div>
-<p>Also, <code class="docutils literal notranslate"><span class="pre">housing_extra_attribs</span></code> is a NumPy array, we’ve lost the column names (unfortunately, that’s a problem with Scikit-Learn). To recover a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, you could run this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">housing_extra_attribs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
@@ -1922,7 +1901,9 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 </div>
-<p>Now let’s build a pipeline for preprocessing the numerical attributes:</p>
+</div>
+<div class="section" id="id7">
+<h3>处理数值数据<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
@@ -2049,7 +2030,6 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 </div>
-<p>For reference, here is the old solution based on a <code class="docutils literal notranslate"><span class="pre">DataFrameSelector</span></code> transformer (to just select a subset of the Pandas <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> columns), and a <code class="docutils literal notranslate"><span class="pre">FeatureUnion</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.base</span> <span class="kn">import</span> <span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span>
@@ -2096,7 +2076,9 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 </div>
-<p>Now let’s join all these components into a big pipeline that will preprocess both the numerical and the categorical features:</p>
+</div>
+<div class="section" id="id8">
+<h3>整合管线<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_attribs</span> <span class="o">=</span> <span class="n">housing_num</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
@@ -2197,7 +2179,6 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 </div>
-<p>The result is the same as with the <code class="docutils literal notranslate"><span class="pre">ColumnTransformer</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">housing_prepared</span><span class="p">,</span> <span class="n">old_housing_prepared</span><span class="p">)</span>
@@ -2216,8 +2197,9 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="select-and-train-a-model">
-<h1>Select and train a model<a class="headerlink" href="#select-and-train-a-model" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="id9">
+<h2>训练模型<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
@@ -2410,8 +2392,8 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="fine-tune-your-model">
-<h1>Fine-tune your model<a class="headerlink" href="#fine-tune-your-model" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id10">
+<h2>调试模型<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span>
@@ -2772,7 +2754,6 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 </div>
-<p>We can compute a 95% confidence interval for the test RMSE:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
@@ -2809,7 +2790,6 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 </div>
-<p>We could compute the interval manually like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">squared_errors</span><span class="p">)</span>
@@ -2831,278 +2811,6 @@ Name: median_house_value, dtype: float64
 <span class="ne">NameError</span>: name &#39;squared_errors&#39; is not defined
 </pre></div>
 </div>
-</div>
-</div>
-<p>Alternatively, we could use a z-scores rather than t-scores:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zscore</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="n">confidence</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">zmargin</span> <span class="o">=</span> <span class="n">zscore</span> <span class="o">*</span> <span class="n">squared_errors</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
-<span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean</span> <span class="o">-</span> <span class="n">zmargin</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean</span> <span class="o">+</span> <span class="n">zmargin</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [82],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">zscore</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="n">confidence</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">zmargin</span> <span class="o">=</span> <span class="n">zscore</span> <span class="o">*</span> <span class="n">squared_errors</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean</span> <span class="o">-</span> <span class="n">zmargin</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean</span> <span class="o">+</span> <span class="n">zmargin</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;squared_errors&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="extra-material">
-<h1>Extra material<a class="headerlink" href="#extra-material" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="a-full-pipeline-with-both-preparation-and-prediction">
-<h2>A full pipeline with both preparation and prediction<a class="headerlink" href="#a-full-pipeline-with-both-preparation-and-prediction" title="Permalink to this headline">¶</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">full_pipeline_with_predictor</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
-        <span class="p">(</span><span class="s2">&quot;preparation&quot;</span><span class="p">,</span> <span class="n">full_pipeline</span><span class="p">),</span>
-        <span class="p">(</span><span class="s2">&quot;linear&quot;</span><span class="p">,</span> <span class="n">LinearRegression</span><span class="p">())</span>
-    <span class="p">])</span>
-
-<span class="n">full_pipeline_with_predictor</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">housing</span><span class="p">,</span> <span class="n">housing_labels</span><span class="p">)</span>
-<span class="n">full_pipeline_with_predictor</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">some_data</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [83],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">full_pipeline_with_predictor</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>         <span class="p">(</span><span class="s2">&quot;preparation&quot;</span><span class="p">,</span> <span class="n">full_pipeline</span><span class="p">),</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>         <span class="p">(</span><span class="s2">&quot;linear&quot;</span><span class="p">,</span> <span class="n">LinearRegression</span><span class="p">())</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">full_pipeline_with_predictor</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">housing</span><span class="p">,</span> <span class="n">housing_labels</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">full_pipeline_with_predictor</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">some_data</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;Pipeline&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="example-scipy-distributions-for-randomizedsearchcv">
-<h2>Example SciPy distributions for <code class="docutils literal notranslate"><span class="pre">RandomizedSearchCV</span></code><a class="headerlink" href="#example-scipy-distributions-for-randomizedsearchcv" title="Permalink to this headline">¶</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">geom</span><span class="p">,</span> <span class="n">expon</span><span class="p">,</span> <span class="n">reciprocal</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expon_distrib</span> <span class="o">=</span> <span class="n">expon</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
-<span class="n">reciprocal_distrib</span> <span class="o">=</span> <span class="n">reciprocal</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">200000</span><span class="p">)</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
-
-<span class="n">_</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
-
-<span class="n">titles</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s2">&quot;Expon distribution&quot;</span><span class="p">,</span> <span class="s2">&quot;Log of Expon distribution&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Reciprocal distribution&quot;</span><span class="p">,</span> <span class="s2">&quot;Log of Reciprocal distribution&quot;</span>
-<span class="p">]</span>
-
-<span class="n">dists</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="n">expon_distrib</span><span class="p">,</span>
-    <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">expon_distrib</span><span class="p">),</span> <span class="n">reciprocal_distrib</span><span class="p">,</span>
-    <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">reciprocal_distrib</span><span class="p">)</span>
-<span class="p">]</span>
-
-<span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">dist</span><span class="p">,</span> <span class="n">title</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">dists</span><span class="p">,</span> <span class="n">titles</span><span class="p">):</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">dist</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/01-data-processing_105_0.png" src="../_images/01-data-processing_105_0.png" />
-</div>
-</div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="exercise-solutions">
-<h1>Exercise solutions<a class="headerlink" href="#exercise-solutions" title="Permalink to this headline">¶</a></h1>
-<p>Question: Try adding a transformer in the preparation pipeline to select only the most important attributes.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.base</span> <span class="kn">import</span> <span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span>
-
-<span class="k">def</span> <span class="nf">indices_of_top_k</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argpartition</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">arr</span><span class="p">),</span> <span class="o">-</span><span class="n">k</span><span class="p">)[</span><span class="o">-</span><span class="n">k</span><span class="p">:])</span>
-
-<span class="k">class</span> <span class="nc">TopFeatureSelector</span><span class="p">(</span><span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">feature_importances</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">feature_importances</span> <span class="o">=</span> <span class="n">feature_importances</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">k</span> <span class="o">=</span> <span class="n">k</span>
-    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">feature_indices_</span> <span class="o">=</span> <span class="n">indices_of_top_k</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">feature_importances</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span>
-    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">X</span><span class="p">[:,</span> <span class="bp">self</span><span class="o">.</span><span class="n">feature_indices_</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [86],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">sklearn.base</span> <span class="kn">import</span> <span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">def</span> <span class="nf">indices_of_top_k</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argpartition</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">arr</span><span class="p">),</span> <span class="o">-</span><span class="n">k</span><span class="p">)[</span><span class="o">-</span><span class="n">k</span><span class="p">:])</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;sklearn&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<p>Note: this feature selector assumes that you have already computed the feature importances somehow (for example using a <code class="docutils literal notranslate"><span class="pre">RandomForestRegressor</span></code>). You may be tempted to compute them directly in the <code class="docutils literal notranslate"><span class="pre">TopFeatureSelector</span></code>’s <code class="docutils literal notranslate"><span class="pre">fit()</span></code> method, however this would likely slow down grid/randomized search since the feature importances would have to be computed for every hyperparameter combination (unless you implement some sort of cache).</p>
-<p>Let’s define the number of top features we want to keep:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="mi">5</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Now let’s look for the indices of the top k features:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">top_k_feature_indices</span> <span class="o">=</span> <span class="n">indices_of_top_k</span><span class="p">(</span><span class="n">feature_importances</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
-<span class="n">top_k_feature_indices</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [88],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">top_k_feature_indices</span> <span class="o">=</span> <span class="n">indices_of_top_k</span><span class="p">(</span><span class="n">feature_importances</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">top_k_feature_indices</span>
-
-<span class="ne">NameError</span>: name &#39;indices_of_top_k&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">attributes</span><span class="p">)[</span><span class="n">top_k_feature_indices</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [89],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">attributes</span><span class="p">)[</span><span class="n">top_k_feature_indices</span><span class="p">]</span>
-
-<span class="ne">NameError</span>: name &#39;attributes&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-<p>Let’s double check that these are indeed the top k features:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sorted</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">feature_importances</span><span class="p">,</span> <span class="n">attributes</span><span class="p">),</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)[:</span><span class="n">k</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [90],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">feature_importances</span><span class="p">,</span> <span class="n">attributes</span><span class="p">),</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)[:</span><span class="n">k</span><span class="p">]</span>
-
-<span class="ne">NameError</span>: name &#39;feature_importances&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-<p>Looking good… Now let’s create a new pipeline that runs the previously defined preparation pipeline, and adds top k feature selection:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">preparation_and_feature_selection_pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
-    <span class="p">(</span><span class="s1">&#39;preparation&#39;</span><span class="p">,</span> <span class="n">full_pipeline</span><span class="p">),</span>
-    <span class="p">(</span><span class="s1">&#39;feature_selection&#39;</span><span class="p">,</span> <span class="n">TopFeatureSelector</span><span class="p">(</span><span class="n">feature_importances</span><span class="p">,</span> <span class="n">k</span><span class="p">))</span>
-<span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [91],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">preparation_and_feature_selection_pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="p">(</span><span class="s1">&#39;preparation&#39;</span><span class="p">,</span> <span class="n">full_pipeline</span><span class="p">),</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="p">(</span><span class="s1">&#39;feature_selection&#39;</span><span class="p">,</span> <span class="n">TopFeatureSelector</span><span class="p">(</span><span class="n">feature_importances</span><span class="p">,</span> <span class="n">k</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="p">])</span>
-
-<span class="ne">NameError</span>: name &#39;Pipeline&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">housing_prepared_top_k_features</span> <span class="o">=</span> <span class="n">preparation_and_feature_selection_pipeline</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">housing</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [92],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">housing_prepared_top_k_features</span> <span class="o">=</span> <span class="n">preparation_and_feature_selection_pipeline</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">housing</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;preparation_and_feature_selection_pipeline&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-<p>Let’s look at the features of the first 3 instances:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">housing_prepared_top_k_features</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [93],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">housing_prepared_top_k_features</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
-
-<span class="ne">NameError</span>: name &#39;housing_prepared_top_k_features&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-<p>Now let’s double check that these are indeed the top k features:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">housing_prepared</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="n">top_k_feature_indices</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [94],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">housing_prepared</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="n">top_k_feature_indices</span><span class="p">]</span>
-
-<span class="ne">NameError</span>: name &#39;housing_prepared&#39; is not defined
-</pre></div>
 </div>
 </div>
 </div>
@@ -3143,7 +2851,7 @@ Name: median_house_value, dtype: float64
     <a class='right-next' id="next-link" href="02-classification.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Classification</p>
+        <p class="prev-next-title">分类</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
