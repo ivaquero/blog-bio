@@ -548,18 +548,6 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;seaborn&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="section" id="regression-plot">
 <h2>Regression Plot<a class="headerlink" href="#regression-plot" title="Permalink to this headline">¶</a></h2>
@@ -699,26 +687,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [3],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">mpg_select</span> <span class="o">=</span> <span class="n">mpg</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;cyl in [4, 8]&#39;</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;displ&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>            <span class="n">y</span><span class="o">=</span><span class="s1">&#39;hwy&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>            <span class="n">data</span><span class="o">=</span><span class="n">mpg_select</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>            <span class="n">height</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>            <span class="n">robust</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>            <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;cyl&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span>            <span class="n">col</span><span class="o">=</span><span class="s1">&#39;cyl&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>            <span class="n">scatter_kws</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">s</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">.7</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">7.5</span><span class="p">),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="n">t</span><span class="o">=</span><span class="s1">&#39;Scatterplot with line of best fit grouped by number of cylinders&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span>     <span class="n">y</span><span class="o">=</span><span class="mf">1.05</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;sns&#39; is not defined
-</pre></div>
-</div>
+<img alt="../_images/correlation_4_0.png" src="../_images/correlation_4_0.png" />
 </div>
 </div>
 </div>
@@ -736,18 +705,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [4],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">sns</span><span class="o">.</span><span class="n">stripplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;cty&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;hwy&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">,</span> <span class="n">jitter</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Use jittered plots to avoid overlapping of points&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-<span class="ne">NameError</span>: name &#39;sns&#39; is not defined
-</pre></div>
-</div>
-<img alt="../_images/correlation_6_1.png" src="../_images/correlation_6_1.png" />
+<img alt="../_images/correlation_6_0.png" src="../_images/correlation_6_0.png" />
 </div>
 </div>
 </div>
@@ -777,20 +735,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [5],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">JointGrid</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>                 <span class="n">x</span><span class="o">=</span><span class="s2">&quot;displ&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>                 <span class="n">y</span><span class="o">=</span><span class="s2">&quot;hwy&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>                 <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;manufacturer&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>                 <span class="n">ax</span><span class="o">=</span><span class="n">g</span><span class="o">.</span><span class="n">ax_joint</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">h</span><span class="p">,</span> <span class="n">l</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">ax_joint</span><span class="o">.</span><span class="n">get_legend_handles_labels</span><span class="p">()</span>
-
-<span class="ne">NameError</span>: name &#39;sns&#39; is not defined
-</pre></div>
-</div>
+<img alt="../_images/correlation_8_0.png" src="../_images/correlation_8_0.png" />
 </div>
 </div>
 </div>
@@ -931,16 +876,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [7],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">FacetGrid</span><span class="p">(</span><span class="n">mtcars</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;vs&quot;</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="s2">&quot;am&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">g</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">,</span> <span class="s2">&quot;mpg&quot;</span><span class="p">,</span> <span class="s2">&quot;wt&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-<span class="ne">NameError</span>: name &#39;sns&#39; is not defined
-</pre></div>
-</div>
+<img alt="../_images/correlation_11_0.png" src="../_images/correlation_11_0.png" />
 </div>
 </div>
 </div>
@@ -964,24 +900,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [8],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">_</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">mtcars</span><span class="o">.</span><span class="n">corr</span><span class="p">(),</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>             <span class="n">xticklabels</span><span class="o">=</span><span class="n">mtcars</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>             <span class="n">yticklabels</span><span class="o">=</span><span class="n">mtcars</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>             <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdYlGn&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>             <span class="n">center</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>             <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span>             <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Correlogram of mtcars&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-<span class="ne">NameError</span>: name &#39;sns&#39; is not defined
-</pre></div>
-</div>
-<img alt="../_images/correlation_13_1.png" src="../_images/correlation_13_1.png" />
+<img alt="../_images/correlation_13_0.png" src="../_images/correlation_13_0.png" />
 </div>
 </div>
 </div>

@@ -910,16 +910,6 @@ memory usage: 1.6+ MB
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [7],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;sklearn&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -929,16 +919,105 @@ memory usage: 1.6+ MB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [8],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">train_set</span><span class="p">,</span> <span class="n">test_set</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">housing</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">test_set</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;train_test_split&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>longitude</th>
+      <th>latitude</th>
+      <th>housing_median_age</th>
+      <th>total_rooms</th>
+      <th>total_bedrooms</th>
+      <th>population</th>
+      <th>households</th>
+      <th>median_income</th>
+      <th>median_house_value</th>
+      <th>ocean_proximity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>20046</th>
+      <td>-119.01</td>
+      <td>36.06</td>
+      <td>25.0</td>
+      <td>1505.0</td>
+      <td>NaN</td>
+      <td>1392.0</td>
+      <td>359.0</td>
+      <td>1.6812</td>
+      <td>47700.0</td>
+      <td>INLAND</td>
+    </tr>
+    <tr>
+      <th>3024</th>
+      <td>-119.46</td>
+      <td>35.14</td>
+      <td>30.0</td>
+      <td>2943.0</td>
+      <td>NaN</td>
+      <td>1565.0</td>
+      <td>584.0</td>
+      <td>2.5313</td>
+      <td>45800.0</td>
+      <td>INLAND</td>
+    </tr>
+    <tr>
+      <th>15663</th>
+      <td>-122.44</td>
+      <td>37.80</td>
+      <td>52.0</td>
+      <td>3830.0</td>
+      <td>NaN</td>
+      <td>1310.0</td>
+      <td>963.0</td>
+      <td>3.4801</td>
+      <td>500001.0</td>
+      <td>NEAR BAY</td>
+    </tr>
+    <tr>
+      <th>20484</th>
+      <td>-118.72</td>
+      <td>34.28</td>
+      <td>17.0</td>
+      <td>3051.0</td>
+      <td>NaN</td>
+      <td>1705.0</td>
+      <td>495.0</td>
+      <td>5.7376</td>
+      <td>218600.0</td>
+      <td>&lt;1H OCEAN</td>
+    </tr>
+    <tr>
+      <th>9814</th>
+      <td>-121.93</td>
+      <td>36.62</td>
+      <td>34.0</td>
+      <td>2351.0</td>
+      <td>NaN</td>
+      <td>1063.0</td>
+      <td>428.0</td>
+      <td>3.7250</td>
+      <td>278000.0</td>
+      <td>NEAR OCEAN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -992,16 +1071,6 @@ Name: income_cat, dtype: int64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [12],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">StratifiedShuffleSplit</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;sklearn&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1013,18 +1082,6 @@ Name: income_cat, dtype: int64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [13],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">split</span> <span class="o">=</span> <span class="n">StratifiedShuffleSplit</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">for</span> <span class="n">train_index</span><span class="p">,</span> <span class="n">test_index</span> <span class="ow">in</span> <span class="n">split</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">housing</span><span class="p">,</span> <span class="n">housing</span><span class="p">[</span><span class="s2">&quot;income_cat&quot;</span><span class="p">]):</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">strat_train_set</span> <span class="o">=</span> <span class="n">housing</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">train_index</span><span class="p">]</span>
-
-<span class="ne">NameError</span>: name &#39;StratifiedShuffleSplit&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1033,12 +1090,12 @@ Name: income_cat, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [14],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">strat_test_set</span><span class="p">[</span><span class="s2">&quot;income_cat&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">strat_test_set</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;strat_test_set&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3    0.350533
+2    0.318798
+4    0.176357
+5    0.114341
+1    0.039971
+Name: income_cat, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -1070,25 +1127,75 @@ Name: income_cat, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [15],</span> in <span class="ni">&lt;cell line: 5&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">income_cat_proportions</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;income_cat&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">train_set</span><span class="p">,</span> <span class="n">test_set</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">housing</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">compare_props</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="s2">&quot;Overall&quot;</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="n">income_cat_proportions</span><span class="p">(</span><span class="n">housing</span><span class="p">),</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="n">income_cat_proportions</span><span class="p">(</span><span class="n">test_set</span><span class="p">),</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="p">})</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="n">compare_props</span><span class="p">[</span><span class="s2">&quot;Rand. </span><span class="si">%e</span><span class="s2">rror&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">compare_props</span><span class="p">[</span><span class="s2">&quot;Random&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="n">compare_props</span><span class="p">[</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="s2">&quot;Overall&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="mi">100</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;train_test_split&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Overall</th>
+      <th>Stratified</th>
+      <th>Random</th>
+      <th>Rand. %error</th>
+      <th>Strat. %error</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>0.039826</td>
+      <td>0.039971</td>
+      <td>0.040213</td>
+      <td>0.973236</td>
+      <td>0.364964</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.318847</td>
+      <td>0.318798</td>
+      <td>0.324370</td>
+      <td>1.732260</td>
+      <td>-0.015195</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.350581</td>
+      <td>0.350533</td>
+      <td>0.358527</td>
+      <td>2.266446</td>
+      <td>-0.013820</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.176308</td>
+      <td>0.176357</td>
+      <td>0.167393</td>
+      <td>-5.056334</td>
+      <td>0.027480</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.114438</td>
+      <td>0.114341</td>
+      <td>0.109496</td>
+      <td>-4.318374</td>
+      <td>-0.084674</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1104,16 +1211,6 @@ Name: income_cat, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">housing</span> <span class="o">=</span> <span class="n">strat_train_set</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [17],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">housing</span> <span class="o">=</span> <span class="n">strat_train_set</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-
-<span class="ne">NameError</span>: name &#39;strat_train_set&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1173,14 +1270,14 @@ Name: income_cat, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>median_house_value    1.000000
-median_income         0.688075
-total_rooms           0.134153
-housing_median_age    0.105623
-households            0.065843
-total_bedrooms        0.049686
-population           -0.024650
-longitude            -0.045967
-latitude             -0.144160
+median_income         0.687151
+total_rooms           0.135140
+housing_median_age    0.114146
+households            0.064590
+total_bedrooms        0.047781
+population           -0.026882
+longitude            -0.047466
+latitude             -0.142673
 Name: median_house_value, dtype: float64
 </pre></div>
 </div>
@@ -1255,17 +1352,17 @@ Name: median_house_value, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>median_house_value          1.000000
-median_income               0.688075
-rooms_per_household         0.151948
-total_rooms                 0.134153
-housing_median_age          0.105623
-households                  0.065843
-total_bedrooms              0.049686
-population_per_household   -0.023737
-population                 -0.024650
-longitude                  -0.045967
-latitude                   -0.144160
-bedrooms_per_room          -0.255880
+median_income               0.687151
+rooms_per_household         0.146255
+total_rooms                 0.135140
+housing_median_age          0.114146
+households                  0.064590
+total_bedrooms              0.047781
+population_per_household   -0.021991
+population                 -0.026882
+longitude                  -0.047466
+latitude                   -0.142673
+bedrooms_per_room          -0.259952
 Name: median_house_value, dtype: float64
 </pre></div>
 </div>
@@ -1328,108 +1425,108 @@ Name: median_house_value, dtype: float64
   <tbody>
     <tr>
       <th>count</th>
-      <td>20640.000000</td>
-      <td>20640.000000</td>
-      <td>20640.000000</td>
-      <td>20640.000000</td>
-      <td>20433.000000</td>
-      <td>20640.000000</td>
-      <td>20640.000000</td>
-      <td>20640.000000</td>
-      <td>20640.000000</td>
-      <td>20640.000000</td>
-      <td>20433.000000</td>
-      <td>20640.000000</td>
+      <td>16512.000000</td>
+      <td>16512.000000</td>
+      <td>16512.000000</td>
+      <td>16512.000000</td>
+      <td>16354.000000</td>
+      <td>16512.000000</td>
+      <td>16512.000000</td>
+      <td>16512.000000</td>
+      <td>16512.000000</td>
+      <td>16512.000000</td>
+      <td>16354.000000</td>
+      <td>16512.000000</td>
     </tr>
     <tr>
       <th>mean</th>
-      <td>-119.569704</td>
-      <td>35.631861</td>
-      <td>28.639486</td>
-      <td>2635.763081</td>
-      <td>537.870553</td>
-      <td>1425.476744</td>
-      <td>499.539680</td>
-      <td>3.870671</td>
-      <td>206855.816909</td>
-      <td>5.429000</td>
-      <td>0.213039</td>
-      <td>3.070655</td>
+      <td>-119.575635</td>
+      <td>35.639314</td>
+      <td>28.653404</td>
+      <td>2622.539789</td>
+      <td>534.914639</td>
+      <td>1419.687379</td>
+      <td>497.011810</td>
+      <td>3.875884</td>
+      <td>207005.322372</td>
+      <td>5.440406</td>
+      <td>0.212873</td>
+      <td>3.096469</td>
     </tr>
     <tr>
       <th>std</th>
-      <td>2.003532</td>
-      <td>2.135952</td>
-      <td>12.585558</td>
-      <td>2181.615252</td>
-      <td>421.385070</td>
-      <td>1132.462122</td>
-      <td>382.329753</td>
-      <td>1.899822</td>
-      <td>115395.615874</td>
-      <td>2.474173</td>
-      <td>0.057983</td>
-      <td>10.386050</td>
+      <td>2.001828</td>
+      <td>2.137963</td>
+      <td>12.574819</td>
+      <td>2138.417080</td>
+      <td>412.665649</td>
+      <td>1115.663036</td>
+      <td>375.696156</td>
+      <td>1.904931</td>
+      <td>115701.297250</td>
+      <td>2.611696</td>
+      <td>0.057378</td>
+      <td>11.584825</td>
     </tr>
     <tr>
       <th>min</th>
       <td>-124.350000</td>
       <td>32.540000</td>
       <td>1.000000</td>
+      <td>6.000000</td>
       <td>2.000000</td>
-      <td>1.000000</td>
       <td>3.000000</td>
-      <td>1.000000</td>
+      <td>2.000000</td>
       <td>0.499900</td>
       <td>14999.000000</td>
-      <td>0.846154</td>
+      <td>1.130435</td>
       <td>0.100000</td>
       <td>0.692308</td>
     </tr>
     <tr>
       <th>25%</th>
       <td>-121.800000</td>
-      <td>33.930000</td>
+      <td>33.940000</td>
       <td>18.000000</td>
-      <td>1447.750000</td>
-      <td>296.000000</td>
-      <td>787.000000</td>
-      <td>280.000000</td>
-      <td>2.563400</td>
-      <td>119600.000000</td>
-      <td>4.440716</td>
-      <td>0.175427</td>
-      <td>2.429741</td>
+      <td>1443.000000</td>
+      <td>295.000000</td>
+      <td>784.000000</td>
+      <td>279.000000</td>
+      <td>2.566950</td>
+      <td>119800.000000</td>
+      <td>4.442168</td>
+      <td>0.175304</td>
+      <td>2.431352</td>
     </tr>
     <tr>
       <th>50%</th>
-      <td>-118.490000</td>
+      <td>-118.510000</td>
       <td>34.260000</td>
       <td>29.000000</td>
-      <td>2127.000000</td>
-      <td>435.000000</td>
-      <td>1166.000000</td>
-      <td>409.000000</td>
-      <td>3.534800</td>
-      <td>179700.000000</td>
-      <td>5.229129</td>
-      <td>0.203162</td>
-      <td>2.818116</td>
+      <td>2119.000000</td>
+      <td>433.000000</td>
+      <td>1164.000000</td>
+      <td>408.000000</td>
+      <td>3.541550</td>
+      <td>179500.000000</td>
+      <td>5.232342</td>
+      <td>0.203027</td>
+      <td>2.817661</td>
     </tr>
     <tr>
       <th>75%</th>
       <td>-118.010000</td>
-      <td>37.710000</td>
+      <td>37.720000</td>
       <td>37.000000</td>
-      <td>3148.000000</td>
-      <td>647.000000</td>
-      <td>1725.000000</td>
-      <td>605.000000</td>
-      <td>4.743250</td>
-      <td>264725.000000</td>
-      <td>6.052381</td>
-      <td>0.239821</td>
-      <td>3.282261</td>
+      <td>3141.000000</td>
+      <td>644.000000</td>
+      <td>1719.000000</td>
+      <td>602.000000</td>
+      <td>4.745325</td>
+      <td>263900.000000</td>
+      <td>6.056361</td>
+      <td>0.239816</td>
+      <td>3.281420</td>
     </tr>
     <tr>
       <th>max</th>
@@ -1437,9 +1534,9 @@ Name: median_house_value, dtype: float64
       <td>41.950000</td>
       <td>52.000000</td>
       <td>39320.000000</td>
-      <td>6445.000000</td>
+      <td>6210.000000</td>
       <td>35682.000000</td>
-      <td>6082.000000</td>
+      <td>5358.000000</td>
       <td>15.000100</td>
       <td>500001.000000</td>
       <td>141.909091</td>
@@ -1457,17 +1554,6 @@ Name: median_house_value, dtype: float64
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">housing</span> <span class="o">=</span> <span class="n">strat_train_set</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;median_house_value&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">housing_labels</span> <span class="o">=</span> <span class="n">strat_train_set</span><span class="p">[</span><span class="s2">&quot;median_house_value&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [27],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">housing</span> <span class="o">=</span> <span class="n">strat_train_set</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;median_house_value&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">housing_labels</span> <span class="o">=</span> <span class="n">strat_train_set</span><span class="p">[</span><span class="s2">&quot;median_house_value&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-
-<span class="ne">NameError</span>: name &#39;strat_train_set&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1506,99 +1592,75 @@ Name: median_house_value, dtype: float64
       <th>population</th>
       <th>households</th>
       <th>median_income</th>
-      <th>median_house_value</th>
       <th>ocean_proximity</th>
       <th>income_cat</th>
-      <th>rooms_per_household</th>
-      <th>bedrooms_per_room</th>
-      <th>population_per_household</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>290</th>
-      <td>-122.16</td>
-      <td>37.77</td>
-      <td>47.0</td>
-      <td>1256.0</td>
+      <th>1606</th>
+      <td>-122.08</td>
+      <td>37.88</td>
+      <td>26.0</td>
+      <td>2947.0</td>
       <td>NaN</td>
-      <td>570.0</td>
-      <td>218.0</td>
-      <td>4.3750</td>
-      <td>161900.0</td>
-      <td>NEAR BAY</td>
-      <td>3</td>
-      <td>5.761468</td>
-      <td>NaN</td>
-      <td>2.614679</td>
-    </tr>
-    <tr>
-      <th>341</th>
-      <td>-122.17</td>
-      <td>37.75</td>
-      <td>38.0</td>
-      <td>992.0</td>
-      <td>NaN</td>
-      <td>732.0</td>
-      <td>259.0</td>
-      <td>1.6196</td>
-      <td>85100.0</td>
+      <td>825.0</td>
+      <td>626.0</td>
+      <td>2.9330</td>
       <td>NEAR BAY</td>
       <td>2</td>
-      <td>3.830116</td>
-      <td>NaN</td>
-      <td>2.826255</td>
     </tr>
     <tr>
-      <th>538</th>
-      <td>-122.28</td>
-      <td>37.78</td>
-      <td>29.0</td>
-      <td>5154.0</td>
-      <td>NaN</td>
-      <td>3741.0</td>
-      <td>1273.0</td>
-      <td>2.5762</td>
-      <td>173400.0</td>
-      <td>NEAR BAY</td>
-      <td>2</td>
-      <td>4.048704</td>
-      <td>NaN</td>
-      <td>2.938727</td>
-    </tr>
-    <tr>
-      <th>563</th>
-      <td>-122.24</td>
-      <td>37.75</td>
+      <th>10915</th>
+      <td>-117.87</td>
+      <td>33.73</td>
       <td>45.0</td>
-      <td>891.0</td>
+      <td>2264.0</td>
       <td>NaN</td>
-      <td>384.0</td>
-      <td>146.0</td>
-      <td>4.9489</td>
-      <td>247100.0</td>
-      <td>NEAR BAY</td>
-      <td>4</td>
-      <td>6.102740</td>
-      <td>NaN</td>
-      <td>2.630137</td>
+      <td>1970.0</td>
+      <td>499.0</td>
+      <td>3.4193</td>
+      <td>&lt;1H OCEAN</td>
+      <td>3</td>
     </tr>
     <tr>
-      <th>696</th>
-      <td>-122.10</td>
-      <td>37.69</td>
-      <td>41.0</td>
-      <td>746.0</td>
+      <th>19150</th>
+      <td>-122.70</td>
+      <td>38.35</td>
+      <td>14.0</td>
+      <td>2313.0</td>
       <td>NaN</td>
-      <td>387.0</td>
-      <td>161.0</td>
-      <td>3.9063</td>
-      <td>178400.0</td>
-      <td>NEAR BAY</td>
+      <td>954.0</td>
+      <td>397.0</td>
+      <td>3.7813</td>
+      <td>&lt;1H OCEAN</td>
       <td>3</td>
-      <td>4.633540</td>
+    </tr>
+    <tr>
+      <th>4186</th>
+      <td>-118.23</td>
+      <td>34.13</td>
+      <td>48.0</td>
+      <td>1308.0</td>
       <td>NaN</td>
-      <td>2.403727</td>
+      <td>835.0</td>
+      <td>294.0</td>
+      <td>4.2891</td>
+      <td>&lt;1H OCEAN</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>16885</th>
+      <td>-122.40</td>
+      <td>37.58</td>
+      <td>26.0</td>
+      <td>3281.0</td>
+      <td>NaN</td>
+      <td>1145.0</td>
+      <td>480.0</td>
+      <td>6.3580</td>
+      <td>NEAR OCEAN</td>
+      <td>5</td>
     </tr>
   </tbody>
 </table>
@@ -1610,30 +1672,10 @@ Name: median_house_value, dtype: float64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [29],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">SimpleImputer</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;sklearn&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">imputer</span> <span class="o">=</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s2">&quot;median&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [30],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">imputer</span> <span class="o">=</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s2">&quot;median&quot;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;SimpleImputer&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1656,18 +1698,93 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [32],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">X</span> <span class="o">=</span> <span class="n">imputer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">housing_num</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">housing_tr</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">housing_num</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>                           <span class="n">index</span><span class="o">=</span><span class="n">housing</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">housing_tr</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;imputer&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>longitude</th>
+      <th>latitude</th>
+      <th>housing_median_age</th>
+      <th>total_rooms</th>
+      <th>total_bedrooms</th>
+      <th>population</th>
+      <th>households</th>
+      <th>median_income</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>12655</th>
+      <td>-121.46</td>
+      <td>38.52</td>
+      <td>29.0</td>
+      <td>3873.0</td>
+      <td>797.0</td>
+      <td>2237.0</td>
+      <td>706.0</td>
+      <td>2.1736</td>
+    </tr>
+    <tr>
+      <th>15502</th>
+      <td>-117.23</td>
+      <td>33.09</td>
+      <td>7.0</td>
+      <td>5320.0</td>
+      <td>855.0</td>
+      <td>2015.0</td>
+      <td>768.0</td>
+      <td>6.3373</td>
+    </tr>
+    <tr>
+      <th>2908</th>
+      <td>-119.04</td>
+      <td>35.37</td>
+      <td>44.0</td>
+      <td>1618.0</td>
+      <td>310.0</td>
+      <td>667.0</td>
+      <td>300.0</td>
+      <td>2.8750</td>
+    </tr>
+    <tr>
+      <th>14053</th>
+      <td>-117.13</td>
+      <td>32.75</td>
+      <td>24.0</td>
+      <td>1877.0</td>
+      <td>519.0</td>
+      <td>898.0</td>
+      <td>483.0</td>
+      <td>2.2264</td>
+    </tr>
+    <tr>
+      <th>20496</th>
+      <td>-118.70</td>
+      <td>34.28</td>
+      <td>27.0</td>
+      <td>3536.0</td>
+      <td>646.0</td>
+      <td>1837.0</td>
+      <td>580.0</td>
+      <td>4.4964</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="section" id="id5">
 <h3>处理类别数据<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
@@ -1702,44 +1819,44 @@ Name: median_house_value, dtype: float64
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
+      <th>12655</th>
+      <td>INLAND</td>
+    </tr>
+    <tr>
+      <th>15502</th>
+      <td>NEAR OCEAN</td>
+    </tr>
+    <tr>
+      <th>2908</th>
+      <td>INLAND</td>
+    </tr>
+    <tr>
+      <th>14053</th>
+      <td>NEAR OCEAN</td>
+    </tr>
+    <tr>
+      <th>20496</th>
+      <td>&lt;1H OCEAN</td>
+    </tr>
+    <tr>
+      <th>1481</th>
       <td>NEAR BAY</td>
     </tr>
     <tr>
-      <th>1</th>
-      <td>NEAR BAY</td>
+      <th>18125</th>
+      <td>&lt;1H OCEAN</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>NEAR BAY</td>
+      <th>5830</th>
+      <td>&lt;1H OCEAN</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>NEAR BAY</td>
+      <th>17989</th>
+      <td>&lt;1H OCEAN</td>
     </tr>
     <tr>
-      <th>4</th>
-      <td>NEAR BAY</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>NEAR BAY</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>NEAR BAY</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>NEAR BAY</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>NEAR BAY</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>NEAR BAY</td>
+      <th>4861</th>
+      <td>&lt;1H OCEAN</td>
     </tr>
   </tbody>
 </table>
@@ -1748,16 +1865,6 @@ Name: median_house_value, dtype: float64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">OneHotEncoder</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [34],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">OneHotEncoder</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;sklearn&#39;
 </pre></div>
 </div>
 </div>
@@ -1771,14 +1878,13 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [35],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cat_encoder</span> <span class="o">=</span> <span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">sparse</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">housing_cat_1hot</span> <span class="o">=</span> <span class="n">cat_encoder</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">housing_cat</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">housing_cat_1hot</span>
-
-<span class="ne">NameError</span>: name &#39;OneHotEncoder&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0., 1., 0., 0., 0.],
+       [0., 0., 0., 0., 1.],
+       [0., 1., 0., 0., 0.],
+       ...,
+       [1., 0., 0., 0., 0.],
+       [1., 0., 0., 0., 0.],
+       [0., 1., 0., 0., 0.]])
 </pre></div>
 </div>
 </div>
@@ -1790,12 +1896,8 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [36],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cat_encoder</span><span class="o">.</span><span class="n">categories_</span>
-
-<span class="ne">NameError</span>: name &#39;cat_encoder&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[array([&#39;&lt;1H OCEAN&#39;, &#39;INLAND&#39;, &#39;ISLAND&#39;, &#39;NEAR BAY&#39;, &#39;NEAR OCEAN&#39;],
+       dtype=object)]
 </pre></div>
 </div>
 </div>
@@ -1806,16 +1908,6 @@ Name: median_house_value, dtype: float64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.base</span> <span class="kn">import</span> <span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [37],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">sklearn.base</span> <span class="kn">import</span> <span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;sklearn&#39;
 </pre></div>
 </div>
 </div>
@@ -1849,20 +1941,6 @@ Name: median_house_value, dtype: float64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [38],</span> in <span class="ni">&lt;cell line: 5&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># column index</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">rooms_ix</span><span class="p">,</span> <span class="n">bedrooms_ix</span><span class="p">,</span> <span class="n">population_ix</span><span class="p">,</span> <span class="n">households_ix</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="k">class</span> <span class="nc">CombinedAttributesAdder</span><span class="p">(</span><span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">add_bedrooms_per_room</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>  <span class="c1"># no *args or **kargs</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>         <span class="bp">self</span><span class="o">.</span><span class="n">add_bedrooms_per_room</span> <span class="o">=</span> <span class="n">add_bedrooms_per_room</span>
-
-<span class="ne">NameError</span>: name &#39;BaseEstimator&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1886,20 +1964,117 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [40],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">housing_extra_attribs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
-<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">housing_extra_attribs</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">columns</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">housing</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">+</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="p">[</span><span class="s2">&quot;rooms_per_household&quot;</span><span class="p">,</span> <span class="s2">&quot;population_per_household&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">index</span><span class="o">=</span><span class="n">housing</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">housing_extra_attribs</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;housing_extra_attribs&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>longitude</th>
+      <th>latitude</th>
+      <th>housing_median_age</th>
+      <th>total_rooms</th>
+      <th>total_bedrooms</th>
+      <th>population</th>
+      <th>households</th>
+      <th>median_income</th>
+      <th>ocean_proximity</th>
+      <th>income_cat</th>
+      <th>rooms_per_household</th>
+      <th>population_per_household</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>12655</th>
+      <td>-121.46</td>
+      <td>38.52</td>
+      <td>29.0</td>
+      <td>3873.0</td>
+      <td>797.0</td>
+      <td>2237.0</td>
+      <td>706.0</td>
+      <td>2.1736</td>
+      <td>INLAND</td>
+      <td>2</td>
+      <td>5.485836</td>
+      <td>3.168555</td>
+    </tr>
+    <tr>
+      <th>15502</th>
+      <td>-117.23</td>
+      <td>33.09</td>
+      <td>7.0</td>
+      <td>5320.0</td>
+      <td>855.0</td>
+      <td>2015.0</td>
+      <td>768.0</td>
+      <td>6.3373</td>
+      <td>NEAR OCEAN</td>
+      <td>5</td>
+      <td>6.927083</td>
+      <td>2.623698</td>
+    </tr>
+    <tr>
+      <th>2908</th>
+      <td>-119.04</td>
+      <td>35.37</td>
+      <td>44.0</td>
+      <td>1618.0</td>
+      <td>310.0</td>
+      <td>667.0</td>
+      <td>300.0</td>
+      <td>2.875</td>
+      <td>INLAND</td>
+      <td>2</td>
+      <td>5.393333</td>
+      <td>2.223333</td>
+    </tr>
+    <tr>
+      <th>14053</th>
+      <td>-117.13</td>
+      <td>32.75</td>
+      <td>24.0</td>
+      <td>1877.0</td>
+      <td>519.0</td>
+      <td>898.0</td>
+      <td>483.0</td>
+      <td>2.2264</td>
+      <td>NEAR OCEAN</td>
+      <td>2</td>
+      <td>3.886128</td>
+      <td>1.859213</td>
+    </tr>
+    <tr>
+      <th>20496</th>
+      <td>-118.7</td>
+      <td>34.28</td>
+      <td>27.0</td>
+      <td>3536.0</td>
+      <td>646.0</td>
+      <td>1837.0</td>
+      <td>580.0</td>
+      <td>4.4964</td>
+      <td>&lt;1H OCEAN</td>
+      <td>3</td>
+      <td>6.096552</td>
+      <td>3.167241</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="id7">
@@ -1908,17 +2083,6 @@ Name: median_house_value, dtype: float64
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [41],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;sklearn&#39;
 </pre></div>
 </div>
 </div>
@@ -1933,34 +2097,10 @@ Name: median_house_value, dtype: float64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [42],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">num_pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="p">(</span><span class="s1">&#39;imputer&#39;</span><span class="p">,</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s2">&quot;median&quot;</span><span class="p">)),</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="p">(</span><span class="s1">&#39;attribs_adder&#39;</span><span class="p">,</span> <span class="n">CombinedAttributesAdder</span><span class="p">()),</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="p">(</span><span class="s1">&#39;std_scaler&#39;</span><span class="p">,</span> <span class="n">StandardScaler</span><span class="p">()),</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="p">])</span>
-
-<span class="ne">NameError</span>: name &#39;Pipeline&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.compose</span> <span class="kn">import</span> <span class="n">ColumnTransformer</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [43],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">sklearn.compose</span> <span class="kn">import</span> <span class="n">ColumnTransformer</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;sklearn&#39;
 </pre></div>
 </div>
 </div>
@@ -1979,22 +2119,6 @@ Name: median_house_value, dtype: float64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [44],</span> in <span class="ni">&lt;cell line: 4&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">num_attribs</span> <span class="o">=</span> <span class="n">housing_num</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">cat_attribs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ocean_proximity&quot;</span><span class="p">]</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">full_pipeline</span> <span class="o">=</span> <span class="n">ColumnTransformer</span><span class="p">([</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="p">(</span><span class="s2">&quot;num&quot;</span><span class="p">,</span> <span class="n">num_pipeline</span><span class="p">,</span> <span class="n">num_attribs</span><span class="p">),</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="p">(</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="n">OneHotEncoder</span><span class="p">(),</span> <span class="n">cat_attribs</span><span class="p">),</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">housing_prepared</span> <span class="o">=</span> <span class="n">full_pipeline</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">housing</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;ColumnTransformer&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2003,12 +2127,19 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [45],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">housing_prepared</span>
-
-<span class="ne">NameError</span>: name &#39;housing_prepared&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.94135046,  1.34743822,  0.02756357, ...,  0.        ,
+         0.        ,  0.        ],
+       [ 1.17178212, -1.19243966, -1.72201763, ...,  0.        ,
+         0.        ,  1.        ],
+       [ 0.26758118, -0.1259716 ,  1.22045984, ...,  0.        ,
+         0.        ,  0.        ],
+       ...,
+       [-1.5707942 ,  1.31001828,  1.53856552, ...,  0.        ,
+         0.        ,  0.        ],
+       [-1.56080303,  1.2492109 , -1.1653327 , ...,  0.        ,
+         0.        ,  0.        ],
+       [-1.28105026,  2.02567448, -0.13148926, ...,  0.        ,
+         0.        ,  0.        ]])
 </pre></div>
 </div>
 </div>
@@ -2020,12 +2151,7 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [46],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">housing_prepared</span><span class="o">.</span><span class="n">shape</span>
-
-<span class="ne">NameError</span>: name &#39;housing_prepared&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(16512, 16)
 </pre></div>
 </div>
 </div>
@@ -2033,16 +2159,6 @@ Name: median_house_value, dtype: float64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.base</span> <span class="kn">import</span> <span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [47],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">sklearn.base</span> <span class="kn">import</span> <span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;sklearn&#39;
 </pre></div>
 </div>
 </div>
@@ -2059,19 +2175,6 @@ Name: median_house_value, dtype: float64
 
     <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">X</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">attribute_names</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [48],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Create a class to select numerical or categorical columns</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="k">class</span> <span class="nc">OldDataFrameSelector</span><span class="p">(</span><span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attribute_names</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>         <span class="bp">self</span><span class="o">.</span><span class="n">attribute_names</span> <span class="o">=</span> <span class="n">attribute_names</span>
-
-<span class="ne">NameError</span>: name &#39;BaseEstimator&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -2098,41 +2201,10 @@ Name: median_house_value, dtype: float64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [49],</span> in <span class="ni">&lt;cell line: 4&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">num_attribs</span> <span class="o">=</span> <span class="n">housing_num</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">cat_attribs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ocean_proximity&quot;</span><span class="p">]</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">old_num_pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="p">(</span><span class="s1">&#39;selector&#39;</span><span class="p">,</span> <span class="n">OldDataFrameSelector</span><span class="p">(</span><span class="n">num_attribs</span><span class="p">)),</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="p">(</span><span class="s1">&#39;imputer&#39;</span><span class="p">,</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s2">&quot;median&quot;</span><span class="p">)),</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="p">(</span><span class="s1">&#39;attribs_adder&#39;</span><span class="p">,</span> <span class="n">CombinedAttributesAdder</span><span class="p">()),</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="p">(</span><span class="s1">&#39;std_scaler&#39;</span><span class="p">,</span> <span class="n">StandardScaler</span><span class="p">()),</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="p">])</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">old_cat_pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="p">(</span><span class="s1">&#39;selector&#39;</span><span class="p">,</span> <span class="n">OldDataFrameSelector</span><span class="p">(</span><span class="n">cat_attribs</span><span class="p">)),</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="p">(</span><span class="s1">&#39;cat_encoder&#39;</span><span class="p">,</span> <span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">sparse</span><span class="o">=</span><span class="kc">False</span><span class="p">)),</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="p">])</span>
-
-<span class="ne">NameError</span>: name &#39;Pipeline&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">FeatureUnion</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [50],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">FeatureUnion</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;sklearn&#39;
 </pre></div>
 </div>
 </div>
@@ -2146,19 +2218,6 @@ Name: median_house_value, dtype: float64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [51],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">old_full_pipeline</span> <span class="o">=</span> <span class="n">FeatureUnion</span><span class="p">(</span><span class="n">transformer_list</span><span class="o">=</span><span class="p">[</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="p">(</span><span class="s2">&quot;num_pipeline&quot;</span><span class="p">,</span> <span class="n">old_num_pipeline</span><span class="p">),</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="p">(</span><span class="s2">&quot;cat_pipeline&quot;</span><span class="p">,</span> <span class="n">old_cat_pipeline</span><span class="p">),</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="p">])</span>
-
-<span class="ne">NameError</span>: name &#39;FeatureUnion&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2168,13 +2227,19 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [52],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">old_housing_prepared</span> <span class="o">=</span> <span class="n">old_full_pipeline</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">housing</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">old_housing_prepared</span>
-
-<span class="ne">NameError</span>: name &#39;old_full_pipeline&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.94135046,  1.34743822,  0.02756357, ...,  0.        ,
+         0.        ,  0.        ],
+       [ 1.17178212, -1.19243966, -1.72201763, ...,  0.        ,
+         0.        ,  1.        ],
+       [ 0.26758118, -0.1259716 ,  1.22045984, ...,  0.        ,
+         0.        ,  0.        ],
+       ...,
+       [-1.5707942 ,  1.31001828,  1.53856552, ...,  0.        ,
+         0.        ,  0.        ],
+       [-1.56080303,  1.2492109 , -1.1653327 , ...,  0.        ,
+         0.        ,  0.        ],
+       [-1.28105026,  2.02567448, -0.13148926, ...,  0.        ,
+         0.        ,  0.        ]])
 </pre></div>
 </div>
 </div>
@@ -2186,12 +2251,7 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [53],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">housing_prepared</span><span class="p">,</span> <span class="n">old_housing_prepared</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;housing_prepared&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -2206,16 +2266,6 @@ Name: median_house_value, dtype: float64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [54],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;sklearn&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2225,16 +2275,7 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [55],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">lin_reg</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">lin_reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">housing_prepared</span><span class="p">,</span> <span class="n">housing_labels</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;LinearRegression&#39; is not defined
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><style>#sk-container-id-1 {color: black;background-color: white;}#sk-container-id-1 pre{padding: 0;}#sk-container-id-1 div.sk-toggleable {background-color: white;}#sk-container-id-1 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-1 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-1 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-1 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-1 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-1 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-1 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-1 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-1 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-1 div.sk-item {position: relative;z-index: 1;}#sk-container-id-1 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-1 div.sk-item::before, #sk-container-id-1 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-1 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-1 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-1 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-1 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-1 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-1 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-1 div.sk-label-container {text-align: center;}#sk-container-id-1 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-1 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>LinearRegression()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label sk-toggleable__label-arrow">LinearRegression</label><div class="sk-toggleable__content"><pre>LinearRegression()</pre></div></div></div></div></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2247,15 +2288,8 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [56],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">some_data</span> <span class="o">=</span> <span class="n">housing</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">some_labels</span> <span class="o">=</span> <span class="n">housing_labels</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">some_data_prepared</span> <span class="o">=</span> <span class="n">full_pipeline</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">some_data</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Predictions:&quot;</span><span class="p">,</span> <span class="n">lin_reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">some_data_prepared</span><span class="p">))</span>
-
-<span class="ne">NameError</span>: name &#39;housing_labels&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Predictions: [ 85657.90192014 305492.60737488 152056.46122456 186095.70946094
+ 244550.67966089]
 </pre></div>
 </div>
 </div>
@@ -2263,16 +2297,6 @@ Name: median_house_value, dtype: float64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [57],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;sklearn&#39;
 </pre></div>
 </div>
 </div>
@@ -2286,14 +2310,7 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [58],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">housing_predictions</span> <span class="o">=</span> <span class="n">lin_reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">housing_prepared</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">lin_rmse</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">housing_labels</span><span class="p">,</span> <span class="n">housing_predictions</span><span class="p">,</span> <span class="n">squared</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">lin_rmse</span>
-
-<span class="ne">NameError</span>: name &#39;lin_reg&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>68627.87390018745
 </pre></div>
 </div>
 </div>
@@ -2301,16 +2318,6 @@ Name: median_house_value, dtype: float64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_error</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [59],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_error</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;sklearn&#39;
 </pre></div>
 </div>
 </div>
@@ -2323,13 +2330,7 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [60],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">lin_mae</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">housing_labels</span><span class="p">,</span> <span class="n">housing_predictions</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">lin_mae</span>
-
-<span class="ne">NameError</span>: name &#39;mean_absolute_error&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>49438.66860915802
 </pre></div>
 </div>
 </div>
@@ -2337,16 +2338,6 @@ Name: median_house_value, dtype: float64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeRegressor</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [61],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeRegressor</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;sklearn&#39;
 </pre></div>
 </div>
 </div>
@@ -2359,16 +2350,7 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [62],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">tree_reg</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">tree_reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">housing_prepared</span><span class="p">,</span> <span class="n">housing_labels</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;DecisionTreeRegressor&#39; is not defined
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><style>#sk-container-id-2 {color: black;background-color: white;}#sk-container-id-2 pre{padding: 0;}#sk-container-id-2 div.sk-toggleable {background-color: white;}#sk-container-id-2 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-2 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-2 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-2 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-2 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-2 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-2 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-2 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-2 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-2 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-2 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-2 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-2 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-2 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-2 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-2 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-2 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-2 div.sk-item {position: relative;z-index: 1;}#sk-container-id-2 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-2 div.sk-item::before, #sk-container-id-2 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-2 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-2 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-2 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-2 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-2 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-2 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-2 div.sk-label-container {text-align: center;}#sk-container-id-2 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-2 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-2" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>DecisionTreeRegressor(random_state=42)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-2" type="checkbox" checked><label for="sk-estimator-id-2" class="sk-toggleable__label sk-toggleable__label-arrow">DecisionTreeRegressor</label><div class="sk-toggleable__content"><pre>DecisionTreeRegressor(random_state=42)</pre></div></div></div></div></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2379,14 +2361,7 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [63],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">housing_predictions</span> <span class="o">=</span> <span class="n">tree_reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">housing_prepared</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">tree_rmse</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">housing_labels</span><span class="p">,</span> <span class="n">housing_predictions</span><span class="p">,</span> <span class="n">squared</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">tree_rmse</span>
-
-<span class="ne">NameError</span>: name &#39;tree_reg&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
 </pre></div>
 </div>
 </div>
@@ -2397,16 +2372,6 @@ Name: median_house_value, dtype: float64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [64],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;sklearn&#39;
 </pre></div>
 </div>
 </div>
@@ -2422,21 +2387,6 @@ Name: median_house_value, dtype: float64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [65],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">tree_reg</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>                          <span class="n">housing_prepared</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>                          <span class="n">housing_labels</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>                          <span class="n">scoring</span><span class="o">=</span><span class="s2">&quot;neg_mean_squared_error&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>                          <span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">tree_rmse_scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="n">scores</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;cross_val_score&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2449,14 +2399,8 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [66],</span> in <span class="ni">&lt;cell line: 5&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mean:&quot;</span><span class="p">,</span> <span class="n">scores</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Standard deviation:&quot;</span><span class="p">,</span> <span class="n">scores</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">display_scores</span><span class="p">(</span><span class="n">tree_rmse_scores</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;tree_rmse_scores&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mean: 71629.89009727491
+Standard deviation: 2914.035468468928
 </pre></div>
 </div>
 </div>
@@ -2474,18 +2418,8 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [67],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">lin_scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">lin_reg</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>                              <span class="n">housing_prepared</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>                              <span class="n">housing_labels</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>                              <span class="n">scoring</span><span class="o">=</span><span class="s2">&quot;neg_mean_squared_error&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>                              <span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">lin_rmse_scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="n">lin_scores</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">display_scores</span><span class="p">(</span><span class="n">lin_rmse_scores</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;cross_val_score&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mean: 69104.07998247063
+Standard deviation: 2880.328209818066
 </pre></div>
 </div>
 </div>
@@ -2493,16 +2427,6 @@ Name: median_house_value, dtype: float64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestRegressor</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [68],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestRegressor</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;sklearn&#39;
 </pre></div>
 </div>
 </div>
@@ -2519,14 +2443,7 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [69],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">forest_reg</span> <span class="o">=</span> <span class="n">RandomForestRegressor</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">forest_reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">housing_prepared</span><span class="p">,</span> <span class="n">housing_labels</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">housing_predictions</span> <span class="o">=</span> <span class="n">forest_reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">housing_prepared</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;RandomForestRegressor&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18650.698705770003
 </pre></div>
 </div>
 </div>
@@ -2544,18 +2461,8 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [70],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">forest_scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">forest_reg</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>                                 <span class="n">housing_prepared</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>                                 <span class="n">housing_labels</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>                                 <span class="n">scoring</span><span class="o">=</span><span class="s2">&quot;neg_mean_squared_error&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>                                 <span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">forest_rmse_scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="n">forest_scores</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">display_scores</span><span class="p">(</span><span class="n">forest_rmse_scores</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;cross_val_score&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mean: 50435.58092066179
+Standard deviation: 2203.3381412764606
 </pre></div>
 </div>
 </div>
@@ -2572,17 +2479,15 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [71],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">lin_reg</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>                          <span class="n">housing_prepared</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>                          <span class="n">housing_labels</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>                          <span class="n">scoring</span><span class="o">=</span><span class="s2">&quot;neg_mean_squared_error&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>                          <span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="n">scores</span><span class="p">))</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
-
-<span class="ne">NameError</span>: name &#39;cross_val_score&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count       10.000000
+mean     69104.079982
+std       3036.132517
+min      64114.991664
+25%      67077.398482
+50%      68718.763507
+75%      71357.022543
+max      73997.080502
+dtype: float64
 </pre></div>
 </div>
 </div>
@@ -2591,17 +2496,6 @@ Name: median_house_value, dtype: float64
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">RandomizedSearchCV</span>
 <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">randint</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [72],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">RandomizedSearchCV</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">randint</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;sklearn&#39;
 </pre></div>
 </div>
 </div>
@@ -2625,25 +2519,13 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [73],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">param_distribs</span> <span class="o">=</span> <span class="p">{</span>
-<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="s1">&#39;n_estimators&#39;</span><span class="p">:</span> <span class="n">randint</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">200</span><span class="p">),</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="s1">&#39;max_features&#39;</span><span class="p">:</span> <span class="n">randint</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">8</span><span class="p">),</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="p">}</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">forest_reg</span> <span class="o">=</span> <span class="n">RandomForestRegressor</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">rnd_search</span> <span class="o">=</span> <span class="n">RandomizedSearchCV</span><span class="p">(</span><span class="n">forest_reg</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>                                 <span class="n">param_distributions</span><span class="o">=</span><span class="n">param_distribs</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span>                                 <span class="n">n_iter</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>                                 <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span>                                 <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;neg_mean_squared_error&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span>                                 <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;randint&#39; is not defined
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><style>#sk-container-id-3 {color: black;background-color: white;}#sk-container-id-3 pre{padding: 0;}#sk-container-id-3 div.sk-toggleable {background-color: white;}#sk-container-id-3 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-3 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-3 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-3 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-3 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-3 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-3 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-3 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-3 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-3 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-3 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-3 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-3 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-3 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-3 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-3 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-3 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-3 div.sk-item {position: relative;z-index: 1;}#sk-container-id-3 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-3 div.sk-item::before, #sk-container-id-3 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-3 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-3 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-3 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-3 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-3 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-3 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-3 div.sk-label-container {text-align: center;}#sk-container-id-3 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-3 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-3" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>RandomizedSearchCV(cv=5, estimator=RandomForestRegressor(random_state=42),
+                   param_distributions={&#x27;max_features&#x27;: &lt;scipy.stats._distn_infrastructure.rv_frozen object at 0x1455eb3a0&gt;,
+                                        &#x27;n_estimators&#x27;: &lt;scipy.stats._distn_infrastructure.rv_frozen object at 0x1455ea7a0&gt;},
+                   random_state=42, scoring=&#x27;neg_mean_squared_error&#x27;)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-3" type="checkbox" ><label for="sk-estimator-id-3" class="sk-toggleable__label sk-toggleable__label-arrow">RandomizedSearchCV</label><div class="sk-toggleable__content"><pre>RandomizedSearchCV(cv=5, estimator=RandomForestRegressor(random_state=42),
+                   param_distributions={&#x27;max_features&#x27;: &lt;scipy.stats._distn_infrastructure.rv_frozen object at 0x1455eb3a0&gt;,
+                                        &#x27;n_estimators&#x27;: &lt;scipy.stats._distn_infrastructure.rv_frozen object at 0x1455ea7a0&gt;},
+                   random_state=42, scoring=&#x27;neg_mean_squared_error&#x27;)</pre></div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-4" type="checkbox" ><label for="sk-estimator-id-4" class="sk-toggleable__label sk-toggleable__label-arrow">estimator: RandomForestRegressor</label><div class="sk-toggleable__content"><pre>RandomForestRegressor(random_state=42)</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-5" type="checkbox" ><label for="sk-estimator-id-5" class="sk-toggleable__label sk-toggleable__label-arrow">RandomForestRegressor</label><div class="sk-toggleable__content"><pre>RandomForestRegressor(random_state=42)</pre></div></div></div></div></div></div></div></div></div></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2654,14 +2536,16 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [74],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cvres</span> <span class="o">=</span> <span class="n">rnd_search</span><span class="o">.</span><span class="n">cv_results_</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">for</span> <span class="n">mean_score</span><span class="p">,</span> <span class="n">params</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">cvres</span><span class="p">[</span><span class="s2">&quot;mean_test_score&quot;</span><span class="p">],</span> <span class="n">cvres</span><span class="p">[</span><span class="s2">&quot;params&quot;</span><span class="p">]):</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="n">mean_score</span><span class="p">),</span> <span class="n">params</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;rnd_search&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>49117.55344336652 {&#39;max_features&#39;: 7, &#39;n_estimators&#39;: 180}
+51450.63202856348 {&#39;max_features&#39;: 5, &#39;n_estimators&#39;: 15}
+50692.53588182537 {&#39;max_features&#39;: 3, &#39;n_estimators&#39;: 72}
+50783.614493515 {&#39;max_features&#39;: 5, &#39;n_estimators&#39;: 21}
+49162.89877456354 {&#39;max_features&#39;: 7, &#39;n_estimators&#39;: 122}
+50655.798471042704 {&#39;max_features&#39;: 3, &#39;n_estimators&#39;: 75}
+50513.856319990606 {&#39;max_features&#39;: 3, &#39;n_estimators&#39;: 88}
+49521.17201976928 {&#39;max_features&#39;: 5, &#39;n_estimators&#39;: 100}
+50302.90440763418 {&#39;max_features&#39;: 3, &#39;n_estimators&#39;: 150}
+65167.02018649492 {&#39;max_features&#39;: 5, &#39;n_estimators&#39;: 2}
 </pre></div>
 </div>
 </div>
@@ -2674,13 +2558,10 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [75],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">feature_importances</span> <span class="o">=</span> <span class="n">rnd_search</span><span class="o">.</span><span class="n">best_estimator_</span><span class="o">.</span><span class="n">feature_importances_</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">feature_importances</span>
-
-<span class="ne">NameError</span>: name &#39;rnd_search&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([7.13721236e-02, 6.28935545e-02, 4.30092772e-02, 1.64086555e-02,
+       1.55670107e-02, 1.64745016e-02, 1.53753328e-02, 3.45190341e-01,
+       5.95258394e-02, 1.10738856e-01, 6.97457058e-02, 8.67185471e-03,
+       1.58662678e-01, 6.67961748e-05, 2.68890007e-03, 3.60857368e-03])
 </pre></div>
 </div>
 </div>
@@ -2696,15 +2577,22 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [76],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">extra_attribs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;rooms_per_hhold&quot;</span><span class="p">,</span> <span class="s2">&quot;pop_per_hhold&quot;</span><span class="p">,</span> <span class="s2">&quot;bedrooms_per_room&quot;</span><span class="p">]</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">cat_encoder</span> <span class="o">=</span> <span class="n">full_pipeline</span><span class="o">.</span><span class="n">named_transformers_</span><span class="p">[</span><span class="s2">&quot;cat&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">cat_one_hot_attribs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">cat_encoder</span><span class="o">.</span><span class="n">categories_</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">attributes</span> <span class="o">=</span> <span class="n">num_attribs</span> <span class="o">+</span> <span class="n">extra_attribs</span> <span class="o">+</span> <span class="n">cat_one_hot_attribs</span>
-
-<span class="ne">NameError</span>: name &#39;full_pipeline&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(0.34519034100319007, &#39;median_income&#39;),
+ (0.15866267751808202, &#39;INLAND&#39;),
+ (0.11073885589189819, &#39;pop_per_hhold&#39;),
+ (0.07137212359389712, &#39;longitude&#39;),
+ (0.06974570580531124, &#39;bedrooms_per_room&#39;),
+ (0.06289355447798799, &#39;latitude&#39;),
+ (0.05952583935728965, &#39;rooms_per_hhold&#39;),
+ (0.04300927718434756, &#39;housing_median_age&#39;),
+ (0.01647450156625561, &#39;population&#39;),
+ (0.016408655481155894, &#39;total_rooms&#39;),
+ (0.015567010725199514, &#39;total_bedrooms&#39;),
+ (0.015375332753137499, &#39;households&#39;),
+ (0.008671854710510336, &#39;&lt;1H OCEAN&#39;),
+ (0.003608573683092269, &#39;NEAR OCEAN&#39;),
+ (0.002688900073839445, &#39;NEAR BAY&#39;),
+ (6.679617480568294e-05, &#39;ISLAND&#39;)]
 </pre></div>
 </div>
 </div>
@@ -2724,18 +2612,6 @@ Name: median_house_value, dtype: float64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [77],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">final_model</span> <span class="o">=</span> <span class="n">rnd_search</span><span class="o">.</span><span class="n">best_estimator_</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">X_test</span> <span class="o">=</span> <span class="n">strat_test_set</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;median_house_value&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">strat_test_set</span><span class="p">[</span><span class="s2">&quot;median_house_value&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-
-<span class="ne">NameError</span>: name &#39;rnd_search&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2744,12 +2620,7 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [78],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">final_rmse</span>
-
-<span class="ne">NameError</span>: name &#39;final_rmse&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>46981.841079394515
 </pre></div>
 </div>
 </div>
@@ -2774,18 +2645,7 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [80],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">confidence</span> <span class="o">=</span> <span class="mf">0.95</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">squared_errors</span> <span class="o">=</span> <span class="p">(</span><span class="n">final_predictions</span> <span class="o">-</span> <span class="n">y_test</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">stats</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">interval</span><span class="p">(</span><span class="n">confidence</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>                      <span class="nb">len</span><span class="p">(</span><span class="n">squared_errors</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>                      <span class="n">loc</span><span class="o">=</span><span class="n">squared_errors</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>                      <span class="n">scale</span><span class="o">=</span><span class="n">stats</span><span class="o">.</span><span class="n">sem</span><span class="p">(</span><span class="n">squared_errors</span><span class="p">)))</span>
-
-<span class="ne">NameError</span>: name &#39;final_predictions&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([45009.73121871, 48874.43992557])
 </pre></div>
 </div>
 </div>
@@ -2801,14 +2661,7 @@ Name: median_house_value, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [81],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">squared_errors</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">mean</span> <span class="o">=</span> <span class="n">squared_errors</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">tscore</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">ppf</span><span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="n">confidence</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="n">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;squared_errors&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(45009.7312187091, 48874.439925573846)
 </pre></div>
 </div>
 </div>

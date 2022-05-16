@@ -790,16 +790,6 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [8],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">statsmodels.tsa.stattools</span> <span class="k">as</span> <span class="nn">stattools</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;statsmodels&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -893,18 +883,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [10],</span> in <span class="ni">&lt;cell line: 4&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">x</span> <span class="o">=</span> <span class="n">mortality</span><span class="p">[</span><span class="s1">&#39;mdeaths&#39;</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">y</span> <span class="o">=</span> <span class="n">mortality</span><span class="p">[</span><span class="s1">&#39;fdeaths&#39;</span><span class="p">]</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">ccs</span> <span class="o">=</span> <span class="n">stattools</span><span class="o">.</span><span class="n">ccf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)[:</span><span class="mi">100</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">nlags</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ccs</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">conf_level</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">nlags</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;stattools&#39; is not defined
-</pre></div>
-</div>
+<img alt="../_images/time_series_13_0.png" src="../_images/time_series_13_0.png" />
 </div>
 </div>
 </div>
@@ -913,16 +892,6 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">statsmodels.tsa.seasonal</span> <span class="kn">import</span> <span class="n">seasonal_decompose</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [11],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">statsmodels.tsa.seasonal</span> <span class="kn">import</span> <span class="n">seasonal_decompose</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;statsmodels&#39;
 </pre></div>
 </div>
 </div>
@@ -998,18 +967,6 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [13],</span> in <span class="ni">&lt;cell line: 6&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">date</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">passengers</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">dates</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">result</span> <span class="o">=</span> <span class="n">seasonal_decompose</span><span class="p">(</span><span class="n">passengers</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">],</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;multiplicative&#39;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;seasonal_decompose&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1033,23 +990,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [14],</span> in <span class="ni">&lt;cell line: 8&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>                          <span class="mi">1</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>                          <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>                          
-<span class="g g-Whitespace">      </span><span class="mi">5</span>                          <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>                          <span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">8</span> <span class="n">ys</span> <span class="o">=</span> <span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">observed</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">trend</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">seasonal</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">resid</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">ylabels</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Value&#39;</span><span class="p">,</span> <span class="s1">&#39;Trend&#39;</span><span class="p">,</span> <span class="s1">&#39;Seasonal&#39;</span><span class="p">,</span> <span class="s1">&#39;Residual&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">ylabel</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">ys</span><span class="p">,</span> <span class="n">ylabels</span><span class="p">):</span>
-
-<span class="ne">NameError</span>: name &#39;result&#39; is not defined
-</pre></div>
-</div>
-<img alt="../_images/time_series_18_1.png" src="../_images/time_series_18_1.png" />
+<img alt="../_images/time_series_18_0.png" src="../_images/time_series_18_0.png" />
 </div>
 </div>
 </div>

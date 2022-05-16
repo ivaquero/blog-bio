@@ -548,18 +548,6 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;seaborn&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="section" id="stacked-histogram">
 <h2>Stacked Histogram<a class="headerlink" href="#stacked-histogram" title="Permalink to this headline">¶</a></h2>
@@ -699,27 +687,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [3],</span> in <span class="ni">&lt;cell line: 5&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">80</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">x_var</span><span class="p">,</span> <span class="n">group_var</span> <span class="o">=</span> <span class="s1">&#39;displ&#39;</span><span class="p">,</span> <span class="s1">&#39;class&#39;</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>              <span class="n">x</span><span class="o">=</span><span class="n">x_var</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>              <span class="n">hue</span><span class="o">=</span><span class="n">group_var</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>              <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span>              <span class="n">multiple</span><span class="o">=</span><span class="s2">&quot;stack&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>              <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span>        <span class="n">xlabel</span><span class="o">=</span><span class="n">x_var</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span>        <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Frequency&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span>        <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Stacked Histogram of $</span><span class="si">{</span><span class="n">x_var</span><span class="si">}</span><span class="s1">$ colored by $</span><span class="si">{</span><span class="n">group_var</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-<span class="ne">NameError</span>: name &#39;sns&#39; is not defined
-</pre></div>
-</div>
-<img alt="../_images/distribution_4_1.png" src="../_images/distribution_4_1.png" />
+<img alt="../_images/distribution_4_0.png" src="../_images/distribution_4_0.png" />
 </div>
 </div>
 </div>
@@ -854,22 +822,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [5],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;_class in [&#39;compact&#39;, &#39;suv&#39;, &#39;minivan&#39;]&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>              <span class="n">x</span><span class="o">=</span><span class="s1">&#39;cty&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>              <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;_class&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>              <span class="n">stat</span><span class="o">=</span><span class="s1">&#39;density&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>              <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>              <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-<span class="ne">NameError</span>: name &#39;sns&#39; is not defined
-</pre></div>
-</div>
-<img alt="../_images/distribution_7_1.png" src="../_images/distribution_7_1.png" />
+<img alt="../_images/distribution_7_0.png" src="../_images/distribution_7_0.png" />
 </div>
 </div>
 </div>
@@ -904,24 +857,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [6],</span> in <span class="ni">&lt;cell line: 19&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span>         <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>                 <span class="n">medians_dict</span><span class="p">[</span><span class="n">xticklabel</span><span class="p">]</span> <span class="o">*</span> <span class="mf">1.01</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span>                 <span class="s2">&quot;#obs : &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n_ob</span><span class="p">),</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span>                 <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span>                 <span class="n">fontdict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="s1">&#39;medium&#39;</span><span class="p">},</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span>                 <span class="n">color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-<span class="ne">---&gt; </span><span class="mi">19</span> <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;_class&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;hwy&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">,</span> <span class="n">notch</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="n">add_n_obs</span><span class="p">(</span><span class="n">mpg</span><span class="p">,</span> <span class="n">group_col</span><span class="o">=</span><span class="s1">&#39;_class&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;hwy&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Box Plot of Highway Mileage by Vehicle Class&#39;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;sns&#39; is not defined
-</pre></div>
-</div>
-<img alt="../_images/distribution_9_1.png" src="../_images/distribution_9_1.png" />
+<img alt="../_images/distribution_9_0.png" src="../_images/distribution_9_0.png" />
 </div>
 </div>
 </div>
@@ -1023,30 +959,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [8],</span> in <span class="ni">&lt;cell line: 11&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Spectral</span><span class="p">(</span><span class="n">i</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">email</span><span class="p">[</span><span class="n">group_col</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
-<span class="nn">      8     for i</span> in <span class="ni">range(len(email[group_col].unique</span><span class="nt">()))</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="p">]</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">group</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">colors</span><span class="p">,</span> <span class="n">email</span><span class="p">[</span><span class="n">group_col</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()):</span>
-<span class="ne">---&gt; </span><span class="mi">12</span>     <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Users&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span>                 <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Stage&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span>                 <span class="n">data</span><span class="o">=</span><span class="n">email</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">email</span><span class="p">[</span><span class="n">group_col</span><span class="p">]</span> <span class="o">==</span> <span class="n">group</span><span class="p">,</span> <span class="p">:],</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span>                 <span class="n">order</span><span class="o">=</span><span class="n">order_of_bars</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span>                 <span class="n">color</span><span class="o">=</span><span class="n">c</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span>                 <span class="n">label</span><span class="o">=</span><span class="n">group</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span>                 <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;Users&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span>        <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;Stage of Purchase&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span>        <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Population Pyramid of the Marketing Funnel&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-
-<span class="ne">NameError</span>: name &#39;sns&#39; is not defined
-</pre></div>
-</div>
-<img alt="../_images/distribution_12_1.png" src="../_images/distribution_12_1.png" />
+<img alt="../_images/distribution_12_0.png" src="../_images/distribution_12_0.png" />
 </div>
 </div>
 </div>
@@ -1072,26 +985,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [9],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">titanic</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../../datasets/stats/titanic.csv&#39;</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;age&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>             <span class="n">y</span><span class="o">=</span><span class="s2">&quot;embark_town&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>             <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;sex&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>             <span class="n">col</span><span class="o">=</span><span class="s2">&quot;class&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>             <span class="n">data</span><span class="o">=</span><span class="n">titanic</span><span class="p">[</span><span class="n">titanic</span><span class="o">.</span><span class="n">embark_town</span><span class="o">.</span><span class="n">notnull</span><span class="p">()],</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>             <span class="n">orient</span><span class="o">=</span><span class="s2">&quot;h&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span>             <span class="n">height</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>             <span class="n">aspect</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span>             <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;tab10&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span>             <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;violin&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span>             <span class="n">dodge</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span>             <span class="n">cut</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;sns&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x15715bdc0&gt;
 </pre></div>
 </div>
+<img alt="../_images/distribution_14_1.png" src="../_images/distribution_14_1.png" />
 </div>
 </div>
 </div>
