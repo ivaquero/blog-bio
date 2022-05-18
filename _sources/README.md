@@ -332,7 +332,7 @@ $$
 - Prefer `\mathbf{}` to `{\bf }`
 - Prefer `\mathit{}` to `{\it }`
 
-## 6. 参考书目
+## 6. Reference
 
 - [Hands-on Machine Learning with Scikit-Learn, Keras & TensorFlow](https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/) (HandsOnML2, Machine Learning Sections)
 - [Machine Learning with PyTorch and Scikit-Learn](https://www.amazon.ca/Machine-Learning-PyTorch-Scikit-Learn-learning/dp/1801819319) (PyTorch, Deep Learning Sections)
