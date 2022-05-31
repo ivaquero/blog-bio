@@ -517,11 +517,6 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#torch-nn-module">
-     torch.nn module
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id11">
      搭建模型
     </a>
@@ -625,11 +620,6 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id10">
      加载并预处理数据
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#torch-nn-module">
-     torch.nn module
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -1027,70 +1017,48 @@ CCE (w Probas): 0.5996
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torchvision</span>
 <span class="kn">from</span> <span class="nn">torchvision</span> <span class="kn">import</span> <span class="n">transforms</span>
+<span class="kn">from</span> <span class="nn">torchvision.datasets</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">image_path</span> <span class="o">=</span> <span class="s1">&#39;../../datasets/torch&#39;</span>
 <span class="n">transform</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span><span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">()])</span>
 
-<span class="n">mnist_dataset</span> <span class="o">=</span> <span class="n">torchvision</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">MNIST</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="n">image_path</span><span class="p">,</span>
-                                           <span class="n">train</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                                           <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">,</span>
-                                           <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">mnist</span> <span class="o">=</span> <span class="n">MNIST</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="n">image_path</span><span class="p">,</span>
+                      <span class="n">train</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                      <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">,</span>
+                      <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">Subset</span>
-
-<span class="n">mnist_valid_dataset</span> <span class="o">=</span> <span class="n">Subset</span><span class="p">(</span><span class="n">mnist_dataset</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10000</span><span class="p">))</span>
-<span class="n">mnist_train_dataset</span> <span class="o">=</span> <span class="n">Subset</span><span class="p">(</span><span class="n">mnist_dataset</span><span class="p">,</span>
-                             <span class="n">torch</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">mnist_dataset</span><span class="p">)))</span>
-<span class="n">mnist_test_dataset</span> <span class="o">=</span> <span class="n">torchvision</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">MNIST</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="n">image_path</span><span class="p">,</span>
-                                                <span class="n">train</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-                                                <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">,</span>
-                                                <span class="n">download</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">Subset</span><span class="p">,</span> <span class="n">DataLoader</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
-
-<span class="n">batch_size</span> <span class="o">=</span> <span class="mi">64</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mnist_valid</span> <span class="o">=</span> <span class="n">Subset</span><span class="p">(</span><span class="n">mnist</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10000</span><span class="p">))</span>
+<span class="n">mnist_train</span> <span class="o">=</span> <span class="n">Subset</span><span class="p">(</span><span class="n">mnist</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">mnist</span><span class="p">)))</span>
+<span class="n">mnist_test</span> <span class="o">=</span> <span class="n">MNIST</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="n">image_path</span><span class="p">,</span>
+                   <span class="n">train</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                   <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">,</span>
+                   <span class="n">download</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">batch_size</span> <span class="o">=</span> <span class="mi">64</span>
 <span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">train_dl</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">mnist_train_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">valid_dl</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">mnist_valid_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">train_dl</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">mnist_train</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">valid_dl</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">mnist_valid</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="torch-nn-module">
-<h3>torch.nn module<a class="headerlink" href="#torch-nn-module" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p><strong>Conv2d:</strong> <code class="docutils literal notranslate"><span class="pre">torch.nn.Conv2d</span></code></p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">out_channels</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">kernel_size</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">stride</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">padding</span></code></p></li>
-</ul>
-</li>
-<li><p><strong>MaxPool2d:</strong> <code class="docutils literal notranslate"><span class="pre">torch.nn.MaxPool2d</span></code></p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">kernel_size</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">stride</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">padding</span></code></p></li>
-</ul>
-</li>
-<li><p><strong>Dropout</strong> <code class="docutils literal notranslate"><span class="pre">torch.nn.Dropout</span></code></p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">p</span></code></p></li>
-</ul>
-</li>
-</ul>
 </div>
 <div class="section" id="id11">
 <h3>搭建模型<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
@@ -1165,6 +1133,7 @@ CCE (w Probas): 0.5996
     <span class="n">accuracy_hist_train</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">num_epochs</span>
     <span class="n">loss_hist_valid</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">num_epochs</span>
     <span class="n">accuracy_hist_valid</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">num_epochs</span>
+    
     <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">):</span>
         <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
         <span class="k">for</span> <span class="n">x_batch</span><span class="p">,</span> <span class="n">y_batch</span> <span class="ow">in</span> <span class="n">train_dl</span><span class="p">:</span>
@@ -1213,12 +1182,6 @@ CCE (w Probas): 0.5996
 Epoch 2 accuracy: 0.9841 val_accuracy: 0.9870
 Epoch 3 accuracy: 0.9885 val_accuracy: 0.9873
 Epoch 4 accuracy: 0.9911 val_accuracy: 0.9842
-Epoch 5 accuracy: 0.9934 val_accuracy: 0.9887
-Epoch 6 accuracy: 0.9945 val_accuracy: 0.9896
-Epoch 7 accuracy: 0.9949 val_accuracy: 0.9910
-Epoch 8 accuracy: 0.9959 val_accuracy: 0.9892
-Epoch 9 accuracy: 0.9963 val_accuracy: 0.9882
-Epoch 10 accuracy: 0.9967 val_accuracy: 0.9890
 </pre></div>
 </div>
 </div>
@@ -1256,8 +1219,8 @@ Epoch 10 accuracy: 0.9967 val_accuracy: 0.9890
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># torch.cuda.synchronize()</span>
 <span class="n">model_cpu</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span>
-<span class="n">pred</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">mnist_test_dataset</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mf">255.</span><span class="p">)</span>
-<span class="n">is_correct</span> <span class="o">=</span> <span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="n">mnist_test_dataset</span><span class="o">.</span><span class="n">targets</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
+<span class="n">pred</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">mnist_test</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mf">255.</span><span class="p">)</span>
+<span class="n">is_correct</span> <span class="o">=</span> <span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="n">mnist_test</span><span class="o">.</span><span class="n">targets</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Test accuracy: </span><span class="si">{</span><span class="n">is_correct</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1275,7 +1238,7 @@ Epoch 10 accuracy: 0.9967 val_accuracy: 0.9890
 
 <span class="k">for</span> <span class="n">ind</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">()):</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xticks</span><span class="o">=</span><span class="p">[],</span> <span class="n">yticks</span><span class="o">=</span><span class="p">[])</span>
-    <span class="n">img</span> <span class="o">=</span> <span class="n">mnist_test_dataset</span><span class="p">[</span><span class="n">ind</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">mnist_test</span><span class="p">[</span><span class="n">ind</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span>
     <span class="n">pred</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
     <span class="n">y_pred</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">pred</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray_r&#39;</span><span class="p">)</span>
@@ -1313,25 +1276,23 @@ Epoch 10 accuracy: 0.9967 val_accuracy: 0.9890
 <h3>加载数据集<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torchvision</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image_path</span> <span class="o">=</span> <span class="s1">&#39;../../datasets/torch&#39;</span>
+<span class="n">celeba_train</span> <span class="o">=</span> <span class="n">CelebA</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span>
+                              <span class="n">split</span><span class="o">=</span><span class="s1">&#39;train&#39;</span><span class="p">,</span>
+                              <span class="n">target_type</span><span class="o">=</span><span class="s1">&#39;attr&#39;</span><span class="p">,</span>
+                              <span class="n">download</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">celeba_valid</span> <span class="o">=</span> <span class="n">CelebA</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span>
+                              <span class="n">split</span><span class="o">=</span><span class="s1">&#39;valid&#39;</span><span class="p">,</span>
+                              <span class="n">target_type</span><span class="o">=</span><span class="s1">&#39;attr&#39;</span><span class="p">,</span>
+                              <span class="n">download</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">celeba_test</span> <span class="o">=</span> <span class="n">CelebA</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span>
+                             <span class="n">split</span><span class="o">=</span><span class="s1">&#39;test&#39;</span><span class="p">,</span>
+                             <span class="n">target_type</span><span class="o">=</span><span class="s1">&#39;attr&#39;</span><span class="p">,</span>
+                             <span class="n">download</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
-<span class="n">image_path</span> <span class="o">=</span> <span class="s1">&#39;../../datasets/torch&#39;</span>
-<span class="n">celeba_train_dataset</span> <span class="o">=</span> <span class="n">torchvision</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">CelebA</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span>
-                                                   <span class="n">split</span><span class="o">=</span><span class="s1">&#39;train&#39;</span><span class="p">,</span>
-                                                   <span class="n">target_type</span><span class="o">=</span><span class="s1">&#39;attr&#39;</span><span class="p">,</span>
-                                                   <span class="n">download</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">celeba_valid_dataset</span> <span class="o">=</span> <span class="n">torchvision</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">CelebA</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span>
-                                                   <span class="n">split</span><span class="o">=</span><span class="s1">&#39;valid&#39;</span><span class="p">,</span>
-                                                   <span class="n">target_type</span><span class="o">=</span><span class="s1">&#39;attr&#39;</span><span class="p">,</span>
-                                                   <span class="n">download</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">celeba_test_dataset</span> <span class="o">=</span> <span class="n">torchvision</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">CelebA</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span>
-                                                  <span class="n">split</span><span class="o">=</span><span class="s1">&#39;test&#39;</span><span class="p">,</span>
-                                                  <span class="n">target_type</span><span class="o">=</span><span class="s1">&#39;attr&#39;</span><span class="p">,</span>
-                                                  <span class="n">download</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Train set: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">celeba_train_dataset</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Validation set: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">celeba_valid_dataset</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Test set: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">celeba_test_dataset</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Train set: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">celeba_train</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Validation set: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">celeba_valid</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Test set: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">celeba_test</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1348,15 +1309,13 @@ Test set: 19962
 <h3>图像变换、数据放大<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">torchvision</span> <span class="kn">import</span> <span class="n">transforms</span>
-
-<span class="c1">## take 5 examples</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## take 5 examples</span>
 
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mf">8.5</span><span class="p">))</span>
 
 <span class="c1">## Column 1: cropping to a bounding-box</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">img</span><span class="p">,</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">celeba_train_dataset</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">img</span><span class="p">,</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">celeba_train</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Crop to a </span><span class="se">\n</span><span class="s1">bounding-box&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;medium&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
@@ -1365,7 +1324,7 @@ Test set: 19962
 
 <span class="c1">## Column 2: flipping (horizontally)</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">img</span><span class="p">,</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">celeba_train_dataset</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">img</span><span class="p">,</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">celeba_train</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Flip (horizontal)&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;medium&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
@@ -1374,7 +1333,7 @@ Test set: 19962
 
 <span class="c1">## Column 3: adjust contrast</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="n">img</span><span class="p">,</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">celeba_train_dataset</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">img</span><span class="p">,</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">celeba_train</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Adjust constrast&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;medium&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
@@ -1384,7 +1343,7 @@ Test set: 19962
 
 <span class="c1">## Column 4: adjust brightness</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">img</span><span class="p">,</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">celeba_train_dataset</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">img</span><span class="p">,</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">celeba_train</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Adjust brightness&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;medium&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
@@ -1394,7 +1353,7 @@ Test set: 19962
 
 <span class="c1">## Column 5: cropping from image center</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="n">img</span><span class="p">,</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">celeba_train_dataset</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">img</span><span class="p">,</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">celeba_train</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Center crop</span><span class="se">\n</span><span class="s1">and resize&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;medium&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
@@ -1418,7 +1377,7 @@ Test set: 19962
 
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
 
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">celeba_train_dataset</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">celeba_train</span><span class="p">):</span>
     <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -1478,17 +1437,15 @@ Test set: 19962
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
-
-<span class="n">celeba_train_dataset</span> <span class="o">=</span> <span class="n">torchvision</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">CelebA</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span>
-                                                   <span class="n">split</span><span class="o">=</span><span class="s1">&#39;train&#39;</span><span class="p">,</span>
-                                                   <span class="n">target_type</span><span class="o">=</span><span class="s1">&#39;attr&#39;</span><span class="p">,</span>
-                                                   <span class="n">download</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-                                                   <span class="n">transform</span><span class="o">=</span><span class="n">transform_train</span><span class="p">,</span>
-                                                   <span class="n">target_transform</span><span class="o">=</span><span class="n">get_smile</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">celeba_train</span> <span class="o">=</span> <span class="n">CelebA</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span>
+                              <span class="n">split</span><span class="o">=</span><span class="s1">&#39;train&#39;</span><span class="p">,</span>
+                              <span class="n">target_type</span><span class="o">=</span><span class="s1">&#39;attr&#39;</span><span class="p">,</span>
+                              <span class="n">download</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                              <span class="n">transform</span><span class="o">=</span><span class="n">transform_train</span><span class="p">,</span>
+                              <span class="n">target_transform</span><span class="o">=</span><span class="n">get_smile</span><span class="p">)</span>
 
 <span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">data_loader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">celeba_train_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">data_loader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">celeba_train</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 
@@ -1517,27 +1474,25 @@ Test set: 19962
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">celeba_valid_dataset</span> <span class="o">=</span> <span class="n">torchvision</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">CelebA</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span>
-                                                   <span class="n">split</span><span class="o">=</span><span class="s1">&#39;valid&#39;</span><span class="p">,</span>
-                                                   <span class="n">target_type</span><span class="o">=</span><span class="s1">&#39;attr&#39;</span><span class="p">,</span>
-                                                   <span class="n">download</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-                                                   <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">,</span>
-                                                   <span class="n">target_transform</span><span class="o">=</span><span class="n">get_smile</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">celeba_valid</span> <span class="o">=</span> <span class="n">CelebA</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span>
+                      <span class="n">split</span><span class="o">=</span><span class="s1">&#39;valid&#39;</span><span class="p">,</span>
+                      <span class="n">target_type</span><span class="o">=</span><span class="s1">&#39;attr&#39;</span><span class="p">,</span>
+                      <span class="n">download</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                      <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">,</span>
+                      <span class="n">target_transform</span><span class="o">=</span><span class="n">get_smile</span><span class="p">)</span>
 
-<span class="n">celeba_test_dataset</span> <span class="o">=</span> <span class="n">torchvision</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">CelebA</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span>
-                                                  <span class="n">split</span><span class="o">=</span><span class="s1">&#39;test&#39;</span><span class="p">,</span>
-                                                  <span class="n">target_type</span><span class="o">=</span><span class="s1">&#39;attr&#39;</span><span class="p">,</span>
-                                                  <span class="n">download</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-                                                  <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">,</span>
-                                                  <span class="n">target_transform</span><span class="o">=</span><span class="n">get_smile</span><span class="p">)</span>
+<span class="n">celeba_test</span> <span class="o">=</span> <span class="n">CelebA</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span>
+                     <span class="n">split</span><span class="o">=</span><span class="s1">&#39;test&#39;</span><span class="p">,</span>
+                     <span class="n">target_type</span><span class="o">=</span><span class="s1">&#39;attr&#39;</span><span class="p">,</span>
+                     <span class="n">download</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                     <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">,</span>
+                     <span class="n">target_transform</span><span class="o">=</span><span class="n">get_smile</span><span class="p">)</span>
 
-<span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">Subset</span>
+<span class="n">celeba_train</span> <span class="o">=</span> <span class="n">Subset</span><span class="p">(</span><span class="n">celeba_train</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">16000</span><span class="p">))</span>
+<span class="n">celeba_valid</span> <span class="o">=</span> <span class="n">Subset</span><span class="p">(</span><span class="n">celeba_valid</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1000</span><span class="p">))</span>
 
-<span class="n">celeba_train_dataset</span> <span class="o">=</span> <span class="n">Subset</span><span class="p">(</span><span class="n">celeba_train_dataset</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">16000</span><span class="p">))</span>
-<span class="n">celeba_valid_dataset</span> <span class="o">=</span> <span class="n">Subset</span><span class="p">(</span><span class="n">celeba_valid_dataset</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1000</span><span class="p">))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Train set: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">celeba_train_dataset</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Validation set: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">celeba_valid_dataset</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Train set: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">celeba_train</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Validation set: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">celeba_valid</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1553,9 +1508,9 @@ Validation set: 1000
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">batch_size</span> <span class="o">=</span> <span class="mi">32</span>
 
 <span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">train_dl</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">celeba_train_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">valid_dl</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">celeba_valid_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">test_dl</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">celeba_test_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">train_dl</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">celeba_train</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">valid_dl</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">celeba_valid</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">test_dl</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">celeba_test</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1578,9 +1533,7 @@ Validation set: 1000
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
-
-<span class="n">model</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">()</span>
 
 <span class="n">model</span><span class="o">.</span><span class="n">add_module</span><span class="p">(</span>
     <span class="s1">&#39;conv1&#39;</span><span class="p">,</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="n">in_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
