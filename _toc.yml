@@ -1,0 +1,68 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: README
+parts:
+  - caption: 综合生命科学
+    chapters:
+      - file: biotechs/01-生物信息学基础
+      - file: biotechs/02-分子生物学基础
+      - file: biotechs/03-演化论基础
+      - file: biotechs/04-病理学基础
+      - file: biotechs/基因工程
+      - file: biotechs/糖生化测定
+      - file: biotechs/蛋白质生化测定
+      - file: biotechs/重组高拷贝酵母
+  - caption: 环境搭建
+    chapters:
+      - file: tutorials/cmd-homebrew
+      - file: tutorials/cmd-posh
+      - file: tutorials/cmd-scoop
+      - file: tutorials/cmd-zsh
+      - file: tutorials/cmd-alacritty
+      - file: tutorials/md-env
+      - file: tutorials/md-markdown
+      - file: tutorials/md-mermaid
+      - file: tutorials/prog-cpp
+      - file: tutorials/prog-latex
+      - file: tutorials/prog-julia
+      - file: tutorials/prog-matlab
+      - file: tutorials/prog-python
+      - file: tutorials/prog-r
+      - file: tutorials/prog-rust
+      - file: tutorials/prog-wsl2
+      - file: tutorials/rev-pyviz
+  - caption: 机器学习
+    chapters:
+      - file: sklearn/01-data-processing
+      - file: sklearn/02-classification
+      - file: sklearn/03-linear-models
+      - file: sklearn/04-decision-trees
+      - file: sklearn/05-ensemble-learning
+      - file: sklearn/06-dimensionality-reduction
+      - file: sklearn/07-unsupervised-learning
+  - caption: 深度学习
+    chapters:
+      - file: pytorch/1-pytorch-intro
+      - file: pytorch/2-pytorch-deeper
+      - file: pytorch/3-cnn
+      # - file: pytorch/4-rnn
+      # - file: pytorch/5-transformer
+      # - file: pytorch/5-transformer2
+  # - caption: Probablity
+  #   chapters:
+  - caption: 分析
+    chapters:
+      - file: analysis/pandas
+      - file: analysis/pandas2
+  - caption: 绘图
+    chapters:
+      - file: plots/correlation
+      - file: plots/deviation
+      - file: plots/distribution
+      - file: plots/group
+      - file: plots/proportion
+      - file: plots/ranking
+      - file: plots/time_series
+      - file: plots/tricks
