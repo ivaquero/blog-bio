@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>生物信息学基础 &#8212; 生物狗学编程</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -66,7 +65,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -75,9 +88,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -95,14 +109,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../README.html">
-   生物狗学编程
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    生物狗学编程
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   综合生命科学
  </span>
@@ -371,12 +386,17 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
 </div>
 
 
@@ -384,61 +404,117 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
     
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
+    <div class="header-article row sticky-top noprint">
         
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/biotechs/01-生物信息学基础.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/biotechs/01-生物信息学基础.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
    1. 扩增子测序
@@ -684,12 +760,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>生物信息学基础</h1>
@@ -951,15 +1026,16 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1>生物信息学基础<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="id2">
-<h2>1. 扩增子测序<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id3">
-<h3>1.1. 复制、转录与表达<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>生物信息学基础<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<section id="id2">
+<h2>1. 扩增子测序<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<section id="id3">
+<h3>1.1. 复制、转录与表达<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>RNA 聚合酶将 DNA 转录为 mRNA，之后由核糖体翻译为蛋白质；</p></li>
 <li><p>任意 2 个人类基因组都有千分之一的不同；</p></li>
@@ -972,9 +1048,9 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 <p><img alt="dna" src="../_images/dna.png" /></p>
-</div>
-<div class="section" id="id4">
-<h3>1.2. 测序技术<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id4">
+<h3>1.2. 测序技术<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>第一代测序技术（Sanger 法）</p></li>
 </ul>
@@ -1005,31 +1081,31 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="s-rdna-rrna">
-<h3>1.3. 16S rDNA/rRNA<a class="headerlink" href="#s-rdna-rrna" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="s-rdna-rrna">
+<h3>1.3. 16S rDNA/rRNA<a class="headerlink" href="#s-rdna-rrna" title="Permalink to this headline">#</a></h3>
 <p>16S rRNA 为核糖体的 RNA 的一个亚基，16S rDNA 就是编码该亚基的基因，存在于所有细菌染色体基因中，是细菌的系统分类研究中最有用的和最常用的分子钟，其种类少，含量大（rRNA 约占细菌 RNA 含量的 80%），分子大小适中（1.5 kb 左右），在结构与功能上具有高度的保守性，素有”细菌化石”之称。</p>
 <blockquote>
 <div><p>大多数原核生物中 rDNA 都具有多个拷贝，5S、16S、23S rDNA 的拷贝数相同；
 基因序列比较基于相应 mRNA</p>
 </div></blockquote>
-</div>
-<div class="section" id="s-rdna">
-<h3>1.4. 16S rDNA 测序<a class="headerlink" href="#s-rdna" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="s-rdna">
+<h3>1.4. 16S rDNA 测序<a class="headerlink" href="#s-rdna" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><strong>定义</strong>：以细菌 16S rRNA 基因测序为主；</p></li>
 <li><p>功能：主要研究群落的物种组成、物种间的演化关系以及群落的多样性；</p></li>
 <li><p>方法：测定并比对高变区 V4，使用引物 515F/806R；</p></li>
 <li><p>深度：但，某些物种在高变区可能非常相近，很多注释不到种水平；</p></li>
 </ul>
-</div>
-<div class="section" id="its">
-<h3>1.5. ITS 测序<a class="headerlink" href="#its" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="its">
+<h3>1.5. ITS 测序<a class="headerlink" href="#its" title="Permalink to this headline">#</a></h3>
 <p>内转录间隔区（Internal Transcribed Spacer，ITS）：是位于真菌 rRNA 基因转录区或对应多顺反子 rRNA 前体中大、小亚基 rRNA 之间的核酸序列。用于真菌鉴定的 ITS 序列通常包括 ITS1（18S rRNA 和 5.8S）、5.8S 和 ITS2。真菌 ITS 区域长度一般在 500~750 bp。</p>
-</div>
-</div>
-<div class="section" id="id5">
-<h2>2. 组学<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="id5">
+<h2>2. 组学<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>宏基因组（Metagenomics）</p>
 <ul>
@@ -1050,16 +1126,16 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="illumina">
-<h2>3. Illumina 测序<a class="headerlink" href="#illumina" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id6">
-<h3>3.1. 原理<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="illumina">
+<h2>3. Illumina 测序<a class="headerlink" href="#illumina" title="Permalink to this headline">#</a></h2>
+<section id="id6">
+<h3>3.1. 原理<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
 <p>目前我们接触到的很多生物信息学的技术，均是基于第二代测序技术的（Next Generation Sequencing，NGS）技术的，如 RNA-Seq，ChIP-Seq，FAIRE-Seq，ChIA-PET，Hi-C 等等。</p>
 <p>目前最为常用的 NGS 技术是 Illumina 测序技术，它能够保证在几十个小时内产生几百 G 甚至上 T 的测序数据，完全能够满足高通量测序的通量要求，且其测序准确程度亦为完全能够保证。</p>
-</div>
-<div class="section" id="id7">
-<h3>3.2. 基本概念<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id7">
+<h3>3.2. 基本概念<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>flowcell：指 Illumina 测序时，测序反应发生的位置，1 个 flowcell 含有 8 条 lane（泳道），用于测序反应，可添加试剂，洗脱等等；</p></li>
 <li><p>tile：每一次测序荧光扫描的最小单位；</p></li>
@@ -1068,9 +1144,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>junction：双端测序中间留有的 200bp 测不到的东西；</p></li>
 </ul>
 <p><img alt="flowcell" src="../_images/flowcell.png" /></p>
-</div>
-<div class="section" id="id8">
-<h3>3.3. 建库<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id8">
+<h3>3.3. 建库<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
 <p>由于 Illumina 测序战略本身的问题，导致其测序长度不可能太长，目前最好的 X Ten 也就是双端各 150bp，故在测序的时候需要先打断成一定长度的片段。</p>
 <ul class="simple">
 <li><p>一般测人的基因组，我们是将其打断成 300~500bp 的长度。这个是根据跑胶控制的。</p></li>
@@ -1080,9 +1156,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>进行 PCR 扩增，使得我们的 DNA 样品浓度足够上机要求。</p></li>
 </ul>
 <p><img alt="sequencing" src="../_images/sequencing.png" /></p>
-</div>
-<div class="section" id="pcr">
-<h3>3.4. 桥式 PCR<a class="headerlink" href="#pcr" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="pcr">
+<h3>3.4. 桥式 PCR<a class="headerlink" href="#pcr" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p>将上述的 DNA 样品调整到合适的浓度加入到 flowcell 中，再加入特异的化学试剂，就可使得序列的一端与 flowcell 上面已经存在的短序列通过化学键十分强健地相连。</p></li>
 <li><p>连接以后就正式开始桥式 PCR。首先进行第一轮扩增，将序列补成双链。加入 NaOH 强碱性溶液破坏 DNA 的双链，并洗脱。由于最开始的序列是使用化学键连接的，故不会被洗。</p></li>
@@ -1092,9 +1168,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>形成这种 1 个 cluster，1 个 cluster 的形态，在整个 flowcell 中看上去，示意图如下。其中的每 1 个 cluster 就算是 1 群完全相同的序列。</p></li>
 </ol>
 <p><img alt="brige pcr" src="../_images/bridge-pcr.png" /></p>
-</div>
-<div class="section" id="id9">
-<h3>3.5. 测序<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id9">
+<h3>3.5. 测序<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>测序的过程反而简单了不少。就是来一个 primer，然后加入特殊处理过的 A，T，C，G 四种碱基。</p></li>
 <li><p>特殊的地方有两点，一个是脱氧核糖 3 号位加入了叠氮基团而不是常规的羟基，保证每次只能够在序列上添加 1 个碱基；另一方面是，碱基部分加入了荧光基团，可激发出不同的颜色。</p></li>
@@ -1105,19 +1181,19 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>随后加入试剂，将脱氧核糖 3 号位的—N₂ 改变成 —OH，然后切掉部分荧光基团，使其在下一轮反应中，不再发出荧光。如此往复，就可测出序列的内容。</p></li>
 </ul>
 <p><img alt="process" src="../_images/process.png" /></p>
-</div>
-<div class="section" id="id10">
-<h3>3.6. 长度限制<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id10">
+<h3>3.6. 长度限制<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>测序时，经过长时间的 PCR，会有不同步的情况。通俗一点讲，如一开始 1 个 cluster 中是 100 个完全一样的 DNA 链，但，经过 1 轮增加碱基，其中 99 个都加入了 1 个碱基，显示了红色，另外 1 个没有加入碱基，不显示颜色。这时候整体为红色，我们可顺利得到结果。随后，在第 2 轮再加入碱基进行合成的时候，就变成了，之前没有加入的加入了 1 个碱基显示红色，剩下的 99 个显示绿色，这个时候就会出现杂信号。当测序长度不断延长，这个杂信号会越来越多，最后很有可能出现，50 个红，50 个绿色，这时候我们判断不出来到底是什么碱基被合成。</p></li>
 <li><p>测序过程中，使用的碱基是特殊处理的，有一个非常大的荧光基团修饰。在使用 DNA ploymerase 的时候，酶的状态也会受到底物的影响，越来越差。</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="id11">
-<h2>4. 序列文件<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="fasta-fastq">
-<h3>4.1. fasta &amp; .fastq<a class="headerlink" href="#fasta-fastq" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id11">
+<h2>4. 序列文件<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h2>
+<section id="fasta-fastq">
+<h3>4.1. fasta &amp; .fastq<a class="headerlink" href="#fasta-fastq" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>FASTA</p></li>
 </ul>
@@ -1168,17 +1244,17 @@ FFKKKFKKFKF&lt;KK&lt;F, AFKKKKK7FFK77&lt;FKK, &lt;F7K, , 7AF&lt;FF7FKK7AA, 7&lt;
 <li><p>第 3 行：以”+”开始，可储存一些附加信息，一般是空的；</p></li>
 <li><p>第 4 行：储存的是质量信息，与第 2 行的碱基序列是一一对应的，其中的每个符号对应的 ASCII 值成为 Phred 值，可简单理解为对应位置碱基的质量值，越大说明测序的质量越好。</p></li>
 </ol>
-</div>
-<div class="section" id="id12">
-<h3>4.2. 质量值的计算<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id12">
+<h3>4.2. 质量值的计算<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
 <p>在测序仪进行测序的时候，会自动根据荧光信号的强弱给出一个参考的测序错误概率（Error Probability，P）。根据定义来说，P 值肯定是越小越好，具体计算时，遵循以下两步：</p>
 <ol class="simple">
 <li><p>将 P 取 log₁₀ 之后再乘以-10，得到的结果为 Q。如 P = 1%，则对应的 Q= -10 × log₁₀（0.01）= 20；</p></li>
 <li><p>把这个 Q 加上 33（Sanger）或 64（Illumina，Solexa）转成一个新的数值，称为 Phred，最后把 Phred 对应的 ASCII 字符对应到这个碱基。如 Q = 20，Phred = 20 + 33 = 53，对应的符号是”5”。这样就可用 1 个符号与 1 个碱基一一对应。</p></li>
 </ol>
-</div>
-<div class="section" id="fastqc">
-<h3>4.3. fastqc<a class="headerlink" href="#fastqc" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="fastqc">
+<h3>4.3. fastqc<a class="headerlink" href="#fastqc" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>整条序列</p></li>
 </ul>
@@ -1248,19 +1324,19 @@ FFKKKFKKFKF&lt;KK&lt;F, AFKKKKK7FFK77&lt;FKK, &lt;F7K, , 7AF&lt;FF7FKK7AA, 7&lt;
 </ul>
 <p><img alt="fastqc3" src="../_images/fastqc3.png" /></p>
 <p>这个图统计的是，在序列中某些特征的短序列重复出现的次数，可看到 1∼8 bp 的时候图例中的几种短序列都出现了非常多的次数。一般来说，出现这种情况，要么是 adapter 没有去除干净，而又没有使用-a 参数；要么就是序列本身可能重复度比较高，如建库 PCR 的时候出现了 bias。对于这种情况，可 cut 掉前面的一些长度，可试着 cut 5∼8 bp。</p>
-</div>
-<div class="section" id="cutadapt">
-<h3>4.4. cutadapt<a class="headerlink" href="#cutadapt" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="cutadapt">
+<h3>4.4. cutadapt<a class="headerlink" href="#cutadapt" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p>fastq 文件中的 adapter 肯定是需要去掉的；</p></li>
 <li><p>一些头部的 random barcode 亦为需要去掉的；</p></li>
 <li><p>在进行一些特殊的分析的时候，还需要保证所有的输入序列长度完全一致，不能长不能短，必须整整齐齐在一起（如 RNA-Seq 的可变剪切分析经常有这个要求）。</p></li>
 </ol>
-</div>
-<div class="section" id="sam-bam">
-<h3>4.5. sam &amp; .bam<a class="headerlink" href="#sam-bam" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="sam">
-<h4>4.5.1. SAM<a class="headerlink" href="#sam" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="sam-bam">
+<h3>4.5. sam &amp; .bam<a class="headerlink" href="#sam-bam" title="Permalink to this headline">#</a></h3>
+<section id="sam">
+<h4>4.5.1. SAM<a class="headerlink" href="#sam" title="Permalink to this headline">#</a></h4>
 <p>SAM（Sequence Alignment Map）设计之初就是为了存储 mapping 结果的。一个标准的 SAM 文件由 2 部分组成。</p>
 <ul class="simple">
 <li><p>第 1 部分是以”&#64;”开头的头部，在文件的最前面；</p></li>
@@ -1268,19 +1344,19 @@ FFKKKFKKFKF&lt;KK&lt;F, AFKKKKK7FFK77&lt;FKK, &lt;F7K, , 7AF&lt;FF7FKK7AA, 7&lt;
 </ul>
 <p>1 行 SAM 文件的内容包含有多列，标准的 SAM 文件会包含 11 列内容，其中每一列的内容代表的意思与简单的描述如下。我们主要关注的是前 4 列内容。</p>
 <p><img alt="sam" src="../_images/sam.png" /></p>
-</div>
-<div class="section" id="bam">
-<h4>4.5.2. BAM<a class="headerlink" href="#bam" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="bam">
+<h4>4.5.2. BAM<a class="headerlink" href="#bam" title="Permalink to this headline">#</a></h4>
 <p>BAM 文件是 SAM 文件的一种压缩格式，亦为最常用的一种比对结果的压缩格式。它一般可将 SAM 文件压缩到只有原来的 20∼30% 大小，且使用非常方便。</p>
 <p>同时，对于 BAM 文件，一般还会进行排序，根据不同的需要，排序的方法一般有 2 种：</p>
 <ul class="simple">
 <li><p>第 1 种是按照 mapping 到的参考基因组的坐标上下游顺序来排序，是 samtools 的默认排序方法；</p></li>
 <li><p>第 2 种是按照 reads name 进行排序，需要增加一个-n 参数。</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="gtf-gff">
-<h3>4.6. gtf &amp; .gff<a class="headerlink" href="#gtf-gff" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="gtf-gff">
+<h3>4.6. gtf &amp; .gff<a class="headerlink" href="#gtf-gff" title="Permalink to this headline">#</a></h3>
 <p>GFF（General Feature Format）有若干个版本，简单来说，GTF（General Transfer Format）是 GFF 文件的其中一个版本，一般认为 GTF 文件就是 GFF 2.0 版本的内容。一个标准的 GTF/GFF2.0 文件需要包括 9 列内容。</p>
 <p>所有的列必须用 TAB 分隔，总共有 9 列内容，第 9 列是补充列；</p>
 <p>补充列的内容可为空，但，前面 8 列必须有内容，若想表达空的概念，则需要用”.”；</p>
@@ -1297,20 +1373,20 @@ FFKKKFKKFKF&lt;KK&lt;F, AFKKKKK7FFK77&lt;FKK, &lt;F7K, , 7AF&lt;FF7FKK7AA, 7&lt;
 <li><p>第 6 列 score
 一般存放打分值，如拼装的可信度之类。下载的官方注释文件一般为 0.0</p></li>
 <li><p>第 7 列 strand
-正链基因标记为 “+”, 负链基因标记为 “-“；</p></li>
+正链基因标记为 “+”, 负链基因标记为 “-”；</p></li>
 <li><p>第 8 列 frame
 只可能是 0, 1, 2 这 3 个值, 表示与 CDS 中 codon 的相对位置；
 0 表示，这个 region 的第 1bp 就是正好是 codon 三连密码子的第 1 个碱基；
 1 表示，这个 region 的第 2bp 就是正好是 codon 三连密码子的第 1 个碱基；
 2 表示，这个 region 的第 3bp 就是正好是 codon 三连密码子的第 1 个碱基；</p></li>
 <li><p>第 9 列 attribute
-一般会记录 gene_id 与 transcript_id;
+一般会记录 gene*{i}d 与 transcript*{i}d;
 这一列是可选列，可增加很多内容。在程序处理过程中，相同的 attribute 会合并在一起处理。
-如，所有 gene_id=SGIP1 的行都会先汇总在一起，表示 1 个基因。</p></li>
+如，所有 gene_{i}d=SGIP1 的行都会先汇总在一起，表示 1 个基因。</p></li>
 </ul>
-</div>
-<div class="section" id="rpkmfpkm">
-<h3>4.7. RPKM、FPKM<a class="headerlink" href="#rpkmfpkm" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="rpkmfpkm">
+<h3>4.7. RPKM、FPKM<a class="headerlink" href="#rpkmfpkm" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>RPKM: Reads Per Kilobase per Million mapped reads</p></li>
 <li><p>FPKM: Fragments Per Kilobase per Million mapped reads</p></li>
@@ -1319,16 +1395,16 @@ FFKKKFKKFKF&lt;KK&lt;F, AFKKKKK7FFK77&lt;FKK, &lt;F7K, , 7AF&lt;FF7FKK7AA, 7&lt;
 <p>设 geneA 的 reads count 为 Count，geneA 的 exon 总长度为 Length Kbp，总的测序量为 D 兆 reads，则：</p>
 <div class="math notranslate nohighlight">
 \[
-\mathrm{RPKM} = \mathrm{Count}/ \mathrm{Length} / D * 10^9
+\mathrm{RPKM} = \mathrm{Count}/ \mathrm{Length} / D * 10⁹
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-\mathrm{TPM} = \mathrm{FPKM} / ∑(\mathrm{FPKM}) * 10^6
+\mathrm{TPM} = \mathrm{FPKM} / ∑(\mathrm{FPKM}) * 10⁶
 \]</div>
-</div>
-</div>
-<div class="section" id="id13">
-<h2>5. 扩增子分析<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="id13">
+<h2>5. 扩增子分析<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Barcode：样品标签，用于混池测序后区分列来自那个样品</p></li>
 <li><p>Primer：在 16S/ITS/18S 保守区设计的引物，用于扩增 rDNA 的部分高变区</p></li>
@@ -1336,20 +1412,20 @@ FFKKKFKKFKF&lt;KK&lt;F, AFKKKKK7FFK77&lt;FKK, &lt;F7K, , 7AF&lt;FF7FKK7AA, 7&lt;
 </ul>
 <p><img alt="Barcode" src="../_images/barcode.png" /></p>
 <p><img alt="HiSeq/MiSeq" src="../_images/hiseq-miseq.png" /></p>
-<div class="section" id="id14">
-<h3>5.1. 预处理、质控<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<section id="id14">
+<h3>5.1. 预处理、质控<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h3>
 <p>推荐使用 <code class="docutils literal notranslate"><span class="pre">DADA2</span></code>，主要作用是去除低质量序列、嵌合体，再生成 Feature 表（OTU 表），不再使用聚类方法。</p>
-</div>
-<div class="section" id="id15">
-<h3>5.2. 物种多样性<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id15">
+<h3>5.2. 物种多样性<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><strong>定义</strong>：用于度量群落生态单样本的物种多样性，是反映丰富度和均匀度的综合指标；</p></li>
 <li><p>菌群丰富度（community richness），指数有 Chao1、Ace，指数越大，说明菌群丰富度越高；</p></li>
 <li><p>菌群多样性（community diversity），指数有 Shannon、Simpson，Shannon 值越大，说明群落多样性越高；Simpson 值越大，说明菌群多样性越低；</p></li>
 </ul>
 <p><img alt="diversity" src="../_images/diversity.png" /></p>
-<div class="section" id="richness">
-<h4>5.2.1. 丰富度（Richness）<a class="headerlink" href="#richness" title="Permalink to this headline">¶</a></h4>
+<section id="richness">
+<h4>5.2.1. 丰富度（Richness）<a class="headerlink" href="#richness" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>OTU</p></li>
 </ul>
@@ -1364,22 +1440,22 @@ FFKKKFKKFKF&lt;KK&lt;F, AFKKKKK7FFK77&lt;FKK, &lt;F7K, , 7AF&lt;FF7FKK7AA, 7&lt;
 <p>Chao1 是根据出现 1/2 次的 OTU 来估算总体</p>
 <div class="math notranslate nohighlight">
 \[
-\mathrm{Chao1} = S_\mathrm{obs} + \frac{F_1}{2}×\frac{F_1}{F_2}
+\mathrm{Chao1} = S_\mathrm{obs} + \frac{F₁}{2}×\frac{F₁}{F₂}
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-\mathrm{Chao1} = S_\mathrm{obs} + \frac{F_1}{2}×\frac{F_1 -1}{F_2 + 1}
+\mathrm{Chao1} = S_\mathrm{obs} + \frac{F₁}{2}×\frac{F₁ -1}{F₂ + 1}
 \]</div>
-</div>
-<div class="section" id="alpha">
-<h4>5.2.2. Alpha 多样性<a class="headerlink" href="#alpha" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="alpha">
+<h4>5.2.2. Alpha 多样性<a class="headerlink" href="#alpha" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>Shannon-Weiner 指数</p></li>
 </ul>
 <p>Shannon-Weiner 指数来源于信息理论。它的计算公式表明，群落中生物种类增多代表了群落的复杂程度增高，即 H 值愈大，群落所含的信息量愈大</p>
 <div class="math notranslate nohighlight">
 \[
-H = -∑_{i = 1}^r{(\frac{n_i}{N})ln(\frac{n_i}{N})}
+H = -∑_{i = 1}^{r}{(\frac{n_{i}}{N})ln(\frac{n_{i}}{N})}
 \]</div>
 <ul class="simple">
 <li><p>Simpson 指数</p></li>
@@ -1387,7 +1463,7 @@ H = -∑_{i = 1}^r{(\frac{n_i}{N})ln(\frac{n_i}{N})}
 <p>Simpson 指数描述从一个群落种连续两次采样所得到的个体数属于同一种的概率</p>
 <div class="math notranslate nohighlight">
 \[
-1 - \mathrm{dominance} = 1 - ∑_{i = 1}^r{(\frac{n_i}{N})}^2
+1 - \mathrm{dominance} = 1 - ∑_{i = 1}^{r}{(\frac{n_{i}}{N})}²
 \]</div>
 <ul class="simple">
 <li><p>均匀度（Evenness）</p></li>
@@ -1397,19 +1473,19 @@ H = -∑_{i = 1}^r{(\frac{n_i}{N})ln(\frac{n_i}{N})}
 \[
 \mathrm{evenness} = \frac{H}{\ln N}
 \]</div>
-</div>
-</div>
-<div class="section" id="id16">
-<h3>5.3. 生态系统多样性<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="beta">
-<h4>5.3.1. Beta 多样性<a class="headerlink" href="#beta" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="id16">
+<h3>5.3. 生态系统多样性<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
+<section id="beta">
+<h4>5.3.1. Beta 多样性<a class="headerlink" href="#beta" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p><strong>定义</strong>：用于不同生态系统间多样性的比较，利用各样本序列间的演化关系及丰度信息来计算样本间距离，反映样本（组）间是否具有显著的微生物群落差异；</p></li>
 <li><p>Beta 多样性的本质是排序（ordination），即在一个可视化的低维空间（通常是二维）重排这些样品，使得样方之间的距离最大程度地反映出平面散点图内样品间的关系信息</p></li>
 </ul>
-</div>
-<div class="section" id="id17">
-<h4>5.3.2. 距离矩阵<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id17">
+<h4>5.3.2. 距离矩阵<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>在生物学研究中，距离主要分为两大类，一种是物种距离（jaccard，bray_curtis）；另一种是演化距离（unifrac，unweighted_unifrac）</p></li>
 <li><p>统计距离的组间差异显著性</p></li>
@@ -1419,10 +1495,10 @@ H = -∑_{i = 1}^r{(\frac{n_i}{N})ln(\frac{n_i}{N})}
 <li><p>主坐标轴分析（PCoA）</p></li>
 <li><p>物种分类</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="id18">
-<h3>5.4. 差异丰度分析<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id18">
+<h3>5.4. 差异丰度分析<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>相关图表</p>
 <ul>
@@ -1436,12 +1512,12 @@ H = -∑_{i = 1}^r{(\frac{n_i}{N})ln(\frac{n_i}{N})}
 <li><p>差异 Features 分析</p></li>
 <li><p>差异分类学级别分析</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="id19">
-<h2>6. 生物的分类<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id20">
-<h3>6.1. 两界分类系统<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id19">
+<h2>6. 生物的分类<a class="headerlink" href="#id19" title="Permalink to this headline">#</a></h2>
+<section id="id20">
+<h3>6.1. 两界分类系统<a class="headerlink" href="#id20" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Karl von Linnaeus（1707∼1778 年）</p></li>
 <li><p>1735 年出版《自然系统》（System Nature）</p></li>
@@ -1450,9 +1526,9 @@ H = -∑_{i = 1}^r{(\frac{n_i}{N})ln(\frac{n_i}{N})}
 <li><p>Vegetabilia（植物界）</p></li>
 <li><p>Animalia（动物界）</p></li>
 </ol>
-</div>
-<div class="section" id="id21">
-<h3>6.2. 三界分类系统<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id21">
+<h3>6.2. 三界分类系统<a class="headerlink" href="#id21" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Haeckel（1866）</p></li>
 </ul>
@@ -1461,9 +1537,9 @@ H = -∑_{i = 1}^r{(\frac{n_i}{N})ln(\frac{n_i}{N})}
 <li><p>Plantae（植物界）</p></li>
 <li><p>Protista（原生生物界）</p></li>
 </ol>
-</div>
-<div class="section" id="id22">
-<h3>6.3. 五界分类系统<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id22">
+<h3>6.3. 五界分类系统<a class="headerlink" href="#id22" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Whittaker（1969）</p></li>
 </ul>
@@ -1474,9 +1550,9 @@ H = -∑_{i = 1}^r{(\frac{n_i}{N})ln(\frac{n_i}{N})}
 <li><p>Fungi（真菌界）</p></li>
 <li><p>Animalia（动物界）</p></li>
 </ol>
-</div>
-<div class="section" id="id23">
-<h3>6.4. 三域分类系统<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id23">
+<h3>6.4. 三域分类系统<a class="headerlink" href="#id23" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Woese et al. （1990）</p>
 <ul>
@@ -1489,9 +1565,9 @@ H = -∑_{i = 1}^r{(\frac{n_i}{N})ln(\frac{n_i}{N})}
 <li><p>Bacteria（细菌，真细菌）</p></li>
 <li><p>Eukarya（真核生物）</p></li>
 </ol>
-</div>
-<div class="section" id="id24">
-<h3>6.5. 六界分类系统<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id24">
+<h3>6.5. 六界分类系统<a class="headerlink" href="#id24" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Cavalier-Smith（1998）</p>
 <ul>
@@ -1507,9 +1583,9 @@ H = -∑_{i = 1}^r{(\frac{n_i}{N})ln(\frac{n_i}{N})}
 <li><p>Fungi（真菌界）</p></li>
 <li><p>Animalia（动物界）</p></li>
 </ol>
-</div>
-<div class="section" id="id25">
-<h3>6.6. 生物分类的基本等级<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id25">
+<h3>6.6. 生物分类的基本等级<a class="headerlink" href="#id25" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p>Domain</p></li>
 <li><p>Kingdom</p></li>
@@ -1521,12 +1597,12 @@ H = -∑_{i = 1}^r{(\frac{n_i}{N})ln(\frac{n_i}{N})}
 <li><p>Species</p></li>
 </ol>
 <p><img alt="phylogeny" src="../_images/phylogeny.png" /></p>
-</div>
-</div>
-<div class="section" id="id26">
-<h2>7. 发生树<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id27">
-<h3>7.1. 定义<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id26">
+<h2>7. 发生树<a class="headerlink" href="#id26" title="Permalink to this headline">#</a></h2>
+<section id="id27">
+<h3>7.1. 定义<a class="headerlink" href="#id27" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>系统发生（phylogeny）：某个生物类群的演化历史</p></li>
 <li><p>发生树（phylogenetic tree）是表明被认为具有共同祖先的各物种间演化关系的树。是一种亲缘分支分类方法（cladogram）。树中的每个节点代表其各分支的最近共同祖先，而节点间的线段长度对应演化距离，如估计的演化时间。</p></li>
@@ -1536,9 +1612,9 @@ H = -∑_{i = 1}^r{(\frac{n_i}{N})ln(\frac{n_i}{N})}
 <li><p>趋同演化（convergent evolution）：亲缘关系较远、不是来自最近共同祖先的相似特征。</p></li>
 </ul>
 <p><img alt="phylogeny2" src="../_images/phylogeny2.png" /></p>
-</div>
-<div class="section" id="id28">
-<h3>7.2. 有根树和无根树<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id28">
+<h3>7.2. 有根树和无根树<a class="headerlink" href="#id28" title="Permalink to this headline">#</a></h3>
 <ul>
 <li><p>有根树 （rooted tree）：以最古老的物种为根，展示物种形成的顺序。</p>
 <blockquote>
@@ -1552,16 +1628,16 @@ H = -∑_{i = 1}^r{(\frac{n_i}{N})ln(\frac{n_i}{N})}
 <li><p>并系类群（paraphyletic）：来自于同一最近祖先的后代，但不是全部后代（一般来说含有一个完整的支）</p></li>
 <li><p>多系类群（polyphyletic）：来自于不同最近祖先的后代</p></li>
 </ol>
-</div>
-<div class="section" id="id29">
-<h3>7.3. 基因树和物种树<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id29">
+<h3>7.3. 基因树和物种树<a class="headerlink" href="#id29" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>基于单个同源基因差异构建的系统发生数应称之为基因树。因为这种树代表的仅仅是单个基因的演化历史。</p></li>
 <li><p>物种树一般最好是从多个基因数据的分析中得到。例如一项关于植物演化的研究中，用了 100 个不同的基因来构建物种树，因为演化是发生在生物体种群水平上的，而不是发生在个体水平上的，虽然表面上不需要更多的数据，但实际上还是有必要的。若只用等位基因来构建物种数，那许多人人和大猩猩就会分到一起，而不是和其他人分到一起。</p></li>
 </ul>
-</div>
-<div class="section" id="id30">
-<h3>7.4. 构建方法<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id30">
+<h3>7.4. 构建方法<a class="headerlink" href="#id30" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>独立元素法（discrete character methods）：演化树的拓扑形状是由序列上的每个状态决定的</p>
 <ul>
@@ -1577,9 +1653,9 @@ H = -∑_{i = 1}^r{(\frac{n_i}{N})ln(\frac{n_i}{N})}
 </li>
 <li><p>贝叶斯法（Bayesian）</p></li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1603,9 +1679,11 @@ H = -∑_{i = 1}^r{(\frac{n_i}{N})ln(\frac{n_i}{N})}
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="../README.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1621,24 +1699,28 @@ H = -∑_{i = 1}^r{(\frac{n_i}{N})ln(\frac{n_i}{N})}
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By ivaquero<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By ivaquero<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

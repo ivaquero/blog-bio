@@ -146,7 +146,7 @@ font:
   italic:
     family: 'FiraCode Nerd Font'
     style: Italic
-  bold_italic:
+  bold_{i}talic:
     family: 'FiraCode Nerd Font'
     style: Bold Italic
 

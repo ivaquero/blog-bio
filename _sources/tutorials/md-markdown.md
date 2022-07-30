@@ -87,10 +87,10 @@ _这是倾斜的文字_
 > 图片 title 是图片的标题，当鼠标移到图片上时显示的内容。title 可加可不加
 
 ```markdown
-![知乎](https://pic2.zhimg.com/80/v2-48bbd284deacef0b5896427e660b2a51_1440w.png '知乎')
+![知乎](https://pic2.zhimg.com/80/v2-48bbd284deacef0b5896427e660b2a51₁440w.png '知乎')
 ```
 
-![知乎](https://pic2.zhimg.com/80/v2-48bbd284deacef0b5896427e660b2a51_1440w.png '知乎')
+![知乎](https://pic2.zhimg.com/80/v2-48bbd284deacef0b5896427e660b2a51₁440w.png '知乎')
 
 ### 2.2. 超链接
 
@@ -160,13 +160,13 @@ _这是倾斜的文字_
 
 ```markdown
 | 表头 | 表头 | 表头 |
-| ---- | ---- | ---- |
+| :--: | :--: | :--: |
 | 内容 | 内容 | 内容 |
 | 内容 | 内容 | 内容 |
 ```
 
 | 表头 | 表头 | 表头 |
-| ---- | ---- | ---- |
+| :--: | :--: | :--: |
 | 内容 | 内容 | 内容 |
 | 内容 | 内容 | 内容 |
 
@@ -222,12 +222,12 @@ $Γ(n) = (n-1)! \enspace ∀ n ∈ ℕ$
 
 ```markdown
 $$
-x = \frac{-b ± \sqrt{b^2 - 4ac}}{2a}
+x = \frac{-b ± \sqrt{b² - 4ac}}{2a}
 $$
 ```
 
 $$
-x = \frac{-b ± \sqrt{b^2 - 4ac}}{2a}
+x = \frac{-b ± \sqrt{b² - 4ac}}{2a}
 $$
 
 ## 5. 扩展格式

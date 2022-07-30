@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>搭建 Windows 统一开发环境（Scoop） &#8212; 生物狗学编程</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -64,7 +63,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -73,9 +86,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -93,14 +107,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../README.html">
-   生物狗学编程
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    生物狗学编程
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   综合生命科学
  </span>
@@ -369,12 +384,17 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
 </div>
 
 
@@ -382,61 +402,117 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
     
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
+    <div class="header-article row sticky-top noprint">
         
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/tutorials/cmd-scoop.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/tutorials/cmd-scoop.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id1">
    包管理器
@@ -583,12 +659,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>搭建 Windows 统一开发环境（Scoop）</h1>
@@ -751,13 +826,14 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="windows-scoop">
-<h1>搭建 Windows 统一开发环境（Scoop）<a class="headerlink" href="#windows-scoop" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="id1">
-<h2>包管理器<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="windows-scoop">
+<h1>搭建 Windows 统一开发环境（Scoop）<a class="headerlink" href="#windows-scoop" title="Permalink to this headline">#</a></h1>
+<section id="id1">
+<h2>包管理器<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>包管理器（package manager）是开发人员常用的生产力工具，Ubuntu 上的 <strong>Apt-Get</strong> 和 macOS 上的 <strong>Homebrew</strong> 等的使用都让开发环境的搭建变得无比丝滑。这里的包，可理解成广义上的软件，不仅包含常见的基于图形用户界面（GUI）的软件，还包含基于命令行界面（CLI）的开发工具。简单说，包管理器就是一个软件自动化管理工具。</p>
 <p>作为一款以 GUI 见长的大众操作系统，Windows 的包管理器长期被忽视。如今，随着 Windows 的迭代和编程技术的日益普及，Windows 也有了经过时间检验的包管理器：<strong>WinGet</strong> 和 <strong>Scoop</strong>。</p>
 <p>总的来看，上述两者各有长短。</p>
@@ -798,27 +874,27 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="scoop">
-<h2>Scoop 的安装<a class="headerlink" href="#scoop" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="scoop">
+<h2>Scoop 的安装<a class="headerlink" href="#scoop" title="Permalink to this headline">#</a></h2>
 <p><strong>Scoop</strong> 由澳洲程序员 Luke Sampson 于 2015 年创建，其特色之一就是其安装管理不依赖”管理员权限”，这对使用有权限限制的公共计算机的使用者是一大利好。其的安装步骤如下：</p>
-<div class="section" id="powershell">
-<h3>步骤 1：在 PowerShell 中打开远程权限<a class="headerlink" href="#powershell" title="Permalink to this headline">¶</a></h3>
+<section id="powershell">
+<h3>步骤 1：在 PowerShell 中打开远程权限<a class="headerlink" href="#powershell" title="Permalink to this headline">#</a></h3>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Set-ExecutionPolicy</span> <span class="n">RemoteSigned</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span><span class="p">;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id2">
-<h3>步骤 2：自定义 Scoop 安装目录<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id2">
+<h3>步骤 2：自定义 Scoop 安装目录<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nv">$env:SCOOP</span><span class="p">=</span><span class="s1">&#39;Your_Scoop_Path&#39;</span><span class="p">;</span>
 <span class="c"># $env:SCOOP = &#39;C:\Scoop&#39;;</span>
 <span class="no">[Environment]</span><span class="p">::</span><span class="n">SetEnvironmentVariable</span><span class="p">(</span><span class="s1">&#39;SCOOP&#39;</span><span class="p">,</span> <span class="nv">$env:SCOOP</span><span class="p">,</span> <span class="s1">&#39;User&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>若跳过该步骤，<strong>Scoop</strong> 将默认把所有用户安装的 App 和 <strong>Scoop</strong> 本身置于<code class="docutils literal notranslate"><span class="pre">c:/users/user_name/scoop</span></code></p>
-</div>
-<div class="section" id="id3">
-<h3>步骤 3：下载并安装 Scoop<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id3">
+<h3>步骤 3：下载并安装 Scoop<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">iwr </span><span class="n">-useb</span> <span class="n">get</span><span class="p">.</span><span class="n">scoop</span><span class="p">.</span><span class="n">sh</span> <span class="p">|</span> <span class="nb">iex</span>
 <span class="n">scoop</span> <span class="n">update</span>
 </pre></div>
@@ -829,24 +905,24 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">scoop</span> <span class="n">update</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id4">
-<h3>步骤 4：安装包（主要是命令行程序）<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id4">
+<h3>步骤 4：安装包（主要是命令行程序）<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">scoop</span> <span class="n">install</span> <span class="p">&lt;</span><span class="n">app_name</span><span class="p">&gt;</span>
 <span class="n">scoop</span> <span class="n">install</span> <span class="n">sudo</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="scoop-help">
-<h3>步骤 5：通过 <code class="docutils literal notranslate"><span class="pre">scoop</span> <span class="pre">help</span></code> 查看使用简介<a class="headerlink" href="#scoop-help" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="scoop-help">
+<h3>步骤 5：通过 <code class="docutils literal notranslate"><span class="pre">scoop</span> <span class="pre">help</span></code> 查看使用简介<a class="headerlink" href="#scoop-help" title="Permalink to this headline">#</a></h3>
 <p><img alt="help" src="../_images/scoop3.png" /></p>
 <p>更多信息，请访问 <a class="reference external" href="https://scoop.sh/">Scoop 官网</a></p>
-</div>
-</div>
-<div class="section" id="id5">
-<h2>Scoop 的使用（加载扩展库）<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="aria2">
-<h3>步骤 1：安装 Aria2 来加速下载<a class="headerlink" href="#aria2" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id5">
+<h2>Scoop 的使用（加载扩展库）<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<section id="aria2">
+<h3>步骤 1：安装 Aria2 来加速下载<a class="headerlink" href="#aria2" title="Permalink to this headline">#</a></h3>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">scoop</span> <span class="n">install</span> <span class="n">aria2</span>
 </pre></div>
 </div>
@@ -854,15 +930,15 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">scoop</span> <span class="n">config</span> <span class="n">aria2-enabled</span> <span class="n">false</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="git">
-<h3>步骤 2：安装 Git 来添加新仓库<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="git">
+<h3>步骤 2：安装 Git 来添加新仓库<a class="headerlink" href="#git" title="Permalink to this headline">#</a></h3>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">scoop</span> <span class="n">install</span> <span class="n">git</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id6">
-<h3>步骤 3：添加仓库并更新<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id6">
+<h3>步骤 3：添加仓库并更新<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>添加官方维护的 extras 库（含大量 GUI 程序）</p></li>
 </ul>
@@ -881,9 +957,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>重命名自己下载的文件名为 3 中的文件名，但取代 .download 文件；</p></li>
 <li><p>输入 scoop install git；</p></li>
 </ul>
-</div>
-<div class="section" id="scoopet">
-<h3>可选步骤：添加我创建并维护的 scoopet 库（专注服务科研）<a class="headerlink" href="#scoopet" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="scoopet">
+<h3>可选步骤：添加我创建并维护的 scoopet 库（专注服务科研）<a class="headerlink" href="#scoopet" title="Permalink to this headline">#</a></h3>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">scoop</span> <span class="n">bucket</span> <span class="n">add</span> <span class="n">scoopet</span> <span class="n">https</span><span class="p">://</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">ivaquro</span><span class="p">/</span><span class="n">scoopet</span>
 <span class="n">scoop</span> <span class="n">update</span>
 </pre></div>
@@ -899,9 +975,9 @@ const thebe_selector_output = ".output, .cell_output"
 <div><p>详情见 <a class="reference external" href="https://github.com/ivaquro/scoopet/blob/master/README_CN.md">README_CN</a></p>
 </div></blockquote>
 <p><img alt="scoopet" src="../_images/scoop2.png" /></p>
-</div>
-<div class="section" id="app">
-<h3>步骤 4：安装 App<a class="headerlink" href="#app" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="app">
+<h3>步骤 4：安装 App<a class="headerlink" href="#app" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>使用 <code class="docutils literal notranslate"><span class="pre">scoop</span> <span class="pre">search</span></code> 命令搜索 App 的具体名称</p></li>
 </ul>
@@ -918,9 +994,9 @@ const thebe_selector_output = ".output, .cell_output"
 <blockquote>
 <div><p>使用 <code class="docutils literal notranslate"><span class="pre">scoop-completion</span></code>：键入 App 名称的前几个字母后敲击 <code class="docutils literal notranslate"><span class="pre">tab</span></code> 键进行补全</p>
 </div></blockquote>
-</div>
-<div class="section" id="id7">
-<h3>步骤 5：查看官方推荐仓库<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id7">
+<h3>步骤 5：查看官方推荐仓库<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">scoop</span> <span class="n">bucket</span> <span class="n">known</span>
 
 <span class="n">main</span> <span class="p">[</span><span class="n">默认</span><span class="p">]</span>
@@ -937,12 +1013,12 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 <p>这里，推荐 <a class="reference external" href="https://scoop.netlify.app/apps/">Apps | Scoop</a>，方便全网查询安装脚本所在 bucket。</p>
-</div>
-</div>
-<div class="section" id="id8">
-<h2>Scoop 的管理与配置<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id9">
-<h3>更新<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id8">
+<h2>Scoop 的管理与配置<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
+<section id="id9">
+<h3>更新<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="c"># 查看已安装程序</span>
 <span class="n">scoop</span> <span class="n">list</span>
 <span class="c"># 查看更新</span>
@@ -954,9 +1030,9 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 <p><img alt="list" src="../_images/scoop3.png" /></p>
-</div>
-<div class="section" id="id10">
-<h3>命令行推荐<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id10">
+<h3>命令行推荐<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="c"># 使用 Linux 命令行</span>
 <span class="n">scoop</span> <span class="n">install</span> <span class="n">gow</span>
 <span class="c"># 调用管理员权限</span>
@@ -965,9 +1041,9 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">scoop</span> <span class="n">install</span> <span class="n">windows-terminal</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id11">
-<h3>Aria2 的参数<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id11">
+<h3>Aria2 的参数<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
 <p>打开<code class="docutils literal notranslate"><span class="pre">~\.config\scoop\config.json</span></code>，加入以下内容</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;alias&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w"></span>
@@ -982,27 +1058,27 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id12">
-<h3>杀毒<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id12">
+<h3>杀毒<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="c"># 开启</span>
 <span class="n">sudo</span> <span class="nb">Add-MpPreference</span> <span class="n">-ExclusionPath</span> <span class="s2">&quot;</span><span class="p">$(</span><span class="nv">$env:programdata</span><span class="p">)</span><span class="s2">\scoop&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="p">$(</span><span class="nv">$env:scoop</span><span class="p">)</span><span class="s2">&quot;</span>
 <span class="c"># 关闭</span>
 <span class="n">sudo</span> <span class="nb">Remove-MpPreference</span> <span class="n">-ExclusionPath</span> <span class="s2">&quot;</span><span class="p">$(</span><span class="nv">$env:programdata</span><span class="p">)</span><span class="s2">\scoop&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="p">$(</span><span class="nv">$env:scoop</span><span class="p">)</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id13">
-<h3>代理<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id13">
+<h3>代理<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">scoop</span> <span class="n">config</span> <span class="n">proxy</span> <span class="n">proxy</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">org</span><span class="p">:</span><span class="n">8080</span>
 <span class="c"># 认证</span>
 <span class="n">scoop</span> <span class="n">config</span> <span class="n">proxy</span> <span class="p">[</span><span class="n">username</span><span class="p">:</span><span class="n">password</span><span class="p">@]</span><span class="n">host</span><span class="p">:</span><span class="n">port</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="bucket">
-<h2>建立自己的 Bucket<a class="headerlink" href="#bucket" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="bucket">
+<h2>建立自己的 Bucket<a class="headerlink" href="#bucket" title="Permalink to this headline">#</a></h2>
 <p>由于没有自己的公司，Scoop 当前是完全社区化的，核心代码除了增加了 aria 集成，其他没有太多明显的变化，只有不断扩大的扩展库，也称 bucket。当然由于软件繁多，社区里目前主要维护的 bucket 还是 main 和 extras，姑且算是官方库。故，难免有自己需要，而官方库里有没有的软件。不过，Scoop 的简洁，使用户自定义 bucket 的技术门槛非常低，这亦为我一直以来推崇 Scoop 远胜于 Chocolatey 的主要原因之一。</p>
 <p>Scoop bucket 的创建的关键步骤有如下两个：</p>
 <ul class="simple">
@@ -1012,14 +1088,14 @@ const thebe_selector_output = ".output, .cell_output"
 <blockquote>
 <div><p>大家均是成年人了，github 这个同性交友网站的使用在这里就不做赘述了。</p>
 </div></blockquote>
-<div class="section" id="id14">
-<h3>bucket<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<section id="id14">
+<h3>bucket<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h3>
 <p>推荐 fork 我的仓库 <a class="reference external" href="https://github.com/ivaquero/scoopet">Scoopet</a></p>
 <p>或者这个仓库，<a class="reference external" href="https://github.com/Ash258/GenericBucket"></a>。</p>
 <p>其他文件基本不用改动，将自定义的脚本放在 bucket 文件夹里面就行。</p>
-</div>
-<div class="section" id="id15">
-<h3>脚本结构<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id15">
+<h3>脚本结构<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h3>
 <p>Scoop 脚本的大致结构如下：</p>
 <p><img alt="manifest" src="../_images/scoop-manifest.png" /></p>
 <p>需要做的就是将其中的各项替换。现对各个项目做一下介绍，加 <code class="docutils literal notranslate"><span class="pre">*</span></code> 的是必填项：</p>
@@ -1034,17 +1110,17 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><code class="docutils literal notranslate"><span class="pre">checkver</span></code>：版本校对；</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">autoupdate</span></code>：自动升级，涉及持续集成；</p></li>
 </ul>
-<div class="section" id="hash">
-<h4>hash<a class="headerlink" href="#hash" title="Permalink to this headline">¶</a></h4>
+<section id="hash">
+<h4>hash<a class="headerlink" href="#hash" title="Permalink to this headline">#</a></h4>
 <p>脚本开始构建的时候，需要到官网，把软件下载下来，然后本机查看 hash，默认为 sha256 码，也有 md5 和 sha1 形式的，命令如下：</p>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">certutil</span> <span class="n">-hashfile</span> <span class="no">[file]</span> <span class="n">sha256</span>
 <span class="n">certutil</span> <span class="n">-hashfile</span> <span class="no">[file]</span> <span class="n">md5</span>
 <span class="n">certutil</span> <span class="n">-hashfile</span> <span class="no">[file]</span> <span class="n">sha1</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="url">
-<h4>url<a class="headerlink" href="#url" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="url">
+<h4>url<a class="headerlink" href="#url" title="Permalink to this headline">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">url</span></code>是比较难处理的。简单说，开源软件最方便，很多可开箱即用，而非开源的不少就特别繁琐，有的甚至处理不了，如 QQ（处理不了 QQ Protect）。这个叙述起来都特别麻烦，需要具体情况具体分析，这里只简述一般情况，后面慢慢补充。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">.msi</span></code>类：往往不需要变更；</p></li>
@@ -1058,10 +1134,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p><img alt="Scoop script" src="../_images/scoop-manifest2.png" /></p>
 <p>祝愿感兴趣的朋友早日拥有自己的 bucket，方便自己，也方便他人。</p>
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1085,9 +1161,11 @@ const thebe_selector_output = ".output, .cell_output"
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="cmd-posh.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1103,24 +1181,28 @@ const thebe_selector_output = ".output, .cell_output"
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By ivaquero<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By ivaquero<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

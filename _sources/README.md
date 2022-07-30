@@ -205,16 +205,16 @@ Reduce the use of `begin{array}...end{array}`
 
 $$
 \begin{aligned}
-  y_1 &= x^2 + 2*x \\
-  y_2 &= x^3 + x
+  y₁ &= x² + 2*x \\
+  y₂ &= x³ + x
 \end{aligned}
 $$
 
 ```latex
 $$
 \begin{aligned}
-  y_1 &= x^2 + 2*x \\
-  y_2 &= x^3 + x
+  y₁ &= x² + 2*x \\
+  y₂ &= x³ + x
 \end{aligned}
 $$
 ```
@@ -223,16 +223,16 @@ $$
 
 $$
 \begin{cases}
-  y = x^2 + 2*x & x > 0 \\
-  y = x^3 + x & x ≤ 0
+  y = x² + 2*x & x > 0 \\
+  y = x³ + x & x ≤ 0
 \end{cases}
 $$
 
 ```latex
 $$
 \begin{cases}
-  y = x^2 + 2*x & x > 0 \\
-  y = x^3 + x & x ≤ 0
+  y = x² + 2*x & x > 0 \\
+  y = x³ + x & x ≤ 0
 \end{cases}
 $$
 ```
@@ -263,15 +263,15 @@ $$
 
 ### 5.2. Brackets
 
-- Prefer `\Big...\Big` to `\left...\right`
+- Prefer `\bigg...\bigg` to `\left...\right`
 
 $$
-A\Big[\frac12\ \frac13\ ⋯\ \frac1{99}\Big]
+A\bigg[\frac{1}{2}\ \frac{1}{3}\ ⋯\ \frac{1}{99}\bigg]
 $$
 
 ```latex
 $$
-A\Big[\frac12\ \frac13\ ⋯\ \frac1{99}\Big]
+A\bigg[\frac{1}{2}\ \frac{1}{3}\ ⋯\ \frac{1}{99}\bigg]
 $$
 ```
 
@@ -282,7 +282,7 @@ $$
 - Prefer `^{\top}` to `^T` for transpose
 
 $$
-𝐀^⊤
+𝐀^{⊤}
 $$
 
 ```latex
@@ -320,12 +320,12 @@ $$
 - Prefer `mathrm{}` to `{\rm }` or `\mathop{}` or `\operatorname{}`
 
 $$
-θ_\mathrm{MLE} = \underset{θ}{\mathrm{argmax}}∑_{i = 1}^{N}\log p(x_i ∣ θ)
+θ_\mathrm{MLE} = \underset{θ}{\mathrm{argmax}}∑_{i = 1}^{N}\log p(x_{i} ∣ θ)
 $$
 
 ```latex
 $$
-θ_\mathrm{MLE} = \underset{θ}{\mathrm{argmax}}∑_{i = 1}^{N}\log p(x_i ∣ θ)
+θ_\mathrm{MLE} = \underset{θ}{\mathrm{argmax}}∑_{i = 1}^{N}\log p(x_{i} ∣ θ)
 $$
 ```
 

@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>演化论基础 &#8212; 生物狗学编程</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -66,7 +65,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -75,9 +88,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -95,14 +109,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../README.html">
-   生物狗学编程
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    生物狗学编程
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   综合生命科学
  </span>
@@ -371,12 +386,17 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
 </div>
 
 
@@ -384,61 +404,117 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
     
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
+    <div class="header-article row sticky-top noprint">
         
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/biotechs/03-演化论基础.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/biotechs/03-演化论基础.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
    1. 选择
@@ -662,12 +738,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>演化论基础</h1>
@@ -907,15 +982,16 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1>演化论基础<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="id2">
-<h2>1. 选择<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id3">
-<h3>1.1. 自然选择<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>演化论基础<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<section id="id2">
+<h2>1. 选择<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<section id="id3">
+<h3>1.1. 自然选择<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
 <p><strong>定义</strong>：生物在自然界竞争中，适应者能<strong>生存</strong>和<strong>生殖</strong>，不适应者被淘汰。</p>
 <ul class="simple">
 <li><p>定向选择（directional selection）：某些等位基因的频率或性状向”单一”方向移动。</p></li>
@@ -923,17 +999,17 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>间断选择（disruption selection）：处于两端的性状被保留，处于中间的性状被淘汰</p></li>
 <li><p>频率依赖选择（frequency-dependent selection）：某种基因型能否被保留，取决于其频率</p></li>
 </ul>
-</div>
-<div class="section" id="hardy-weinberg">
-<h3>1.2. Hardy-Weinberg 平衡<a class="headerlink" href="#hardy-weinberg" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="hardy-weinberg">
+<h3>1.2. Hardy-Weinberg 平衡<a class="headerlink" href="#hardy-weinberg" title="Permalink to this headline">#</a></h3>
 <p>无突变、无自然选择、无迁徙、随机交配、大种群情况下，基因频率符合：</p>
 <div class="math notranslate nohighlight">
 \[
-p^2 + 2pq + q^2 = 1
+p² + 2pq + q² = 1
 \]</div>
-</div>
-<div class="section" id="id4">
-<h3>1.3. 适应<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id4">
+<h3>1.3. 适应<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <p>适应（adapt）：生物的某种结构、行为及基因或蛋白质等生物大分子的功能有利于该生物顺利地在自然环境中<strong>成功繁殖</strong>。</p>
 <p>适合度（fitness，f）：某类生物实体（基因型）繁殖的平均能力，即被自然所”选留”的程度。</p>
 <p>选择系数（selection coefficient，s）: 与适合度相反，用于度量自然选择对某种基因型及其后代的淘汰的作用。</p>
@@ -941,13 +1017,13 @@ p^2 + 2pq + q^2 = 1
 \[
 f + s = 1
 \]</div>
-</div>
-</div>
-<div class="section" id="id5">
-<h2>2. 中性演化学说<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="id5">
+<h2>2. 中性演化学说<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
 <p>由日本进化生物学家木村资生（Kimura Motoo，1924∼1994）</p>
-<div class="section" id="id6">
-<h3>2.1. 遗传变异<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<section id="id6">
+<h3>2.1. 遗传变异<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>变异方式</p>
 <ul>
@@ -977,9 +1053,9 @@ f + s = 1
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="id7">
-<h3>2.2. 中性演化理论<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id7">
+<h3>2.2. 中性演化理论<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
 <p>突变得到的等位基因并未带来正面、负面影响，即中性的<span class="math notranslate nohighlight">\(s = 0\)</span></p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(s&gt;0\)</span>，被选择保留；</p></li>
@@ -1001,9 +1077,9 @@ f + s = 1
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="id8">
-<h3>2.3. 近中性演化理论<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id8">
+<h3>2.3. 近中性演化理论<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
 <p>有效种群：一个种群中能将其基因连续传递到下一代的个体均值。</p>
 <blockquote>
 <div><p>相当于理想状态下（种群大小稳定，世代间没有重叠，所有个体以相同的概率给下一代贡献配子）种群的大小。</p>
@@ -1018,12 +1094,12 @@ f + s = 1
 <li><p>不同世代之间有重叠</p></li>
 <li><p>一个物种由多个遗传相对隔离的亚种群构成</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="id9">
-<h2>3. 蛋白演化<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id10">
-<h3>3.1. 氨基酸替代速率<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id9">
+<h2>3. 蛋白演化<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h2>
+<section id="id10">
+<h3>3.1. 氨基酸替代速率<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
 <p>设：不同位点上的氨基酸替代速率相同，即使不相同，平均替代速率也很小</p>
 <p>令</p>
 <p><span class="math notranslate nohighlight">\(n_{aa}\)</span>：所比较序列的氨基酸数目
@@ -1038,9 +1114,9 @@ f + s = 1
 <p><span class="math notranslate nohighlight">\(T\)</span>：两个同源序列分歧的时间</p>
 <p>可得，每年每个位点氨基酸的替代速率</p>
 <p><span class="math notranslate nohighlight">\(k_{aa} = K_{aa} / (2T)\)</span></p>
-</div>
-<div class="section" id="id11">
-<h3>3.2. 分子钟<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id11">
+<h3>3.2. 分子钟<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
 <p><strong>定义</strong>：一个特定的大分子（蛋白质或 DNA）在所有的演化谱系中具有恒定的演化速率，即线性演化。</p>
 <ul class="simple">
 <li><p>两个大分子（物种）分歧的时间</p>
@@ -1063,26 +1139,26 @@ f + s = 1
 </ul>
 </li>
 </ul>
-</div>
-</div>
-<div class="section" id="id12">
-<h2>4. 核酸演化<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id13">
-<h3>4.1. 碱基替代模型<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id12">
+<h2>4. 核酸演化<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h2>
+<section id="id13">
+<h3>4.1. 碱基替代模型<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
 <p>置换（Transition）：嘌呤 ↔ 嘌呤，嘧啶 ↔ 嘧啶
 颠换（Transversion）：嘌呤 ↔ 嘧啶
 同义替代（synonymous substitution）：不影响所编码氨基酸的碱基改变
 非同义替代（non-synonymous substitution）：影响所编码氨基酸 的碱基改变</p>
-<div class="section" id="jukes-cantor">
-<h4>4.1.1. 单参数模型（Jukes-Cantor）<a class="headerlink" href="#jukes-cantor" title="Permalink to this headline">¶</a></h4>
+<section id="jukes-cantor">
+<h4>4.1.1. 单参数模型（Jukes-Cantor）<a class="headerlink" href="#jukes-cantor" title="Permalink to this headline">#</a></h4>
 <p>设：每种碱基被另一种碱基替代的速率为<span class="math notranslate nohighlight">\(α\)</span>，则每种碱基被其他碱基的替代速率<span class="math notranslate nohighlight">\(λ\)</span>有</p>
 <div class="math notranslate nohighlight">
 \[
 λ = 3α
 \]</div>
-</div>
-<div class="section" id="kimura">
-<h4>4.1.2. 双参数模型（Kimura）<a class="headerlink" href="#kimura" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="kimura">
+<h4>4.1.2. 双参数模型（Kimura）<a class="headerlink" href="#kimura" title="Permalink to this headline">#</a></h4>
 <p>设：碱基置换和颠换的速率不一样</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(α\)</span>：碱基置换的速率</p></li>
@@ -1092,20 +1168,20 @@ f + s = 1
 <blockquote>
 <div><p>当时间无穷大时，两个模型趋于一致</p>
 </div></blockquote>
-</div>
-</div>
-<div class="section" id="id14">
-<h3>4.2. 非编码区<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="j-c">
-<h4>4.2.1. J-C 模型<a class="headerlink" href="#j-c" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="id14">
+<h3>4.2. 非编码区<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h3>
+<section id="j-c">
+<h4>4.2.1. J-C 模型<a class="headerlink" href="#j-c" title="Permalink to this headline">#</a></h4>
 <p>令<span class="math notranslate nohighlight">\(p\)</span>为两序列中发生变化的碱基的比例，则</p>
 <div class="math notranslate nohighlight">
 \[
-K = -\frac34 \ln(1 - \frac43 p)
+K = -\frac{3}{4} \ln(1 - \frac{4}3 p)
 \]</div>
-</div>
-<div class="section" id="k-2">
-<h4>4.2.2. K-2 模型<a class="headerlink" href="#k-2" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="k-2">
+<h4>4.2.2. K-2 模型<a class="headerlink" href="#k-2" title="Permalink to this headline">#</a></h4>
 <p>令</p>
 <p><span class="math notranslate nohighlight">\(𝐏\)</span>：置换碱基的比例
 <span class="math notranslate nohighlight">\(Q\)</span>：颠换碱基的比例</p>
@@ -1114,12 +1190,12 @@ K = -\frac34 \ln(1 - \frac43 p)
 <p>可得</p>
 <div class="math notranslate nohighlight">
 \[
-K = \frac12\ln(x) + \frac14\ln(y)
+K = \frac{1}{2}\ln(x) + \frac{1}{4}\ln(y)
 \]</div>
-</div>
-</div>
-<div class="section" id="id15">
-<h3>4.3. 编码区<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id15">
+<h3>4.3. 编码区<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h3>
 <p>一般 start 和 stop codon 不予考虑</p>
 <ul class="simple">
 <li><p>三类碱基</p>
@@ -1131,9 +1207,9 @@ K = \frac12\ln(x) + \frac14\ln(y)
 </li>
 <li><p>每类位点的总替代数</p>
 <ul>
-<li><p>0 兼并性位点: K0（全部非同义替代）</p></li>
-<li><p>4 兼并性位点: K4（全部同义替代）</p></li>
-<li><p>2 兼并性位点: K2（一半为同义替代，一半为非同义替代）</p></li>
+<li><p>0 兼并性位点: K₀（全部非同义替代）</p></li>
+<li><p>4 兼并性位点: K₄（全部同义替代）</p></li>
+<li><p>2 兼并性位点: K₂（一半为同义替代，一半为非同义替代）</p></li>
 </ul>
 </li>
 <li><p>核酸的演化速率</p></li>
@@ -1146,7 +1222,7 @@ r= \frac{K}{(2T)}
 <span class="math notranslate nohighlight">\(K_S\)</span>（同义替代位点的平均替代数）
 <span class="math notranslate nohighlight">\(K_A\)</span>（非同义替代位点的平均替代数）</p>
 <blockquote>
-<div><p><span class="math notranslate nohighlight">\(K = K_0 +K_2+K_4\)</span></p>
+<div><p><span class="math notranslate nohighlight">\(K = K₀ + K₂ + K₄\)</span></p>
 </div></blockquote>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(K_A/K_S\)</span>值</p></li>
@@ -1157,9 +1233,9 @@ r= \frac{K}{(2T)}
 <li><p><span class="math notranslate nohighlight">\(K_A/K_S &lt; 1\)</span>：造成氨基酸改变的替代少，为负选择</p></li>
 <li><p><span class="math notranslate nohighlight">\(K_A/K_S &gt; 1\)</span>：造成氨基酸改变的替代多，为正选择</p></li>
 </ul>
-</div>
-<div class="section" id="id16">
-<h3>4.4. 基因组<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id16">
+<h3>4.4. 基因组<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:center head"><p>生物</p></th>
@@ -1193,12 +1269,12 @@ r= \frac{K}{(2T)}
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div class="section" id="id17">
-<h2>5. 物种的形成和灭绝<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id18">
-<h3>5.1. 物种定义<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id17">
+<h2>5. 物种的形成和灭绝<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h2>
+<section id="id18">
+<h3>5.1. 物种定义<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>表征种：形态上相似的一类生物</p>
 <ul>
@@ -1224,11 +1300,11 @@ r= \frac{K}{(2T)}
 <div><p>不同的物种代表了演化过程中的不同阶段</p>
 </div></blockquote>
 <p>谱系（lineage）：由一个祖先（物种）所产生 的所有后代（物种）及其相互关系</p>
-</div>
-<div class="section" id="id19">
-<h3>5.2. 隔离<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id20">
-<h4>5.2.1. 地理隔离<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id19">
+<h3>5.2. 隔离<a class="headerlink" href="#id19" title="Permalink to this headline">#</a></h3>
+<section id="id20">
+<h4>5.2.1. 地理隔离<a class="headerlink" href="#id20" title="Permalink to this headline">#</a></h4>
 <ul>
 <li><p>异域隔离：自然灾害造成的新的生境，被分开的种群、新迁移而来的种群中产生的变异被随机固定，或被不同的选择压力固定</p>
 <blockquote>
@@ -1238,9 +1314,9 @@ r= \frac{K}{(2T)}
 <li><p>邻域隔离：生境的逐渐变化，居群两端的个体也发生分化，中间的过渡带即杂种带受到自然选择压力</p></li>
 <li><p>同域隔离：分化的两个物种在同一区域。原理上说是可能的，但在现实中更少，主要存在于昆虫和寄生动物中，宿主的改变可能会造成新物种的产生。</p></li>
 </ul>
-</div>
-<div class="section" id="id21">
-<h4>5.2.2. 有性生殖隔离<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id21">
+<h4>5.2.2. 有性生殖隔离<a class="headerlink" href="#id21" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>合子前隔离</p>
 <ul>
@@ -1258,14 +1334,14 @@ r= \frac{K}{(2T)}
 </ul>
 </li>
 </ul>
-</div>
-</div>
-<div class="section" id="id22">
-<h3>5.3. 物种灭绝<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id22">
+<h3>5.3. 物种灭绝<a class="headerlink" href="#id22" title="Permalink to this headline">#</a></h3>
 <p>狭义：过去的 50 年里，在野外再也未被发现的物种</p>
 <p>广义：一个物种最后一个个体的死亡</p>
-<div class="section" id="id23">
-<h4>5.3.1. 灭绝类型<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h4>
+<section id="id23">
+<h4>5.3.1. 灭绝类型<a class="headerlink" href="#id23" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>谱系</p>
 <ul>
@@ -1286,10 +1362,10 @@ r= \frac{K}{(2T)}
 </ul>
 </li>
 </ul>
-</div>
-</div>
-<div class="section" id="id24">
-<h3>5.4. 灭绝原因<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id24">
+<h3>5.4. 灭绝原因<a class="headerlink" href="#id24" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>内部：物种固有的特性所决定的</p>
 <ul>
@@ -1306,9 +1382,9 @@ r= \frac{K}{(2T)}
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="id25">
-<h3>5.5. 学说与假说<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id25">
+<h3>5.5. 学说与假说<a class="headerlink" href="#id25" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>间断平衡学说</p>
 <ul>
@@ -1325,12 +1401,12 @@ r= \frac{K}{(2T)}
 </ul>
 </li>
 </ul>
-</div>
-</div>
-<div class="section" id="id26">
-<h2>6. 物种起源<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id27">
-<h3>6.1. 人造生命<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id26">
+<h2>6. 物种起源<a class="headerlink" href="#id26" title="Permalink to this headline">#</a></h2>
+<section id="id27">
+<h3>6.1. 人造生命<a class="headerlink" href="#id27" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>生命的定义</p>
 <ul>
@@ -1339,8 +1415,8 @@ r= \frac{K}{(2T)}
 </ul>
 </li>
 </ul>
-<div class="section" id="id28">
-<h4>6.1.1. 进展<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h4>
+<section id="id28">
+<h4>6.1.1. 进展<a class="headerlink" href="#id28" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>细菌中存在限制性内切酶（Hamilton Smith，Nobel Prize for 1978）：切断外源 DNA</p></li>
 <li><p><em>Mycoplasma genitalium</em>，480 个不重复基因（1995）</p></li>
@@ -1349,12 +1425,12 @@ r= \frac{K}{(2T)}
 <li><p>合成了一种细菌的基因组 <em>Mycoplasma mycoides</em> JCVI-syn1.0，1079 kb，将其”组装”进了 <em>Mycoplasma capricolum</em> 的”壳”中（2010）</p></li>
 <li><p>对已合成的细菌的基因组 <em>Mycoplasma mycoides</em> JCVI-syn1.0 进行基因突变，然后将其”组装”进 <em>Mycoplasma capricolum</em> 的”壳”中（2016）</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="id29">
-<h3>6.2. 生物分子起源<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id30">
-<h4>6.2.1. 生物大分子起源<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="id29">
+<h3>6.2. 生物分子起源<a class="headerlink" href="#id29" title="Permalink to this headline">#</a></h3>
+<section id="id30">
+<h4>6.2.1. 生物大分子起源<a class="headerlink" href="#id30" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>第一个有信息的分子是 RNA（Francis Crick，1968）</p></li>
 <li><p>发现有催化作用的 RNA（Thomas Cech，1986）</p>
@@ -1375,9 +1451,9 @@ r= \frac{K}{(2T)}
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="id31">
-<h4>6.2.2. 线粒体起源<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id31">
+<h4>6.2.2. 线粒体起源<a class="headerlink" href="#id31" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>内共生学说：真核生物吞食原核生物后，后者与寄主细胞不断磨合，最终与之共生。</p></li>
 <li><p>最接近原核生物的真核生物线粒体为 <em>Reclinomonas americana</em>（1997）</p>
@@ -1388,17 +1464,17 @@ r= \frac{K}{(2T)}
 </li>
 <li><p>最接近真核生物线粒体的原核生物为 <em>Rickettsia prowazekii</em>（1998）</p></li>
 </ul>
-</div>
-<div class="section" id="id32">
-<h4>6.2.3. 叶绿体起源<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id32">
+<h4>6.2.3. 叶绿体起源<a class="headerlink" href="#id32" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>内共生起源：蓝细菌</p></li>
 <li><p>单系起源</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="id33">
-<h3>6.3. 适应度景观<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id33">
+<h3>6.3. 适应度景观<a class="headerlink" href="#id33" title="Permalink to this headline">#</a></h3>
 <p>根据演化理论，以下特征足以产生演化：</p>
 <ul class="simple">
 <li><p>复制者：一批能够以某种方式复制的智能体。</p></li>
@@ -1406,9 +1482,9 @@ r= \frac{K}{(2T)}
 <li><p>生存和繁殖差异：个体之间的差异必须影响其生存或繁殖的能力。</p></li>
 </ul>
 <p>为了模拟这些特征，需要定义智能体种群，智能体代表个体。每个智能体都有遗传信息，称为基因型，这是智能体繁殖时复制的信息。在 NK 模型中 <a class="footnote-reference brackets" href="#id37" id="id34">1</a>，基因型由 N 个二进制数字的序列表示，K 表示景观的凸凹度（landscape ruggedness）。为了产生突变，创建具有多种基因型的种群。最后，为了产生生存和繁殖差异，定义一个函数，将每个基因型映射为一个适应度（fitness），其中适应度是一个关于智能体的生存或繁殖能力的度量。</p>
-</div>
-<div class="section" id="id35">
-<h3>6.4. 证据<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id35">
+<h3>6.4. 证据<a class="headerlink" href="#id35" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>化石</p>
 <ul>
@@ -1419,8 +1495,8 @@ r= \frac{K}{(2T)}
 </li>
 <li><p>地理位置</p></li>
 </ul>
-<div class="section" id="id36">
-<h4>6.4.1. 极性的确定<a class="headerlink" href="#id36" title="Permalink to this headline">¶</a></h4>
+<section id="id36">
+<h4>6.4.1. 极性的确定<a class="headerlink" href="#id36" title="Permalink to this headline">#</a></h4>
 <p>特征的一些状态，谁先谁后，即祖征还是衍征</p>
 <ol class="simple">
 <li><p>纵向对比法：化石资料</p></li>
@@ -1433,10 +1509,10 @@ r= \frac{K}{(2T)}
 <dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/NK_model">https://en.wikipedia.org/wiki/NK_model</a>.</p>
 </dd>
 </dl>
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1460,9 +1536,11 @@ r= \frac{K}{(2T)}
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="02-%E5%88%86%E5%AD%90%E7%94%9F%E7%89%A9%E5%AD%A6%E5%9F%BA%E7%A1%80.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1478,24 +1556,28 @@ r= \frac{K}{(2T)}
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By ivaquero<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By ivaquero<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

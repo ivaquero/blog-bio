@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>病理学基础 &#8212; 生物狗学编程</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -64,7 +63,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -73,9 +86,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -93,14 +107,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../README.html">
-   生物狗学编程
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    生物狗学编程
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   综合生命科学
  </span>
@@ -369,12 +384,17 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
 </div>
 
 
@@ -382,61 +402,117 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
     
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
+    <div class="header-article row sticky-top noprint">
         
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/biotechs/04-病理学基础.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/biotechs/04-病理学基础.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
    1. 组织的适应和损伤
@@ -446,137 +522,83 @@ const thebe_selector_output = ".output, .cell_output"
     <a class="reference internal nav-link" href="#id3">
      1.1. 适应
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
-       萎缩、肥大
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id5">
-       增生、化生
-      </a>
-     </li>
-    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     1.2. 可逆损伤
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     1.3. 不可逆损伤
+    </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id6">
-     1.2. 可逆损伤
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id7">
-       样变
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id8">
-       其他
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id9">
-     1.3. 不可逆损伤
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id10">
-       坏死
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id11">
-       其他
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id12">
      1.4. 损伤的修复
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id13">
-       再生
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id14">
-       纤维性修复
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id15">
-       创伤愈合
-      </a>
-     </li>
-    </ul>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id16">
+  <a class="reference internal nav-link" href="#id7">
    2. 局部血液循环障碍
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id17">
+    <a class="reference internal nav-link" href="#id8">
      2.1. 充血、淤血
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id18">
+    <a class="reference internal nav-link" href="#id9">
      2.2. 血栓
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id19">
+  <a class="reference internal nav-link" href="#id10">
    3. 炎症
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id20">
+  <a class="reference internal nav-link" href="#id11">
    4. 肿瘤
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id21">
+  <a class="reference internal nav-link" href="#id12">
    5. 心血管系统疾病
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id22">
+  <a class="reference internal nav-link" href="#id13">
    6. 呼吸系统疾病
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id23">
+  <a class="reference internal nav-link" href="#id14">
    7. 消化系统疾病
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id24">
+  <a class="reference internal nav-link" href="#id15">
    8. 泌尿系统疾病
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id25">
+  <a class="reference internal nav-link" href="#id16">
    9. 生殖系统和乳腺疾病
   </a>
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>病理学基础</h1>
@@ -598,126 +620,73 @@ const thebe_selector_output = ".output, .cell_output"
     <a class="reference internal nav-link" href="#id3">
      1.1. 适应
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
-       萎缩、肥大
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id5">
-       增生、化生
-      </a>
-     </li>
-    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     1.2. 可逆损伤
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     1.3. 不可逆损伤
+    </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id6">
-     1.2. 可逆损伤
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id7">
-       样变
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id8">
-       其他
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id9">
-     1.3. 不可逆损伤
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id10">
-       坏死
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id11">
-       其他
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id12">
      1.4. 损伤的修复
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id13">
-       再生
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id14">
-       纤维性修复
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id15">
-       创伤愈合
-      </a>
-     </li>
-    </ul>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id16">
+  <a class="reference internal nav-link" href="#id7">
    2. 局部血液循环障碍
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id17">
+    <a class="reference internal nav-link" href="#id8">
      2.1. 充血、淤血
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id18">
+    <a class="reference internal nav-link" href="#id9">
      2.2. 血栓
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id19">
+  <a class="reference internal nav-link" href="#id10">
    3. 炎症
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id20">
+  <a class="reference internal nav-link" href="#id11">
    4. 肿瘤
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id21">
+  <a class="reference internal nav-link" href="#id12">
    5. 心血管系统疾病
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id22">
+  <a class="reference internal nav-link" href="#id13">
    6. 呼吸系统疾病
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id23">
+  <a class="reference internal nav-link" href="#id14">
    7. 消化系统疾病
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id24">
+  <a class="reference internal nav-link" href="#id15">
    8. 泌尿系统疾病
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id25">
+  <a class="reference internal nav-link" href="#id16">
    9. 生殖系统和乳腺疾病
   </a>
  </li>
@@ -727,55 +696,48 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1>病理学基础<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="id2">
-<h2>1. 组织的适应和损伤<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id3">
-<h3>1.1. 适应<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id4">
-<h4>萎缩、肥大<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>病理学基础<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<section id="id2">
+<h2>1. 组织的适应和损伤<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<section id="id3">
+<h3>1.1. 适应<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>萎缩（atrophy）：通常是由于该器官的实质细胞体积缩小所致，有时也可因细胞数目减少引起，或二者兼有。萎缩有生理性、病理性之分。生理性萎缩与年龄有关。</p></li>
 <li><p>肥大（hypertrophy）：由于功能增加、合成代谢旺盛，细胞体积增大，使该器官、组织体积增大。病理性有代偿性、内分泌性之分。</p></li>
-</ul>
-</div>
-<div class="section" id="id5">
-<h4>增生、化生<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
-<ul class="simple">
 <li><p>增生（hyperplasia）：实质细胞数量增多，使该组织、器官体积增大。病理性有代偿性、内分泌性之分。</p></li>
 <li><p>化生（metaplasia）：一种已分化成熟的细胞由于适应环境改变而被另一种分化成熟细胞所代替的过程。通常发生于同源细胞间。</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="id6">
-<h3>1.2. 可逆损伤<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id7">
-<h4>样变<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id4">
+<h3>1.2. 可逆损伤<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
+<li><p>样变</p>
+<ul>
 <li><p>细胞水肿（cell swelling，hydropic degeneration）：细胞内水钠积聚过多，引起细胞体积肿大，胞浆疏松、透明淡染。发生于实质性器官（肾、肝、心），主要原因是缺氧、中毒、感染。</p></li>
 <li><p>脂肪样变（fatty degeneration）：类似细胞水肿，非脂肪细胞的脂滴增多。常发生于心、肝、肾等代谢旺盛或耗氧较多的器官。</p></li>
 <li><p>玻璃样变（hyaline degeneration）：在 HE 染色情况下，细胞外间质或细胞质内出现伊红染、均质半透明、无结构的玻璃样物质。</p></li>
 <li><p>粘液样变（mucoid degeneration）：组织间质内出现类粘液（粘多糖和蛋白质）的积聚。粘液样变性常见于间叶性肿瘤、急性风湿病时的心血管壁、动脉粥样硬化的血管壁。</p></li>
 <li><p>淀粉样变（amyloidosis）：组织内有淀粉样物质沉着。此种病变可见于慢性炎症、内分泌系统肿瘤、老年性痴呆等多种疾病。</p></li>
 </ul>
-</div>
-<div class="section" id="id8">
-<h4>其他<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
-<ul class="simple">
+</li>
+<li><p>其他</p>
+<ul>
 <li><p>病理性色素沉积（pathologic pigmentation）：含铁血黄素（hemosiderin）、脂褐素（lipofuscin）、黑色素（melanin）、胆红素（bilirubin）</p></li>
-<li><p>病理性钙化（pathologic calcification）：营养不良性钙化、转移性钙化 。</p></li>
+<li><p>病理性钙化（pathologic calcification）：营养不良性钙化、转移性钙化。</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="id9">
-<h3>1.3. 不可逆损伤<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id10">
-<h4>坏死<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+</li>
+</ul>
+</section>
+<section id="id5">
+<h3>1.3. 不可逆损伤<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
+<li><p>坏死</p>
+<ul>
 <li><p>凝固性坏死（coagulation necrosis）：组织坏死后，蛋白质变性凝固且溶酶体酶水解作用较弱时，坏死区呈灰黄、干燥、质实状态。这种坏死多由缺血引起，常在心、肾、脾等器官的缺血性坏死时出现。</p></li>
 <li><p>液化性坏死（liquefaction necrosis）：组织坏死后分解、液化而呈液体状，有时还形成含有液体的腔。</p></li>
 <li><p>干酪样坏死 （caseous necrosis）：结核病时，坏死区内脂质较多，颜色带黄，质地松软，状似干酪。</p></li>
@@ -784,46 +746,48 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>坏疽（gangrene）：大块组织坏死后继发腐败菌感染，出现不同程度的腐败性变化。</p></li>
 <li><p>湿性坏疽：常发生于与体外相连的内脏，如肠、阑尾等器官，也可发生于四肢。</p></li>
 </ul>
-</div>
-<div class="section" id="id11">
-<h4>其他<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
-<p>细胞凋亡（Apoptosis）：也称程序性细胞死亡，是真核细胞在一定条件下通过启动其自身内部机制，主要是激活内源性核酸内切酶而发生的细胞主动性死亡方式。</p>
-</div>
-</div>
-<div class="section" id="id12">
-<h3>1.4. 损伤的修复<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id13">
-<h4>再生<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="id14">
-<h4>纤维性修复<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
-<ul class="simple">
-<li><p>肉芽组织（granulation tissue）：由新生的毛细血管，增生的纤维母细胞及多少不等的炎细胞组成，在创伤表面常呈鲜红色，颗粒状，柔软湿润，似新鲜肉芽。</p></li>
-<li><p>瘢痕组织：</p></li>
+</li>
+<li><p>其他</p>
+<ul>
+<li><p>细胞凋亡（Apoptosis）：也称程序性细胞死亡，是真核细胞在一定条件下通过启动其自身内部机制，主要是激活内源性核酸内切酶而发生的细胞主动性死亡方式。</p></li>
 </ul>
-</div>
-<div class="section" id="id15">
-<h4>创伤愈合<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
-<p>皮肤：</p>
+</li>
+</ul>
+</section>
+<section id="id6">
+<h3>1.4. 损伤的修复<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
+<li><p>纤维性修复</p>
+<ul>
+<li><p>肉芽组织（granulation tissue）：由新生的毛细血管，增生的纤维母细胞及多少不等的炎细胞组成，在创伤表面常呈鲜红色，颗粒状，柔软湿润，似新鲜肉芽。</p></li>
+<li><p>瘢痕组织</p></li>
+</ul>
+</li>
+<li><p>创伤愈合</p>
+<ul>
+<li><p>皮肤</p>
+<ul>
 <li><p>一期愈合（healing by first intention） 见于组织缺损少、创缘整齐、创面对合好、无感染、炎症反应轻微的伤口。</p></li>
 <li><p>二期愈合（healing by second intention） 见于创伤组织缺损大，创缘不整齐，伴有感染，炎症反应明显的伤口。</p></li>
 </ul>
-<p>骨折：</p>
-</div>
-</div>
-</div>
-<div class="section" id="id16">
-<h2>2. 局部血液循环障碍<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id17">
-<h3>2.1. 充血、淤血<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+</li>
+<li><p>骨折</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="id7">
+<h2>2. 局部血液循环障碍<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
+<section id="id8">
+<h3>2.1. 充血、淤血<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>动脉性充血（arterial hyperemia）：局部组织和器官由于动脉血输入增多而发生的充血。</p></li>
 <li><p>静脉性充血（venous hyperemia）：器官或组织静脉血液回流受阻，血液淤积于小静脉和毛细血管内引起的充血，简称淤血（congestion）。</p></li>
 </ul>
-</div>
-<div class="section" id="id18">
-<h3>2.2. 血栓<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id9">
+<h3>2.2. 血栓<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>血栓（thrombus）：在活体的心脏和血管内，血液发生凝固或血液中某些有形成分析出凝集形成固体质块。</p></li>
 <li><p>白色血栓（pale thrombus）：由血小板粘附、粘集形成的附着于心血管壁损伤处的血栓。主要由血小板及少量纤维素构成。</p></li>
@@ -831,30 +795,30 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>红色血栓（red thrombus）：主要见于静脉。</p></li>
 <li><p>透明血栓（hyaline thrombus）：发生于微循环的血管内，主要在毛细血管，因其只能在显微镜下见到。透明血栓主要由嗜酸性同质性的纤维蛋白构成。这种血栓为多发性，最常见于弥漫性血管内凝血（DIC）时的微循环内。</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="id19">
-<h2>3. 炎症<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="id20">
-<h2>4. 肿瘤<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="id21">
-<h2>5. 心血管系统疾病<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="id22">
-<h2>6. 呼吸系统疾病<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="id23">
-<h2>7. 消化系统疾病<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="id24">
-<h2>8. 泌尿系统疾病<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="id25">
-<h2>9. 生殖系统和乳腺疾病<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h2>
-</div>
-</div>
+</section>
+</section>
+<section id="id10">
+<h2>3. 炎症<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="id11">
+<h2>4. 肿瘤<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="id12">
+<h2>5. 心血管系统疾病<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="id13">
+<h2>6. 呼吸系统疾病<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="id14">
+<h2>7. 消化系统疾病<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="id15">
+<h2>8. 泌尿系统疾病<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="id16">
+<h2>9. 生殖系统和乳腺疾病<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -878,9 +842,11 @@ const thebe_selector_output = ".output, .cell_output"
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="03-%E6%BC%94%E5%8C%96%E8%AE%BA%E5%9F%BA%E7%A1%80.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -896,24 +862,28 @@ const thebe_selector_output = ".output, .cell_output"
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By ivaquero<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By ivaquero<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

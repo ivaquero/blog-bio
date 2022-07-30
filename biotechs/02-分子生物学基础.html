@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>分子生物学基础 &#8212; 生物狗学编程</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -66,7 +65,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -75,9 +88,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -95,14 +109,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../README.html">
-   生物狗学编程
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    生物狗学编程
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   综合生命科学
  </span>
@@ -371,12 +386,17 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
 </div>
 
 
@@ -384,61 +404,117 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
     
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
+    <div class="header-article row sticky-top noprint">
         
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/biotechs/02-分子生物学基础.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/biotechs/02-分子生物学基础.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
    1. 微生物命名
@@ -564,12 +640,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>分子生物学基础</h1>
@@ -711,15 +786,16 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1>分子生物学基础<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="id2">
-<h2>1. 微生物命名<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id3">
-<h3>1.1. 分类<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>分子生物学基础<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<section id="id2">
+<h2>1. 微生物命名<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<section id="id3">
+<h3>1.1. 分类<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>分类</p>
 <ul>
@@ -738,9 +814,9 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="id4">
-<h3>1.2. 基因<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id4">
+<h3>1.2. 基因<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>一般方法（三部分）</p>
 <ul>
@@ -822,9 +898,9 @@ const thebe_selector_output = ".output, .cell_output"
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="id5">
-<h3>1.3. 表型<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id5">
+<h3>1.3. 表型<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p>first-letter capitalized</p></li>
 <li><p>not italicized</p>
@@ -834,12 +910,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ol>
-</div>
-</div>
-<div class="section" id="id6">
-<h2>2. 基因结构<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id7">
-<h3>2.1. 基础概念<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id6">
+<h2>2. 基因结构<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
+<section id="id7">
+<h3>2.1. 基础概念<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>基因（gene）：即遗传因子，是产生一条多肽链或功能 RNA 所需的全部核苷酸序列，即带有遗传讯息的 DNA 片段；</p></li>
 <li><p>顺反子（cistron）：即结构基因，为决定一条多肽链合成的功能单位。顺反子在一定条件下与基因同义；</p></li>
@@ -848,9 +924,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>辅酶（coenzyme）：一类可将化学基团从一个酶转移到另一个酶上的有机小分子。与酶较为松散地结合，对于特定酶的活性发挥是必要的；</p></li>
 </ul>
 <p><img alt="BI-aa" src="../_images/aa.png" /></p>
-</div>
-<div class="section" id="id8">
-<h3>2.2. 复制、转录、翻译<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id8">
+<h3>2.2. 复制、转录、翻译<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>复制</p></li>
 </ul>
@@ -863,9 +939,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>翻译</p></li>
 </ul>
 <p>以 mRNA 为模板，原料为 20 中游离的氨基酸，3 个碱基决定 1 个氨基酸。</p>
-</div>
-<div class="section" id="orfcds">
-<h3>2.3. ORF、CDS<a class="headerlink" href="#orfcds" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="orfcds">
+<h3>2.3. ORF、CDS<a class="headerlink" href="#orfcds" title="Permalink to this headline">#</a></h3>
 <p>开放读码框（Open Reading Frame, ORF）是从一个起始密码子开始到一个终止密码子结束的一段序列；不是所有读码框都能被表达出蛋白产物或有生物学功能的蛋白；</p>
 <ul class="simple">
 <li><p>CDS 必定是一个或多个 ORF；但，每个 ORF 不一定均是 CDS；</p></li>
@@ -873,9 +949,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>CDS = transcription（事实存在）；</p></li>
 </ul>
 <p><img alt="ORF" src="../_images/gene-seq.dio" /></p>
-</div>
-<div class="section" id="promoter">
-<h3>2.4. 启动子（Promoter）<a class="headerlink" href="#promoter" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="promoter">
+<h3>2.4. 启动子（Promoter）<a class="headerlink" href="#promoter" title="Permalink to this headline">#</a></h3>
 <p>位于编码区上游的非编码区。真核生物启动子包括下列几种不同顺序，能促进转录过程：</p>
 <ul class="simple">
 <li><p>帽子位点</p>
@@ -905,34 +981,34 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="enhancer">
-<h3>2.5. 增强子（Enhancer）<a class="headerlink" href="#enhancer" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="enhancer">
+<h3>2.5. 增强子（Enhancer）<a class="headerlink" href="#enhancer" title="Permalink to this headline">#</a></h3>
 <p>又称远上游序列（far upstream sequence），一般都在-100bp 以上；</p>
 <ul class="simple">
 <li><p>对依赖于 TATA 框的转录和不依赖 TATA 框的转录都有增强效应，但对前者增强效应高；</p></li>
 <li><p>增强子是通过启动子来增加转录的，有效的增强子可位于基因的 5’端，也可位于基因的 3’端，有的还可位于基因的内含子中；</p></li>
 <li><p>增强子的效应很明显，一般能使基因转录频率增加 10-200 倍，有的甚至可高达上千倍；</p></li>
 </ul>
-</div>
-<div class="section" id="terminator">
-<h3>2.6. 终止子（Terminator）<a class="headerlink" href="#terminator" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="terminator">
+<h3>2.6. 终止子（Terminator）<a class="headerlink" href="#terminator" title="Permalink to this headline">#</a></h3>
 <p>在一个基因的末端往往有一段特定顺序，具有转录终止的功能，为反向重复序列，是 RNA 聚合酶停止工作的信号，反向重复序列转录后，可形成发夹式结构，且形成一串 U。发夹式结构阻碍了 RNA 聚合酶的移动，一串 U 的 U 与 DNA 模板中的 A 结合不稳定，从模板上脱落下来，转录终止。</p>
-</div>
-</div>
-<div class="section" id="id9">
-<h2>3. 乳糖操纵子<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="operon">
-<h3>3.1. 操纵子（Operon）<a class="headerlink" href="#operon" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id9">
+<h2>3. 乳糖操纵子<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h2>
+<section id="operon">
+<h3>3.1. 操纵子（Operon）<a class="headerlink" href="#operon" title="Permalink to this headline">#</a></h3>
 <p>很多功能相关的结构基因串联排列在染色体上，由一个共同的控制区来操纵这些基因的表达，包含这些结构基因和控制区的整个核苷酸序列就称为操纵子。</p>
 <ul class="simple">
 <li><p>1960∼1961 年，Monod 和 Jacob 首次提出”操纵子”学说（Lodish et al. 2000），获 1965 年诺贝尔生理学和医学奖；</p></li>
 <li><p>1940 年，Monod 发现细菌在含葡萄糖和乳糖的培养基上生长时，细菌先利用葡萄糖，葡萄糖用完后，才利用乳糖；在糖源变换期，细菌的生长会出现停顿。即产生”二次生长曲线”。</p></li>
 </ul>
 <p><img alt="Operon" src="../_images/operon-lac.png" /></p>
-</div>
-<div class="section" id="id10">
-<h3>3.2. 相关概念<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id10">
+<h3>3.2. 相关概念<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>组成型表达（constitutive expression）：在个体发育的任一阶段都能在大多数细胞中持续进行的基因表达，受环境因素的影响较少；</p></li>
 <li><p>持家基因（housekeeping gene）：表达产物通常是对生命过程必需的、必不可少的基因；</p></li>
@@ -941,9 +1017,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>协调表达（coordinate expression）：在一定机制控制下，功能上相关的一组基因，无论其为何种表达方式，均需协调一致、共同表达，使各表达产物的分子比例适当，从而正常发挥功能的现象；</p></li>
 <li><p>安慰诱导物（gratuitous inducer）：能诱导酶的合成，但又不被分解的分子；</p></li>
 </ul>
-</div>
-<div class="section" id="id11">
-<h3>3.3. 组成<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id11">
+<h3>3.3. 组成<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>三个特异性序列</p>
 <ul>
@@ -967,29 +1043,29 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 <p><img alt="Operon 2" src="../_images/operon-lac2.png" /></p>
-</div>
-<div class="section" id="mrna">
-<h3>3.4. 多顺反子 mRNA<a class="headerlink" href="#mrna" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="mrna">
+<h3>3.4. 多顺反子 mRNA<a class="headerlink" href="#mrna" title="Permalink to this headline">#</a></h3>
 <p>多顺反子 mRNA 在细菌中很普遍。多顺反子 <em>lac</em> mRNA 中的 lacZ，lacY，lacA 经翻译生成的产物分别生成代谢分解乳糖的三种酶，且始终存在着一定的比例关系（Z:Y:A = 5:2:1）</p>
 <ul class="simple">
 <li><p>lacZ，lacY，lacA 基因的转录是由 lacI 基因指令合成的阻遏蛋白 R 所控制；</p></li>
 <li><p>lacI 一般和结构基因相毗连，但它本身具有自己的启动子和终止子，成为独立的转录单位；</p></li>
 <li><p>由于 lacI 的产物是可溶性蛋白，按照理说是无需位于结构基因的附近，它是能够分散到各处或结合到分散的 DNA 位点上；</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="id12">
-<h2>4. 乳糖操纵子的调控<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id13">
-<h3>4.1. 阻遏蛋白的负调控<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id12">
+<h2>4. 乳糖操纵子的调控<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h2>
+<section id="id13">
+<h3>4.1. 阻遏蛋白的负调控<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>无乳糖：lac 操纵子处于阻遏状态（repression）；</p></li>
 <li><p>有乳糖（presence of lactose）：<em>lac</em> 操纵子即可被诱导；</p></li>
 <li><p>诱导剂（inducer）：别乳糖、半乳糖、IPTG（异丙基硫代半乳糖苷）</p></li>
 </ul>
-</div>
-<div class="section" id="iptg">
-<h3>4.2. IPTG<a class="headerlink" href="#iptg" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="iptg">
+<h3>4.2. IPTG<a class="headerlink" href="#iptg" title="Permalink to this headline">#</a></h3>
 <p>由于乳糖虽可诱导酶的合成，但又随之分解，产生很多复杂的动力学问题，因此人们常用安慰诱导物来进行各种实验，如异丙基-<em>β</em>-D-硫代半乳糖苷（IPTG）；</p>
 <ul class="simple">
 <li><p>IPTG 与自然的 <em>β</em>-半乳糖苷酶相似，且不能被酶分解，它的浓度在实验中不会改变。能在缺乏<em>lacY</em>基因下而有效地被运送。</p></li>
@@ -997,9 +1073,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>X-gal（5-溴-4-录-3-吲哚-<em>β</em>-半乳糖苷）亦为一种人工化学合成的半乳糖苷，可被 <em>β</em>-半乳糖苷酶水解产生兰色化合物，因此可用作 β－半乳糖苷酶活性的指示剂；IPTG 和 X-gal 都被广泛应用在分子生物学和基因工程的工作中；</p></li>
 </ul>
 <p><img alt="IPTG" src="../_images/iptg.png" /></p>
-</div>
-<div class="section" id="cap">
-<h3>4.3. CAP 的正调控<a class="headerlink" href="#cap" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="cap">
+<h3>4.3. CAP 的正调控<a class="headerlink" href="#cap" title="Permalink to this headline">#</a></h3>
 <p>CAP （catabolite activator protein）：分解代谢基因激活蛋白，又称为 CRP（cAMP receptor protein），<em>lac</em> 操纵子高水平转录必需的一个激活蛋白；</p>
 <ul class="simple">
 <li><p>CAP（同二聚体），含 DNA 结合区
@@ -1009,16 +1085,16 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p>当细菌在含有葡萄糖套和乳糖的培养基中生长时，通常优先利用葡萄糖。只有当葡萄糖消耗完，经过一段停滞期，在乳糖的诱导下半乳糖苷酶开始合成，细菌才能充分利用乳糖。葡萄糖的降解物能抑制腺苷酸环化酶活性，并活化磷酸二脂酶，因而降低 cAMP 的浓度。故葡萄糖存在时，cAMP 浓度低；仅在葡萄糖消耗完毕时，cAMP 浓度增高，CAP-cAMP 复合物形成（结合于 <em>lac</em> 操纵子 CAP 结合位点），才会促进转录。</p>
 <p><img alt="CAP" src="../_images/cap.png" /></p>
-</div>
-<div class="section" id="id14">
-<h3>4.4. 协调调控<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id14">
+<h3>4.4. 协调调控<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h3>
 <p>由于 <span class="math notranslate nohighlight">\(P_{lac}\)</span> 是弱启动子，单纯因乳糖的存在发生去阻遏使 <em>lac</em> 操纵元转录开放，还不能使细菌很好利用乳糖，必需同时有 CAP 来加强转录活性，细菌才能合成足够的酶来利用乳糖；</p>
 <ul class="simple">
 <li><p>关键条件：<em>lac</em> 操纵子的强诱导既需要有乳糖的存在又需要没有葡萄糖可供利用。</p></li>
 </ul>
-</div>
-<div class="section" id="id15">
-<h3>4.5. 阻遏蛋白和 CAP 的双重调控<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id15">
+<h3>4.5. 阻遏蛋白和 CAP 的双重调控<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>负调节与正调节协调合作</p>
 <ul>
@@ -1030,10 +1106,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>本底表达</p></li>
 </ul>
 <p>在细胞中透性酶等总是以最低量存在着，足以供给底物开始进入时的需要。即，操纵子有一个本底水平（basal level）的表达，即使没有诱导物的存在，也保持此表达水平（诱导水平的 1‰）；有的诱导物是通过其他吸收系统进入细胞的。</p>
-</div>
-</div>
-<div class="section" id="id16">
-<h2>5. 出芽酵母基因的命名<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="id16">
+<h2>5. 出芽酵母基因的命名<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h2>
 <ol class="simple">
 <li><p>Dominant gene: 3 upper case letters + 1 number</p></li>
 <li><p>Recessive gene: 3 lower case letters + 1 number</p></li>
@@ -1041,8 +1117,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Protein: Proteins are referred to by the relevant gene symbol, non-italic, initial letter uppercase and with the suffix p, <em>e.g.</em>, Ade5p, Cdc28p</p></li>
 <li><p>Phenotypes: a non-italic three-letter abbreviation corresponding to the gene symbol, initial letter uppercase. <em>e.g.</em>, Arg⁻, Arg⁺。</p></li>
 </ol>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1066,9 +1142,11 @@ const thebe_selector_output = ".output, .cell_output"
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="01-%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%9F%BA%E7%A1%80.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1084,24 +1162,28 @@ const thebe_selector_output = ".output, .cell_output"
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By ivaquero<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By ivaquero<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

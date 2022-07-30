@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>糖生化测定 &#8212; 生物狗学编程</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -66,7 +65,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -75,9 +88,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -95,14 +109,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../README.html">
-   生物狗学编程
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    生物狗学编程
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   综合生命科学
  </span>
@@ -371,12 +386,17 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
 </div>
 
 
@@ -384,61 +404,117 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
     
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
+    <div class="header-article row sticky-top noprint">
         
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/biotechs/糖生化测定.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/biotechs/糖生化测定.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
    1. 分糖
@@ -582,12 +658,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>糖生化测定</h1>
@@ -747,23 +822,24 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1>糖生化测定<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="id2">
-<h2>1. 分糖<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id3">
-<h3>1.1. 预备<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>糖生化测定<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<section id="id2">
+<h2>1. 分糖<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<section id="id3">
+<h3>1.1. 预备<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p>收集管以清水冲洗，后以去离子水浸泡</p></li>
 <li><p>称取寡糖 1~2 g 配成 10% 的溶液</p></li>
 <li><p>上样，紫外测定</p></li>
 </ol>
-</div>
-<div class="section" id="id4">
-<h3>1.2. 收集<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id4">
+<h3>1.2. 收集<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p>以 1 mL/min 流速，每 10 min 收集 1 管</p></li>
 <li><p>取紫外吸收峰交叠处，点 TLC 验证纯度</p></li>
@@ -771,40 +847,40 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>平放，冷冻于 -80℃</p></li>
 <li><p>在三角瓶上封膜，在膜上扎眼，冻干，冷冻保存。</p></li>
 </ol>
-</div>
-<div class="section" id="id5">
-<h3>1.3. 壳寡糖的分离<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id5">
+<h3>1.3. 壳寡糖的分离<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p>制备 1% 的壳聚糖溶液（将 1g 壳聚糖溶于 100 mL 1% 的醋酸，后用 NaOH 调 pH 至 5.0）</p></li>
 <li><p>取 100 mL 溶液 + 0.5 U 壳聚糖酶 + 1 U 几丁质酶 + 2 U NAGase，30℃，8h。</p></li>
 <li><p>将溶液 pH 调至 8.0，旋蒸后，过膜除沉淀。</p></li>
 <li><p>上活性炭柱，测定 OD₂₂₀</p></li>
 </ol>
-</div>
-</div>
-<div class="section" id="id6">
-<h2>2. 糖检测与分析<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id7">
-<h3>2.1. 薄层层析<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="id8">
-<h3>2.2. 制板<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id6">
+<h2>2. 糖检测与分析<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
+<section id="id7">
+<h3>2.1. 薄层层析<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="id8">
+<h3>2.2. 制板<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p>背面 10 cm 处取两点划线，裁下，不断轻微翻折至两部分断开</p></li>
 <li><p>底线距底边 1.5 cm，其上每隔 0.6 cm 取点，每点上样 5~10 μL，进样针点样</p></li>
 </ol>
-</div>
-<div class="section" id="id9">
-<h3>2.3. 展层<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id9">
+<h3>2.3. 展层<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p>在展层槽中加入展层剂，其里面低于硅胶板样品线</p></li>
 <li><p>放入展层，展完后（约 40 min），吹干，再展，展完再吹干</p></li>
 <li><p>迅速插入入装有染色剂的液槽中，吹干</p></li>
 <li><p>烘箱加热至显色（10 min）</p></li>
 </ol>
-</div>
-<div class="section" id="id10">
-<h3>2.4. 显色剂与展层剂<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id10">
+<h3>2.4. 显色剂与展层剂<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:center head"><p>检测产物</p></th>
@@ -826,9 +902,9 @@ const thebe_selector_output = ".output, .cell_output"
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="tlc">
-<h3>2.5. TLC 拖尾现象<a class="headerlink" href="#tlc" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="tlc">
+<h3>2.5. TLC 拖尾现象<a class="headerlink" href="#tlc" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p>样品浓度过大，薄层板过载导致。这种情况直接降低样品浓度或是上样量就可以验证了。</p></li>
 <li><p>样品对硅胶的吸附能力过强导致的拖尾。对不同体系加入不同的调节剂，酸体系加冰醋酸，碱体系加氨水。</p></li>
@@ -837,19 +913,19 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>硅胶板是有酸性的，分子中有 <code class="docutils literal notranslate"><span class="pre">-NH</span></code> 或 <code class="docutils literal notranslate"><span class="pre">-N-</span></code> 的化合物显碱性，用硅胶板做 TLC 的时候会拖尾</p></li>
 <li><p>展开剂中加三乙胺或氨水，可以使硅胶板的酸性中和，就不会拖尾了，一般做碱性物质的 TLC 都加氨水或三乙胺</p></li>
 </ol>
-</div>
-<div class="section" id="id11">
-<h3>2.6. 其他问题<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id11">
+<h3>2.6. 其他问题<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>展样不齐：桌面不平；硅胶板未放平；硅胶板上下不平行（裁板问题）；</p></li>
 <li><p>背景色深、显色难：样品杂质多（可用阴阳离子树脂吸附）；显色剂过久（硫酸中混有过多水分等）；展层剂过久混有杂质；展层剂未及时吹干 。</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="id12">
-<h2>3. 酶活<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id14">
-<h3>3.1. 几丁质酶及壳聚糖酶 <a class="footnote-reference brackets" href="#id24" id="id13">1</a><a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id12">
+<h2>3. 酶活<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h2>
+<section id="id14">
+<h3>3.1. 几丁质酶及壳聚糖酶 <a class="footnote-reference brackets" href="#id24" id="id13">1</a><a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p>底物震荡，剪枪头</p></li>
 <li><p>底物（sigma 胶体几丁质，质量分数 ca. 1%）200 μL</p></li>
@@ -858,9 +934,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>加入 DNS 600 μL，沸水浴 10 min</p></li>
 <li><p>简单离心，测 OD₅₄₀</p></li>
 </ol>
-</div>
-<div class="section" id="n-2">
-<h3>3.2. β-<em>N</em>-乙酰氨基葡萄糖苷酶 <a class="footnote-reference brackets" href="#id25" id="id15">2</a><a class="headerlink" href="#n-2" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="n-2">
+<h3>3.2. β-<em>N</em>-乙酰氨基葡萄糖苷酶 <a class="footnote-reference brackets" href="#id25" id="id15">2</a><a class="headerlink" href="#n-2" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p>底物（2 mM <em>p</em>NP-β-乙酰葡萄糖胺） 100 μL</p></li>
 <li><p>缓冲液（20 mM pH 6.5 磷酸盐）稀释酶液 100 μL</p></li>
@@ -868,41 +944,41 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>加入 0.5 M NaOH 200 μL 终止反应</p></li>
 <li><p>测 OD₄₁₀</p></li>
 </ol>
-</div>
-</div>
-<div class="section" id="id16">
-<h2>4. 酶学性质<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="ph">
-<h3>4.1. pH<a class="headerlink" href="#ph" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id16">
+<h2>4. 酶学性质<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h2>
+<section id="ph">
+<h3>4.1. pH<a class="headerlink" href="#ph" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p>最适 pH：于最适温度下，以不同 pH 缓冲液将酶液稀释 100 倍以上，采用标准方法测定酶活。</p></li>
 <li><p>pH 稳定性：于最适温度下，以不同 pH 缓冲液将酶液稀释 100 倍以上，保温 30 min，冰水浴 30 min，再于最适条件下（调回最适 pH）测定酶活</p></li>
 </ol>
-</div>
-<div class="section" id="id17">
-<h3>4.2. 温度<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id17">
+<h3>4.2. 温度<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p>最适温度：于最适 pH 下，以不同温度水浴，采用标准方法测定酶活。</p></li>
 <li><p>温度稳定性：于最适 pH 下，以不同温度水浴处理 30 min，冰浴 30 min，再于最适条件下测定酶活。</p></li>
 </ol>
-</div>
-<div class="section" id="id18">
-<h3>4.3. 半衰期<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id18">
+<h3>4.3. 半衰期<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h3>
 <p>设酶失活为一级不可逆失活，酶失活符合一级失活模型，则时间与酶活浓度的关系满足下列方程：</p>
 <div class="math notranslate nohighlight">
 \[
-[E_t]=[E_0]\exp(-k_dt)
+[E_t]=[E₀]\exp(-k_dt)
 \]</div>
-<p>多数酶的热失活服从上式，<span class="math notranslate nohighlight">\(k_d\)</span>可称为衰变常数，单位为<span class="math notranslate nohighlight">\(t^{-1}\)</span>。<span class="math notranslate nohighlight">\(k_d\)</span>的倒数称为时间常数<span class="math notranslate nohighlight">\(t_d\)</span>。当<span class="math notranslate nohighlight">\([E_t]\)</span>为<span class="math notranslate nohighlight">\([E_0]\)</span>的一半的时间称为半衰期，用<span class="math notranslate nohighlight">\(t_{\frac12}\)</span>表示。</p>
-<p><span class="math notranslate nohighlight">\(k_d\)</span>、<span class="math notranslate nohighlight">\(t_d\)</span>和<span class="math notranslate nohighlight">\(t_{\frac12}\)</span>之间的关系为：</p>
+<p>多数酶的热失活服从上式，<span class="math notranslate nohighlight">\(k_d\)</span>可称为衰变常数，单位为<span class="math notranslate nohighlight">\(t^{-1}\)</span>。<span class="math notranslate nohighlight">\(k_d\)</span>的倒数称为时间常数<span class="math notranslate nohighlight">\(t_d\)</span>。当<span class="math notranslate nohighlight">\([E_t]\)</span>为<span class="math notranslate nohighlight">\([E₀]\)</span>的一半的时间称为半衰期，用<span class="math notranslate nohighlight">\(t_{\frac{1}{2}}\)</span>表示。</p>
+<p><span class="math notranslate nohighlight">\(k_d\)</span>、<span class="math notranslate nohighlight">\(t_d\)</span>和<span class="math notranslate nohighlight">\(t_{\frac{1}{2}}\)</span>之间的关系为：</p>
 <div class="math notranslate nohighlight">
 \[
-k_d = 1/t_d = \ln2 / t_{\frac12}
+k_d = 1/t_d = \ln2 / t_{\frac{1}{2}}
 \]</div>
 <p>取一定量的酶液，在热稳定转变温度下，保温一定时间（0，15，30，60，120，240 min）后迅速冷却。测定残余活力，以保温前的酶活力为 100%，以相对残余酶活取自然对数为纵坐标，时间为横坐标作图。得标准曲线，以之求取半衰期。</p>
-</div>
-<div class="section" id="id19">
-<h3>4.4. 分子量<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id19">
+<h3>4.4. 分子量<a class="headerlink" href="#id19" title="Permalink to this headline">#</a></h3>
 <p>在蛋白质混合样品中各蛋白质组分的分子大小和形状以及所带电荷多少等因素所造成的电泳迁移率有差别。在聚丙烯酰胺凝胶系统中，加入一定量的十二烷基硫酸钠（SDS），形成蛋白质－SDS 复合物，这种复合物由于结合了大量的 SDS，使蛋白质丧失了原有的电荷状态，形成了仅保持原有分子大小为特征的负离子团块，从而降低或消除了各种蛋白质分子之间的天然的电荷差异，此时，蛋白质分子的电泳迁移率主要取决于它的分子量大小，而其它因素对电泳迁移率的影响几乎可以忽略不计。</p>
 <p>当蛋白质的分子量在 15,000~200,000 之间时，电泳迁移率与分子量的对数值呈直线关系，符合下列方程：</p>
 <div class="math notranslate nohighlight">
@@ -911,31 +987,31 @@ k_d = 1/t_d = \ln2 / t_{\frac12}
 \]</div>
 <p>其中，<span class="math notranslate nohighlight">\(M_r\)</span>为蛋白质分子量，<span class="math notranslate nohighlight">\(m_R\)</span> 为相对迁移率，等于样品迁移距离（cm）/染料迁移距离（cm）。在条件一定时，b 和 K 均为常数。</p>
 <p>若将已知分子量的标准蛋白质的迁移率对分子量的对数作图，可获得一条标准曲线。未知蛋白质在相同条件下进行电泳，根据它的电泳迁移率即可在标准曲线上求得分子量。</p>
-</div>
-</div>
-<div class="section" id="id20">
-<h2>5. 培养基<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="l">
-<h3>5.1. 几丁质平板（1L）<a class="headerlink" href="#l" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id20">
+<h2>5. 培养基<a class="headerlink" href="#id20" title="Permalink to this headline">#</a></h2>
+<section id="l">
+<h3>5.1. 几丁质平板（1L）<a class="headerlink" href="#l" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p>离子液：K₂HPO₄ 0.7g，KH₂PO₄ 0.3g，KCl 0.5g，MgSO₄ 0.5g</p></li>
 <li><p>有机物：蛋白胨 5g，琼脂 15g，胶体几丁质</p></li>
 </ol>
-</div>
-<div class="section" id="id21">
-<h3>5.2. 胶体几丁质<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id21">
+<h3>5.2. 胶体几丁质<a class="headerlink" href="#id21" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p>10g 几丁质粉末 + 100 mL 浓盐酸，阴暗处静置过夜</p></li>
 <li><p>200 mL 50% 乙醇分次加入，使胶体几丁质析出</p></li>
 <li><p>9,000 rpm，3 min，取沉淀</p></li>
 <li><p>水洗至 pH=7</p></li>
 </ol>
-</div>
-</div>
-<div class="section" id="id22">
-<h2>6. 试剂<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="dns">
-<h3>6.1. 3,5-二硝基水杨酸（DNS）<a class="headerlink" href="#dns" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id22">
+<h2>6. 试剂<a class="headerlink" href="#id22" title="Permalink to this headline">#</a></h2>
+<section id="dns">
+<h3>6.1. 3,5-二硝基水杨酸（DNS）<a class="headerlink" href="#dns" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p>配制 100 mL 5 M NaOH（20 g），加入 DNS 粉末 3.15 g，加水至 500 mL。</p></li>
 <li><p>水浴至 45℃，同时不断搅拌，直至溶液清澈透明。</p></li>
@@ -943,10 +1019,10 @@ k_d = 1/t_d = \ln2 / t_{\frac12}
 <li><p>停止加热，冷却至室温后，用水定容至 1000 mL。</p></li>
 <li><p>烧结玻璃过滤器过滤。取滤液，储存在棕色瓶中，避光保存。室温下存放 7 天后使用，有效期为 6 个月。</p></li>
 </ol>
-</div>
-</div>
-<div class="section" id="id23">
-<h2>7. 参考文献<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="id23">
+<h2>7. 参考文献<a class="headerlink" href="#id23" title="Permalink to this headline">#</a></h2>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="id24"><span class="brackets"><a class="fn-backref" href="#id13">1</a></span></dt>
@@ -956,8 +1032,8 @@ k_d = 1/t_d = \ln2 / t_{\frac12}
 <dd><p>S. Yang, S. Song, Q. Yan, X. Fu, Z. Jiang, X. Yang, Biochemical Characterization of the First Fungal Glycoside Hydrolyase Family 3 β-N-Acetylglucosaminidase from <em>Rhizomucor miehei</em> , J. Agric. Food Chem. 62 (2014) 5181–5190.</p>
 </dd>
 </dl>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -981,9 +1057,11 @@ k_d = 1/t_d = \ln2 / t_{\frac12}
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="%E5%9F%BA%E5%9B%A0%E5%B7%A5%E7%A8%8B.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -999,24 +1077,28 @@ k_d = 1/t_d = \ln2 / t_{\frac12}
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By ivaquero<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By ivaquero<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

@@ -145,7 +145,7 @@ channels:
 ## The input line is too long
 pip install pywinpath
 pywinpath
-## Intel MKL FATAL ERROR: Cannot load mkl_intel_thread.dll.
+## Intel MKL FATAL ERROR: Cannot load mkl_{i}ntel_thread.dll.
 set CONDA_DLL_SEARCH_MODIFICATION_ENABLE = 1
 ```
 
