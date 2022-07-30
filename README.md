@@ -206,7 +206,7 @@ Reduce the use of `begin{array}...end{array}`
 $$
 \begin{aligned}
   y₁ &= x² + 2*x \\
-  y₂ &= x^3 + x
+  y₂ &= x³ + x
 \end{aligned}
 $$
 
@@ -214,7 +214,7 @@ $$
 $$
 \begin{aligned}
   y₁ &= x² + 2*x \\
-  y₂ &= x^3 + x
+  y₂ &= x³ + x
 \end{aligned}
 $$
 ```
@@ -224,7 +224,7 @@ $$
 $$
 \begin{cases}
   y = x² + 2*x & x > 0 \\
-  y = x^3 + x & x ≤ 0
+  y = x³ + x & x ≤ 0
 \end{cases}
 $$
 
@@ -232,7 +232,7 @@ $$
 $$
 \begin{cases}
   y = x² + 2*x & x > 0 \\
-  y = x^3 + x & x ≤ 0
+  y = x³ + x & x ≤ 0
 \end{cases}
 $$
 ```
