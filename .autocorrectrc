@@ -1,0 +1,7 @@
+textRules:
+  ',': 0
+  '-': 0
+spellcheck:
+  # Correct Words (Case insensitive) for by Spellcheck
+  words:
+    - GitHub
