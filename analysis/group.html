@@ -1,0 +1,1588 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Group &#8212; 生物狗学编程</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'analysis/group';</script>
+    <link rel="canonical" href="https://ivaquero.github.io/blog-bio/analysis/group.html" />
+    <link rel="shortcut icon" href="../_static/doge.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Polar" href="polar.html" />
+    <link rel="prev" title="Distribution" href="distribution.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/doge.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/doge.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    生物狗学编程
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">综合生命科学</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/01-%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%9F%BA%E7%A1%80.html">生物信息学基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/02-%E5%88%86%E5%AD%90%E7%94%9F%E7%89%A9%E5%AD%A6%E5%9F%BA%E7%A1%80.html">分子生物学基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/03-%E6%BC%94%E5%8C%96%E8%AE%BA%E5%9F%BA%E7%A1%80.html">演化论基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/04-%E7%97%85%E7%90%86%E5%AD%A6%E5%9F%BA%E7%A1%80.html">病理学基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/%E5%9F%BA%E5%9B%A0%E5%B7%A5%E7%A8%8B.html">基因工程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/%E7%B3%96%E7%94%9F%E5%8C%96%E6%B5%8B%E5%AE%9A.html">糖生化测定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/%E8%9B%8B%E7%99%BD%E8%B4%A8%E7%94%9F%E5%8C%96%E6%B5%8B%E5%AE%9A.html">蛋白质生化测定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/%E9%87%8D%E7%BB%84%E9%AB%98%E6%8B%B7%E8%B4%9D%E9%85%B5%E6%AF%8D.html">重组高拷贝酵母</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">统计基础</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/01-%E6%A6%82%E7%8E%87%E4%B8%8E%E5%88%86%E5%B8%83.html">概率与分布</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/02-%E7%BB%9F%E8%AE%A1%E9%87%8F%E4%B8%8E%E9%87%87%E6%A0%B7.html">统计量与采样</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/03-%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1.html">参数估计</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/04-%E5%8F%82%E6%95%B0%E6%A3%80%E9%AA%8C.html">参数检验</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/05-%E9%9D%9E%E5%8F%82%E6%95%B0%E6%A3%80%E9%AA%8C.html">非参数检验</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/06-%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90.html">回归分析</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">机器学习</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/01-%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E5%BC%95%E8%A8%80.html">统计学习引言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/02-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92.html">线性回归</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/03-%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9.html">模型选择</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/04-%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB.html">线性分类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/05-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D.html">梯度下降</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/06-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E4%BC%98%E5%8C%96.html">梯度下降优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/07-%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB.html">非线性分类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/08-%E5%86%B3%E7%AD%96%E6%A0%91.html">决策树</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/09-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0.html">集成学习</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/10-%E9%99%8D%E7%BB%B4.html">降维</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/11-%E7%A1%AC%E8%81%9A%E7%B1%BB.html">硬聚类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/12-%E8%BD%AF%E8%81%9A%E7%B1%BB.html">软聚类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/13-%E7%94%9F%E5%AD%98%E5%88%86%E6%9E%90.html">生存分析</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 入门</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../python/01-%E7%8E%AF%E5%A2%83%E4%B8%8E%E5%8F%98%E9%87%8F.html">环境与变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/02-%E5%8F%98%E9%87%8F%E8%BF%90%E7%AE%97.html">变量运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/03-%E5%AE%B9%E5%99%A8.html">容器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/04-%E5%AE%B9%E5%99%A8%E8%BF%90%E7%AE%97.html">容器运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/05-%E6%8E%A7%E5%88%B6%E6%B5%81.html">控制流</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/06-%E5%87%BD%E6%95%B0.html">函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/07-%E9%97%AD%E5%8C%85%E4%B8%8E%E8%A3%85%E9%A5%B0%E5%99%A8.html">闭包与装饰器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/08-%E5%86%85%E7%BD%AE%E7%AE%97%E6%B3%95%E6%A8%A1%E5%9D%97.html">内置算法模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/09-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B.html">面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/10-%E6%A8%A1%E7%89%88%E4%B8%8E%E6%A8%A1%E5%BC%8F.html">模版与模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/11-%E9%AD%94%E6%B3%95%E6%96%B9%E6%B3%95.html">魔法方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/12-%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B.html">高级编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/13-%E5%A4%9A%E4%BB%BB%E5%8A%A1.html">多任务</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/14-%E5%BC%82%E6%AD%A5.html">异步</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/15-%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B.html">网络模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/16-%E5%85%83%E7%BC%96%E7%A8%8B.html">元编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/17-%E6%A8%A1%E5%9D%97%E4%B8%8E%E8%B0%83%E8%AF%95.html">模块与调试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/18-%E9%AB%98%E6%80%A7%E8%83%BD%E6%89%A9%E5%B1%95.html">高性能扩展</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">数据分析</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="clean-pandas.html">Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clean-pandas2.html">Pandas 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="correlation.html">Correlation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deviation.html">Deviation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distribution.html">Distribution</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polar.html">Polar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proportion.html">Proportion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ranking.html">Ranking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="time-series.html">Time Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tricks.html">Tricks</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/analysis/group.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/analysis/group.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Group</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bar">Bar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dendrogram">Dendrogram</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encircling">Encircling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#andrews-curve">Andrews Curve</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-coordinates">Parallel Coordinates</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="group">
+<h1>Group<a class="headerlink" href="#group" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">patches</span>
+<span class="kn">from</span> <span class="nn">scipy.spatial</span> <span class="kn">import</span> <span class="n">ConvexHull</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="bar">
+<h2>Bar<a class="headerlink" href="#bar" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpg</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/mpg.csv&quot;</span><span class="p">)</span>
+<span class="n">mpg</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>manufacturer</th>
+      <th>model</th>
+      <th>displ</th>
+      <th>year</th>
+      <th>cyl</th>
+      <th>trans</th>
+      <th>drv</th>
+      <th>cty</th>
+      <th>hwy</th>
+      <th>fl</th>
+      <th>class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>audi</td>
+      <td>a4</td>
+      <td>1.8</td>
+      <td>1999</td>
+      <td>4</td>
+      <td>auto(l5)</td>
+      <td>f</td>
+      <td>18</td>
+      <td>29</td>
+      <td>p</td>
+      <td>compact</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>audi</td>
+      <td>a4</td>
+      <td>1.8</td>
+      <td>1999</td>
+      <td>4</td>
+      <td>manual(m5)</td>
+      <td>f</td>
+      <td>21</td>
+      <td>29</td>
+      <td>p</td>
+      <td>compact</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>audi</td>
+      <td>a4</td>
+      <td>2.0</td>
+      <td>2008</td>
+      <td>4</td>
+      <td>manual(m6)</td>
+      <td>f</td>
+      <td>20</td>
+      <td>31</td>
+      <td>p</td>
+      <td>compact</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>audi</td>
+      <td>a4</td>
+      <td>2.0</td>
+      <td>2008</td>
+      <td>4</td>
+      <td>auto(av)</td>
+      <td>f</td>
+      <td>21</td>
+      <td>30</td>
+      <td>p</td>
+      <td>compact</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>audi</td>
+      <td>a4</td>
+      <td>2.8</td>
+      <td>1999</td>
+      <td>6</td>
+      <td>auto(l5)</td>
+      <td>f</td>
+      <td>16</td>
+      <td>26</td>
+      <td>p</td>
+      <td>compact</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpg_group</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">mpg</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s2">&quot;cty&quot;</span><span class="p">,</span> <span class="s2">&quot;manufacturer&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;manufacturer&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s2">&quot;cty&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">})</span>
+<span class="p">)</span>
+<span class="n">mpg_group</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;cty&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">mpg_group</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">mpg_group</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>manufacturer</th>
+      <th>cty</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>lincoln</td>
+      <td>11.333333</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>land rover</td>
+      <td>11.500000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>dodge</td>
+      <td>13.135135</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>mercury</td>
+      <td>13.250000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>jeep</td>
+      <td>13.500000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">mpg_group</span><span class="p">[</span><span class="s2">&quot;manufacturer&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">mpg_group</span><span class="p">[</span><span class="s2">&quot;cty&quot;</span><span class="p">]</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">cty</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">cty</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">cty</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">)</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">patches</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">(</span>
+    <span class="p">(</span><span class="mf">0.57</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.005</span><span class="p">),</span>
+    <span class="n">width</span><span class="o">=</span><span class="mf">0.33</span><span class="p">,</span>
+    <span class="n">height</span><span class="o">=</span><span class="mf">0.13</span><span class="p">,</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+    <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span>
+    <span class="n">transform</span><span class="o">=</span><span class="n">fig</span><span class="o">.</span><span class="n">transFigure</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">patches</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">(</span>
+    <span class="p">(</span><span class="mf">0.124</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.005</span><span class="p">),</span>
+    <span class="n">width</span><span class="o">=</span><span class="mf">0.446</span><span class="p">,</span>
+    <span class="n">height</span><span class="o">=</span><span class="mf">0.13</span><span class="p">,</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+    <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span>
+    <span class="n">transform</span><span class="o">=</span><span class="n">fig</span><span class="o">.</span><span class="n">transFigure</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_artist</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_artist</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;Miles Per Gallon&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Bar Chart for Highway Mileage&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">get_xticklabels</span><span class="p">(),</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/8725c7d894ca91a0b562efb20a5ac175fda6f0650b6822a456d650b89a7dda9c.png" src="../_images/8725c7d894ca91a0b562efb20a5ac175fda6f0650b6822a456d650b89a7dda9c.png" />
+</div>
+</div>
+</section>
+<section id="dendrogram">
+<h2>Dendrogram<a class="headerlink" href="#dendrogram" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.cluster</span> <span class="kn">import</span> <span class="n">hierarchy</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arrests</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/us_arrests.csv&quot;</span><span class="p">)</span>
+<span class="n">arrests</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Murder</th>
+      <th>Assault</th>
+      <th>UrbanPop</th>
+      <th>Rape</th>
+      <th>State</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>13.2</td>
+      <td>236</td>
+      <td>58</td>
+      <td>21.2</td>
+      <td>Alabama</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10.0</td>
+      <td>263</td>
+      <td>48</td>
+      <td>44.5</td>
+      <td>Alaska</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>8.1</td>
+      <td>294</td>
+      <td>80</td>
+      <td>31.0</td>
+      <td>Arizona</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>8.8</td>
+      <td>190</td>
+      <td>50</td>
+      <td>19.5</td>
+      <td>Arkansas</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>9.0</td>
+      <td>276</td>
+      <td>91</td>
+      <td>40.6</td>
+      <td>California</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="n">dend</span> <span class="o">=</span> <span class="n">hierarchy</span><span class="o">.</span><span class="n">dendrogram</span><span class="p">(</span>
+    <span class="n">hierarchy</span><span class="o">.</span><span class="n">linkage</span><span class="p">(</span>
+        <span class="n">arrests</span><span class="p">[[</span><span class="s2">&quot;Murder&quot;</span><span class="p">,</span> <span class="s2">&quot;Assault&quot;</span><span class="p">,</span> <span class="s2">&quot;UrbanPop&quot;</span><span class="p">,</span> <span class="s2">&quot;Rape&quot;</span><span class="p">]],</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;ward&quot;</span>
+    <span class="p">),</span>
+    <span class="n">labels</span><span class="o">=</span><span class="n">arrests</span><span class="o">.</span><span class="n">State</span><span class="o">.</span><span class="n">array</span><span class="p">,</span>
+    <span class="n">color_threshold</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;USArrests Dendograms&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/a2d61a4220e5a30ca103e8fbfaf16cf4ad04ef9effa756960d17ed88d6974a1e.png" src="../_images/a2d61a4220e5a30ca103e8fbfaf16cf4ad04ef9effa756960d17ed88d6974a1e.png" />
+</div>
+</div>
+</section>
+<section id="encircling">
+<h2>Encircling<a class="headerlink" href="#encircling" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">midwest</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/midwest_filter.csv&quot;</span><span class="p">)</span>
+<span class="n">midwest</span><span class="p">[</span><span class="s2">&quot;popdensity&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">midwest</span><span class="p">[</span><span class="s2">&quot;popdensity&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">100</span>
+<span class="n">midwest</span><span class="p">[</span><span class="s2">&quot;state&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">midwest</span><span class="p">[</span><span class="s2">&quot;state&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;category&quot;</span><span class="p">)</span>
+<span class="n">midwest</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PID</th>
+      <th>county</th>
+      <th>state</th>
+      <th>area</th>
+      <th>poptotal</th>
+      <th>popdensity</th>
+      <th>popwhite</th>
+      <th>popblack</th>
+      <th>popamerindian</th>
+      <th>popasian</th>
+      <th>...</th>
+      <th>percprof</th>
+      <th>poppovertyknown</th>
+      <th>percpovertyknown</th>
+      <th>percbelowpoverty</th>
+      <th>percchildbelowpovert</th>
+      <th>percadultpoverty</th>
+      <th>percelderlypoverty</th>
+      <th>inmetro</th>
+      <th>category</th>
+      <th>dot_size</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>561</td>
+      <td>ADAMS</td>
+      <td>IL</td>
+      <td>0.052</td>
+      <td>66090</td>
+      <td>12.709615</td>
+      <td>63917</td>
+      <td>1702</td>
+      <td>98</td>
+      <td>249</td>
+      <td>...</td>
+      <td>4.355859</td>
+      <td>63628</td>
+      <td>96.274777</td>
+      <td>13.151443</td>
+      <td>18.011717</td>
+      <td>11.009776</td>
+      <td>12.443812</td>
+      <td>0</td>
+      <td>AAR</td>
+      <td>250.944411</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>562</td>
+      <td>ALEXANDER</td>
+      <td>IL</td>
+      <td>0.014</td>
+      <td>10626</td>
+      <td>7.590000</td>
+      <td>7054</td>
+      <td>3496</td>
+      <td>19</td>
+      <td>48</td>
+      <td>...</td>
+      <td>2.870315</td>
+      <td>10529</td>
+      <td>99.087145</td>
+      <td>32.244278</td>
+      <td>45.826514</td>
+      <td>27.385647</td>
+      <td>25.228976</td>
+      <td>0</td>
+      <td>LHR</td>
+      <td>185.781260</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>563</td>
+      <td>BOND</td>
+      <td>IL</td>
+      <td>0.022</td>
+      <td>14991</td>
+      <td>6.814091</td>
+      <td>14477</td>
+      <td>429</td>
+      <td>35</td>
+      <td>16</td>
+      <td>...</td>
+      <td>4.488572</td>
+      <td>14235</td>
+      <td>94.956974</td>
+      <td>12.068844</td>
+      <td>14.036061</td>
+      <td>10.852090</td>
+      <td>12.697410</td>
+      <td>0</td>
+      <td>AAR</td>
+      <td>175.905385</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>564</td>
+      <td>BOONE</td>
+      <td>IL</td>
+      <td>0.017</td>
+      <td>30806</td>
+      <td>18.121177</td>
+      <td>29344</td>
+      <td>127</td>
+      <td>46</td>
+      <td>150</td>
+      <td>...</td>
+      <td>4.197800</td>
+      <td>30337</td>
+      <td>98.477569</td>
+      <td>7.209019</td>
+      <td>11.179536</td>
+      <td>5.536013</td>
+      <td>6.217047</td>
+      <td>1</td>
+      <td>ALU</td>
+      <td>319.823487</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>565</td>
+      <td>BROWN</td>
+      <td>IL</td>
+      <td>0.018</td>
+      <td>5836</td>
+      <td>3.242222</td>
+      <td>5264</td>
+      <td>547</td>
+      <td>14</td>
+      <td>5</td>
+      <td>...</td>
+      <td>3.367680</td>
+      <td>4815</td>
+      <td>82.505140</td>
+      <td>13.520249</td>
+      <td>13.022889</td>
+      <td>11.143211</td>
+      <td>19.200000</td>
+      <td>0</td>
+      <td>AAR</td>
+      <td>130.442161</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 29 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">midwest_select</span> <span class="o">=</span> <span class="n">midwest</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;state==&#39;IN&#39;&quot;</span><span class="p">)</span>
+<span class="n">midwest_select</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PID</th>
+      <th>county</th>
+      <th>state</th>
+      <th>area</th>
+      <th>poptotal</th>
+      <th>popdensity</th>
+      <th>popwhite</th>
+      <th>popblack</th>
+      <th>popamerindian</th>
+      <th>popasian</th>
+      <th>...</th>
+      <th>percprof</th>
+      <th>poppovertyknown</th>
+      <th>percpovertyknown</th>
+      <th>percbelowpoverty</th>
+      <th>percchildbelowpovert</th>
+      <th>percadultpoverty</th>
+      <th>percelderlypoverty</th>
+      <th>inmetro</th>
+      <th>category</th>
+      <th>dot_size</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>83</th>
+      <td>663</td>
+      <td>ADAMS</td>
+      <td>IN</td>
+      <td>0.021</td>
+      <td>31095</td>
+      <td>14.807143</td>
+      <td>30530</td>
+      <td>36</td>
+      <td>42</td>
+      <td>60</td>
+      <td>...</td>
+      <td>4.862299</td>
+      <td>30490</td>
+      <td>98.054350</td>
+      <td>11.636602</td>
+      <td>17.194524</td>
+      <td>9.101888</td>
+      <td>8.714027</td>
+      <td>1</td>
+      <td>AAU</td>
+      <td>277.642023</td>
+    </tr>
+    <tr>
+      <th>84</th>
+      <td>665</td>
+      <td>BARTHOLOMEW</td>
+      <td>IN</td>
+      <td>0.022</td>
+      <td>63657</td>
+      <td>28.935000</td>
+      <td>61774</td>
+      <td>1005</td>
+      <td>97</td>
+      <td>610</td>
+      <td>...</td>
+      <td>6.844097</td>
+      <td>62784</td>
+      <td>98.628588</td>
+      <td>8.545171</td>
+      <td>10.736855</td>
+      <td>6.992420</td>
+      <td>10.811943</td>
+      <td>0</td>
+      <td>AAR</td>
+      <td>457.463283</td>
+    </tr>
+    <tr>
+      <th>85</th>
+      <td>666</td>
+      <td>BENTON</td>
+      <td>IN</td>
+      <td>0.024</td>
+      <td>9441</td>
+      <td>3.933750</td>
+      <td>9389</td>
+      <td>6</td>
+      <td>16</td>
+      <td>1</td>
+      <td>...</td>
+      <td>4.014538</td>
+      <td>9300</td>
+      <td>98.506514</td>
+      <td>8.043011</td>
+      <td>8.349218</td>
+      <td>6.842329</td>
+      <td>10.502283</td>
+      <td>0</td>
+      <td>AAR</td>
+      <td>139.244020</td>
+    </tr>
+    <tr>
+      <th>86</th>
+      <td>667</td>
+      <td>BLACKFORD</td>
+      <td>IN</td>
+      <td>0.010</td>
+      <td>14067</td>
+      <td>14.067000</td>
+      <td>13978</td>
+      <td>7</td>
+      <td>44</td>
+      <td>16</td>
+      <td>...</td>
+      <td>4.428124</td>
+      <td>13903</td>
+      <td>98.834151</td>
+      <td>9.853988</td>
+      <td>12.323745</td>
+      <td>8.332247</td>
+      <td>10.937500</td>
+      <td>0</td>
+      <td>AAR</td>
+      <td>268.221385</td>
+    </tr>
+    <tr>
+      <th>87</th>
+      <td>668</td>
+      <td>BOONE</td>
+      <td>IN</td>
+      <td>0.024</td>
+      <td>38147</td>
+      <td>15.894583</td>
+      <td>37814</td>
+      <td>83</td>
+      <td>90</td>
+      <td>94</td>
+      <td>...</td>
+      <td>8.813967</td>
+      <td>37402</td>
+      <td>98.047029</td>
+      <td>6.296455</td>
+      <td>8.021754</td>
+      <td>5.239599</td>
+      <td>7.089425</td>
+      <td>1</td>
+      <td>HLU</td>
+      <td>291.483110</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 29 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="n">midwest</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;area&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;poptotal&quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;state&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="s2">&quot;popdensity&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;tab10&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span>
+<span class="p">)</span>
+
+
+<span class="c1"># Encircling</span>
+<span class="k">def</span> <span class="nf">encircle</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">ax</span> <span class="ow">or</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">hull</span> <span class="o">=</span> <span class="n">ConvexHull</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+    <span class="n">poly</span> <span class="o">=</span> <span class="n">patches</span><span class="o">.</span><span class="n">Polygon</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="n">p</span><span class="p">[</span><span class="n">hull</span><span class="o">.</span><span class="n">vertices</span><span class="p">,</span> <span class="p">:],</span> <span class="n">closed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">poly</span><span class="p">)</span>
+
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span>
+    <span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">),</span>
+    <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90000</span><span class="p">),</span>
+    <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;Area&quot;</span><span class="p">,</span>
+    <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;Population&quot;</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Bubble Plot with Encircling&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">midwest_select</span><span class="p">[</span><span class="s2">&quot;area&quot;</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">midwest_select</span><span class="p">[</span><span class="s2">&quot;poptotal&quot;</span><span class="p">]</span>
+
+<span class="c1"># Draw polygon surrounding vertices</span>
+<span class="n">encircle</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="s2">&quot;gold&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">encircle</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s2">&quot;firebrick&quot;</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/32e19c645375f4d1ca0ee96986a169383cc2d78d5a1362e2b2761669f4ee14d7.png" src="../_images/32e19c645375f4d1ca0ee96986a169383cc2d78d5a1362e2b2761669f4ee14d7.png" />
+</div>
+</div>
+</section>
+<section id="andrews-curve">
+<h2>Andrews Curve<a class="headerlink" href="#andrews-curve" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pandas.plotting</span> <span class="kn">import</span> <span class="n">andrews_curves</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mtcars</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/mtcars.csv&quot;</span><span class="p">)</span>
+<span class="n">mtcars</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cyl</th>
+      <th>disp</th>
+      <th>hp</th>
+      <th>drat</th>
+      <th>wt</th>
+      <th>qsec</th>
+      <th>vs</th>
+      <th>am</th>
+      <th>gear</th>
+      <th>carb</th>
+      <th>fast</th>
+      <th>cars</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>4.582576</td>
+      <td>6</td>
+      <td>160.0</td>
+      <td>110</td>
+      <td>3.90</td>
+      <td>2.620</td>
+      <td>16.46</td>
+      <td>0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>4</td>
+      <td>1</td>
+      <td>Mazda RX4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4.582576</td>
+      <td>6</td>
+      <td>160.0</td>
+      <td>110</td>
+      <td>3.90</td>
+      <td>2.875</td>
+      <td>17.02</td>
+      <td>0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>4</td>
+      <td>1</td>
+      <td>Mazda RX4 Wag</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4.774935</td>
+      <td>4</td>
+      <td>108.0</td>
+      <td>93</td>
+      <td>3.85</td>
+      <td>2.320</td>
+      <td>18.61</td>
+      <td>1</td>
+      <td>1</td>
+      <td>4</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Datsun 710</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4.626013</td>
+      <td>6</td>
+      <td>258.0</td>
+      <td>110</td>
+      <td>3.08</td>
+      <td>3.215</td>
+      <td>19.44</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Hornet 4 Drive</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4.324350</td>
+      <td>8</td>
+      <td>360.0</td>
+      <td>175</td>
+      <td>3.15</td>
+      <td>3.440</td>
+      <td>17.02</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>2</td>
+      <td>1</td>
+      <td>Hornet Sportabout</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mtcars</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;cars&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="n">andrews_curves</span><span class="p">(</span><span class="n">mtcars</span><span class="p">,</span> <span class="s2">&quot;cyl&quot;</span><span class="p">,</span> <span class="n">colormap</span><span class="o">=</span><span class="s2">&quot;Set1&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[[</span><span class="s2">&quot;top&quot;</span><span class="p">,</span> <span class="s2">&quot;right&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Andrews Curves of mtcars&quot;</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/a90bfd2e6b369781dc6bbd16f00571b929d77bfe4acb904c480c9ef9071aa610.png" src="../_images/a90bfd2e6b369781dc6bbd16f00571b929d77bfe4acb904c480c9ef9071aa610.png" />
+</div>
+</div>
+</section>
+<section id="parallel-coordinates">
+<h2>Parallel Coordinates<a class="headerlink" href="#parallel-coordinates" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pandas.plotting</span> <span class="kn">import</span> <span class="n">parallel_coordinates</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diamonds</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/diamonds.csv&quot;</span><span class="p">)</span>
+<span class="n">diamonds</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>carat</th>
+      <th>cut</th>
+      <th>color</th>
+      <th>clarity</th>
+      <th>depth</th>
+      <th>table</th>
+      <th>price</th>
+      <th>x</th>
+      <th>y</th>
+      <th>z</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.23</td>
+      <td>Ideal</td>
+      <td>E</td>
+      <td>SI2</td>
+      <td>61.5</td>
+      <td>55.0</td>
+      <td>326</td>
+      <td>3.95</td>
+      <td>3.98</td>
+      <td>2.43</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.21</td>
+      <td>Premium</td>
+      <td>E</td>
+      <td>SI1</td>
+      <td>59.8</td>
+      <td>61.0</td>
+      <td>326</td>
+      <td>3.89</td>
+      <td>3.84</td>
+      <td>2.31</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.23</td>
+      <td>Good</td>
+      <td>E</td>
+      <td>VS1</td>
+      <td>56.9</td>
+      <td>65.0</td>
+      <td>327</td>
+      <td>4.05</td>
+      <td>4.07</td>
+      <td>2.31</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.29</td>
+      <td>Premium</td>
+      <td>I</td>
+      <td>VS2</td>
+      <td>62.4</td>
+      <td>58.0</td>
+      <td>334</td>
+      <td>4.20</td>
+      <td>4.23</td>
+      <td>2.63</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.31</td>
+      <td>Good</td>
+      <td>J</td>
+      <td>SI2</td>
+      <td>63.3</td>
+      <td>58.0</td>
+      <td>335</td>
+      <td>4.34</td>
+      <td>4.35</td>
+      <td>2.75</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="n">parallel_coordinates</span><span class="p">(</span>
+    <span class="n">frame</span><span class="o">=</span><span class="n">diamonds</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s2">&quot;cut&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">]],</span>
+    <span class="n">class_column</span><span class="o">=</span><span class="s2">&quot;cut&quot;</span><span class="p">,</span>
+    <span class="n">colormap</span><span class="o">=</span><span class="s2">&quot;Dark2&quot;</span><span class="p">,</span>
+    <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[[</span><span class="s2">&quot;top&quot;</span><span class="p">,</span> <span class="s2">&quot;right&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Parallel Coordinated of Diamonds&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/f7b5a5c17605eb5fdc60059f54ff6dc8e2ece0a6fd482c0f7226e9b31d0ec505.png" src="../_images/f7b5a5c17605eb5fdc60059f54ff6dc8e2ece0a6fd482c0f7226e9b31d0ec505.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./analysis"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="distribution.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Distribution</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="polar.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Polar</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bar">Bar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dendrogram">Dendrogram</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encircling">Encircling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#andrews-curve">Andrews Curve</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-coordinates">Parallel Coordinates</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By ivaquero
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

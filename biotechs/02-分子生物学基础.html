@@ -1,0 +1,902 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>分子生物学基础 &#8212; 生物狗学编程</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'biotechs/02-分子生物学基础';</script>
+    <link rel="canonical" href="https://ivaquero.github.io/blog-bio/biotechs/02-分子生物学基础.html" />
+    <link rel="shortcut icon" href="../_static/doge.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="演化论基础" href="03-%E6%BC%94%E5%8C%96%E8%AE%BA%E5%9F%BA%E7%A1%80.html" />
+    <link rel="prev" title="生物信息学基础" href="01-%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%9F%BA%E7%A1%80.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/doge.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/doge.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    生物狗学编程
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">综合生命科学</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01-%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%9F%BA%E7%A1%80.html">生物信息学基础</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">分子生物学基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-%E6%BC%94%E5%8C%96%E8%AE%BA%E5%9F%BA%E7%A1%80.html">演化论基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-%E7%97%85%E7%90%86%E5%AD%A6%E5%9F%BA%E7%A1%80.html">病理学基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E5%9F%BA%E5%9B%A0%E5%B7%A5%E7%A8%8B.html">基因工程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E7%B3%96%E7%94%9F%E5%8C%96%E6%B5%8B%E5%AE%9A.html">糖生化测定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E8%9B%8B%E7%99%BD%E8%B4%A8%E7%94%9F%E5%8C%96%E6%B5%8B%E5%AE%9A.html">蛋白质生化测定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E9%87%8D%E7%BB%84%E9%AB%98%E6%8B%B7%E8%B4%9D%E9%85%B5%E6%AF%8D.html">重组高拷贝酵母</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">统计基础</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/01-%E6%A6%82%E7%8E%87%E4%B8%8E%E5%88%86%E5%B8%83.html">概率与分布</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/02-%E7%BB%9F%E8%AE%A1%E9%87%8F%E4%B8%8E%E9%87%87%E6%A0%B7.html">统计量与采样</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/03-%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1.html">参数估计</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/04-%E5%8F%82%E6%95%B0%E6%A3%80%E9%AA%8C.html">参数检验</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/05-%E9%9D%9E%E5%8F%82%E6%95%B0%E6%A3%80%E9%AA%8C.html">非参数检验</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/06-%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90.html">回归分析</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">机器学习</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/01-%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E5%BC%95%E8%A8%80.html">统计学习引言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/02-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92.html">线性回归</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/03-%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9.html">模型选择</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/04-%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB.html">线性分类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/05-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D.html">梯度下降</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/06-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E4%BC%98%E5%8C%96.html">梯度下降优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/07-%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB.html">非线性分类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/08-%E5%86%B3%E7%AD%96%E6%A0%91.html">决策树</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/09-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0.html">集成学习</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/10-%E9%99%8D%E7%BB%B4.html">降维</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/11-%E7%A1%AC%E8%81%9A%E7%B1%BB.html">硬聚类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/12-%E8%BD%AF%E8%81%9A%E7%B1%BB.html">软聚类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/13-%E7%94%9F%E5%AD%98%E5%88%86%E6%9E%90.html">生存分析</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 入门</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../python/01-%E7%8E%AF%E5%A2%83%E4%B8%8E%E5%8F%98%E9%87%8F.html">环境与变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/02-%E5%8F%98%E9%87%8F%E8%BF%90%E7%AE%97.html">变量运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/03-%E5%AE%B9%E5%99%A8.html">容器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/04-%E5%AE%B9%E5%99%A8%E8%BF%90%E7%AE%97.html">容器运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/05-%E6%8E%A7%E5%88%B6%E6%B5%81.html">控制流</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/06-%E5%87%BD%E6%95%B0.html">函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/07-%E9%97%AD%E5%8C%85%E4%B8%8E%E8%A3%85%E9%A5%B0%E5%99%A8.html">闭包与装饰器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/08-%E5%86%85%E7%BD%AE%E7%AE%97%E6%B3%95%E6%A8%A1%E5%9D%97.html">内置算法模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/09-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B.html">面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/10-%E6%A8%A1%E7%89%88%E4%B8%8E%E6%A8%A1%E5%BC%8F.html">模版与模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/11-%E9%AD%94%E6%B3%95%E6%96%B9%E6%B3%95.html">魔法方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/12-%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B.html">高级编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/13-%E5%A4%9A%E4%BB%BB%E5%8A%A1.html">多任务</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/14-%E5%BC%82%E6%AD%A5.html">异步</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/15-%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B.html">网络模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/16-%E5%85%83%E7%BC%96%E7%A8%8B.html">元编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/17-%E6%A8%A1%E5%9D%97%E4%B8%8E%E8%B0%83%E8%AF%95.html">模块与调试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/18-%E9%AB%98%E6%80%A7%E8%83%BD%E6%89%A9%E5%B1%95.html">高性能扩展</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">数据分析</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../analysis/clean-pandas.html">Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/clean-pandas2.html">Pandas 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/correlation.html">Correlation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/deviation.html">Deviation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/distribution.html">Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/group.html">Group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/polar.html">Polar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/proportion.html">Proportion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/ranking.html">Ranking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/time-series.html">Time Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/tricks.html">Tricks</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/biotechs/02-分子生物学基础.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>分子生物学基础</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1. 微生物命名</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.1. 分类</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.2. 基因</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">1.3. 表型</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2. 基因结构</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2.1. 基础概念</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.2. 复制、转录、翻译</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#orf-cds">2.3. ORF, CDS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#promoter">2.4. 启动子（Promoter）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enhancer">2.5. 增强子（Enhancer）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#terminator">2.6. 终止子（Terminator）</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">3. 乳糖操纵子</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operon">3.1. 操纵子（Operon）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">3.2. 相关概念</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">3.3. 组成</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mrna">3.4. 多顺反子 mRNA</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">4. 乳糖操纵子的调控</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">4.1. 阻遏蛋白的负调控</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iptg">4.2. IPTG</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cap">4.3. CAP 的正调控</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">4.4. 协调调控</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">4.5. 阻遏蛋白和 CAP 的双重调控</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">5. 出芽酵母基因的命名</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>分子生物学基础<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<section id="id2">
+<h2>1. 微生物命名<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<section id="id3">
+<h3>1.1. 分类<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>分类</p>
+<ul>
+<li><p>非细胞型：病毒、亚病毒</p></li>
+<li><p>原核细胞型：细菌（支原体、衣原体、立克次氏体、放线菌和螺旋体）</p></li>
+<li><p>真核细胞型：酵母、霉菌、原生动物、藻类</p></li>
+</ul>
+</li>
+<li><p>双名法</p>
+<ul>
+<li><p>属名 + 种名（斜体）+ 命名者姓氏缩写（正体）</p></li>
+<li><p>属名：首字母大写</p></li>
+<li><p>种名：小写字母</p></li>
+<li><p>名词所有格（表来源）</p></li>
+<li><p>形容词主格（表性质）</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id4">
+<h3>1.2. 基因<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>一般方法（三部分）</p>
+<ul>
+<li><p>3 lower case letters (pathway)</p></li>
+<li><p>1 capital letter (actual gene)</p></li>
+<li><p>1 allele number</p></li>
+</ul>
+</li>
+<li><p>突变体</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p>Superscripts</p></th>
+<th class="text-center head"><p>Meaning</p></th>
+<th class="text-center head"><p>Example</p></th>
+<th class="text-center head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>+</p></td>
+<td class="text-center"><p>Wild type</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(leuA⁺\)</span>-</p></td>
+<td class="text-center"><p>Mutant</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>ts</p></td>
+<td class="text-center"><p>temperature sensitive</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(leuA^{ts}\)</span></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>cs</p></td>
+<td class="text-center"><p>cold sensitive</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(leuA^{cs}\)</span></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>am</p></td>
+<td class="text-center"><p>amber mutation</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(leuA_{am}\)</span></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>um</p></td>
+<td class="text-center"><p>umber (opal) mutation</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(leuA_{um}\)</span></p></td>
+<td class="text-center"><p>琥珀突变</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>oc</p></td>
+<td class="text-center"><p>ochre mutation</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(leuA_{oc}\)</span></p></td>
+<td class="text-center"><p>赭石突变</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>R</p></td>
+<td class="text-center"><p>resistant</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(rif^R\)</span></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Δ</p></td>
+<td class="text-center"><p>deletion</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(ΔleuA\)</span></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>-</p></td>
+<td class="text-center"><p>fusion</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(leuA-lacZ\)</span></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>:</p></td>
+<td class="text-center"><p>fusion</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(leuA:lacZ\)</span></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">:</span></code> 前的基因是断裂的</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>::</p></td>
+<td class="text-center"><p>insertion</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(leuA::Tn10Ω\)</span></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Δ(gene)::(resistance)</p></td>
+<td class="text-center"><p>deletion/replacement</p></td>
+<td class="text-center"><p>ΔleuA::npt</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id5">
+<h3>1.3. 表型<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p>first-letter capitalized</p></li>
+<li><p>not italicized</p>
+<ul class="simple">
+<li><p><em>DnaA⁻</em> the protein produced by the <em>dnaA</em> gene</p></li>
+<li><p><em>LeuA⁻</em> the phenotype of a <em>leuA</em> mutant</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+<section id="id6">
+<h2>2. 基因结构<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
+<section id="id7">
+<h3>2.1. 基础概念<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>基因（gene）：即遗传因子，是产生一条多肽链或功能 RNA 所需的全部核苷酸序列，即带有遗传讯息的 DNA 片段；</p></li>
+<li><p>顺反子（cistron）：即结构基因，为决定一条多肽链合成的功能单位。顺反子在一定条件下与基因同义；</p></li>
+<li><p>多顺反子 mRNA：含有编码一个以上蛋白质的编码信息，且，这些蛋白质均是以独立的多肽被翻译的 mRNA；</p></li>
+<li><p>全酶（holoenzyme）：一些酶除蛋白质外，还含有对热稳定的小分子物质。前者称为酶蛋白（apoenzyme），后者称为辅因子（cofactor）。只有酶蛋白和辅因子结合成完整的分子时，才具有活力；</p></li>
+<li><p>辅酶（coenzyme）：一类可将化学基团从一个酶转移到另一个酶上的有机小分子。与酶较为松散地结合，对于特定酶的活性发挥是必要的；</p></li>
+</ul>
+<p><img alt="BI-aa" src="../_images/aa.png" /></p>
+</section>
+<section id="id8">
+<h3>2.2. 复制、转录、翻译<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>复制</p></li>
+</ul>
+<p>以 DNA 为模板，在 DNA 聚合酶的催化作用下，将四种游离的 dNTP 按照碱基互补配对原则合成新链 DNA，为半保留复制，需要引物。</p>
+<ul class="simple">
+<li><p>转录</p></li>
+</ul>
+<p>以 DNA 为模版，在 DNA 指导的 RNA 聚合酶的作用下，将四种游离的 NTP 按照碱基互补配对的原则合成 RNA，为半不连续转录，需要引物。</p>
+<ul class="simple">
+<li><p>翻译</p></li>
+</ul>
+<p>以 mRNA 为模板，原料为 20 中游离的氨基酸，3 个碱基决定 1 个氨基酸。</p>
+</section>
+<section id="orf-cds">
+<h3>2.3. ORF, CDS<a class="headerlink" href="#orf-cds" title="Permalink to this headline">#</a></h3>
+<p>开放读码框（Open Reading Frame, ORF）是从一个起始密码子开始到一个终止密码子结束的一段序列；不是所有读码框都能被表达出蛋白产物或有生物学功能的蛋白；</p>
+<ul class="simple">
+<li><p>CDS 必定是一个或多个 ORF；但，每个 ORF 不一定均是 CDS；</p></li>
+<li><p>ORF = translation（理论可能）</p></li>
+<li><p>CDS = transcription（事实存在）；</p></li>
+</ul>
+<p><img alt="ORF" src="../_images/gene-seq.dio" /></p>
+</section>
+<section id="promoter">
+<h3>2.4. 启动子（Promoter）<a class="headerlink" href="#promoter" title="Permalink to this headline">#</a></h3>
+<p>位于编码区上游的非编码区。真核生物启动子包括下列几种不同顺序，能促进转录过程：</p>
+<ul class="simple">
+<li><p>帽子位点</p>
+<ul>
+<li><p>转录的起始位点；</p></li>
+</ul>
+</li>
+<li><p>TATA 框（Hogness box）</p>
+<ul>
+<li><p>似于原核生物的 Pribnow 框，决定转录起点的选择，为 RNA 聚合酶的结合处；</p></li>
+<li><p>一致顺序为 TATAATAAT；</p></li>
+<li><p>约在基因转录起始点上游约 -30-50bp 处；</p></li>
+</ul>
+</li>
+<li><p>CAAT 框（CAAT box）</p>
+<ul>
+<li><p>真核生物基因常有的调节区，控制转录的起始频率，可能亦为 RNA 聚合酶的结合处之一；</p></li>
+<li><p>一致顺序为 GGGTCAATCT；</p></li>
+<li><p>位于转录起始点上游约 -80-100bp 处；</p></li>
+</ul>
+</li>
+<li><p>GC 框（GC box）</p>
+<ul>
+<li><p>转录因子 Sp1 能识别 GC 框且与之结合，其 N 端有激活转录的作用；</p></li>
+<li><p>由 GGCGGG 组成；</p></li>
+<li><p>位于 CAAT 框的两侧，有 2 个拷贝；</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="enhancer">
+<h3>2.5. 增强子（Enhancer）<a class="headerlink" href="#enhancer" title="Permalink to this headline">#</a></h3>
+<p>又称远上游序列（far upstream sequence），一般都在-100bp 以上；</p>
+<ul class="simple">
+<li><p>对依赖于 TATA 框的转录和不依赖 TATA 框的转录都有增强效应，但对前者增强效应高；</p></li>
+<li><p>增强子是通过启动子来增加转录的，有效的增强子可位于基因的 5’端，也可位于基因的 3’端，有的还可位于基因的内含子中；</p></li>
+<li><p>增强子的效应很明显，一般能使基因转录频率增加 10-200 倍，有的甚至可高达上千倍；</p></li>
+</ul>
+</section>
+<section id="terminator">
+<h3>2.6. 终止子（Terminator）<a class="headerlink" href="#terminator" title="Permalink to this headline">#</a></h3>
+<p>在一个基因的末端往往有一段特定顺序，具有转录终止的功能，为反向重复序列，是 RNA 聚合酶停止工作的信号，反向重复序列转录后，可形成发夹式结构，且形成一串 U。发夹式结构阻碍了 RNA 聚合酶的移动，一串 U 的 U 与 DNA 模板中的 A 结合不稳定，从模板上脱落下来，转录终止。</p>
+</section>
+</section>
+<section id="id9">
+<h2>3. 乳糖操纵子<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h2>
+<section id="operon">
+<h3>3.1. 操纵子（Operon）<a class="headerlink" href="#operon" title="Permalink to this headline">#</a></h3>
+<p>很多功能相关的结构基因串联排列在染色体上，由一个共同的控制区来操纵这些基因的表达，包含这些结构基因和控制区的整个核苷酸序列就称为操纵子。</p>
+<ul class="simple">
+<li><p>1960∼1961 年，Monod 和 Jacob 首次提出”操纵子”学说（Lodish et al. 2000），获 1965 年诺贝尔生理学和医学奖；</p></li>
+<li><p>1940 年，Monod 发现细菌在含葡萄糖和乳糖的培养基上生长时，细菌先利用葡萄糖，葡萄糖用完后，才利用乳糖；在糖源变换期，细菌的生长会出现停顿。即产生”二次生长曲线”。</p></li>
+</ul>
+<p><img alt="Operon" src="../_images/operon-lac.png" /></p>
+</section>
+<section id="id10">
+<h3>3.2. 相关概念<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>组成型表达（constitutive expression）：在个体发育的任一阶段都能在大多数细胞中持续进行的基因表达，受环境因素的影响较少；</p></li>
+<li><p>持家基因（housekeeping gene）：表达产物通常是对生命过程必需的、必不可少的基因；</p></li>
+<li><p>诱导（induction）：在特定的环境信号刺激下，相应基因被激活，从而使基因的表达产物增加的过程；</p></li>
+<li><p>阻遏（repression）：在特定环境信号刺激下，相应基因被抑制，从而使基因的表达产物减少的过程；</p></li>
+<li><p>协调表达（coordinate expression）：在一定机制控制下，功能上相关的一组基因，无论其为何种表达方式，均需协调一致、共同表达，使各表达产物的分子比例适当，从而正常发挥功能的现象；</p></li>
+<li><p>安慰诱导物（gratuitous inducer）：能诱导酶的合成，但又不被分解的分子；</p></li>
+</ul>
+</section>
+<section id="id11">
+<h3>3.3. 组成<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>三个特异性序列</p>
+<ul>
+<li><p>操纵子 O（operator）: 阻遏蛋白结合位点，指能被调控蛋白特异性结合的一段 DNA 序列；</p></li>
+<li><p>启动子 P（promoter）: 位于结构基因的上游，指能被 RNA 聚合酶识别、结合并启动基因转录的一段 DNA 序列；</p></li>
+<li><p>CAP 结合位点：环 cAMP 受体蛋白（分解代谢物激活蛋白）结合位点；</p></li>
+</ul>
+</li>
+<li><p>一个调节基因</p>
+<ul>
+<li><p><em>lac I</em>：编码阻遏蛋白，能结合于操纵序列位点；</p></li>
+</ul>
+</li>
+<li><p>结构基因</p>
+<ul>
+<li><p>结构基因（structural gene，SG）：操纵元中被调控的编码蛋白质的基因</p></li>
+<li><p>Z 编码 <em>β</em>-半乳糖苷酶：将乳糖水解成葡萄糖和半乳糖；</p></li>
+<li><p>Y 编码 <em>β</em>-半乳糖苷透过酶：使外界的 <em>β</em>-半乳糖苷（如乳糖）能透过大肠杆菌细胞壁和原生质膜进入细胞内；</p></li>
+<li><p>A 编码 <em>β</em>-半乳糖苷乙酰基转移酶：乙酰 CoA 上的乙酰基转到 <em>β</em>-半乳糖苷上，形成乙酰半乳糖；</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="Operon 2" src="../_images/operon-lac2.png" /></p>
+</section>
+<section id="mrna">
+<h3>3.4. 多顺反子 mRNA<a class="headerlink" href="#mrna" title="Permalink to this headline">#</a></h3>
+<p>多顺反子 mRNA 在细菌中很普遍。多顺反子 <em>lac</em> mRNA 中的 lacZ，lacY，lacA 经翻译生成的产物分别生成代谢分解乳糖的三种酶，且始终存在着一定的比例关系（Z:Y:A = 5:2:1）</p>
+<ul class="simple">
+<li><p>lacZ，lacY，lacA 基因的转录是由 lacI 基因指令合成的阻遏蛋白 R 所控制；</p></li>
+<li><p>lacI 一般和结构基因相毗连，但它本身具有自己的启动子和终止子，成为独立的转录单位；</p></li>
+<li><p>由于 lacI 的产物是可溶性蛋白，按照理说是无需位于结构基因的附近，它是能够分散到各处或结合到分散的 DNA 位点上；</p></li>
+</ul>
+</section>
+</section>
+<section id="id12">
+<h2>4. 乳糖操纵子的调控<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h2>
+<section id="id13">
+<h3>4.1. 阻遏蛋白的负调控<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>无乳糖：lac 操纵子处于阻遏状态（repression）；</p></li>
+<li><p>有乳糖（presence of lactose）：<em>lac</em> 操纵子即可被诱导；</p></li>
+<li><p>诱导剂（inducer）：别乳糖、半乳糖、IPTG（异丙基硫代半乳糖苷）</p></li>
+</ul>
+</section>
+<section id="iptg">
+<h3>4.2. IPTG<a class="headerlink" href="#iptg" title="Permalink to this headline">#</a></h3>
+<p>由于乳糖虽可诱导酶的合成，但又随之分解，产生很多复杂的动力学问题，因此人们常用安慰诱导物来进行各种实验，如异丙基-<em>β</em>-D-硫代半乳糖苷（IPTG）；</p>
+<ul class="simple">
+<li><p>IPTG 与自然的 <em>β</em>-半乳糖苷酶相似，且不能被酶分解，它的浓度在实验中不会改变。能在缺乏_lacY_ 基因下而有效地被运送。</p></li>
+<li><p>半乳糖苷键中用硫代替了氧，失去了水解活性，但硫代半乳糖苷和同源的氧代化合物与酶位点的亲和力相同，IPTG 虽不为 <em>β</em>-半乳糖苷酶所识别，但它是 lac 基因簇十分有效的诱导物；</p></li>
+<li><p>X-gal（5-溴-4-氯-3-吲哚-<em>β</em>-半乳糖苷）亦为一种人工化学合成的半乳糖苷，可被 <em>β</em>-半乳糖苷酶水解产生兰色化合物，因此可用作 β－半乳糖苷酶活性的指示剂；IPTG 和 X-gal 都被广泛应用在分子生物学和基因工程的工作中；</p></li>
+</ul>
+<p><img alt="IPTG" src="../_images/iptg.png" /></p>
+</section>
+<section id="cap">
+<h3>4.3. CAP 的正调控<a class="headerlink" href="#cap" title="Permalink to this headline">#</a></h3>
+<p>CAP（catabolite activator protein）：分解代谢基因激活蛋白，又称为 CRP（cAMP receptor protein），<em>lac</em> 操纵子高水平转录必需的一个激活蛋白；</p>
+<ul class="simple">
+<li><p>CAP（同二聚体），含 DNA 结合区
+以二聚体的方式与特定的 DNA 序列结合，cAMP 结合区与 cAMP 特异结合，并发生空间构象的变化，形成 cAMP-CAP 复合物（有活性）；</p></li>
+<li><p>当 CAP 与 CAP 结合位点这段序列结合时，可激活 RNA 转录酶活性，使之提高 50 倍；</p></li>
+<li><p>葡萄糖效应</p></li>
+</ul>
+<p>当细菌在含有葡萄糖套和乳糖的培养基中生长时，通常优先利用葡萄糖。只有当葡萄糖消耗完，经过一段停滞期，在乳糖的诱导下半乳糖苷酶开始合成，细菌才能充分利用乳糖。葡萄糖的降解物能抑制腺苷酸环化酶活性，并活化磷酸二脂酶，因而降低 cAMP 的浓度。故葡萄糖存在时，cAMP 浓度低；仅在葡萄糖消耗完毕时，cAMP 浓度增高，CAP-cAMP 复合物形成（结合于 <em>lac</em> 操纵子 CAP 结合位点），才会促进转录。</p>
+<p><img alt="CAP" src="../_images/cap.png" /></p>
+</section>
+<section id="id14">
+<h3>4.4. 协调调控<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h3>
+<p>由于 <span class="math notranslate nohighlight">\(P_{lac}\)</span> 是弱启动子，单纯因乳糖的存在发生去阻遏使 <em>lac</em> 操纵元转录开放，还不能使细菌很好利用乳糖，必需同时有 CAP 来加强转录活性，细菌才能合成足够的酶来利用乳糖；</p>
+<ul class="simple">
+<li><p>关键条件：<em>lac</em> 操纵子的强诱导既需要有乳糖的存在又需要没有葡萄糖可供利用。</p></li>
+</ul>
+</section>
+<section id="id15">
+<h3>4.5. 阻遏蛋白和 CAP 的双重调控<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>负调节与正调节协调合作</p>
+<ul>
+<li><p>阻遏蛋白封闭转录时，CAP 不发挥作用；</p></li>
+<li><p>如没有 CAP 加强转录，即使阻遏蛋白 R 从 P 上解聚仍无强大转录活性；</p></li>
+<li><p>葡萄糖可降低 cAMP 浓度，阻碍其与 CAP 结合从而抑制转录；</p></li>
+</ul>
+</li>
+<li><p>本底表达</p></li>
+</ul>
+<p>在细胞中透性酶等总是以最低量存在着，足以供给底物开始进入时的需要。即，操纵子有一个本底水平（basal level）的表达，即使没有诱导物的存在，也保持此表达水平（诱导水平的 1‰）；有的诱导物是通过其他吸收系统进入细胞的。</p>
+</section>
+</section>
+<section id="id16">
+<h2>5. 出芽酵母基因的命名<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p>Dominant gene: 3 upper case letters + 1 number</p></li>
+<li><p>Recessive gene: 3 lower case letters + 1 number</p></li>
+<li><p>Alleles: gene symbol + a hyphen + 1 italic Arabic number, <em>e…g.</em>, act1-606, his2-1</p></li>
+<li><p>Protein: Proteins are referred to by the relevant gene symbol, non-italic, initial letter uppercase and with the suffix p, <em>e.g.</em>, Ade5p, Cdc28p</p></li>
+<li><p>Phenotypes: a non-italic three-letter abbreviation corresponding to the gene symbol, initial letter uppercase. <em>e.g.</em>, Arg⁻, Arg⁺.</p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./biotechs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="01-%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%9F%BA%E7%A1%80.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">生物信息学基础</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="03-%E6%BC%94%E5%8C%96%E8%AE%BA%E5%9F%BA%E7%A1%80.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">演化论基础</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1. 微生物命名</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.1. 分类</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.2. 基因</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">1.3. 表型</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2. 基因结构</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2.1. 基础概念</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.2. 复制、转录、翻译</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#orf-cds">2.3. ORF, CDS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#promoter">2.4. 启动子（Promoter）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enhancer">2.5. 增强子（Enhancer）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#terminator">2.6. 终止子（Terminator）</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">3. 乳糖操纵子</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operon">3.1. 操纵子（Operon）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">3.2. 相关概念</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">3.3. 组成</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mrna">3.4. 多顺反子 mRNA</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">4. 乳糖操纵子的调控</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">4.1. 阻遏蛋白的负调控</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iptg">4.2. IPTG</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cap">4.3. CAP 的正调控</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">4.4. 协调调控</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">4.5. 阻遏蛋白和 CAP 的双重调控</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">5. 出芽酵母基因的命名</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By ivaquero
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

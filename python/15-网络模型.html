@@ -1,0 +1,1001 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>网络模型 &#8212; 生物狗学编程</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'python/15-网络模型';</script>
+    <link rel="canonical" href="https://ivaquero.github.io/blog-bio/python/15-网络模型.html" />
+    <link rel="shortcut icon" href="../_static/doge.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="元编程" href="16-%E5%85%83%E7%BC%96%E7%A8%8B.html" />
+    <link rel="prev" title="异步" href="14-%E5%BC%82%E6%AD%A5.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/doge.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/doge.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    生物狗学编程
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">综合生命科学</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/01-%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%9F%BA%E7%A1%80.html">生物信息学基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/02-%E5%88%86%E5%AD%90%E7%94%9F%E7%89%A9%E5%AD%A6%E5%9F%BA%E7%A1%80.html">分子生物学基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/03-%E6%BC%94%E5%8C%96%E8%AE%BA%E5%9F%BA%E7%A1%80.html">演化论基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/04-%E7%97%85%E7%90%86%E5%AD%A6%E5%9F%BA%E7%A1%80.html">病理学基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/%E5%9F%BA%E5%9B%A0%E5%B7%A5%E7%A8%8B.html">基因工程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/%E7%B3%96%E7%94%9F%E5%8C%96%E6%B5%8B%E5%AE%9A.html">糖生化测定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/%E8%9B%8B%E7%99%BD%E8%B4%A8%E7%94%9F%E5%8C%96%E6%B5%8B%E5%AE%9A.html">蛋白质生化测定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/%E9%87%8D%E7%BB%84%E9%AB%98%E6%8B%B7%E8%B4%9D%E9%85%B5%E6%AF%8D.html">重组高拷贝酵母</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">统计基础</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/01-%E6%A6%82%E7%8E%87%E4%B8%8E%E5%88%86%E5%B8%83.html">概率与分布</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/02-%E7%BB%9F%E8%AE%A1%E9%87%8F%E4%B8%8E%E9%87%87%E6%A0%B7.html">统计量与采样</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/03-%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1.html">参数估计</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/04-%E5%8F%82%E6%95%B0%E6%A3%80%E9%AA%8C.html">参数检验</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/05-%E9%9D%9E%E5%8F%82%E6%95%B0%E6%A3%80%E9%AA%8C.html">非参数检验</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/06-%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90.html">回归分析</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">机器学习</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/01-%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E5%BC%95%E8%A8%80.html">统计学习引言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/02-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92.html">线性回归</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/03-%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9.html">模型选择</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/04-%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB.html">线性分类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/05-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D.html">梯度下降</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/06-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E4%BC%98%E5%8C%96.html">梯度下降优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/07-%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB.html">非线性分类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/08-%E5%86%B3%E7%AD%96%E6%A0%91.html">决策树</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/09-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0.html">集成学习</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/10-%E9%99%8D%E7%BB%B4.html">降维</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/11-%E7%A1%AC%E8%81%9A%E7%B1%BB.html">硬聚类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/12-%E8%BD%AF%E8%81%9A%E7%B1%BB.html">软聚类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/13-%E7%94%9F%E5%AD%98%E5%88%86%E6%9E%90.html">生存分析</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 入门</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01-%E7%8E%AF%E5%A2%83%E4%B8%8E%E5%8F%98%E9%87%8F.html">环境与变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-%E5%8F%98%E9%87%8F%E8%BF%90%E7%AE%97.html">变量运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-%E5%AE%B9%E5%99%A8.html">容器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-%E5%AE%B9%E5%99%A8%E8%BF%90%E7%AE%97.html">容器运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-%E6%8E%A7%E5%88%B6%E6%B5%81.html">控制流</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-%E5%87%BD%E6%95%B0.html">函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-%E9%97%AD%E5%8C%85%E4%B8%8E%E8%A3%85%E9%A5%B0%E5%99%A8.html">闭包与装饰器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08-%E5%86%85%E7%BD%AE%E7%AE%97%E6%B3%95%E6%A8%A1%E5%9D%97.html">内置算法模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B.html">面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-%E6%A8%A1%E7%89%88%E4%B8%8E%E6%A8%A1%E5%BC%8F.html">模版与模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-%E9%AD%94%E6%B3%95%E6%96%B9%E6%B3%95.html">魔法方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12-%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B.html">高级编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13-%E5%A4%9A%E4%BB%BB%E5%8A%A1.html">多任务</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14-%E5%BC%82%E6%AD%A5.html">异步</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">网络模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16-%E5%85%83%E7%BC%96%E7%A8%8B.html">元编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17-%E6%A8%A1%E5%9D%97%E4%B8%8E%E8%B0%83%E8%AF%95.html">模块与调试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18-%E9%AB%98%E6%80%A7%E8%83%BD%E6%89%A9%E5%B1%95.html">高性能扩展</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">数据分析</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../analysis/clean-pandas.html">Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/clean-pandas2.html">Pandas 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/correlation.html">Correlation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/deviation.html">Deviation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/distribution.html">Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/group.html">Group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/polar.html">Polar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/proportion.html">Proportion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/ranking.html">Ranking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/time-series.html">Time Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/tricks.html">Tricks</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/python/15-网络模型.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>网络模型</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#osi">1. OSI 模型</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.1. 简介</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tcp-ip">1.2. TCP/IP 协议族</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.3. 协议</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">链路层</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">网络层和传输层</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2. 网络地址</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipv4">2.1. IPv4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ip">2.2. 私有 IP</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2.3. 子网掩码</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mac">2.4. MAC 地址</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#socket">3. Socket</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">3.1. 创建、修改</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">3.2. 端口</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#udp">4. UDP</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">4.1. 服务端</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">4.2. 广播</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tcp">5. TCP 原理</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">5.1. 握手和挥手</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">5.2. 监听的队列长度</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">5.3. 短链接</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">5.4. 长链接</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">6. TCP 服务器</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">6.1. 非阻塞版</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>网络模型<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<section id="osi">
+<h2>1. OSI 模型<a class="headerlink" href="#osi" title="Permalink to this headline">#</a></h2>
+<section id="id2">
+<h3>1.1. 简介<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<p>OSI 模型：开放式通信系统互联参考模型（Open Systems Interconnection Reference Model, OSI/RM），是国际标准化组织（ISO）提出的一个试图使各种计算机在世界范围内互连为网络的标准框架。</p>
+<p>OSI 模型将网络结构抽象为 7 层：</p>
+<ul class="simple">
+<li><p>应用层</p></li>
+<li><p>表示层</p></li>
+<li><p>会话层</p></li>
+<li><p>传输层</p></li>
+<li><p>网络层</p></li>
+<li><p>链路层</p></li>
+<li><p>物理层</p></li>
+</ul>
+<p><img alt="structure" src="../_images/structure.png" /></p>
+</section>
+<section id="tcp-ip">
+<h3>1.2. TCP/IP 协议族<a class="headerlink" href="#tcp-ip" title="Permalink to this headline">#</a></h3>
+<p>TCP/IP 协议：互联网协议包含了上百种协议标准，但，最重要的两个协议是 TCP 和 IP 协议，故，大家把互联网的协议简称 TCP/IP 协议；</p>
+<p>TCP/IP 模型：将 OSI 模型简化为<strong>四层</strong>；</p>
+<p><img alt="structure3" src="../_images/structure3.png" /></p>
+</section>
+<section id="id3">
+<h3>1.3. 协议<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<p><img alt="structure2" src="../_images/structure2.png" /></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p>协议</p></th>
+<th class="text-center head"><p></p></th>
+<th class="text-center head"><p>层级</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>DNS</p></td>
+<td class="text-center"><p>域名系统</p></td>
+<td class="text-center"><p>应用层</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>DHCP</p></td>
+<td class="text-center"><p>动态主机配置协议</p></td>
+<td class="text-center"><p>应用层</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>FTP</p></td>
+<td class="text-center"><p>文件转移协议</p></td>
+<td class="text-center"><p>应用层</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>HTTP</p></td>
+<td class="text-center"><p>超文本转移协议</p></td>
+<td class="text-center"><p>应用层</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>TFTP</p></td>
+<td class="text-center"><p>简单文件转移协议</p></td>
+<td class="text-center"><p>应用层</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>SMTP</p></td>
+<td class="text-center"><p>简单邮件转移协议</p></td>
+<td class="text-center"><p>应用层</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>TCP</p></td>
+<td class="text-center"><p>传输控制协议</p></td>
+<td class="text-center"><p>传输层</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>UDP</p></td>
+<td class="text-center"><p>用户数据报协议</p></td>
+<td class="text-center"><p>传输层</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>IP</p></td>
+<td class="text-center"><p>因特网协议</p></td>
+<td class="text-center"><p>网络层</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>ICMP</p></td>
+<td class="text-center"><p>因特网控制消息协议</p></td>
+<td class="text-center"><p>网络层</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>IGMP</p></td>
+<td class="text-center"><p>因特网组管理协议</p></td>
+<td class="text-center"><p>网络层</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>ARP</p></td>
+<td class="text-center"><p>地址解析协议</p></td>
+<td class="text-center"><p>网络层</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>RARP</p></td>
+<td class="text-center"><p>反向地址解析协议</p></td>
+<td class="text-center"><p>网络层</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>应用层：应用程序可自建协议；</p></li>
+<li><p>传输层：必须通过 IP 才能和链路层进行通信；</p></li>
+<li><p>网络层：ICMP 和 IGMP 必须通过 IP 才能和链路层通信，ICMP 可直接与应用层通信，ARP 和 RARP 只与链路层通信的协议；</p></li>
+</ul>
+<section id="id4">
+<h4>链路层<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h4>
+<p><img alt="protocol-frame" src="../_images/protocol-frame.png" /></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p>类型</p></th>
+<th class="text-center head"><p>协议</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>0800</p></td>
+<td class="text-center"><p>IP</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>0806</p></td>
+<td class="text-center"><p>ARP</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>8035</p></td>
+<td class="text-center"><p>RARP</p></td>
+</tr>
+</tbody>
+</table>
+<p><img alt="arp" src="../_images/arp.png" /></p>
+</section>
+<section id="id5">
+<h4>网络层和传输层<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h4>
+<p><img alt="protocol-packet" src="../_images/tcp.png" /></p>
+</section>
+</section>
+</section>
+<section id="id6">
+<h2>2. 网络地址<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
+<section id="ipv4">
+<h3>2.1. IPv4<a class="headerlink" href="#ipv4" title="Permalink to this headline">#</a></h3>
+<p>IPv4 地址（逻辑地址）: 用于在网络中标记一台电脑的一串数字，在本地局域网上是惟一的；</p>
+<ul class="simple">
+<li><p>IPv4 地址均由 4 个 4 字节，即 32 个二进制数组成，每类 IPv4 地址的最小值用于显示网络区段，最大值用于广播，这两个值往往不会进行分配</p></li>
+<li><p>A 类 IPv4 地址中的<strong>127.0.0.1 – 127.255.255.255</strong>用于回路测试；</p></li>
+<li><p><strong>127.0.0.1</strong>可代表本机 IPv4 地址，用 <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1</span></code> 就可测试本机中配置的 Web 服务器；</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p>类别</p></th>
+<th class="text-center head"><p>网络地址占用字节</p></th>
+<th class="text-center head"><p>主机地址占用字节</p></th>
+<th class="text-center head"><p>IP 地址范围</p></th>
+<th class="text-center head"><p>可用网络个数</p></th>
+<th class="text-center head"><p>每个网络能容纳主机</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>A</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>3</p></td>
+<td class="text-center"><p>1.0.0.1 - 126.255.255.254</p></td>
+<td class="text-center"><p>126</p></td>
+<td class="text-center"><p>1677214</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>B</p></td>
+<td class="text-center"><p>2</p></td>
+<td class="text-center"><p>2</p></td>
+<td class="text-center"><p>128.1.0.1 - 191.255.255.254</p></td>
+<td class="text-center"><p>16384</p></td>
+<td class="text-center"><p>65534</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>C</p></td>
+<td class="text-center"><p>3</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>192.0.1.1 - 223.255.255.254</p></td>
+<td class="text-center"><p>2097152</p></td>
+<td class="text-center"><p>254</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>D</p></td>
+<td class="text-center"><p>不指向特定的网络</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>224.0.0.1 - 239.255.255.254</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p></p></td>
+<td class="text-center"><p>只被用于多点广播</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>E</p></td>
+<td class="text-center"><p>仅作实验和开发用</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ip">
+<h3>2.2. 私有 IP<a class="headerlink" href="#ip" title="Permalink to this headline">#</a></h3>
+<p>私有 IP：国际规定有一部分 IPv4 地址是用于我们的局域网使用，不在公网中使用的 IP 地址；</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p>类别</p></th>
+<th class="text-center head"><p>起始 IP 段</p></th>
+<th class="text-center head"><p>终止 IP 段</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>A</p></td>
+<td class="text-center"><p>10.0.0.0</p></td>
+<td class="text-center"><p>10.255.255.255</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>B</p></td>
+<td class="text-center"><p>172.16.0.0</p></td>
+<td class="text-center"><p>172.31.255.255</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>C</p></td>
+<td class="text-center"><p>192.168.0.0</p></td>
+<td class="text-center"><p>192.168.255.255</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id7">
+<h3>2.3. 子网掩码<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<p>子网掩码不能单独存在，它必须结合 IP 地址一起使用。子网掩码只有一个作用，就是将某个 IP 地址划分成网络地址和主机地址，只有通过子网掩码，才能表明一台主机所在的子网与其他子网的关系，使网络正常工作。</p>
+<p>与 IP 地址相同，子网掩码的长度亦为 32 位，左边是网络位，用二进制数字 1 表示，右边是主机位，用二进制数字 0 表示。子网掩码与 IPv4 地址进行按位与操作，可得到 IPv4 地址所在的网络段（末位为 0）</p>
+<p>若一个网络的规模不超过 254 台电脑，使用 255.255.255.0 作为子网掩码就可了，若在一所大学具有 1500 多台电脑，这种规模的局域网可使用 255.255.0.0；</p>
+</section>
+<section id="mac">
+<h3>2.4. MAC 地址<a class="headerlink" href="#mac" title="Permalink to this headline">#</a></h3>
+<p>MAC 地址（硬件地址）：由 6 个字节组成，前 3 个表示网卡许可，后 3 个是网卡产品序列号；</p>
+<ul class="simple">
+<li><p>ping 命令会先调用 ARP（包含目标 IP 地址），通过交换机将 ARP 广播发送给其连接的所有设备，然后返回网关的 MAC 地址，然后请求方 PC 调用 ICMP 向目的 PC 发送消息；</p></li>
+<li><p>当 MAC 地址为十六进制，则会发送给 ARP，反之会发送给 IP；</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 设置 IP 和掩码</span>
+ifconfig<span class="w"> </span>eth0<span class="w"> </span><span class="m">192</span>.168.5.40
+netmask<span class="w"> </span><span class="m">255</span>.255.255.0
+<span class="c1"># 设置网关</span>
+route<span class="w"> </span>add<span class="w"> </span>default<span class="w"> </span>gw<span class="w"> </span><span class="m">192</span>.168.5.1
+<span class="c1"># 查看域名解析的 IPv4 地址</span>
+nslookup<span class="w"> </span>baidu.com
+</pre></div>
+</div>
+</section>
+</section>
+<section id="socket">
+<h2>3. Socket<a class="headerlink" href="#socket" title="Permalink to this headline">#</a></h2>
+<section id="id8">
+<h3>3.1. 创建、修改<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<p>Socket（套接字）是进程间通信的一种方式，它能实现不同主机间的进程间通信，用于解决传输层以下的通信；</p>
+<p><img alt="tcp" src="../_images/tcp.png" /></p>
+<p>Socket = IP address + Protocol + Port</p>
+<ul class="simple">
+<li><p>创建：socket.socket(AddressFamily, Type)</p>
+<ul>
+<li><p>AddressFamily</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">AF_INET</span></code>：用于网络进程间通信</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AF_UNIX</span></code>：用于同台机器进程间通信</p></li>
+</ul>
+</li>
+<li><p>Type</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">SOCK_STREAM</span></code>：流式套接字，主要用于 TCP</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SOCK_DGRAM</span></code>：数据包套接字，主要用于 UDP</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>修改设置：setsockopt(SOL_SOCKET, Type)</p>
+<ul>
+<li><p>Type</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">SO_BROADCAST</span></code>：主要用于 UDP 广播</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SO_REUSEADDR</span></code>：主要用于 TCP 服务器</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id9">
+<h3>3.2. 端口<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<p>计算机通过 IP + 端口号区分不同网络服务。</p>
+<ul class="simple">
+<li><p>端口号只有整数，范围是从 0 到 65535，Linux 共拥有 65536 (<span class="math notranslate nohighlight">\(2^{16}\)</span>) 个端口</p></li>
+<li><p>端口号不是随意使用的，而是按照一定的规定进行分配</p></li>
+<li><p>知名端口：端口号为 0-1023 的端口，如端口 80 分配给 HTTP 服务，端口 21 分配给 FTP 服务</p></li>
+<li><p>动态端口：端口号为 1023-65535 的端口，动态分配给相应服务</p></li>
+<li><p>查看端口状态：netstat –an</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p>Protocol</p></th>
+<th class="text-center head"><p>Port</p></th>
+<th class="text-center head"><p>Socket</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>HTTP</p></td>
+<td class="text-center"><p>80</p></td>
+<td class="text-center"><p>TCP</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>FTP</p></td>
+<td class="text-center"><p>20/21</p></td>
+<td class="text-center"><p>TCP</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Telnet</p></td>
+<td class="text-center"><p>23</p></td>
+<td class="text-center"><p>TCP</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>SMTP</p></td>
+<td class="text-center"><p>25</p></td>
+<td class="text-center"><p>TCP, UDP</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>DNS</p></td>
+<td class="text-center"><p>53</p></td>
+<td class="text-center"><p>UDP</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>TFTP</p></td>
+<td class="text-center"><p>69</p></td>
+<td class="text-center"><p>UDP</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>SNMP</p></td>
+<td class="text-center"><p>161</p></td>
+<td class="text-center"><p>UDP</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="udp">
+<h2>4. UDP<a class="headerlink" href="#udp" title="Permalink to this headline">#</a></h2>
+<p>UDP 是一个<strong>面向数据包</strong>的、<strong>无连接</strong>的通信协议，一般用于多点通信和实时的数据业务</p>
+<ul class="simple">
+<li><p>UDP 不提供可靠性，它只是把应用程序传给 IP 的数据报（datagram）发送出去，每个数据报能否到达目的地、到达目的地的时间、内容的正确性均是不能被保证的</p></li>
+<li><p>UDP 在传输数据报前不用在客户和服务器之间建立一个连接，且<strong>没有超时重发</strong>等机制，故而传输速度很快（注重速度流畅）</p></li>
+<li><p>UDP 传输数据时有大小限制，每个被传输的数据报必须 <strong>&lt; 64 kB</strong></p></li>
+</ul>
+<section id="id10">
+<h3>4.1. 服务端<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
+<p>一般情况下，为了让其他的客户端能够正确发送到此进程，服务器端需要绑定端口，而客户端一般不需要绑定，而是让操作系统随机分配，这样就不会因为需要绑定的端口被占用而导致程序无法运行；</p>
+</section>
+<section id="id11">
+<h3>4.2. 广播<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<p>通过 UDP 进行广播，需要使用 <code class="docutils literal notranslate"><span class="pre">socket.socket(.setsockopt(s.SOL_SOCKET,</span> <span class="pre">s.SO_BROADCAST,</span> <span class="pre">1)</span></code> 修改 UDP 套接字参数；</p>
+<p>每类 IPv4 地址最小值用于显示网络区段，最大值用于广播，即末位为 255，C 类地址广播地址多为 192.168.1.255；</p>
+</section>
+</section>
+<section id="tcp">
+<h2>5. TCP 原理<a class="headerlink" href="#tcp" title="Permalink to this headline">#</a></h2>
+<section id="id12">
+<h3>5.1. 握手和挥手<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
+<p>TCP 模型中，在通信开始前，一定要先建立相关的链接，才能发送数据，类似于生活中”打电话”；</p>
+<ul class="simple">
+<li><p>SYN（synchronous）：TCP/IP 建立连接时使用的握手信号；</p></li>
+<li><p>ACK（Acknowledgement）：确认字符，表示发来的数据已确认接收无误；</p></li>
+<li><p>当发送方接收到 ACK 信号时，就可发送下一个数据。若发送方没有收到信号，则发送方会重发当前的数据包；</p></li>
+<li><p>当一端收到一个 FIN，内核让 read 返回 0 来通知应用层另一端已经终止了向本端的数据传送；</p></li>
+<li><p>发送 FIN 通常是应用层对 socket 进行关闭的结果；</p></li>
+</ul>
+<p><img alt="tcp2" src="../_images/tcp2.png" /></p>
+<ul class="simple">
+<li><p>连接状态</p>
+<ul>
+<li><p>客户端：SYN_SENT</p></li>
+<li><p>服务端：LISTEN、SYN_RCV</p></li>
+<li><p>共同：ESTABLISHED</p></li>
+</ul>
+</li>
+<li><p>关闭状态</p>
+<ul>
+<li><p>客户端：FIN_WAIT1（调用 <code class="docutils literal notranslate"><span class="pre">close()</span></code> ）、FIN_WAIT2、TIME_WAIT</p></li>
+<li><p>服务端：CLOSE_WAIT（ <code class="docutils literal notranslate"><span class="pre">recv()</span></code> 数据为空）、LASK_ACK（调用 <code class="docutils literal notranslate"><span class="pre">close()</span></code> ）</p></li>
+<li><p>共同：CLOSED</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id13">
+<h3>5.2. 监听的队列长度<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">listen()</span></code> 中的参数表示已经建立链接和半链接的总数，若当前已建立链接数和半链接数以达到设定值，则新客户端就不会连接成功，而是等待服务器；</p>
+<blockquote>
+<div><p>Linux 中，无论 <code class="docutils literal notranslate"><span class="pre">listen()</span></code> 中的参数为多少，系统会自动给定 1 个值；</p>
+</div></blockquote>
+</section>
+<section id="id14">
+<h3>5.3. 短链接<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h3>
+<p>短链接多用于网站，一般只会在 client/server 间传递一次读写操作</p>
+<ol class="arabic simple">
+<li><p>client 向 server 发起连接请求</p></li>
+<li><p>server 接到请求，双方建立连接</p></li>
+<li><p>client 向 server 发送消息</p></li>
+<li><p>server 回应 client</p></li>
+<li><p>一次读写完成，此时双方任一个都可发起 close 操作</p></li>
+</ol>
+</section>
+<section id="id15">
+<h3>5.4. 长链接<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h3>
+<p>长链接多用于视频、游戏等，是在短链接基础上</p>
+<ul class="simple">
+<li><p>一次读写完成，连接不关闭</p></li>
+<li><p>后续读写操作</p></li>
+<li><p>长时间操作后，client 发起关闭请求</p></li>
+</ul>
+</section>
+</section>
+<section id="id16">
+<h2>6. TCP 服务器<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h2>
+<p>单进程服务器同一时刻只能为一个客户进行服务，多线程往往用于代替多进程服务器；</p>
+<section id="id17">
+<h3>6.1. 非阻塞版<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h3>
+<p>当服务器为一个客户端服务时，而另外的客户端发起了 connect，只要服务器 listen 的队列有空闲的位置，就会为这个新客户端进行连接，但当服务器为这个新客户端服务时，可能一次性把所有数据接收完毕</p>
+<ul class="simple">
+<li><p>非阻塞模式下，accept 时，恰巧没有客户端 connect，则 accept 会产生一个异常，故需要 try 来进行处理</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./python"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="14-%E5%BC%82%E6%AD%A5.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">异步</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="16-%E5%85%83%E7%BC%96%E7%A8%8B.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">元编程</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#osi">1. OSI 模型</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.1. 简介</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tcp-ip">1.2. TCP/IP 协议族</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.3. 协议</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">链路层</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">网络层和传输层</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2. 网络地址</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipv4">2.1. IPv4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ip">2.2. 私有 IP</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2.3. 子网掩码</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mac">2.4. MAC 地址</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#socket">3. Socket</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">3.1. 创建、修改</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">3.2. 端口</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#udp">4. UDP</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">4.1. 服务端</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">4.2. 广播</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tcp">5. TCP 原理</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">5.1. 握手和挥手</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">5.2. 监听的队列长度</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">5.3. 短链接</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">5.4. 长链接</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">6. TCP 服务器</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">6.1. 非阻塞版</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By ivaquero
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

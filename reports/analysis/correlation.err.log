@@ -1,0 +1,69 @@
+Traceback (most recent call last):
+  File "/Users/integzz/.conda/envs/kaggle/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/Users/integzz/.conda/envs/kaggle/lib/python3.11/site-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/integzz/.conda/envs/kaggle/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 166, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/integzz/.conda/envs/kaggle/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/integzz/.conda/envs/kaggle/lib/python3.11/site-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/Users/integzz/.conda/envs/kaggle/lib/python3.11/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/integzz/.conda/envs/kaggle/lib/python3.11/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+mpg_select = mpg.query("cyl in [4, 8]")
+
+(
+    ggplot(
+        mpg_select,
+        aes(x="displ", y="hwy", color="cyl", fill="cyl"),
+    )
+    + geom_point(size=2)
+    + geom_smooth(method="lm", size=1)
+    + facet_wrap("cyl")
+    + lims(x=(0, 8), y=(0, 50))
+    + labs(title="Scatterplot with line of best fit grouped by number of cylinders")
+    + theme(plot_title=element_text(hjust=0.5), legend_position="none")
+    + scale_color_gradient(low="#E69F00", high="#56B4E9")
+    + scale_fill_gradient(low="#E69F00", high="#56B4E9")
+)
+
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mTypeError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn[3], line 14[0m
+[1;32m      1[0m mpg_select [38;5;241m=[39m mpg[38;5;241m.[39mquery([38;5;124m"[39m[38;5;124mcyl in [4, 8][39m[38;5;124m"[39m)
+[1;32m      3[0m (
+[1;32m      4[0m     ggplot(
+[1;32m      5[0m         mpg_select,
+[1;32m      6[0m         aes(x[38;5;241m=[39m[38;5;124m"[39m[38;5;124mdispl[39m[38;5;124m"[39m, y[38;5;241m=[39m[38;5;124m"[39m[38;5;124mhwy[39m[38;5;124m"[39m, color[38;5;241m=[39m[38;5;124m"[39m[38;5;124mcyl[39m[38;5;124m"[39m, fill[38;5;241m=[39m[38;5;124m"[39m[38;5;124mcyl[39m[38;5;124m"[39m),
+[1;32m      7[0m     )
+[1;32m      8[0m     [38;5;241m+[39m geom_point(size[38;5;241m=[39m[38;5;241m2[39m)
+[1;32m      9[0m     [38;5;241m+[39m geom_smooth(method[38;5;241m=[39m[38;5;124m"[39m[38;5;124mlm[39m[38;5;124m"[39m, size[38;5;241m=[39m[38;5;241m1[39m)
+[1;32m     10[0m     [38;5;241m+[39m facet_wrap([38;5;124m"[39m[38;5;124mcyl[39m[38;5;124m"[39m)
+[1;32m     11[0m     [38;5;241m+[39m lims(x[38;5;241m=[39m([38;5;241m0[39m, [38;5;241m8[39m), y[38;5;241m=[39m([38;5;241m0[39m, [38;5;241m50[39m))
+[1;32m     12[0m     [38;5;241m+[39m labs(title[38;5;241m=[39m[38;5;124m"[39m[38;5;124mScatterplot with line of best fit grouped by number of cylinders[39m[38;5;124m"[39m)
+[1;32m     13[0m     [38;5;241m+[39m theme(plot_title[38;5;241m=[39melement_text(hjust[38;5;241m=[39m[38;5;241m0.5[39m), legend_position[38;5;241m=[39m[38;5;124m"[39m[38;5;124mnone[39m[38;5;124m"[39m)
+[0;32m---> 14[0m     [38;5;241m+[39m [43mscale_color_gradient[49m[43m([49m[43mlow[49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43m#E69F00[39;49m[38;5;124;43m"[39;49m[43m,[49m[43m [49m[43mhigh[49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43m#56B4E9[39;49m[38;5;124;43m"[39;49m[43m)[49m
+[1;32m     15[0m     [38;5;241m+[39m scale_fill_gradient(low[38;5;241m=[39m[38;5;124m"[39m[38;5;124m#E69F00[39m[38;5;124m"[39m, high[38;5;241m=[39m[38;5;124m"[39m[38;5;124m#56B4E9[39m[38;5;124m"[39m)
+[1;32m     16[0m )
+
+File [0;32m~/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/scales/scale_color.py:189[0m, in [0;36mscale_color_gradient.__init__[0;34m(self, low, high, **kwargs)[0m
+[1;32m    186[0m [38;5;28;01mfrom[39;00m [38;5;21;01mmizani[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpalettes[39;00m [38;5;28;01mimport[39;00m gradient_n_pal
+[1;32m    188[0m [38;5;66;03m# TODO: fix types in mizani[39;00m
+[0;32m--> 189[0m [38;5;28mself[39m[38;5;241m.[39mpalette [38;5;241m=[39m [43mgradient_n_pal[49m[43m([49m
+[1;32m    190[0m [43m    [49m[43m[[49m[43mlow[49m[43m,[49m[43m [49m[43mhigh[49m[43m][49m[43m,[49m[43m [49m[43mname[49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43mgradient[39;49m[38;5;124;43m"[39;49m
+[1;32m    191[0m [43m[49m[43m)[49m  [38;5;66;03m# pyright: ignore[39;00m
+[1;32m    192[0m scale_continuous[38;5;241m.[39m[38;5;21m__init__[39m([38;5;28mself[39m, [38;5;241m*[39m[38;5;241m*[39mkwargs)
+
+[0;31mTypeError[0m: gradient_n_pal.__init__() got an unexpected keyword argument 'name'
+

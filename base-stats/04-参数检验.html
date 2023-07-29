@@ -1,0 +1,1554 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>参数检验 &#8212; 生物狗学编程</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'base-stats/04-参数检验';</script>
+    <link rel="canonical" href="https://ivaquero.github.io/blog-bio/base-stats/04-参数检验.html" />
+    <link rel="shortcut icon" href="../_static/doge.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="非参数检验" href="05-%E9%9D%9E%E5%8F%82%E6%95%B0%E6%A3%80%E9%AA%8C.html" />
+    <link rel="prev" title="参数估计" href="03-%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/doge.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/doge.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    生物狗学编程
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">综合生命科学</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/01-%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%9F%BA%E7%A1%80.html">生物信息学基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/02-%E5%88%86%E5%AD%90%E7%94%9F%E7%89%A9%E5%AD%A6%E5%9F%BA%E7%A1%80.html">分子生物学基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/03-%E6%BC%94%E5%8C%96%E8%AE%BA%E5%9F%BA%E7%A1%80.html">演化论基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/04-%E7%97%85%E7%90%86%E5%AD%A6%E5%9F%BA%E7%A1%80.html">病理学基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/%E5%9F%BA%E5%9B%A0%E5%B7%A5%E7%A8%8B.html">基因工程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/%E7%B3%96%E7%94%9F%E5%8C%96%E6%B5%8B%E5%AE%9A.html">糖生化测定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/%E8%9B%8B%E7%99%BD%E8%B4%A8%E7%94%9F%E5%8C%96%E6%B5%8B%E5%AE%9A.html">蛋白质生化测定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/%E9%87%8D%E7%BB%84%E9%AB%98%E6%8B%B7%E8%B4%9D%E9%85%B5%E6%AF%8D.html">重组高拷贝酵母</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">统计基础</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01-%E6%A6%82%E7%8E%87%E4%B8%8E%E5%88%86%E5%B8%83.html">概率与分布</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-%E7%BB%9F%E8%AE%A1%E9%87%8F%E4%B8%8E%E9%87%87%E6%A0%B7.html">统计量与采样</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1.html">参数估计</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">参数检验</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-%E9%9D%9E%E5%8F%82%E6%95%B0%E6%A3%80%E9%AA%8C.html">非参数检验</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90.html">回归分析</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">机器学习</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/01-%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E5%BC%95%E8%A8%80.html">统计学习引言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/02-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92.html">线性回归</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/03-%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9.html">模型选择</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/04-%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB.html">线性分类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/05-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D.html">梯度下降</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/06-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E4%BC%98%E5%8C%96.html">梯度下降优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/07-%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB.html">非线性分类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/08-%E5%86%B3%E7%AD%96%E6%A0%91.html">决策树</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/09-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0.html">集成学习</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/10-%E9%99%8D%E7%BB%B4.html">降维</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/11-%E7%A1%AC%E8%81%9A%E7%B1%BB.html">硬聚类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/12-%E8%BD%AF%E8%81%9A%E7%B1%BB.html">软聚类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/13-%E7%94%9F%E5%AD%98%E5%88%86%E6%9E%90.html">生存分析</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 入门</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../python/01-%E7%8E%AF%E5%A2%83%E4%B8%8E%E5%8F%98%E9%87%8F.html">环境与变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/02-%E5%8F%98%E9%87%8F%E8%BF%90%E7%AE%97.html">变量运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/03-%E5%AE%B9%E5%99%A8.html">容器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/04-%E5%AE%B9%E5%99%A8%E8%BF%90%E7%AE%97.html">容器运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/05-%E6%8E%A7%E5%88%B6%E6%B5%81.html">控制流</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/06-%E5%87%BD%E6%95%B0.html">函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/07-%E9%97%AD%E5%8C%85%E4%B8%8E%E8%A3%85%E9%A5%B0%E5%99%A8.html">闭包与装饰器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/08-%E5%86%85%E7%BD%AE%E7%AE%97%E6%B3%95%E6%A8%A1%E5%9D%97.html">内置算法模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/09-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B.html">面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/10-%E6%A8%A1%E7%89%88%E4%B8%8E%E6%A8%A1%E5%BC%8F.html">模版与模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/11-%E9%AD%94%E6%B3%95%E6%96%B9%E6%B3%95.html">魔法方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/12-%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B.html">高级编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/13-%E5%A4%9A%E4%BB%BB%E5%8A%A1.html">多任务</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/14-%E5%BC%82%E6%AD%A5.html">异步</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/15-%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B.html">网络模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/16-%E5%85%83%E7%BC%96%E7%A8%8B.html">元编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/17-%E6%A8%A1%E5%9D%97%E4%B8%8E%E8%B0%83%E8%AF%95.html">模块与调试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/18-%E9%AB%98%E6%80%A7%E8%83%BD%E6%89%A9%E5%B1%95.html">高性能扩展</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">数据分析</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../analysis/clean-pandas.html">Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/clean-pandas2.html">Pandas 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/correlation.html">Correlation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/deviation.html">Deviation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/distribution.html">Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/group.html">Group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/polar.html">Polar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/proportion.html">Proportion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/ranking.html">Ranking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/time-series.html">Time Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/tricks.html">Tricks</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/base-stats/04-参数检验.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/base-stats/04-参数检验.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>参数检验</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1. 正态性检验</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.1. 经验分布函数</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.2. 概率图</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shapiro-wilk-w">1.3. Shapiro-Wilk W 检验</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ks">1.4. KS 检验系</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">1.4.1. KS 检验</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lilliefors">1.4.2. Lilliefors 检验</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ad">1.4.3. AD 检验</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2. 显著性检验</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2.1. 单样本</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.2. 配对双样本</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">2.3. 独立双样本</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">3. 相关性检验</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">3.1. 单样本</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">3.2. 双样本</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">3.3. 多样本</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">4. 单因素方差分析</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">4.1. 基本思想</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">4.2. 平方和</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">4.3. 多重比较</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">5. 双因素方差分析</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">5.1. 等重复双因素</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">5.2. 平方和</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">5.3. 嵌套双因素</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">5.4. 平方和</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+<span class="kn">from</span> <span class="nn">statsmodels.stats.anova</span> <span class="kn">import</span> <span class="n">anova_lm</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;seaborn-v0_8&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>参数检验<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<section id="id2">
+<h2>1. 正态性检验<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<section id="id3">
+<h3>1.1. 经验分布函数<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<p>设<span class="math notranslate nohighlight">\(x_1, x_2, ⋯ x_n\)</span>为总体<span class="math notranslate nohighlight">\(X\)</span>的一个样本，令<span class="math notranslate nohighlight">\(f(x)\)</span>为其中不大于<span class="math notranslate nohighlight">\(x\)</span>的随机变量的个数，定义经验分布函数为</p>
+<div class="math notranslate nohighlight">
+\[
+F_n (x) = \frac{1}{n}f(x), x ∈ ℝ
+\]</div>
+<p>一般地，先将样本值<span class="math notranslate nohighlight">\(x_1, x_2, ⋯ x_n\)</span>进行升序排列，并重新编号，则经验分布函数的观测值为</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+F_n(x) =
+\begin{cases}
+  0, &amp; x&lt;x_{(1)} \\
+  \frac{k}{n}, &amp; x_{k} &lt;x&lt;x_{(k+ 1)} \\
+  1, &amp; x &gt;x_{(n)}
+\end{cases}
+\end{split}\]</div>
+<blockquote>
+<div><p>1933 年，Glivenko（Валери Іванович Глущенко, 1897-1940）证明，当<span class="math notranslate nohighlight">\(n → +∞\)</span>，<span class="math notranslate nohighlight">\(F_n(x) = F(x)\)</span>。</p>
+</div></blockquote>
+</section>
+<section id="id4">
+<h3>1.2. 概率图<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<p>存在许多图形方法，用于通过将它们的分位数或密切相关的参数相互比较来比较两个概率分布：</p>
+<ul class="simple">
+<li><p>QQ-Plots：给定数据集的分位数相对于参考分布的分位数绘制，通常是标准。</p></li>
+<li><p>PP-Plots：根据参考分布的 CDF 绘制给定数据集的 CDF。</p></li>
+<li><p>概率图：绘制给定数据集的有序值与参考分布的分位数。</p></li>
+</ul>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">n_size</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">n_size</span><span class="p">)</span>
+
+<span class="n">λ</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">chi2</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">chi2</span><span class="p">(</span><span class="n">λ</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">chi2</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">_</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;PDF(X)&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;chi2(x), λ=3&quot;</span><span class="p">)</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">chi2</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">n_size</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">probplot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../_images/ad7273ce47d4a2f87b4be0297ccc321a3f8dba2eaa97dff02bbe153acd218bad.png" src="../_images/ad7273ce47d4a2f87b4be0297ccc321a3f8dba2eaa97dff02bbe153acd218bad.png" />
+</div>
+</div>
+</section>
+<section id="shapiro-wilk-w">
+<h3>1.3. Shapiro-Wilk W 检验<a class="headerlink" href="#shapiro-wilk-w" title="Permalink to this headline">#</a></h3>
+<p>Shapiro-Wilk W 检验取决于观察的顺序统计量之间的协方差矩阵，适用于小样本场合<span class="math notranslate nohighlight">\((n ⩽ 50)\)</span>。是最常用的快速正态性检验方法。</p>
+<ul class="simple">
+<li><p>H₀: 样本服从高斯分布</p></li>
+</ul>
+</section>
+<section id="ks">
+<h3>1.4. KS 检验系<a class="headerlink" href="#ks" title="Permalink to this headline">#</a></h3>
+<section id="id5">
+<h4>1.4.1. KS 检验<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h4>
+<p>Kolmogorov-Smirnov 检验通过比较容量为<span class="math notranslate nohighlight">\(n\)</span>的经验分布函数<span class="math notranslate nohighlight">\(F_n(x)\)</span>与给定分布函数<span class="math notranslate nohighlight">\(F₀(x)\)</span>的间隔，构造统计量<span class="math notranslate nohighlight">\(D\)</span>为两个分布函数的间隔最大值，来推断该样本是否来自给定分布函数的总体。适用于连续分布的独立样本。</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span>
+<span class="n">n_size</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">n_size</span><span class="p">)</span>
+<span class="n">func</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="p">()</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">x_ecdf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="n">end</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="n">n_size</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">_lambda</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">chi2</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">chi2</span><span class="p">(</span><span class="n">_lambda</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">chi2</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">n_size</span><span class="p">)</span>
+<span class="n">y_ecdf</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">ECDF</span><span class="p">(</span><span class="n">data</span><span class="p">)(</span><span class="n">x_ecdf</span><span class="p">)</span>
+
+<span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s2">&quot;k--&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;CDF from Normal Distribution&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_ecdf</span><span class="p">,</span> <span class="n">y_ecdf</span><span class="p">,</span> <span class="s2">&quot;k-&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;ECDF from $\chi^2$ variables&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;Cumulative Probability&quot;</span><span class="p">)</span>
+
+<span class="n">start_ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">x_ecdf</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">arrow_start</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x_ecdf</span><span class="p">[</span><span class="n">start_ind</span><span class="p">],</span> <span class="n">y_ecdf</span><span class="p">[</span><span class="n">start_ind</span><span class="p">]])</span>
+
+<span class="n">start_ind2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">arrow_end</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="n">start_ind2</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">start_ind2</span><span class="p">]])</span>
+<span class="n">arrow_len</span> <span class="o">=</span> <span class="n">arrow_end</span> <span class="o">-</span> <span class="n">arrow_start</span>
+
+<span class="n">arrow</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+    <span class="n">width</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">length_includes_head</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">head_length</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">head_width</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span>
+<span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="n">arrow_start</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">arrow_start</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="n">arrow_len</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="o">**</span><span class="n">arrow</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="n">arrow_start</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">arrow_start</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">arrow_len</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">arrow_len</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="o">**</span><span class="n">arrow</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../_images/4da14371e44bd497c3de3b20f264d0f7e217964d831fdb6f32ee58c28d658941.png" src="../_images/4da14371e44bd497c3de3b20f264d0f7e217964d831fdb6f32ee58c28d658941.png" />
+</div>
+</div>
+</section>
+<section id="lilliefors">
+<h4>1.4.2. Lilliefors 检验<a class="headerlink" href="#lilliefors" title="Permalink to this headline">#</a></h4>
+<p>KS 检验的改进，用于一般的正态性检验，通过量化样本的经验分布函数（ECDF）与参考分布的累积分布函数（CDF）之间的距离，或两个样本的经验分布函数之间的距离，即用样本均值和标准差代替总体的期望和标准差，然后再用 K-S 正态性检验法，步骤相同。</p>
+<blockquote>
+<div><p>KS 检验只能检验是否一个样本来自于一个已知样本，而 Lilliefors 检验可检验是否来自未知总体。</p>
+</div></blockquote>
+</section>
+<section id="ad">
+<h4>1.4.3. AD 检验<a class="headerlink" href="#ad" title="Permalink to this headline">#</a></h4>
+<p>与 K-S 检验相比，Anderson-Darling 检验度量经验累积概率和理论累积概率之差的方法显得更加自然。同 KS 检验一样，可进行对多种分布相似性的检验。可以检验的分布包括 <code class="docutils literal notranslate"><span class="pre">['norm',</span> <span class="pre">'expon',</span> <span class="pre">'logistic',</span> <span class="pre">'gumbel',</span> <span class="pre">'gumbel_l',</span> <span class="pre">'gumbel_r',</span> <span class="pre">'extreme1']</span></code>。</p>
+<div class="math notranslate nohighlight">
+\[
+z=n∫_{-∞}^{∞} \bigg[F_n(x) -F(x)\bigg]^2 w(x)f(x) dx
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+A^2 = -n - ∑\frac{2i - 1}{n} \bigg[\ln F(Y_{i}) + \ln(1 -F(Y_{n + 1 -i}))\bigg]
+\]</div>
+<p>其中，<span class="math notranslate nohighlight">\(Y_{i} = \dfrac{X_{i} - \hat{μ}}{σ̂}\)</span></p>
+</section>
+</section>
+</section>
+<section id="id6">
+<h2>2. 显著性检验<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
+<section id="id7">
+<h3>2.1. 单样本<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(σ^2\)</span>已知（<em>Z</em> 检验）</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+Z = \frac{X̂ - μ}{σ/\sqrt{n}}
+\]</div>
+<blockquote>
+<div><p>分母为分布跨度，跨度越小则统计量越大，越有可能拒绝 H₀。</p>
+</div></blockquote>
+<p><span class="math notranslate nohighlight">\(μ\)</span>的<span class="math notranslate nohighlight">\(1 - α\)</span>置信区间</p>
+<div class="math notranslate nohighlight">
+\[
+P\{|z| &lt; z_{α/2} \} ⇒ (X̄ ± z_{α/2} \frac{σ}{\sqrt{n}})
+\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(σ^2\)</span> 未知（<em>t</em> 检验）</p></li>
+</ul>
+<p>由 <em>Z</em> 统计量、<span class="math notranslate nohighlight">\(χ^2\)</span>分布和 <em>t</em> 分布定义</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{X̄ - μ}{σ/\sqrt n} /\sqrt{\dfrac{(n - 1)S^2}{σ^2}/{(n - 1)}}∼ \dfrac{N(0, 1)}{\sqrt{χ^2(n - 1)/(n - 1)}}
+\]</div>
+<p>化简左边的式子，可得</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{X̄ - μ}{S/\sqrt n} ∼ t(n - 1)
+\]</div>
+<p><span class="math notranslate nohighlight">\(μ\)</span>的<span class="math notranslate nohighlight">\(1 -α\)</span>置信区间</p>
+<div class="math notranslate nohighlight">
+\[
+P\{|t| &lt; t_{α/2, n - 1} ⇒ (X̄ ± t_{α/2, n - 1} \dfrac{S}{\sqrt{n}})
+\]</div>
+<blockquote>
+<div><p>当<span class="math notranslate nohighlight">\(σ\)</span>未知，可用极差 × 0.25 近似</p>
+</div></blockquote>
+</section>
+<section id="id8">
+<h3>2.2. 配对双样本<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<p>在两组相互比较中，必须区分两个案例。将在不同时间从同一受试者记录的两个值相互比较。例如，学生进入小学和第一年后的身高，以检查他们是否已经成长（每个小学生身高相互独立）。由于我们只对第一次和第二次测量中每个受试者的差异感兴趣，因此该检验称为配对<span class="math notranslate nohighlight">\(t\)</span>检验，相当于均值差异的单样本<span class="math notranslate nohighlight">\(t\)</span>检验。</p>
+<p>由上，设身高变化由同一因素引起，即认为身高差来自同一分布<span class="math notranslate nohighlight">\(N(μ_D, σ_D)\)</span>，则</p>
+<div class="math notranslate nohighlight">
+\[
+t = \frac{D̄}{S_d/\sqrt{n}}
+\]</div>
+<p>其中，<span class="math notranslate nohighlight">\(D̄\)</span>为样本差均值，<span class="math notranslate nohighlight">\(S_d\)</span>为样本差的样本方差</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">]</span>
+<span class="n">xs</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">dx</span>
+<span class="n">index</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;pre&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="s2">&quot;r*&quot;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;post&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;m&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;pre-post&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">5.3</span><span class="p">),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">6.2</span><span class="p">),</span> <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;Subject Nr&quot;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;Value&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper left&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../_images/3522073e2db0675a8a6e75dd209cf2a3523832e8d0b9dc85704949c43033b959.png" src="../_images/3522073e2db0675a8a6e75dd209cf2a3523832e8d0b9dc85704949c43033b959.png" />
+</div>
+</div>
+</section>
+<section id="id9">
+<h3>2.3. 独立双样本<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(σ_1, σ_2\)</span>已知</p></li>
+</ul>
+<p>构造 <em>Z</em> 统计量</p>
+<div class="math notranslate nohighlight">
+\[
+Z = \frac{X̄_1 - X̄_2}{\sqrt{\dfrac{σ_1^2}{n_1} + \dfrac{σ_2^2}{n_2}}} ∼ N(0, 1)
+\]</div>
+<p><span class="math notranslate nohighlight">\(μ_1 - μ_2\)</span>的<span class="math notranslate nohighlight">\(1 -α\)</span>置信区间</p>
+<div class="math notranslate nohighlight">
+\[
+(X̄_1 - X̄_2 ± z_{α/2}*\sqrt{\dfrac{σ_1^2}{n_1} + \dfrac{σ_2^2}{n_2}})
+\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(σ_1, σ_2\)</span>未知，但相等</p></li>
+</ul>
+<p>由于往往不能确定方差是否相等，故需要先进行方差齐性检验，即 <em>F</em> 检验。</p>
+<p>由</p>
+<div class="math notranslate nohighlight">
+\[
+X̄_1 - X̄_2 ∼ N(μ_1 - μ_2, \frac{σ^2}{n1} + \frac{σ}{n_2})
+\]</div>
+<p>构造 <em>t</em> 统计量</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{X̄_1 - X̄_2}{S_w\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}} ∼ t(n_1 + n_2 - 2)
+\]</div>
+<p>其中，<span class="math notranslate nohighlight">\(S_w = \sqrt{\dfrac{(n_1 - 1)S_1^2 + (n_2-1)S_2^2}{n_1 + n_2 - 2}}\)</span> 为合并标准差（pooled standard deviation）。</p>
+<p><span class="math notranslate nohighlight">\(μ_1 - μ_2\)</span>的<span class="math notranslate nohighlight">\(1 - α\)</span>置信区间</p>
+<div class="math notranslate nohighlight">
+\[
+(X̄_1 - X̄_2 ± t_{α/2, n_1 + n_2 - 2}*S_w \sqrt{\dfrac{1}{n_1} + \dfrac{1}{n_2}})
+\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(σ_1, σ_2\)</span>未知，但不等</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+t = \dfrac{X̄_1 - X̄_2}{\sqrt{\frac{S_1^2}{n_1} + \frac{S_2^2}{n_2}}}
+\]</div>
+<p>使用 Satterthwaite 近似，使用自由度为下式的 <em>t</em> 分布</p>
+<div class="math notranslate nohighlight">
+\[
+df = \frac{(\frac{S_1^2}{n_1} + \frac{S_2^2}{n_2})^2}{\frac{(\frac{S_1^2}{n_1})^2}{n_1 - 1} + \frac{(\frac{S_2^2}{n_2})^2}{n_2-1}}
+\]</div>
+</section>
+</section>
+<section id="id10">
+<h2>3. 相关性检验<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
+<p>也叫方差相等检验。用于检验两组样本是否独立。</p>
+<section id="id11">
+<h3>3.1. 单样本<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<p><span class="math notranslate nohighlight">\(χ^2\)</span>检验用途非常广，它在分类资料统计推断中的应用，包括：两个率或两个构成比比较的检验；多个构成比比较的检验以及分类资料的相关分析等。</p>
+<blockquote>
+<div><p>在大数据运营场景中，通常用在某个变量（或特征）值是不是和因变量有显著关系。</p>
+</div></blockquote>
+<p>由定义</p>
+<div class="math notranslate nohighlight">
+\[
+χ^2 = \dfrac{(n - 1)S^2}{σ^2} = \dfrac{∑(X_{i}X̄)^2}{σ^2}∼ χ^2(n - 1)
+\]</div>
+<p><span class="math notranslate nohighlight">\(σ^2\)</span>的<span class="math notranslate nohighlight">\(1 - α\)</span>置信区间</p>
+<div class="math notranslate nohighlight">
+\[
+P\{χ^2_{1 - α/2, n - 1} &lt; χ^2 &lt; χ^2_{α/2, n - 1\}} ⇒ (\dfrac{(n - 1)S^2}{χ^2_{α/2, n - 1}}, \dfrac{(n - 1)S^2}{χ^2_{1 - α/2, n - 1}})
+\]</div>
+</section>
+<section id="id12">
+<h3>3.2. 双样本<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
+<p>H₀: 样本间是相互独立的。</p>
+<p>构造 <em>F</em> 统计量</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{S_1^2/S_2^2}{σ_1/σ_2^2} ∼ F(n_1 - 1, n_2-1)
+\]</div>
+<p><span class="math notranslate nohighlight">\(σ_1^2/σ_2^2\)</span>的<span class="math notranslate nohighlight">\(1 - α\)</span>置信区间</p>
+<div class="math notranslate nohighlight">
+\[
+P\{F^2_{1 - α/2, n_1 - 1, n_2 - 2} &lt; F &lt; F^2_{α/2, n_1 - 1, n_2 - 2}\} ⇒ (\dfrac{S_1^2/S_2^2}{F^2_{α/2, n_1 - 1, n_2 - 2}}, \dfrac{S_1^2/S_2^2}{F^2_{1 - α/2, n_1 - 1, n_2 - 2}})
+\]</div>
+</section>
+<section id="id13">
+<h3>3.3. 多样本<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Bartlett 检验：用于正态数据的方差齐次检验</p></li>
+<li><p>Levene 检验：用于非正态数据的方差齐次检验。其既可用于检验两总体方差齐性，也可用于检验多个总体的方差齐性。</p></li>
+<li><p>Fligner-Killeen 检验：用于同分布数据的方差齐次检验，与分布无关</p></li>
+</ul>
+</section>
+</section>
+<section id="id14">
+<h2>4. 单因素方差分析<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h2>
+<section id="id15">
+<h3>4.1. 基本思想<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h3>
+<p>方差分析（Analysis of Variance，ANOVA）由英国统计与遗传学家 Ronald A. Fisher（1890 ～ 1962）发明，用于两个及两个以上<strong>样本</strong>均数差的显著性检验。</p>
+<p>ANOVA 的思想是将方差分解为组内方差和组间方差，并观察这些分布是否与整个样本来自同一分布的零假设相匹配。区分不同分组的变量通常称为因子（factor）或处理（treatment）。对一个因子进行的分析，称为单因素方差分析（one-way ANOVA）。</p>
+<blockquote>
+<div><p>注意，使用 ANOVA，在每个分析组中拥有完全相同数量的样本非常重要，同时要保证<strong>总体方差相等</strong>。</p>
+</div></blockquote>
+<p><img alt="anova" src="../_images/anova.png" /></p>
+<p>设样本有<span class="math notranslate nohighlight">\(k\)</span>个分组，受到同一因素 <em>A</em> 影响，因素 <em>A</em> 有<span class="math notranslate nohighlight">\(n_{j}\)</span>个水平，样本个数<span class="math notranslate nohighlight">\(n = k⋅n_{j}\)</span>，可得样本方差（也叫均方）</p>
+<div class="math notranslate nohighlight">
+\[
+std^2 = \frac{1}{df_T} ∑(X_{ij} - X̂)^2 \frac{\mathrm{SS_T}}{df_T}
+\]</div>
+<p>其中，<span class="math notranslate nohighlight">\(SS_T\)</span>为总偏差平方和，<span class="math notranslate nohighlight">\(df_T\)</span>为总自由度。</p>
+<div class="math notranslate nohighlight">
+\[
+\mathrm{SS_T} = \mathrm{SS_A} + \mathrm{SS_E}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+df_T = df_A + df_E
+\]</div>
+<ul class="simple">
+<li><p>H₀: <span class="math notranslate nohighlight">\(E(\mathrm{MS_A}) = σ^2\)</span></p></li>
+<li><p>拒绝条件：<span class="math notranslate nohighlight">\(F &gt; F_{α}\)</span></p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p>方差来源</p></th>
+<th class="text-center head"><p>平方和</p></th>
+<th class="text-center head"><p>自由度</p></th>
+<th class="text-center head"><p>均方</p></th>
+<th class="text-center head"><p>F 值</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>因素 A（组间）</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\mathrm{SS_A}\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(k - 1\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\dfrac{\mathrm{SS_A}}{k-1}\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\dfrac{\mathrm{MS_A}}{\mathrm{MS_E}}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>误差（组内）</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\mathrm{SS_E}\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(n - k\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\dfrac{\mathrm{SS_E}}{n - k}\)</span></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>总和</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\mathrm{SS_T}\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(n - 1\)</span></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(F\)</span>值即为组间方差与组内方差的比值。组间的差异越大，<span class="math notranslate nohighlight">\(F\)</span>值越大，越可能拒绝 H₀。</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/altman_910.txt&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">,</span> <span class="s2">&quot;treatment&quot;</span><span class="p">])</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>value</th>
+      <th>treatment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>243</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>251</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>275</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>291</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>347</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="s2">&quot;value~C(treatment)&quot;</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">anova_lm</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                df        sum_sq      mean_sq         F    PR(&gt;F)
+C(treatment)   2.0  15515.766414  7757.883207  3.711336  0.043589
+Residual      19.0  39716.097222  2090.320906       NaN       NaN
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+<span class="n">loc</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mf">5.3</span><span class="p">,</span> <span class="mf">4.7</span><span class="p">],</span> <span class="mf">0.1</span>
+<span class="n">n_size</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="n">mean_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">scale</span><span class="p">)</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">n_size</span><span class="p">)</span>
+    <span class="n">offset</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">n_size</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">offset</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_size</span><span class="p">),</span> <span class="n">data</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+    <span class="n">mean_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_ticks</span><span class="p">([</span><span class="mi">50</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">250</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([</span><span class="s2">&quot;Group1&quot;</span><span class="p">,</span> <span class="s2">&quot;Group2&quot;</span><span class="p">,</span> <span class="s2">&quot;Group3&quot;</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_ticks</span><span class="p">([])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Sum-Squares&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s2">&quot;medium&quot;</span><span class="p">)</span>
+
+<span class="n">mean_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">mean_list</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">mean_mean</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#999999&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">80</span><span class="p">,</span> <span class="mi">220</span><span class="p">],</span> <span class="p">[</span><span class="n">mean_list</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">mean_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="s2">&quot;#999999&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">80</span><span class="p">,</span> <span class="mi">120</span><span class="p">],</span> <span class="p">[</span><span class="n">mean_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">mean_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.2</span><span class="p">],</span> <span class="s2">&quot;#999999&quot;</span><span class="p">)</span>
+
+<span class="n">arrow</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+    <span class="n">width</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">length_includes_head</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">head_length</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">head_width</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span>
+<span class="p">)</span>
+
+<span class="n">d_mean</span> <span class="o">=</span> <span class="n">mean_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">mean_mean</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="n">mean_list</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="o">**</span><span class="n">arrow</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="n">mean_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="o">**</span><span class="n">arrow</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="mi">210</span><span class="p">,</span> <span class="n">mean_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">d_mean</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">d_mean</span><span class="p">,</span> <span class="o">**</span><span class="n">arrow</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="mi">210</span><span class="p">,</span> <span class="n">mean_list</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">d_mean</span><span class="p">,</span> <span class="o">**</span><span class="n">arrow</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">225</span><span class="p">,</span> <span class="p">(</span><span class="n">mean_mean</span> <span class="o">+</span> <span class="n">mean_list</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">,</span> <span class="s2">&quot;$SS_</span><span class="si">{Treatment}</span><span class="s2">$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s2">&quot;medium&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span> <span class="n">mean_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s2">&quot;$SS_</span><span class="si">{Error}</span><span class="s2">$&quot;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s2">&quot;medium&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../_images/562485faf438b28db97b201c43dee7f34497f2c10d4bc5bb5dd3bb58ab2bcae3.png" src="../_images/562485faf438b28db97b201c43dee7f34497f2c10d4bc5bb5dd3bb58ab2bcae3.png" />
+</div>
+</div>
+<blockquote>
+<div><p>注意区别，样本与因素，双样本 ANOVA：<span class="math notranslate nohighlight">\(t^2_{val} = F_{val}\)</span></p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">galton</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/galton.csv&quot;</span><span class="p">)</span>
+<span class="n">galton</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>family</th>
+      <th>father</th>
+      <th>mother</th>
+      <th>sex</th>
+      <th>height</th>
+      <th>nkids</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>78.5</td>
+      <td>67.0</td>
+      <td>M</td>
+      <td>73.2</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>78.5</td>
+      <td>67.0</td>
+      <td>F</td>
+      <td>69.2</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>78.5</td>
+      <td>67.0</td>
+      <td>F</td>
+      <td>69.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>78.5</td>
+      <td>67.0</td>
+      <td>F</td>
+      <td>69.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2</td>
+      <td>75.5</td>
+      <td>66.5</td>
+      <td>M</td>
+      <td>73.5</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f_val</span><span class="p">,</span> <span class="n">p_val</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">f_oneway</span><span class="p">(</span><span class="n">galton</span><span class="p">[</span><span class="s2">&quot;father&quot;</span><span class="p">],</span> <span class="n">galton</span><span class="p">[</span><span class="s2">&quot;mother&quot;</span><span class="p">])</span>
+<span class="n">t_val</span><span class="p">,</span> <span class="n">p_val_t</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">galton</span><span class="p">[</span><span class="s2">&quot;father&quot;</span><span class="p">],</span> <span class="n">galton</span><span class="p">[</span><span class="s2">&quot;mother&quot;</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;from the t-test, t² = </span><span class="si">{</span><span class="n">t_val</span><span class="o">**</span><span class="mi">2</span><span class="si">:</span><span class="s2">5.3f</span><span class="si">}</span><span class="se">\n</span><span class="s2">from the F-test, F = </span><span class="si">{</span><span class="n">f_val</span><span class="si">:</span><span class="s2">5.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_almost_equal</span><span class="p">(</span><span class="n">t_val</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">f_val</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>from the t-test, t² = 2083.481
+from the F-test, F = 2083.481
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id16">
+<h3>4.2. 平方和<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>处理平方和（处理值对总均值的偏差平方和）</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\mathrm{SS_A} = ∑_{j=1}^{k} ∑_{i=1}^{n_{j}}{(X̄_{⋅j} - X̂)}^2 = ∑_{j=1}^{k} n_{j} {X̂_{⋅j}}^2
+\]</div>
+<ul class="simple">
+<li><p>误差平方和（观测值对处理值对偏差平方和）</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\mathrm{SS_E} = ∑_{j=1}^{k} ∑_{i=1}^{n_{j}}{(X_{ij} - {X̄_{⋅j}})}^2
+\]</div>
+</section>
+<section id="id17">
+<h3>4.3. 多重比较<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h3>
+<p>ANOVA 只能判断总体中的不同处理间是否有显著差异，但若想具体到各处理间的显著性差异有几种，还需进行多重比较。其中，Tukey 检验最常用，Bonferroni <em>t</em> 检验法最严格，<span class="math notranslate nohighlight">\(LSD_α\)</span>法最宽松。</p>
+<ul class="simple">
+<li><p>Tukey 检验：有时也称为 Tukey 诚实显着性差异检验（HSD），用于控制多个比较中的<span class="math notranslate nohighlight">\(α\)</span>。它基于 <em>t</em> 分布化的范围。</p></li>
+<li><p>Dunnett-t 检验：适用于<span class="math notranslate nohighlight">\(k-1\)</span>个实验组与对照组均数的比较。</p></li>
+<li><p>Bonferroni-t 校正法：Tukey 的 <em>t</em> 范围检验（HSD）是特定于所有 <em>{k}</em> 个独立样本对的比较的检验。但，我们可对所有对进行 <em>t</em> 检验，计算 p 值并对多个检验问题应用其中一个 p 值校正。Bonferroni-t 校正法通过对每次检验的显著性水平进行调整，使总<span class="math notranslate nohighlight">\(α\)</span>控制在给定水平以下。</p></li>
+<li><p>Holm 校正法：也称 Holm-Bonferroni 方法，依次将最小 p 值与在每次检验中减少的<span class="math notranslate nohighlight">\(α\)</span>进行比较。例如，若有三组（三个比较），这意味着第一个 p 值在 0.05 / 3 水平（0.017）检验，第二个在 0.05 / 2 水平（0.025）检验，第三个在 0.05 / 1 水平（0.05）。</p></li>
+</ul>
+</section>
+</section>
+<section id="id18">
+<h2>5. 双因素方差分析<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h2>
+<section id="id19">
+<h3>5.1. 等重复双因素<a class="headerlink" href="#id19" title="Permalink to this headline">#</a></h3>
+<p>设样本受两个因素影响，其中因素<span class="math notranslate nohighlight">\(𝑨\)</span>有<span class="math notranslate nohighlight">\(r\)</span>个水平，因素 B 有<span class="math notranslate nohighlight">\(s\)</span>个水平，每对<span class="math notranslate nohighlight">\((A_{i}, B_{j})\)</span>有<span class="math notranslate nohighlight">\(t\)</span>个观测值。也叫等重复双因素方差分析。</p>
+<div class="math notranslate nohighlight">
+\[
+SS_T =SS_A + SS_B + SS_{AB} + SS_E
+\]</div>
+<p>H₀</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H_{01}: E(MS_A) = σ^2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_{02}: E(MS_B) = σ^2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_{03}: E(MS_{AB}) = σ^2\)</span></p></li>
+</ul>
+<p>拒绝条件：<span class="math notranslate nohighlight">\(F &gt; F_{α}\)</span></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p>方差来源</p></th>
+<th class="text-center head"><p>平方和</p></th>
+<th class="text-center head"><p>自由度</p></th>
+<th class="text-center head"><p>均方</p></th>
+<th class="text-center head"><p>F 值</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>因素 A</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(SS_A\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(r - 1\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\dfrac{SS_A}{r - 1}\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\dfrac{MS_A}{MS_E}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>因素 B</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(SS_B\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(s - 1\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\dfrac{SS_B}{s - 1}\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\dfrac{MS_B}{MS_E}\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>交互作用</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(SS_{AB}\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\((r - 1)(s - 1)\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\dfrac{SS_{AB}}{(r - 1)(s - 1)}\)</span></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>误差</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(SS_E\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(rs(t - 1)\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\dfrac{SS_E}{rs(t-1)}\)</span></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>总和</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(SS_T\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(rst - 1\)</span></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/altman_126.txt&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;hs&quot;</span><span class="p">,</span> <span class="s2">&quot;fetus&quot;</span><span class="p">,</span> <span class="s2">&quot;observer&quot;</span><span class="p">])</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>hs</th>
+      <th>fetus</th>
+      <th>observer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>14.3</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>14.0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>14.8</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>13.6</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>13.6</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">formula</span> <span class="o">=</span> <span class="s2">&quot;hs~C(fetus) + C(observer) + C(fetus):C(observer)&quot;</span>
+<span class="n">lm</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">anova_lm</span><span class="p">(</span><span class="n">lm</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        df      sum_sq     mean_sq            F        PR(&gt;F)
+C(fetus)               2.0  324.008889  162.004444  2113.101449  1.051039e-27
+C(observer)            3.0    1.198611    0.399537     5.211353  6.497055e-03
+C(fetus):C(observer)   6.0    0.562222    0.093704     1.222222  3.295509e-01
+Residual              24.0    1.840000    0.076667          NaN           NaN
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id20">
+<h3>5.2. 平方和<a class="headerlink" href="#id20" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>处理平方和 1</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+SS_A = st∑_{i=1}^{r} (X_{i⋅⋅} - X̂)^2
+\]</div>
+<ul class="simple">
+<li><p>处理平方和 2</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+SS_B = rt∑_{j=1}^s(X_{⋅j⋅} - X̂)^2
+\]</div>
+<ul class="simple">
+<li><p>交互平方和</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+SS_{AB} = t∑_{i=1}^{r} ∑_{j=1}^s (X_{ij⋅} - X_{i⋅⋅} - X_{⋅j⋅} - X̂)^2
+\]</div>
+<ul class="simple">
+<li><p>误差平方和</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+S_E = ∑_{i=1}^{r} ∑_{j=1}^s ∑_{k = 1}^{t} (X_{ijk} - X_{ij⋅})^2
+\]</div>
+<ul class="simple">
+<li><p>期望</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+E(S_A) = (r-1)σ^2 + st∑_{i=1}^{r}α_{i}^2
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+E(S_B) = (s-1)σ^2 + rt∑_{i=1}^{r} β_{j}^2
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+E(S_{AB}) = (r-1)(s-1)σ^2 + t∑_{i=1}^{r} ∑_{j=1}^{r} γ_{ij}^2
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+E(S_E) = rs(t-1)σ^2
+\]</div>
+</section>
+<section id="id21">
+<h3>5.3. 嵌套双因素<a class="headerlink" href="#id21" title="Permalink to this headline">#</a></h3>
+<p>设样本受因素<span class="math notranslate nohighlight">\(𝑨\)</span>影响，而因素<span class="math notranslate nohighlight">\(𝑨\)</span>又受因素<span class="math notranslate nohighlight">\(B\)</span>影响，两个因素分别有<span class="math notranslate nohighlight">\(p, q\)</span>个水平，每个因素<span class="math notranslate nohighlight">\(B\)</span>有<span class="math notranslate nohighlight">\(n\)</span>个观测值。</p>
+<div class="math notranslate nohighlight">
+\[
+S_T = S_B + S_E
+\]</div>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p>方差来源</p></th>
+<th class="text-center head"><p>平方和</p></th>
+<th class="text-center head"><p>自由度</p></th>
+<th class="text-center head"><p>均方</p></th>
+<th class="text-center head"><p>F 值</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>因素 A</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(SS_A\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(p - 1\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\dfrac{SS_A}{p - 1}\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\dfrac{MS_A}{MS_{B(A)}}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>因素 B(A)</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(SS_{B(A)}\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(q - p\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\dfrac{SS_{B(A)}}{q - p}\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\dfrac{MS_{B(A)}}{MS_E}\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>误差</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(SS_E\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(pqn - q\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\dfrac{SS_E}{pqn - 1}\)</span></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>总和</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(SS_T\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(pqn - 1\)</span></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id22">
+<h3>5.4. 平方和<a class="headerlink" href="#id22" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>处理平方和（因素 A 间）</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+SS_A = ∑n_{i⋅} (X̄_{i⋅⋅} - X̂)^2
+\]</div>
+<ul class="simple">
+<li><p>处理平方和 2（因素 A 内因素 B 间）</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+SS_{B(A)} = ∑∑n_{ij}(X̄_{ij⋅} - X̄_{i⋅⋅})^2
+\]</div>
+<ul class="simple">
+<li><p>误差平方和</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+S_E = ∑∑∑(X̄_{ijk} - X̄_{ij⋅})^2
+\]</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./base-stats"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="03-%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">参数估计</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="05-%E9%9D%9E%E5%8F%82%E6%95%B0%E6%A3%80%E9%AA%8C.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">非参数检验</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1. 正态性检验</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.1. 经验分布函数</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.2. 概率图</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shapiro-wilk-w">1.3. Shapiro-Wilk W 检验</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ks">1.4. KS 检验系</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">1.4.1. KS 检验</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lilliefors">1.4.2. Lilliefors 检验</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ad">1.4.3. AD 检验</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2. 显著性检验</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2.1. 单样本</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.2. 配对双样本</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">2.3. 独立双样本</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">3. 相关性检验</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">3.1. 单样本</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">3.2. 双样本</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">3.3. 多样本</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">4. 单因素方差分析</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">4.1. 基本思想</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">4.2. 平方和</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">4.3. 多重比较</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">5. 双因素方差分析</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">5.1. 等重复双因素</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">5.2. 平方和</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">5.3. 嵌套双因素</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">5.4. 平方和</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By ivaquero
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

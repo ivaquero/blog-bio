@@ -1,0 +1,1525 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>基因工程 &#8212; 生物狗学编程</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'biotechs/基因工程';</script>
+    <link rel="canonical" href="https://ivaquero.github.io/blog-bio/biotechs/基因工程.html" />
+    <link rel="shortcut icon" href="../_static/doge.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="糖生化测定" href="%E7%B3%96%E7%94%9F%E5%8C%96%E6%B5%8B%E5%AE%9A.html" />
+    <link rel="prev" title="病理学基础" href="04-%E7%97%85%E7%90%86%E5%AD%A6%E5%9F%BA%E7%A1%80.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/doge.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/doge.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    生物狗学编程
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">综合生命科学</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01-%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%9F%BA%E7%A1%80.html">生物信息学基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-%E5%88%86%E5%AD%90%E7%94%9F%E7%89%A9%E5%AD%A6%E5%9F%BA%E7%A1%80.html">分子生物学基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-%E6%BC%94%E5%8C%96%E8%AE%BA%E5%9F%BA%E7%A1%80.html">演化论基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-%E7%97%85%E7%90%86%E5%AD%A6%E5%9F%BA%E7%A1%80.html">病理学基础</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">基因工程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E7%B3%96%E7%94%9F%E5%8C%96%E6%B5%8B%E5%AE%9A.html">糖生化测定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E8%9B%8B%E7%99%BD%E8%B4%A8%E7%94%9F%E5%8C%96%E6%B5%8B%E5%AE%9A.html">蛋白质生化测定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E9%87%8D%E7%BB%84%E9%AB%98%E6%8B%B7%E8%B4%9D%E9%85%B5%E6%AF%8D.html">重组高拷贝酵母</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">统计基础</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/01-%E6%A6%82%E7%8E%87%E4%B8%8E%E5%88%86%E5%B8%83.html">概率与分布</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/02-%E7%BB%9F%E8%AE%A1%E9%87%8F%E4%B8%8E%E9%87%87%E6%A0%B7.html">统计量与采样</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/03-%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1.html">参数估计</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/04-%E5%8F%82%E6%95%B0%E6%A3%80%E9%AA%8C.html">参数检验</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/05-%E9%9D%9E%E5%8F%82%E6%95%B0%E6%A3%80%E9%AA%8C.html">非参数检验</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/06-%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90.html">回归分析</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">机器学习</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/01-%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E5%BC%95%E8%A8%80.html">统计学习引言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/02-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92.html">线性回归</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/03-%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9.html">模型选择</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/04-%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB.html">线性分类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/05-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D.html">梯度下降</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/06-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E4%BC%98%E5%8C%96.html">梯度下降优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/07-%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB.html">非线性分类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/08-%E5%86%B3%E7%AD%96%E6%A0%91.html">决策树</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/09-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0.html">集成学习</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/10-%E9%99%8D%E7%BB%B4.html">降维</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/11-%E7%A1%AC%E8%81%9A%E7%B1%BB.html">硬聚类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/12-%E8%BD%AF%E8%81%9A%E7%B1%BB.html">软聚类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/13-%E7%94%9F%E5%AD%98%E5%88%86%E6%9E%90.html">生存分析</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 入门</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../python/01-%E7%8E%AF%E5%A2%83%E4%B8%8E%E5%8F%98%E9%87%8F.html">环境与变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/02-%E5%8F%98%E9%87%8F%E8%BF%90%E7%AE%97.html">变量运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/03-%E5%AE%B9%E5%99%A8.html">容器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/04-%E5%AE%B9%E5%99%A8%E8%BF%90%E7%AE%97.html">容器运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/05-%E6%8E%A7%E5%88%B6%E6%B5%81.html">控制流</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/06-%E5%87%BD%E6%95%B0.html">函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/07-%E9%97%AD%E5%8C%85%E4%B8%8E%E8%A3%85%E9%A5%B0%E5%99%A8.html">闭包与装饰器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/08-%E5%86%85%E7%BD%AE%E7%AE%97%E6%B3%95%E6%A8%A1%E5%9D%97.html">内置算法模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/09-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B.html">面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/10-%E6%A8%A1%E7%89%88%E4%B8%8E%E6%A8%A1%E5%BC%8F.html">模版与模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/11-%E9%AD%94%E6%B3%95%E6%96%B9%E6%B3%95.html">魔法方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/12-%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B.html">高级编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/13-%E5%A4%9A%E4%BB%BB%E5%8A%A1.html">多任务</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/14-%E5%BC%82%E6%AD%A5.html">异步</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/15-%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B.html">网络模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/16-%E5%85%83%E7%BC%96%E7%A8%8B.html">元编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/17-%E6%A8%A1%E5%9D%97%E4%B8%8E%E8%B0%83%E8%AF%95.html">模块与调试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/18-%E9%AB%98%E6%80%A7%E8%83%BD%E6%89%A9%E5%B1%95.html">高性能扩展</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">数据分析</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../analysis/clean-pandas.html">Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/clean-pandas2.html">Pandas 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/correlation.html">Correlation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/deviation.html">Deviation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/distribution.html">Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/group.html">Group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/polar.html">Polar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/proportion.html">Proportion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/ranking.html">Ranking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/time-series.html">Time Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/tricks.html">Tricks</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/biotechs/基因工程.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>基因工程</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dna">1. DNA 基本操作</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.1. 克隆流程</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.2. 提质粒</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.3. 转化</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">2. 细菌 DNA 的提取</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#s-rdna">2.1. 关于 16S rDNA</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2.2. 原理</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2.3. 材料</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.4. 方法与步骤</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">2.5. 实验注意</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">3. 真菌基因组 DNA 的提取</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">3.1. 原理</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">3.2. 准备</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">3.3. 培养</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">3.4. 萃取</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">3.5. 洗涤</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pcr">4. PCR</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">4.1. PCR 引物设计</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#realtime-pcr">4.2. RealTime PCR</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">4.3. 其他引物</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">4.3.1. 简并引物设计</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">4.3.2. 测序引物设计</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">4.3.3. 探针的设计</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">4.3.4. 巢式引物</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">4.4. 耐热型 DNA 聚合酶</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pol-i">4.4.1. pol I 型</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">4.4.2. α 型</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">4.4.3. 混合型</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">4.5. 准备</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">4.5.1. 体系</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">4.5.2. 程序</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gc-buffer-pcr">4.5.3. GC Buffer PCR</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">5. 琼脂糖凝胶核酸电泳</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id29">5.1. 凝胶</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id30">5.2. 配胶（1%）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id31">5.3. 上样（塑料手套上混匀）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id32">5.4. 双酶切</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id33">5.5. 载体连接</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id34">5.6. 菌落验证</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id35">6. 大肠杆菌</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id36">6.1. 非融合表达载体</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id37">6.2. 融合表达载体</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id38">6.3. 提高表达水平</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id39">6.4. 菌株选择</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id40">7. 限制性内切核酸酶</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id41">7.1. DNA 甲基化</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id42">7.2. 星号活力</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id43">8. 培养基</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tb">8.1. TB 培养基</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id44">9. 试剂</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ctab-1">9.1. CTAB 提取缓冲液 </a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id46">9.2. 焦碳酸二乙酯</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id47">9.3. 琼脂糖电泳</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id48">10. 参考文献</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>基因工程<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<section id="dna">
+<h2>1. DNA 基本操作<a class="headerlink" href="#dna" title="Permalink to this headline">#</a></h2>
+<section id="id2">
+<h3>1.1. 克隆流程<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 设计引物</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> PCR</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 目的基因回收</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 双酶切</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 连接载体</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 转化 DH5α</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 阳性克隆验证</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 提质粒</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 转化（原核 BL21(DE3)，真核 Rossetta(DE3)）</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 阳性克隆小瓶诱导表达（37°C，4h，OD₆₀₀ = 0.6∼0.8）</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 破壁</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 电泳检测</p></li>
+</ul>
+</section>
+<section id="id3">
+<h3>1.2. 提质粒<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="id4">
+<h3>1.3. 转化<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p>在冰上将感受态细胞（100 μL/支）化冻。</p></li>
+<li><p>加入质粒 2∼5 μL，冰上，4°C 静置 30∼60 min。</p></li>
+<li><p>热激：42°C，30∼60 s，迅速放回冰上，静置 2∼3 min。</p></li>
+<li><p>加 900 μL LB 培养基，37°C，保温 30∼60 min（促进抗性基因表达，时间不可过长）。</p></li>
+<li><p>离心 1,2000 rpm，2 min，去掉部分上清，重悬，100 μL 涂布。</p></li>
+<li><p>挑单菌落：BL21 10 h，DH 5α 16 h。</p></li>
+</ol>
+</section>
+</section>
+<section id="id5">
+<h2>2. 细菌 DNA 的提取<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<section id="s-rdna">
+<h3>2.1. 关于 16S rDNA<a class="headerlink" href="#s-rdna" title="Permalink to this headline">#</a></h3>
+<p>rRNA 分子在生物体中普遍存在，其一级结构中既具有保守的片段，又具有变化的碱基序列，在结构上可分为保守区（conserved domain）和可变区（variable domain）。保守的片段反应了生物物种间的亲缘关系，而高变片段则能表明物种间的差异。研究 rRNA 基因序列可以发现各物种间的系统发生（phylogenesis）关系。细菌 rRNA 按沉降系数分为 3 种，分别为 5S、16S 和 23S rRNA。其中位于原核细胞核糖体小亚基上的 16S rRNA 长约 1540 bp，结构和碱基排列复杂度适中，较易于进行序列测定和分析比较。16S rDNA 是细菌染色体上编码 16S rRNA 相对应的 DNA 序列，存在于所有细菌染色体基因中。因此可用 PCR 扩增其相应的 rDNA 片断，来快速、灵敏地检测样品中是否存在某些细菌或致病菌，或进行细菌多样性分析，尤其是那些人工无法培养的微生物。</p>
+</section>
+<section id="id6">
+<h3>2.2. 原理<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<p>基因工程实验所需要的基因组 DNA 通常要求分子量尽可能大，以此增加外源基因获得率，但要获得大片段的 DNA 非易事。对于细菌来说，细菌细胞具有坚硬的细胞壁。提取难度将大于真核细胞。同时有染色体 DNA 和质粒 DNA，因此要将其分离开。处理过程中，细菌染色体 DNA 缠绕在细胞膜碎片上，离心时容易被沉淀下来，而质粒 DNA 则留在上清液中，上清液中还可能有蛋白质，核糖核蛋白和少量的染色体 DNA。</p>
+<p>细菌基因组 DNA 在抽提过程中，不可避免的机械剪切力必将切断 DNA，若要抽提到大的 DNA 分子，就要尽可能地温和操作，减少剪切力；分子热运动也会减少所抽提到的 DNA 分子量，故提取过程也要尽可能在低温下进行。另外细胞内及抽提器皿中污染的核酸酶也会降解制备过程中的 DNA，故制备过程要抑制其核酸酶的活性。</p>
+<p>制备的 DNA 必须是高纯度的，以满足基因工程中各种酶反应的需要，制备的样品必须没有蛋白污染，没有 RNA，各种离子浓度应符合要求。DNA 不溶于 95% 的酒精溶液，但是细胞中的某些物质则可以溶于酒精溶液。利用这一原理，可以进一步提取出含杂质较少的 DNA。并且用酒精可以洗脱在前几步实验中使 DNA 携带的盐离子。</p>
+<p>大肠杆菌染色体 DNA 抽提首先收集对数生长期的细胞，然后用离子型表面活性剂 SDS 破裂细胞，SDS 具有的主要功能是：</p>
+<ol class="arabic simple">
+<li><p>溶解细胞膜上的脂类和蛋白质，因而溶解膜蛋白而破坏细胞膜；</p></li>
+<li><p>解聚细胞膜上的脂类和蛋白质，有助于消除染色体 DNA 上的蛋白质；</p></li>
+<li><p>SDS 能与蛋白质结合成为 R₁-O∼SO₃R₂-蛋白质复合物，使蛋白质变性而沉淀下来。</p></li>
+</ol>
+<p>SDS 也能抑制核糖核酸酶的作用，故在以后的提取过程中，必须把它除干净。以免影响下一步 RNase 的作用。破细胞后 RNA 经 RNase 消化除去，蛋白质经苯酚、氯仿-异戊醇抽提除去。含有质粒 DNA 的上清液用乙醇或异丙醇沉淀，回收 DNA。</p>
+</section>
+<section id="id7">
+<h3>2.3. 材料<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p>LB 液体培养液</p></li>
+<li><p>酚/氯仿（1:1）：一般市售的酚需要重蒸处理，市售的酚常含有杂质而呈粉色和淡黄色，需要重蒸二次，收集沸点 160°C 部分，小瓶分装，瓶内空腔充氮气，-20°C 密封保存，以免氧化，用前从冰箱中取出，68°C 蒸馏水饱和，加入 8-羟基喹啉（100g 酚加 0.1g），酚变为黄色。8-羟基喹啉是抗氧化剂，并能部分抑制核糖核酸酶，含 8-羟基喹啉的酚用等体积 1.0 &gt; M pH 8.0 Tris 缓冲液抽提，再用 0.1 M pH 8.0 含 0.2％ &gt; β-巯基乙醇的 Tris 缓冲液抽提数次，酚溶液的 pH 应 &gt; 7.6。此酚溶液在平衡缓冲液覆盖下 4°C 可保存一个月。</p></li>
+<li><p>核糖核酸酶：无 DNase 污染，将胰 RNase（RNase A）溶于 10 mM Tris·Cl（pH &gt; 7.5） + 15 mM Nacl 溶液中，浓度为 10 mg/mL 于 100°C 加热 15 min，缓慢冷却至室温，分装后于 -20°C 保存。</p></li>
+<li><p>TEG 缓冲液：pH 8.0 25 mM Tris⋅HCl，10 mM EDTA，50 mM 葡萄糖，4 mg/mL 溶菌酶</p></li>
+<li><p>碱裂解液：0.2 M NaOH，1% SDS</p></li>
+<li><p>乙酸钾溶液、乙酸钠溶液、溶菌酶溶液、丙酮溶液。</p></li>
+</ol>
+</section>
+<section id="id8">
+<h3>2.4. 方法与步骤<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p>取 1 mL 对数期菌液，12000 rpm 5 min；</p></li>
+<li><p>弃上清，将沉淀溶于 200 μL 丙酮，震荡混匀，冰浴 5 min。</p></li>
+<li><p>8000 rpm 离心 2 min，弃上清。</p></li>
+<li><p>将沉淀混于 TEG 缓冲液中，震荡混匀，冰浴 5 min</p></li>
+<li><p>加入 200 μL SDS 裂解液，冰浴 5 min</p></li>
+<li><p>加入 150 μL 乙酸钾溶液，冰浴 15 min，使其沉淀完全。</p></li>
+<li><p>4°C 下离心，12000 rpm，5 min。（乙酸钾能沉淀 SDS 与蛋白质的复合物，并使过量的 SDS-Na⁺ 转化为溶解度很低的 SDS-K⁺ 一起沉淀下来。）离心后，若上清液浑浊，应混匀后再冷至 0°C，重复离心。弃去上清</p></li>
+<li><p>加入等体积的酚-氯仿饱和溶液，反复震荡，离心，12000 rpm 2 min（可多次抽提，直至两相间无絮状蛋白沉淀）。</p></li>
+<li><p>将上清移至新管，加入 2 倍体积预冷无水乙醇，混合摇匀。</p></li>
+<li><p>-20°C，15 min 后，4°C 下离心 12000 rpm 5 min。</p></li>
+<li><p>1 mL 70% 冷乙醇洗涤沉淀，然后离心，弃去上清液。</p></li>
+<li><p>干燥，100 μL 20 μg/mL RNase A，37C，30min</p></li>
+<li><p>2 倍体积无水乙醇沉淀，70% 冷乙醇洗涤（沉淀 DNA 可以使用一倍体积异丙醇或 2 倍体积乙醇。）</p></li>
+<li><p>干燥，溶于 50 μL TE（倒数一二步是制备的 DNA 马上就要用的情况，若需保存，则是在使用之前加入 RNase。）</p></li>
+</ol>
+<p>革兰氏阳性菌，由于细胞壁的结构与阴性菌有差别，裂解比阴性菌稍微麻烦一些，可以采取 CTAB/NaCl 法稍加修改，在第四步加入终浓度 2 mg/mL 的溶菌酶，37 度温育 1h。</p>
+</section>
+<section id="id9">
+<h3>2.5. 实验注意<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p>提基因组最好要将枪头尖剪掉（剪掉以后在酒精灯上迅速过一下，使其断口圆滑）。以免枪头损伤 DNA。</p></li>
+<li><p>菌量有一定的要求，通常为菌液的 OD₆₀₀=1.9 时，取 1∼2 mL 就可以了。</p></li>
+<li><p>第一步悬浮时，振荡的时间稍长一些（1∼2 min），充分悬浮菌体。</p></li>
+<li><p>裂解步骤中，若不澄清说明菌体没有裂解，可能的原因有：a. 菌量太大；b. 该菌为厚壁的非革兰氏阴性菌。</p></li>
+<li><p>加洗液 RNase A，量要加足，以防止清洗不净影响未来的实验。</p></li>
+</ol>
+</section>
+</section>
+<section id="id10">
+<h2>3. 真菌基因组 DNA 的提取<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
+<section id="id11">
+<h3>3.1. 原理<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<p>DNA 在生物体内是与蛋白质形成复合物的形式存在的，因此提取出脱氧核糖核蛋白复合物后，必须将其中蛋白质去除。CTAB（溴代十六烷基三甲胺）是一种去污剂，它能与核酸形成复合物，在高盐溶液中可溶并且稳定存在，若降低盐浓度，CTAB 与核酸的复合物会沉淀出来，而大部分蛋白和多糖仍溶于溶液中。</p>
+</section>
+<section id="id12">
+<h3>3.2. 准备<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p>CTAB：CTAB 4 g + NaCl 16.364 g + 1M Tris⋅HCl 20 mL（pH 8.0），冷却后 0.2∼1% β-巯基乙醇（400 μL）</p></li>
+<li><p>氯仿-异戊醇（24:1）：先加 96 mL 氯仿，再加 4 mL 异戊醇，摇匀即可。</p></li>
+<li><p>Tris 饱和酚</p></li>
+</ol>
+</section>
+<section id="id13">
+<h3>3.3. 培养<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p>以接种环刮取斜面上的孢子，接种至盛在 500 mL 三角瓶 100 mL PDB 培养基中，摇床 30°C，72 h。</p></li>
+<li><p>抽滤得到菌丝体，先以 100 mL 无菌生理盐水洗涤 3 次，再以 100 mL 无菌蒸馏水洗涤 3 次。</p></li>
+<li><p>将抽滤干的菌丝体转移至陶瓷研钵中，加入液氮，快速将菌体研磨成粉。</p></li>
+<li><p>分装菌粉，每个 EP 管中约 100 mg。</p></li>
+</ol>
+</section>
+<section id="id14">
+<h3>3.4. 萃取<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h3>
+<p>准备：酚、氯仿、异戊醇</p>
+<ol class="arabic simple">
+<li><p>每管菌粉加入 2×CTAB 提取液 500 μL，混匀，65°C，1 h。期间不时颠倒混匀。</p></li>
+<li><p>加入等体积的酚和（氯仿/异戊醇）（各 250 μL），12000rpm 离心 10min。</p></li>
+<li><p>小心的吸取上清液至另一 EP 管，若有机相和水相界面处杂质较多，重复上一步至干净为止。</p></li>
+<li><p>加入等体积的（氯仿/异戊醇），12000 rpm 离心 10 min。（量好）</p></li>
+<li><p>加 RNA 酶溶液至浓度约 20 μg/μL，37°C 水浴 30 min。（可跳过）</p></li>
+<li><p>加入等体积的（氯仿/异戊醇），12000 rpm 离心 10 min。（量好）</p></li>
+<li><p>转移上清液，加入等体积的异丙醇，-20°C 放置 30 min。（量好）</p></li>
+</ol>
+</section>
+<section id="id15">
+<h3>3.5. 洗涤<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p>4°C，12000 rpm 离心 10 min，小心的吸去液体（吸净），加 1 mL -20°C，预冷 70% 乙醇，洗涤（2 次）。</p></li>
+<li><p>4°C，12000 rpm 离心 10 min，小心的吸去液体（吸净），开盖，室温放置 15∼20 min，晾干乙醇。</p></li>
+<li><p>加入灭菌双蒸水 50 μL，37°C，溶解 30 min，0.6% 琼脂糖凝胶电泳检测浓度。其余置于 -20°C 备用。</p></li>
+</ol>
+<div class="admonition-ctab-2x admonition">
+<p class="admonition-title">CTAB 提取液（2X）</p>
+<p>称 CTAB 1 g，NaCl 4.09 g，加水 40 mL，搅拌溶解（可适当水浴加热促进溶解），加入 2.5 mL Tirs·Cl（1 M，pH 8.0），1 mL EDTA（0.5 M，pH 8.0），补水定容至 50 mL，121°C 高压蒸汽灭菌 20 min 备用。</p>
+</div>
+</section>
+</section>
+<section id="pcr">
+<h2>4. PCR<a class="headerlink" href="#pcr" title="Permalink to this headline">#</a></h2>
+<section id="id16">
+<h3>4.1. PCR 引物设计<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p>引物最好在模板 cDNA 的保守区内设计</p></li>
+</ol>
+<p>DNA 序列的保守区是通过物种间相似序列的比较确定的。在 NCBI 上搜索不同物种的同一基因，通过序列分析软件（如 DNAman）比对（Alignment），各基因相同的序列就是该基因的保守区。</p>
+<ol class="arabic simple" start="2">
+<li><p>引物长度一般在 15∼30 碱基之间</p></li>
+</ol>
+<p>引物长度（primerlength）常用的是 18∼27 bp，但应 ⩽ 38，因为过长会导致其延伸温度 &gt; 74°C，不适于 Taq 酶进行反应。</p>
+<ol class="arabic simple" start="3">
+<li><p>引物 GC 含量在 40%∼60% 之间，Tₘ 值最好接近 72°C</p></li>
+</ol>
+<p>GC 含量过高或过低都不利于引发反应。上下游引物的 GC 含量不能相差太大。另外，上下游引物的 Tₘ 值（melting temperature）是寡核苷酸的解链温度，即在一定盐浓度条件下，50% 寡核苷酸双链解链的温度。有效启动温度，一般高于 Tₘ 值 5∼10°C。若按公式 Tₘ = 4(G+C) + 2(A+T) 估计引物的 Tₘ 值，则有效引物的 Tₘ 为 55∼80°C，其 Tₘ 值最好接近 72°C 以使复性条件最佳。</p>
+<ol class="arabic simple">
+<li><p>引物 3’端要避开密码子的第 3 位。</p></li>
+</ol>
+<p>如扩增编码区域，引物 3’端不要终止于密码子的第 3 位，因密码子的第 3 位易发生简并，会影响扩增的特异性与效率。</p>
+<ol class="arabic simple" start="5">
+<li><p>引物 3’端不能选择 A，最好选择 T。</p></li>
+</ol>
+<p>引物 3’端错配时，不同碱基引发效率存在着很大的差异，当末位的碱基为 A 时，即使在错配的情况下，也能有引发链的合成，而当末位链为 T 时，错配的引发效率大大降低，G、C 错配的引发效率介于 A、T 之间，故 3’端最好选择 T。</p>
+<ol class="arabic simple" start="6">
+<li><p>碱基要随机分布</p></li>
+</ol>
+<p>引物序列在模板内应当没有相似性较高，尤其是 3’端相似性较高的序列，否则容易导致错误引发（False priming）。降低引物与模板相似性的一种方法是，引物中四种碱基的分布最好是随机的，不要有聚嘌呤或聚嘧啶的存在。尤其 3’端不应超过 3 个连续的 G 或 C，因这样会使引物在 GC 富集序列区错误引发。</p>
+<ol class="arabic simple" start="7">
+<li><p>引物自身及引物之间不应存在互补序列。</p></li>
+</ol>
+<p>引物自身不应存在互补序列，否则引物自身会折叠成发夹结构（Hairpin）使引物本身复性。这种二级结构会因空间位阻而影响引物与模板的复性结合。引物自身不能有连续 4 个碱基的互补。引物间也不应具有互补性，尤其应避免 3’端的互补重叠以防止引物二聚体（Dimer 与 Cross dimer）的形成。引物之间不能有连续 4 个碱基的互补。引物二聚体及发夹结构若不可避免的话，应尽量使其 ΔG 值不要过高（应 &lt; 4.5 kcal/mol）。否则易导致产生引物二聚体带，并且降低引物有效浓度而使 PCR 反应不能正常进行。</p>
+<ol class="arabic simple" start="8">
+<li><p>引物 5’端和中间 ΔG 值应该相对较高，而 3’端 ΔG 值较低</p></li>
+</ol>
+<p>ΔG 值是指 DNA 双链形成所需的自由能，它反映了双链结构内部碱基对的相对稳定性，ΔG 值越大，则双链越稳定。应当选用 5’端和中间 ΔG 值相对较高，而 3’端 ΔG 值较低（绝对值不超过 9）的引物。引物 3’端的 ΔG 值过高，容易在错配位点形成双链结构并引发 DNA 聚合反应。（不同位置的 ΔG 值可以用 Oligo 软件进行分析）</p>
+<ol class="arabic simple" start="9">
+<li><p>引物的 5’端可以修饰，而 3’端不可修饰</p></li>
+</ol>
+<p>引物的 5’端决定着 PCR 产物的长度，它对扩增特异性影响不大。因此，可以被修饰而不影响扩增的特异性。引物 5’端修饰包括：加酶切位点；标记生物素、荧光、地高辛、Eu³⁺ 等；引入蛋白质结合 DNA 序列；引入点突变、插入突变、缺失突变序列；引入启动子序列等。</p>
+<p>引物的延伸是从 3’端开始的，不能进行任何修饰。3’端也不能有形成任何二级结构可能。</p>
+<ol class="arabic simple">
+<li><p>扩增产物的单链不能形成二级结构</p></li>
+</ol>
+<p>某些引物无效的主要原因是扩增产物单链二级结构的影响，选择扩增片段时最好避开二级结构区域。用有关软件可以预测估计 mRNA 的稳定二级结构，有助于选择模板。实验表明，待扩区域自由能（ΔG°）&lt; 58.6l kJ/mol 时，扩增往往不能成功。若不能避开这一区域时，用 7-deaza-2’-脱氧 GTP 取代 dGTP 对扩增的成功是有帮助的。</p>
+<ol class="arabic simple" start="11">
+<li><p>引物应具有特异性</p></li>
+</ol>
+<p>引物设计完成以后，应对其进行 BLAST 检测。若与其它基因不具有互补性，就可进行下一步的实验了。</p>
+</section>
+<section id="realtime-pcr">
+<h3>4.2. RealTime PCR<a class="headerlink" href="#realtime-pcr" title="Permalink to this headline">#</a></h3>
+<p>做 RealTime 时，用于 SYBRGreenI 法时的一对引物与一般 PCR 的引物在引物设计上所要求的参数是不同的。引物设计的要求：</p>
+<ol class="arabic simple">
+<li><p>避免重复碱基，尤其是 G</p></li>
+<li><p>Tₘ = 58∼60°C，GC = 30∼80%</p></li>
+<li><p>3’端最后 5 个碱基内不能有多于 2 个的 G 或 C</p></li>
+<li><p>正向引物与探针离得越近越好，但不能重叠。</p></li>
+<li><p>PCR 扩增产物长度：引物的产物大小不要太大，一般在 80∼250 bp 间都可；80∼150 bp 最为合适（可以延长至 300 bp）。</p></li>
+<li><p>引物的退火温度要高，一般要在 60°C 以上；</p></li>
+</ol>
+</section>
+<section id="id17">
+<h3>4.3. 其他引物<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="id18">
+<h3>4.3.1. 简并引物设计<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p>设计简并引物时，一定要检查靶扩增区域选定氨基酸遗传密码的简并度。很显然，期望选择简并度最低的氨基酸，达到提高特异性的目的。</p></li>
+<li><p>充分注意物种对于密码子的偏好性，选择该物种使用频率高的密码子，以降低引物的简并性。</p></li>
+<li><p>应努力避免 3’端的简并，对于大多数氨基酸残基来说，意味着引物 3’端不要位于密码子的第三位。</p></li>
+<li><p>在一些多义位置使用脱氧次黄嘌呤（dI）代替简并碱基。</p></li>
+</ol>
+</section>
+<section id="id19">
+<h3>4.3.2. 测序引物设计<a class="headerlink" href="#id19" title="Permalink to this headline">#</a></h3>
+<p>当然，测序引物的设计一般都由测序公司来完成，若需要自己设计的话；则除了按照上面所提到的引物设计通用标准外，还需要注意两点：</p>
+<ol class="arabic simple">
+<li><p>测序引物的特异性的标准掌握应该更严格一些，也就是说设计时更优先考虑特异性。因为在测序反应中，若引物与模板在非预期位置退火并引发链延伸，会对结果对来很大的干扰甚至造成结果无法识读。</p></li>
+<li><p>测序引物的 Tₘ 值适当高一些。现在大部分测序反应均选用耐热的测序级 DNA 聚合酶来催化，并采用 PCR 的热循环程序。选用的测序引物的 Tₘ 值稍高一些，有助于使反应顺利跨过待测模板的二级结构区，也有助于降低非特异反应。</p></li>
+</ol>
+</section>
+<section id="id20">
+<h3>4.3.3. 探针的设计<a class="headerlink" href="#id20" title="Permalink to this headline">#</a></h3>
+<p>探针的设计，根据不同的用途各有其设计特点，这里只是就通用的原则进行讨论：</p>
+<ol class="arabic simple">
+<li><p>探针的长短一般在 20∼50 核苷酸之间，过长合成成本高，且易出现聚合酶合成错误，杂交时间长。太短则特异性下降。</p></li>
+<li><p>注意 G 和 C 的含量努力控制在 40∼60％，同时一种碱基连续重复 ⩽ 4 个，以免非特异性杂交产生。</p></li>
+<li><p>探针自身序列不能形成二聚体，也不能有”发夹”结构存在，这一点上的要求就要比普通引物设计严格得多。</p></li>
+<li><p>若探针地靶目标是多个基因的混合物，就必须控制该探针与无关基因之间的相似性在 70% 以下。</p></li>
+</ol>
+</section>
+<section id="id21">
+<h3>4.3.4. 巢式引物<a class="headerlink" href="#id21" title="Permalink to this headline">#</a></h3>
+<p>PCR 反应特异性低或 1 次 PCR 产量极低时使用。在第一次产物内侧设计引物 3、4，再进行 PCR，亦可与第一次引物部分重叠，甚至仅移动 3’端几个 bp。</p>
+</section>
+<section id="id22">
+<h3>4.4. 耐热型 DNA 聚合酶<a class="headerlink" href="#id22" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="pol-i">
+<h3>4.4.1. pol I 型<a class="headerlink" href="#pol-i" title="Permalink to this headline">#</a></h3>
+<p>用于 &lt; 1kb 片段扩增</p>
+<p>种类多，价格低，与 α 型酶相比，延伸活性高，重复性好，但无 3’ →5’ 外切核酸酶活性，不具校正功能，保真性一般。TA 克隆所用酶属此类。</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p>酶</p></th>
+<th class="text-center head"><p>来源</p></th>
+<th class="text-center head"><p>特性</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><em>Taq</em></p></td>
+<td class="text-center"><p><em>Thermus aquaticus</em></p></td>
+<td class="text-center"><p>最常用的耐热聚合酶</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><em>Tth</em></p></td>
+<td class="text-center"><p><em>Thermus thermophiles</em></p></td>
+<td class="text-center"><p>Mn²⁺ 存在时，有逆转录活性，可完成”一般 RT-PCR”</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><em>Tfl</em></p></td>
+<td class="text-center"><p><em>Thermus flavus</em></p></td>
+<td class="text-center"><p>比 <em>Taq</em> 酶耐热</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><em>Tbr</em></p></td>
+<td class="text-center"><p><em>Thermus brockiamus</em></p></td>
+<td class="text-center"><p>比 <em>Taq</em> 酶耐热，且保真性好</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id23">
+<h3>4.4.2. α 型<a class="headerlink" href="#id23" title="Permalink to this headline">#</a></h3>
+<p>3’→5’ 外切核酸酶活性，保真性好，但延伸能力受影响，且不具有末端无模板添加碱基活性，不能用于 TA 克隆。</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p>酶</p></th>
+<th class="text-center head"><p>来源</p></th>
+<th class="text-center head"><p>特性</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><em>Pfu</em></p></td>
+<td class="text-center"><p><em>Pyrococcus furiosus</em></p></td>
+<td class="text-center"><p>典型</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><em>Pfu Turbo</em></p></td>
+<td class="text-center"><p><em>Pyrococcus furiosus</em></p></td>
+<td class="text-center"><p><em>Pfu</em> 中添加 PCR 促进因子</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><em>Pfx (KOD)</em></p></td>
+<td class="text-center"><p><em>Pyrococcus kodakaraensis</em> KOD1</p></td>
+<td class="text-center"><p>具热启动特性</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><em>Pwo</em></p></td>
+<td class="text-center"><p><em>Pyrococcus woesei</em></p></td>
+<td class="text-center"><p>5’ →3’ 外切核酸酶活性完全丧失</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><em>Tli</em></p></td>
+<td class="text-center"><p><em>Thermococcus litoralis</em></p></td>
+<td class="text-center"><p>3’ →5’ 外切核酸酶活性完全丧失</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><em>DeepVent</em></p></td>
+<td class="text-center"><p><em>Pyrococcus</em> sp. GB-D</p></td>
+<td class="text-center"><p>3’ →5’ 外切核酸酶活性完全丧失，极耐热</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><em>Pyrobest</em> ™</p></td>
+<td class="text-center"><p><em>Pyrococcus</em> sp.</p></td>
+<td class="text-center"><p>具与 Taq 酶同等延伸能力</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id24">
+<h3>4.4.3. 混合型<a class="headerlink" href="#id24" title="Permalink to this headline">#</a></h3>
+<p>用于 &gt; 5kb 片段扩增，多数不能进行 TA 克隆</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p>酶</p></th>
+<th class="text-center head"><p>公司</p></th>
+<th class="text-center head"><p>特性</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>LA <em>Taq</em> ™</p></td>
+<td class="text-center"><p>TaKaRa</p></td>
+<td class="text-center"><p>扩增可达 &gt; 15kb，G-C 含量高需特殊缓冲液</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>EX <em>Taq</em> ™</p></td>
+<td class="text-center"><p>TaKaRa</p></td>
+<td class="text-center"><p>高扩增</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Z-<em>Taq</em> ™</p></td>
+<td class="text-center"><p>TaKaRa</p></td>
+<td class="text-center"><p>延伸快</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id25">
+<h3>4.5. 准备<a class="headerlink" href="#id25" title="Permalink to this headline">#</a></h3>
+<p>新引物使用前离心，1,2000 rpm，2min，加 100× 水稀释（10 mM）</p>
+</section>
+<section id="id26">
+<h3>4.5.1. 体系<a class="headerlink" href="#id26" title="Permalink to this headline">#</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p></p></th>
+<th class="text-center head"><p>PrimeStar</p></th>
+<th class="text-center head"><p>PrimeStar</p></th>
+<th class="text-center head"><p>®Taq</p></th>
+<th class="text-center head"><p>®Taq</p></th>
+<th class="text-center head"><p>LA Taq <br> EX Taq</p></th>
+<th class="text-center head"><p>LA Taq <br> EX Taq</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>System</p></td>
+<td class="text-center"><p>50 μL</p></td>
+<td class="text-center"><p>20 μL</p></td>
+<td class="text-center"><p>50 μL</p></td>
+<td class="text-center"><p>20 μL</p></td>
+<td class="text-center"><p>50 μL</p></td>
+<td class="text-center"><p>20 μL</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Enzyme</p></td>
+<td class="text-center"><p>0.5</p></td>
+<td class="text-center"><p>0.2</p></td>
+<td class="text-center"><p>0.5</p></td>
+<td class="text-center"><p>0.2</p></td>
+<td class="text-center"><p>0.5</p></td>
+<td class="text-center"><p>0.2</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>10×Buffer</p></td>
+<td class="text-center"><p>10</p></td>
+<td class="text-center"><p>4</p></td>
+<td class="text-center"><p>5</p></td>
+<td class="text-center"><p>2</p></td>
+<td class="text-center"><p>5</p></td>
+<td class="text-center"><p>2</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>dNTP Mix</p></td>
+<td class="text-center"><p>4</p></td>
+<td class="text-center"><p>1.6</p></td>
+<td class="text-center"><p>4</p></td>
+<td class="text-center"><p>1.6</p></td>
+<td class="text-center"><p>4</p></td>
+<td class="text-center"><p>1.6</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Template</p></td>
+<td class="text-center"><p>2</p></td>
+<td class="text-center"><p>0.8</p></td>
+<td class="text-center"><p>2</p></td>
+<td class="text-center"><p>0.2</p></td>
+<td class="text-center"><p>2</p></td>
+<td class="text-center"><p>0.8</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>H₂0</p></td>
+<td class="text-center"><p>31.5</p></td>
+<td class="text-center"><p>12.6</p></td>
+<td class="text-center"><p>36.5</p></td>
+<td class="text-center"><p>15.6</p></td>
+<td class="text-center"><p>36.5 14.6</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Primers</p></td>
+<td class="text-center"><p>1×2</p></td>
+<td class="text-center"><p>0.4×2</p></td>
+<td class="text-center"><p>1×2</p></td>
+<td class="text-center"><p>0.4×2</p></td>
+<td class="text-center"><p>1×2</p></td>
+<td class="text-center"><p>0.4×2</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id27">
+<h3>4.5.2. 程序<a class="headerlink" href="#id27" title="Permalink to this headline">#</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p>Step</p></th>
+<th class="text-center head"><p></p></th>
+<th class="text-center head"><p>温度</p></th>
+<th class="text-center head"><p>时间</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>1</p></td>
+<td class="text-center"><p>预变性</p></td>
+<td class="text-center"><p>94°C</p></td>
+<td class="text-center"><p>5 min</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>2</p></td>
+<td class="text-center"><p>变性</p></td>
+<td class="text-center"><p>94°C</p></td>
+<td class="text-center"><p>30 s</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>3</p></td>
+<td class="text-center"><p>退火</p></td>
+<td class="text-center"><p>Tₘ-5°C</p></td>
+<td class="text-center"><p>30 s</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>4</p></td>
+<td class="text-center"><p>延伸</p></td>
+<td class="text-center"><p>72°C</p></td>
+<td class="text-center"><p>90 s</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>5</p></td>
+<td class="text-center"><p>循环</p></td>
+<td class="text-center"><p>30∼35°C</p></td>
+<td class="text-center"><p>cycles</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>6</p></td>
+<td class="text-center"><p>后延伸</p></td>
+<td class="text-center"><p>72°C</p></td>
+<td class="text-center"><p>5∼10 min</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="gc-buffer-pcr">
+<h3>4.5.3. GC Buffer PCR<a class="headerlink" href="#gc-buffer-pcr" title="Permalink to this headline">#</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p>System</p></th>
+<th class="text-center head"><p>50</p></th>
+<th class="text-center head"><p>20</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>LA Taq &amp; PrimeStar</p></td>
+<td class="text-center"><p>0.5</p></td>
+<td class="text-center"><p>0.2</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>GC buffer</p></td>
+<td class="text-center"><p>25</p></td>
+<td class="text-center"><p>10</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>dNTP Mix</p></td>
+<td class="text-center"><p>4</p></td>
+<td class="text-center"><p>1.6</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Template</p></td>
+<td class="text-center"><p>2</p></td>
+<td class="text-center"><p>0.8</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>H₂O</p></td>
+<td class="text-center"><p>16.5</p></td>
+<td class="text-center"><p>6.6</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Primers</p></td>
+<td class="text-center"><p>1×2</p></td>
+<td class="text-center"><p>0.4×2</p></td>
+</tr>
+</tbody>
+</table>
+<p>GC Buffer 分为 I &amp; II，一般用 I 方可；LA Taq &amp; PrimeStar 有各自的 2×GC Buffer。</p>
+</section>
+</section>
+<section id="id28">
+<h2>5. 琼脂糖凝胶核酸电泳<a class="headerlink" href="#id28" title="Permalink to this headline">#</a></h2>
+<p>双链 DNA 中，碱基处于配对状态，生理条件下，磷酸基带负电，故多聚核苷酸又称<strong>多聚阴离子</strong>。实际电泳中，由于介质大分子阻力，小分子迁移速率＞大分子，另外迁移速率还与分子构型相关。使用尿素或甲醛等核酸变性剂，可使其打开为单链，此时其电荷多少仅与大小有关。</p>
+<section id="id29">
+<h3>5.1. 凝胶<a class="headerlink" href="#id29" title="Permalink to this headline">#</a></h3>
+<p>分辨率与凝胶类型和浓度有关</p>
+<p>琼脂糖凝胶分辨率为 DNA 0.2-50 kb，丙烯酰胺凝胶分辨率为 DNA 1∼1000 bp。分辨 50 kb 以上的 DNA，需使用脉冲电场凝胶电泳（PFGE）。</p>
+</section>
+<section id="id30">
+<h3>5.2. 配胶（1%）<a class="headerlink" href="#id30" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p>大胶 0.35 g + 35 mL TAE，小胶 0.15g + 15 mL TAE（pH 试纸检测）</p></li>
+<li><p>微波炉加热，微沸溶胶至无明显颗粒，室温静置 15 min，稍冷却</p></li>
+<li><p>在制胶的卡槽上插上梳子，制胶。（卡槽黑色一端为负极）</p></li>
+</ol>
+</section>
+<section id="id31">
+<h3>5.3. 上样（塑料手套上混匀）<a class="headerlink" href="#id31" title="Permalink to this headline">#</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p></p></th>
+<th class="text-center head"><p>体积</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>Marker</p></td>
+<td class="text-center"><p>2.0 μL（看片段大小）</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Loading Buffer</p></td>
+<td class="text-center"><p>0.5 μL</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>PCR 产物</p></td>
+<td class="text-center"><p>2.0 μL（未知浓度可上 5 μL）</p></td>
+</tr>
+</tbody>
+</table>
+<p>目的条带回收</p>
+</section>
+<section id="id32">
+<h3>5.4. 双酶切<a class="headerlink" href="#id32" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>产物双酶切</p></li>
+</ul>
+<p>回收后，加入双限制性内切酶，酶切 Buffer 视酶而定，以 Nde I/Xho I 为例</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p>System</p></th>
+<th class="text-center head"><p>50</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>Nde i</p></td>
+<td class="text-center"><p>2</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Xho I</p></td>
+<td class="text-center"><p>2</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>10×H</p></td>
+<td class="text-center"><p>5</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Carrier</p></td>
+<td class="text-center"><p>30</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>H₂O</p></td>
+<td class="text-center"><p>11</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>50 μL EB 溶解回收目的基因后，约余下 30 μL，可直接操作。若加 BSA 水 H₂O 应减量，37°C 酶切过夜。</p></li>
+<li><p>酶切后，50 μL 反应液加 50 μL 水</p>
+<ul>
+<li><p>60°C，10 min 终止反应</p></li>
+<li><p>加入 500 μL 溶胶液回收酶切片段</p></li>
+</ul>
+</li>
+<li><p>质粒双酶切</p></li>
+</ul>
+<p>体系同上，终止时加 Loading Buffer，跑胶回收酶切后片段</p>
+</section>
+<section id="id33">
+<h3>5.5. 载体连接<a class="headerlink" href="#id33" title="Permalink to this headline">#</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p></p></th>
+<th class="text-center head"><p>Common</p></th>
+<th class="text-center head"><p>T carrier</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>System</p></td>
+<td class="text-center"><p>5</p></td>
+<td class="text-center"><p>10</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Segment</p></td>
+<td class="text-center"><p>3</p></td>
+<td class="text-center"><p>4.8</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Carrier</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>0.2 (T)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>T4 ligase</p></td>
+<td class="text-center"><p>0.5</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Buffer</p></td>
+<td class="text-center"><p>0.5</p></td>
+<td class="text-center"><p>5 (I)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Reaction</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Temperature</p></td>
+<td class="text-center"><p>20</p></td>
+<td class="text-center"><p>20</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Time</p></td>
+<td class="text-center"><p>4h or overnight</p></td>
+<td class="text-center"><p>&lt; 1h</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Else</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>I=segment +T</p></td>
+</tr>
+</tbody>
+</table>
+<p>目的基因若用 Taq 酶扩出，则可连接 T 载体，验证测序正确后进行下一步。</p>
+</section>
+<section id="id34">
+<h3>5.6. 菌落验证<a class="headerlink" href="#id34" title="Permalink to this headline">#</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p>System</p></th>
+<th class="text-center head"><p>50 μL</p></th>
+<th class="text-center head"><p>20 μL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>r Taq</p></td>
+<td class="text-center"><p>0.5 0.2</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>10×buffer</p></td>
+<td class="text-center"><p>5</p></td>
+<td class="text-center"><p>2</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>dNTP Mix</p></td>
+<td class="text-center"><p>4</p></td>
+<td class="text-center"><p>1.6</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>H₂O</p></td>
+<td class="text-center"><p>38.5</p></td>
+<td class="text-center"><p>15.8</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>PET up/dn</p></td>
+<td class="text-center"><p>1×2</p></td>
+<td class="text-center"><p>0.4×2</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>用牙签挑取单菌落，剩余置于 800 μL LB 中（加抗生素）于 37°C 摇床培养</p></li>
+<li><p>PCR 体系 20 μL 小管与大管标号一一对应，退火温度 55°C</p></li>
+<li><p>PCR 产物电泳验证，有目的条带即为阳性克隆，测序正确后提质粒</p></li>
+<li><p>每个基因挑 10 个克隆，无一正确再挑 10 个</p></li>
+</ul>
+</section>
+</section>
+<section id="id35">
+<h2>6. 大肠杆菌<a class="headerlink" href="#id35" title="Permalink to this headline">#</a></h2>
+<section id="id36">
+<h3>6.1. 非融合表达载体<a class="headerlink" href="#id36" title="Permalink to this headline">#</a></h3>
+<p>A. pKK 223-3 (Pharmacia)
+B. Pbv220</p>
+</section>
+<section id="id37">
+<h3>6.2. 融合表达载体<a class="headerlink" href="#id37" title="Permalink to this headline">#</a></h3>
+<p>SD-ATG 距离固定，翻译起始信号组织合理，表达的蛋白一端有一段细菌多肽或蛋白质。</p>
+<ul class="simple">
+<li><p>A. pGEX（Pharmacia）</p>
+<ul>
+<li><p>下游 SD 序列为谷胱甘肽巯基转移酶基因，于目的基因相连。</p></li>
+<li><p>由三种不同可读框质粒组成，IPTG 诱导。</p></li>
+<li><p>谷胱甘肽-Sepharose 柱纯化，标签可以凝血酶或凝血因子 X 切除。</p></li>
+</ul>
+</li>
+<li><p>B. pRSET（Invitrogen）</p>
+<ul>
+<li><p>目的基因插入多克隆位点。由三种不同可读框质粒组成，IPTG 诱导。</p></li>
+<li><p>SD 序列和起始密码子下游依次为 His₆ 序列、抗体结合序列、肠激酶识别序列和多克隆位点。</p></li>
+<li><p>His₆ 可螯合二价离子，抗体结合部分可供免疫学检测，肠激酶识别部分可以肠激酶切除末端多余肽段。</p></li>
+</ul>
+</li>
+<li><p>C. pET（Novagen）</p>
+<ul>
+<li><p>目的基因被克隆岛 T7 噬菌体强转录和翻译信号的控制下，并经宿主细胞提供 T7 RNA 聚合酶诱导其表达，目的蛋白可达细胞总蛋白量的 50%。</p></li>
+<li><p>基础表达严格控制，强力表达调控系统。</p></li>
+<li><p>提供可溶蛋白、二硫键生成、蛋白质外运及多肽生产等专用载体和宿主菌。</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id38">
+<h3>6.3. 提高表达水平<a class="headerlink" href="#id38" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>改用更强启动子以提高 mRNA 产量，并在基因下游加入稳定 mRNA 的强终止子；</p></li>
+<li><p>调整 SD-ATG 距离；</p></li>
+<li><p>改用蛋白酶缺陷型宿主菌，或宿主菌种表达蛋白酶抑制剂，以减少表达蛋白的降解；</p></li>
+<li><p>改用分泌型表达模式，以减少反馈抑制或蛋白酶降解；</p></li>
+<li><p>根据密码子简并性，减少目的基因中稀有密码子的比例；</p></li>
+<li><p>消除核糖体结合位点附近可能的二级结构，加大 A、T 含量，提高翻译效率。</p></li>
+</ul>
+</section>
+<section id="id39">
+<h3>6.4. 菌株选择<a class="headerlink" href="#id39" title="Permalink to this headline">#</a></h3>
+<p>分子生物学实验中的大肠杆菌菌株主要来自 K12（表面糖蛋白 K 抗原）。</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p></p></th>
+<th class="text-center head"><p>HB101</p></th>
+<th class="text-center head"><p>JM109</p></th>
+<th class="text-center head"><p>DH5α</p></th>
+<th class="text-center head"><p>BL21(DE3)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><em>rec</em> A</p></td>
+<td class="text-center"><p>-</p></td>
+<td class="text-center"><p>-</p></td>
+<td class="text-center"><p>-</p></td>
+<td class="text-center"><p>+</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><em>mrc</em> A</p></td>
+<td class="text-center"><p>+</p></td>
+<td class="text-center"><p>-</p></td>
+<td class="text-center"><p>-</p></td>
+<td class="text-center"><p>+</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><em>mcr</em> BC</p></td>
+<td class="text-center"><p>-</p></td>
+<td class="text-center"><p>+</p></td>
+<td class="text-center"><p>+</p></td>
+<td class="text-center"><p>+</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><em>sup</em></p></td>
+<td class="text-center"><p><em>sup</em> E</p></td>
+<td class="text-center"><p><em>sup</em> E</p></td>
+<td class="text-center"><p><em>sup</em> E</p></td>
+<td class="text-center"><p>+</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><em>rps</em></p></td>
+<td class="text-center"><p>Strʳ</p></td>
+<td class="text-center"><p>+</p></td>
+<td class="text-center"><p>+</p></td>
+<td class="text-center"><p>+</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><em>gyr</em></p></td>
+<td class="text-center"><p>+</p></td>
+<td class="text-center"><p>c</p></td>
+<td class="text-center"><p>Nalʳ</p></td>
+<td class="text-center"><p>+</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><em>Eco</em> K</p></td>
+<td class="text-center"><p>r⁻m⁻</p></td>
+<td class="text-center"><p>r⁻m⁺</p></td>
+<td class="text-center"><p>r⁻m⁺</p></td>
+<td class="text-center"><p>r⁻m⁻</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>F’</p></td>
+<td class="text-center"><p>-</p></td>
+<td class="text-center"><p>+</p></td>
+<td class="text-center"><p>-</p></td>
+<td class="text-center"><p>-</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>特征</p></td>
+<td class="text-center"><p>用于一般转化实验</p></td>
+<td class="text-center"><p>能对 pBlueScrip、pUC 进行蓝白斑筛选</p></td>
+<td class="text-center"><p>能进行蓝白斑筛选；转化率高</p></td>
+<td class="text-center"><p>蛋白酶活性低；有 T7 RNA 聚合酶基因</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p><em>rec</em> A：ATP 依赖型 DNA 重组酶基因缺失，能稳定插入 50 bp 以上重复 DNA 序列，对 DNA 转化有利。</p></li>
+<li><p><em>mcr</em> A、<em>mcr</em> BC：特异切割外源 DNA 甲基化序列的限制性内切核酸酶基因，进行高等动植物基因组 DNA 操作时使用其缺失体菌株。</p></li>
+<li><p><em>sup</em> E：琥珀突变抑制因子，缺失体不能表达阻遏蛋白与终止密码子 UAG 结合，UAG 将编码成谷氨酰胺。</p></li>
+<li><p><em>rps</em>(Strʳ)、<em>gyr</em>(Strʳ)：分别耐 50 μg/mL 链霉素和 100 μg/mL 萘啶酮酸</p></li>
+<li><p><em>Eco</em> K：参与限制与修饰。突变株可避免限制反应。</p></li>
+<li><p>F’ ：具有重组 F 因子，可作 M13 噬菌体的宿主菌。</p></li>
+</ul>
+</section>
+</section>
+<section id="id40">
+<h2>7. 限制性内切核酸酶<a class="headerlink" href="#id40" title="Permalink to this headline">#</a></h2>
+<p>一类识别 DNA 上 3∼8 个特异核苷酸序列，并产生切割反应的内切核酸酶，广泛分布于细菌细胞中，以防御感染噬菌体。与其识别序列相同，产生修饰作用的酶称修饰酶（主要是甲基化酶）。限制性内切酶自身基因组 DNA 因修饰酶作用而不能被切割，这种防御机制称为限制-修饰系统。</p>
+<p>修饰酶活性与限制酶活性分开，反应仅需要 Mg²⁺，有固定识别序列和切割位点，切割位点与识别序列的距离非常接近或完全相同，具有这些特征的限制性内切酶为 II 型限制性内切核酸酶。其多数具有对称的回文结构。大多数酶的最适反应温度是 37°C。</p>
+<section id="id41">
+<h3>7.1. DNA 甲基化<a class="headerlink" href="#id41" title="Permalink to this headline">#</a></h3>
+<p><em>dam</em> 甲基酶在 5’ GATC 3’ 的 A 上甲基化，<em>dcm</em> 甲基化酶在 5’ CCAGG 3’ 或 5’ CCTGG 3’ 的 C 上甲基化。</p>
+</section>
+<section id="id42">
+<h3>7.2. 星号活力<a class="headerlink" href="#id42" title="Permalink to this headline">#</a></h3>
+<p>酶切反应条件改变后，特异序列识别特性会降低，当酶量占反应体系 1/10 以上，可能导致星号活力。</p>
+</section>
+</section>
+<section id="id43">
+<h2>8. 培养基<a class="headerlink" href="#id43" title="Permalink to this headline">#</a></h2>
+<section id="tb">
+<h3>8.1. TB 培养基<a class="headerlink" href="#tb" title="Permalink to this headline">#</a></h3>
+<p>Terrific broth</p>
+<ul class="simple">
+<li><p>有机物（900 mL）：胰蛋白胨 12 g，酵母粉 24 g，甘油 4 mL</p></li>
+<li><p>离子液（100 mL）：0.17 M KH₂PO₄，0.72 M K₂HPO₄</p></li>
+<li><p>离子液储液：900 mL H₂O，23.1 g KH₂PO₄，164.2 g K₂HPO₄·3H₂O，定容至 1 L</p></li>
+</ul>
+<p>接种 2%，37°C，5 h，OD₆₀₀ = 3.0 时，加入 1‰ 1 M IPTG 诱导</p>
+</section>
+</section>
+<section id="id44">
+<h2>9. 试剂<a class="headerlink" href="#id44" title="Permalink to this headline">#</a></h2>
+<section id="ctab-1">
+<h3>9.1. CTAB 提取缓冲液 <a class="footnote-reference brackets" href="#id49" id="id45">1</a><a class="headerlink" href="#ctab-1" title="Permalink to this headline">#</a></h3>
+<p>十六烷基三甲基溴化铵</p>
+<ol class="arabic simple">
+<li><p>Tris⋅HCl（pH 8.0）提供缓冲环境，防止核酸被破坏；</p></li>
+<li><p>EDTA 螯合 Mg²⁺ 或 Mn²⁺ 离子，抑制 DNase 活性；</p></li>
+<li><p>NaCl 提供一个高盐环境，使 DNA 充分溶解，存在于液相中；</p></li>
+<li><p><em>β</em>-巯基乙醇是抗氧化剂，有效地防止酚氧化成醌，避免褐变，使酚容易去除基因组 DNA。</p></li>
+</ol>
+</section>
+<section id="id46">
+<h3>9.2. 焦碳酸二乙酯<a class="headerlink" href="#id46" title="Permalink to this headline">#</a></h3>
+<p>分子式为 C₆H₁₀O₅，分子量为 162.14。是一种强烈但不彻底的 RNase 抑制剂。它通过和 RNAase 的活性基团组氨酸的咪唑环结合使蛋白质变性，从而抑制酶的活性。DEPC 水用于配制电泳缓冲液，和溶解 RNA.每次处理耗材时都要用新配的。有下列毒性：</p>
+<ol class="arabic simple">
+<li><p>高效烷化剂，配置：加 0.1% DEPC 到去离子水中，混匀过夜，然后高温高压 121°C，20 min，DEPC 即降解成 CO₂ 和 H₂O 无毒。</p></li>
+<li><p>刺激性：对眼睛和气道粘膜有强刺激，在操作中应尽量在通风的条件下进行，DEPC 毒性并不是很强，但吸入的毒性是最强的，使用时戴口罩，不小心占到手上注意立即冲洗。</p></li>
+<li><p>潜在致癌物质，主要是能生成乙酯基衍生物和乙酯类衍生物，其中尿烷是一种已知的致癌物质。</p></li>
+</ol>
+</section>
+<section id="id47">
+<h3>9.3. 琼脂糖电泳<a class="headerlink" href="#id47" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Loading Buffer</p></li>
+</ul>
+<p>先配制 0.1% 溴酚兰水溶液，然后取 1 份 0.1% 溴酚兰溶液与等体积的甘油混合即成</p>
+<ul class="simple">
+<li><p>TAE 缓冲液（50×）</p></li>
+</ul>
+<p>pH 8.0</p>
+<p>每升溶液中含有 242 g Tris，57.1 mL 冰乙酸，100 mL 0.5 M EDTA。电泳时稀释成 1× 浓度使用染色（两层手套，EB 染色 1 min）</p>
+<ul class="simple">
+<li><p>溴乙啶染液</p></li>
+</ul>
+<p>称取 5 mg 溴乙啶，用重蒸水溶解定容到 10 mL，取 1 mL 此溶液用 1x TAE 缓冲液稀释到 1 升，最终浓度为 0.5 μg/mL。320 nm 紫外线主要由 EB 吸收，对核酸断链及嘧啶二聚体形成影响小，褪色轻微，观察、操作俱佳。废弃 EB 用 NaClO 处理为无色，倒入水池。</p>
+</section>
+</section>
+<section id="id48">
+<h2>10. 参考文献<a class="headerlink" href="#id48" title="Permalink to this headline">#</a></h2>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id49"><span class="brackets"><a class="fn-backref" href="#id45">1</a></span></dt>
+<dd><p>Lodhi, M. A.; Ye, G.-N.; Weeden, N. F.; Reisch, B. I. A simple and efficient method for DNA extraction from grapevine cultivars and <em>Vitis</em> species. Plant Mol. Biol. Report.1994, 12 (1), 6-13.</p>
+</dd>
+</dl>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./biotechs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="04-%E7%97%85%E7%90%86%E5%AD%A6%E5%9F%BA%E7%A1%80.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">病理学基础</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="%E7%B3%96%E7%94%9F%E5%8C%96%E6%B5%8B%E5%AE%9A.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">糖生化测定</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dna">1. DNA 基本操作</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.1. 克隆流程</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.2. 提质粒</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.3. 转化</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">2. 细菌 DNA 的提取</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#s-rdna">2.1. 关于 16S rDNA</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2.2. 原理</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2.3. 材料</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.4. 方法与步骤</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">2.5. 实验注意</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">3. 真菌基因组 DNA 的提取</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">3.1. 原理</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">3.2. 准备</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">3.3. 培养</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">3.4. 萃取</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">3.5. 洗涤</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pcr">4. PCR</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">4.1. PCR 引物设计</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#realtime-pcr">4.2. RealTime PCR</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">4.3. 其他引物</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">4.3.1. 简并引物设计</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">4.3.2. 测序引物设计</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">4.3.3. 探针的设计</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">4.3.4. 巢式引物</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">4.4. 耐热型 DNA 聚合酶</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pol-i">4.4.1. pol I 型</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">4.4.2. α 型</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">4.4.3. 混合型</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">4.5. 准备</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">4.5.1. 体系</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">4.5.2. 程序</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gc-buffer-pcr">4.5.3. GC Buffer PCR</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">5. 琼脂糖凝胶核酸电泳</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id29">5.1. 凝胶</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id30">5.2. 配胶（1%）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id31">5.3. 上样（塑料手套上混匀）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id32">5.4. 双酶切</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id33">5.5. 载体连接</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id34">5.6. 菌落验证</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id35">6. 大肠杆菌</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id36">6.1. 非融合表达载体</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id37">6.2. 融合表达载体</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id38">6.3. 提高表达水平</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id39">6.4. 菌株选择</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id40">7. 限制性内切核酸酶</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id41">7.1. DNA 甲基化</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id42">7.2. 星号活力</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id43">8. 培养基</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tb">8.1. TB 培养基</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id44">9. 试剂</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ctab-1">9.1. CTAB 提取缓冲液 </a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id46">9.2. 焦碳酸二乙酯</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id47">9.3. 琼脂糖电泳</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id48">10. 参考文献</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By ivaquero
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

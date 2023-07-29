@@ -1,0 +1,894 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>梯度下降优化 &#8212; 生物狗学编程</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'base-ml/06-梯度下降优化';</script>
+    <link rel="canonical" href="https://ivaquero.github.io/blog-bio/base-ml/06-梯度下降优化.html" />
+    <link rel="shortcut icon" href="../_static/doge.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="非线性分类" href="07-%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB.html" />
+    <link rel="prev" title="梯度下降" href="05-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/doge.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/doge.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    生物狗学编程
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">综合生命科学</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/01-%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%9F%BA%E7%A1%80.html">生物信息学基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/02-%E5%88%86%E5%AD%90%E7%94%9F%E7%89%A9%E5%AD%A6%E5%9F%BA%E7%A1%80.html">分子生物学基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/03-%E6%BC%94%E5%8C%96%E8%AE%BA%E5%9F%BA%E7%A1%80.html">演化论基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/04-%E7%97%85%E7%90%86%E5%AD%A6%E5%9F%BA%E7%A1%80.html">病理学基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/%E5%9F%BA%E5%9B%A0%E5%B7%A5%E7%A8%8B.html">基因工程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/%E7%B3%96%E7%94%9F%E5%8C%96%E6%B5%8B%E5%AE%9A.html">糖生化测定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/%E8%9B%8B%E7%99%BD%E8%B4%A8%E7%94%9F%E5%8C%96%E6%B5%8B%E5%AE%9A.html">蛋白质生化测定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/%E9%87%8D%E7%BB%84%E9%AB%98%E6%8B%B7%E8%B4%9D%E9%85%B5%E6%AF%8D.html">重组高拷贝酵母</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">统计基础</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/01-%E6%A6%82%E7%8E%87%E4%B8%8E%E5%88%86%E5%B8%83.html">概率与分布</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/02-%E7%BB%9F%E8%AE%A1%E9%87%8F%E4%B8%8E%E9%87%87%E6%A0%B7.html">统计量与采样</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/03-%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1.html">参数估计</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/04-%E5%8F%82%E6%95%B0%E6%A3%80%E9%AA%8C.html">参数检验</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/05-%E9%9D%9E%E5%8F%82%E6%95%B0%E6%A3%80%E9%AA%8C.html">非参数检验</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/06-%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90.html">回归分析</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">机器学习</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01-%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E5%BC%95%E8%A8%80.html">统计学习引言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92.html">线性回归</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9.html">模型选择</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB.html">线性分类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D.html">梯度下降</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">梯度下降优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB.html">非线性分类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08-%E5%86%B3%E7%AD%96%E6%A0%91.html">决策树</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0.html">集成学习</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-%E9%99%8D%E7%BB%B4.html">降维</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-%E7%A1%AC%E8%81%9A%E7%B1%BB.html">硬聚类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12-%E8%BD%AF%E8%81%9A%E7%B1%BB.html">软聚类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13-%E7%94%9F%E5%AD%98%E5%88%86%E6%9E%90.html">生存分析</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 入门</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../python/01-%E7%8E%AF%E5%A2%83%E4%B8%8E%E5%8F%98%E9%87%8F.html">环境与变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/02-%E5%8F%98%E9%87%8F%E8%BF%90%E7%AE%97.html">变量运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/03-%E5%AE%B9%E5%99%A8.html">容器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/04-%E5%AE%B9%E5%99%A8%E8%BF%90%E7%AE%97.html">容器运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/05-%E6%8E%A7%E5%88%B6%E6%B5%81.html">控制流</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/06-%E5%87%BD%E6%95%B0.html">函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/07-%E9%97%AD%E5%8C%85%E4%B8%8E%E8%A3%85%E9%A5%B0%E5%99%A8.html">闭包与装饰器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/08-%E5%86%85%E7%BD%AE%E7%AE%97%E6%B3%95%E6%A8%A1%E5%9D%97.html">内置算法模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/09-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B.html">面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/10-%E6%A8%A1%E7%89%88%E4%B8%8E%E6%A8%A1%E5%BC%8F.html">模版与模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/11-%E9%AD%94%E6%B3%95%E6%96%B9%E6%B3%95.html">魔法方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/12-%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B.html">高级编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/13-%E5%A4%9A%E4%BB%BB%E5%8A%A1.html">多任务</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/14-%E5%BC%82%E6%AD%A5.html">异步</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/15-%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B.html">网络模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/16-%E5%85%83%E7%BC%96%E7%A8%8B.html">元编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/17-%E6%A8%A1%E5%9D%97%E4%B8%8E%E8%B0%83%E8%AF%95.html">模块与调试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/18-%E9%AB%98%E6%80%A7%E8%83%BD%E6%89%A9%E5%B1%95.html">高性能扩展</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">数据分析</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../analysis/clean-pandas.html">Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/clean-pandas2.html">Pandas 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/correlation.html">Correlation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/deviation.html">Deviation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/distribution.html">Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/group.html">Group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/polar.html">Polar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/proportion.html">Proportion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/ranking.html">Ranking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/time-series.html">Time Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/tricks.html">Tricks</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/base-ml/06-梯度下降优化.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>梯度下降优化</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1. 抑制震荡</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.1. 动量法</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nesterov">1.2. Nesterov</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">2. 自适应</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adagrad">2.1. Adagrad</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rmsprop">2.2. RMSprop</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adam">2.3. Adam</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">3. 参数正则化</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">3.2. 岭回归</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">3.3. 套索回归</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">3.4. 弹性网络</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">3.5. 衰减角度</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">4. 调参策略</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">4.1. 坐标轴下降法</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">4.2. 降低学习率</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">4.3. 早停</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">5. 网络结构正则化</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>梯度下降优化<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<p>随机梯度下降需要的计算量很大，现在的计算机是没有办法承担这个量的，所以需要对梯度下降法进行优化，使其以更少的计算实现差不多的效果。</p>
+<p>优化梯度下降法，大概有两个思路：</p>
+<ul class="simple">
+<li><p>调整神经网络结构</p>
+<ul>
+<li><p>增加池化层</p></li>
+<li><p>Dropout</p></li>
+</ul>
+</li>
+<li><p>对梯度下降法本身上进行优化</p></li>
+</ul>
+<p>随机梯度下降法是一个凸问题，可表述为</p>
+<div class="math notranslate nohighlight">
+\[
+f(x^{(k)}) - f^{*} = O\bigg(\frac{1}{\sqrt{k}}\bigg)
+\]</div>
+<p>其中，<span class="math notranslate nohighlight">\(k\)</span>为迭代次数，<span class="math notranslate nohighlight">\(f^{*}\)</span>代表极值点。</p>
+<p>经过<span class="math notranslate nohighlight">\(k\)</span>次训练过后，最后随机梯度下降法能达到的误差是根号<span class="math notranslate nohighlight">\(k\)</span>分之一这个量级的，这个和标准梯度下降法没有特别大的差别，所以不如直接使用随机梯度下降法。若是强凸问题，收敛的还会更快。</p>
+<section id="id2">
+<h2>1. 抑制震荡<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<p>SGD 的一个显著特征是，梯度往往在一个方向上向前，而另一个方向上震荡，若能抑制住震荡，就能更为高效地使梯度收敛。</p>
+<p><img alt="fluctuation" src="../_images/fluctuation.png" /></p>
+<section id="id3">
+<h3>1.1. 动量法<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<p>由 SGD</p>
+<div class="math notranslate nohighlight">
+\[
+θ_{(t)} = θ_{(t-1)} - 𝑱
+\]</div>
+<p>这里，令</p>
+<div class="math notranslate nohighlight">
+\[
+Δθ_{(t) i} = \frac{∂J(θ_{(t-1) i})}{∂θ_i}
+\]</div>
+<p>则有</p>
+<div class="math notranslate nohighlight">
+\[
+θ_{(t) i} = θ_{(t-1) i} - θ_{(t) i}
+\]</div>
+<p>引入动量（momentum）来代替之前的梯度，令</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+  𝑽_{(t)} &amp;= 𝑽_{(t-1)} + θ_{(t) i}\\
+  &amp;= \underbrace{θ 𝑽_{(t-1)}}_{偏导的 0 次项} + \underbrace{(1 - θ )⋅Δθ_{(t) i}}_{偏导的 1 次项}
+\end{aligned}
+\end{split}\]</div>
+<blockquote>
+<div><p>这里使用了指数加权移动平均法（exponentially weighted moving average，EWMA），其表示各数值的加权系数随时间呈指数式递减，越靠近当前时刻的数值加权系数就越大。</p>
+</div></blockquote>
+<p>于是有</p>
+<div class="math notranslate nohighlight">
+\[
+θ_{(t) i} = θ_{(t-1) i} - v_{(t)}
+\]</div>
+<ul class="simple">
+<li><p>下降初期时，使用上一次参数更新，下降方向一致，乘上较大的能够进行很好的加速。</p></li>
+<li><p>下降中后期时，在局部最小值来回震荡的时候，使得更新幅度增大，跳出陷阱。</p></li>
+<li><p>在梯度改变方向的时候，动量项能够在相关方向加速 SGD，抑制振荡，从而加快收敛。</p></li>
+</ul>
+</section>
+<section id="nesterov">
+<h3>1.2. Nesterov<a class="headerlink" href="#nesterov" title="Permalink to this headline">#</a></h3>
+<p>Nesterov 加速（Nesterov accelerated gradient，NAG）在动量法的基础上，提前引入动量项<span class="math notranslate nohighlight">\(𝑽_{(t-1) i}\)</span>。</p>
+<div class="math notranslate nohighlight">
+\[
+Δθ_{(t) i} = \frac{∂J(θ_{(t-1) i} + γ𝑽_{(t-1) i})}{∂θ_i}
+\]</div>
+</section>
+</section>
+<section id="id4">
+<h2>2. 自适应<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<section id="adagrad">
+<h3>2.1. Adagrad<a class="headerlink" href="#adagrad" title="Permalink to this headline">#</a></h3>
+<p>2012 年，AlexNet 引入的 Adagrad 是梯度下降的现代路径优化方法的开端。Adagrad 其实是对学习率进行了一个约束。即：</p>
+<div class="math notranslate nohighlight">
+\[
+θ_{(t) i} = θ_{(t-1) i} - \frac{η}{\sqrt{𝑺_{(t)} + ϵ}}⋅Δθ_{(t) i}
+\]</div>
+<p>其中，<span class="math notranslate nohighlight">\(𝑺_{(t)}\)</span>为历史上所有梯度的平方再开方，即</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+  𝑺_{(t)} &amp;= 𝑺_{(t-1)} + Δθ_{(t) i}⋅ Δθ_{(t) i}\\
+  \\
+  Δθ_{(t) i} &amp;= \dfrac{∂J(θ_{(t-1) i})}{∂θ_i}
+\end{cases}
+\end{split}\]</div>
+<p>此处，<span class="math notranslate nohighlight">\(ϵ\)</span>对从 1 到进行一个递推形成一个约束项正则化因子，保证分母非 0。</p>
+</section>
+<section id="rmsprop">
+<h3>2.2. RMSprop<a class="headerlink" href="#rmsprop" title="Permalink to this headline">#</a></h3>
+<p>当 Adagrad 经过平台区域，由于其考虑所有历史数据，其收敛速度将难以得到提升，RMSprop 结合 EWMA，选择性地考虑较近的历史数据，使经过平台区后，梯度收敛速度能在非平台区得到恢复。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+  𝑺_{(t)} &amp;= θ 𝑺_{(t-1)} + (1 - θ )Δθ_{(t) i}⋅ Δθ_{(t) i}\\
+  \\
+  θ_{(t) i} &amp;= θ_{(t-1) i} - \frac{η}{\sqrt{𝑺_{(t)} + ϵ}}⋅Δθ_{(t) i}
+\end{cases}
+\end{split}\]</div>
+</section>
+<section id="adam">
+<h3>2.3. Adam<a class="headerlink" href="#adam" title="Permalink to this headline">#</a></h3>
+<p>Adam 在 RMSprop 基础上进一步结合了动量法</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+  𝑺_{(t)} &amp;= θ_1 𝑺_{(t-1)} + (1 - θ_1 )Δθ_{(t) i}⋅ Δθ_{(t) i}\\
+  𝑽_{(t)} &amp;= θ_2 𝑽_{(t-1)} + (1 - θ_2 )⋅Δθ_{(t) i}\\
+  θ_{(t) i} &amp;= θ_{(t-1) i} - \frac{η}{\sqrt{𝑺_{(t)} + ϵ}}⋅𝑽_{(t)}
+\end{cases}
+\end{split}\]</div>
+</section>
+</section>
+<section id="id5">
+<h2>3. 参数正则化<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<p>由最开始部分的偏差-方差权衡，可知</p>
+<ul class="simple">
+<li><p>模型越大，则样本内误差越小，但是参数的误差可能会很大：若使用高阶的多项式，样本点的一个小小的扰动都会使得估计出的模型参数有非常大的变化</p></li>
+<li><p>模型越小，样本内的均方误差会大一些，但是参数的均方误差可以变的比较小：每个维度的数据点很少，观察中的噪声便会导致高方差，即精确度下降</p></li>
+</ul>
+<p>凡是可以减少泛化误差，而不是减少训练误差的方法均可称为正则化（regularization）。这里的正则化，指的是<strong>收缩估计</strong>（shrinkage estimation），其通过引入 Lₚ 范数作为惩罚项，限制模型规模，降低模型（参数，即权重）的误差，从而提高样本外的预测效果，防止过拟合。</p>
+<section id="id6">
+<h3>3.2. 岭回归<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<p>岭回归（Ridge Regression），也叫 Tikhonov 正则化或 ℓ2 正则化，其惩罚项使用 L_2 范数，即</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+J(θ) &amp;= \mathrm{MSE}(θ) + \fracλ2 ∑θ_i^2\\
+&amp;= \mathrm{MSE}(θ) + \fracλ2 ∥θ∥_2^2
+\end{aligned}
+\end{split}\]</div>
+<p>其中，<span class="math notranslate nohighlight">\(λ ⩾ 0\)</span>是一个控制收缩量的超参数：<span class="math notranslate nohighlight">\(λ\)</span>的值越大，收缩量越大。截距项<span class="math notranslate nohighlight">\(θ_0\)</span>用于测量当<span class="math notranslate nohighlight">\(x_{i1} = x_{i2} = … = x_{ip} = 0\)</span>时响应特征的均值，所有不会受到惩罚。设<span class="math notranslate nohighlight">\(X\)</span>的列在 Ridge 之前已经中心化，均值为 0，则截距项估计值为</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{θ}_0 = ȳ = ∑y_i / n
+\]</div>
+<p>系数向量为：</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{θ} = (𝑿^{⊤}𝑿 + λ𝑰)^{-1} 𝑿^{⊤}y
+\]</div>
+<blockquote>
+<div><p>实际上，<span class="math notranslate nohighlight">\(𝑰\)</span>可以是任意实正定矩阵</p>
+</div></blockquote>
+<p>其中，</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+𝑿^{⊤}𝑿 + λ𝑰 =
+\begin{bmatrix}
+x_{11} + λ &amp; x_{12} &amp; x_{13} &amp; ⋯ &amp; x_{1n} \\
+0 &amp; x_{22} + λ &amp; x_{23} &amp; ⋯ &amp; x_{2n} \\
+0 &amp; 0 &amp; x_{33} + λ &amp; ⋯ &amp; x_{3n} \\
+⋮ &amp; ⋮ &amp; ⋮ &amp; \ddots &amp; ⋮ \\
+0 &amp; 0 &amp; 0 &amp; ⋯ &amp; λ
+\end{bmatrix}
+\end{split}\]</div>
+<p>最后得到的行列式已经不存在全 0 行或全 0 列了，除非以下两种情况，否则矩阵<span class="math notranslate nohighlight">\(𝑿^{⊤}𝑿 + λ𝑰\)</span>永远都是满秩</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(λ = 0\)</span></p></li>
+<li><p>原矩阵<span class="math notranslate nohighlight">\(𝑿^{⊤}𝑿\)</span>存在对角线上元素为<span class="math notranslate nohighlight">\(λ\)</span>，且其他元素都为 0 的行或列</p></li>
+</ul>
+<p>当特征个数<span class="math notranslate nohighlight">\(p\)</span>和实例个数<span class="math notranslate nohighlight">\(n\)</span>差不多时，OLS 估计方差会很大；当<span class="math notranslate nohighlight">\(p&gt;n\)</span>，OLS 没有唯一解，此时可考虑使用 Ridge。</p>
+<p>由下图，<span class="math notranslate nohighlight">\(λ\)</span>控制着 L_2 范数所代表的集合（圆）的<strong>半径</strong>，其作用是进行<strong>等值缩减</strong>，使损失函数的梯度和惩罚项的梯度之和为 0。</p>
+<p><img alt="l2" src="../_images/reg-l2.png" /></p>
+<p>此前曾提到，OLS 权重是标度不变的（scale invariant）：无论第<span class="math notranslate nohighlight">\(j\)</span>个预测器按什么比例变化，<span class="math notranslate nohighlight">\(X_{j}θ_{j}\)</span>保持不变。但 Ridge 会受到很大影响。故，在使用 Ridge 前必须进行<strong>标准化</strong>。</p>
+<blockquote>
+<div><p>若特征未按比例缩放，则正则化模型可能会收敛至次优解决方案：由于正则化会惩罚较大的权重，因此与具有较大值的特征相比，具有较小值的特征往往会被忽略。</p>
+</div></blockquote>
+</section>
+<section id="id7">
+<h3>3.3. 套索回归<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<p>然而，Ridge 最终还是会包含全部<span class="math notranslate nohighlight">\(p\)</span>个特征，且，其惩罚项进行的是<strong>等比缩减</strong>，不会把任何一个特征的系数确切地收缩到 0（除非<span class="math notranslate nohighlight">\(λ = ∞\)</span>，整个模型只剩下常数项）。这种设定不影响预测精度，但当<span class="math notranslate nohighlight">\(p\)</span>非常大时，不便于模型的解释。最小绝对收缩和选择算子回归（Least Absolute Shrinkage and Selection Operator Regression，Lasso Regression），也叫套索回归或 ℓ1 正则化，是一种弥补此缺陷的方法，它倾向于选择具有较少参数值的解决方案，从而有效地减少给定解决方案所依赖的特征的数量：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+J(θ) &amp;= \mathrm{MSE}(θ) + λ∑|θ_i|\\
+&amp;= \mathrm{MSE}(θ) + λ∥θ∥_1
+\end{aligned}
+\end{split}\]</div>
+<blockquote>
+<div><p>在 Lasso 中，正则化系数<span class="math notranslate nohighlight">\(λ\)</span>无法对矩阵 造成任何影响，即 Lasso 无法解决特征之间 “精确相关”的问题。</p>
+</div></blockquote>
+<p>现实中，数据量大且很复杂，很难遇到”精确相关的问题”，因此假设矩阵<span class="math notranslate nohighlight">\(𝑿^{⊤}𝑿\)</span>的逆存在，则</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{θ} = (𝑿^{⊤}𝑿θ)^{-1}\bigg(𝑿^{⊤}𝒚 - \frac{λ𝑰}2\bigg)
+\]</div>
+<p>可以通过增大<span class="math notranslate nohighlight">\(λ\)</span>而限制参数估计中的<span class="math notranslate nohighlight">\(\hat{θ}\)</span>的大小，而防止多重共线性引起的参数 被估计过大导致模型失准的问题。Lasso 不是从根本上解决多重共线性问题，而是限制多重共线性带来的影响。</p>
+<p>由下图，L_1 范数的作用是进行<strong>等值缩减</strong>。当<span class="math notranslate nohighlight">\(λ\)</span>足够大时，L_1 范数所代表的集合与损失函数的交点很容易在坐标轴上，这意味某一特征的权重被削减为 0，Lasso 建立起的是一个<strong>稀疏模型</strong>，只包含所有特征的一个子集，故更容易解释。。</p>
+<p><img alt="l1" src="../_images/reg-l1.png" /></p>
+<blockquote>
+<div><p>Lasso 及其变体是收缩传感领域的基础。在某些条件下，它可恢复精确的非零权重集。</p>
+</div></blockquote>
+<p>可证明，上述两种回归的权重分别等价于求解：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\min_θ(\mathrm{RSS}) &amp;s.t. ∑_{j=1}^p θ*j^2 ⩽ s
+\\
+\min_θ(\mathrm{RSS}) &amp;s.t. ∑_{j=1}^p |θ_{j}| ⩽ s
+\end{aligned}
+\end{split}\]</div>
+<p>这就等同于在满足至多<span class="math notranslate nohighlight">\(s\)</span>个系数不为 0 的条件下，寻找使得<span class="math notranslate nohighlight">\(\mathrm{RSS}\)</span>最小的系数。</p>
+</section>
+<section id="id8">
+<h3>3.4. 弹性网络<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<p>弹性网络（Elastic Net）是介于 Ridge 回归和 Lasso 回归之间的中间地带。正则项是 Ridge 和 Lasso 的正则项的简单混合。设混合比为<span class="math notranslate nohighlight">\(r\)</span>。当<span class="math notranslate nohighlight">\(r = 0\)</span>时，弹性网络等效于 Ridge 回归，而当<span class="math notranslate nohighlight">\(r = 1\)</span>时，弹性网络等效于 Lasso 回归：</p>
+<div class="math notranslate nohighlight">
+\[
+J(θ) = \mathrm{MSE}(θ) + r λ ∑|θ_i|+ \frac{1 - r}2 λ∑θ_i^2
+\]</div>
+<p><img alt="Elastic Net" src="../_images/elastic-net.png" /></p>
+<p>通常，弹性网络优于 Lasso，因为当特征的数量&gt;训练实例的数量或多个特征紧密相关时，Lasso 的行为可能会不稳定。</p>
+</section>
+<section id="id9">
+<h3>3.5. 衰减角度<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<p>设<span class="math notranslate nohighlight">\(θ\)</span>为原损失函数中的权重，<span class="math notranslate nohighlight">\(J(θ^{*})\)</span>为原损失函数中最值点的权重，则对岭回归有</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+J(θ) &amp;≈ J(θ^{*}) + ∇\_{θ} J(θ^{*})(θ - θ^{*}) + \frac{1}{2}(θ - θ^{*})^{⊤} 𝑯(θ - θ^{*})\\
+&amp;= J(θ^{*}) + \frac{1}{2}(θ - θ^{*})^{⊤} 𝑯(θ - θ^{*})
+\end{aligned}
+\end{split}\]</div>
+<p>其中，<span class="math notranslate nohighlight">\(𝑯\)</span>为 Hessian 矩阵。</p>
+<p>可得</p>
+<div class="math notranslate nohighlight">
+\[
+∇\_{θ}J(θ) = 𝑯(θ - θ^{*})
+\]</div>
+<p>又令正则化后的损失函数为<span class="math notranslate nohighlight">\(Ĵ(θ)\)</span>，即</p>
+<div class="math notranslate nohighlight">
+\[
+Ĵ(θ) = J(θ^{*}) + \frac{1}{2}(θ - θ^{*})^{⊤} 𝑯(θ - θ^{*}) + \frac{α}2 θ^{⊤} θ
+\]</div>
+<p>可得</p>
+<div class="math notranslate nohighlight">
+\[
+∇_θĴ(θ) = 𝑯(θ - θ^{*}) + αθ
+\]</div>
+<p>联立，可得</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\hat{θ} &amp;= (𝑯 + α⋅𝑰)^{-1} 𝑯⋅θ^{*} \\
+&amp;= (𝑸𝜦𝑸^{⊤} + α⋅𝑰)^{-1} 𝑸𝜦𝑸^{⊤} ⋅ θ^{*} \\
+&amp;= 𝑸(𝜦 + α⋅𝑰)^{-1} 𝜦𝑸^{⊤} ⋅ θ^{*}
+\end{aligned}
+\end{split}\]</div>
+<blockquote>
+<div><p>此处用到了，Hessian 矩阵为对称阵的性质和相似矩阵。</p>
+</div></blockquote>
+<p>即</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{θ}_i = \frac{λ_i}{λ_i + α}⋅θ_i^{*}
+\]</div>
+<p>对套索回归，假设数据经过了 PCA 预处理，此时<span class="math notranslate nohighlight">\(𝑯\)</span>为对角矩阵，</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+Ĵ(θ) &amp;= J(θ^{*}) + \frac{1}{2}(θ - θ^{*})^{⊤} 𝑯(θ - θ^{*}) + α ∥θ∥_1 \\
+&amp;= J(θ^{*}) + ∑_i^n(\frac{1}{2} 𝑯_{i, i} ⋅(θ_i - θ_i^{*})^2+ α ∥θ_i∥)
+\end{aligned}
+\end{split}\]</div>
+<p>求导得</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{θ}_i = θ_i^{*} - \frac{α \cdot \mathrm{sign}(\hat{θ}\_i)}{𝑯_{i, i}}
+\]</div>
+<p>即</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\hat{θ}_i &amp;=
+\begin{cases}
+θ_i^{*} - \frac{α}{𝑯_{i, i}} &amp;
+θ*i^{*} ∈ (\frac{α}{𝑯_{i, i}}, ∞) \\
+θ*i^{*} + \frac{α}{𝑯_{i, i}} &amp; θ*i^{*} ∈ (-∞, -\frac{α}{𝑯_{i, i}}) \\
+0 &amp; θ*i^{*} ∈ (-\frac{α}{𝑯_{i, i}}, \frac{α}{𝑯_{i, i}})
+\end{cases}
+\\
+&amp;= \mathrm{sign}(θ_i^{*})⋅\max \{|θ_i^{*}| - \frac{α}{𝑯_{i, i}}, 𝟎\}
+\end{aligned}
+\end{split}\]</div>
+</section>
+</section>
+<section id="id10">
+<h2>4. 调参策略<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
+<section id="id11">
+<h3>4.1. 坐标轴下降法<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<p>Lasso 因其损失函数不是连续可导的，因此梯度下降法、牛顿法就没法用了。坐标轴下降法是一种迭代算法，与梯度下降法利用目标函数的导数来确定搜索方向不同，坐标轴下降法是在当前坐标轴上搜索函数最小值，不需要求目标函数的导数。</p>
+<p>凸函数<span class="math notranslate nohighlight">\(J(θ)\)</span>有<span class="math notranslate nohighlight">\(n\)</span>个参数向量<span class="math notranslate nohighlight">\(θ_i\)</span>。令参数向量<span class="math notranslate nohighlight">\(θ_i\)</span>为<span class="math notranslate nohighlight">\(p\)</span>维向量，即对于每个参数向量有<span class="math notranslate nohighlight">\(θ=(θ_1, θ_2, ⋯, θ_p)\)</span>固定<span class="math notranslate nohighlight">\((p-1)\)</span>个参数，计算剩下的那个参数使得凸函数<span class="math notranslate nohighlight">\(J(θ)\)</span>达到最小的点，<span class="math notranslate nohighlight">\(p\)</span>个参数都来一次，就得到了该次迭代的最小值点。</p>
+</section>
+<section id="id12">
+<h3>4.2. 降低学习率<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
+<p>为了避免使用 Lasso 时梯度下降最终在最佳值附近反弹，需要在训练过程中<strong>逐渐降低学习速率</strong>（它仍然会在最佳值附近反弹，但，步长会越来越小，因此会收敛）。另外，Lasso 成本函数在<span class="math notranslate nohighlight">\(θ_i = 0 (i = 1，2，…，n)\)</span>时是不可微的，但，若您使用次梯度向量（sub-gradient vector）代替任何<span class="math notranslate nohighlight">\(θ_i = 0\)</span>，则梯度下降仍然可有效：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+g(θ, J) = ∇_θ \mathrm{MSE}(θ) + λ
+\begin{bmatrix}
+\mathrm{sign}(θ_1) \\
+\mathrm{sign}(θ_2) \\
+⋮ \\
+\mathrm{sign}(θ_n)
+\end{bmatrix}
+\end{split}\]</div>
+<p>其中，</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathrm{sign}(θ_i) =
+  \begin{cases}
+  -1 &amp; θ_i &lt; 0 \\
+  0 &amp; θ_i = 0 \\
+  +1 &amp; θ_i &gt; 0
+  \end{cases}
+\end{split}\]</div>
+<p><img alt="Ridge vs Lasso" src="../_images/reg-process.png" /></p>
+</section>
+<section id="id13">
+<h3>4.3. 早停<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
+<p>早停（early stopping）指一旦验证误差达到最小值，就停止训练。使用 SGD 时，曲线不是则平滑，且可能很难知道是否达到了最小值。一种解决方案是仅在验证误差超过最小误差一段时间后（当确信模型不会做得更好时）停止，然后将模型参数回滚到验证误差最小的点。</p>
+<p>梯度下降法并不一定是全局下降最快的方向，它只是目标函数在当前的点的切平面（或超切平面）上下降最快的方向。在实际应用中，牛顿方向（考虑 Hessian 矩阵）才一般被认为是下降最快的方向。</p>
+</section>
+</section>
+<section id="id14">
+<h2>5. 网络结构正则化<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./base-ml"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="05-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">梯度下降</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="07-%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">非线性分类</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1. 抑制震荡</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.1. 动量法</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nesterov">1.2. Nesterov</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">2. 自适应</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adagrad">2.1. Adagrad</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rmsprop">2.2. RMSprop</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adam">2.3. Adam</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">3. 参数正则化</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">3.2. 岭回归</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">3.3. 套索回归</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">3.4. 弹性网络</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">3.5. 衰减角度</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">4. 调参策略</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">4.1. 坐标轴下降法</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">4.2. 降低学习率</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">4.3. 早停</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">5. 网络结构正则化</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By ivaquero
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

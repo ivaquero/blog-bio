@@ -1,0 +1,782 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>降维 &#8212; 生物狗学编程</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'base-ml/10-降维';</script>
+    <link rel="canonical" href="https://ivaquero.github.io/blog-bio/base-ml/10-降维.html" />
+    <link rel="shortcut icon" href="../_static/doge.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="硬聚类" href="11-%E7%A1%AC%E8%81%9A%E7%B1%BB.html" />
+    <link rel="prev" title="集成学习" href="09-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/doge.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/doge.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    生物狗学编程
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">综合生命科学</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/01-%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%9F%BA%E7%A1%80.html">生物信息学基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/02-%E5%88%86%E5%AD%90%E7%94%9F%E7%89%A9%E5%AD%A6%E5%9F%BA%E7%A1%80.html">分子生物学基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/03-%E6%BC%94%E5%8C%96%E8%AE%BA%E5%9F%BA%E7%A1%80.html">演化论基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/04-%E7%97%85%E7%90%86%E5%AD%A6%E5%9F%BA%E7%A1%80.html">病理学基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/%E5%9F%BA%E5%9B%A0%E5%B7%A5%E7%A8%8B.html">基因工程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/%E7%B3%96%E7%94%9F%E5%8C%96%E6%B5%8B%E5%AE%9A.html">糖生化测定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/%E8%9B%8B%E7%99%BD%E8%B4%A8%E7%94%9F%E5%8C%96%E6%B5%8B%E5%AE%9A.html">蛋白质生化测定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/%E9%87%8D%E7%BB%84%E9%AB%98%E6%8B%B7%E8%B4%9D%E9%85%B5%E6%AF%8D.html">重组高拷贝酵母</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">统计基础</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/01-%E6%A6%82%E7%8E%87%E4%B8%8E%E5%88%86%E5%B8%83.html">概率与分布</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/02-%E7%BB%9F%E8%AE%A1%E9%87%8F%E4%B8%8E%E9%87%87%E6%A0%B7.html">统计量与采样</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/03-%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1.html">参数估计</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/04-%E5%8F%82%E6%95%B0%E6%A3%80%E9%AA%8C.html">参数检验</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/05-%E9%9D%9E%E5%8F%82%E6%95%B0%E6%A3%80%E9%AA%8C.html">非参数检验</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/06-%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90.html">回归分析</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">机器学习</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01-%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E5%BC%95%E8%A8%80.html">统计学习引言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92.html">线性回归</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9.html">模型选择</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB.html">线性分类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D.html">梯度下降</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E4%BC%98%E5%8C%96.html">梯度下降优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB.html">非线性分类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08-%E5%86%B3%E7%AD%96%E6%A0%91.html">决策树</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0.html">集成学习</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">降维</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-%E7%A1%AC%E8%81%9A%E7%B1%BB.html">硬聚类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12-%E8%BD%AF%E8%81%9A%E7%B1%BB.html">软聚类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13-%E7%94%9F%E5%AD%98%E5%88%86%E6%9E%90.html">生存分析</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 入门</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../python/01-%E7%8E%AF%E5%A2%83%E4%B8%8E%E5%8F%98%E9%87%8F.html">环境与变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/02-%E5%8F%98%E9%87%8F%E8%BF%90%E7%AE%97.html">变量运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/03-%E5%AE%B9%E5%99%A8.html">容器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/04-%E5%AE%B9%E5%99%A8%E8%BF%90%E7%AE%97.html">容器运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/05-%E6%8E%A7%E5%88%B6%E6%B5%81.html">控制流</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/06-%E5%87%BD%E6%95%B0.html">函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/07-%E9%97%AD%E5%8C%85%E4%B8%8E%E8%A3%85%E9%A5%B0%E5%99%A8.html">闭包与装饰器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/08-%E5%86%85%E7%BD%AE%E7%AE%97%E6%B3%95%E6%A8%A1%E5%9D%97.html">内置算法模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/09-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B.html">面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/10-%E6%A8%A1%E7%89%88%E4%B8%8E%E6%A8%A1%E5%BC%8F.html">模版与模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/11-%E9%AD%94%E6%B3%95%E6%96%B9%E6%B3%95.html">魔法方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/12-%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B.html">高级编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/13-%E5%A4%9A%E4%BB%BB%E5%8A%A1.html">多任务</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/14-%E5%BC%82%E6%AD%A5.html">异步</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/15-%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B.html">网络模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/16-%E5%85%83%E7%BC%96%E7%A8%8B.html">元编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/17-%E6%A8%A1%E5%9D%97%E4%B8%8E%E8%B0%83%E8%AF%95.html">模块与调试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/18-%E9%AB%98%E6%80%A7%E8%83%BD%E6%89%A9%E5%B1%95.html">高性能扩展</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">数据分析</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../analysis/clean-pandas.html">Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/clean-pandas2.html">Pandas 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/correlation.html">Correlation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/deviation.html">Deviation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/distribution.html">Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/group.html">Group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/polar.html">Polar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/proportion.html">Proportion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/ranking.html">Ranking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/time-series.html">Time Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/tricks.html">Tricks</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/base-ml/10-降维.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>降维</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pca">1. PCA</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.1. 主成分</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.2. 模型细节</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">1.3. 方差与维度</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2. PCA 变体</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rpca-ipca">2.1. RPCA, IPCA</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kpca">2.2. kPCA</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2.3. 主成分回归</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">3. 流形学习</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">3.1. 流形</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lle">3.2. LLE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#umap">3.3. UMAP</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">4. 交叉降维</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">4.1. 偏最小二乘</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>降维<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<section id="pca">
+<h2>1. PCA<a class="headerlink" href="#pca" title="Permalink to this headline">#</a></h2>
+<p>主成分分析（Principal Component Analysis，PCA）是当前最流行的降维算法。首先，它确定最靠近数据的超平面，然后将数据投影到其上。</p>
+<p><img alt="Projection" src="../_images/projection.png" /></p>
+<p>上图中</p>
+<ul class="simple">
+<li><p>实线保留最大方差，反映数据结构</p></li>
+<li><p>点线的投影保留中等方差（由测定误差导致）</p></li>
+</ul>
+<p>证明该选择的一种方法是，该轴使原始数据集与其在该轴上的投影之间的均方距离最小 <a class="footnote-reference brackets" href="#id12" id="id2">1</a>。</p>
+<p>优化目标</p>
+<ul class="simple">
+<li><p>降维后方差最大</p></li>
+<li><p>不同维度间相关性为 0</p></li>
+</ul>
+<div class="admonition- admonition">
+<p class="admonition-title">步骤</p>
+<ul class="simple">
+<li><p>数据：数组<span class="math notranslate nohighlight">\(X\)</span>，大小为<span class="math notranslate nohighlight">\(p× n\)</span>。</p></li>
+<li><p>结果：数组<span class="math notranslate nohighlight">\(Z\)</span>，大小为<span class="math notranslate nohighlight">\(k× n, k&lt;d\)</span></p></li>
+<li><p>开始</p>
+<ul>
+<li><p>计算协方差矩阵<span class="math notranslate nohighlight">\(𝑨\)</span></p></li>
+<li><p>特征值分解<span class="math notranslate nohighlight">\(𝑸𝜮𝑸^{-1}\)</span></p></li>
+<li><p>将特征值按递增顺序排序</p></li>
+<li><p>选择<span class="math notranslate nohighlight">\(𝑽 = 𝑸_{p-k:p-1}\)</span>，计算<span class="math notranslate nohighlight">\(Z= 𝑽^{⊤} X\)</span></p></li>
+</ul>
+</li>
+<li><p>结束</p></li>
+</ul>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pca</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+    <span class="n">cov_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cov</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">rowvar</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">l</span><span class="p">,</span> <span class="n">e</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">cov_matrix</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">l</span><span class="p">,</span> <span class="n">e</span>
+
+
+<span class="n">x_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+<span class="n">x_1</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x_0</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">((</span><span class="n">x_0</span><span class="p">,</span> <span class="n">x_1</span><span class="p">))</span>
+
+<span class="n">principal_val</span><span class="p">,</span> <span class="n">principal_vec</span> <span class="o">=</span> <span class="n">pca</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">X_proj</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">first_princpal_vec</span><span class="p">)</span>
+</pre></div>
+</div>
+<section id="id3">
+<h3>1.1. 主成分<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<p>一组变量<span class="math notranslate nohighlight">\(X_1, X_2, …, X_p\)</span>的第一主成分（first principal component，1st PC）是标准化线性组合中方差最大的组合，记为：</p>
+<div class="math notranslate nohighlight">
+\[
+Z_1 = ∑_{j=1}^p ϕ_{j1} X_{j}
+\]</div>
+<p>这里，归一化的含义是：</p>
+<div class="math notranslate nohighlight">
+\[
+∑_{j=1}^p ϕ_{j 1}^2 = 1
+\]</div>
+<p>其中，<span class="math notranslate nohighlight">\(ϕ_{ji}\)</span>被称为第一主 PC 的载荷（loading），其构成了 PC 的载荷向量<span class="math notranslate nohighlight">\(ϕ_1 = \begin{bmatrix}
+ϕ_{11} &amp; ϕ_{21} &amp; … &amp; ϕ_{p 1}
+\end{bmatrix}^{⊤}\)</span>。为防止载荷的绝对值过大而导致方差过大，故限定这些载荷的平方和为 1。</p>
+<p>设有一个<span class="math notranslate nohighlight">\(n × p\)</span>维度据集<span class="math notranslate nohighlight">\(X\)</span>，</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+X=
+\begin{bmatrix}
+  x_{0, 0} &amp; x_{0, 1} &amp; ⋯ &amp; x_{0, n - 1} \\
+  ⋮ &amp; ⋱ &amp; &amp; ⋮ \\
+  x_{p-1, 0} &amp; x_{p-1, 1} &amp; ⋯ &amp; x_{p-1, n - 1}
+\end{bmatrix} =
+\begin{bmatrix}
+  x_0 … x_{n-1}
+\end{bmatrix}
+\end{split}\]</div>
+<p>经过<strong>中心化</strong>处理（这是 PCA 的基本设之一），均值为 0，然后寻求具有如下形式的样本特征值的线性组合：</p>
+<div class="math notranslate nohighlight">
+\[
+z_{i1} = ∑_{j=1}^p ϕ_{j1} x_{ij}
+\]</div>
+<p>该线性组合在限定条件<span class="math notranslate nohighlight">\(∑_{j=1}^p ϕ_{j 1}^2 = 1\)</span>下有最大的样本方差，此时，此前的问题转化为优化问题：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\max_{ϕ_{11}, …, ϕ_{p 1}}
+\bigg\{
+  \frac{1}{n} ∑\bigg(∑_{j=1}^p ϕ_{j1} x_{ij} \bigg)^2
+\bigg\} =
+\max_{ϕ_{11}, …, ϕ_{p 1}}
+\bigg\{
+  \frac{1}{n} ∑z_{i1}^2
+\bigg\} \\
+s.t.
+∑_{j=1}^p ϕ_{j 1}^2 = 1
+\end{split}\]</div>
+<p>由于</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{n} ∑x_{ij} = 0
+\]</div>
+<p>则</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{n} ∑z_{i1} = 0
+\]</div>
+<p>这里，称<span class="math notranslate nohighlight">\(z_{11}, …, z_{n 1}\)</span>为第一 PC 的得分。从几何角度来看，载荷向量<span class="math notranslate nohighlight">\(ϕ_1 = \begin{bmatrix}ϕ_{11} &amp; ϕ_{21} &amp; … &amp; ϕ_{p 1} \end{bmatrix}^{⊤}\)</span>定义了一个在向量空间上数据最大变异的方向。若将<span class="math notranslate nohighlight">\(n\)</span>个数据点投影到这个方向上，这些投影的值即为 PC 的得分<span class="math notranslate nohighlight">\(z_{11}, …, z_{n 1}\)</span>。</p>
+<p>当第一主成分<span class="math notranslate nohighlight">\(Z_1\)</span>确定后，继续寻找第二主成分<span class="math notranslate nohighlight">\(Z_2\)</span>。后者亦为<span class="math notranslate nohighlight">\(X_1, X_2, …, X_p\)</span>的线性组合，且为与<span class="math notranslate nohighlight">\(Z_1\)</span>不相关的各种线性组合中方差最大的一个，其得分有如下形式：</p>
+<div class="math notranslate nohighlight">
+\[
+z_{i2} = ∑_{j=1}^p ϕ_{j2} x_{ij}
+\]</div>
+<p>同时，第二主成分的载荷向量<span class="math notranslate nohighlight">\(ϕ_2 ⊥ ϕ_1\)</span>。</p>
+<p><img alt="PCA" src="../_images/pca.png" /></p>
+</section>
+<section id="id4">
+<h3>1.2. 模型细节<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<p>对于每个 PC，PCA 都找到一个指向 PC 方向的零中心单位向量。由于两个相对的单位向量位于同一轴上，因此 PCA 返回的单位向量的方向不稳定：若稍微扰动训练集并再次运行 PCA，则单位向量可能指向与原始向量相反的方向。但，它们通常仍将位于相同的轴上。在某些情况下，一对单位向量甚至可旋转或交换（若沿这两个轴的方差接近），但，它们定义的平面通常保持不变。</p>
+<p>实际上，通过<strong>奇异值分解</strong>（SVD），可轻松通过数据集找到 PC 所在的矩阵，即<span class="math notranslate nohighlight">\(U𝜮𝑽^{⊤}\)</span>中的<span class="math notranslate nohighlight">\(V\)</span>。</p>
+<p>一旦确定了所有主成分，就可通过将数据集投影到前<span class="math notranslate nohighlight">\(d\)</span>个主成分定义的超平面上，将数据集的维度降低到<span class="math notranslate nohighlight">\(d\)</span>维。选择此超平面可确保投影将保留尽可能多的方差。</p>
+<div class="math notranslate nohighlight">
+\[
+X_{d - \mathrm{proj}} = X β_d
+\]</div>
+<p>其中，<span class="math notranslate nohighlight">\(β_d\)</span>定义为包含<span class="math notranslate nohighlight">\(V\)</span>的前<span class="math notranslate nohighlight">\(d\)</span>列的矩阵。</p>
+</section>
+<section id="id5">
+<h3>1.3. 方差与维度<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<p>选取的 2 个主成分构成一个空间平面，其使得每个数据点到达这个平面的距离的平方和最小。其中，第<span class="math notranslate nohighlight">\(m\)</span>个主成分的可解释方差为：</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{n} ∑z_{im}^2 =
+\frac{1}{n} ∑\bigg(∑_{j=1}^p ϕ_{j m} x_{ij} \bigg)^2
+\]</div>
+<p>由数据集的总方差：</p>
+<div class="math notranslate nohighlight">
+\[
+∑_{j=1}^p \mathrm{Var} \bigg(X_{j} \bigg) =
+∑_{j=1}^p \frac{1}{n} ∑x_{ij}^2
+\]</div>
+<p>于是，第<span class="math notranslate nohighlight">\(m\)</span>个主成分的方差解释率（proportion of variance explained，PVE）可表示为：</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{∑\bigg(∑_{j=1}^p ϕ_{j m} x_{ij} \bigg)^2}{∑_{j=1}^p ∑x_{ij}^2}
+\]</div>
+<p><img alt="PVE" src="../_images/pve.png" /></p>
+<p>为计算前<span class="math notranslate nohighlight">\(M\)</span>个主成分的累积 PVE，可简单地对前<span class="math notranslate nohighlight">\(M\)</span>个 PVE 求和，一共有<span class="math notranslate nohighlight">\(\min(n - 1, p)\)</span>个主成分，其和为 1。</p>
+<p>实践中，与其任意选择要减小到的维度，<strong>不如选择相加足够大的方差（例如 95％）的维度</strong>。当然，除非要降低数据可视化的维度，这种情况下，通常需要将维度降低到 2 或 3。另一个选择是<strong>将方差解释率绘制为维度的函数</strong>来判断。</p>
+</section>
+</section>
+<section id="id6">
+<h2>2. PCA 变体<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
+<section id="rpca-ipca">
+<h3>2.1. RPCA, IPCA<a class="headerlink" href="#rpca-ipca" title="Permalink to this headline">#</a></h3>
+<p>RPCA（Randomized PCA，RPCA）就是在使用 SVD 求解时使用随机方法，其运算复杂度为<span class="math notranslate nohighlight">\(O(m × d^2) + O(d^3)\)</span>，故，当<span class="math notranslate nohighlight">\(d &lt; n × 80\%\)</span></p>
+<p>常规 PCA 实现的一个问题是，它们要求整个训练集都适合内存，才能运行算法。幸运的是，递增 PCA（Incremental PCA，IPCA）可将训练集划分为多个小批，并一次小批量输入。但速度慢于常规 PCA。</p>
+</section>
+<section id="kpca">
+<h3>2.2. kPCA<a class="headerlink" href="#kpca" title="Permalink to this headline">#</a></h3>
+<p>核 PCA（Kernel PCA，kPCA）用于复杂非线性投影，它通常擅长于在投影后保留实例簇，有时甚至可展开位于扭曲流形附近的数据集。内核技巧可将实例隐式映射到一个非常高维的空间，称特征空间（feature space），从而实现非线性分类和回归。高维特征空间中的线性决策边界对应于原始空间（original space）中的复杂非线性决策边界。</p>
+<p>通过应用 PCA 投影的逆变换，还可将缩小的数据集解压缩回原来的维度。虽然投影会丢失一些信息（5％偏差之内），但，很可能接近原始数据。原始数据和重构数据（压缩后再解压缩）之间的均方距离称为重构误差（reconstruction error）。选择内核和超参数可找到最低重构误差（重建并不像使用线性 PCA 那样容易）。多亏了内核技巧，此变换在数学上等效于使用特征映射（feature map）φ 将训练集映射到无限维特征空间，然后使用线性 PCA 将变换后的训练集投影到 2D。</p>
+<p><img alt="kPCA" src="../_images/kpca.png" /></p>
+<p>注意，若给定实例的线性 PCA 可在缩小的空间中反转，则重构点将位于特征空间中，而不是原始空间中。由于特征空间是无限维的，因此无法计算真实的重构误差。幸运的是，可在原始空间中找到一个点，该点将映射到重建点附近。这一点称为重建原像（pre-image）。获得该原像后，可测量其与原始实例的平方距离。然后，选择内核和超参数，以最大程度地减少此重构前图像错误。简言之，<strong>并非所有降维算法都可通过计算重构误差评估性能</strong>。</p>
+<blockquote>
+<div><p>一种常用重构方案是训练有监督的回归模型，其中将投影实例作为训练集，而将原始实例作为目标。</p>
+</div></blockquote>
+</section>
+<section id="id7">
+<h3>2.3. 主成分回归<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<p>将一个点投影到一条线，可简单理解成为这条线寻找离这个点最近的位置。</p>
+</section>
+</section>
+<section id="id8">
+<h2>3. 流形学习<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
+<section id="id9">
+<h3>3.1. 流形<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<p>在大多数实际问题中，训练实例并不能均匀地分布在所有维度上。许多特征几乎是恒定不变的，而其他特征则是高度相关的。结果，所有训练实例都位于（或接近于）高维空间的低维子空间内。这时，可考虑投影（projection）。但，投影并不总是降维的最佳方法。在许多情况下，子空间可能会扭曲和旋转，如在著名的瑞士卷（Swiss roll）玩具数据集中。</p>
+<p><img alt="swiss roll" src="../_images/swiss-roll.png" /></p>
+<p>Swiss Roll 是 2D 流形（manifold）的一个示例。简而言之，2D 流形是可在更高维度的空间中弯曲和扭曲的二维形状。更一般而言，<span class="math notranslate nohighlight">\(d\)</span>维流形是<span class="math notranslate nohighlight">\(n\)</span>维空间（其中<span class="math notranslate nohighlight">\(d &lt; n\)</span></p>
+<p>许多降维算法通过对训练实例所在的流形进行建模来工作。这称为流形学习（Manifold Learning，MfL）。它依赖于流形假设，该设认为<strong>大多数现实世界的高维度据集都接近于低维流形</strong>。通常根据经验可观察到这种设。</p>
+<p>考虑一下”MNIST”数据集：所有手写数字图像都有一些相似之处。它们由连接的线组成，边界为白色，且或多或少居中。若尝试随机创建数字图像，则可用的自由度大大低于若允许生成所需图像的自由度。这些约束倾向于将数据集压缩为低维流形。</p>
+<p>流形设通常还伴随着另一个隐式设：手头的任务若用流形的低维空间表示，将更加简单。如下图上半部分。但，这种隐含设并不总是成立，如下图下半部分。简而言之，在训练模型之前减小训练集的维度通常可加快训练速度，但<strong>不一定总能带来更好或更简单的解决方案</strong>。这一切都取决于数据集。</p>
+<p><img alt="Swiss roll 2" src="../_images/swiss-roll2.png" /></p>
+</section>
+<section id="lle">
+<h3>3.2. LLE<a class="headerlink" href="#lle" title="Permalink to this headline">#</a></h3>
+<p>局部线性嵌入（Locally Linear Embedding，LLE）是另一种强大的非线性降维技术。它是一种流形学习技术，它不像以前的算法那样依赖投影。简而言之，LLE 的工作方式是：首先测量每个训练实例与其最近邻（c.n.）的线性相关程度，然后寻找最能保留这些局部关系的训练集的低维表示形式。这种方法特别适用于展开扭曲的流形，尤其是在没有太多噪音的情况下。</p>
+<p>对实例<span class="math notranslate nohighlight">\(x_i\)</span>，找到<span class="math notranslate nohighlight">\(k\)</span>个最近邻，然后尝试将<span class="math notranslate nohighlight">\(x\)</span>重建为这些邻居的线性函数：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+  \hat{β} &amp;= \underset{β}{\mathrm{argmax}} ∑_{i=1}^m
+  \bigg(x_i - ∑_{j=1}^m β_{ij} x_{j} \bigg)^2 \\
+  &amp;s.t.
+    \begin{cases}
+    β_{ij} = 0 x_{j} ∉ c.n \\
+    \\
+    ∑_{j=1}^m β_{ij} = 1 i ∈ [1, m]
+  \end{cases}
+\end{aligned}
+\end{split}\]</div>
+<p>随后将训练实例映射到<span class="math notranslate nohighlight">\(d\)</span>维（<span class="math notranslate nohighlight">\(d&lt;n\)</span>）空间</p>
+<div class="math notranslate nohighlight">
+\[
+Ẑ = \underset{Z}{\mathrm{argmax}} ∑_{i=1}^m
+\bigg(z_i - ∑_{j=1}^m \hat{β}_{ij}z_{j}\bigg)^2
+\]</div>
+<p>其中，<span class="math notranslate nohighlight">\(z_i\)</span>是<span class="math notranslate nohighlight">\(x_i\)</span>映射后的图像，<span class="math notranslate nohighlight">\(Z\)</span>是包含所有<span class="math notranslate nohighlight">\(z_i\)</span>的矩阵。由此。整个算法的运算复杂度为：<span class="math notranslate nohighlight">\(O(m\log(m)n\log(k))\)</span>用于找到<span class="math notranslate nohighlight">\(k\)</span>个最近的邻居，<span class="math notranslate nohighlight">\(O(mnk^3)\)</span>用于优化权重，<span class="math notranslate nohighlight">\(O(dm^2)\)</span>用于构建低维表示。不幸的是，最后一项中的<span class="math notranslate nohighlight">\(m\)</span>使该算法很难扩展到非常大的数据集。</p>
+<blockquote>
+<div><p>实践中会选择串联战略：<strong>先使用 PCA 快速消除大量无用的维度，然后应用 LLE 等进行微调</strong>。</p>
+</div></blockquote>
+</section>
+<section id="umap">
+<h3>3.3. UMAP<a class="headerlink" href="#umap" title="Permalink to this headline">#</a></h3>
+</section>
+</section>
+<section id="id10">
+<h2>4. 交叉降维<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
+<section id="id11">
+<h3>4.1. 偏最小二乘<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id12"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dd><p>Karl Pearson, “On Lines and Planes of Closest Fit to Systems of Points in Space, ” The London, Edinburgh, and Dublin Philosophical Magazine and Journal of Science 2, no. 11 (1901): 559-572.</p>
+</dd>
+</dl>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./base-ml"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="09-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">集成学习</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="11-%E7%A1%AC%E8%81%9A%E7%B1%BB.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">硬聚类</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pca">1. PCA</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.1. 主成分</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.2. 模型细节</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">1.3. 方差与维度</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2. PCA 变体</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rpca-ipca">2.1. RPCA, IPCA</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kpca">2.2. kPCA</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2.3. 主成分回归</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">3. 流形学习</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">3.1. 流形</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lle">3.2. LLE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#umap">3.3. UMAP</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">4. 交叉降维</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">4.1. 偏最小二乘</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By ivaquero
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
