@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
@@ -44,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -68,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="魔法方法" href="11-%E9%AD%94%E6%B3%95%E6%96%B9%E6%B3%95.html" />
     <link rel="prev" title="面向对象编程" href="09-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -405,11 +406,11 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>模版与模式<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<h1>模版与模式<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <section id="id2">
-<h2>1. 模板化<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<h2>1. 模板化<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <section id="id3">
-<h3>1.1. 继承<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<h3>1.1. 继承<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <p>通过继承，子类对象会拥有父类的属性，并可调用父类的方法，但父类中的私有方法和属性不能被继承。</p>
 <p>Python 会按照特定的顺序遍历继承图。这个顺序叫方法解析顺序（Method Resolution Order，MRO）。类都有一个名为 <code class="docutils literal notranslate"><span class="pre">__mro__</span></code> 的属性，它的值是一个元组，按照方法解析顺序列出各个超类，从当前类一直向上，直到 object 类。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">():</span>
@@ -441,7 +442,7 @@ document.write(`
 </div>
 </section>
 <section id="id4">
-<h3>1.2. 多态<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<h3>1.2. 多态<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p>多态：用于实现不同类的对象调用同一个函数，调用时才确定调用的方法属于子类还是父类。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -464,9 +465,9 @@ document.write(`
 </section>
 </section>
 <section id="id5">
-<h2>2. 重载<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<h2>2. 重载<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
 <section id="id6">
-<h3>运算符<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<h3>运算符<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
 <p>在某些圈子中，运算符重载的名声并不好。这个语言特性已经被滥用，导致缺陷和意料之外的性能瓶颈。但是，若使用得当，API 会变得好用，代码会变得易于阅读。Python 施加了一些限制，做好了灵活性、可用性和安全性方面的平衡：</p>
 <ul class="simple">
 <li><p>不能重载内置类型的运算符</p></li>
@@ -478,7 +479,7 @@ document.write(`
 </div></blockquote>
 </section>
 <section id="id7">
-<h3>2.1. 类方法<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<h3>2.1. 类方法<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 <p>若子类中，有一个和父类相同名字的方法，在子类中的方法会覆盖掉父类中同名的方法。</p>
 <p>父类中被重写的方法的调用：</p>
 <ul class="simple">
@@ -546,9 +547,9 @@ document.write(`
 </section>
 </section>
 <section id="id8">
-<h2>3. 改进<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
+<h2>3. 改进<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
 <section id="id9">
-<h3>3.1. 限制属性<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<h3>3.1. 限制属性<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
 <p>创建了大量的（比如百万级）实例，为此占用了大量的内存。对于那些主要用作简单数据结构的类，通常可以在类定义中增加 <code class="docutils literal notranslate"><span class="pre">__slot__</span></code> 属性，之后的实例不能再有 <code class="docutils literal notranslate"><span class="pre">__slots__</span></code> 中所列名称之外的其他属性。</p>
 <ul class="simple">
 <li><p>每个子类都要定义 <code class="docutils literal notranslate"><span class="pre">__slots__</span></code> 属性，因为解释器会忽略继承的 <code class="docutils literal notranslate"><span class="pre">__slots__</span></code> 属性。</p></li>
@@ -568,9 +569,9 @@ document.write(`
 </section>
 </section>
 <section id="id10">
-<h2>4. 模式<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
+<h2>4. 模式<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
 <section id="id11">
-<h3>4.1. 工厂模式<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<h3>4.1. 工厂模式<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
 <p>工厂模式：定义 1 个创建对象的接口（表现为函数），但由子类决定要实例化的类是哪一个。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. 定义一个容器父类</span>
 <span class="k">class</span> <span class="nc">CarStore</span><span class="p">():</span>
@@ -629,7 +630,7 @@ document.write(`
 </div>
 </section>
 <section id="id12">
-<h3>4.2. 单例模式<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
+<h3>4.2. 单例模式<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
 <p>单例类即不管怎么创建，只会生成一个对象的类，其生成的对象的属性相互绑定。换句话说，单例只执行 1 次 <code class="docutils literal notranslate"><span class="pre">__init__</span></code> 方法，不管怎么实例化，均指向同一个 id。创建单例需要使用 <code class="docutils literal notranslate"><span class="pre">__new__</span></code> 方法。</p>
 <p><code class="docutils literal notranslate"><span class="pre">__new__</span></code> 是类中执行的第一个方法，无论在类中什么位置，且，必须要有返回值，表示创建出的对象的引用。<code class="docutils literal notranslate"><span class="pre">__new__</span></code> 返回值可是 <code class="docutils literal notranslate"><span class="pre">object.__new__(cls)</span></code> ，也可是 <code class="docutils literal notranslate"><span class="pre">className.__new__(cls)</span></code> 。若没有返回值，将仅执行 <code class="docutils literal notranslate"><span class="pre">__new__(cls)</span></code> 方法， <code class="docutils literal notranslate"><span class="pre">cls</span></code> 指向类对象。</p>
 <p><code class="docutils literal notranslate"><span class="pre">__init__</span></code> 的参数 <code class="docutils literal notranslate"><span class="pre">self</span></code> ，就是 <code class="docutils literal notranslate"><span class="pre">__new__</span></code> 返回的实例， <code class="docutils literal notranslate"><span class="pre">__init__</span></code> 不需要返回值。 <code class="docutils literal notranslate"><span class="pre">__init__</span></code> 的其他参数，需要传入 <code class="docutils literal notranslate"><span class="pre">__new__</span></code> 。</p>

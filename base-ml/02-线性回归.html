@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
@@ -44,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -70,7 +71,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="模型选择" href="03-%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9.html" />
     <link rel="prev" title="统计学习引言" href="01-%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E5%BC%95%E8%A8%80.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -399,11 +400,11 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>线性回归<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<h1>线性回归<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <section id="id2">
-<h2>1. 线性回归<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<h2>1. 线性回归<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <section id="id3">
-<h3>1.1. 简单线性回归<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<h3>1.1. 简单线性回归<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <p>广义上的线性回归，包括线性回归和多项式回归，其目的是找到一条直线或曲线，并以最小的误差来拟合数据，回归的核心就是寻找<strong>误差的最小值</strong>。</p>
 <blockquote>
 <div><p>回归分析的前提是，<span class="math notranslate nohighlight">\(𝑿_i\)</span>相互独立，<span class="math notranslate nohighlight">\(𝒀\)</span>服从高斯分布</p>
@@ -425,7 +426,7 @@ ŷ = \hat{θ}_0 + \hat{θ}_1 x
 \]</div>
 </section>
 <section id="id4">
-<h3>1.2. 多元线性回归<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<h3>1.2. 多元线性回归<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p>设有<span class="math notranslate nohighlight">\(p\)</span>个不同的预测器，则多元线性回归模型为：</p>
 <div class="math notranslate nohighlight">
 \[
@@ -438,7 +439,7 @@ ŷ = \hat{θ}_0 + ∑_{i=1}^p \hat{θ}_i x_i
 \]</div>
 </section>
 <section id="id5">
-<h3>1.3. 模型语言<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<h3>1.3. 模型语言<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <p>对线性模型回归模型</p>
 <div class="math notranslate nohighlight">
 \[
@@ -484,15 +485,15 @@ ŷ = \hat{θ}_0 + ∑_{i=1}^p \hat{θ}_i x_i
 </table>
 </section>
 <section id="id6">
-<h3>1.4. 运算复杂度<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<h3>1.4. 运算复杂度<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
 <p>规范方程需要计算的<span class="math notranslate nohighlight">\(𝑿^{⊤}𝑿\)</span>的逆是一个<span class="math notranslate nohighlight">\((n + 1) × (n + 1)\)</span>的矩阵，其运算复杂度为<span class="math notranslate nohighlight">\(O(n^{2.4})\)</span>∼<span class="math notranslate nohighlight">\(O(n^3)\)</span>，即，若特征<span class="math notranslate nohighlight">\(n\)</span>加倍，则运算时间将乘以<span class="math notranslate nohighlight">\(2^{2.4}∼2^3\)</span>倍。</p>
 <p>相比较之下，SVD 的运算复杂度只有<span class="math notranslate nohighlight">\(O(n^2)\)</span>。从积极的一面来看，两者均与训练集中的实例数（它们为<span class="math notranslate nohighlight">\(O(m)\)</span>）呈线性关系，故，只要它们适合内存，它们就可有效地处理大型训练集。</p>
 </section>
 </section>
 <section id="id7">
-<h2>2. 模型检验<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
+<h2>2. 模型检验<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
 <section id="id8">
-<h3>2.1. 估计系数<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<h3>2.1. 估计系数<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
 <p>在做出预测之前，需要根据数据集估计系数。令</p>
 <div class="math notranslate nohighlight">
 \[

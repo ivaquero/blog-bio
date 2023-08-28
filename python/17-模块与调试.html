@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
@@ -44,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -68,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="高性能扩展" href="18-%E9%AB%98%E6%80%A7%E8%83%BD%E6%89%A9%E5%B1%95.html" />
     <link rel="prev" title="元编程" href="16-%E5%85%83%E7%BC%96%E7%A8%8B.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -413,11 +414,11 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>模块与调试<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<h1>模块与调试<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <section id="id2">
-<h2>1. 基本操作<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<h2>1. 基本操作<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <section id="id3">
-<h3>1.1. 导入<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<h3>1.1. 导入<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <p>模块就是程序，任何以 <code class="docutils literal notranslate"><span class="pre">.py</span></code> 为扩展名的文件均是 python 模块，都可用 <code class="docutils literal notranslate"><span class="pre">import</span></code> 导入</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 方法 1</span>
 <span class="kn">import</span> <span class="nn">time</span> <span class="k">as</span> <span class="nn">t</span>
@@ -432,7 +433,7 @@ document.write(`
 </div>
 </section>
 <section id="id4">
-<h3>1.2. 查看路径和帮助<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<h3>1.2. 查看路径和帮助<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 方法 1</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="n">os</span><span class="o">.</span><span class="vm">__file__</span>
@@ -444,9 +445,9 @@ document.write(`
 </section>
 </section>
 <section id="id5">
-<h2>2. 模块的制作<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<h2>2. 模块的制作<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
 <section id="id6">
-<h3>2.1. 头文件<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<h3>2.1. 头文件<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">import</span></code> 会执行对象的全部代码，为使其中的部分代码在导入时不被调用，必须加入头文件。</p>
 <p>当模块调用自身的<strong>name</strong>方法，执行的是字符串 <code class="docutils literal notranslate"><span class="pre">'__main__'</span></code>，当调用其他模块的 <code class="docutils literal notranslate"><span class="pre">__name__</span></code>，执行的是字符串’调用模块名’。添加 <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">__name__=='__main__':</span></code> 可使下面的代码只有在调用时执行，被导入时不执行。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 模块末尾往往会添加</span>
@@ -458,7 +459,7 @@ document.write(`
 </div>
 </section>
 <section id="id7">
-<h3>2.2. 起始文件<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<h3>2.2. 起始文件<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>创建 1 个存放相关模块的文件夹，文件夹的名字即包（Package）的名字</p></li>
 <li><p>在文件夹中创建 1 个起始文件 <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>，内容可为空，也会写入 <code class="docutils literal notranslate"><span class="pre">__all__</span></code> 方法。</p></li>
@@ -482,9 +483,9 @@ document.write(`
 </section>
 </section>
 <section id="id8">
-<h2>3. 异常<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
+<h2>3. 异常<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
 <section id="id9">
-<h3>3.1. 异常的捕获<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<h3>3.1. 异常的捕获<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
 <p>在编写函数的时候，需要处理错误输入，并给出错误信息，这个时候需要编写异常函数。</p>
 <ul class="simple">
 <li><p>有异常处理的函数，在异常处理后会继续执行</p></li>
@@ -535,7 +536,7 @@ document.write(`
 </div>
 </section>
 <section id="id10">
-<h3>3.2. 异常的自定义<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
+<h3>3.2. 异常的自定义<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">raise</span></code> 语句可用于来引发异常，若后面没有关键字，则引发相应异常。异常类的名字可自定义，但必须继承自 <code class="docutils literal notranslate"><span class="pre">Error</span></code> 或 <code class="docutils literal notranslate"><span class="pre">Exception</span></code> 。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">InputException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
 
@@ -561,7 +562,7 @@ document.write(`
 </div>
 </section>
 <section id="id11">
-<h3>3.3. 迭代异常<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<h3>3.3. 迭代异常<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
 <p>Python 在生成器中提供了 <code class="docutils literal notranslate"><span class="pre">throw()</span></code> 方法来处理频繁使用 <code class="docutils literal notranslate"><span class="pre">yield</span></code> 部分的异常，但这种方法会破坏可读性。推荐构建类，并使用 <code class="docutils literal notranslate"><span class="pre">__iter__()</span></code> 方法来处理还有循环和 <code class="docutils literal notranslate"><span class="pre">yield</span></code> 的部分。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Timer</span><span class="p">:</span>
 
@@ -581,9 +582,9 @@ document.write(`
 </section>
 </section>
 <section id="if">
-<h2>4. 消除 <code class="docutils literal notranslate"><span class="pre">if</span></code><a class="headerlink" href="#if" title="Permalink to this headline">#</a></h2>
+<h2>4. 消除 <code class="docutils literal notranslate"><span class="pre">if</span></code><a class="headerlink" href="#if" title="Permalink to this heading">#</a></h2>
 <section id="id12">
-<h3>4.1. 嵌套 <code class="docutils literal notranslate"><span class="pre">if</span></code><a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
+<h3>4.1. 嵌套 <code class="docutils literal notranslate"><span class="pre">if</span></code><a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
 <p>在函数内使用 <code class="docutils literal notranslate"><span class="pre">return</span></code> 或 <code class="docutils literal notranslate"><span class="pre">raise</span></code> 等语句提前在分支内结束函数。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">buy_fruit</span><span class="p">(</span><span class="n">nerd</span><span class="p">,</span> <span class="n">store</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;去水果店买苹果</span>
@@ -624,7 +625,7 @@ document.write(`
 </div>
 </section>
 <section id="id13">
-<h3>4.2. 重叠 <code class="docutils literal notranslate"><span class="pre">if</span></code><a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
+<h3>4.2. 重叠 <code class="docutils literal notranslate"><span class="pre">if</span></code><a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 对于新用户，创建新的用户资料，否则更新旧资料</span>
 <span class="k">if</span> <span class="n">user</span><span class="o">.</span><span class="n">no_profile_exists</span><span class="p">:</span>
     <span class="n">create_user_profile</span><span class="p">(</span>
@@ -666,23 +667,23 @@ document.write(`
 </section>
 </section>
 <section id="id14">
-<h2>5. 命令行<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h2>
+<h2>5. 命令行<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h2>
 <section id="id15">
-<h3>5.1. 查询<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h3>
+<h3>5.1. 查询<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>上个变量返回值： <code class="docutils literal notranslate"><span class="pre">_</span></code></p></li>
 <li><p>包路径： <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">site</span></code></p></li>
 </ul>
 </section>
 <section id="id16">
-<h3>5.2. 查看<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
+<h3>5.2. 查看<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>JSON： <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">json.tool</span> <span class="pre">[file].json</span></code></p></li>
 <li><p>服务器： <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">http.server</span> <span class="pre">8888</span></code></p></li>
 </ul>
 </section>
 <section id="id17">
-<h3>5.3. 文件处理<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h3>
+<h3>5.3. 文件处理<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>创建 tar： <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">tarfile</span> <span class="pre">-c</span> <span class="pre">[file].tar</span> <span class="pre">[folder]</span></code></p></li>
 <li><p>解压 tar： <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">tarfile</span> <span class="pre">-e</span> <span class="pre">[file].tar</span> <span class="pre">[new_file]</span></code></p></li>

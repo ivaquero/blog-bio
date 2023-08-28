@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
@@ -44,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -70,7 +71,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="生存分析" href="13-%E7%94%9F%E5%AD%98%E5%88%86%E6%9E%90.html" />
     <link rel="prev" title="硬聚类" href="11-%E7%A1%AC%E8%81%9A%E7%B1%BB.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -395,18 +396,18 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>软聚类<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<h1>软聚类<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <p>软聚类又称为模糊聚类（fuzzy clustering），是指每个实例赋予每个簇一个分数的聚类。而硬聚类会将每个实例分配给一个单独的簇。</p>
 <section id="id2">
-<h2>1. 期望最大<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<h2>1. 期望最大<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>期望最大（Expectation-Maximization，EM）算法与 <em>k</em>-均值算法有很多相似之处：它随机初始化簇参数，首先将实例分配给簇（期望步骤），然后更新簇（最大化步骤），然后重复这两个步骤，直到收敛为止。在聚类的上下文中，您可将 EM 视为 <em>k</em>-均值的概括，它不仅可找到聚类中心（<span class="math notranslate nohighlight">\(μ_i\)</span>），还可找到它们的大小，形状和方向（<span class="math notranslate nohighlight">\(Σ_i\)</span>），以及它们的相对权重（<span class="math notranslate nohighlight">\(ϕ_i\)</span>）。</p>
 <p>但，与 <em>k</em>-均值不同，EM 使用软聚类分配。对于每个实例，在期望步骤中，该算法（基于当前的簇参数）估计它属于每个簇的概率。然后，在最大化步骤中，将使用数据集中的所有实例更新每个簇，并通过每个实例属于该簇的估计概率对其进行加权。这些概率称为实例簇的干系（responsibilities）。在最大化步骤中，每个簇的更新将主要受到其最相干的实例的影响。在已经估算了每个簇的位置，大小，形状，方向和相对权重后，该模型可轻松地将每个实例分配给最可能的簇（硬聚类）或估算其属于特定簇的概率（软聚类）。</p>
 <p>不幸的是，就像 <em>k</em>-均值一样，EM 最终可能会收敛于较差的解决方案，因此<strong>它需要运行几次</strong>，仅保留最佳解决方案。当存在多个维度，多个簇或很少实例时，EM 可能难以收敛于最佳解决方案。可能需要通过限制算法必须学习的参数数量来减少任务的难度。一种方法是限制簇可具有的形状和方向的范围。这可通过对协方差矩阵施加约束来实现。</p>
 </section>
 <section id="gmm">
-<h2>2. GMM<a class="headerlink" href="#gmm" title="Permalink to this headline">#</a></h2>
+<h2>2. GMM<a class="headerlink" href="#gmm" title="Permalink to this heading">#</a></h2>
 <section id="id3">
-<h3>2.1. 模型推导<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<h3>2.1. 模型推导<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <p>高斯混合模型（Gaussian Mixture Model，GMM）假设实例是由多个参数未知的高斯分布的混合生成的。从单个高斯分布生成的所有实例均形成一个簇，该簇通常看起来像椭圆形。每个簇可具有不同的椭圆形状，大小，密度和方向。</p>
 <p>GMM 有多种变体。在实现之前，必须知道高斯分布的数量 <em>k</em>。其简单变体的算法如下：</p>
 <div class="admonition- admonition">
@@ -427,7 +428,7 @@ x_i ∼ 𝒩({μ}_{j}, {Σ}_{j})
 <p>GMM 还可在任何给定位置估计模型的密度。而对于给出的每个实例，此方法都会估算该位置处的概率密度函数（PDF）的对数。若计算这些分数的指数，则可在给定实例的位置获得 PDF 的值。这些不是概率，而是概率密度：它们<strong>可取任何正值</strong>，而不仅仅是 0 到 1 之间的值。要估算实例落入特定区域的概率，必须在该区域上积分 PDF。</p>
 </section>
 <section id="id4">
-<h3>2.2. 相关细节<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<h3>2.2. 相关细节<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p>设 GMM 的参数分别为实例数<span class="math notranslate nohighlight">\(m\)</span>，维度<span class="math notranslate nohighlight">\(n\)</span>，簇数 <em>k</em>。</p>
 <ul class="simple">
 <li><p>簇为任意球形或任意椭圆形，运算复杂度为<span class="math notranslate nohighlight">\(O(kmn)\)</span></p></li>
@@ -436,7 +437,7 @@ x_i ∼ 𝒩({μ}_{j}, {Σ}_{j})
 <p>实际上，GMM 在具有椭圆形状的聚类上效果很好。</p>
 </section>
 <section id="bgmm">
-<h3>2.3. BGMM<a class="headerlink" href="#bgmm" title="Permalink to this headline">#</a></h3>
+<h3>2.3. BGMM<a class="headerlink" href="#bgmm" title="Permalink to this heading">#</a></h3>
 <p>除了手动搜索最佳数目的簇，还可使用贝叶斯 - 高斯混合模型（Bayesian-Gaussian Mixure Model，BGMM），该算法能够为不必要的簇赋予等于（或接近）零的权重。将簇数量 <code class="docutils literal notranslate"><span class="pre">n_components</span></code> 设置为一个您有充分理由相信的值，该值大于最佳簇数量，该算法将自动消除不必要的簇。在此模型中，聚类参数（包括权重，均值和协方差矩阵）不再被视为固定模型参数，而是被视为潜在的随机变量。故，此处<span class="math notranslate nohighlight">\(z\)</span>同时包括聚类参数和聚类分配。</p>
 <div class="math notranslate nohighlight">
 \[

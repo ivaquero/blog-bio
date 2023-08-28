@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
@@ -44,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -70,7 +71,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Pandas" href="../analysis/clean-pandas.html" />
     <link rel="prev" title="模块与调试" href="17-%E6%A8%A1%E5%9D%97%E4%B8%8E%E8%B0%83%E8%AF%95.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -399,11 +400,11 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>高性能扩展<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<h1>高性能扩展<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <section id="id2">
-<h2>1. 默认环境<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<h2>1. 默认环境<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <section id="id3">
-<h3>1.1. 三组概念<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<h3>1.1. 三组概念<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>代码</p>
 <ul>
@@ -427,7 +428,7 @@ document.write(`
 </section>
 </section>
 <section id="id4">
-<h2>2. 标准工作站<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<h2>2. 标准工作站<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>计算单元</p>
 <ul>
@@ -457,7 +458,7 @@ document.write(`
 </li>
 </ul>
 <section id="id5">
-<h3>2.1. 计算单元<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<h3>2.1. 计算单元<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <p>Amdahl’s 定律认为提升系统的一部分性能时，对整个系统性能的影响取决于：</p>
 <ol class="arabic simple">
 <li><p>这一部分有多重要</p></li>
@@ -478,7 +479,7 @@ S=\frac{1}{(1 - α) + α / k}
 <p>这意味着即使某些 Python 代码可以使用多个核心，在任意时间点仅有一个核心在执行 Python 的指令。</p>
 </section>
 <section id="id6">
-<h3>2.2. 存储单元<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<h3>2.2. 存储单元<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>旋转硬盘
 计算机关机也能保持的长期存储。读写速度通常较慢，因为磁盘必须物理旋转和等待磁头移动。随机访问性能下降但容量很高（TB 级别）。</p></li>
@@ -499,7 +500,7 @@ S=\frac{1}{(1 - α) + α / k}
 <p>另外，异步 I/O 和缓存预取等技术还提供了很多方法来确保数据在被需要时就已经存在于对应的地方。</p>
 </section>
 <section id="id7">
-<h3>2.3. 通信层<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<h3>2.3. 通信层<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 <p>通信有很多模式，但它们都是同一样东西的变种：总线。</p>
 <p>总线（Bus）是计算机各种功能部件之间传送信息的公共通信干线，它是由导线组成的传输线束。</p>
 <p>总线按功能和规范可分为五大类型：</p>
@@ -522,7 +523,7 @@ S=\frac{1}{(1 - α) + α / k}
 </section>
 </section>
 <section id="c">
-<h2>3. C 扩展<a class="headerlink" href="#c" title="Permalink to this headline">#</a></h2>
+<h2>3. C 扩展<a class="headerlink" href="#c" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>加速器</p>
 <ul>

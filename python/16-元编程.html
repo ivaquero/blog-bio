@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
@@ -44,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -68,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="模块与调试" href="17-%E6%A8%A1%E5%9D%97%E4%B8%8E%E8%B0%83%E8%AF%95.html" />
     <link rel="prev" title="网络模型" href="15-%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -401,9 +402,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>元编程<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<h1>元编程<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <section id="id2">
-<h2>1. 描述符<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<h2>1. 描述符<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>使用描述符（descriptor）是一种特殊的类，可以类的形式定义实例的属性。<code class="docutils literal notranslate"><span class="pre">&#64;property</span></code> 负责把一个方法变成属性调用，可对属性赋值时做必要的检查，并保证代码的清晰短⼩，同时将⽅法变换为只读，并重新实现⼀个属性的设置和读取⽅法，可做边界判定。</p>
 <p>虽然内置的 <code class="docutils literal notranslate"><span class="pre">property</span></code> 经常用作装饰器，但它其实是一个类。<code class="docutils literal notranslate"><span class="pre">property</span></code> 都是类属性，但是 <code class="docutils literal notranslate"><span class="pre">property</span></code> 管理的其实是实例属性的存取。</p>
 <ul class="simple">
@@ -418,7 +419,7 @@ document.write(`
 <li><p>仅有 <code class="docutils literal notranslate"><span class="pre">__get__</span></code> 方法的描述符可以实现高效缓存</p></li>
 </ul>
 <section id="id3">
-<h3>1.1. 属性验证<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<h3>1.1. 属性验证<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <p>被装饰的读值方法有个 <code class="docutils literal notranslate"><span class="pre">.setter</span></code> 属性，这个属性也是装饰器；这个装饰器把读值方法和设值方法绑定在一起。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">LineItem</span><span class="p">:</span>
 
@@ -444,7 +445,7 @@ document.write(`
 </div>
 </section>
 <section id="id4">
-<h3>1.2. 属性删除<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<h3>1.2. 属性删除<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p>定义特性时，可以使用 <code class="docutils literal notranslate"><span class="pre">&#64;my_propety.deleter</span></code> 装饰器包装一个方法，负责删除特性管理的
 属性。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BlackKnight</span><span class="p">:</span>
@@ -489,9 +490,9 @@ document.write(`
 </section>
 </section>
 <section id="id5">
-<h2>2. 手动实现<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<h2>2. 手动实现<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
 <section id="id6">
-<h3>2.1. 基本结构<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<h3>2.1. 基本结构<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Quantity</span><span class="p">:</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">storage_name</span><span class="p">):</span>
@@ -525,7 +526,7 @@ document.write(`
 </div>
 </section>
 <section id="id7">
-<h3>2.2. 自动获取属性名称<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<h3>2.2. 自动获取属性名称<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Quantity</span><span class="p">:</span>
     <span class="n">__counter</span> <span class="o">=</span> <span class="mi">0</span>
 
@@ -568,10 +569,10 @@ document.write(`
 </section>
 </section>
 <section id="id8">
-<h2>3. 元类<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
+<h2>3. 元类<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
 <p>Python 中，一切皆是对象，类也不例外，可对其赋值、拷贝、添加属性，甚至作为参数传递（如打印）。</p>
 <section id="type">
-<h3>3.1. <code class="docutils literal notranslate"><span class="pre">type</span></code><a class="headerlink" href="#type" title="Permalink to this headline">#</a></h3>
+<h3>3.1. <code class="docutils literal notranslate"><span class="pre">type</span></code><a class="headerlink" href="#type" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">type()</span></code> 可被用于创建类，<code class="docutils literal notranslate"><span class="pre">type('className',</span> <span class="pre">(parentClassName1,</span> <span class="pre">parentClassName2),</span> <span class="pre">{'attr':</span> <span class="pre">value})</span></code>，生成的类被称为元类（metaclass）。</p>
 <p>Python 在创建类时，会自动创建 <code class="docutils literal notranslate"><span class="pre">__metaclass__</span></code> 属性。类中有 <code class="docutils literal notranslate"><span class="pre">__metaclass__</span></code> 时，Python 会通过 XXX 创建类（对象），若没有，则继续向上寻找。按照默认习惯，元类的类名总是以 <code class="docutils literal notranslate"><span class="pre">Metaclass</span></code> 结尾，以便清楚地表示这是一个元类。</p>
 <blockquote>
@@ -599,7 +600,7 @@ document.write(`
 </section>
 </section>
 <section id="id9">
-<h2>4. 类元编程<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h2>
+<h2>4. 类元编程<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
 </section>
 </section>
 

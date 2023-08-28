@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
@@ -44,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -70,7 +71,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="硬聚类" href="11-%E7%A1%AC%E8%81%9A%E7%B1%BB.html" />
     <link rel="prev" title="集成学习" href="09-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -410,9 +411,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>降维<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<h1>降维<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <section id="pca">
-<h2>1. PCA<a class="headerlink" href="#pca" title="Permalink to this headline">#</a></h2>
+<h2>1. PCA<a class="headerlink" href="#pca" title="Permalink to this heading">#</a></h2>
 <p>主成分分析（Principal Component Analysis，PCA）是当前最流行的降维算法。首先，它确定最靠近数据的超平面，然后将数据投影到其上。</p>
 <p><img alt="Projection" src="../_images/projection.png" /></p>
 <p>上图中</p>
@@ -457,7 +458,7 @@ document.write(`
 </pre></div>
 </div>
 <section id="id3">
-<h3>1.1. 主成分<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<h3>1.1. 主成分<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <p>一组变量<span class="math notranslate nohighlight">\(X_1, X_2, …, X_p\)</span>的第一主成分（first principal component，1st PC）是标准化线性组合中方差最大的组合，记为：</p>
 <div class="math notranslate nohighlight">
 \[
@@ -523,7 +524,7 @@ z_{i2} = ∑_{j=1}^p ϕ_{j2} x_{ij}
 <p><img alt="PCA" src="../_images/pca.png" /></p>
 </section>
 <section id="id4">
-<h3>1.2. 模型细节<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<h3>1.2. 模型细节<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p>对于每个 PC，PCA 都找到一个指向 PC 方向的零中心单位向量。由于两个相对的单位向量位于同一轴上，因此 PCA 返回的单位向量的方向不稳定：若稍微扰动训练集并再次运行 PCA，则单位向量可能指向与原始向量相反的方向。但，它们通常仍将位于相同的轴上。在某些情况下，一对单位向量甚至可旋转或交换（若沿这两个轴的方差接近），但，它们定义的平面通常保持不变。</p>
 <p>实际上，通过<strong>奇异值分解</strong>（SVD），可轻松通过数据集找到 PC 所在的矩阵，即<span class="math notranslate nohighlight">\(U𝜮𝑽^{⊤}\)</span>中的<span class="math notranslate nohighlight">\(V\)</span>。</p>
 <p>一旦确定了所有主成分，就可通过将数据集投影到前<span class="math notranslate nohighlight">\(d\)</span>个主成分定义的超平面上，将数据集的维度降低到<span class="math notranslate nohighlight">\(d\)</span>维。选择此超平面可确保投影将保留尽可能多的方差。</p>
@@ -534,7 +535,7 @@ X_{d - \mathrm{proj}} = X β_d
 <p>其中，<span class="math notranslate nohighlight">\(β_d\)</span>定义为包含<span class="math notranslate nohighlight">\(V\)</span>的前<span class="math notranslate nohighlight">\(d\)</span>列的矩阵。</p>
 </section>
 <section id="id5">
-<h3>1.3. 方差与维度<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<h3>1.3. 方差与维度<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <p>选取的 2 个主成分构成一个空间平面，其使得每个数据点到达这个平面的距离的平方和最小。其中，第<span class="math notranslate nohighlight">\(m\)</span>个主成分的可解释方差为：</p>
 <div class="math notranslate nohighlight">
 \[
@@ -558,14 +559,14 @@ X_{d - \mathrm{proj}} = X β_d
 </section>
 </section>
 <section id="id6">
-<h2>2. PCA 变体<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
+<h2>2. PCA 变体<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
 <section id="rpca-ipca">
-<h3>2.1. RPCA, IPCA<a class="headerlink" href="#rpca-ipca" title="Permalink to this headline">#</a></h3>
+<h3>2.1. RPCA, IPCA<a class="headerlink" href="#rpca-ipca" title="Permalink to this heading">#</a></h3>
 <p>RPCA（Randomized PCA，RPCA）就是在使用 SVD 求解时使用随机方法，其运算复杂度为<span class="math notranslate nohighlight">\(O(m × d^2) + O(d^3)\)</span>，故，当<span class="math notranslate nohighlight">\(d &lt; n × 80\%\)</span></p>
 <p>常规 PCA 实现的一个问题是，它们要求整个训练集都适合内存，才能运行算法。幸运的是，递增 PCA（Incremental PCA，IPCA）可将训练集划分为多个小批，并一次小批量输入。但速度慢于常规 PCA。</p>
 </section>
 <section id="kpca">
-<h3>2.2. kPCA<a class="headerlink" href="#kpca" title="Permalink to this headline">#</a></h3>
+<h3>2.2. kPCA<a class="headerlink" href="#kpca" title="Permalink to this heading">#</a></h3>
 <p>核 PCA（Kernel PCA，kPCA）用于复杂非线性投影，它通常擅长于在投影后保留实例簇，有时甚至可展开位于扭曲流形附近的数据集。内核技巧可将实例隐式映射到一个非常高维的空间，称特征空间（feature space），从而实现非线性分类和回归。高维特征空间中的线性决策边界对应于原始空间（original space）中的复杂非线性决策边界。</p>
 <p>通过应用 PCA 投影的逆变换，还可将缩小的数据集解压缩回原来的维度。虽然投影会丢失一些信息（5％偏差之内），但，很可能接近原始数据。原始数据和重构数据（压缩后再解压缩）之间的均方距离称为重构误差（reconstruction error）。选择内核和超参数可找到最低重构误差（重建并不像使用线性 PCA 那样容易）。多亏了内核技巧，此变换在数学上等效于使用特征映射（feature map）φ 将训练集映射到无限维特征空间，然后使用线性 PCA 将变换后的训练集投影到 2D。</p>
 <p><img alt="kPCA" src="../_images/kpca.png" /></p>
@@ -575,14 +576,14 @@ X_{d - \mathrm{proj}} = X β_d
 </div></blockquote>
 </section>
 <section id="id7">
-<h3>2.3. 主成分回归<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<h3>2.3. 主成分回归<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 <p>将一个点投影到一条线，可简单理解成为这条线寻找离这个点最近的位置。</p>
 </section>
 </section>
 <section id="id8">
-<h2>3. 流形学习<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
+<h2>3. 流形学习<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
 <section id="id9">
-<h3>3.1. 流形<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<h3>3.1. 流形<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
 <p>在大多数实际问题中，训练实例并不能均匀地分布在所有维度上。许多特征几乎是恒定不变的，而其他特征则是高度相关的。结果，所有训练实例都位于（或接近于）高维空间的低维子空间内。这时，可考虑投影（projection）。但，投影并不总是降维的最佳方法。在许多情况下，子空间可能会扭曲和旋转，如在著名的瑞士卷（Swiss roll）玩具数据集中。</p>
 <p><img alt="swiss roll" src="../_images/swiss-roll.png" /></p>
 <p>Swiss Roll 是 2D 流形（manifold）的一个示例。简而言之，2D 流形是可在更高维度的空间中弯曲和扭曲的二维形状。更一般而言，<span class="math notranslate nohighlight">\(d\)</span>维流形是<span class="math notranslate nohighlight">\(n\)</span>维空间（其中<span class="math notranslate nohighlight">\(d &lt; n\)</span></p>
@@ -592,7 +593,7 @@ X_{d - \mathrm{proj}} = X β_d
 <p><img alt="Swiss roll 2" src="../_images/swiss-roll2.png" /></p>
 </section>
 <section id="lle">
-<h3>3.2. LLE<a class="headerlink" href="#lle" title="Permalink to this headline">#</a></h3>
+<h3>3.2. LLE<a class="headerlink" href="#lle" title="Permalink to this heading">#</a></h3>
 <p>局部线性嵌入（Locally Linear Embedding，LLE）是另一种强大的非线性降维技术。它是一种流形学习技术，它不像以前的算法那样依赖投影。简而言之，LLE 的工作方式是：首先测量每个训练实例与其最近邻（c.n.）的线性相关程度，然后寻找最能保留这些局部关系的训练集的低维表示形式。这种方法特别适用于展开扭曲的流形，尤其是在没有太多噪音的情况下。</p>
 <p>对实例<span class="math notranslate nohighlight">\(x_i\)</span>，找到<span class="math notranslate nohighlight">\(k\)</span>个最近邻，然后尝试将<span class="math notranslate nohighlight">\(x\)</span>重建为这些邻居的线性函数：</p>
 <div class="math notranslate nohighlight">
@@ -620,13 +621,13 @@ Ẑ = \underset{Z}{\mathrm{argmax}} ∑_{i=1}^m
 </div></blockquote>
 </section>
 <section id="umap">
-<h3>3.3. UMAP<a class="headerlink" href="#umap" title="Permalink to this headline">#</a></h3>
+<h3>3.3. UMAP<a class="headerlink" href="#umap" title="Permalink to this heading">#</a></h3>
 </section>
 </section>
 <section id="id10">
-<h2>4. 交叉降维<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
+<h2>4. 交叉降维<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
 <section id="id11">
-<h3>4.1. 偏最小二乘<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<h3>4.1. 偏最小二乘<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="id12"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>

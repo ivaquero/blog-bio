@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
@@ -44,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -68,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Deviation" href="deviation.html" />
     <link rel="prev" title="Pandas 2" href="clean-pandas2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -431,7 +432,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="correlation">
-<h1>Correlation<a class="headerlink" href="#correlation" title="Permalink to this headline">#</a></h1>
+<h1>Correlation<a class="headerlink" href="#correlation" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -444,7 +445,7 @@ document.write(`
 </div>
 </div>
 <section id="regression-plot">
-<h2>Regression Plot<a class="headerlink" href="#regression-plot" title="Permalink to this headline">#</a></h2>
+<h2>Regression Plot<a class="headerlink" href="#regression-plot" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpg</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/mpg.csv&quot;</span><span class="p">)</span>
@@ -615,7 +616,7 @@ document.write(`
 </div>
 </section>
 <section id="jittering">
-<h2>Jittering<a class="headerlink" href="#jittering" title="Permalink to this headline">#</a></h2>
+<h2>Jittering<a class="headerlink" href="#jittering" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">ggplot</span><span class="p">(</span><span class="n">mpg</span><span class="p">,</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;cty&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;hwy&quot;</span><span class="p">))</span>
@@ -656,7 +657,7 @@ document.write(`
 </div>
 </section>
 <section id="facetgrid">
-<h2>FacetGrid<a class="headerlink" href="#facetgrid" title="Permalink to this headline">#</a></h2>
+<h2>FacetGrid<a class="headerlink" href="#facetgrid" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mtcars</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/mtcars.csv&quot;</span><span class="p">)</span>
@@ -796,7 +797,7 @@ document.write(`
 </div>
 </div>
 <section id="ggplot2-version">
-<h3>ggplot2 version<a class="headerlink" href="#ggplot2-version" title="Permalink to this headline">#</a></h3>
+<h3>ggplot2 version<a class="headerlink" href="#ggplot2-version" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
@@ -817,7 +818,7 @@ document.write(`
 </section>
 </section>
 <section id="heatmap">
-<h2>Heatmap<a class="headerlink" href="#heatmap" title="Permalink to this headline">#</a></h2>
+<h2>Heatmap<a class="headerlink" href="#heatmap" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">corr_matrix</span> <span class="o">=</span> <span class="n">mtcars</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -962,7 +963,7 @@ document.write(`
 </div>
 </div>
 <section id="id1">
-<h3>ggplot2 version<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<h3>ggplot2 version<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">corr_matrix2</span> <span class="o">=</span> <span class="n">corr_matrix</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="o">=</span><span class="s2">&quot;index&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -1070,7 +1071,7 @@ document.write(`
 </section>
 </section>
 <section id="marginal-plot">
-<h2>Marginal Plot<a class="headerlink" href="#marginal-plot" title="Permalink to this headline">#</a></h2>
+<h2>Marginal Plot<a class="headerlink" href="#marginal-plot" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">JointGrid</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
@@ -1092,7 +1093,7 @@ document.write(`
 </div>
 </div>
 <section id="id2">
-<h3>ggplot2 version<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<h3>ggplot2 version<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g1</span> <span class="o">=</span> <span class="n">ggplot</span><span class="p">(</span><span class="n">mpg</span><span class="p">)</span> <span class="o">+</span> <span class="n">geom_point</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="s2">&quot;displ&quot;</span><span class="p">,</span> <span class="s2">&quot;hwy&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;manufacturer&quot;</span><span class="p">))</span>

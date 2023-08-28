@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
@@ -44,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -68,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Tricks" href="tricks.html" />
     <link rel="prev" title="Ranking" href="ranking.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -426,7 +427,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="time-series">
-<h1>Time Series<a class="headerlink" href="#time-series" title="Permalink to this headline">#</a></h1>
+<h1>Time Series<a class="headerlink" href="#time-series" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dateutil.parser</span> <span class="kn">import</span> <span class="n">parse</span>
@@ -439,7 +440,7 @@ document.write(`
 </div>
 </div>
 <section id="peaks">
-<h2>Peaks<a class="headerlink" href="#peaks" title="Permalink to this headline">#</a></h2>
+<h2>Peaks<a class="headerlink" href="#peaks" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">passengers</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/air_passengers.csv&quot;</span><span class="p">)</span>
@@ -579,7 +580,7 @@ document.write(`
 </div>
 </section>
 <section id="seasonal">
-<h2>Seasonal<a class="headerlink" href="#seasonal" title="Permalink to this headline">#</a></h2>
+<h2>Seasonal<a class="headerlink" href="#seasonal" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">passengers</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">parse</span><span class="p">(</span><span class="n">d</span><span class="p">)</span><span class="o">.</span><span class="n">year</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">passengers</span><span class="o">.</span><span class="n">date</span><span class="p">]</span>
@@ -637,7 +638,7 @@ document.write(`
 </div>
 </section>
 <section id="cross-correlation">
-<h2>Cross Correlation<a class="headerlink" href="#cross-correlation" title="Permalink to this headline">#</a></h2>
+<h2>Cross Correlation<a class="headerlink" href="#cross-correlation" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.tsa.stattools</span> <span class="k">as</span> <span class="nn">stattools</span>
@@ -741,7 +742,7 @@ document.write(`
 </div>
 </section>
 <section id="decomposition">
-<h2>Decomposition<a class="headerlink" href="#decomposition" title="Permalink to this headline">#</a></h2>
+<h2>Decomposition<a class="headerlink" href="#decomposition" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">statsmodels.tsa.seasonal</span> <span class="kn">import</span> <span class="n">seasonal_decompose</span>
@@ -844,7 +845,7 @@ document.write(`
 </div>
 </section>
 <section id="doule-y">
-<h2>Doule Y<a class="headerlink" href="#doule-y" title="Permalink to this headline">#</a></h2>
+<h2>Doule Y<a class="headerlink" href="#doule-y" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">economics</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/economics.csv&quot;</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">])</span>
@@ -962,7 +963,7 @@ document.write(`
 </div>
 </section>
 <section id="sem">
-<h2>SEM<a class="headerlink" href="#sem" title="Permalink to this headline">#</a></h2>
+<h2>SEM<a class="headerlink" href="#sem" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">sem</span>
@@ -1184,7 +1185,7 @@ document.write(`
 </div>
 </section>
 <section id="area">
-<h2>Area<a class="headerlink" href="#area" title="Permalink to this headline">#</a></h2>
+<h2>Area<a class="headerlink" href="#area" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">economics</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/economics.csv&quot;</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">])</span>
@@ -1255,7 +1256,7 @@ document.write(`
 </div>
 </section>
 <section id="stacked-area">
-<h2>Stacked Area<a class="headerlink" href="#stacked-area" title="Permalink to this headline">#</a></h2>
+<h2>Stacked Area<a class="headerlink" href="#stacked-area" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">visitors</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/night_visitors.csv&quot;</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;yearmon&quot;</span><span class="p">])</span>
@@ -1264,7 +1265,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/py/n14256yd5r5ddms88x9bvsv40000gn/T/ipykernel_93740/1398973000.py:1: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/py/n14256yd5r5ddms88x9bvsv40000gn/T/ipykernel_20571/1398973000.py:1: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
   visitors = pd.read_csv(&quot;data/night_visitors.csv&quot;, parse_dates=[&quot;yearmon&quot;])
 </pre></div>
 </div>
@@ -1411,7 +1412,7 @@ document.write(`
 </div>
 </section>
 <section id="unstacked-area">
-<h2>Unstacked Area<a class="headerlink" href="#unstacked-area" title="Permalink to this headline">#</a></h2>
+<h2>Unstacked Area<a class="headerlink" href="#unstacked-area" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">economics</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">array</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>

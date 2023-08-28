@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
@@ -44,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -70,7 +71,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="环境与变量" href="../python/01-%E7%8E%AF%E5%A2%83%E4%B8%8E%E5%8F%98%E9%87%8F.html" />
     <link rel="prev" title="软聚类" href="12-%E8%BD%AF%E8%81%9A%E7%B1%BB.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -394,20 +395,20 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>生存分析<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<h1>生存分析<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <section id="id2">
-<h2>1. 生存概率<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<h2>1. 生存概率<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>在分析存活时间时，会出现不同于目前为止的讨论的问题。一个问题是如何处理受试者退出研究的问题。设我们测试一种新的癌症药物。当一些受试者死亡时，其他受试者可能认为新药无效，并决定研究结束前退出研究。这类研究使用的术语是生存分析（survival analysis）。</p>
 <p>这种方法也用于分析其他领域的类似问题。例如：可用于研究机器在坏掉之前的寿命有多长；或人们订阅邮件列表的时间（其中”死亡”对应的是取消订阅邮件列表）。</p>
 <section id="id3">
-<h3>1.1. 删失<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<h3>1.1. 删失<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <p>进行生存分析的难点在于，在一项研究结束时，许多个体可能还”活着”。在统计学中，对于只能部分知道的测量值的表达方式是删失（censoring）。若未知数据位于生存阈值右侧，则称为右删失，反之称为左删失。</p>
 <p>举个例子，考虑一个邮件列表，其订阅者分为两个子组。第一组很快就厌倦了邮件，三个月后就会退订。第二组人很喜欢，一般会订阅一年半的时间。</p>
 <p><img alt="survival" src="../_images/survival.png" /></p>
 <p>红线表示有退订行为的个人的订阅时间，蓝线表示没有退订行为（被右删失）的个人的订阅时间。若要求估计总体的平均订阅时间，而又本能地决定不包括被右删失的个人，很明显会严重低估真实的平均订阅时间。</p>
 </section>
 <section id="kaplanmeier">
-<h3>1.2. Kaplan–Meier 曲线<a class="headerlink" href="#kaplanmeier" title="Permalink to this headline">#</a></h3>
+<h3>1.2. Kaplan–Meier 曲线<a class="headerlink" href="#kaplanmeier" title="Permalink to this heading">#</a></h3>
 <p>若一些受试者在研究中期增加了他们的隐私设置，即在研究结束前禁止我们对他们进行监控，就会出现类似的、进一步的问题。而处理这些问题的一个巧妙方法是用 Kaplan -Meier 曲线来描述这类数据。首先，时间被细分为几个小的时期。然后计算受试者在给定时期内存活的可能性。生存概率由以下公式给出</p>
 <div class="math notranslate nohighlight">
 \[
@@ -419,7 +420,7 @@ p_k = p_{k-1} * \frac{r_k - f_k}{r_k}
 </section>
 </section>
 <section id="weibull">
-<h2>2. Weibull 分布<a class="headerlink" href="#weibull" title="Permalink to this headline">#</a></h2>
+<h2>2. Weibull 分布<a class="headerlink" href="#weibull" title="Permalink to this heading">#</a></h2>
 <p>Weibull 分布可靠性数据或寿命数据建模的最常用分布。由于它最早是由 Fréchet 确定的（1927 年），但由 Weibull 详细描述的（1951 年），故有时它也以 Fréchet 分布为名。</p>
 <p>Weibull 分布有两个参数，可处理增加，减少或恒定的故障率。</p>
 <div class="math notranslate nohighlight">

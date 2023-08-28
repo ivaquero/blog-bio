@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
@@ -44,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -68,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="控制流" href="05-%E6%8E%A7%E5%88%B6%E6%B5%81.html" />
     <link rel="prev" title="容器" href="03-%E5%AE%B9%E5%99%A8.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -411,11 +412,11 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>容器运算<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<h1>容器运算<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <section id="id2">
-<h2>1. 合并<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<h2>1. 合并<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <section id="id3">
-<h3>1.1. 解包合并<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<h3>1.1. 解包合并<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">list01</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="n">list02</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
 <span class="n">list03</span> <span class="o">=</span> <span class="p">[</span><span class="o">*</span><span class="n">list01</span><span class="p">,</span> <span class="o">*</span><span class="n">list02</span><span class="p">]</span>
@@ -432,7 +433,7 @@ document.write(`
 </div>
 </section>
 <section id="id4">
-<h3>1.2. 内置方法<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<h3>1.2. 内置方法<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">list01</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="n">list02</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
 
@@ -459,7 +460,7 @@ document.write(`
 </div>
 </section>
 <section id="id5">
-<h3>1.3. 增量运算<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<h3>1.3. 增量运算<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <p>对列表 进行 <code class="docutils literal notranslate"><span class="pre">+=</span></code> 操作相当于 extend，而使用 <code class="docutils literal notranslate"><span class="pre">=+</span></code> 操作是新增了一个列表。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">+=</span></code> 其背后使用的魔法方法是 <code class="docutils literal notranslate"><span class="pre">__iadd__</span></code> ，若没有实现这个方法则会退而求其次，使用 <code class="docutils literal notranslate"><span class="pre">__add__</span></code> 。用列表举例 <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+=</span> <span class="pre">b</span></code> ，使用 <code class="docutils literal notranslate"><span class="pre">__add__</span></code> 的话就像是使用了 <code class="docutils literal notranslate"><span class="pre">a.extend(b)</span></code> ，若使用 <code class="docutils literal notranslate"><span class="pre">__add__</span></code> 的话，则是 <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code> ，前者是直接在原列表上进行扩展，而后者是先从原列表中取出值，在一个新的列表中进行扩展，然后再将新的列表对象返回给变量，显然后者的消耗要大些。</p></li>
@@ -490,7 +491,7 @@ document.write(`
 </section>
 </section>
 <section id="id6">
-<h2>2. 配对<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
+<h2>2. 配对<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
 <span class="n">zipped</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <span class="p">[</span><span class="o">*</span><span class="n">zipped</span><span class="p">]</span> <span class="c1"># [(1, 4), (2, 5), (3, 6)]</span>
@@ -503,9 +504,9 @@ document.write(`
 </div>
 </section>
 <section id="id7">
-<h2>3. 排序<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
+<h2>3. 排序<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
 <section id="id8">
-<h3>3.1. 关键字排序<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<h3>3.1. 关键字排序<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">sort()</span></code> 对字符串的大小写敏感，可指定 <code class="docutils literal notranslate"><span class="pre">key</span></code> 来避免这种影响。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">sort()</span></code> 返回值即自身，故无法被接收。</p></li>
@@ -521,7 +522,7 @@ document.write(`
 </div>
 </section>
 <section id="id9">
-<h3>3.2. 迭代排序<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<h3>3.2. 迭代排序<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">sorted(iterable,</span> <span class="pre">key,</span> <span class="pre">reverse=False)</span></code> 对可迭代对象排序，无返回值。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 绝对值排序</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">([</span><span class="mi">36</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">12</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="o">-</span><span class="mi">21</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="nb">abs</span><span class="p">))</span>
@@ -538,7 +539,7 @@ document.write(`
 <p>对字典或 JSON 用 <code class="docutils literal notranslate"><span class="pre">operator.itemgetter()</span></code> 通常会运行得更快一些。这个同样适用于 <code class="docutils literal notranslate"><span class="pre">min()</span></code> 和 <code class="docutils literal notranslate"><span class="pre">max()</span></code> 这样的函数。</p>
 </section>
 <section id="id10">
-<h3>3.3. 合并排序<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
+<h3>3.3. 合并排序<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">heapq</span></code> 模块里有一个 <code class="docutils literal notranslate"><span class="pre">merge</span></code> 方法，可以用于合并多个列表。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">heapq</span> <span class="kn">import</span> <span class="n">merge</span>
 
@@ -553,11 +554,11 @@ document.write(`
 </section>
 </section>
 <section id="id11">
-<h2>4. 高阶函数<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h2>
+<h2>4. 高阶函数<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h2>
 <p>Python 中有 3 个常用的迭代函数，其本质均为生成器。是由于引入了列表推导和生成器表达式，它
 们变得没那么重要了。</p>
 <section id="map">
-<h3>4.1. <code class="docutils literal notranslate"><span class="pre">map</span></code><a class="headerlink" href="#map" title="Permalink to this headline">#</a></h3>
+<h3>4.1. <code class="docutils literal notranslate"><span class="pre">map</span></code><a class="headerlink" href="#map" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">map(func,</span> <span class="pre">iterable1,</span> <span class="pre">iterable2)</span></code> 将传入的函数依次作用到序列的每个元素，并把结果迭代返回生成器对象。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 函数需要一个参数</span>
 <span class="n">l</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
@@ -577,7 +578,7 @@ document.write(`
 </div>
 </section>
 <section id="filter">
-<h3>4.2. <code class="docutils literal notranslate"><span class="pre">filter</span></code><a class="headerlink" href="#filter" title="Permalink to this headline">#</a></h3>
+<h3>4.2. <code class="docutils literal notranslate"><span class="pre">filter</span></code><a class="headerlink" href="#filter" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">filter(func/None,</span> <span class="pre">iterable)</span></code> ，删除非 <code class="docutils literal notranslate"><span class="pre">True</span></code> 的内容，返回生成器对象。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 判断奇数</span>
 <span class="n">l1</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
@@ -590,7 +591,7 @@ document.write(`
 </div>
 </section>
 <section id="reduce">
-<h3>4.3. <code class="docutils literal notranslate"><span class="pre">reduce</span></code><a class="headerlink" href="#reduce" title="Permalink to this headline">#</a></h3>
+<h3>4.3. <code class="docutils literal notranslate"><span class="pre">reduce</span></code><a class="headerlink" href="#reduce" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">reduce(func,</span> <span class="pre">iterable/value)</span></code> 把一个函数作用在一个序列上，把结果继续和序列的下一个元素递归累加。</p>
 <p><code class="docutils literal notranslate"><span class="pre">reduce(f,</span> <span class="pre">[x1,</span> <span class="pre">x2,</span> <span class="pre">x3,</span> <span class="pre">x4])</span> <span class="pre">=</span> <span class="pre">f(f(f(x1,</span> <span class="pre">x2),</span> <span class="pre">x3),</span> <span class="pre">x4)</span></code></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
@@ -604,9 +605,9 @@ document.write(`
 </section>
 </section>
 <section id="id12">
-<h2>5. 其他<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h2>
+<h2>5. 其他<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h2>
 <section id="id13">
-<h3>5.1. 二分查找<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
+<h3>5.1. 二分查找<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">bisect</span>
 
 
@@ -621,7 +622,7 @@ document.write(`
 </div>
 </section>
 <section id="id14">
-<h3>5.2. 插入<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h3>
+<h3>5.2. 插入<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">bisect</span>
 <span class="kn">import</span> <span class="nn">random</span>
 
@@ -637,7 +638,7 @@ document.write(`
 </div>
 </section>
 <section id="id15">
-<h3>5.3. 不可变映射类型<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h3>
+<h3>5.3. 不可变映射类型<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">types</span> <span class="kn">import</span> <span class="n">MappingProxyType</span>
 
 <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;A&#39;</span><span class="p">}</span>

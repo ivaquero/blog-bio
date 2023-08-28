@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
@@ -44,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -70,7 +71,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="线性分类" href="04-%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB.html" />
     <link rel="prev" title="线性回归" href="02-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -413,11 +414,11 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>模型选择<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<h1>模型选择<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <section id="id2">
-<h2>1. 选择标准<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<h2>1. 选择标准<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <section id="id3">
-<h3>1.1. 拟合效果<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<h3>1.1. 拟合效果<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-center head"><p>测度</p></th>
@@ -456,7 +457,7 @@ document.write(`
 </ul>
 </section>
 <section id="id4">
-<h3>1.2. 范数<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<h3>1.2. 范数<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p>对距离的测度在数学上被称为范数（norm）。广义上，对于一个含有<span class="math notranslate nohighlight">\(n\)</span>个元素的向量<span class="math notranslate nohighlight">\(v\)</span>来说，其<span class="math notranslate nohighlight">\(ℓ_k\)</span>范数可定义为：</p>
 <div class="math notranslate nohighlight">
 \[
@@ -492,7 +493,7 @@ document.write(`
 <p>范数指数越高，它越关注大值而忽略小值。因而，对离群值 RMSE 比 MAE 更敏感。但，当离群值很少出现时，RMSE 表现非常好，通常是首选。</p>
 </section>
 <section id="id5">
-<h3>1.3. 超参数<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<h3>1.3. 超参数<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <p>超参数（hyperparameters）是算法参数，而非模型参数，如学习率、应用正则化的数量等。当不知道超参数的标度应为多少时，一个很有用的工具是倒数分布（reciprocal distribution），又称对数均匀分布（log-uniform distribution），其 PDF 为：</p>
 <div class="math notranslate nohighlight">
 \[
@@ -507,13 +508,13 @@ F(x; a, b) = \frac{\ln(x) - \ln(a)}{\ln(b) - \ln(a)}
 </section>
 </section>
 <section id="id6">
-<h2>2. 误差优化<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
+<h2>2. 误差优化<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
 <section id="id7">
-<h3>2.1. 最小二乘法<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<h3>2.1. 最小二乘法<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 <p>即对 MSE 进行优化，求得 <span class="math notranslate nohighlight">\(\mathrm{argmin}\{\mathrm{MSE}\}\)</span></p>
 </section>
 <section id="id8">
-<h3>2.2. 极大似然估计<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<h3>2.2. 极大似然估计<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
 <p>极大似然估计估计（MLE）的基本思想与 LSQ 有很大的不同：</p>
 <ul class="simple">
 <li><p>在 LSQ 中，模型是恒定的，响应的误差是可变的；</p></li>
@@ -557,7 +558,7 @@ p(ϵ_i) = Φ\bigg(\frac{y_i - μ}{σ} \bigg)
 <p>不难得到，<span class="math notranslate nohighlight">\(∇^2 ℒ\)</span>半正定，<span class="math notranslate nohighlight">\(ℒ\)</span>为凸函数。</p>
 </section>
 <section id="id9">
-<h3>2.3. 矩阵形式<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<h3>2.3. 矩阵形式<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{bmatrix}
@@ -589,9 +590,9 @@ x̂_n^{⊤}ŵ
 </section>
 </section>
 <section id="id10">
-<h2>3. 模型评估<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
+<h2>3. 模型评估<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
 <section id="bar-r-2">
-<h3>3.1. <span class="math notranslate nohighlight">\(\bar{R}^2\)</span><a class="headerlink" href="#bar-r-2" title="Permalink to this headline">#</a></h3>
+<h3>3.1. <span class="math notranslate nohighlight">\(\bar{R}^2\)</span><a class="headerlink" href="#bar-r-2" title="Permalink to this heading">#</a></h3>
 <p>由此前<span class="math notranslate nohighlight">\(R^2\)</span>的定义可知，其会随着模型包含的特征的增加而增加。对于包含<span class="math notranslate nohighlight">\(d\)</span>个特征的 OLS，调整<span class="math notranslate nohighlight">\(R^2\)</span>的计算公式如下：</p>
 <div class="math notranslate nohighlight">
 \[
@@ -605,7 +606,7 @@ x̂_n^{⊤}ŵ
 </ul>
 </section>
 <section id="id11">
-<h3>3.2. 留一交叉验证<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<h3>3.2. 留一交叉验证<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
 <p>交叉验证（Cross-Validation）可用于估算模型的泛化性能。若模型在训练数据上表现良好，但根据交叉验证指标的泛化较差，则模型过拟合。若两者均表现不佳，则说明欠拟合。</p>
 <p>留一交叉验证（Leave-One-Out Cross-Validation，LOOCV），将训练集分为 2 个部分，将一个单独的训练<span class="math notranslate nohighlight">\((x_1, y_1)\)</span>作为验证集，其余组成训练集。对此大小为<span class="math notranslate nohighlight">\(n - 1\)</span>个的训练集进行拟合，然后用<span class="math notranslate nohighlight">\(x_1\)</span>预测<span class="math notranslate nohighlight">\(ŷ\)</span>。重复上述步骤<span class="math notranslate nohighlight">\(n\)</span>次，得到<span class="math notranslate nohighlight">\(n\)</span>个 MSE，则对测试 MSE 的估计为：</p>
 <div class="math notranslate nohighlight">
@@ -620,7 +621,7 @@ x̂_n^{⊤}ŵ
 <p>其中，<span class="math notranslate nohighlight">\(h_i\)</span>为杠杆值。</p>
 </section>
 <section id="k">
-<h3>3.3. K-折交叉验证<a class="headerlink" href="#k" title="Permalink to this headline">#</a></h3>
+<h3>3.3. K-折交叉验证<a class="headerlink" href="#k" title="Permalink to this heading">#</a></h3>
 <p><span class="math notranslate nohighlight">\(k\)</span>折交叉验证（k-fold Cross-Validation）是 LOOCV 法的一种替代，其将原始训练数据集分割成<span class="math notranslate nohighlight">\(k\)</span>个<strong>不重合</strong>的<strong>大小基本一致</strong>的子数据集，每一次使用一个子数据集验证模型，并使用其他<span class="math notranslate nohighlight">\(k-1\)</span>个子数据集来训练模型：</p>
 <div class="math notranslate nohighlight">
 \[
@@ -630,12 +631,12 @@ x̂_n^{⊤}ŵ
 <p><img alt="cross validation" src="../_images/cross-validation.png" /></p>
 </section>
 <section id="id12">
-<h3>3.4. 学习曲线<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
+<h3>3.4. 学习曲线<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
 <p>学习曲线是另一种评估模型的方法：这是模型在训练集和验证集上的性能与训练集大小（或训练迭代）的函数关系图，示例如下：</p>
 <p><img alt="learning curves" src="../_images/learning-curves.png" /></p>
 </section>
 <section id="id13">
-<h3>3.5. 信息准则<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
+<h3>3.5. 信息准则<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
 <p>通常，训练集的 MSE 比测试集的要低，但训练集的 RSS 不能用于对预测个数不同的模型进行选择。此时需要根据模型规模对训练误差进行调整。</p>
 <p>若回归模型的误差项服从高斯分布，则极大似然估计估计和最小二乘估计是等价的。此时可信息准则添加惩罚项。常见信息准则有赤池信息准则（Akaike information criterion，AIC）和贝叶斯信息准则（Bayesian information criterion，BIC），它们基于对数似然。这两种措施都会对模型复杂性造成损失，但 AIC 对复杂性的惩罚程度要低于 BIC。</p>
 <div class="math notranslate nohighlight">
@@ -650,7 +651,7 @@ x̂_n^{⊤}ŵ
 </section>
 </section>
 <section id="id14">
-<h2>4. 标度与放缩<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h2>
+<h2>4. 标度与放缩<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>线性变换</p>
 <ul>
@@ -680,7 +681,7 @@ x̂_n^{⊤}ŵ
 </ul>
 <p><img alt="scaling" src="../_images/scaling.png" /></p>
 <section id="id15">
-<h3>4.1. 标准化<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h3>
+<h3>4.1. 标准化<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
 <p>标准化将数据放缩为均值为 0，方差为 1 的状态。</p>
 <ul class="simple">
 <li><p>依照特征矩阵的列处理数据</p></li>
@@ -697,7 +698,7 @@ x̂_n^{⊤}ŵ
 \]</div>
 </section>
 <section id="id16">
-<h3>4.2. 归一化<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
+<h3>4.2. 归一化<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
 <p>归一化将数据的值压缩到<span class="math notranslate nohighlight">\([0, 1]\)</span>或<span class="math notranslate nohighlight">\([-1, 1]\)</span>。</p>
 <ul class="simple">
 <li><p>依照特征矩阵的行处理数据</p></li>

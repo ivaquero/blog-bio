@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
@@ -44,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -70,7 +71,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="集成学习" href="09-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0.html" />
     <link rel="prev" title="非线性分类" href="07-%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -416,11 +417,11 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>决策树<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<h1>决策树<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <section id="id2">
-<h2>1. 广义可加模型<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<h2>1. 广义可加模型<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <section id="gam">
-<h3>1.1. GAM 回归<a class="headerlink" href="#gam" title="Permalink to this headline">#</a></h3>
+<h3>1.1. GAM 回归<a class="headerlink" href="#gam" title="Permalink to this heading">#</a></h3>
 <p>对多元线性模型的非线性关系的预测</p>
 <div class="math notranslate nohighlight">
 \[
@@ -446,7 +447,7 @@ y_i = θ_0 + ∑_{j=1}^p θ_j x_{ij} + ϵ_i
 <p>GAM 被视为线性模型、完全非参数模型之间的一类折中建模方法。</p>
 </section>
 <section id="id3">
-<h3>1.2. GAM 分类<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<h3>1.2. GAM 分类<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <p>对逻辑回归</p>
 <div class="math notranslate nohighlight">
 \[
@@ -460,11 +461,11 @@ y_i = θ_0 + ∑_{j=1}^p θ_j x_{ij} + ϵ_i
 </section>
 </section>
 <section id="id4">
-<h2>2. 树方法<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<h2>2. 树方法<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
 <p>树方法主要依据分层（stratifying）和切割（segmenting）的方式将预测器的空间划分为一系列简单区域，这些规则可被概况为一棵树，因而也称决策树（Decision Tree，DT）。</p>
 <p>决策树可执行分类和回归任务，甚至可执行多输出任务，能够拟合复杂的数据集，甚至<strong>不在乎数据是否放缩</strong>。决策树是直观的，其决策也易于解释。这种模型通常称为<strong>白盒模型</strong>。与之相反，正如我们将看到的，通常将随机森林或神经网络视为<strong>黑盒模型</strong>。他们做出了很好的预测，可轻松地检查他们为做出这些预测而执行的计算；但，通常很难用简单的术语来解释为什么做出预测。</p>
 <section id="id5">
-<h3>2.1. 树的结构<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<h3>2.1. 树的结构<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <p>一棵决策树一般包含一个根节点、若干个内部节点和若干个叶子节点。</p>
 <ul class="simple">
 <li><p>叶子节点对应于决策结果；</p></li>
@@ -498,7 +499,7 @@ y_i = θ_0 + ∑_{j=1}^p θ_j x_{ij} + ϵ_i
 </div>
 </section>
 <section id="id6">
-<h3>2.2. 不纯度<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<h3>2.2. 不纯度<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
 <p>一般而言，随着长树过程的不断进行，我们希望决策树的分支节点所包含的样本越来越归属于同一类别，即节点的不纯度（impurity）越来越低。</p>
 <p>令<span class="math notranslate nohighlight">\(p_i\)</span>为节点<span class="math notranslate nohighlight">\(t\)</span>中第<span class="math notranslate nohighlight">\(i\)</span>类样本的占比，<span class="math notranslate nohighlight">\(c\)</span>为类别数目，则节点<span class="math notranslate nohighlight">\(t\)</span>的不纯度度量主要包括：</p>
 <ul class="simple">
@@ -519,15 +520,15 @@ H_i = -∑_{k=1 \atop p_{i, k ≠ 0}}^n p_{i, k} \log_2 p_{i, k}
 <p>Gini 不纯度的计算速度稍快，是一个很好的默认值。但，Gini 不纯度趋向于分离出最频繁出现的类别，而熵趋于产生稍微更平衡的树。</p>
 </section>
 <section id="id7">
-<h3>2.3. 运算复杂度<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<h3>2.3. 运算复杂度<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 <p>决策树进行预测需要从根到叶遍历。决策树通常是近似平衡的，因此遍历决策树需要经过大约<span class="math notranslate nohighlight">\(O(\log_2 m)\)</span>个节点。由于每个节点仅需要检查一个特征的值，因此总预测复杂度为<span class="math notranslate nohighlight">\(O(\log_2 m)\)</span>，与特征数量无关。故，即使处理大型训练集，预测也非常快。</p>
 <p>训练算法比较每个节点上所有样本上的所有特征。比较每个节点上所有样本的所有特征会导致训练复杂度为<span class="math notranslate nohighlight">\(O(n × m\log_2 m)\)</span>。对于小型训练集（少于几千个实例），可通过对数据进行预排序来加快训练速度，但，这样做会大大减慢对大型训练集的训练速度。</p>
 </section>
 </section>
 <section id="id8">
-<h2>3. 树的生成<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
+<h2>3. 树的生成<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
 <section id="cart">
-<h3>3.1. CART<a class="headerlink" href="#cart" title="Permalink to this headline">#</a></h3>
+<h3>3.1. CART<a class="headerlink" href="#cart" title="Permalink to this heading">#</a></h3>
 <p>分类和回归树（Classification and Regression Tree，CART），又称生长树（growing trees），该算法的工作原理是，使用单个特征<span class="math notranslate nohighlight">\(k\)</span>和阈值<span class="math notranslate nohighlight">\(t_k\)</span>将训练集分为两个子集，<span class="math notranslate nohighlight">\((k, t_k)\)</span>通过成本函数计算得到最纯子集：</p>
 <div class="math notranslate nohighlight">
 \[
@@ -571,7 +572,7 @@ ŷ_{node} = \dfrac{∑_{i ∈ node}y^{(i)}}{m_{node}}
 </ul>
 </section>
 <section id="id9">
-<h3>3.2. ID3（基于信息增益）<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<h3>3.2. ID3（基于信息增益）<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
 <p>ID3（迭代二分法器 3）创建一个多路树，以贪婪的方式为每个节点找到将产生分类目标的最大信息增益的分类特征。ID3 基于信息增益，即</p>
 <div class="math notranslate nohighlight">
 \[
@@ -599,7 +600,7 @@ H(D ∣ A) &amp;= ∑_{i=1}^n \frac{|D_i|}{|D|} H(D_i)\\
 </ul>
 </section>
 <section id="c4-5c5-0">
-<h3>3.3. C4.5、C5.0（基于信息增益比）<a class="headerlink" href="#c4-5c5-0" title="Permalink to this headline">#</a></h3>
+<h3>3.3. C4.5、C5.0（基于信息增益比）<a class="headerlink" href="#c4-5c5-0" title="Permalink to this heading">#</a></h3>
 <p>C4.5 是 ID3 的后继者，并通过动态定义离散属性（基于数值变量）来消除特征必须分类的限制，该离散属性将连续属性值划分为一组离散的间隔。C4.5 将训练的树（即 ID3 算法的输出）变换成 <code class="docutils literal notranslate"><span class="pre">if-then</span></code> 规则集。然后评估每个规则的这些准确性以确定它们应该应用的顺序。若规则的准确性在没有它的情况下得到改善，则通过删除规则的前提条件来完成剪枝。</p>
 <div class="math notranslate nohighlight">
 \[
@@ -619,14 +620,14 @@ H_A(D) = -∑_{i=1}^n \frac{|D_i|}{|D|} \log _2 \frac{|D_i|}{|D|}
 </section>
 </section>
 <section id="id10">
-<h2>4. 剪枝<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
+<h2>4. 剪枝<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
 <p>为了防止构建的树过大，产生过拟合且缺乏可解释性，往往需要对树进行剪枝（pruning）。</p>
 <section id="id11">
-<h3>4.1. 预剪枝<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<h3>4.1. 预剪枝<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
 <p>预剪枝（pre-pruning）是指在树的构建过程（只用到训练集），设置一个阈值，使得当在当前分裂节点中分裂前和分裂后的误差超过这个阈值则分列，否则不进行分裂操作。这样可大大降低运算成本，但也可能带来短视的问题：一些被忽略的分裂可能会对模型准确性产生重大影响。</p>
 </section>
 <section id="id12">
-<h3>4.2. 后剪枝<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
+<h3>4.2. 后剪枝<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
 <p>针对预剪枝存在的问题，后剪枝（post-pruning）的战略是在用训练集首先无限制地训练决策树，然后修剪（删除）不必要的节点。一种常用方法是代价复杂度剪枝（Cost Complexity Pruning，CCP）。这种方法不考虑每一棵树，而是考虑以非负调整参数<span class="math notranslate nohighlight">\(α\)</span>标记的一系列子树。每个<span class="math notranslate nohighlight">\(α\)</span>的取值对应一棵子树<span class="math notranslate nohighlight">\(T⊂ T_0\)</span>，当<span class="math notranslate nohighlight">\(α\)</span>一定时，其对应的子树使下式最小：</p>
 <div class="math notranslate nohighlight">
 \[
@@ -641,7 +642,7 @@ H_A(D) = -∑_{i=1}^n \frac{|D_i|}{|D|} \log _2 \frac{|D_i|}{|D|}
 <p>若某一节点的子节点全部为叶节点，则认为其对纯度提高在统计上不显着，即该节点是不必要的。使用标准的统计检验，如<span class="math notranslate nohighlight">\(χ^2\)</span>检验来估计这种改进纯粹是偶然结果的概率（零假设）。</p>
 </section>
 <section id="id13">
-<h3>4.3. 其他战略<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
+<h3>4.3. 其他战略<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>错误率降低剪枝（Reduced Error Pruning，REP)</p></li>
 <li><p>悲观剪枝（Pessimistic Error Pruning，PEP)</p></li>
@@ -649,9 +650,9 @@ H_A(D) = -∑_{i=1}^n \frac{|D_i|}{|D|} \log _2 \frac{|D_i|}{|D|}
 </section>
 </section>
 <section id="id14">
-<h2>5. 回归树<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h2>
+<h2>5. 回归树<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h2>
 <section id="id15">
-<h3>5.1. 误差度量<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h3>
+<h3>5.1. 误差度量<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
 <p>CART 算法的工作原理与以前的方法大致相同，不同之处在于，它不再尝试以最小化不纯度的方式拆分训练集，而是尝试以最小化 MSE 的方式拆分训练集：</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -670,7 +671,7 @@ H_A(D) = -∑_{i=1}^n \frac{|D_i|}{|D|} \log _2 \frac{|D_i|}{|D|}
 \end{split}\]</div>
 </section>
 <section id="id16">
-<h3>5.2. 树的局限<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
+<h3>5.2. 树的局限<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
 <p>决策树有一些限制。首先，决策树喜欢正交的决策边界（所有分割都垂直于轴），这使它们对训练集旋转敏感。限制此问题的一种方法是使用主成分分析（详见 20.3），这通常可使训练数据的方向更好。</p>
 <p><img alt="Boundary" src="../_images/decision-tree-boundary.png" /></p>
 <p>决策树的更主要问题是它们对训练数据中的<strong>细微变化非常敏感</strong>。随机森林可通过对许多树木进行平均预测来限制这种不稳定性，详见后续章节。</p>

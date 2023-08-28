@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
@@ -44,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -70,7 +71,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="统计学习引言" href="../base-ml/01-%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E5%BC%95%E8%A8%80.html" />
     <link rel="prev" title="非参数检验" href="05-%E9%9D%9E%E5%8F%82%E6%95%B0%E6%A3%80%E9%AA%8C.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -457,7 +458,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>回归分析<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<h1>回归分析<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -475,9 +476,9 @@ document.write(`
 </details>
 </div>
 <section id="id2">
-<h2>1. 模型检验<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<h2>1. 模型检验<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <section id="id3">
-<h3>1.1. 线性回归<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<h3>1.1. 线性回归<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <p>广义上的线性回归，包括线性回归和多项式回归，其目的是找到一条直线或曲线，并以最小的误差来拟合数据，回归的核心就是寻找<strong>误差的最小值</strong>。</p>
 <blockquote>
 <div><p>回归分析的前提是，<span class="math notranslate nohighlight">\(𝑿_i\)</span>相互独立，<span class="math notranslate nohighlight">\(𝒀\)</span>服从高斯分布</p>
@@ -504,7 +505,7 @@ ŷ = \hat{θ}_0 + \hat{θ}_1 x
 \]</div>
 </section>
 <section id="id4">
-<h3>1.2. 系数偏差<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<h3>1.2. 系数偏差<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p>一般来说，样本均值可提供对总体均值的良好估计，用<span class="math notranslate nohighlight">\(μ̂\)</span>和<span class="math notranslate nohighlight">\(μ\)</span>分别表示样本均值和总体均值，则<span class="math notranslate nohighlight">\(μ̂\)</span>对<span class="math notranslate nohighlight">\(μ\)</span>的估计必须是无偏的（unbiased）。通常使用标准误差（standard error，SE）来测量二者之间的偏差（bias）：</p>
 <div class="math notranslate nohighlight">
 \[
@@ -525,7 +526,7 @@ ŷ = \hat{θ}_0 + \hat{θ}_1 x
 \]</div>
 </section>
 <section id="t">
-<h3>1.3. <em>t</em> 检验<a class="headerlink" href="#t" title="Permalink to this headline">#</a></h3>
+<h3>1.3. <em>t</em> 检验<a class="headerlink" href="#t" title="Permalink to this heading">#</a></h3>
 <p><em>t</em> 检验一般可评估不同预测因素的重要性，设模型的残差关于 0 呈高斯分布。若残差不以这种方式表现，则说明变量之间存在一定的非线性，其 <em>t</em> 检验不应该用于评估各个预测因子的重要性。</p>
 <p>SE 可用于计算置信区间（confidence intervals，CI）。对于线性回归模型，<span class="math notranslate nohighlight">\(θ_0\)</span>和<span class="math notranslate nohighlight">\(θ_1\)</span>的 CI 分别为：</p>
 <div class="math notranslate nohighlight">
@@ -550,9 +551,9 @@ t = \frac{\hat{θ}_1 - 0}{\mathrm{SE}(\hat{θ}_1)}
 </section>
 </section>
 <section id="id5">
-<h2>2. 相关性<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<h2>2. 相关性<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
 <section id="id6">
-<h3>2.1. 拟合程度<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<h3>2.1. 拟合程度<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
 <p>通常情况下，式<span class="math notranslate nohighlight">\((2.3)\)</span>中的<span class="math notranslate nohighlight">\(\mathrm{RSE}\)</span>可作为模型欠拟合（underfitting）的度量。但由于它是以<span class="math notranslate nohighlight">\(𝒀\)</span>的单位度量的故并不清楚构成良好的<span class="math notranslate nohighlight">\(\mathrm{RSE}\)</span>的要素有哪些。由</p>
 <div class="math notranslate nohighlight">
 \[
@@ -629,7 +630,7 @@ R^2 ≡ 1 - \frac{SS_{res}}{SS_{tot}} = \frac{SS_{mod}}{SS_{tot}}
 </div></blockquote>
 </section>
 <section id="id7">
-<h3>2.2. 相关性系数<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<h3>2.2. 相关性系数<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 <p>对于两个相关的变量，相关性系数（correlation coefficient）度量两个变量之间的关联。而线性回归则是用于从一个变量预测另一个变量的值。</p>
 <p>若这两个变量呈高斯分布，则确定相关系数的标准测量通常使用 Pearson 系数：</p>
 <div class="math notranslate nohighlight">
@@ -658,7 +659,7 @@ r_{𝑿𝒀} = \frac{Cov(𝑿, 𝒀)}{\sqrt{D(𝑿)}\sqrt{D(𝒀)}}
 \]</div>
 </section>
 <section id="f">
-<h3>2.3. <em>F</em> 检验<a class="headerlink" href="#f" title="Permalink to this headline">#</a></h3>
+<h3>2.3. <em>F</em> 检验<a class="headerlink" href="#f" title="Permalink to this heading">#</a></h3>
 <p>记线性模型的系数为<span class="math notranslate nohighlight">\(θ_i\)</span></p>
 <p><span class="math notranslate nohighlight">\(H_0: θ_i = 0\)</span></p>
 <p>构造 <em>F</em> 值</p>
@@ -678,37 +679,37 @@ r_{𝑿𝒀} = \frac{Cov(𝑿, 𝒀)}{\sqrt{D(𝑿)}\sqrt{D(𝒀)}}
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="id8">
-<h1>回归分析<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h1>
+<h1>回归分析<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h1>
 <section id="id9">
-<h2>3. 拟合度检验<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h2>
+<h2>3. 拟合度检验<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
 <p>又称残差分析。</p>
 <p><img alt="correlation" src="../_images/correlation.png" /></p>
 <section id="omnibus">
-<h3>3.1. Omnibus 检验<a class="headerlink" href="#omnibus" title="Permalink to this headline">#</a></h3>
+<h3>3.1. Omnibus 检验<a class="headerlink" href="#omnibus" title="Permalink to this heading">#</a></h3>
 <p>Omnibus 检验使用偏度（skewness）和峭度（kurtosis）来研究残差，检验高斯分布的零假设。偏度是分布不对称性的度量，峭度是其曲率的度量，特别是曲线的指向。</p>
 <p>若获得的 <span class="math notranslate nohighlight">\(p\)</span> 值非常小，则残差通常不会分布在零附近，应该更仔细地看一下模型。</p>
 <p>对于高斯分布的数据，偏度大约是 3。为方便起见，可使用超值峭度（excess kurtosis），其定义为<span class="math notranslate nohighlight">\(\mathrm{kurtosis} - 3\)</span>，以确保其高斯分布的值等于零。</p>
 </section>
 <section id="jarque-bera">
-<h3>3.2. Jarque-Bera 检验<a class="headerlink" href="#jarque-bera" title="Permalink to this headline">#</a></h3>
+<h3>3.2. Jarque-Bera 检验<a class="headerlink" href="#jarque-bera" title="Permalink to this heading">#</a></h3>
 <p>Jarque-Bera 检验，类似 Omnibus 检验。零假设是分布是正态的，偏度和超值峭度都等于 0。不幸的是，对于小样本，Jarque-Bera 检验很容易拒绝零假设。</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(H_0\)</span>: 分布是正态的，偏度和超值峭度都等于 0。</p></li>
 </ul>
 </section>
 <section id="durbin-watson">
-<h3>3.3. Durbin-Watson 检验<a class="headerlink" href="#durbin-watson" title="Permalink to this headline">#</a></h3>
+<h3>3.3. Durbin-Watson 检验<a class="headerlink" href="#durbin-watson" title="Permalink to this heading">#</a></h3>
 <p>Durbin-Watson 检验用于检测残差中是否存在自相关（通过给定的时间滞后相互分离的数值之间的关系）。</p>
 </section>
 <section id="dagostino-pearson">
-<h3>3.4. d’Agostino-Pearson 检验<a class="headerlink" href="#dagostino-pearson" title="Permalink to this headline">#</a></h3>
+<h3>3.4. d’Agostino-Pearson 检验<a class="headerlink" href="#dagostino-pearson" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">stats.normaltest()</span></code> 采用该检验。其结合了偏度和峰度检验，以生成单个全局”综合”统计数据。</p>
 </section>
 </section>
 <section id="id10">
-<h2>5. 问题点检测<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
+<h2>5. 问题点检测<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
 <section id="id11">
-<h3>5.1. 残差图<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<h3>5.1. 残差图<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
 <p>残差图（residual plot）分别以拟合值<span class="math notranslate nohighlight">\(ŷ_i\)</span>和残差<span class="math notranslate nohighlight">\(e_i\)</span>（或残差的开方）为横纵坐标轴，可用于检查数据的非线性。</p>
 <ul class="simple">
 <li><p>若存在明显规律，则暗示线性模型存在着某一方面的问题。</p></li>
@@ -716,11 +717,11 @@ r_{𝑿𝒀} = \frac{Cov(𝑿, 𝒀)}{\sqrt{D(𝑿)}\sqrt{D(𝒀)}}
 </ul>
 </section>
 <section id="id12">
-<h3>5.2. 离群点<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
+<h3>5.2. 离群点<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
 <p>产生离群点的原因有很多，如数据收集过程中某个实例的错误记录。残差图可识别离群点，但实践中，确定残差多大的点为离群点十分困难。此处使用学生化残差（studentized residual）代替残差，将其绝对值 &gt;3 的点定义为离群点。</p>
 </section>
 <section id="id13">
-<h3>5.3. 高杠杆点<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
+<h3>5.3. 高杠杆点<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
 <p>高杠杆点（high leverage）表示<span class="math notranslate nohighlight">\(x_i\)</span>异常的点。高杠杆点比离群点对 OLS 的影响更大。为量化杠杆作用，可计算杠杆统计量。对简单线性回归有：</p>
 <div class="math notranslate nohighlight">
 \[
@@ -730,9 +731,9 @@ h_i = \frac{1}{n} + \frac{(x_i - x̄)^2}{∑_{i' = 1}^n(x_{i'} - x̄)^2} ∈ \bi
 </section>
 </section>
 <section id="id14">
-<h2>6. 共线性<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h2>
+<h2>6. 共线性<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h2>
 <section id="id15">
-<h3>6.1. 方差膨胀因子<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h3>
+<h3>6.1. 方差膨胀因子<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
 <p>共线性（colinearity）指两个或多个预测器高度相关。共线性会导致<span class="math notranslate nohighlight">\(\mathrm{SE}(\hat{θ}_i)\)</span>增大，导致<span class="math notranslate nohighlight">\(t\)</span>统计量下降。多重共线性（multi-colinearity）会导致矩阵求逆失败，或产生不准确的结果。</p>
 <p>当存在多重共线性时，可使用方差膨胀因子（variance inflation factor，VIF）检测。VIF 是拟合全模型的<span class="math notranslate nohighlight">\(D(\hat{θ})\)</span>除以单变量回归中<span class="math notranslate nohighlight">\(D(\hat{θ}_i)\)</span>所得的比例：</p>
 <div class="math notranslate nohighlight">
@@ -742,7 +743,7 @@ h_i = \frac{1}{n} + \frac{(x_i - x̄)^2}{∑_{i' = 1}^n(x_{i'} - x̄)^2} ∈ \bi
 <p>其中，<span class="math notranslate nohighlight">\(R_{𝑿_i | 𝑿_{-i}}^2\)</span>是<span class="math notranslate nohighlight">\(𝑿_i\)</span>对所有预测器回归的<span class="math notranslate nohighlight">\(R^2\)</span>，若前者接近 <span class="math notranslate nohighlight">\(1\)</span>，则存在共线性，此时 VIF 很大。经验法则是<span class="math notranslate nohighlight">\(\mathrm{VIF} &gt; 5 | 10\)</span>，即可认为存在共线性。这种情况下，不需要对<span class="math notranslate nohighlight">\(R^2\)</span>大小妥协。</p>
 </section>
 <section id="id16">
-<h3>6.2. 条件数<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
+<h3>6.2. 条件数<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
 <p>第二种检测方法是条件数，条件数用于度量函数输出对其输入的灵敏度。若条件数&gt;30，则回归可能具有多重共线性。</p>
 <p>设<span class="math notranslate nohighlight">\(x\)</span>是真实解，<span class="math notranslate nohighlight">\(x_c\)</span>是计算解，定义</p>
 <p>误差向量：<span class="math notranslate nohighlight">\(e ≡ x - x_c\)</span>
@@ -825,7 +826,7 @@ d &amp; - b \\ -c &amp; a
 <p>用<span class="math notranslate nohighlight">\(𝑨\)</span>作用于单位圆（<span class="math notranslate nohighlight">\(x^2 + y^2 = 1\)</span>）的<span class="math notranslate nohighlight">\(x\)</span>，可得到相应的椭圆。对于较小的条件数值，<span class="math notranslate nohighlight">\(𝑨\)</span>不会明显扭曲单位圆。但对于较大的值，扭曲会十分明显。</p>
 </section>
 <section id="id17">
-<h3>6.3. 处理方法<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h3>
+<h3>6.3. 处理方法<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
 <p>常用处理方法是岭回归。</p>
 <blockquote>
 <div><p>机器学习不要求特征之间必须独立，必须不相关，只要不是高度相关或精确相关就好。</p>

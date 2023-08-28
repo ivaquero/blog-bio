@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
@@ -44,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -70,7 +71,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="降维" href="10-%E9%99%8D%E7%BB%B4.html" />
     <link rel="prev" title="决策树" href="08-%E5%86%B3%E7%AD%96%E6%A0%91.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -404,14 +405,14 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>集成学习<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<h1>集成学习<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <section id="id2">
-<h2>1. 集成方法<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<h2>1. 集成方法<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>若汇总一组预测器（例如分类器或回归变量）的预测，则通常会获得比使用最佳单个预测器更好的预测。一组预测器称为集成（ensemble）。故，这种技术称为集成学习（Ensemble Learning），其目标是组合使用给定学习算法构建的几个基基础计器的预测，以便改善单个估算器的泛化能力及鲁棒性。</p>
 <p>当预测器彼此尽可能独立时，集成方法最有效。获得不同分类器的一种方法是使用完全不同的算法对其进行训练。这增加了他们犯非常不同类型的错误的机会，从而提高了集成的准确性。</p>
 <p>主流的集成方法包括袋装法（bagging）、提升法（boosting）和堆叠法（stacking）。</p>
 <section id="id3">
-<h3>1.1. 平均集成<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<h3>1.1. 平均集成<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <p>平均集成中，驱动原则是独立构建多个估算器，然后对其预测进行平均。平均而言，组合估计通常优于任何单基估计，因为其方差减小。包括投票法和采样法。</p>
 <ul class="simple">
 <li><p>投票法</p></li>
@@ -433,7 +434,7 @@ f(x) = \frac{1}{k} ∑_{k=1}^{k} f_m(x)
 <p>袋装分类器有 2 种采样模式，分别为实例采样和特征采样。前者的 2 个超参数为 <code class="docutils literal notranslate"><span class="pre">max_samples</span></code> 和 <code class="docutils literal notranslate"><span class="pre">bootstrap</span></code>，后者的 2 个超参数控制：<code class="docutils literal notranslate"><span class="pre">max_features</span></code> 和 <code class="docutils literal notranslate"><span class="pre">bootstrap_features</span></code> 。对于特征采样，每个预测器将在输入特征的随机子集中进行训练。当处理高维输入（如图像）时，此技术特别有用。对实例和特征进行采样的方法称为随机补丁（Random Patches）<a class="footnote-reference brackets" href="#id17" id="id6">3</a>。保留所有实例（设置 <code class="docutils literal notranslate"><span class="pre">bootstrap=False</span></code> 和 <code class="docutils literal notranslate"><span class="pre">max_samples</span> <span class="pre">=</span> <span class="pre">1.0</span></code> ）但进行特征采样（设置 <code class="docutils literal notranslate"><span class="pre">bootstrap_features=True</span></code> 和/或 <code class="docutils literal notranslate"><span class="pre">max_features&lt;</span> <span class="pre">1.0</span></code> ）的方法称为随机子空间（Random Subspaces）<a class="footnote-reference brackets" href="#id18" id="id7">4</a>。采样功能可导致更多的预测器，从而为<strong>降低方差而增加了一些偏差</strong>。</p>
 </section>
 <section id="id8">
-<h3>1.2. 提升法<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<h3>1.2. 提升法<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
 <p>提升最初被称为假设提升（hypothesis boosting），其基基础计器按顺序构建，且试图减少组合估计器的偏差。动机是结合几个弱模型来产生强大的整体。</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -445,7 +446,7 @@ f(x) = \frac{1}{k} ∑_{k=1}^{k} f_m(x)
 <p>其中，<span class="math notranslate nohighlight">\(h(x;a_m)\)</span>就是一个个的弱分类器，<span class="math notranslate nohighlight">\(a_m\)</span>是弱分类器学习到的最优参数，<span class="math notranslate nohighlight">\(β_m\)</span>就是弱学习在强分类器中所占比重，<span class="math notranslate nohighlight">\(𝑷\)</span>是所有<span class="math notranslate nohighlight">\(a_m\)</span>和<span class="math notranslate nohighlight">\(β_m\)</span>的组合。</p>
 </section>
 <section id="id9">
-<h3>1.3. 堆叠法<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<h3>1.3. 堆叠法<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
 <p>堆叠，是堆叠泛化的简称（stacked generalization），基于一个简单的想法：与其使用琐碎的函数来汇总集合中所有预测器的预测，不如训练模型来执行这种聚合。例如对新实例执行回归。三个预测器中的每个预测器都将预测一个不同的值，然后输入给最终的预测器进行最终预测，最终的预测器被称为混合器（blender）或元学习器（meta learner）。</p>
 <blockquote>
 <div><p>这类方法还不够成熟，这里暂不介绍。</p>
@@ -453,7 +454,7 @@ f(x) = \frac{1}{k} ∑_{k=1}^{k} f_m(x)
 </section>
 </section>
 <section id="id10">
-<h2>2. 随机森林<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
+<h2>2. 随机森林<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
 <p>随机森林（Random Forest，RF）是最典型的 bagging 模型 <a class="footnote-reference brackets" href="#id19" id="id11">5</a>，是多个决策树的集成，其在树木生长时会引入额外的随机性；它不是在分割节点时搜索最佳特征，而是在特征的随机子集中搜索最佳特征。该算法导致更大的树多样性，这将较高的偏差换为较低的方差，通常会产生总体较好的模型。其优势简述如下：</p>
 <ul class="simple">
 <li><p>能够处理很高维度（feature 很多）的数据，且不用做特征选择</p></li>
@@ -466,18 +467,18 @@ f(x) = \frac{1}{k} ∑_{k=1}^{k} f_m(x)
 </div></blockquote>
 <p><img alt="Random Forest" src="../_images/random-forest.png" /></p>
 <section id="extra-trees">
-<h3>2.1. Extra-Trees<a class="headerlink" href="#extra-trees" title="Permalink to this headline">#</a></h3>
+<h3>2.1. Extra-Trees<a class="headerlink" href="#extra-trees" title="Permalink to this heading">#</a></h3>
 <p>当在随机森林中生长一棵树时，在每个节点上，仅考虑要素的随机子集进行拆分。通过为每个特征使用随机阈值，可使树变得更加随机。这种极随机树的森林称为极随机树集成（Extremely Randomized Trees Ensemble，Extra-Trees）<a class="footnote-reference brackets" href="#id20" id="id12">6</a>。这将以更大的偏见换取更低的方差。这也使 Extra-Trees 的训练速度比常规的 RF 要快得多，因为在每个节点上为每个特征找到最佳的阈值是生长树木最耗时的任务之一。但二者的效果对比需要交叉验证进一步判定。</p>
 </section>
 <section id="id13">
-<h3>2.2. 特征重要性<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
+<h3>2.2. 特征重要性<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
 <p>随机森林的另一个出色品质是，它们使测量每个特征的相对重要性（feature importance）变得容易。通过查看使用该特征的树节点平均减少了多少不纯度来度量该特征的重要性。更准确地说，它是一个加权均值，其中每个节点的权重等于与其关联的训练样本数。</p>
 </section>
 </section>
 <section id="id14">
-<h2>3. 梯度提升<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h2>
+<h2>3. 梯度提升<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h2>
 <section id="gbrt">
-<h3>3.1. GBRT<a class="headerlink" href="#gbrt" title="Permalink to this headline">#</a></h3>
+<h3>3.1. GBRT<a class="headerlink" href="#gbrt" title="Permalink to this heading">#</a></h3>
 <p>梯度提升（Gradient Boosting）的工作原理是将预测器顺序地添加到一个集成中，尝试<strong>使新的预测器适合先前预测器造成的残差</strong>。</p>
 <p><img alt="Gradient Boosting" src="../_images/gradient-boosting.png" /></p>
 <p>梯度提升回归树（Gradient Boosted Regression Trees）使用超参数 <code class="docutils literal notranslate"><span class="pre">learning_rate</span></code> 来放缩每一棵树的贡献。若将其设置为较低的值，则集成中将需要更多树以适合训练集，但通常可更好地进行预测。为了找到最佳的树数量，可使用提前停止。一种方案是是<strong>阶段预测</strong>（stage prediction），在训练的每个阶段上返回由集成预测的迭代器。</p>
@@ -485,7 +486,7 @@ f(x) = \frac{1}{k} ∑_{k=1}^{k} f_m(x)
 </section>
 </section>
 <section id="lightgbm">
-<h2>4. LightGBM<a class="headerlink" href="#lightgbm" title="Permalink to this headline">#</a></h2>
+<h2>4. LightGBM<a class="headerlink" href="#lightgbm" title="Permalink to this heading">#</a></h2>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="id15"><span class="brackets"><a class="fn-backref" href="#id4">1</a></span></dt>

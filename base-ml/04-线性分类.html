@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
@@ -44,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -70,7 +71,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="梯度下降" href="05-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D.html" />
     <link rel="prev" title="模型选择" href="03-%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -419,11 +420,11 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>线性分类<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<h1>线性分类<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <section id="id2">
-<h2>1. 逻辑回归<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<h2>1. 逻辑回归<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <section id="id3">
-<h3>1.1. 模型推导<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<h3>1.1. 模型推导<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <p>若预测器存在线性关系，为了使其可对二元分类进行预测，需要找到一个函数，使对任意<span class="math notranslate nohighlight">\(X\)</span>，该函数的输出都在 0 和 1 之间。逻辑回归（logistic regression）使用 sigmoid 函数：</p>
 <div class="math notranslate nohighlight">
 \[
@@ -441,7 +442,7 @@ p̂(X) = \frac{1}{1 + e^{-θ^{⊤}X}}
 \]</div>
 </section>
 <section id="id4">
-<h3>1.2. 估计系数<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<h3>1.2. 估计系数<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p>对式<span class="math notranslate nohighlight">\(p̂(X)\)</span>求导</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -473,9 +474,9 @@ J(θ) = -\frac{1}{m} ∑_{i=1}^m \bigg[y_i \log(p̂_i) + (1 - y_i) \log(1 - p̂_
 </section>
 </section>
 <section id="id5">
-<h2>2. 分类的准确性<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<h2>2. 分类的准确性<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
 <section id="id6">
-<h3>2.1. 混淆矩阵<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<h3>2.1. 混淆矩阵<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
 <p>混淆矩阵用于概览分类的具体结果。下图为二元分类的示例，其可推广至多类分类。由图可知，对角线表示得到正确分类的实例个数，故<strong>对角线上的值越大，分类结果越好</strong>。混淆矩阵的行、列分别表示预测值、真实值。</p>
 <p><img alt="confusion matrix" src="../_images/confusion-matrix.png" /></p>
 <p>整体分类结果的正确率（accuracy）为</p>
@@ -508,7 +509,7 @@ F_1 = \frac{2}{\mathrm{1/P + 1/R}}
 \]</div>
 </section>
 <section id="roc-auc">
-<h3>2.2. ROC &amp; AUC<a class="headerlink" href="#roc-auc" title="Permalink to this headline">#</a></h3>
+<h3>2.2. ROC &amp; AUC<a class="headerlink" href="#roc-auc" title="Permalink to this heading">#</a></h3>
 <p>受试者操作特性（receiver-operating-characteristic，ROC）曲线是显示灵敏度（真阳性率，纵轴）和 1-特异性（假阳性率，横轴）之间关系的图表。而 ROC 曲线下的积分面积（area under the ROC，AUC）用于测量机器学习算法对二进制分类问题的性能（泛化能力）。</p>
 <div class="math notranslate nohighlight">
 \[
@@ -520,15 +521,15 @@ F_1 = \frac{2}{\mathrm{1/P + 1/R}}
 横轴 FPR：越大，预测正类中实际负类越多。</p>
 </section>
 <section id="id7">
-<h3>2.3. 决策方程<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<h3>2.3. 决策方程<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 <p>决策方程（decision function）会计算每个实例的分数，若该分数大于阈值，则将实例分配给阳性类；反之，将其分配给阴性类。<strong>分数离 0 越远，分类结果的可信度越高</strong>。通过降低决策方程的阈值，可增加召回率，但需要损失精确度。这在多类分类时，十分有用。机器学习中，拟合得到的系数 <code class="docutils literal notranslate"><span class="pre">coef_</span></code> 即为决策方程的系数，拟合得到的截距 <code class="docutils literal notranslate"><span class="pre">intercept_</span></code> 即为决策方程的偏差。</p>
 <p><img alt="Decision Boundary" src="../_images/decision-boundary.png" /></p>
 </section>
 </section>
 <section id="id8">
-<h2>3. 熵<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
+<h2>3. 熵<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
 <section id="id9">
-<h3>3.1. 信息熵<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<h3>3.1. 信息熵<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
 <p>信息熵（information entropy）是信息论的基石，是不确定性的重要度量。其定义简述如下：</p>
 <ul class="simple">
 <li><p>熵：当一件事情有多种可能情况时，这件事情对某人而言的不确定性</p></li>
@@ -591,7 +592,7 @@ H(X) &amp;= \frac{1}{2} \log (2π) + \log (\det(Σ)) + \frac{1}{2} \\
 \end{split}\]</div>
 </section>
 <section id="id10">
-<h3>3.2. 交叉熵<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
+<h3>3.2. 交叉熵<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
 <p>交叉熵（cross entropy）用于度量一组估计的类别概率与目标类别的匹配程度。对两个不同的分布<span class="math notranslate nohighlight">\(p, q\)</span>可表示为</p>
 <div class="math notranslate nohighlight">
 \[
@@ -609,7 +610,7 @@ J(θ) = -\frac{1}{m} ∑_{i=1}^m ∑_{k=1}^{k} y_{ik} \log (p̂_{ik})
 \]</div>
 </section>
 <section id="kl">
-<h3>3.3. KL 散度<a class="headerlink" href="#kl" title="Permalink to this headline">#</a></h3>
+<h3>3.3. KL 散度<a class="headerlink" href="#kl" title="Permalink to this heading">#</a></h3>
 <p>Kullback-Leibler 散度（KL divergence）是度量两个分布接近程度的一种方法，也称为相对熵，其定义如下</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -629,7 +630,7 @@ J(θ) = -\frac{1}{m} ∑_{i=1}^m ∑_{k=1}^{k} y_{ik} \log (p̂_{ik})
 </div></blockquote>
 </section>
 <section id="id11">
-<h3>3.4. 互信息<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<h3>3.4. 互信息<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
 <p>互信息：两个随机变量<span class="math notranslate nohighlight">\(X, Y\)</span>的互信息定义为<span class="math notranslate nohighlight">\(X, Y\)</span>的联合分布和各自独立分布乘积的相对熵</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -649,10 +650,10 @@ I(X;Y) = D(P(X;Y) || P(X) P(Y))
 </section>
 </section>
 <section id="id12">
-<h2>4. 多元逻辑回归<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h2>
+<h2>4. 多元逻辑回归<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h2>
 <p>多元逻辑回归（multinomial logistic regression）。当给定实例<span class="math notranslate nohighlight">\(x\)</span>时，首先利用 sigmoid 函数为每个类别<span class="math notranslate nohighlight">\(k\)</span>计算一个分数<span class="math notranslate nohighlight">\(s_k(x)\)</span>，然后通过对分数应用 Softmax 函数（因为将值都转化为 0∼1）来估计每个类别的概率。</p>
 <section id="softmax">
-<h3>4.1. Softmax 函数<a class="headerlink" href="#softmax" title="Permalink to this headline">#</a></h3>
+<h3>4.1. Softmax 函数<a class="headerlink" href="#softmax" title="Permalink to this heading">#</a></h3>
 <p>对<span class="math notranslate nohighlight">\(K\)</span>个类别的 Softmax 函数如下</p>
 <div class="math notranslate nohighlight">
 \[
@@ -677,7 +678,7 @@ s(x) = x^{⊤}θ
 <p>Softmax 分类器一次只能预测一个类别（它是多类别，但不是多输出），因此它只能与<strong>互斥类别</strong>一起使用，而无法用于在一张照片中识别多个人。</p>
 </section>
 <section id="id13">
-<h3>4.2. 最大熵原理<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
+<h3>4.2. 最大熵原理<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
 <p>直观地说，一个分布越分散，其熵就越大。对于完全随机的变量（等可能），信息熵最大。假设数据是离散分布的，<span class="math notranslate nohighlight">\(k\)</span>个特征的概率分别为<span class="math notranslate nohighlight">\(p_k\)</span>，最大熵原理（maximum entropy principle）可以表述为：</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -697,7 +698,7 @@ p_1 = p_2 = ⋯ = p_k = \frac{1}{k}
 <p>因此等可能的情况熵最大。</p>
 </section>
 <section id="id14">
-<h3>4.3. 条件熵<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h3>
+<h3>4.3. 条件熵<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
@@ -733,13 +734,13 @@ P(y ∣ x)=\frac{e^{η^{⊤}⋅f(x, y)}}{∑_{y} e^{η^{⊤}⋅f(x, y)}}
 </section>
 </section>
 <section id="id15">
-<h2>5. 多类分类<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h2>
+<h2>5. 多类分类<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h2>
 <p>一些算法，如随机梯度下降（SGD），随机森林（RF）和朴素贝叶斯本身（nB）就可处理多个类别的分类，属于多类分类器（multi-class classifiers）。而逻辑回归或 SVM 严格来说是二元分类器（binary classifiers）。要使用二元分类器处理多类分类，需要采取一些战略。</p>
 <blockquote>
 <div><p>为了绕开这种处理，可以选择树模型。</p>
 </div></blockquote>
 <section id="id16">
-<h3>5.1. 一对一<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
+<h3>5.1. 一对一<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
 <p>一对一（one-versus-one，OvO）也称全配对（all-pairs），其将<span class="math notranslate nohighlight">\(n\)</span>个类别两两配对，产生<span class="math notranslate nohighlight">\(\binom{n}{2}\)</span>个二元分类器。随后进行如下步骤：</p>
 <ul class="simple">
 <li><p>新样本提交给所有分类器预测：<span class="math notranslate nohighlight">\(\binom{n}{2}\)</span>个分类结果</p></li>
@@ -747,7 +748,7 @@ P(y ∣ x)=\frac{e^{η^{⊤}⋅f(x, y)}}{∑_{y} e^{η^{⊤}⋅f(x, y)}}
 </ul>
 </section>
 <section id="id17">
-<h3>5.2. 一对其余<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h3>
+<h3>5.2. 一对其余<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
 <p>一对其余（one-versus-the-rest，OvR），也叫一对全部（one-versus-all），是将数据集中某一类作为正例，其余类作为反例，产生<span class="math notranslate nohighlight">\(n\)</span>个二元分类器。随后进行如下步骤：</p>
 <ul class="simple">
 <li><p>新样本提交给所有分类器预测：<span class="math notranslate nohighlight">\(n\)</span>个分类结果</p></li>
@@ -787,7 +788,7 @@ P(y ∣ x)=\frac{e^{η^{⊤}⋅f(x, y)}}{∑_{y} e^{η^{⊤}⋅f(x, y)}}
 <p>某些算法，如 SVM，其不能随训练集的大小而较好地放缩。对于这些算法，OvO 是首选的，因为在小型训练集上训练多个分类器比在大型训练集上训练几个分类器更快。但对于大多数二进制分类算法，OvR 是首选。</p>
 </section>
 <section id="id18">
-<h3>5.3. 多对多<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h3>
+<h3>5.3. 多对多<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h3>
 <p>多对多（all-versus-all，AvA）将若干类作为正类，若干个其他类作为反类，然后对各类别使用纠错输出码（error correcting output code，ECOC）编码，大致步骤如下</p>
 <div class="admonition- admonition">
 <p class="admonition-title">步骤</p>
@@ -809,7 +810,7 @@ P(y ∣ x)=\frac{e^{η^{⊤}⋅f(x, y)}}{∑_{y} e^{η^{⊤}⋅f(x, y)}}
 </section>
 </section>
 <section id="id19">
-<h2>6. 多输出分类<a class="headerlink" href="#id19" title="Permalink to this headline">#</a></h2>
+<h2>6. 多输出分类<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h2>
 <p>考虑一个人脸识别分类器：若识别同一张图片中的多个人该怎么办？每个识别的人都应该附上一个标签。这种输出多个二元标签的分类系统称为多标签分类（multi-label classification）系统。</p>
 <p>评估多标签分类器的方法有很多，选择正确的指标确实取决于您的项目。一种方法是测量每个单独标签的 F1 得分，然后简单地计算平均分数。这个假设是所有标签都同样重要，但，事实并非如此。一种简单的选择是给每个标签赋予等于其支持的权重（即具有该目标标签的实例数）。</p>
 <p>多输出分类（multi-output classification）只是多标签分类的推广，其中每个标签可是多类（即，它可具有两个以上的可能值）。多输出系统不限于分类任务；它还可用于多个任务。您甚至可能拥有一个系统，该系统每个实例输出多个标签，包括类标签和值标签。</p>

@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
@@ -44,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -70,7 +71,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="参数估计" href="03-%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1.html" />
     <link rel="prev" title="概率与分布" href="01-%E6%A6%82%E7%8E%87%E4%B8%8E%E5%88%86%E5%B8%83.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -478,14 +479,14 @@ document.write(`
 </details>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>统计量与采样<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<h1>统计量与采样<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <section id="id2">
-<h2>1. 统计量<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<h2>1. 统计量<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>在数据的统计分析中，往往需要利用几个选定的样本（sample），得出其所来自的总体（population）的结论。正确的研究设计应该确保样本数据能够代表总体。</p>
 <p>总体与样本之间的主要区别在于如何将观测结果分配到数据集中。</p>
 <p><img alt="statistic" src="../_images/statistic.png" /></p>
 <section id="id3">
-<h3>1.1. 集中程度<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<h3>1.1. 集中程度<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-center head"><p>术语</p></th>
@@ -524,9 +525,9 @@ document.write(`
 </table>
 </section>
 <section id="id4">
-<h3>1.2. 离散程度<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<h3>1.2. 离散程度<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <section id="id5">
-<h4>1.2.1. 极差、分位数<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h4>
+<h4>1.2.1. 极差、分位数<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>极差（range）：最大值 - 最小值；</p></li>
 <li><p>分位数（percentile）：多由箱线图表示，简单概括为<span class="math notranslate nohighlight">\(5\)</span>线<span class="math notranslate nohighlight">\(n\)</span>点，由上到下依次为：</p></li>
@@ -549,7 +550,7 @@ document.write(`
 </div></blockquote>
 </section>
 <section id="id6">
-<h4>1.2.2. 标准差、变异系数<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h4>
+<h4>1.2.2. 标准差、变异系数<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>方差（variance）：也叫平均平方偏差（mean square deviation）</p></li>
 </ul>
@@ -577,7 +578,7 @@ document.write(`
 </section>
 </section>
 <section id="id7">
-<h3>1.3. 期望<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<h3>1.3. 期望<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 <p>期望值是该变量总体输出值的均值</p>
 <ul class="simple">
 <li><p>对离散型分布</p></li>
@@ -602,7 +603,7 @@ E(X) = ∫_{-∞}^{∞} xf(x) dx
 </ol>
 </section>
 <section id="id8">
-<h3>1.4. 方差<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<h3>1.4. 方差<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
 <p>设<span class="math notranslate nohighlight">\(X\)</span>为随机变量，若存在</p>
 <div class="math notranslate nohighlight">
 \[
@@ -635,7 +636,7 @@ D(X) = ∫_{-∞}^{∞}[x - E(X)]f(x) dx
 </ol>
 </section>
 <section id="id9">
-<h3>1.5. 协方差<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<h3>1.5. 协方差<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
 <p>设<span class="math notranslate nohighlight">\(X\)</span>、<span class="math notranslate nohighlight">\(Y\)</span>为随机变量，若存在</p>
 <div class="math notranslate nohighlight">
 \[
@@ -663,9 +664,9 @@ Cov(β) = D(XX^{⊤})^{-1}
 </section>
 </section>
 <section id="id10">
-<h2>2. 大数定律<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
+<h2>2. 大数定律<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
 <section id="chebyshev">
-<h3>2.1. Chebyshev 不等式<a class="headerlink" href="#chebyshev" title="Permalink to this headline">#</a></h3>
+<h3>2.1. Chebyshev 不等式<a class="headerlink" href="#chebyshev" title="Permalink to this heading">#</a></h3>
 <p>设随机变量 <span class="math notranslate nohighlight">\(X\)</span> 的 <span class="math notranslate nohighlight">\(E(X) = μ, D(X) = σ^2\)</span>，则<span class="math notranslate nohighlight">\(∀ϵ ∈ ℤ\)</span>，存在</p>
 <div class="math notranslate nohighlight">
 \[
@@ -686,7 +687,7 @@ P\{|X - μ| ⩽ ϵσ\}⩾ 1 - \frac{1}{ϵ^2}
 </ol>
 </section>
 <section id="id11">
-<h3>2.2. 依概率收敛<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<h3>2.2. 依概率收敛<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
 <p>设<span class="math notranslate nohighlight">\(X_2, X_2, ⋯\)</span>是随机变量序列，若对于任意<span class="math notranslate nohighlight">\(ϵ\)</span>，都有</p>
 <div class="math notranslate nohighlight">
 \[
@@ -699,7 +700,7 @@ X_n \stackrel{p}{→} x₀
 \]</div>
 </section>
 <section id="wiener-khinchin">
-<h3>2.3. Wiener-Khinchin 大数定律<a class="headerlink" href="#wiener-khinchin" title="Permalink to this headline">#</a></h3>
+<h3>2.3. Wiener-Khinchin 大数定律<a class="headerlink" href="#wiener-khinchin" title="Permalink to this heading">#</a></h3>
 <p>也称，弱大数定律（Weak Law of Large Numbers，WLLN）。定律指出：用算术均值来近似实际真值是合理的，在数理统计中，用算术均值来估计数学期望就是根据此定律。</p>
 <p>设<span class="math notranslate nohighlight">\(X_{i} ∼ iid.\)</span>，期望值<span class="math notranslate nohighlight">\(E(X_{i}) = μ(i = 1, 2, ⋯)\)</span>，则<span class="math notranslate nohighlight">\(∀ϵ ∈ ℤ\)</span>，存在</p>
 <div class="math notranslate nohighlight">
@@ -709,7 +710,7 @@ X_n \stackrel{p}{→} x₀
 </div></blockquote>
 </section>
 <section id="id12">
-<h3>2.4. 几乎确信收敛<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
+<h3>2.4. 几乎确信收敛<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
 <p>当<span class="math notranslate nohighlight">\(n → ∞\)</span>，在函数<span class="math notranslate nohighlight">\(P\)</span>下，<span class="math notranslate nohighlight">\(X_n(ω)\)</span>不收敛到<span class="math notranslate nohighlight">\(x₀(ω)\)</span>的概率为 0</p>
 <div class="math notranslate nohighlight">
 \[
@@ -722,7 +723,7 @@ X_n → x₀ a. s.
 \]</div>
 </section>
 <section id="kolmogorov">
-<h3>2.5. Kolmogorov 大数定律<a class="headerlink" href="#kolmogorov" title="Permalink to this headline">#</a></h3>
+<h3>2.5. Kolmogorov 大数定律<a class="headerlink" href="#kolmogorov" title="Permalink to this heading">#</a></h3>
 <p>也称强大数定律（Strong Law of Large Numbers，SLLN）。</p>
 <p>设<span class="math notranslate nohighlight">\(X_{i} ∼ iid.\)</span>，且期望值<span class="math notranslate nohighlight">\(E(X_{i}) = μ(k = 1, 2, ⋯)\)</span>，则</p>
 <div class="math notranslate nohighlight">
@@ -732,9 +733,9 @@ P\bigg\{\lim_{n → ∞} \frac{1}{n} ∑X_{i} μ\bigg\} = 1
 </section>
 </section>
 <section id="clt">
-<h2>3. 中心极限定理（CLT）<a class="headerlink" href="#clt" title="Permalink to this headline">#</a></h2>
+<h2>3. 中心极限定理（CLT）<a class="headerlink" href="#clt" title="Permalink to this heading">#</a></h2>
 <section id="id13">
-<h3>3.1. 依分布收敛<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
+<h3>3.1. 依分布收敛<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
 <p>直觉上，当<span class="math notranslate nohighlight">\(X_n\)</span>依分布收敛到<span class="math notranslate nohighlight">\(x₀\)</span>，就是说，随着<span class="math notranslate nohighlight">\(n\)</span>的增大，<span class="math notranslate nohighlight">\(X_n\)</span>的概率分布越来越接近<span class="math notranslate nohighlight">\(x₀\)</span>的概率分布，即：<span class="math notranslate nohighlight">\(X_n\)</span>的 CDF 越来越接近<span class="math notranslate nohighlight">\(x₀\)</span>的 CDF（随机变量的 PDF 并不总存在）。</p>
 <p><span class="math notranslate nohighlight">\(\{X_n\}\)</span>和<span class="math notranslate nohighlight">\(\{x₀\}\)</span>是 CDF 分别为<span class="math notranslate nohighlight">\(\{F_n(⋅)\}\)</span>和<span class="math notranslate nohighlight">\(\{F₀(⋅)\}\)</span>的随机变量序列，若在<span class="math notranslate nohighlight">\(F₀(x)\)</span>连续处，对于所有的<span class="math notranslate nohighlight">\(x ∈ ℝ\)</span>，都有</p>
 <div class="math notranslate nohighlight">
@@ -748,7 +749,7 @@ X_{n}\stackrel{d}{→} x₀
 \]</div>
 </section>
 <section id="id14">
-<h3>3.2. 独立同分布定理<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h3>
+<h3>3.2. 独立同分布定理<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
 <p><span class="math notranslate nohighlight">\(n\)</span>个独立同分布随机变量之和近似于高斯分布。</p>
 <p>当采样次数足够大（<span class="math notranslate nohighlight">\(n ⩾ 30\)</span>）便有以上性质，这样的总体可看做正态总体。</p>
 <div class="cell tag_hide-input docutils container">
@@ -780,12 +781,12 @@ X_{n}\stackrel{d}{→} x₀
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/5af4c1eea4684527e4b5499c398c59b1729bf4873038cae08443dc0a0188d567.png" src="../_images/5af4c1eea4684527e4b5499c398c59b1729bf4873038cae08443dc0a0188d567.png" />
+<img alt="../_images/02b6ebb952a6b22346e79a1b6dad4667291144fb7686939e94bb20b88ac53e07.png" src="../_images/02b6ebb952a6b22346e79a1b6dad4667291144fb7686939e94bb20b88ac53e07.png" />
 </div>
 </div>
 </section>
 <section id="lyapunov">
-<h3>3.3. Lyapunov 定理<a class="headerlink" href="#lyapunov" title="Permalink to this headline">#</a></h3>
+<h3>3.3. Lyapunov 定理<a class="headerlink" href="#lyapunov" title="Permalink to this heading">#</a></h3>
 <p>当<span class="math notranslate nohighlight">\(n\)</span>足够大时，对<span class="math notranslate nohighlight">\(n\)</span>个随机变量<span class="math notranslate nohighlight">\(X_1, X_2, ⋯, X_n.\ iid.\)</span>，无论其服从什么分布，</p>
 <p>若存在</p>
 <div class="math notranslate nohighlight">
@@ -799,7 +800,7 @@ X_{n}\stackrel{d}{→} x₀
 \]</div>
 </section>
 <section id="de-moivre-laplace">
-<h3>3.4. De Moivre-LaPlace 定理<a class="headerlink" href="#de-moivre-laplace" title="Permalink to this headline">#</a></h3>
+<h3>3.4. De Moivre-LaPlace 定理<a class="headerlink" href="#de-moivre-laplace" title="Permalink to this heading">#</a></h3>
 <p>设随机变量<span class="math notranslate nohighlight">\(X_1, X_2, ⋯, X_n.\ iid. ∼ B(n, p)\)</span>，则<span class="math notranslate nohighlight">\(∀ϵ ∈ ℤ\)</span>，存在</p>
 <div class="math notranslate nohighlight">
 \[
@@ -809,9 +810,9 @@ X_{n}\stackrel{d}{→} x₀
 </section>
 </section>
 <section id="id15">
-<h2>4. 采样分布<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h2>
+<h2>4. 采样分布<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h2>
 <section id="id16">
-<h3>4.1. 标准正态分布<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
+<h3>4.1. 标准正态分布<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
 <p>对正态分布，当<span class="math notranslate nohighlight">\(μ = 0, σ = 1\)</span></p>
 <div class="math notranslate nohighlight">
 \[
@@ -894,7 +895,7 @@ Z = \frac{X̂ - μ}{σ/\sqrt{n}} ∼ N(0, 1)
 </ol>
 </section>
 <section id="id17">
-<h3>4.2. 采样均值<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h3>
+<h3>4.2. 采样均值<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>采样均值</p></li>
 </ul>
@@ -975,7 +976,7 @@ Z = \frac{X̂ - μ}{σ/\sqrt{n}} ∼ N(0, 1)
 </div>
 </section>
 <section id="id18">
-<h3>4.3. 独立分布之和<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h3>
+<h3>4.3. 独立分布之和<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[
 l(y) = ∫_{-∞}^{∞}f(x, y-x) dx
@@ -990,7 +991,7 @@ l(y) = ∫_{-∞}^{∞}f(x, y-x) dx
 \end{aligned}
 \end{split}\]</div>
 <section id="id19">
-<h4>4.3.1. <span class="math notranslate nohighlight">\(χ^2\)</span>分布<a class="headerlink" href="#id19" title="Permalink to this headline">#</a></h4>
+<h4>4.3.1. <span class="math notranslate nohighlight">\(χ^2\)</span>分布<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h4>
 <p><span class="math notranslate nohighlight">\(χ^2\)</span>分布用于描述高斯分布数据间的相关性（独立性）。</p>
 <p>若<span class="math notranslate nohighlight">\(∀X_{i} ∼ iid.\ N(0, σ^2)\)</span>的随机变量，则</p>
 <div class="math notranslate nohighlight">
@@ -1050,13 +1051,13 @@ Y = ∑X_{i}^2 ∼ χ^2(n)
 </section>
 </section>
 <section id="id20">
-<h3>4.4. 独立分布之商<a class="headerlink" href="#id20" title="Permalink to this headline">#</a></h3>
+<h3>4.4. 独立分布之商<a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[
 l(y) = ∫₀^{∞} x_1 f_1(x_1)f_2(x_1, y) dx_1
 \]</div>
 <section id="t">
-<h4>4.4.1. <em>t</em> 分布<a class="headerlink" href="#t" title="Permalink to this headline">#</a></h4>
+<h4>4.4.1. <em>t</em> 分布<a class="headerlink" href="#t" title="Permalink to this heading">#</a></h4>
 <p><em>t</em> 分布，又称 Student <em>t</em> 分布，是来自正态总体的样本均值的分布。通常用于小样本数，当总体均值及标准差未知时。<em>t</em> 分布的实质是，用样本方差 <span class="math notranslate nohighlight">\(S\)</span> 估计总体方差 <span class="math notranslate nohighlight">\(σ\)</span>，也就是用标准误差（sem）代替 <em>Z</em> 统计量中的标准差。</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1127,7 +1128,7 @@ h(t) = \frac{Γ[(n + 1)/2]}{\sqrt{π n}Γ(n/2)}\bigg(1 + \dfrac{t^2}{n}\bigg)^{-
 </ol>
 </section>
 <section id="f">
-<h4>4.4.2. <em>F</em> 分布<a class="headerlink" href="#f" title="Permalink to this headline">#</a></h4>
+<h4>4.4.2. <em>F</em> 分布<a class="headerlink" href="#f" title="Permalink to this heading">#</a></h4>
 <p><em>F</em> 分布用于比较两组高斯分布数据的可变性，并确定方差分析的临界值，即判断两个总体是否有相同的方差。</p>
 <p>当<span class="math notranslate nohighlight">\(X_{i} ∼ χ^2(i)\)</span>，则</p>
 <div class="math notranslate nohighlight">
@@ -1197,7 +1198,7 @@ h(t) = \frac{Γ[(n + 1)/2]}{\sqrt{π n}Γ(n/2)}\bigg(1 + \dfrac{t^2}{n}\bigg)^{-
 </section>
 </section>
 <section id="id21">
-<h3>4.5. 小结<a class="headerlink" href="#id21" title="Permalink to this headline">#</a></h3>
+<h3>4.5. 小结<a class="headerlink" href="#id21" title="Permalink to this heading">#</a></h3>
 <p>采样分布的前提设是总体相互独立</p>
 <table class="colwidths-auto table">
 <thead>

@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
@@ -44,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -70,7 +71,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="统计量与采样" href="02-%E7%BB%9F%E8%AE%A1%E9%87%8F%E4%B8%8E%E9%87%87%E6%A0%B7.html" />
     <link rel="prev" title="重组高拷贝酵母" href="../biotechs/%E9%87%8D%E7%BB%84%E9%AB%98%E6%8B%B7%E8%B4%9D%E9%85%B5%E6%AF%8D.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -407,37 +408,31 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1. 集合</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.1. 集合的运算</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.2. 重排、组合</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">1.3. 事件的运算</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">1.4. 随机变量</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1. 条件概率</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.1. 定义</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.2. 事件的运算</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">1.3. 全概率公式</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2. 条件概率</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.1. 定义</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">2.2. 独立性</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">2.3. 全概率公式</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2. 随机分布</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2.1. 随机变量</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.2. 分布函数</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">3. 随机分布</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">3.1. 分布函数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">3. 常见离散分布</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">3.1. 二项分布</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">3.2. 超几何分布</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poisson">3.3. Poisson 分布</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">3.4. 负二项分布</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">3.5. 几何分布</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">3.6. 小结</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">4. 常见离散分布</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">4.1. 二项分布</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">4.2. 超几何分布</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poisson">4.3. Poisson 分布</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">4.4. 负二项分布</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">4.5. 几何分布</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">4.6. 小结</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">5. 常见连续分布</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">5.1. 指数分布</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">5.2. 高斯分布</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">5.3. 对数高斯分布</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">5.4. 均匀分布</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">4. 常见连续分布</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">4.1. 指数分布</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussian">4.2. Gaussian 分布</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">4.3. 对数 Gaussian 分布</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">4.4. 均匀分布</a></li>
 </ul>
 </li>
 </ul>
@@ -452,7 +447,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>概率与分布<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<h1>概率与分布<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -471,151 +466,9 @@ document.write(`
 </details>
 </div>
 <section id="id2">
-<h2>1. 集合<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Boolean 方程：<span class="math notranslate nohighlight">\(f_n:\{0, 1\}^{n} → \{0, 1\}\)</span>有<span class="math notranslate nohighlight">\(2^{2^{n}}\)</span>个子集</p></li>
-</ul>
-<div class="admonition- admonition">
-<p class="admonition-title">组合数定理</p>
-<div class="math notranslate nohighlight">
-\[
-∑_{i=1}^{k} p_{i} = n (p_{i} ∈ ℕ⁺) →
-∑_{i=1}^{k} q_{i} = n - k (q_{i} ∈ ℕ)
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-∑_{i=1}^{k} r_{i} ⩽ n (r_{i} ∈ ℕ) →
-∑_{i=1}^{k+ 1} r_{i} = n (r_{i} ∈ ℕ)
-\]</div>
-</div>
+<h2>1. 条件概率<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <section id="id3">
-<h3>1.1. 集合的运算<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
-<p>样本空间：包括所有可能结果的集合，可连续，可离散。</p>
-<ul class="simple">
-<li><p>交换律</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[
-A ∪ B = B ∪ A
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-A ∩ B = B ∩ A
-\]</div>
-<ul class="simple">
-<li><p>结合律</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[
-A ∪ (B ∪ C) = (A ∪ B) ∪ C
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-A ∩ (B ∩ C) = (A ∩ B) ∩ C
-\]</div>
-<ul class="simple">
-<li><p>分配律</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[
-A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C)
-\]</div>
-<ul class="simple">
-<li><p>De Morgen 律</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[
-\overline{A ∪ B} = \overline{A} ∩ \overline{B}
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-\overline{A ∩ B} = \overline{A} ∪ \overline{B}
-\]</div>
-<ul class="simple">
-<li><p>转化</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[
-A + B = A ∪ B
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-A - B = A\overline{B}
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-A(B-C) = AB - AC
-\]</div>
-<ul class="simple">
-<li><p>笛卡尔积</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[
-A× B = \{(x, y) |x ∈ A ∧ y ∈ B\}
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-A×∅ = ∅
-\]</div>
-<blockquote>
-<div><p>笛卡尔幂：<span class="math notranslate nohighlight">\(n\)</span>元集合有<span class="math notranslate nohighlight">\(2^{n} -1\)</span>个子集，其<span class="math notranslate nohighlight">\(k\)</span>阶笛卡尔幂有<span class="math notranslate nohighlight">\(n^{k}\)</span>个元素</p>
-</div></blockquote>
-</section>
-<section id="id4">
-<h3>1.2. 重排、组合<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(P_r^{n} = \dfrac{n!}{(n -r)!}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(P_r^{r} = r!\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(C_r^{n} = \dfrac{P_r^{n}}{P_r^{r}} = \bigg(\begin{matrix} n \\ r \end{matrix}\bigg)\)</span></p></li>
-<li><p>Pascal 公式</p></li>
-</ol>
-<div class="math notranslate nohighlight">
-\[
-\binom{n + 1}{k} = \binom{n}{k} + \binom{n}{k-1}
-\]</div>
-</section>
-<section id="id5">
-<h3>1.3. 事件的运算<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
-<p>在概率论中，考虑一个样本空间 Ω，它是所有可能结果<span class="math notranslate nohighlight">\(ω\)</span>的集合，以及它的子集的集合<span class="math notranslate nohighlight">\(F\)</span>，其结构为 σ 代数，其元素称为事件（event）。</p>
-<ul class="simple">
-<li><p>有限可加性</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[
-A ⊂ B ⇒ P(B-A) = P(B) - P(A) ⇒ P(A) ⩽ P(B)
-\]</div>
-<ul class="simple">
-<li><p>加法定律</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[
-P(A ∪ B) = P(A) +P(B) -P(AB)
-\]</div>
-</section>
-<section id="id6">
-<h3>1.4. 随机变量<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>随机变量</p></li>
-</ul>
-<p>一个真实的随机变量 X 是一个（可度量的）从<span class="math notranslate nohighlight">\(Ω\)</span>到<span class="math notranslate nohighlight">\(ℝ\)</span>的映射。</p>
-<div class="math notranslate nohighlight">
-\[
-X: ω ∈ Ω ↦ x ∈ ℝ
-\]</div>
-<ul class="simple">
-<li><p>离散随机变量</p></li>
-</ul>
-<p>若一个随机变量<span class="math notranslate nohighlight">\(X\)</span>在<span class="math notranslate nohighlight">\(ℝ\)</span>的一个子集中取值，其取值个数可度量，则说它是离散的。</p>
-</section>
-</section>
-<section id="id7">
-<h2>2. 条件概率<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
-<section id="id8">
-<h3>2.1. 定义<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<h3>1.1. 定义<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>古典概率</p>
 <ul>
@@ -632,9 +485,28 @@ X: ω ∈ Ω ↦ x ∈ ℝ
 </li>
 </ul>
 </section>
-<section id="id9">
-<h3>2.2. 独立性<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
-<p>独立 ⇔ <span class="math notranslate nohighlight">\(P(AB) = P(A)P(B) ⇒ A ∩ B = ∅\)</span></p>
+<section id="id4">
+<h3>1.2. 事件的运算<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<p>在概率论中，考虑一个样本空间 Ω，它是所有可能结果<span class="math notranslate nohighlight">\(ω\)</span>的集合，以及它的子集的集合<span class="math notranslate nohighlight">\(F\)</span>，其结构为 σ 代数，其元素称为事件（event）。</p>
+<ul class="simple">
+<li><p>有限可加性</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+A ⊂ B ⇒ P(B-A) = P(B) - P(A) ⇒ P(A) ⩽ P(B)
+\]</div>
+<ul class="simple">
+<li><p>加法定律</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+P(A ∪ B) = P(A) +P(B) -P(AB)
+\]</div>
+<ul class="simple">
+<li><p>独立性</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[独立 ⇔ P(AB) = P(A)P(B) ⇒ A ∩ B = ∅\]</div>
 <ul class="simple">
 <li><p>推论 1</p></li>
 </ul>
@@ -646,12 +518,9 @@ X: ω ∈ Ω ↦ x ∈ ℝ
 \end{cases}
 ⇔ P(B|A) = P(B)
 \end{split}\]</div>
-<ul class="simple">
-<li><p>推论 2</p></li>
-</ul>
 </section>
-<section id="id10">
-<h3>2.3. 全概率公式<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
+<section id="id5">
+<h3>1.3. 全概率公式<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>完备事件群：任意两事件互斥，所有事件的并集是整个样本空间（必然事件）</p></li>
 <li><p>全概率公式：对完备事件组<span class="math notranslate nohighlight">\(B_{i}\)</span>，若事件都有正概率，则对任一事件<span class="math notranslate nohighlight">\(𝑨\)</span>都有如下公式成立</p></li>
@@ -662,10 +531,25 @@ P(A) = P(Aω) = P(∑_{1}^{n}AB_{i}) = ∑_{1}^{n}{P(AB_{i})} = ∑_{1}^{n}{P(B_
 \]</div>
 </section>
 </section>
-<section id="id11">
-<h2>3. 随机分布<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h2>
-<section id="id12">
-<h3>3.1. 分布函数<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
+<section id="id6">
+<h2>2. 随机分布<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<section id="id7">
+<h3>2.1. 随机变量<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>随机变量</p></li>
+</ul>
+<p>一个真实的随机变量 X 是一个（可度量的）从<span class="math notranslate nohighlight">\(Ω\)</span>到<span class="math notranslate nohighlight">\(ℝ\)</span>的映射。</p>
+<div class="math notranslate nohighlight">
+\[
+X: ω ∈ Ω ↦ x ∈ ℝ
+\]</div>
+<ul class="simple">
+<li><p>离散随机变量</p></li>
+</ul>
+<p>若一个随机变量<span class="math notranslate nohighlight">\(X\)</span>在<span class="math notranslate nohighlight">\(ℝ\)</span>的一个子集中取值，其取值个数可度量，则说它是离散的。</p>
+</section>
+<section id="id8">
+<h3>2.2. 分布函数<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>概率质量函数（Probability Mass Function，PMF）：离散随机变量在各特定取值上的概率。</p></li>
 <li><p>概率密度函数（Probability Density Function，PDF）：连续随机变量的 PMF。</p></li>
@@ -738,10 +622,10 @@ P(a ⩽ x ⩽ b) = ∫_a^b\mathrm{PDF}(x) dx = \mathrm{CDF}(b) - \mathrm{CDF}(a)
 </div>
 </section>
 </section>
-<section id="id13">
-<h2>4. 常见离散分布<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h2>
-<section id="id14">
-<h3>4.1. 二项分布<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h3>
+<section id="id9">
+<h2>3. 常见离散分布<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
+<section id="id10">
+<h3>3.1. 二项分布<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
 <p>设试验 <em>E</em> 只有 2 种可能结果 A 和 Ā，则称 <em>E</em> 为 Bernoulli 试验，将此试验独立重复<span class="math notranslate nohighlight">\(n\)</span>次，即为<span class="math notranslate nohighlight">\(n\)</span>重 Bernoulli 试验（如放回采样），其结果的发生概率服从 Bernoulli 分布，也叫 (0-1) 分布。</p>
 <p>将后者的试验结果<span class="math notranslate nohighlight">\(X\)</span>扩展为 ℤ，则其中一个结果<span class="math notranslate nohighlight">\(k (k ∈ ℤ)\)</span>的发生概率<span class="math notranslate nohighlight">\(P\{X = k\}\)</span>服从二项分布</p>
 <div class="math notranslate nohighlight">
@@ -816,8 +700,8 @@ P(X = i) = \binom{n}{i}p^{i}(1 - p)^{n - i}, i ∈ ℕ
 </div>
 </div>
 </section>
-<section id="id15">
-<h3>4.2. 超几何分布<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h3>
+<section id="id11">
+<h3>3.2. 超几何分布<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
 <p>一批产品共<span class="math notranslate nohighlight">\(N\)</span>个，其中废品<span class="math notranslate nohighlight">\(M(⩽ N)\)</span>个。随机抽取<span class="math notranslate nohighlight">\(n\)</span>个，含<span class="math notranslate nohighlight">\(m\)</span>个废品的概率服从分布，相当于不放回抽样的二项分布</p>
 <div class="math notranslate nohighlight">
 \[
@@ -856,7 +740,7 @@ P(X = m) = \binom{N - M}{n - m} \binom{M}{m}/\binom{N}{n}
 </div>
 </section>
 <section id="poisson">
-<h3>4.3. Poisson 分布<a class="headerlink" href="#poisson" title="Permalink to this headline">#</a></h3>
+<h3>3.3. Poisson 分布<a class="headerlink" href="#poisson" title="Permalink to this heading">#</a></h3>
 <p>Poisson 分布用于描述单位时间内随机事件发生的次数。将时间切分为<span class="math notranslate nohighlight">\(n\)</span>个时段，设某事件的总发生次数为<span class="math notranslate nohighlight">\(λ\)</span>，则一个时段内该事件发生的概率为<span class="math notranslate nohighlight">\(p= λ/n\)</span>，代入二项分布，</p>
 <div class="math notranslate nohighlight">
 \[
@@ -910,8 +794,8 @@ P(X = i) = e^{-λ}⋅\frac{λ^{i}}{i!}, i ∈ ℕ
 </div>
 </div>
 </section>
-<section id="id16">
-<h3>4.4. 负二项分布<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
+<section id="id12">
+<h3>3.4. 负二项分布<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
 <p>已知合格率为<span class="math notranslate nohighlight">\(p\)</span>时，进行<span class="math notranslate nohighlight">\(n\)</span>次实验，抽到合格品<span class="math notranslate nohighlight">\(r\)</span>个，服从分布</p>
 <div class="math notranslate nohighlight">
 \[
@@ -954,11 +838,11 @@ P(X = i) = \binom{i + r - 1}{r - 1}p^{r}(1 - p)^{i}
 </div>
 </div>
 <blockquote>
-<div><p>当<span class="math notranslate nohighlight">\(r\)</span>为整数时，又称帕斯卡分布。</p>
+<div><p>当<span class="math notranslate nohighlight">\(r\)</span>为整数时，又称 Pascal 分布。</p>
 </div></blockquote>
 </section>
-<section id="id17">
-<h3>4.5. 几何分布<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h3>
+<section id="id13">
+<h3>3.5. 几何分布<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
 <p>对负二项分布，当<span class="math notranslate nohighlight">\(r = 1\)</span>，则有分布</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1000,8 +884,8 @@ G = ∑_{i=0}^{n} ar^{i} = a\bigg(\frac{1 - r^{n + 1}}{1 - r}\bigg),\ r ≠ 1
 </div>
 </div>
 </section>
-<section id="id18">
-<h3>4.6. 小结<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h3>
+<section id="id14">
+<h3>3.6. 小结<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-center head"><p>离散分布</p></th>
@@ -1027,24 +911,24 @@ G = ∑_{i=0}^{n} ar^{i} = a\bigg(\frac{1 - r^{n + 1}}{1 - r}\bigg),\ r ≠ 1
 <td class="text-center"><p>不放回二项分布</p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p>Poisson 分布</p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(Poi(λ)\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(Pois(λ)\)</span></p></td>
 <td class="text-center"><p>ℤ</p></td>
 <td class="text-center"><p>小概率事件</p></td>
 </tr>
 </tbody>
 </table>
 <ol class="arabic simple">
-<li><p>当<span class="math notranslate nohighlight">\(n ⩾ 20, p ⩽ 0.05\)</span>，<span class="math notranslate nohighlight">\(B(n, p) → Poi(λ)\)</span></p></li>
+<li><p>当<span class="math notranslate nohighlight">\(n ⩾ 20, p ⩽ 0.05\)</span>，<span class="math notranslate nohighlight">\(B(n, p) → Pois(λ)\)</span></p></li>
 <li><p>当<span class="math notranslate nohighlight">\(np ⩾ 5\)</span>，<span class="math notranslate nohighlight">\(B(n, p) → N(np, np(1 - p))\)</span></p></li>
-<li><p>当<span class="math notranslate nohighlight">\(λ ⩾ 20\)</span>，<span class="math notranslate nohighlight">\(Poi(λ) → N(λ, λ)\)</span></p></li>
+<li><p>当<span class="math notranslate nohighlight">\(λ ⩾ 20\)</span>，<span class="math notranslate nohighlight">\(Pois(λ) → N(λ, λ)\)</span></p></li>
 <li><p>当<span class="math notranslate nohighlight">\(N → ∞\)</span>，<span class="math notranslate nohighlight">\(H(N, m, n) → B(n, p)\)</span>（当<span class="math notranslate nohighlight">\(n\)</span>固定，则<span class="math notranslate nohighlight">\(p=M/N\)</span>固定）</p></li>
 </ol>
 </section>
 </section>
-<section id="id19">
-<h2>5. 常见连续分布<a class="headerlink" href="#id19" title="Permalink to this headline">#</a></h2>
-<section id="id20">
-<h3>5.1. 指数分布<a class="headerlink" href="#id20" title="Permalink to this headline">#</a></h3>
+<section id="id15">
+<h2>4. 常见连续分布<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h2>
+<section id="id16">
+<h3>4.1. 指数分布<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
 <p>指数分布表示 Poisson 过程中的事件的时间间隔。可以看作是逆 Poisson 分布。</p>
 <blockquote>
 <div><p>逆分布（inverse distribution）是随机变量的倒数服从的分布。</p>
@@ -1098,9 +982,9 @@ f(x, λ) =
 ∀s, \ t ⩾ 0 ⇒ P(X &gt; s + t | X &gt; s) = P(T &gt; t)
 \]</div>
 </section>
-<section id="id21">
-<h3>5.2. 高斯分布<a class="headerlink" href="#id21" title="Permalink to this headline">#</a></h3>
-<p>高斯分布或高斯分布是所有分布函数中最重要的。这是由于所有分布函数的均值在足够大的样本数下都近似于高斯分布。</p>
+<section id="gaussian">
+<h3>4.2. Gaussian 分布<a class="headerlink" href="#gaussian" title="Permalink to this heading">#</a></h3>
+<p>Gaussian 分布或 Gaussian 分布是所有分布函数中最重要的。这是由于所有分布函数的均值在足够大的样本数下都近似于 Gaussian 分布。</p>
 <p>概率密度函数</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1143,9 +1027,9 @@ f(x) = \frac{1}{\sqrt{2π} σ} e^{-\frac{(x - μ)^2}{2 σ^2}}
 </div>
 </div>
 </section>
-<section id="id22">
-<h3>5.3. 对数高斯分布<a class="headerlink" href="#id22" title="Permalink to this headline">#</a></h3>
-<p>数据的对数正态变换通常用于将高偏度分布变换为高斯分布。</p>
+<section id="id17">
+<h3>4.3. 对数 Gaussian 分布<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
+<p>数据的对数正态变换通常用于将高偏度分布变换为 Gaussian 分布。</p>
 <div class="math notranslate nohighlight">
 \[
 f(x, s) = \frac{1}{s x \sqrt{2π}} \exp{\bigg(-\frac{\log^2(x)}{2 s^2}\bigg)}
@@ -1180,8 +1064,8 @@ f(x, s) = \frac{1}{s x \sqrt{2π}} \exp{\bigg(-\frac{\log^2(x)}{2 s^2}\bigg)}
 </div>
 </div>
 </section>
-<section id="id23">
-<h3>5.4. 均匀分布<a class="headerlink" href="#id23" title="Permalink to this headline">#</a></h3>
+<section id="id18">
+<h3>4.4. 均匀分布<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h3>
 <p>概率密度函数</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1293,37 +1177,31 @@ f(x, s) = \frac{1}{s x \sqrt{2π}} \exp{\bigg(-\frac{\log^2(x)}{2 s^2}\bigg)}
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1. 集合</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.1. 集合的运算</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.2. 重排、组合</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">1.3. 事件的运算</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">1.4. 随机变量</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1. 条件概率</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.1. 定义</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.2. 事件的运算</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">1.3. 全概率公式</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2. 条件概率</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.1. 定义</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">2.2. 独立性</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">2.3. 全概率公式</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2. 随机分布</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2.1. 随机变量</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.2. 分布函数</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">3. 随机分布</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">3.1. 分布函数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">3. 常见离散分布</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">3.1. 二项分布</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">3.2. 超几何分布</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poisson">3.3. Poisson 分布</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">3.4. 负二项分布</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">3.5. 几何分布</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">3.6. 小结</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">4. 常见离散分布</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">4.1. 二项分布</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">4.2. 超几何分布</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poisson">4.3. Poisson 分布</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">4.4. 负二项分布</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">4.5. 几何分布</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">4.6. 小结</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">5. 常见连续分布</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">5.1. 指数分布</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">5.2. 高斯分布</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">5.3. 对数高斯分布</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">5.4. 均匀分布</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">4. 常见连续分布</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">4.1. 指数分布</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussian">4.2. Gaussian 分布</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">4.3. 对数 Gaussian 分布</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">4.4. 均匀分布</a></li>
 </ul>
 </li>
 </ul>

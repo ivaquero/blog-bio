@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
@@ -44,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -70,7 +71,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="软聚类" href="12-%E8%BD%AF%E8%81%9A%E7%B1%BB.html" />
     <link rel="prev" title="降维" href="10-%E9%99%8D%E7%BB%B4.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -407,11 +408,11 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>硬聚类<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<h1>硬聚类<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <section id="id2">
-<h2>1. 距离聚类<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<h2>1. 距离聚类<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <section id="k">
-<h3>1.1. <em>k</em>-均值<a class="headerlink" href="#k" title="Permalink to this headline">#</a></h3>
+<h3>1.1. <em>k</em>-均值<a class="headerlink" href="#k" title="Permalink to this heading">#</a></h3>
 <p><em>k</em>-均值（k-means）<a class="footnote-reference brackets" href="#id16" id="id3">1</a> 是聚类算法中最为简单、高效的，在聚类时只具有线性复杂度<span class="math notranslate nohighlight">\(O(m)\)</span>。其核心思想是：<em>k</em> 由用户指定 <em>k</em> 个初始质心（initial centroids）来表示簇（cluster），重复迭代直至算法收敛。2003 年，Elkan<a class="footnote-reference brackets" href="#id17" id="id4">2</a> 发现通过利用三角形不等式（即两点之间，直线最短）并跟踪实例和质心之间的上下限可避免很多不必要的计算，这是机器学习中，<em>k</em>-均值默认使用的算法；2006 年，David Arthur 和 Sergei Vassilvitskii<a class="footnote-reference brackets" href="#id18" id="id5">3</a> 引入了一个更智能的初始化步骤，该步骤倾向于选择彼此相距较远的质心，这一改进使 <em>k</em>-均值算法收敛到次优解决方案的可能性大大降低。由此，<em>k</em>-均值算法流程如下：</p>
 <div class="admonition- admonition">
 <p class="admonition-title">步骤</p>
@@ -459,7 +460,7 @@ W(C_k) =
 <p>其中，<span class="math notranslate nohighlight">\(x̄_{kj} = \frac{1}{|C_k|} ∑_{i ∈ C_k} x_{ij}\)</span>是第<span class="math notranslate nohighlight">\(C_k\)</span>类中第<span class="math notranslate nohighlight">\(j\)</span>个分量的均值。</p>
 </section>
 <section id="id6">
-<h3>1.2. 模型评价<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<h3>1.2. 模型评价<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
 <p>当簇的直径非常不同时，<em>k</em>-均值算法的性能就不会很好，因为将实例分配给簇时，它所关心的只是与质心的距离。一种解决方案是使用<strong>不同的随机初始化多次运行算法</strong>，并留下最佳解决方案。机器学习以模型的惯性（inertia）作为度量，即每个实例与其最接近的质心之间的均方距离，运行 <code class="docutils literal notranslate"><span class="pre">n_init</span></code> 次算法并使模型保持最低惯性。通过实例簇个数 <em>k</em> -惯性曲线，可判断最佳 <em>k</em>。</p>
 <p><img alt="inertia" src="../_images/inertia.png" /></p>
 <p>而对于最佳簇个数的选择，更加精确（运算成本更高）的方法是轮廓分数（silhouette score），也就是所有实例的平均轮廓系数。轮廓系数的定义为：</p>
@@ -473,19 +474,19 @@ W(C_k) =
 <p>尽管 <em>k</em>-均值有许多优点，但它并不完美。正如我们所看到的，有必要多次运行该算法以避免次优解决方案，此外，还需要指定集群数量，这很麻烦。此外，当聚类具有不同的大小，不同的密度或非球形时，<em>k</em>-均值的表现也不佳。在运行之前<strong>缩放</strong>输入很重要，虽然这并不能保证所有的聚类都很好且球形，但，总体上可改善。</p>
 </section>
 <section id="id7">
-<h3>1.3. 小批量 <em>k</em>-均值<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<h3>1.3. 小批量 <em>k</em>-均值<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 <p>David Sculley<a class="footnote-reference brackets" href="#id19" id="id8">4</a> 在 2010 年的论文中提出了 <em>k</em>-均值算法的另一个重要变体。该算法使用小批量处理，在每次迭代时稍微移动质心。这大致将 <em>k</em>-均值的速度提高了 3~4 倍，且可对庞大数据集进行聚类。</p>
 <p>尽管小批量 <em>k</em>-均值算法比常规 <em>k</em>-均值算法快得多，但其惯性通常稍差一些，尤其是随着簇数的增加。两条曲线之间的差异保持相当恒定，但，随着 k 的增加，由于惯性变得越来越小，该差异变得越来越明显。</p>
 </section>
 <section id="id9">
-<h3>1.4. 半监督化<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<h3>1.4. 半监督化<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
 <p>标记数据集既昂贵又费时，故，通常有很多未标记的实例。标签传播（label propagation）将某些（或全部）标签从已标记实例复制到相似的未标记实例。这可大大扩展标记实例的数量，从而使监督算法达到更好的性能（这是半监督学习的一种形式）。一种方法是在所有实例上使用一种聚类算法，如 <em>k</em>-均值，然后为每个群集找到最常见的标签或最具代表性的实例的标签（即最接近质心的实例）并将其传播到同一簇中未标记的实例。</p>
 </section>
 </section>
 <section id="id10">
-<h2>3. 密度聚类<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
+<h2>3. 密度聚类<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
 <section id="dbscan">
-<h3>3.1. DBScan<a class="headerlink" href="#dbscan" title="Permalink to this headline">#</a></h3>
+<h3>3.1. DBScan<a class="headerlink" href="#dbscan" title="Permalink to this heading">#</a></h3>
 <p>设簇结构能够通过样本分布的紧密程度来确定，它通过一组邻域参数<span class="math notranslate nohighlight">\((ϵ, MinPts)\)</span>来描述样本分布的紧密程度。算法简述如下：</p>
 <div class="admonition- admonition">
 <p class="admonition-title">步骤</p>
@@ -506,7 +507,7 @@ N_{ϵ}({x_i}) = \{x_j ∈ D|\mathrm{dist}(x_i, x_j) ⩽ ϵ\},\ D\ = \{{x_1}, {x_
 <p>简言之，DBSCAN 是一种非常简单但功能强大的算法，能够识别任何数量的<strong>任何形状的簇</strong>。它<strong>对离群值具有鲁棒性</strong>，且只有两个超参数（ <code class="docutils literal notranslate"><span class="pre">eps</span></code> 和 <code class="docutils literal notranslate"><span class="pre">min_samples</span></code> ）。但，若密度在整个群集中变化很大，则不可能正确捕获所有簇。它的计算复杂度大约为<span class="math notranslate nohighlight">\(O(m\log m)\)</span>，使其在实例数方面非常接近线性，但，若 <code class="docutils literal notranslate"><span class="pre">eps</span></code> 大，可能需要多达<span class="math notranslate nohighlight">\(O(m^2)\)</span>的内存。</p>
 </section>
 <section id="id11">
-<h3>3.2. 密度关系<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<h3>3.2. 密度关系<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>密度直达</p></li>
 </ul>
@@ -526,9 +527,9 @@ N_{ϵ}({x_i}) = \{x_j ∈ D|\mathrm{dist}(x_i, x_j) ⩽ ϵ\},\ D\ = \{{x_1}, {x_
 </section>
 </section>
 <section id="id12">
-<h2>4. 层级聚类<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h2>
+<h2>4. 层级聚类<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h2>
 <section id="id13">
-<h3>4.1. 凝聚聚类<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
+<h3>4.1. 凝聚聚类<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
 <p>凝聚（Agglomerative）是一种自下而上（bottom-up）的聚类方法，每个观察在其自己的簇中开始，且以这样的方式迭代地合并簇以最小化连接标准。若为每对合并的簇绘制一个带有分支的树，则将得到一个簇的二叉树，其中的叶子是各个实例。这种方法可<strong>很好地扩展到大量实例或簇</strong>。它可捕获<strong>各种形状的簇</strong>，它生成灵活且信息丰富的簇树，而不必强迫选择特定的簇比例，且可与任何成对的距离一起使用。若提供连通性矩阵（connectivity matrix），它可很好地扩展到大量实例。连通性矩阵是一个稀疏的<span class="math notranslate nohighlight">\(m × m\)</span>矩阵，指示哪些实例对是邻居。</p>
 <p>当感兴趣的簇仅由少数观察结果构成时，这种方法特别有意义。当簇的数量很大时，它比 <em>k</em>-均值计算效率高得多。其算法大致如下：</p>
 <div class="admonition- admonition">
@@ -546,15 +547,15 @@ N_{ϵ}({x_i}) = \{x_j ∈ D|\mathrm{dist}(x_i, x_j) ⩽ ϵ\},\ D\ = \{{x_1}, {x_
 <p><img alt="Agglomerative Clustering" src="../_images/agglomerative.png" /></p>
 </section>
 <section id="id14">
-<h3>4.2. 分裂聚类<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h3>
+<h3>4.2. 分裂聚类<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
 <p>分裂（Divisive）：一种自上而下（top-down）的聚类方法，所有观察都在一个集群中开始，当一个集群向下移动时，迭代地分裂。为了估计大量的簇，这种方法既缓慢（由于所有观察开始为一个簇，它以递归方式分割）和统计上不适合。</p>
 </section>
 <section id="birch">
-<h3>4.3. BIRCH<a class="headerlink" href="#birch" title="Permalink to this headline">#</a></h3>
+<h3>4.3. BIRCH<a class="headerlink" href="#birch" title="Permalink to this heading">#</a></h3>
 <p>使用层级结构的平衡迭代约简和聚类（Balanced Iterative Reducing and Clustering using Hierarchies，BIRCH）算法是专为非常大的数据集设计的，只要特征数量不太大（&lt;20），它可比批处理 <em>k</em>-均值更快，且结果相似。训练期间，它构建一个树结构，该树结构仅包含足够的信息以快速将每个新实例分配给簇，而不必将所有实例存储在树中：这种方法允许它在处理庞大的数据集时使用有限的内存。</p>
 </section>
 <section id="id15">
-<h3>4.4. 频谱聚类<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h3>
+<h3>4.4. 频谱聚类<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
 <p>频谱聚类（spectral clustering）在实例之间使用相似性矩阵，并从中创建低维嵌入（即降维），然后在该低维空间中使用另一种聚类算法（如 <em>k</em> -均值）。该算法可捕获复杂的聚类结构，也可用于切割图。它不能很好地扩展到大量实例，且当群集的大小完全不同时，它的运行也不会很好。</p>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">

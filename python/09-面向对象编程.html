@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
@@ -44,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -68,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="模版与模式" href="10-%E6%A8%A1%E7%89%88%E4%B8%8E%E6%A8%A1%E5%BC%8F.html" />
     <link rel="prev" title="内置算法模块" href="08-%E5%86%85%E7%BD%AE%E7%AE%97%E6%B3%95%E6%A8%A1%E5%9D%97.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -417,13 +418,13 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>面向对象编程<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<h1>面向对象编程<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li><p>面向过程编程（Procedure Oriented Programming，POP）：把计算机程序视为一组函数的顺序执行，为简化程序设计，把函数继续切分为子函数来降低系统的复杂度。</p></li>
 <li><p>面向对象编程（Object Oriented Programming，OOP）：把计算机程序视为一组对象的集合，一个对象包含了数据和操作数据的函数，计算机程序的执行就是一系列消息在各个对象之间传递。</p></li>
 </ul>
 <section id="id2">
-<h2>1. 类和对象<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<h2>1. 类和对象<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>面向对象的设计思想是抽象出类（Class），然后以类为模板，创建实例（Instance，也叫对象），对象是类的具体化。</p>
 <ul class="simple">
 <li><p>类定义的变量是静态变量（储存在内存中，类被删后，仍被对象对象调用）</p></li>
@@ -431,7 +432,7 @@ document.write(`
 <li><p>函数定义的是方法，属性名不能与函数名重复，负责将覆盖函数</p></li>
 </ul>
 <section id="id3">
-<h3>1.1. 类的定义<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<h3>1.1. 类的定义<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>类的三要素</p></li>
 </ul>
@@ -448,9 +449,9 @@ document.write(`
 </section>
 </section>
 <section id="id4">
-<h2>2. 构建<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<h2>2. 构建<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
 <section id="self">
-<h3>2.1. <code class="docutils literal notranslate"><span class="pre">self</span></code><a class="headerlink" href="#self" title="Permalink to this headline">#</a></h3>
+<h3>2.1. <code class="docutils literal notranslate"><span class="pre">self</span></code><a class="headerlink" href="#self" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">self</span></code> 是方法的一个特殊参数，可自定义名称，但必须作为第一个参数，在调用时不必传递给实例。<code class="docutils literal notranslate"><span class="pre">self</span></code> 保证属性可被不同对象调用。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -470,7 +471,7 @@ document.write(`
 </div>
 </section>
 <section id="id5">
-<h3>2.2. 初始化<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<h3>2.2. 初始化<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <p>双下划线方法（dunder methods），也叫魔法方法（magic methods）。</p>
 <p><code class="docutils literal notranslate"><span class="pre">__init__()</span></code> 用于初始化。其定义默认的对象属性，没有返回值。 <code class="docutils literal notranslate"><span class="pre">__init__(self)</span></code> 中，在 <code class="docutils literal notranslate"><span class="pre">self</span></code> 后添加的参数为默认参数，相当于 C 语言中的 <code class="docutils literal notranslate"><span class="pre">main()</span></code> 函数。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
@@ -489,7 +490,7 @@ document.write(`
 </div>
 </section>
 <section id="id6">
-<h3>2.3. 打印<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<h3>2.3. 打印<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">__repr__</span></code>：以便于开发者理解的方式返回对象的字符串表示形式。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">__str__</span></code> ：以便于用户理解的方式返回对象的字符串表示形式。</p></li>
@@ -516,9 +517,9 @@ document.write(`
 </section>
 </section>
 <section id="id7">
-<h2>3. 类的性质<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
+<h2>3. 类的性质<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
 <section id="id8">
-<h3>3.1. 私有化<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<h3>3.1. 私有化<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
 <p>Python 不能像 C++ 那样使用 <code class="docutils literal notranslate"><span class="pre">private</span></code> 修饰符创建私有属性，但是 Python 有个简单的机制，能避免子类意外覆盖”私有”属性。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">__XX</span></code>：私有方法或属性，无法用 <code class="docutils literal notranslate"><span class="pre">import</span></code> 导入，需要通过调用类中其他方法调用。</p></li>
@@ -545,7 +546,7 @@ document.write(`
 </div>
 </section>
 <section id="id9">
-<h3>3.2. 对象属性<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<h3>3.2. 对象属性<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
 <p>类属性：指类中方法外的属性，可直接调用。对象属性：指类中方法内的属性，必须通过对象进行调用，对象属性会屏蔽掉同名的类属性，调用时优先调用对象属性。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">People</span><span class="p">():</span>
 
@@ -566,13 +567,13 @@ document.write(`
 </section>
 </section>
 <section id="id10">
-<h2>4. 常用类装饰器<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
+<h2>4. 常用类装饰器<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>对象方法：类中的普通方法</p></li>
 <li><p>类方法：直接对类属性操作的方法</p></li>
 </ul>
 <section id="id11">
-<h3>4.1. 两种方法<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<h3>4.1. 两种方法<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">classmethod</span></code> 装饰器非常有用，<code class="docutils literal notranslate"><span class="pre">staticmethod</span></code> 不是特别有用。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Demo</span><span class="p">:</span>
 
@@ -592,7 +593,7 @@ document.write(`
 </div>
 </section>
 <section id="id12">
-<h3>4.2. 常量枚举<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
+<h3>4.2. 常量枚举<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
 <p>当需要定义常量时，一个办法是用大写变量通过整数来定义，好处是简单，缺点是类型是 <code class="docutils literal notranslate"><span class="pre">int</span></code>，且仍然是变量。更好的方法是为这样的枚举类型定义一个类，然后，每个常量均是类的一个唯一实例。Python 提供了 <code class="docutils literal notranslate"><span class="pre">Enum</span></code> 类来实现这个功能：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
 
@@ -624,9 +625,9 @@ document.write(`
 </section>
 </section>
 <section id="id13">
-<h2>5. 引用<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h2>
+<h2>5. 引用<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h2>
 <section id="id14">
-<h3>5.1. 可变参数的风险<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h3>
+<h3>5.1. 可变参数的风险<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
 <p>对可变参数，需要对其副本进行操作。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TwilightBus</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;让乘客销声匿迹的校车&quot;&quot;&quot;</span>
@@ -656,7 +657,7 @@ document.write(`
 </div>
 </section>
 <section id="id15">
-<h3>5.2. 垃圾回收<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h3>
+<h3>5.2. 垃圾回收<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">del</span></code> 不删除对象，而是删除对象的引用。</p>
 <p>在 CPython 中，垃圾回收使用的主要算法是引用计数。实际上，每个对象都会统计有多少引用指向自己。当引用计数归零时，对象立即就被销毁：CPython 会在对象上调用 <code class="docutils literal notranslate"><span class="pre">__del__</span></code> 方法（若定义了），然后释放分配给对象的内存。</p>
 <blockquote>
@@ -680,7 +681,7 @@ document.write(`
 </div>
 </section>
 <section id="id16">
-<h3>5.3. 弱引用<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
+<h3>5.3. 弱引用<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
 <p>弱引用是可调用的对象，返回的是被引用的对象；若所指对象不存在了，返回 None。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">weakref</span> <span class="kn">import</span> <span class="n">ref</span>
 
@@ -708,7 +709,7 @@ document.write(`
 </div></blockquote>
 </section>
 <section id="id17">
-<h3>5.4. 内存泄露<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h3>
+<h3>5.4. 内存泄露<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">WeakValueDictionary</span></code> 类实现的是一种可变映射，里面的值是对象的弱引用。被引用的对象
 在程序中的其他地方被当作垃圾回收后，对应的键会自动从 <code class="docutils literal notranslate"><span class="pre">WeakValueDictionary</span></code> 中删除。
 因此，<code class="docutils literal notranslate"><span class="pre">WeakValueDictionar</span></code>y 经常用于缓存。</p>
@@ -748,9 +749,9 @@ document.write(`
 </section>
 </section>
 <section id="id18">
-<h2>6. 妙用<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h2>
+<h2>6. 妙用<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h2>
 <section id="json">
-<h3>6.1. 处理 JSON<a class="headerlink" href="#json" title="Permalink to this headline">#</a></h3>
+<h3>6.1. 处理 JSON<a class="headerlink" href="#json" title="Permalink to this heading">#</a></h3>
 <p>假设现在需要从两份旅游数据中获取人员名单</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span>// 去过普吉岛的人员数据
 users_visited_phuket = [

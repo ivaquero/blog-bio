@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
@@ -44,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -68,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="容器" href="03-%E5%AE%B9%E5%99%A8.html" />
     <link rel="prev" title="环境与变量" href="01-%E7%8E%AF%E5%A2%83%E4%B8%8E%E5%8F%98%E9%87%8F.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -406,10 +407,10 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>变量运算<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<h1>变量运算<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <p>运算符优先级：布尔（ <code class="docutils literal notranslate"><span class="pre">and</span></code>，<code class="docutils literal notranslate"><span class="pre">or</span></code>，<code class="docutils literal notranslate"><span class="pre">not</span></code> ）&gt; 比较（ <code class="docutils literal notranslate"><span class="pre">==</span></code>，<code class="docutils literal notranslate"><span class="pre">!=</span></code>，<code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>，<code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> ）&gt; 数值 &gt; 正负号 &gt; 幂运算</p>
 <section id="id2">
-<h2>1. 布尔运算<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<h2>1. 布尔运算<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">or</span></code> 全为真，取第一个值</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">and</span></code> 全为真，取最后一个值</p></li>
@@ -420,7 +421,7 @@ document.write(`
 </div>
 </section>
 <section id="id3">
-<h2>2. 数值<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<h2>2. 数值<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>首个二进制数表示 <code class="docutils literal notranslate"><span class="pre">±</span></code>，0 表示正，1 表示负</p></li>
 <li><p>1 字节的最大值为 255</p></li>
@@ -516,10 +517,10 @@ document.write(`
 </table>
 </section>
 <section id="id4">
-<h2>3. 时间<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<h2>3. 时间<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
 <p>协调世界时（Coordinated Universal Time，UTC）是标准的、与时区无关的时间表示法。UTC 对于计算机来说非常好用，自 UNIX 纪元以来，它以秒来表示时间。但，UTC 对于人类来说并不理想。人类的时间是相对于他们当前所处的位置而言的。</p>
 <section id="id5">
-<h3>3.1. 转化<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<h3>3.1. 转化<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
 
 <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;2012-09-20&#39;</span>
@@ -532,7 +533,7 @@ document.write(`
 </div>
 </section>
 <section id="id6">
-<h3>3.2. 查询<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<h3>3.2. 查询<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
 <p>若需要执行大量类似的日期计算，最好安装 <code class="docutils literal notranslate"><span class="pre">python-dateutil</span></code> 包。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 <span class="kn">from</span> <span class="nn">dateutil.relativedelta</span> <span class="kn">import</span> <span class="n">relativedelta</span>
@@ -559,7 +560,7 @@ document.write(`
 </div>
 </section>
 <section id="id7">
-<h3>3.3. 运算<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<h3>3.3. 运算<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
 
 <span class="n">a</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">hours</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
@@ -585,7 +586,7 @@ document.write(`
 </div>
 </section>
 <section id="id8">
-<h3>3.4. 换算<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<h3>3.4. 换算<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
 <p>Python 提供了两种方式来完成时区变换。旧的方法，使用 <code class="docutils literal notranslate"><span class="pre">time</span></code> 内置模块，非常容易出错。新的方法，使用内置的 <code class="docutils literal notranslate"><span class="pre">datetime</span></code> 模块，在社区构建的 <code class="docutils literal notranslate"><span class="pre">pytz</span></code> 包的帮助下，效果非常好。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 
@@ -608,7 +609,7 @@ document.write(`
 </section>
 </section>
 <section id="id9">
-<h2>4. 文本<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h2>
+<h2>4. 文本<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
 <p>由于历史原因，计算机中存在不同的编码方案。在计算机内存中，统一使用 Unicode 编码，当需要保存到硬盘或需要传输的时候，就变换为 UTF-8 编码。</p>
 <ul class="simple">
 <li><p>Unicode: 为 2 个字节，统一编码标准，支持多语言</p></li>
@@ -616,7 +617,7 @@ document.write(`
 <li><p>ASCII 编码：为 1 个字节，美国人发明</p></li>
 </ul>
 <section id="unicode">
-<h3>4.1. Unicode<a class="headerlink" href="#unicode" title="Permalink to this headline">#</a></h3>
+<h3>4.1. Unicode<a class="headerlink" href="#unicode" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">ord(str)</span></code> 可将单个字符转化为 Unicode 值</p>
 <table class="colwidths-auto table">
 <thead>
@@ -677,7 +678,7 @@ document.write(`
 </div>
 </section>
 <section id="ascii">
-<h3>4.2. ASCII 码<a class="headerlink" href="#ascii" title="Permalink to this headline">#</a></h3>
+<h3>4.2. ASCII 码<a class="headerlink" href="#ascii" title="Permalink to this heading">#</a></h3>
 <p>将所有的 Unicode 十进制数字字符映射为它们对应的 ASCII 版本</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">digitmap</span> <span class="o">=</span> <span class="p">{</span>
     <span class="n">c</span><span class="p">:</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">unicodedata</span><span class="o">.</span><span class="n">digit</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
@@ -701,7 +702,7 @@ document.write(`
 </div>
 </section>
 <section id="id10">
-<h3>4.3. 字节码<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
+<h3>4.3. 字节码<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
 <p>在 Python 中，有两种类型来表示字符数据的序列：“字节” 和 “字符串”。 “字节” 的实例包含原始的、无符号的 8 位值（通常用 ASCII 编码显示）。重要的是，”字符串”实例没有相关的二进制编码，“字节” 实例也没有相关的文本编码。要将 Unicode 数据变换为二进制数据，必须调用 “字符串”的编码方法。要将二进制数据变换为 Unicode 数据，必须调用 “字节” 的解码方法。可为这些方法显式地指定想使用的编码，或接受系统默认值，通常是 UTF-8。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;h</span><span class="se">\x65</span><span class="s2">llo&quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
@@ -750,9 +751,9 @@ document.write(`
 </section>
 </section>
 <section id="id11">
-<h2>5. 文本匹配<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h2>
+<h2>5. 文本匹配<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h2>
 <section id="shell">
-<h3>5.1. Shell<a class="headerlink" href="#shell" title="Permalink to this headline">#</a></h3>
+<h3>5.1. Shell<a class="headerlink" href="#shell" title="Permalink to this heading">#</a></h3>
 <p>一般来说，<code class="docutils literal notranslate"><span class="pre">fnmatch()</span></code> 的匹配模式所采用的大小写区分规则和底层文件系统相同。若这个区别对我们而言很重要，就应该使用 <code class="docutils literal notranslate"><span class="pre">fnmatchcase()</span></code> 。它完全根据我们提供的大小写方式来匹配：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fnmatch</span> <span class="kn">import</span> <span class="n">fnmatch</span><span class="p">,</span> <span class="n">fnmatchcase</span>
 
@@ -767,7 +768,7 @@ document.write(`
 </div>
 </section>
 <section id="id12">
-<h3>5.2. 正则表达式<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
+<h3>5.2. 正则表达式<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
 <p>在 <code class="docutils literal notranslate"><span class="pre">*</span></code> 或 <code class="docutils literal notranslate"><span class="pre">+</span></code> 后添加一个 <code class="docutils literal notranslate"><span class="pre">?</span></code>，会强制将匹配算法调整为寻找最短的可能匹配。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;UPPER PYTHON, lower python, Mixed Python&#39;</span>
 
