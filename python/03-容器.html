@@ -664,7 +664,7 @@ document.write(`
 <h2>4. 特殊容器<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h2>
 <section id="id13">
 <h3>4.1. 数组<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
-<p>若需要一个只包含数字的列表，那么 <code class="docutils literal notranslate"><span class="pre">array.array</span></code> 比 list 更高效。数组支持所有跟可变序列有关的操作，包括 <code class="docutils literal notranslate"><span class="pre">.pop</span></code>、<code class="docutils literal notranslate"><span class="pre">.insert</span></code> 和 <code class="docutils literal notranslate"><span class="pre">.extend</span></code>。另外，数组还提供从文件读取和存入文件的更快的方法，如 <code class="docutils literal notranslate"><span class="pre">.frombytes</span></code> 和 <code class="docutils literal notranslate"><span class="pre">.tofile</span></code>。</p>
+<p>若需要一个只包含数字的列表，则 <code class="docutils literal notranslate"><span class="pre">array.array</span></code> 比 list 更高效。数组支持所有跟可变序列有关的操作，包括 <code class="docutils literal notranslate"><span class="pre">.pop</span></code>、<code class="docutils literal notranslate"><span class="pre">.insert</span></code> 和 <code class="docutils literal notranslate"><span class="pre">.extend</span></code>。另外，数组还提供从文件读取和存入文件的更快的方法，如 <code class="docutils literal notranslate"><span class="pre">.frombytes</span></code> 和 <code class="docutils literal notranslate"><span class="pre">.tofile</span></code>。</p>
 <p>Python 数组跟 C 语言数组一样精简。</p>
 </section>
 <section id="id14">
@@ -751,7 +751,7 @@ document.write(`
 <li><p>浅拷贝（shallowCopy）</p>
 <ul>
 <li><p>增加了一个指针指向已存在的内存地址，复制了最外层容器，副本中的元素是源容器中元素的引用</p></li>
-<li><p>若所有元素都是不可变的，那么这样没有问题，还能节省内存</p></li>
+<li><p>若所有元素都是不可变的，则这样没有问题，还能节省内存</p></li>
 <li><p>若有可变的元素，可能就会导致意想不到的问题</p></li>
 </ul>
 </li>
