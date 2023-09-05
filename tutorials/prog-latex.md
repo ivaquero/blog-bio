@@ -121,7 +121,7 @@ scoop install tectonic
 }
 ```
 
-以上是传统配置，如果使用 `tectonic` 作为 `.tex` 文件的编译工具，则配置如下
+以上是传统配置，若使用 `tectonic` 作为 `.tex` 文件的编译工具，则配置如下
 
 ```json
 {
