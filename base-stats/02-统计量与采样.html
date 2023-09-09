@@ -422,17 +422,16 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">2. 大数定律</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chebyshev">2.1. Chebyshev 不等式</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">2.2. 依概率收敛</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wiener-khinchin">2.3. Wiener-Khinchin 大数定律</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">2.4. 几乎确信收敛</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kolmogorov">2.5. Kolmogorov 大数定律</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">2.2. 几乎确信收敛</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kolmogorov">2.3. Kolmogorov 大数定律</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">2.3. 依概率收敛</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wiener-khinchin">2.5. Wiener-Khinchin 大数定律</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clt">3. 中心极限定理（CLT）</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">3.1. 依分布收敛</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">3.2. 独立同分布定理</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lyapunov">3.3. Lyapunov 定理</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#de-moivre-laplace">3.4. De Moivre-LaPlace 定理</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#de-moivre-laplace">3.3. De Moivre-LaPlace 定理</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">4. 采样分布</a><ul class="nav section-nav flex-column">
@@ -443,7 +442,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">4.4. 独立分布之商</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#t">4.4.1. <em>t</em> 分布</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#t">4.4.1. <span class="math notranslate nohighlight">\(t\)</span>分布</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#f">4.4.2. <em>F</em> 分布</a></li>
 </ul>
 </li>
@@ -596,10 +595,9 @@ E(X) = ∫_{-∞}^{∞} xf(x) dx
 \]</div>
 <p>设<span class="math notranslate nohighlight">\(a\)</span>为常数，<span class="math notranslate nohighlight">\(X\)</span>和<span class="math notranslate nohighlight">\(Y\)</span>是两个随机变量，则有</p>
 <ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(E(a) = a\)</span></p></li>
-<li><p>线性可加：<span class="math notranslate nohighlight">\(E(X + Y) = E(X) + E(Y)\)</span></p></li>
-<li><p>独立可分离：<span class="math notranslate nohighlight">\(X\)</span>、<span class="math notranslate nohighlight">\(Y\)</span> 相互独立 ⇒ <span class="math notranslate nohighlight">\(E(XY) = E(X)E(Y)\)</span></p></li>
-<li><p>连续可嵌套：<span class="math notranslate nohighlight">\(Y\)</span> 是 <span class="math notranslate nohighlight">\(X\)</span> 的连续函数 ⇒ <span class="math notranslate nohighlight">\(Y = g(X)\)</span>，则</p></li>
+<li><p>线性：<span class="math notranslate nohighlight">\(E(X + Y) = E(X) + E(Y)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E(aX + Y) = aE(X + Y)\)</span></p></li>
+<li><p>独立性：<span class="math notranslate nohighlight">\(X\)</span>、<span class="math notranslate nohighlight">\(Y\)</span> 相互独立 ⇒ <span class="math notranslate nohighlight">\(E(XY) = E(X)E(Y)\)</span></p></li>
 </ol>
 </section>
 <section id="id8">
@@ -687,65 +685,64 @@ P\{|X - μ| ⩽ ϵσ\}⩾ 1 - \frac{1}{ϵ^2}
 </ol>
 </section>
 <section id="id11">
-<h3>2.2. 依概率收敛<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
-<p>设<span class="math notranslate nohighlight">\(X_2, X_2, ⋯\)</span>是随机变量序列，若对于任意<span class="math notranslate nohighlight">\(ϵ\)</span>，都有</p>
-<div class="math notranslate nohighlight">
-\[
-\lim_{n → ∞} P(\|X_n-x₀\| ⩾ ϵ)=0
-\]</div>
-<p>则称<span class="math notranslate nohighlight">\(X_n\)</span>依概率收敛于<span class="math notranslate nohighlight">\(x₀\)</span>，记为</p>
-<div class="math notranslate nohighlight">
-\[
-X_n \stackrel{p}{→} x₀
-\]</div>
-</section>
-<section id="wiener-khinchin">
-<h3>2.3. Wiener-Khinchin 大数定律<a class="headerlink" href="#wiener-khinchin" title="Permalink to this heading">#</a></h3>
-<p>也称，弱大数定律（Weak Law of Large Numbers，WLLN）。定律指出：用算术均值来近似实际真值是合理的，在数理统计中，用算术均值来估计数学期望就是根据此定律。</p>
-<p>设<span class="math notranslate nohighlight">\(X_{i} ∼ iid.\)</span>，期望值<span class="math notranslate nohighlight">\(E(X_{i}) = μ(i = 1, 2, ⋯)\)</span>，则<span class="math notranslate nohighlight">\(∀ϵ ∈ ℤ\)</span>，存在</p>
-<div class="math notranslate nohighlight">
-\[P\{|(\frac{1}{n} ∑X_{i}) - μ|&lt;ϵ\} = 1\]</div>
-<blockquote>
-<div><p>当<span class="math notranslate nohighlight">\(X_{i}\)</span>为服从 0-1 分布，W-K 大数定律即为 Bernoulli 大数定律</p>
-</div></blockquote>
-</section>
-<section id="id12">
-<h3>2.4. 几乎确信收敛<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
+<h3>2.2. 几乎确信收敛<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
 <p>当<span class="math notranslate nohighlight">\(n → ∞\)</span>，在函数<span class="math notranslate nohighlight">\(P\)</span>下，<span class="math notranslate nohighlight">\(X_n(ω)\)</span>不收敛到<span class="math notranslate nohighlight">\(x₀(ω)\)</span>的概率为 0</p>
 <div class="math notranslate nohighlight">
 \[
 \lim_{n → ∞} P(|X_n-x₀| ⩾ ϵ)=0
 \]</div>
-<p>记为</p>
+<p>则称<span class="math notranslate nohighlight">\(X_n\)</span>几乎确信收敛<span class="math notranslate nohighlight">\(x_0\)</span>，记为</p>
 <div class="math notranslate nohighlight">
 \[
-X_n → x₀ a. s.
+X_n → x_0
 \]</div>
 </section>
 <section id="kolmogorov">
-<h3>2.5. Kolmogorov 大数定律<a class="headerlink" href="#kolmogorov" title="Permalink to this heading">#</a></h3>
+<h3>2.3. Kolmogorov 大数定律<a class="headerlink" href="#kolmogorov" title="Permalink to this heading">#</a></h3>
 <p>也称强大数定律（Strong Law of Large Numbers，SLLN）。</p>
-<p>设<span class="math notranslate nohighlight">\(X_{i} ∼ iid.\)</span>，且期望值<span class="math notranslate nohighlight">\(E(X_{i}) = μ(k = 1, 2, ⋯)\)</span>，则</p>
+<p>设<span class="math notranslate nohighlight">\(X_{i} ∼ i.i.d.\)</span>，且期望值<span class="math notranslate nohighlight">\(E(X_{i}) = μ(k = 1, 2, ⋯)\)</span>，则</p>
 <div class="math notranslate nohighlight">
 \[
-P\bigg\{\lim_{n → ∞} \frac{1}{n} ∑X_{i} μ\bigg\} = 1
+P\bigg\{\lim_{n → ∞} \frac{1}{n} ∑X_{i} = μ\bigg\} = 1
 \]</div>
+</section>
+<section id="id12">
+<h3>2.3. 依概率收敛<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
+<p>设<span class="math notranslate nohighlight">\(X_2, X_2, ⋯\)</span>是随机变量序列，若<span class="math notranslate nohighlight">\(∀ϵ\)</span>，有</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{n → ∞} P(|X_n - x_0| &gt; ϵ)=0
+\]</div>
+<p>则称<span class="math notranslate nohighlight">\(X_n\)</span>依概率收敛于<span class="math notranslate nohighlight">\(x_0\)</span>，记为</p>
+<div class="math notranslate nohighlight">
+\[
+X_n \stackrel{p}{→} x_0
+\]</div>
+</section>
+<section id="wiener-khinchin">
+<h3>2.5. Wiener-Khinchin 大数定律<a class="headerlink" href="#wiener-khinchin" title="Permalink to this heading">#</a></h3>
+<p>也称弱大数定律（Weak Law of Large Numbers，WLLN）。定律指出：用算术均值来近似实际真值是合理的。</p>
+<p>设<span class="math notranslate nohighlight">\(X_{i} ∼ i.i.d.\)</span>，期望值<span class="math notranslate nohighlight">\(E(X_{i}) = μ(i = 1, 2, ⋯)\)</span>，则<span class="math notranslate nohighlight">\(∀ϵ ∈ ℤ\)</span>，存在</p>
+<div class="math notranslate nohighlight">
+\[P\{ |(\frac{1}{n} ∑X_{i}) - μ| ≤ ϵ \} = 1\]</div>
+<blockquote>
+<div><p>当<span class="math notranslate nohighlight">\(X_{i}\)</span>为服从 0-1 分布，W-K 大数定律即为 Bernoulli 大数定律</p>
+</div></blockquote>
 </section>
 </section>
 <section id="clt">
 <h2>3. 中心极限定理（CLT）<a class="headerlink" href="#clt" title="Permalink to this heading">#</a></h2>
 <section id="id13">
 <h3>3.1. 依分布收敛<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
-<p>直觉上，当<span class="math notranslate nohighlight">\(X_n\)</span>依分布收敛到<span class="math notranslate nohighlight">\(x₀\)</span>，就是说，随着<span class="math notranslate nohighlight">\(n\)</span>的增大，<span class="math notranslate nohighlight">\(X_n\)</span>的概率分布越来越接近<span class="math notranslate nohighlight">\(x₀\)</span>的概率分布，即：<span class="math notranslate nohighlight">\(X_n\)</span>的 CDF 越来越接近<span class="math notranslate nohighlight">\(x₀\)</span>的 CDF（随机变量的 PDF 并不总存在）。</p>
-<p><span class="math notranslate nohighlight">\(\{X_n\}\)</span>和<span class="math notranslate nohighlight">\(\{x₀\}\)</span>是 CDF 分别为<span class="math notranslate nohighlight">\(\{F_n(⋅)\}\)</span>和<span class="math notranslate nohighlight">\(\{F₀(⋅)\}\)</span>的随机变量序列，若在<span class="math notranslate nohighlight">\(F₀(x)\)</span>连续处，对于所有的<span class="math notranslate nohighlight">\(x ∈ ℝ\)</span>，都有</p>
+<p>当<span class="math notranslate nohighlight">\(X_n\)</span>依分布收敛到<span class="math notranslate nohighlight">\(x_0\)</span>，即<span class="math notranslate nohighlight">\(X_n\)</span>的 CDF 越来越接近<span class="math notranslate nohighlight">\(x_0\)</span>的 CDF（随机变量的 PDF 并不总存在）。<span class="math notranslate nohighlight">\(\{X_n\}\)</span>和<span class="math notranslate nohighlight">\(\{x_0\}\)</span>是 CDF 分别为<span class="math notranslate nohighlight">\(\{F_n(⋅)\}\)</span>和<span class="math notranslate nohighlight">\(\{F_0(⋅)\}\)</span>的随机变量序列，若在<span class="math notranslate nohighlight">\(F_0(x)\)</span>连续处，<span class="math notranslate nohighlight">\(∀x ∈ ℝ\)</span>，有</p>
 <div class="math notranslate nohighlight">
 \[
-\underset{n → ∞}{\lim}F_n(x)=F₀(x)
+\lim_{n → ∞} F_n(x) = F_0(x)
 \]</div>
-<p>则当<span class="math notranslate nohighlight">\(n → ∞\)</span>时，<span class="math notranslate nohighlight">\(\{X_n\}\)</span>依分布收敛于<span class="math notranslate nohighlight">\(\{x₀\}\)</span>，记为</p>
+<p>则当<span class="math notranslate nohighlight">\(n → ∞\)</span>时，<span class="math notranslate nohighlight">\(\{X_n\}\)</span>依分布收敛于<span class="math notranslate nohighlight">\(\{x_0\}\)</span>，记为</p>
 <div class="math notranslate nohighlight">
 \[
-X_{n}\stackrel{d}{→} x₀
+X_{n}\stackrel{d}{→} x_0
 \]</div>
 </section>
 <section id="id14">
@@ -781,27 +778,13 @@ X_{n}\stackrel{d}{→} x₀
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/ce0c430584c75b1a90bade018b4af88fbc2c07f04e385d872049cf66fe6caec7.png" src="../_images/ce0c430584c75b1a90bade018b4af88fbc2c07f04e385d872049cf66fe6caec7.png" />
+<img alt="../_images/f8c1a3456829c576236acdade115757fb794e163b9c900d9dbb287abcc76d162.png" src="../_images/f8c1a3456829c576236acdade115757fb794e163b9c900d9dbb287abcc76d162.png" />
 </div>
 </div>
-</section>
-<section id="lyapunov">
-<h3>3.3. Lyapunov 定理<a class="headerlink" href="#lyapunov" title="Permalink to this heading">#</a></h3>
-<p>当<span class="math notranslate nohighlight">\(n\)</span>足够大时，对<span class="math notranslate nohighlight">\(n\)</span>个随机变量<span class="math notranslate nohighlight">\(X_1, X_2, ⋯, X_n.\ iid.\)</span>，无论其服从什么分布，</p>
-<p>若存在</p>
-<div class="math notranslate nohighlight">
-\[
-\frac{1}{∑_{k = 1}^{n}σ_{k}^{2+δ}} ∑_{k = 1}^{n}E\bigg\{|X_{k} - μ|^{2+δ}\bigg\} → 0
-\]</div>
-<p>则</p>
-<div class="math notranslate nohighlight">
-\[
-∑_{k = 1}^{n} X_{k} ∼ N(μ, σ)
-\]</div>
 </section>
 <section id="de-moivre-laplace">
-<h3>3.4. De Moivre-LaPlace 定理<a class="headerlink" href="#de-moivre-laplace" title="Permalink to this heading">#</a></h3>
-<p>设随机变量<span class="math notranslate nohighlight">\(X_1, X_2, ⋯, X_n.\ iid. ∼ B(n, p)\)</span>，则<span class="math notranslate nohighlight">\(∀ϵ ∈ ℤ\)</span>，存在</p>
+<h3>3.3. De Moivre-LaPlace 定理<a class="headerlink" href="#de-moivre-laplace" title="Permalink to this heading">#</a></h3>
+<p>设随机变量<span class="math notranslate nohighlight">\(X_1, X_2, ⋯, X_n\ i.i.d. ∼ B(n, p)\)</span>，则<span class="math notranslate nohighlight">\(∀ϵ ∈ ℤ\)</span>，存在</p>
 <div class="math notranslate nohighlight">
 \[
 \lim_{n → ∞}P\bigg\{\frac{X_n - np}{\sqrt{np(1 - p)}} ⩽ x\bigg\}  = ∫_{-∞}^x \frac{1}{\sqrt{2π}} e^{\frac{-t^2}{2}} dt = Φ(x)
@@ -1057,8 +1040,8 @@ Y = ∑X_{i}^2 ∼ χ^2(n)
 l(y) = ∫₀^{∞} x_1 f_1(x_1)f_2(x_1, y) dx_1
 \]</div>
 <section id="t">
-<h4>4.4.1. <em>t</em> 分布<a class="headerlink" href="#t" title="Permalink to this heading">#</a></h4>
-<p><em>t</em> 分布，又称 Student <em>t</em> 分布，是来自正态总体的样本均值的分布。通常用于小样本数，当总体均值及标准差未知时。<em>t</em> 分布的实质是，用样本方差 <span class="math notranslate nohighlight">\(S\)</span> 估计总体方差 <span class="math notranslate nohighlight">\(σ\)</span>，也就是用标准误差（sem）代替 <em>Z</em> 统计量中的标准差。</p>
+<h4>4.4.1. <span class="math notranslate nohighlight">\(t\)</span>分布<a class="headerlink" href="#t" title="Permalink to this heading">#</a></h4>
+<p><span class="math notranslate nohighlight">\(t\)</span>分布，又称学生 <span class="math notranslate nohighlight">\(t\)</span>分布，是来自正态总体的样本均值的分布。通常用于小样本数，当总体均值及标准差未知时。<span class="math notranslate nohighlight">\(t\)</span>分布的实质是，用样本方差<span class="math notranslate nohighlight">\(S\)</span>估计总体方差<span class="math notranslate nohighlight">\(σ\)</span>，也就是用标准误差（sem）代替 <em>Z</em> 统计量中的标准差。</p>
 <div class="math notranslate nohighlight">
 \[
 t
@@ -1069,7 +1052,7 @@ t
 <blockquote>
 <div><p>由 CLT 可知，样本均值 <span class="math notranslate nohighlight">\(x̄ ∼ N(μ, \dfrac{σ^2}{n})\)</span>。</p>
 </div></blockquote>
-<p>由于 <em>t</em> 分布的尾部长于高斯分布，因此受极端情况的影响要小得多</p>
+<p>由于<span class="math notranslate nohighlight">\(t\)</span>分布的尾部长于高斯分布，因此受极端情况的影响要小得多</p>
 <p><img alt="t-normal" src="../_images/t-normal.png" /></p>
 <p>当<span class="math notranslate nohighlight">\(X_1 ∼ χ^2(n), X_2 ∼ N(0, 1)\)</span>，则</p>
 <div class="math notranslate nohighlight">
@@ -1186,14 +1169,14 @@ h(t) = \frac{Γ[(n + 1)/2]}{\sqrt{π n}Γ(n/2)}\bigg(1 + \dfrac{t^2}{n}\bigg)^{-
 <p>当<span class="math notranslate nohighlight">\(X_{i} ∼ N(μ_1, σ_1^2), Y_{j} ∼ N(μ_2, σ_2^2)\)</span>，则</p>
 <div class="math notranslate nohighlight">
 \[
-∑\bigg[\dfrac{(Y_{j} - Ȳ)}{σ_2^2(m - 1)} \bigg]/\bigg[\dfrac{X_{i} - X̂}{σ_1^2(n - 1)} \bigg] ∼ F(m - 1, n - 1)
+∑\bigg[\dfrac{(Y_{j} - Ȳ)}{σ_2^2(m - 1)} \bigg]/\bigg[\dfrac{X_{i} - X̄}{σ_1^2(n - 1)} \bigg] ∼ F(m - 1, n - 1)
 \]</div>
 <ul class="simple">
 <li><p>当<span class="math notranslate nohighlight">\(σ_1^2 = σ_2^2\)</span></p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[
-∑[(X̂ - Ȳ) -(μ_1 - μ_2)]⋅\sqrt{\bigg[\dfrac{n + m-2}{1/n + 1/m}\bigg]} /\sqrt{\bigg[∑(X_{i} - X̂) + ∑(Y_{i} - Ȳ)\bigg]} ∼ t(n + m - 2)
+∑[(X̄ - Ȳ) -(μ_1 - μ_2)]⋅\sqrt{\bigg[\dfrac{n + m-2}{1/n + 1/m}\bigg]} /\sqrt{\bigg[∑(X_{i} - X̂) + ∑(Y_{i} - Ȳ)\bigg]} ∼ t(n + m - 2)
 \]</div>
 </section>
 </section>
@@ -1311,17 +1294,16 @@ h(t) = \frac{Γ[(n + 1)/2]}{\sqrt{π n}Γ(n/2)}\bigg(1 + \dfrac{t^2}{n}\bigg)^{-
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">2. 大数定律</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chebyshev">2.1. Chebyshev 不等式</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">2.2. 依概率收敛</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wiener-khinchin">2.3. Wiener-Khinchin 大数定律</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">2.4. 几乎确信收敛</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kolmogorov">2.5. Kolmogorov 大数定律</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">2.2. 几乎确信收敛</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kolmogorov">2.3. Kolmogorov 大数定律</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">2.3. 依概率收敛</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wiener-khinchin">2.5. Wiener-Khinchin 大数定律</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clt">3. 中心极限定理（CLT）</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">3.1. 依分布收敛</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">3.2. 独立同分布定理</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lyapunov">3.3. Lyapunov 定理</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#de-moivre-laplace">3.4. De Moivre-LaPlace 定理</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#de-moivre-laplace">3.3. De Moivre-LaPlace 定理</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">4. 采样分布</a><ul class="nav section-nav flex-column">
@@ -1332,7 +1314,7 @@ h(t) = \frac{Γ[(n + 1)/2]}{\sqrt{π n}Γ(n/2)}\bigg(1 + \dfrac{t^2}{n}\bigg)^{-
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">4.4. 独立分布之商</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#t">4.4.1. <em>t</em> 分布</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#t">4.4.1. <span class="math notranslate nohighlight">\(t\)</span>分布</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#f">4.4.2. <em>F</em> 分布</a></li>
 </ul>
 </li>
