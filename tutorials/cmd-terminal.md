@@ -138,16 +138,16 @@ font:
   size: 16
   # 字体
   normal:
-    family: 'FiraCode Nerd Font'
+    family: "FiraCode Nerd Font"
     style: Regular
   bold:
-    family: 'FiraCode Nerd Font'
+    family: "FiraCode Nerd Font"
     style: Bold
   italic:
-    family: 'FiraCode Nerd Font'
+    family: "FiraCode Nerd Font"
     style: Italic
   bold_italic:
-    family: 'FiraCode Nerd Font'
+    family: "FiraCode Nerd Font"
     style: Bold Italic
 
   # 细描边
@@ -206,7 +206,7 @@ template:
         Fixed: 1
       run:
         plugin:
-          location: 'zellij:tab-bar' # 加载标签栏
+          location: "zellij:tab-bar" # 加载标签栏
     - direction: Vertical # part 2
       body: true # 加载主体
     - direction: Vertical # part 3
@@ -215,10 +215,10 @@ template:
         Fixed: 2
       run:
         plugin:
-          location: 'zellij:status-bar' # 加载状态栏
+          location: "zellij:status-bar" # 加载状态栏
 
 tabs: # 每个标签 pane 的排布
-  - name: 'Tab 1' # 每个标签的名字
+  - name: "Tab 1" # 每个标签的名字
     direction: Horizontal # 水平排布
     parts:
       - direction: Vertical # 垂直分割
@@ -245,7 +245,7 @@ shell:
     # login
     - -l
     - -c
-    - 'zellij attach --index 0 --create'
+    - "zellij attach --index 0 --create"
 ```
 
 ### 3.2. 键位绑定
@@ -256,13 +256,13 @@ shell:
 keybinds:
   resize:
     - action: [Resize: Left]
-      key: [Char: 'h', Alt: 'h']
+      key: [Char: "h", Alt: "h"]
     - action: [Resize: Right]
-      key: [Char: 'l', Alt: 'l']
+      key: [Char: "l", Alt: "l"]
     - action: [Resize: Down]
-      key: [Char: 'j', Alt: 'j']
+      key: [Char: "j", Alt: "j"]
     - action: [Resize: Up]
-      key: [Char: 'k', Alt: 'k']
+      key: [Char: "k", Alt: "k"]
 ```
 
 ## 4. 命令行替代
@@ -333,16 +333,8 @@ scoop install nu
 
 [nushell](https://www.nushell.sh/)
 
-## 6. 个人项目
-
-[Oxidizer](https://github.com/ivaquero/oxidizer.sh)
-
-鉴于当下，Zellij 目前拒绝支持 Windows，Alacritty 对用户的要求响应很慢，个人项目已用 WezTerm 取代 Alacritty + Zellij，以统一三大平台配置。
-
-![Oxidizer](https://raw.githubusercontent.com/ivaquero/backup/main/docs/oxidizer.png)
+鉴于当下，Zellij 目前拒绝支持 Windows，Alacritty 对用户的要求响应很慢，可以使用 WezTerm 取代 Alacritty + Zellij，以统一三大平台配置。
 
 > 在 macOS 上，WezTerm 的速度只有 Alacritty 的一半，但是，完整实现了跨平台，多标签，配置上采用 Lua，更灵活。
 
-WezTerm 的基础配置见
-
-[wezterm.lua](https://github.com/ivaquero/oxidizer.sh/blob/master/defaults/wezterm.lua)
+WezTerm 的基础配置见 [wezterm.lua](https://github.com/ivaquero/oxidizer.sh/blob/master/defaults/wezterm.lua)
