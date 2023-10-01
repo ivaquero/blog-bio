@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -68,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/doge.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="统计量与采样" href="02-%E7%BB%9F%E8%AE%A1%E9%87%8F%E4%B8%8E%E9%87%87%E6%A0%B7.html" />
+    <link rel="next" title="统计量与抽样" href="02-%E7%BB%9F%E8%AE%A1%E9%87%8F%E4%B8%8E%E9%87%87%E6%A0%B7.html" />
     <link rel="prev" title="重组高拷贝酵母" href="../biotechs/%E9%87%8D%E7%BB%84%E9%AB%98%E6%8B%B7%E8%B4%9D%E9%85%B5%E6%AF%8D.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -80,6 +81,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -174,7 +184,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">统计基础</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">概率与分布</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02-%E7%BB%9F%E8%AE%A1%E9%87%8F%E4%B8%8E%E9%87%87%E6%A0%B7.html">统计量与采样</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-%E7%BB%9F%E8%AE%A1%E9%87%8F%E4%B8%8E%E9%87%87%E6%A0%B7.html">统计量与抽样</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03-%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1.html">参数估计</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04-%E5%8F%82%E6%95%B0%E6%A3%80%E9%AA%8C.html">参数检验</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05-%E9%9D%9E%E5%8F%82%E6%95%B0%E6%A3%80%E9%AA%8C.html">非参数检验</a></li>
@@ -370,10 +380,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -381,7 +391,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -617,7 +627,7 @@ P(a ⩽ x ⩽ b) = ∫_a^b\mathrm{PDF}(x) dx = \mathrm{CDF}(b) - \mathrm{CDF}(a)
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/5b45ca664750400041f4fe115b641318b5c06b6a05ac423b4764185d240c65b1.png" src="../_images/5b45ca664750400041f4fe115b641318b5c06b6a05ac423b4764185d240c65b1.png" />
+<img alt="../_images/0073eb2071cad49e096b68bcce19dcd000594b276579b3be906a666b4950302a.png" src="../_images/0073eb2071cad49e096b68bcce19dcd000594b276579b3be906a666b4950302a.png" />
 </div>
 </div>
 </section>
@@ -626,7 +636,7 @@ P(a ⩽ x ⩽ b) = ∫_a^b\mathrm{PDF}(x) dx = \mathrm{CDF}(b) - \mathrm{CDF}(a)
 <h2>3. 常见离散分布<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
 <section id="id10">
 <h3>3.1. 二项分布<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
-<p>设试验 <em>E</em> 只有 2 种可能结果 A 和 Ā，则称 <em>E</em> 为 Bernoulli 试验，将此试验独立重复<span class="math notranslate nohighlight">\(n\)</span>次，即为<span class="math notranslate nohighlight">\(n\)</span>重 Bernoulli 试验（如放回采样），其结果的发生概率服从 Bernoulli 分布，也叫 0-1 分布。</p>
+<p>设试验 <em>E</em> 只有 2 种可能结果 A 和 Ā，则称 <em>E</em> 为 Bernoulli 试验，将此试验独立重复<span class="math notranslate nohighlight">\(n\)</span>次，即为<span class="math notranslate nohighlight">\(n\)</span>重 Bernoulli 试验（如放回抽样），其结果的发生概率服从 Bernoulli 分布，也叫 0-1 分布。</p>
 <p>将后者的试验结果<span class="math notranslate nohighlight">\(X\)</span>扩展为 ℤ，则其中一个结果<span class="math notranslate nohighlight">\(k (k ∈ ℤ)\)</span>的发生概率<span class="math notranslate nohighlight">\(P\{X = k\}\)</span>服从二项分布</p>
 <div class="math notranslate nohighlight">
 \[
@@ -665,7 +675,7 @@ P(X = k) = \binom{n}{k}p^{k}(1 - p)^{n - k}, k ∈ ℕ
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/3ab982afb21dfa9886c223cf01b7185129bd9aef332d5f628cc13d795b22a9a6.png" src="../_images/3ab982afb21dfa9886c223cf01b7185129bd9aef332d5f628cc13d795b22a9a6.png" />
+<img alt="../_images/5d481d88fa5719df7e62403e15cea097d81f607e2656ccdc3e7f99a9a4c34bc0.png" src="../_images/5d481d88fa5719df7e62403e15cea097d81f607e2656ccdc3e7f99a9a4c34bc0.png" />
 </div>
 </div>
 <p>假如投一个正六面体的筛子 256 次，则得到 32 次 6 的概率，可由如下方式计算</p>
@@ -730,7 +740,7 @@ P(X = m) = \binom{N - M}{n - m} \binom{M}{m}/\binom{N}{n}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/2cb8a00212d4907e1ab7251274565d61f58ddc92f6e5a6f87c403f7a49b8e8a8.png" src="../_images/2cb8a00212d4907e1ab7251274565d61f58ddc92f6e5a6f87c403f7a49b8e8a8.png" />
+<img alt="../_images/eefa9d035b58e31cbc73195f55bf4c8bd8befb164117b632a8d4d4f96cf912fa.png" src="../_images/eefa9d035b58e31cbc73195f55bf4c8bd8befb164117b632a8d4d4f96cf912fa.png" />
 </div>
 </div>
 </section>
@@ -773,7 +783,7 @@ G = ∑_{i=0}^{n} r^{i} = \frac{1 - r^{n + 1}}{1 - r},\ r ≠ 1
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/9f98d6d132b9ac43fccfdbf52a08d98873b1e82a8b465dc685b31948beea95e0.png" src="../_images/9f98d6d132b9ac43fccfdbf52a08d98873b1e82a8b465dc685b31948beea95e0.png" />
+<img alt="../_images/d7a0bb56940d5c9d5f3c8b87a8b42cff574ea04977f090cf655be8e2f07c9f28.png" src="../_images/d7a0bb56940d5c9d5f3c8b87a8b42cff574ea04977f090cf655be8e2f07c9f28.png" />
 </div>
 </div>
 </section>
@@ -811,7 +821,7 @@ P(X = k) = \binom{k + r - 1}{r - 1}p^{r}(1 - p)^{k}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c6c4d91ff152faf2876a74b1804ef8605682a038ea1ad760df07596c49e85ce2.png" src="../_images/c6c4d91ff152faf2876a74b1804ef8605682a038ea1ad760df07596c49e85ce2.png" />
+<img alt="../_images/20813a0db40505e7f3725e6d87629658ea455778a411aaea2ae8289e05811f22.png" src="../_images/20813a0db40505e7f3725e6d87629658ea455778a411aaea2ae8289e05811f22.png" />
 </div>
 </div>
 <blockquote>
@@ -863,7 +873,7 @@ P(X = k) = e^{-λ}⋅\frac{λ^{k}}{k!}, k ∈ ℕ
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7726f8a0f0339fa49618f700f29a9fbfd29ff56d449ac9b10436cc8045b5b8ef.png" src="../_images/7726f8a0f0339fa49618f700f29a9fbfd29ff56d449ac9b10436cc8045b5b8ef.png" />
+<img alt="../_images/63db705418c6d283c4c5eb1082e17cac2ab2ed59b60bf755191e1d78e171d554.png" src="../_images/63db705418c6d283c4c5eb1082e17cac2ab2ed59b60bf755191e1d78e171d554.png" />
 </div>
 </div>
 </section>
@@ -954,7 +964,7 @@ f(x, λ) =
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/20e1f46ed04226c0e95e29ae9a93901296b3539b9ade0b06839c2034869de1db.png" src="../_images/20e1f46ed04226c0e95e29ae9a93901296b3539b9ade0b06839c2034869de1db.png" />
+<img alt="../_images/ec17efa06fd2be50d986d1ba138d712ef63eae5116fdb3a64bf6b09387dd1401.png" src="../_images/ec17efa06fd2be50d986d1ba138d712ef63eae5116fdb3a64bf6b09387dd1401.png" />
 </div>
 </div>
 <ul class="simple">
@@ -1006,7 +1016,7 @@ f(x) = \frac{1}{\sqrt{2π} σ} e^{-\frac{(x - μ)^2}{2 σ^2}}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/7e02a1165f97e5f2877092d83d539668989412253542bc67ec8e0deb585f89bc.png" src="../_images/7e02a1165f97e5f2877092d83d539668989412253542bc67ec8e0deb585f89bc.png" />
+<img alt="../_images/09c2b0e5acb1f6ac366b83cad3b5da6283f38820b20006e9a88a6348604fd1ac.png" src="../_images/09c2b0e5acb1f6ac366b83cad3b5da6283f38820b20006e9a88a6348604fd1ac.png" />
 </div>
 </div>
 </section>
@@ -1043,7 +1053,7 @@ f(x, s) = \frac{1}{s x \sqrt{2π}} \exp{\bigg(-\frac{\log^2(x)}{2 s^2}\bigg)}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/4dd879baf922b7d751a4f1efa542966e00108dc8a383b75de8cc2ad506d4b947.png" src="../_images/4dd879baf922b7d751a4f1efa542966e00108dc8a383b75de8cc2ad506d4b947.png" />
+<img alt="../_images/15cd6bd74e3bf4f5a0f39b2e6de50ecb0417521d0f14ea387f5fb5117773d318.png" src="../_images/15cd6bd74e3bf4f5a0f39b2e6de50ecb0417521d0f14ea387f5fb5117773d318.png" />
 </div>
 </div>
 </section>
@@ -1086,7 +1096,7 @@ f(x, s) = \frac{1}{s x \sqrt{2π}} \exp{\bigg(-\frac{\log^2(x)}{2 s^2}\bigg)}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/8b1b3cc16f38f0651346a10967706bd6a575437277e5f8d0dfe9e221b1212032.png" src="../_images/8b1b3cc16f38f0651346a10967706bd6a575437277e5f8d0dfe9e221b1212032.png" />
+<img alt="../_images/f5fa47fef9f07aadadc5a834c22edea2c949f32a3e0c92344b4068f09c4e8619.png" src="../_images/f5fa47fef9f07aadadc5a834c22edea2c949f32a3e0c92344b4068f09c4e8619.png" />
 </div>
 </div>
 </section>
@@ -1118,11 +1128,10 @@ f(x, s) = \frac{1}{s x \sqrt{2π}} \exp{\bigg(-\frac{\log^2(x)}{2 s^2}\bigg)}
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="../biotechs/%E9%87%8D%E7%BB%84%E9%AB%98%E6%8B%B7%E8%B4%9D%E9%85%B5%E6%AF%8D.html"
@@ -1138,14 +1147,11 @@ f(x, s) = \frac{1}{s x \sqrt{2π}} \exp{\bigg(-\frac{\log^2(x)}{2 s^2}\bigg)}
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">统计量与采样</p>
+        <p class="prev-next-title">统计量与抽样</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1234,8 +1240,8 @@ By ivaquero
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>
