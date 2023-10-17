@@ -12,7 +12,7 @@ func2 = stats.expon(scale=3)
 func3 = stats.uniform()
 
 actual_subs = np.array(
-    [[func1.rvs(), func2.rvs()][func3.rvs() < 0.5] for i in range(N)]
+    [[func1.rvs(), func2.rvs()][func3.rvs() < 0.5] for _ in range(N)]
 )
 observed_subs = np.minimum(actual_subs, study_duration)
 observed = actual_subs < study_duration

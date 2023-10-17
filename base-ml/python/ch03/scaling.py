@@ -41,7 +41,6 @@ for (ind, array), ax in zip(
     enumerate([test_arr, test_nor, test_mm, test_ma, test_std, test_rbt]),
     axes.flatten(),
 ):
-
     ax.hist(array[:, 0:1], bins=50, alpha=0.8, label="height")
     ax.hist(array[:, 1:2], bins=50, alpha=0.8, label="weight")
 
