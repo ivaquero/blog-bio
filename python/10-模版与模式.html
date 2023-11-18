@@ -564,16 +564,16 @@ document.write(`
 <p>创建了大量的（比如百万级）实例，为此占用了大量的内存。对于那些主要用作简单数据结构的类，通常可以在类定义中增加 <code class="docutils literal notranslate"><span class="pre">__slot__</span></code> 属性，之后的实例不能再有 <code class="docutils literal notranslate"><span class="pre">__slots__</span></code> 中所列名称之外的其他属性。</p>
 <ul class="simple">
 <li><p>每个子类都要定义 <code class="docutils literal notranslate"><span class="pre">__slots__</span></code> 属性，因为解释器会忽略继承的 <code class="docutils literal notranslate"><span class="pre">__slots__</span></code> 属性。</p></li>
-<li><p>实例只能拥有 <code class="docutils literal notranslate"><span class="pre">__slots__</span></code> 中列出的属性，除非把 <code class="docutils literal notranslate"><span class="pre">'__dict__'</span></code> 加入 <code class="docutils literal notranslate"><span class="pre">__slots__</span></code> 中（这样做就失去了节省内存的功效）。</p></li>
-<li><p>若不把 <code class="docutils literal notranslate"><span class="pre">'__weakref__'</span></code> 加入 <code class="docutils literal notranslate"><span class="pre">__slots__</span></code>，实例就不能作为弱引用的目标。</p></li>
+<li><p>实例只能拥有 <code class="docutils literal notranslate"><span class="pre">__slots__</span></code> 中列出的属性，除非把 <code class="docutils literal notranslate"><span class="pre">__dict__</span></code> 加入 <code class="docutils literal notranslate"><span class="pre">__slots__</span></code> 中（这样做就失去了节省内存的功效）。</p></li>
+<li><p>若不把 <code class="docutils literal notranslate"><span class="pre">__weakref__</span></code> 加入 <code class="docutils literal notranslate"><span class="pre">__slots__</span></code>，实例就不能作为弱引用的目标。</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>class Date:
-    `__slots__` = [&#39;year&#39;, &#39;month&#39;, &#39;day&#39;]
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Date</span><span class="p">:</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;month&#39;</span><span class="p">,</span> <span class="s1">&#39;day&#39;</span><span class="p">]</span>
 
-    def __init__(self, year, month, day):
-        self.year = year
-        self.month = month
-        self.day = day
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="p">,</span> <span class="n">day</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">month</span> <span class="o">=</span> <span class="n">month</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">day</span> <span class="o">=</span> <span class="n">day</span>
 </pre></div>
 </div>
 <p>当定义了 <code class="docutils literal notranslate"><span class="pre">__slots__</span></code> 属性时，Python 就会针对实例采用一种更加紧凑的内部表示。不再让每个实例都创建一个 <code class="docutils literal notranslate"><span class="pre">__dict__</span></code> 字典，现在的实例是围绕着一个固定长度的小型数组来构建的，这和一个元组或者列表很相似。在 <code class="docutils literal notranslate"><span class="pre">__slots__</span></code> 中列出的属性名会在内部映射到这个数组的特定索引上。</p>
