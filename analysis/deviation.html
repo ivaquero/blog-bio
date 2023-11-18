@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,9 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -148,13 +148,14 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     
     
       
     
     
-    <img src="../_static/doge.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/doge.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/doge.png" class="logo__image only-light" alt="生物狗学编程 - Home"/>
+    <script>document.write(`<img src="../_static/doge.png" class="logo__image only-dark" alt="生物狗学编程 - Home"/>`);</script>
   
   
 </a></div>
@@ -448,6 +449,18 @@ document.write(`
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="kn">from</span> <span class="nn">plotnine</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">plotnine</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;plotnine&#39;
 </pre></div>
 </div>
 </div>
@@ -779,120 +792,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/integzz/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/utils.py:289: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-/Users/integzz/.conda/envs/kaggle/lib/python3.11/site-packages/mizani/scale.py:256: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="nn">File ~/.conda/envs/kaggle/lib/python3.11/site-packages/IPython/core/formatters.py:708,</span> in <span class="ni">PlainTextFormatter.__call__</span><span class="nt">(self, obj)</span>
-<span class="g g-Whitespace">    </span><span class="mi">701</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">702</span> <span class="n">printer</span> <span class="o">=</span> <span class="n">pretty</span><span class="o">.</span><span class="n">RepresentationPrinter</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">703</span>     <span class="bp">self</span><span class="o">.</span><span class="n">max_width</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">newline</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">704</span>     <span class="n">max_seq_length</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_seq_length</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">705</span>     <span class="n">singleton_pprinters</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">singleton_printers</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">706</span>     <span class="n">type_pprinters</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">type_printers</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">707</span>     <span class="n">deferred_pprinters</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">deferred_printers</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">708</span> <span class="n">printer</span><span class="o">.</span><span class="n">pretty</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">709</span> <span class="n">printer</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">710</span> <span class="k">return</span> <span class="n">stream</span><span class="o">.</span><span class="n">getvalue</span><span class="p">()</span>
-
-<span class="nn">File ~/.conda/envs/kaggle/lib/python3.11/site-packages/IPython/lib/pretty.py:410,</span> in <span class="ni">RepresentationPrinter.pretty</span><span class="nt">(self, obj)</span>
-<span class="g g-Whitespace">    </span><span class="mi">407</span>                         <span class="k">return</span> <span class="n">meth</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">408</span>                 <span class="k">if</span> <span class="bp">cls</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">object</span> \
-<span class="g g-Whitespace">    </span><span class="mi">409</span>                         <span class="ow">and</span> <span class="nb">callable</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;__repr__&#39;</span><span class="p">)):</span>
-<span class="ne">--&gt; </span><span class="mi">410</span>                     <span class="k">return</span> <span class="n">_repr_pprint</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">412</span>     <span class="k">return</span> <span class="n">_default_pprint</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">413</span> <span class="k">finally</span><span class="p">:</span>
-
-<span class="nn">File ~/.conda/envs/kaggle/lib/python3.11/site-packages/IPython/lib/pretty.py:778,</span> in <span class="ni">_repr_pprint</span><span class="nt">(obj, p, cycle)</span>
-<span class="g g-Whitespace">    </span><span class="mi">776</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;A pprint that just redirects to the normal repr function.&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">777</span> <span class="c1"># Find newlines and replace them with p.break_()</span>
-<span class="ne">--&gt; </span><span class="mi">778</span> <span class="n">output</span> <span class="o">=</span> <span class="nb">repr</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">779</span> <span class="n">lines</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">780</span> <span class="k">with</span> <span class="n">p</span><span class="o">.</span><span class="n">group</span><span class="p">():</span>
-
-<span class="nn">File ~/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/ggplot.py:114,</span> in <span class="ni">ggplot.__repr__</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">110</span> <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">112</span><span class="sd">     Print/show the plot</span>
-<span class="g g-Whitespace">    </span><span class="mi">113</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">114</span>     <span class="n">figure</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">116</span>     <span class="n">dpi</span> <span class="o">=</span> <span class="n">figure</span><span class="o">.</span><span class="n">get_dpi</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">117</span>     <span class="n">W</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">figure</span><span class="o">.</span><span class="n">get_figwidth</span><span class="p">()</span> <span class="o">*</span> <span class="n">dpi</span><span class="p">)</span>
-
-<span class="nn">File ~/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/ggplot.py:224,</span> in <span class="ni">ggplot.draw</span><span class="nt">(self, show)</span>
-<span class="g g-Whitespace">    </span><span class="mi">222</span> <span class="bp">self</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">223</span> <span class="k">with</span> <span class="n">plot_context</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="n">show</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">224</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_build</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">226</span>     <span class="c1"># setup</span>
-<span class="g g-Whitespace">    </span><span class="mi">227</span>     <span class="n">figure</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_figure</span><span class="p">()</span>
-
-<span class="nn">File ~/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/ggplot.py:336,</span> in <span class="ni">ggplot._build</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">333</span> <span class="n">layers</span><span class="o">.</span><span class="n">setup_data</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">335</span> <span class="c1"># Apply position adjustments</span>
-<span class="ne">--&gt; </span><span class="mi">336</span> <span class="n">layers</span><span class="o">.</span><span class="n">compute_position</span><span class="p">(</span><span class="n">layout</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">338</span> <span class="c1"># Reset position scales, then re-train and map.  This</span>
-<span class="g g-Whitespace">    </span><span class="mi">339</span> <span class="c1"># ensures that facets have control over the range of</span>
-<span class="g g-Whitespace">    </span><span class="mi">340</span> <span class="c1"># a plot.</span>
-<span class="g g-Whitespace">    </span><span class="mi">341</span> <span class="n">layout</span><span class="o">.</span><span class="n">reset_position_scales</span><span class="p">()</span>
-
-<span class="nn">File ~/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/layer.py:479,</span> in <span class="ni">Layers.compute_position</span><span class="nt">(self, layout)</span>
-<span class="g g-Whitespace">    </span><span class="mi">477</span> <span class="k">def</span> <span class="nf">compute_position</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layout</span><span class="p">:</span> <span class="n">Layout</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">478</span>     <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">479</span>         <span class="n">l</span><span class="o">.</span><span class="n">compute_position</span><span class="p">(</span><span class="n">layout</span><span class="p">)</span>
-
-<span class="nn">File ~/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/layer.py:345,</span> in <span class="ni">layer.compute_position</span><span class="nt">(self, layout)</span>
-<span class="g g-Whitespace">    </span><span class="mi">343</span> <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">setup_params</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">344</span> <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">setup_data</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">345</span> <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">compute_layer</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">layout</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">346</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
-
-<span class="nn">File ~/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/positions/position.py:79,</span> in <span class="ni">position.compute_layer</span><span class="nt">(cls, data, params, layout)</span>
-<span class="g g-Whitespace">     </span><span class="mi">76</span>     <span class="n">scales</span> <span class="o">=</span> <span class="n">layout</span><span class="o">.</span><span class="n">get_scales</span><span class="p">(</span><span class="n">pdata</span><span class="p">[</span><span class="s2">&quot;PANEL&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iat</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="g g-Whitespace">     </span><span class="mi">77</span>     <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">compute_panel</span><span class="p">(</span><span class="n">pdata</span><span class="p">,</span> <span class="n">scales</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">79</span> <span class="k">return</span> <span class="n">groupby_apply</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s2">&quot;PANEL&quot;</span><span class="p">,</span> <span class="n">fn</span><span class="p">)</span>
-
-<span class="nn">File ~/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/utils.py:599,</span> in <span class="ni">groupby_apply</span><span class="nt">(df, cols, func, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">595</span> <span class="n">lst</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="g g-Whitespace">    </span><span class="mi">596</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">cols</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">597</span>     <span class="c1"># function fn should be free to modify dataframe d, therefore</span>
-<span class="g g-Whitespace">    </span><span class="mi">598</span>     <span class="c1"># do not mark d as a slice of df i.e no SettingWithCopyWarning</span>
-<span class="ne">--&gt; </span><span class="mi">599</span>     <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">600</span> <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="nn">File ~/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/positions/position.py:77,</span> in <span class="ni">position.compute_layer.&lt;locals&gt;.fn</span><span class="nt">(pdata)</span>
-<span class="g g-Whitespace">     </span><span class="mi">75</span>     <span class="k">return</span> <span class="n">pdata</span>
-<span class="g g-Whitespace">     </span><span class="mi">76</span> <span class="n">scales</span> <span class="o">=</span> <span class="n">layout</span><span class="o">.</span><span class="n">get_scales</span><span class="p">(</span><span class="n">pdata</span><span class="p">[</span><span class="s2">&quot;PANEL&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iat</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="ne">---&gt; </span><span class="mi">77</span> <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">compute_panel</span><span class="p">(</span><span class="n">pdata</span><span class="p">,</span> <span class="n">scales</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
-
-<span class="nn">File ~/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/positions/position_stack.py:103,</span> in <span class="ni">position_stack.compute_panel</span><span class="nt">(cls, data, scales, params)</span>
-<span class="g g-Whitespace">     </span><span class="mi">98</span>             <span class="k">return</span> <span class="n">sc</span><span class="o">.</span><span class="n">trans</span>
-<span class="g g-Whitespace">    </span><span class="mi">100</span> <span class="c1"># Positioning happens after scale transformation and stacking</span>
-<span class="g g-Whitespace">    </span><span class="mi">101</span> <span class="c1"># only works well for linear data. If the scale is non-linear,</span>
-<span class="g g-Whitespace">    </span><span class="mi">102</span> <span class="c1"># we undo the transformation, stack and redo the transformation</span>
-<span class="ne">--&gt; </span><span class="mi">103</span> <span class="n">nl_trans</span> <span class="o">=</span> <span class="n">get_non_linear_trans</span><span class="p">(</span><span class="n">scales</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">104</span> <span class="k">if</span> <span class="n">nl_trans</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">105</span>     <span class="n">data</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">transform_position</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">trans_y</span><span class="o">=</span><span class="n">nl_trans</span><span class="o">.</span><span class="n">inverse</span><span class="p">)</span>
-
-<span class="nn">File ~/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/positions/position_stack.py:97,</span> in <span class="ni">position_stack.compute_panel.&lt;locals&gt;.get_non_linear_trans</span><span class="nt">(sc)</span>
-<span class="g g-Whitespace">     </span><span class="mi">94</span> <span class="kn">from</span> <span class="nn">..scales.scale</span> <span class="kn">import</span> <span class="n">scale_continuous</span>
-<span class="g g-Whitespace">     </span><span class="mi">96</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">scale_continuous</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">97</span>     <span class="k">if</span> <span class="n">_is_non_linear_trans</span><span class="p">(</span><span class="n">sc</span><span class="o">.</span><span class="n">trans</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">98</span>         <span class="k">return</span> <span class="n">sc</span><span class="o">.</span><span class="n">trans</span>
-
-<span class="nn">File ~/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/positions/position_stack.py:87,</span> in <span class="ni">position_stack.compute_panel.&lt;locals&gt;._is_non_linear_trans</span><span class="nt">(trans)</span>
-<span class="g g-Whitespace">     </span><span class="mi">84</span> <span class="k">if</span> <span class="n">tname</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;_trans&quot;</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">85</span>     <span class="n">tname</span> <span class="o">=</span> <span class="n">tname</span><span class="p">[:</span><span class="o">-</span><span class="mi">6</span><span class="p">]</span>
-<span class="g g-Whitespace">     </span><span class="mi">86</span> <span class="k">return</span> <span class="p">(</span>
-<span class="ne">---&gt; </span><span class="mi">87</span>     <span class="n">trans</span><span class="o">.</span><span class="n">dataspace_is_numerical</span> <span class="ow">and</span> <span class="n">tname</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">linear_transforms</span>
-<span class="g g-Whitespace">     </span><span class="mi">88</span> <span class="p">)</span>
-
-<span class="ne">AttributeError</span>: &#39;identity_trans&#39; object has no attribute &#39;dataspace_is_numerical&#39;
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 </section>
@@ -949,7 +848,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f4b0fad1ec6474077941e5b2d53e2394881df0777923b5afae907aeaa1f93800.png" src="../_images/f4b0fad1ec6474077941e5b2d53e2394881df0777923b5afae907aeaa1f93800.png" />
+<img alt="../_images/c6ceaea267e1889d36750d52e9ce72c87ff80d32db3fcf7667542e6351287e63.png" src="../_images/c6ceaea267e1889d36750d52e9ce72c87ff80d32db3fcf7667542e6351287e63.png" />
 </div>
 </div>
 <section id="id1">
@@ -980,18 +879,6 @@ document.write(`
     <span class="o">+</span> <span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">)</span>
     <span class="o">+</span> <span class="n">coord_flip</span><span class="p">()</span>
 <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/integzz/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/utils.py:289: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-/Users/integzz/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/utils.py:289: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-/Users/integzz/.conda/envs/kaggle/lib/python3.11/site-packages/mizani/scale.py:256: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-/Users/integzz/.conda/envs/kaggle/lib/python3.11/site-packages/mizani/scale.py:256: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-</pre></div>
-</div>
-<img alt="../_images/b80d9933197144f6a735267eb5ebccade0179a20532df506f9461319f92eb990.png" src="../_images/b80d9933197144f6a735267eb5ebccade0179a20532df506f9461319f92eb990.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure Size: (640 x 480)&gt;
 </pre></div>
 </div>
 </div>
@@ -1033,7 +920,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8255e64b8c33fd1f01ded2cc4cb4bedade61f66e54760521b08ee56d089b7cd2.png" src="../_images/8255e64b8c33fd1f01ded2cc4cb4bedade61f66e54760521b08ee56d089b7cd2.png" />
+<img alt="../_images/c1978a74cffc4f90156fd15bebc89db270541a0a6c33f00691e5dd594939362d.png" src="../_images/c1978a74cffc4f90156fd15bebc89db270541a0a6c33f00691e5dd594939362d.png" />
 </div>
 </div>
 <section id="id2">
@@ -1063,18 +950,6 @@ document.write(`
     <span class="o">+</span> <span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">)</span>
     <span class="o">+</span> <span class="n">coord_flip</span><span class="p">()</span>
 <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/integzz/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/utils.py:289: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-/Users/integzz/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/utils.py:289: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-/Users/integzz/.conda/envs/kaggle/lib/python3.11/site-packages/mizani/scale.py:256: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-/Users/integzz/.conda/envs/kaggle/lib/python3.11/site-packages/mizani/scale.py:256: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-</pre></div>
-</div>
-<img alt="../_images/d67a6ecfa90a1376626cfde515d56c7328d72f515c6e7c018900dc1d9d031331.png" src="../_images/d67a6ecfa90a1376626cfde515d56c7328d72f515c6e7c018900dc1d9d031331.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure Size: (640 x 480)&gt;
 </pre></div>
 </div>
 </div>
@@ -1205,8 +1080,8 @@ By ivaquero
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
 
   <footer class="bd-footer">
   </footer>

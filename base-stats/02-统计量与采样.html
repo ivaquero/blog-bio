@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,9 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -150,13 +150,14 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     
     
       
     
     
-    <img src="../_static/doge.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/doge.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/doge.png" class="logo__image only-light" alt="生物狗学编程 - Home"/>
+    <script>document.write(`<img src="../_static/doge.png" class="logo__image only-dark" alt="生物狗学编程 - Home"/>`);</script>
   
   
 </a></div>
@@ -594,20 +595,20 @@ document.write(`
 </ul>
 <div class="math notranslate nohighlight">
 \[
-E(X) = ∑_{1}^{∞} x_{k}p_{k}
+𝔼[X] = ∑_{1}^{∞} x_{k}p_{k}
 \]</div>
 <ul class="simple">
 <li><p>对连续型分布</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[
-E(X) = ∫_{-∞}^{∞} xf(x) dx
+𝔼[X] = ∫_{-∞}^{∞} xf(x) dx
 \]</div>
 <p>设<span class="math notranslate nohighlight">\(a\)</span>为常数，<span class="math notranslate nohighlight">\(X\)</span>和<span class="math notranslate nohighlight">\(Y\)</span>是两个随机变量，则有</p>
 <ol class="arabic simple">
-<li><p>线性：<span class="math notranslate nohighlight">\(E(X + Y) = E(X) + E(Y)\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(E(aX + Y) = aE(X + Y)\)</span></p></li>
-<li><p>独立性：<span class="math notranslate nohighlight">\(X\)</span>、<span class="math notranslate nohighlight">\(Y\)</span> 相互独立 ⇒ <span class="math notranslate nohighlight">\(E(XY) = E(X)E(Y)\)</span></p></li>
+<li><p>线性：<span class="math notranslate nohighlight">\(𝔼[X + Y] = 𝔼[X] + 𝔼[Y]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(𝔼[aX + Y) = a𝔼[X + Y]\)</span></p></li>
+<li><p>独立性：<span class="math notranslate nohighlight">\(X\)</span>、<span class="math notranslate nohighlight">\(Y\)</span> 相互独立 ⇒ <span class="math notranslate nohighlight">\(𝔼[XY) = 𝔼[X]𝔼[Y]\)</span></p></li>
 </ol>
 </section>
 <section id="id8">
@@ -615,7 +616,7 @@ E(X) = ∫_{-∞}^{∞} xf(x) dx
 <p>设<span class="math notranslate nohighlight">\(X\)</span>为随机变量，若存在</p>
 <div class="math notranslate nohighlight">
 \[
-E\{[X -E(X)]^2\}
+E\{[X -𝔼[X]]^2\}
 \]</div>
 <p>则称其为<span class="math notranslate nohighlight">\(X\)</span>的方差，记作<span class="math notranslate nohighlight">\(D(X)\)</span></p>
 <blockquote>
@@ -626,18 +627,18 @@ E\{[X -E(X)]^2\}
 </ul>
 <div class="math notranslate nohighlight">
 \[
-D(X) = ∑_{1}^{∞}[x_{k} - E(X)]^2p_{k}
+D(X) = ∑_{1}^{∞}[x_{k} - 𝔼[X]]^2p_{k}
 \]</div>
 <ul class="simple">
 <li><p>对连续型分布</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[
-D(X) = ∫_{-∞}^{∞}[x - E(X)]f(x) dx
+D(X) = ∫_{-∞}^{∞}[x - 𝔼[X]]f(x) dx
 \]</div>
 <p>设<span class="math notranslate nohighlight">\(a\)</span>为常数，<span class="math notranslate nohighlight">\(X\)</span>和<span class="math notranslate nohighlight">\(Y\)</span>是两个随机变量</p>
 <ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(D(X) = E(X^2) - E^2(X)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(D(X) = 𝔼[X^2] - E^2(X)\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(D(aX + b) = a^2D(X)\)</span></p></li>
 <li><p>独立线性可加：<span class="math notranslate nohighlight">\(X\)</span>、<span class="math notranslate nohighlight">\(Y\)</span>相互独立 ⇒ <span class="math notranslate nohighlight">\(D(X + Y) = D(X) + D(Y)\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(D(X ± Y) = D(X) + D(Y) ± 2Cov(X, Y)\)</span></p></li>
@@ -648,13 +649,13 @@ D(X) = ∫_{-∞}^{∞}[x - E(X)]f(x) dx
 <p>设<span class="math notranslate nohighlight">\(X\)</span>、<span class="math notranslate nohighlight">\(Y\)</span>为随机变量，若存在</p>
 <div class="math notranslate nohighlight">
 \[
-E(X - E(X))(Y - E(Y))
+𝔼[X - 𝔼[X]](Y - 𝔼[Y])
 \]</div>
 <p>则称其为<span class="math notranslate nohighlight">\(X\)</span>与<span class="math notranslate nohighlight">\(Y\)</span>的协方差，记作<span class="math notranslate nohighlight">\(Cov(X, Y)\)</span></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-  Cov(X, Y) &amp;=E(XY) - E(X)E(Y) \\
+  Cov(X, Y) &amp;=𝔼[XY] - 𝔼[X]𝔼[Y] \\
   &amp;= \dfrac{∑{(X_{i} - X̄)(Y_{i} - Ȳ)}}{n - 1}
 \end{aligned}
 \end{split}\]</div>
@@ -675,7 +676,7 @@ Cov(β) = D(XX^{⊤})^{-1}
 <h2>2. 大数定律<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
 <section id="chebyshev">
 <h3>2.1. Chebyshev 不等式<a class="headerlink" href="#chebyshev" title="Permalink to this heading">#</a></h3>
-<p>设随机变量 <span class="math notranslate nohighlight">\(X\)</span> 的 <span class="math notranslate nohighlight">\(E(X) = μ, D(X) = σ^2\)</span>，则<span class="math notranslate nohighlight">\(∀ϵ ∈ ℤ\)</span>，存在</p>
+<p>设随机变量 <span class="math notranslate nohighlight">\(X\)</span> 的 <span class="math notranslate nohighlight">\(𝔼[X] = μ, D(X) = σ^2\)</span>，则<span class="math notranslate nohighlight">\(∀ϵ ∈ ℤ\)</span>，存在</p>
 <div class="math notranslate nohighlight">
 \[
 P\{|X - μ| ⩾ ϵ\} ⩽ \frac{σ^2}{ϵ^2}
@@ -710,7 +711,7 @@ X_n → x_0
 <section id="kolmogorov">
 <h3>2.3. Kolmogorov 大数定律<a class="headerlink" href="#kolmogorov" title="Permalink to this heading">#</a></h3>
 <p>也称强大数定律（Strong Law of Large Numbers，SLLN）。</p>
-<p>设<span class="math notranslate nohighlight">\(X_{i} ∼ i.i.d.\)</span>，且期望值<span class="math notranslate nohighlight">\(E(X_{i}) = μ(k = 1, 2, ⋯)\)</span>，则</p>
+<p>设<span class="math notranslate nohighlight">\(X_{i} ∼ i.i.d.\)</span>，且期望值<span class="math notranslate nohighlight">\(𝔼[X_{i}] = μ(k = 1, 2, ⋯)\)</span>，则</p>
 <div class="math notranslate nohighlight">
 \[
 P\bigg\{\lim_{n → ∞} \frac{1}{n} ∑X_{i} = μ\bigg\} = 1
@@ -732,7 +733,7 @@ X_n \stackrel{p}{→} x_0
 <section id="wiener-khinchin">
 <h3>2.5. Wiener-Khinchin 大数定律<a class="headerlink" href="#wiener-khinchin" title="Permalink to this heading">#</a></h3>
 <p>也称弱大数定律（Weak Law of Large Numbers，WLLN）。定律指出：用算术均值来近似实际真值是合理的。</p>
-<p>设<span class="math notranslate nohighlight">\(X_{i} ∼ i.i.d.\)</span>，期望值<span class="math notranslate nohighlight">\(E(X_{i}) = μ(i = 1, 2, ⋯)\)</span>，则<span class="math notranslate nohighlight">\(∀ϵ ∈ ℤ\)</span>，存在</p>
+<p>设<span class="math notranslate nohighlight">\(X_{i} ∼ i.i.d.\)</span>，期望值<span class="math notranslate nohighlight">\(𝔼[X_{i}] = μ(i = 1, 2, ⋯)\)</span>，则<span class="math notranslate nohighlight">\(∀ϵ ∈ ℤ\)</span>，存在</p>
 <div class="math notranslate nohighlight">
 \[P\{ |(\frac{1}{n} ∑X_{i}) - μ| ≤ ϵ \} = 1\]</div>
 <blockquote>
@@ -788,7 +789,7 @@ X_{n}\stackrel{d}{→} x_0
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/07b081db1e44c6e51bb217856bef5f9bfb5a44fcf6efe9c642bab79e3be0523a.png" src="../_images/07b081db1e44c6e51bb217856bef5f9bfb5a44fcf6efe9c642bab79e3be0523a.png" />
+<img alt="../_images/647d88ba7a1af6fe3c5a534d53e1d93966ff2039fb156a2408c92fb7ac01b432.png" src="../_images/647d88ba7a1af6fe3c5a534d53e1d93966ff2039fb156a2408c92fb7ac01b432.png" />
 </div>
 </div>
 </section>
@@ -875,7 +876,7 @@ Z = \frac{X̂ - μ}{σ/\sqrt{n}} ∼ N(0, 1)
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/b50bb03cee0aaa46679dcc102010cdd72ff7d45d2fe5d46e9c338d33273bd135.png" src="../_images/b50bb03cee0aaa46679dcc102010cdd72ff7d45d2fe5d46e9c338d33273bd135.png" />
+<img alt="../_images/d57755240578b7e9e1e17e6925d829013790b212d65cbcf7cc2407a8d1cee79f.png" src="../_images/d57755240578b7e9e1e17e6925d829013790b212d65cbcf7cc2407a8d1cee79f.png" />
 </div>
 </div>
 <ul class="simple">
@@ -964,7 +965,7 @@ Z = \frac{X̂ - μ}{σ/\sqrt{n}} ∼ N(0, 1)
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/99b62db3b091e4ef1e748d04fe7bcbf2fd5226f1b8af4bb40acfac3138555aea.png" src="../_images/99b62db3b091e4ef1e748d04fe7bcbf2fd5226f1b8af4bb40acfac3138555aea.png" />
+<img alt="../_images/bef96fdfae12b3f66c096f3f2e4052424ac7e76982811cd82c1976932b6b7839.png" src="../_images/bef96fdfae12b3f66c096f3f2e4052424ac7e76982811cd82c1976932b6b7839.png" />
 </div>
 </div>
 </section>
@@ -1032,7 +1033,7 @@ Y = ∑X_{i}^2 ∼ χ^2(n)
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/723e2ac3250fa285a7e1630ce106b9b5bf1ec628246993d3e81a92c69b204155.png" src="../_images/723e2ac3250fa285a7e1630ce106b9b5bf1ec628246993d3e81a92c69b204155.png" />
+<img alt="../_images/0a249d7f76ac628f424a2181480c846a42e432c3c3218dc9560eb83e8f5f20e4.png" src="../_images/0a249d7f76ac628f424a2181480c846a42e432c3c3218dc9560eb83e8f5f20e4.png" />
 </div>
 </div>
 <p>由<span class="math notranslate nohighlight">\(Γ\)</span>函数性质，其具有</p>
@@ -1108,7 +1109,7 @@ h(t) = \frac{Γ[(n + 1)/2]}{\sqrt{π n}Γ(n/2)}\bigg(1 + \dfrac{t^2}{n}\bigg)^{-
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/02bbce9f2cc1162ea97a868e5cdc2ac68749cd39e5552a12274a2fedfbba4b86.png" src="../_images/02bbce9f2cc1162ea97a868e5cdc2ac68749cd39e5552a12274a2fedfbba4b86.png" />
+<img alt="../_images/b942a004c4861fca5aafe8a1a1c16ef2c8fea881d9a6d2833d5626aec8c65a10.png" src="../_images/b942a004c4861fca5aafe8a1a1c16ef2c8fea881d9a6d2833d5626aec8c65a10.png" />
 </div>
 </div>
 <ul class="simple">
@@ -1157,7 +1158,7 @@ h(t) = \frac{Γ[(n + 1)/2]}{\sqrt{π n}Γ(n/2)}\bigg(1 + \dfrac{t^2}{n}\bigg)^{-
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/d459526f23a6f63af07d73fe41755184f8360dd4435010a9f4d48ce87c012bb5.png" src="../_images/d459526f23a6f63af07d73fe41755184f8360dd4435010a9f4d48ce87c012bb5.png" />
+<img alt="../_images/85784f96611c131133c8e8b64ee24542733d9243c42ebe66b36cbf210d4a5cdb.png" src="../_images/85784f96611c131133c8e8b64ee24542733d9243c42ebe66b36cbf210d4a5cdb.png" />
 </div>
 </div>
 <ul class="simple">
@@ -1374,8 +1375,8 @@ By ivaquero
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
 
   <footer class="bd-footer">
   </footer>

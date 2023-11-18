@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,9 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -150,13 +150,14 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     
     
       
     
     
-    <img src="../_static/doge.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/doge.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/doge.png" class="logo__image only-light" alt="生物狗学编程 - Home"/>
+    <script>document.write(`<img src="../_static/doge.png" class="logo__image only-dark" alt="生物狗学编程 - Home"/>`);</script>
   
   
 </a></div>
@@ -792,7 +793,7 @@ P(R_{i} = r_{i}) = \frac{1}{C_{m+ n}^{n}}
 </ol>
 <div class="math notranslate nohighlight">
 \[
-E(U) = \frac{n_1(N + 1)}{2}
+𝔼[U] = \frac{n_1(N + 1)}{2}
 \]</div>
 <div class="math notranslate nohighlight">
 \[
@@ -803,7 +804,7 @@ D(U) = \frac{n_1 n_2(N + 1)}{12}
 </ol>
 <div class="math notranslate nohighlight">
 \[
-E(U) = \frac{n_1(n_1 + n_2 + 1)}{2}
+𝔼[U] = \frac{n_1(n_1 + n_2 + 1)}{2}
 \]</div>
 <div class="math notranslate nohighlight">
 \[
@@ -815,7 +816,7 @@ E(U) = \frac{n_1(n_1 + n_2 + 1)}{2}
 <p>当 <span class="math notranslate nohighlight">\(n_1 ＞10\)</span> 或 <span class="math notranslate nohighlight">\(n_2 - n_1 ＞10\)</span>，可使用正态近似</p>
 <div class="math notranslate nohighlight">
 \[
-Z= \frac{|T_1 - E(U) | -0.5}{\sqrt{D(U)}}
+Z= \frac{|T_1 - 𝔼[U] | -0.5}{\sqrt{D(U)}}
 \]</div>
 <p>当 tie 较多时，应对<span class="math notranslate nohighlight">\(Z\)</span>进行校正</p>
 <div class="math notranslate nohighlight">
@@ -992,7 +993,7 @@ Z = \frac{B + 0.5 - \frac{n}{2}}{\sqrt{n}/2} ∼ N(0, 1)
 </ul>
 <div class="math notranslate nohighlight">
 \[
-E(T) = \frac{n(n - 1)}{4}
+𝔼[T] = \frac{n(n - 1)}{4}
 \]</div>
 <div class="math notranslate nohighlight">
 \[
@@ -1003,7 +1004,7 @@ D(T) = \frac{n(n + 1)(2n + 1)}{24}
 </ul>
 <div class="math notranslate nohighlight">
 \[
-E(T) = \frac{n(n - 1)}{4}
+𝔼[T] = \frac{n(n - 1)}{4}
 \]</div>
 <div class="math notranslate nohighlight">
 \[
@@ -1015,7 +1016,7 @@ D(T) = \frac{n(n + 1)(2n + 1)}{24} - \frac{1}{48} ∑_{i=1}^{r} t_i(t_i^2 - 1)
 <p><span class="math notranslate nohighlight">\(n &gt; 50\)</span>时，可使用正态近似</p>
 <div class="math notranslate nohighlight">
 \[
-Z = \frac{|T - E(T)| - 0.5}{\sqrt{D(T)}}
+Z = \frac{|T - 𝔼[T]| - 0.5}{\sqrt{D(T)}}
 \]</div>
 </section>
 </section>
@@ -1174,8 +1175,8 @@ By ivaquero
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
 
   <footer class="bd-footer">
   </footer>
