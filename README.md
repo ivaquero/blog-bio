@@ -21,4 +21,5 @@
 - 搭建 Markdown 强大写作环境：https://zhuanlan.zhihu.com/p/139140492
 - Markdown 基本语法：https://zhuanlan.zhihu.com/p/139141155
 - Markdown 绘图：https://zhuanlan.zhihu.com/p/139166407
+- Shell 速成：https://zhuanlan.zhihu.com/p/669968798
 - Python 可视化库盘点：https://zhuanlan.zhihu.com/p/404674288
