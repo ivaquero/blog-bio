@@ -1,0 +1,756 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>群分析 &#8212; 生物狗学编程</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'complexity/08-群分析';</script>
+    <link rel="canonical" href="https://ivaquero.github.io/blog-bio/complexity/08-群分析.html" />
+    <link rel="shortcut icon" href="../_static/doge.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="全网分析" href="09-%E5%85%A8%E7%BD%91%E5%88%86%E6%9E%90.html" />
+    <link rel="prev" title="节点分析" href="07-%E8%8A%82%E7%82%B9%E5%88%86%E6%9E%90.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/doge.png" class="logo__image only-light" alt="生物狗学编程 - Home"/>
+    <script>document.write(`<img src="../_static/doge.png" class="logo__image only-dark" alt="生物狗学编程 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    生物狗学编程
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">综合生命科学</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/01-%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%9F%BA%E7%A1%80.html">生物信息学基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/02-%E5%88%86%E5%AD%90%E7%94%9F%E7%89%A9%E5%AD%A6%E5%9F%BA%E7%A1%80.html">分子生物学基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/03-%E6%BC%94%E5%8C%96%E8%AE%BA%E5%9F%BA%E7%A1%80.html">演化论基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/04-%E7%97%85%E7%90%86%E5%AD%A6%E5%9F%BA%E7%A1%80.html">病理学基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/%E5%9F%BA%E5%9B%A0%E5%B7%A5%E7%A8%8B.html">基因工程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/%E7%B3%96%E7%94%9F%E5%8C%96%E6%B5%8B%E5%AE%9A.html">糖生化测定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/%E8%9B%8B%E7%99%BD%E8%B4%A8%E7%94%9F%E5%8C%96%E6%B5%8B%E5%AE%9A.html">蛋白质生化测定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/%E9%87%8D%E7%BB%84%E9%AB%98%E6%8B%B7%E8%B4%9D%E9%85%B5%E6%AF%8D.html">重组高拷贝酵母</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">统计基础</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/01-%E6%A6%82%E7%8E%87%E4%B8%8E%E5%88%86%E5%B8%83.html">概率与分布</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/02-%E7%BB%9F%E8%AE%A1%E9%87%8F%E4%B8%8E%E9%87%87%E6%A0%B7.html">统计量与抽样</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/03-%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1.html">参数估计</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/04-%E5%8F%82%E6%95%B0%E6%A3%80%E9%AA%8C.html">参数检验</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/05-%E9%9D%9E%E5%8F%82%E6%95%B0%E6%A3%80%E9%AA%8C.html">非参数检验</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/06-%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90.html">回归分析</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">机器学习</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/01-%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E5%BC%95%E8%A8%80.html">统计学习引言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/02-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92.html">线性回归</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/03-%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9.html">模型选择</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/04-%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB.html">线性分类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/05-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D.html">梯度下降</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/06-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E4%BC%98%E5%8C%96.html">梯度下降优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/07-%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB.html">非线性分类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/08-%E5%86%B3%E7%AD%96%E6%A0%91.html">决策树</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/09-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0.html">集成学习</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/10-%E9%99%8D%E7%BB%B4.html">降维</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/11-%E7%A1%AC%E8%81%9A%E7%B1%BB.html">硬聚类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/12-%E8%BD%AF%E8%81%9A%E7%B1%BB.html">软聚类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/13-%E7%94%9F%E5%AD%98%E5%88%86%E6%9E%90.html">生存分析</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 入门</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../python/01-%E7%8E%AF%E5%A2%83%E4%B8%8E%E5%8F%98%E9%87%8F.html">环境与变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/02-%E5%8F%98%E9%87%8F%E8%BF%90%E7%AE%97.html">变量运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/03-%E5%AE%B9%E5%99%A8.html">容器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/04-%E5%AE%B9%E5%99%A8%E8%BF%90%E7%AE%97.html">容器运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/05-%E6%8E%A7%E5%88%B6%E6%B5%81.html">控制流</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/06-%E5%87%BD%E6%95%B0.html">函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/07-%E9%97%AD%E5%8C%85%E4%B8%8E%E8%A3%85%E9%A5%B0%E5%99%A8.html">闭包与装饰器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/08-%E5%86%85%E7%BD%AE%E7%AE%97%E6%B3%95%E6%A8%A1%E5%9D%97.html">内置算法模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/09-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B.html">面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/10-%E6%A8%A1%E7%89%88%E4%B8%8E%E6%A8%A1%E5%BC%8F.html">模版与模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/11-%E9%AD%94%E6%B3%95%E6%96%B9%E6%B3%95.html">魔法方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/12-%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B.html">高级编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/13-%E5%A4%9A%E4%BB%BB%E5%8A%A1.html">多任务</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/14-%E5%BC%82%E6%AD%A5.html">异步</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/15-%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B.html">网络模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/16-%E5%85%83%E7%BC%96%E7%A8%8B.html">元编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/17-%E6%A8%A1%E5%9D%97%E4%B8%8E%E8%B0%83%E8%AF%95.html">模块与调试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/18-%E9%AB%98%E6%80%A7%E8%83%BD%E6%89%A9%E5%B1%95.html">高性能扩展</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">数据分析</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../analysis/clean-pandas.html">Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/clean-pandas2.html">Pandas 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/correlation.html">Correlation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/deviation.html">Deviation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/distribution.html">Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/group.html">Group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/polar.html">Polar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/proportion.html">Proportion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/ranking.html">Ranking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/time-series.html">Time Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/tricks.html">Tricks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">复杂性科学</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01-%E5%A4%8D%E6%9D%82%E6%80%A7%E6%A6%82%E8%BF%B0.html">复杂性概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-%E7%BB%86%E8%83%9E%E8%87%AA%E5%8A%A8%E6%9C%BA.html">细胞自动机</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-%E7%9B%B8%E5%8F%98.html">相变</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-%E5%A4%9A%E4%B8%BB%E4%BD%93%E5%BB%BA%E6%A8%A1.html">多主体建模</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-%E5%88%86%E5%BD%A2.html">分形</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-%E9%9A%8F%E6%9C%BA%E5%9B%BE.html">随机图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-%E8%8A%82%E7%82%B9%E5%88%86%E6%9E%90.html">节点分析</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">群分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09-%E5%85%A8%E7%BD%91%E5%88%86%E6%9E%90.html">全网分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A-%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%9F%BA%E7%A1%80.html">博弈论基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="B-%E7%A4%BE%E4%BC%9A%E5%AD%A6%E5%BB%BA%E6%A8%A1.html">社会学建模</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/complexity/08-群分析.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>群分析</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1. 内聚子群</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.1. 特性</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.2. 团体</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#m-slice">1.3. m-slice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#k-core">1.4. k-core</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">2. 度量</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2.1. 聚类系数</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2.2. 传递性</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.3. 核度</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">3. 结构推断</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">3.1. 三元分析</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">3.2. 结构洞</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">3.3. 经纪性</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">4. 模型分割</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">4.1. 层次聚类</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">4.2. 块模型</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">4.3. 模块性</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">4.4. 卢浮方法</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>群分析<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<section id="id2">
+<h2>1. 内聚子群<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>中心度是社交网络分析用于识别重要人物的主要指标。但，它并没有告诉我们是什么力量使一些节点聚集在一起，且与中心节点建立良好的连接，或说是什么力量把网络撕开，且度高的节点是否被聚类或分散在网络中。</p>
+<p>与其分析单个节点及其连接模式，不如分析整个子图和群组。这样做将帮助我们看到这种内聚子群（cohesive subgroup）在社会特征、规范、行为或密度方面是否有别于其他网络模式。</p>
+<section id="id3">
+<h3>1.1. 特性<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<p>内聚子群中，节点与群体内的其他成员的联系比与群体外的成员的联系更频繁，使群体内的所有成员都能相互联系。在高度内聚群中，成员之间往往具有强烈的同质性信念。内聚子群是节点密度较高的区域。它们大多存在于无定向网络中。</p>
+<p>群成员之间的联系可通过个人的联系（即直接联系）或联合群体成员（即间接联系）形成。故，个体与群体成员之间的联系越紧密，受群体标准的影响就越大。</p>
+<p>识别网络中内聚子群的重要性在于，内聚子群是潜在的社会簇。主要有以下两种用于识别的结构：</p>
+<ul class="simple">
+<li><p>团体（clique）</p></li>
+<li><p>m-slice</p></li>
+<li><p>k-core</p></li>
+</ul>
+</section>
+<section id="id4">
+<h3>1.2. 团体<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<p>团体（clique）是一个完整图。最大团体是指一个不是图中任何其他团体的子集的团体。</p>
+<p><img alt="Clique" src="../_images/clique.png" /></p>
+</section>
+<section id="m-slice">
+<h3>1.3. m-slice<a class="headerlink" href="#m-slice" title="Permalink to this heading">#</a></h3>
+<p>m-slice 是一个最大的子网，其包含倍率 ⩾ m 的线，以及与这些线相交的顶点。其目标是根据线的倍率确定内聚子群。根据这个度量标准，孤立的节点被定义为 0-slice。但，m-slice 并不能保证 m-slice 组件内的所有顶点均是以最小的线倍率连接。相反，m-slice 的元素被认为是内聚的，而不是 m-slice 本身。</p>
+</section>
+<section id="k-core">
+<h3>1.4. k-core<a class="headerlink" href="#k-core" title="Permalink to this heading">#</a></h3>
+<p>k-core 指在无定向网络中，最小度数 ⩾ k（每个节点都与至少有 k 个其他节点相连）。它是通过反复删除所有程度小于 k 的节点，这个过程的结果是所有 k-core 节点至少有一个度数为 k 的节点。直到不再有这样的节点存在为止。这些子图不一定是内聚的，但可告诉哪些区域包含了 clique-like 结构。可作为一种在图中找到内聚子群的方法</p>
+</section>
+</section>
+<section id="id5">
+<h2>2. 度量<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<section id="id6">
+<h3>2.1. 聚类系数<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<p>聚类系数（clustering coefficient）是度量一个网络中的节点倾向于形成密集子图（clique、community、cluster）的程度。通常情况下，该度量被描述为图的传递性度量（传递性有时被称为全网聚类系数）。</p>
+<p>对于社会化网络，可理解为一个人的两个朋友本身亦为朋友的概率。故，聚类系数值是一个介于 0 到 1 之间的数字。社会化网络的聚类系数值较高，表明该网络呈现出小世界现象（在小世界网络中，大多数节点均是同质化的，可通过少量的步数来达到）。</p>
+<p>节点聚类系数的计算方法如下：</p>
+<div class="math notranslate nohighlight">
+\[
+C_i = \binom{k_i}2^{-1} T(i)
+= \frac{2T(i)}{K_i(k_i -1)}
+\]</div>
+<p>其中，<span class="math notranslate nohighlight">\(T(i)\)</span>是节点<span class="math notranslate nohighlight">\(i\)</span>的距离三角形数，<span class="math notranslate nohighlight">\(K_i(k_i -1)\)</span>是<span class="math notranslate nohighlight">\(i\)</span>的邻居中可能的最大连接数。</p>
+<p>网络平均聚类定义为：</p>
+<div class="math notranslate nohighlight">
+\[
+C= \frac{1}{n} ∑_{i ∈ v} C_i
+\]</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">clustering</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">average_clustering</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>节点聚类系数 Ci 的计算，在最坏的情况下，通过计算直接连接到节点 i 的所有边，时间复杂度为<span class="math notranslate nohighlight">\(O(n^2)\)</span>。网络聚类系数可通过计算所有闭合的三倍体来计算。</p>
+<p>可用蛮力法来考察网络聚类系数，通过考察节点的组合，时间复杂度等于<span class="math notranslate nohighlight">\(O(n^3)\)</span>。</p>
+<p>另一种方法提出了在图 G 的邻接矩阵表示上使用快速矩阵乘法，在<span class="math notranslate nohighlight">\(O(n^{2.376})\)</span>时间和<span class="math notranslate nohighlight">\(O(n^2)\)</span>空间内解决三倍体查找、计数和节点计数。在不存在三角形的二元图中，聚类系数为零。</p>
+</section>
+<section id="id7">
+<h3>2.2. 传递性<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<p>传递性（transitivity）是一种网络属性，指的是两个节点之间的关系在多大程度上可传递。在社交网络中，传递性反映了朋友之朋友（friend-of-a-friend）概念，有时被用作全网聚类系数的代名词。传递性越高表示节点的局部密度越高。完全闭合的团体可识别为群落（community）。</p>
+<p><img alt="transitivity" src="../_images/transitivity.png" /></p>
+<p>网络的平均传递性是指三角形数对连通三角形数的比。</p>
+<div class="math notranslate nohighlight">
+\[
+\mathrm{Transitivity} = \frac{3 * \mathrm{No. of triangles}}{\mathrm{No. connected triples}}
+\]</div>
+<p>其中，乘以 3 是因为每个三角形在图中都贡献了三个不同的连通的三倍体（triple），每个三倍体以不同节点为中心。传递性为 1 表示该网络包含了所有可能的边。在真实的社会网络中，传递性多在<span class="math notranslate nohighlight">\([0.3, 0.6]\)</span>之间。</p>
+<p>图的传递性与聚类系数（clustering coefficient）密切相关，因为每个节点的传递性均是度量三角形的相对频率。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">radius</span><span class="p">(</span><span class="n">fb</span><span class="p">)</span>
+<span class="c1"># 3</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">diameter</span><span class="p">(</span><span class="n">fb</span><span class="p">)</span>
+<span class="c1"># 5</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">number_connected_components</span><span class="p">(</span><span class="n">fb</span><span class="p">)</span>
+<span class="c1"># 1</span>
+</pre></div>
+</div>
+</section>
+<section id="id8">
+<h3>2.3. 核度<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<p>一个节点的核度（核数，coreness）是<span class="math notranslate nohighlight">\(c\)</span>，意味着它属于 c-核，但属于（c+ 1）- 核。核度有助于确定该节点与网络的连接强度。计算核心度可将节点分为若干层，这对可视化很有帮助。</p>
+</section>
+</section>
+<section id="id9">
+<h2>3. 结构推断<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
+<section id="id10">
+<h3>3.1. 三元分析<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<p>三元体（triad）是一个有三个节点的子图：一个焦点（自我）、一个祭坛（altar）以及另一个任意节点。完整三元体是一个规模为 3 的集团，不能向其中添加节点。</p>
+<p><img alt="Triad" src="../_images/triad.png" /></p>
+<p>完整三元体可重合。完整的三元体 A、D、E 与另一个完整的三元体 B、C、E 重叠，因为这三个三元体共享节点 E。在社交网络的背景下，重叠派系是一个内聚子群，代表着重叠的社交圈。在完全连接的三元体中，三个人共享信息和规范，通过反馈建立信任，通过第三人解决或缓和矛盾。他们的行为就像一个群体，而不是作为一组个人</p>
+<p><img alt="Overlap" src="../_images/overlap.png" /></p>
+<p>对于一个简单的定向图，有 16 种可能出现的三元体类型。每一种类型都用 M-A-N 三个字母表示（有时是一个字母）。</p>
+<ul class="simple">
+<li><p>M，表示互为正数的二元体（dyad）。</p></li>
+<li><p>A，指不对称的数量。</p></li>
+<li><p>N，是指空的二元体的数量。</p></li>
+</ul>
+<p>可加上一个字母，表示不对称选择的方向。如 D 向下，U 向上，C 循环，T 过渡。研究发现，知道定向网络中出现的三元体的类型可帮助推断出网络的整体结构。</p>
+<blockquote>
+<div><p>过渡三元体中，每条长度为 2 的路径都由从路径的起始节点到终点节点的弧线封闭。</p>
+</div></blockquote>
+<p><img alt="MAN" src="../_images/traid-man.png" /></p>
+</section>
+<section id="id11">
+<h3>3.2. 结构洞<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
+<p>所谓结构洞，是指在一个节点的自我网络中存在着一个空洞（没有边），以至于它的两个相邻的人（分身和第三方）不能直接连接。</p>
+<p>在组织中，一个人若能把两个或两个以上不同部门的工作联系在一起，就会有更多的重要性和威望。</p>
+</section>
+<section id="id12">
+<h3>3.3. 经纪性<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
+<p>网络中的某些职位可大量参与信息、商品、疾病、谣言或服务的交换，而其他职位则不然。经纪性（brokerage）关注网络中作为交换渠道的社会关系。它度量的是自我在三元体中诱导和利用行动者之间的竞争的潜力。它还度量自我通过创造或利用其他行为者之间的冲突发挥颠覆作用的可能性。</p>
+<p>一个行为者在网络中能发挥的中介作用在很大程度上取决于结构洞的存在：结构洞多了就意味着经纪性的增加。</p>
+<p>与经纪性相关的另一个重要概念是聚合约束（aggregate constraint）。聚合约束是指对某一节点的所有边的二元约束之和。聚合约束越多，经纪人能发挥的作用就越小。在许多现实生活中的例子中，可看到聚合约束的意义。例如：受约束少的员工比其他员工更可能有成功的工作，受约束少的企业部门更有利润。</p>
+</section>
+</section>
+<section id="id13">
+<h2>4. 模型分割<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h2>
+<section id="id14">
+<h3>4.1. 层次聚类<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
+<p>层次聚类是可用于将结构近似等价的节点对聚类到位置。它可对网络的结构特征进行检查。首先，该算法对最相似的节点进行分组。然后，它再将下一对最相似的节点或簇进行分组。如此反复进行，直到所有的节点都被加入。该算法通过生成一个二叉树式的数据结构来处理聚类问题。</p>
+</section>
+<section id="id15">
+<h3>4.2. 块模型<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
+<p>块模型是一个大网络的缩小版，其中的节点被基于节点集的给定分区折叠。每个节点的分区（块），被表示为单个节点。同样地，原网络中的节点被聚合到新网络中的区块之间进行连接。故，块模型是一种与层次聚类非常相似的技术。</p>
+<p>块模型旨在检测社会网络的一些结构特征，如内聚、核心/外延和排名等。在将节点分组成聚类，并确定这些聚类之间的关系的同时，区块建模使用矩阵（如邻接矩阵）来进行计算和数据可视化。它是一种灵活而高效的方法，用于分析小型密集的社会网络。</p>
+<p>块模型的实现要求要么已经知道一个网络的块模型（节点对类的赋值和指定允许的块类型的图像矩阵），要么就是有一个网络，要找到捕捉网络结构的块模型。</p>
+<p><img alt="Blockmodel" src="../_images/blockmodel.png" /></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+
+<span class="n">partition</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]]</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">quotient_graph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">partition</span><span class="p">,</span> <span class="n">relabel</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">draw</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id16">
+<h3>4.3. 模块性<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
+<p>模块性是度量图的结构（不以节点为导向），是表征一个给定的群落结构在划分网络中的好坏的一个指标。其规定如下：</p>
+<div class="math notranslate nohighlight">
+\[
+Q= \frac{|E_{in}|-|E_{in-R}|}{|E|}
+\]</div>
+<p>其中，<span class="math notranslate nohighlight">\(|E_{in}|\)</span>是连接同一个社区的链接数，若链接是随机的，则估计<span class="math notranslate nohighlight">\(|E_{in-R}|\)</span>。</p>
+<p>模块性是 Newman 和 Girvan 在 2003 年首次提出的，是目前使用最多的技术。它试图实现了对聚类的初步理解。这种技术包括两个步骤。</p>
+<ol class="arabic simple">
+<li><p>分割（divisive），包括迭代去除网络中的边，最终将其分解成群落。</p></li>
+<li><p>重新计算（recalculation），当任何一条边被移除时，重新计算出的是社区之间的间中心度。</p></li>
+</ol>
+<p>这两个过程重复进行，直到达到全局模块性的最大值。其结果是一组节点紧密内连的子网。模块性范围在 -0.5 到 + 1.0 之间，其中高分值表示良好的模块化。</p>
+</section>
+<section id="id17">
+<h3>4.4. 卢浮方法<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
+<p>卢浮方法（Louvain method）是由 Vincent Blondel、Jean-Loup Guillaume、Renaud Lambiotte 和 Etienne Lefebvre 提出的一种大型网络中的群落检测算法。它显示了一个网络如何自然地划分成多个节点群落。其中，群内形成密集的连接，群间形成较稀疏的连接。基于模块性最大的概念，卢浮方法是一种高效的贪婪方法，最多可扩展至到<span class="math notranslate nohighlight">\(10⁹\)</span>条边（或 100 万个节点）。该算法的运行时间为<span class="math notranslate nohighlight">\(O(n\log n)\)</span>。</p>
+<p>该算法的工作原理如下：</p>
+<ol class="arabic simple">
+<li><p>通过对所有节点进行局部的模块化优化，找到节点的小群落。</p></li>
+<li><p>然后将小群落分组到一个节点上，重复第一步。对于加权图，模块化的定义为：</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+Q= \frac{1}{2m} ⋅∑_{ij}\bigg[a_{ij} - \frac{k_i k_{j}}{2m}\bigg]⋅δ(c_i c_{j})
+\]</div>
+<p>其中，<span class="math notranslate nohighlight">\(a_{ij}\)</span>是节点<span class="math notranslate nohighlight">\(i\)</span>和<span class="math notranslate nohighlight">\(j\)</span>之间的边权重；<span class="math notranslate nohighlight">\(k_i\)</span>和<span class="math notranslate nohighlight">\(k_{j}\)</span>分别是连接到节点<span class="math notranslate nohighlight">\(i\)</span>和<span class="math notranslate nohighlight">\(j\)</span>的连接线的权重之和；<span class="math notranslate nohighlight">\(m\)</span>是所有连接线的权重之和；<span class="math notranslate nohighlight">\(c_i\)</span>和<span class="math notranslate nohighlight">\(c_{j}\)</span>是节点的群落；δ 是 Kronecker-δ，即用于检查一对样本是否属于同一个社区。</p>
+<p>Q 的值介于 -1 和 + 1 之间，理论上，优化这个值可产生更好的节点分组。但由于将所有可能迭代的节点进行分组并不实际，故使用了启发式算法。</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./complexity"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="07-%E8%8A%82%E7%82%B9%E5%88%86%E6%9E%90.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">节点分析</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="09-%E5%85%A8%E7%BD%91%E5%88%86%E6%9E%90.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">全网分析</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1. 内聚子群</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.1. 特性</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.2. 团体</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#m-slice">1.3. m-slice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#k-core">1.4. k-core</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">2. 度量</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2.1. 聚类系数</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2.2. 传递性</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.3. 核度</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">3. 结构推断</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">3.1. 三元分析</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">3.2. 结构洞</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">3.3. 经纪性</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">4. 模型分割</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">4.1. 层次聚类</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">4.2. 块模型</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">4.3. 模块性</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">4.4. 卢浮方法</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By ivaquero
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

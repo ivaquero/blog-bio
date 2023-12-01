@@ -1,0 +1,796 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>细胞自动机 &#8212; 生物狗学编程</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'complexity/02-细胞自动机';</script>
+    <link rel="canonical" href="https://ivaquero.github.io/blog-bio/complexity/02-细胞自动机.html" />
+    <link rel="shortcut icon" href="../_static/doge.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="相变" href="03-%E7%9B%B8%E5%8F%98.html" />
+    <link rel="prev" title="复杂性概述" href="01-%E5%A4%8D%E6%9D%82%E6%80%A7%E6%A6%82%E8%BF%B0.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/doge.png" class="logo__image only-light" alt="生物狗学编程 - Home"/>
+    <script>document.write(`<img src="../_static/doge.png" class="logo__image only-dark" alt="生物狗学编程 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    生物狗学编程
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">综合生命科学</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/01-%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%9F%BA%E7%A1%80.html">生物信息学基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/02-%E5%88%86%E5%AD%90%E7%94%9F%E7%89%A9%E5%AD%A6%E5%9F%BA%E7%A1%80.html">分子生物学基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/03-%E6%BC%94%E5%8C%96%E8%AE%BA%E5%9F%BA%E7%A1%80.html">演化论基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/04-%E7%97%85%E7%90%86%E5%AD%A6%E5%9F%BA%E7%A1%80.html">病理学基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/%E5%9F%BA%E5%9B%A0%E5%B7%A5%E7%A8%8B.html">基因工程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/%E7%B3%96%E7%94%9F%E5%8C%96%E6%B5%8B%E5%AE%9A.html">糖生化测定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/%E8%9B%8B%E7%99%BD%E8%B4%A8%E7%94%9F%E5%8C%96%E6%B5%8B%E5%AE%9A.html">蛋白质生化测定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/%E9%87%8D%E7%BB%84%E9%AB%98%E6%8B%B7%E8%B4%9D%E9%85%B5%E6%AF%8D.html">重组高拷贝酵母</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">统计基础</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/01-%E6%A6%82%E7%8E%87%E4%B8%8E%E5%88%86%E5%B8%83.html">概率与分布</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/02-%E7%BB%9F%E8%AE%A1%E9%87%8F%E4%B8%8E%E9%87%87%E6%A0%B7.html">统计量与抽样</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/03-%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1.html">参数估计</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/04-%E5%8F%82%E6%95%B0%E6%A3%80%E9%AA%8C.html">参数检验</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/05-%E9%9D%9E%E5%8F%82%E6%95%B0%E6%A3%80%E9%AA%8C.html">非参数检验</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/06-%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90.html">回归分析</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">机器学习</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/01-%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E5%BC%95%E8%A8%80.html">统计学习引言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/02-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92.html">线性回归</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/03-%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9.html">模型选择</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/04-%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB.html">线性分类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/05-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D.html">梯度下降</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/06-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E4%BC%98%E5%8C%96.html">梯度下降优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/07-%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB.html">非线性分类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/08-%E5%86%B3%E7%AD%96%E6%A0%91.html">决策树</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/09-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0.html">集成学习</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/10-%E9%99%8D%E7%BB%B4.html">降维</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/11-%E7%A1%AC%E8%81%9A%E7%B1%BB.html">硬聚类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/12-%E8%BD%AF%E8%81%9A%E7%B1%BB.html">软聚类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/13-%E7%94%9F%E5%AD%98%E5%88%86%E6%9E%90.html">生存分析</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 入门</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../python/01-%E7%8E%AF%E5%A2%83%E4%B8%8E%E5%8F%98%E9%87%8F.html">环境与变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/02-%E5%8F%98%E9%87%8F%E8%BF%90%E7%AE%97.html">变量运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/03-%E5%AE%B9%E5%99%A8.html">容器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/04-%E5%AE%B9%E5%99%A8%E8%BF%90%E7%AE%97.html">容器运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/05-%E6%8E%A7%E5%88%B6%E6%B5%81.html">控制流</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/06-%E5%87%BD%E6%95%B0.html">函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/07-%E9%97%AD%E5%8C%85%E4%B8%8E%E8%A3%85%E9%A5%B0%E5%99%A8.html">闭包与装饰器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/08-%E5%86%85%E7%BD%AE%E7%AE%97%E6%B3%95%E6%A8%A1%E5%9D%97.html">内置算法模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/09-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B.html">面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/10-%E6%A8%A1%E7%89%88%E4%B8%8E%E6%A8%A1%E5%BC%8F.html">模版与模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/11-%E9%AD%94%E6%B3%95%E6%96%B9%E6%B3%95.html">魔法方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/12-%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B.html">高级编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/13-%E5%A4%9A%E4%BB%BB%E5%8A%A1.html">多任务</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/14-%E5%BC%82%E6%AD%A5.html">异步</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/15-%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B.html">网络模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/16-%E5%85%83%E7%BC%96%E7%A8%8B.html">元编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/17-%E6%A8%A1%E5%9D%97%E4%B8%8E%E8%B0%83%E8%AF%95.html">模块与调试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/18-%E9%AB%98%E6%80%A7%E8%83%BD%E6%89%A9%E5%B1%95.html">高性能扩展</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">数据分析</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../analysis/clean-pandas.html">Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/clean-pandas2.html">Pandas 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/correlation.html">Correlation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/deviation.html">Deviation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/distribution.html">Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/group.html">Group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/polar.html">Polar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/proportion.html">Proportion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/ranking.html">Ranking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/time-series.html">Time Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/tricks.html">Tricks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">复杂性科学</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01-%E5%A4%8D%E6%9D%82%E6%80%A7%E6%A6%82%E8%BF%B0.html">复杂性概述</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">细胞自动机</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-%E7%9B%B8%E5%8F%98.html">相变</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-%E5%A4%9A%E4%B8%BB%E4%BD%93%E5%BB%BA%E6%A8%A1.html">多主体建模</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-%E5%88%86%E5%BD%A2.html">分形</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-%E9%9A%8F%E6%9C%BA%E5%9B%BE.html">随机图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-%E8%8A%82%E7%82%B9%E5%88%86%E6%9E%90.html">节点分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08-%E7%BE%A4%E5%88%86%E6%9E%90.html">群分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09-%E5%85%A8%E7%BD%91%E5%88%86%E6%9E%90.html">全网分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A-%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%9F%BA%E7%A1%80.html">博弈论基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="B-%E7%A4%BE%E4%BC%9A%E5%AD%A6%E5%BB%BA%E6%A8%A1.html">社会学建模</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/complexity/02-细胞自动机.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>细胞自动机</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1. 引言</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.1. 构成</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.2. 空间和邻居</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">1.3. 边界</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ca">2. 简单 CA</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2.1. 零维 CA</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2.2. 初等 CA</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.3. 规则与分类</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">2.4. 一维 CA</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">3. 二维 CA</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">3.1. 生命游戏</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">3.2. 生命的范型</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langton">3.3. Langton 蚂蚁</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">3.4. <span class="math notranslate nohighlight">\(λ\)</span> 法则</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>细胞自动机<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<section id="id2">
+<h2>1. 引言<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<section id="id3">
+<h3>1.1. 构成<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<p>细胞自动机（cellular automata，CA）是一个描述世界的模型，带有非常简单的物理。由冯·诺伊曼（John von Neumann，1903∼1957）和乌拉姆（Stanisław Marcin Ulam，1909∼1984）于 20 世纪 40 年代提出。</p>
+<p>标准 CA 是一个由”细胞”、“细胞状态”、”邻域”和”状态更新规则”构成的四元组，数学上，可表示为</p>
+<div class="math notranslate nohighlight">
+\[
+𝑨 = (L_d, S, N, f)
+\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(𝑨\)</span>：细胞自动机系统</p></li>
+<li><p><span class="math notranslate nohighlight">\(L\)</span>：细胞空间</p></li>
+<li><p><span class="math notranslate nohighlight">\(d\)</span>：细胞空间的维度</p></li>
+<li><p><span class="math notranslate nohighlight">\(S\)</span>：细胞有限的、离散的状态集合</p></li>
+<li><p><span class="math notranslate nohighlight">\(N\)</span>：某个邻域内所有细胞的集合</p></li>
+<li><p><span class="math notranslate nohighlight">\(f\)</span>：局部映射或局部规则</p></li>
+</ul>
+</section>
+<section id="id4">
+<h3>1.2. 空间和邻居<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>细胞：细胞自动机最基本的组成部分。细胞分布在离散的 Euclidean 空间位置上，每个时刻有着离散的状态，如 <span class="math notranslate nohighlight">\(\{0, 1\}\)</span> 等。</p></li>
+<li><p>细胞空间：细胞所分布在 Euclidean 空间上的网格点的集合。最常见的为二维细胞空间，通常可按三角形、四边形和六边形三种网格排列。</p></li>
+<li><p>邻居：细胞自动机的演化规则是局部的，对于指定细胞的状态进行更新时只需要知道其临近细胞的状态。某一细胞状态更新时要搜索的空间域称为该细胞的邻居。</p></li>
+<li><p>邻居的划分：在四方网格划分下的二维细胞自动机的邻居通常有以下三种形式：</p></li>
+</ul>
+<p><img alt="neighbor" src="../_images/neighbor.png" /></p>
+</section>
+<section id="id5">
+<h3>1.3. 边界<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>边界条件：实际模拟细胞自动机的演化时不可能处理无限网络，系统必须是有边界的。处理边界格点时，可为边界的信息进行编码，由此选择不同的演化规则。另一种方法是在边界处扩展，以满足边界有与内部类似的邻居。</p></li>
+<li><p>周期型边界：周期型是指相对边界连接起来的细胞空间。这种空间与无限空间最为接近，进行理论探讨时，常以此类空间作为实验进行模拟。</p></li>
+<li><p>固定边界：所有边界外细胞均取某一固定常量。</p></li>
+<li><p>绝热边界：边界外细胞的状态始终和边界细胞的状态保持一致。</p></li>
+<li><p>反射边界：在边界外邻居的细胞状态是以边界细胞为轴的镜面反射</p></li>
+</ul>
+<p><img alt="boundary" src="../_images/boundary.png" /></p>
+</section>
+</section>
+<section id="ca">
+<h2>2. 简单 CA<a class="headerlink" href="#ca" title="Permalink to this heading">#</a></h2>
+<section id="id6">
+<h3>2.1. 零维 CA<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<p>考虑带有单个细胞的 CA（也称零维 CA，不涉及空间）。细胞状态是用变 量<span class="math notranslate nohighlight">\(x_i\)</span>表示的整数，其中下标<span class="math notranslate nohighlight">\(i\)</span>表示<span class="math notranslate nohighlight">\(x_i\)</span>是时间步骤<span class="math notranslate nohighlight">\(i\)</span>期间的系统状态。作为初始条件，<span class="math notranslate nohighlight">\(x_0 = 0\)</span>。制定一个规则</p>
+<div class="math notranslate nohighlight">
+\[
+x_i = x_{i-1} + 1
+\]</div>
+<p>执行简单的计算，即计数。</p>
+<p>但，这个 CA 是不合规则的；可能的状态数通常是有限的。为了使其成立，选择状态个数<span class="math notranslate nohighlight">\(k =2\)</span>，和另一个简单的规则</p>
+<div class="math notranslate nohighlight">
+\[
+x_i = (x_{i-1} + 1)≡ 2
+\]</div>
+<p>这个 CA 的行为很简单：闪烁。即，在每个时间步之后，细胞的状态在<span class="math notranslate nohighlight">\(0\)</span>和<span class="math notranslate nohighlight">\(1\)</span>之间切换。</p>
+<p>大多数 CA 是确定性的，这意味着规则没有任何随机元素；给定相同的初始状态，它们总是产生相同的结果。也有不确定性的 CA，但这里不涉及它们。</p>
+</section>
+<section id="id7">
+<h3>2.2. 初等 CA<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<p>初等 CA（elementry cellular automata）是状态集<span class="math notranslate nohighlight">\(S\)</span>只有两个元素，即状态个数<span class="math notranslate nohighlight">\(k =2\)</span>，邻居半径<span class="math notranslate nohighlight">\(r = 1\)</span>的一维 CA。其邻居个数为<span class="math notranslate nohighlight">\(N =2\)</span>。这样的局部规则的映射函数可写为如下形式：</p>
+<div class="math notranslate nohighlight">
+\[
+S_i^{t + 1} = f(S_{i-1}^t, S_i^t, S_{i+ 1}^t)
+\]</div>
+<p>此时，输入状态一共有<span class="math notranslate nohighlight">\(2^{2+1} = 8\)</span>种组合方式。每个输入条件都对应着两种输出状态<span class="math notranslate nohighlight">\(0\)</span>或<span class="math notranslate nohighlight">\(1\)</span>，一共存在<span class="math notranslate nohighlight">\(2^8=256\)</span>种状态组合。即，对于初等 CA 而言，总共存在<span class="math notranslate nohighlight">\(256\)</span>种规则。</p>
+<blockquote>
+<div><p>假设一个细胞所具有的状态数为<span class="math notranslate nohighlight">\(k\)</span>，所使用的的邻居半径为<span class="math notranslate nohighlight">\(r\)</span>，则邻域内含<span class="math notranslate nohighlight">\(2r+ 1\)</span>个细胞，这样可能的输入条件的个数就是<span class="math notranslate nohighlight">\(k^{2r+ 1}\)</span>，总的规则数为<span class="math notranslate nohighlight">\(k^{k^{2r + 1}}\)</span>。</p>
+</div></blockquote>
+</section>
+<section id="id8">
+<h3>2.3. 规则与分类<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<p>沃尔夫勒姆（Stephen Wolfram，1959∼）在《一种新科学（A New Kind of Science）》和几篇从 80 年代中期开始的论文中根据 CA 呈现的范型（pattern）对 CA 进行了分类。按复杂性分类排序：</p>
+<ul class="simple">
+<li><p>I 类（homogenous）：自任何初始状态开始，经过一定时间运行后，细胞空间趋于一个空间平稳的构形，这里空间平稳即指每个细胞处于固定状态。不随时间变化而变化。</p></li>
+<li><p>II 类（periodic）：经过一定时间运行后，细胞空间趋于一系列简单的固定或周期范型。由于这些结构可看作是一种滤波器，故可应用到图像处理的研究中。</p></li>
+<li><p>III 类（chaotic）：自任何初始状态开始，经过一定时间运行后，细胞自动机表现出混沌的非周期行为，所生成的结构的统计特征不再变化，通常表现为分形分维特征。可用于产生随机数。</p></li>
+<li><p>IV（complex）：出现复杂的局部结构，或说是局部的混沌，其中有些会不断地传播。</p></li>
+</ul>
+<p>2004 年，Wolfram 的研究助理 Matthew Cook 证明了初等 CA 中的规则 110 是通用的 <a class="footnote-reference brackets" href="#id16" id="id9">1</a>，即，任何计算机可完成的任何计算都可由该 CA 完成。</p>
+</section>
+<section id="id10">
+<h3>2.4. 一维 CA<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<p>在一维 CA 中，有三种自然范型：</p>
+<ul class="simple">
+<li><p>有限序列：数量有限的细胞排成一排。除第一个和最后一个之外的所有细胞都有两个邻居。</p></li>
+<li><p>环：数量有限的细胞排列成一个环。所有细胞都有两个邻居。</p></li>
+<li><p>无限序列：数量无限的细胞排列成一排。</p></li>
+</ul>
+</section>
+</section>
+<section id="id11">
+<h2>3. 二维 CA<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h2>
+<section id="id12">
+<h3>3.1. 生命游戏<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
+<p>约翰·康威（John Horton Conway，1937∼2020）的生命游戏（GoL，1970）是一种使用 Moore 邻域的二维 CA，遵循简单的规则并产生令人惊讶的复杂行为。就像 Wolfram 的规则 110 一样，事实证明 GoL 是 Turing 完备的；即，至少在理论上它可计算任何可计算的函数。</p>
+<p>在二维 CA 的所有可能规则中，大多数产生简单的行为：大多数初始条件快速稳定或无限增长。通过避免无趣的 CA，Conway 也避免了 Wolfram 的一类（固定）和二类（周期）行为，且可能还有三类（混沌）。</p>
+<p>在 GoL 中，每个单元格的下一个状态取决于其当前状态和活动邻居的数量。这种规则可概括为 DSRO（Death, Survival, Reproduction, Overpopulation）。</p>
+<ul class="simple">
+<li><p>若细胞的生前邻居数量 &lt; D 或 &gt; O，则细胞死亡；</p></li>
+<li><p>若细胞的生前邻居数量 ⩽ S，则细胞存活；</p></li>
+<li><p>若细胞的生前邻居数量 ⩾ R 且 ⩽ O，则细胞复活。</p></li>
+</ul>
+<p>当 DSRO = (2, 3, 3, 3)，若一个细胞是活的，若它有两个或三个活动邻居就会生存，否则就会死亡。若一个细胞是死的，它将保持死亡，除非它恰好有三个邻居。</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p>当前状态</p></th>
+<th class="text-center head"><p>邻居数量</p></th>
+<th class="text-center head"><p>下一个状态</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>生存</p></td>
+<td class="text-center"><p>2∼3</p></td>
+<td class="text-center"><p>生存</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>生存</p></td>
+<td class="text-center"><p>0∼1, 4∼8</p></td>
+<td class="text-center"><p>死亡</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>死亡</p></td>
+<td class="text-center"><p>3</p></td>
+<td class="text-center"><p>生存</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>死亡</p></td>
+<td class="text-center"><p>0∼1, 4∼8</p></td>
+<td class="text-center"><p>死亡</p></td>
+</tr>
+</tbody>
+</table>
+<p>从最初的条件来看，GoL 会迅速达到稳定状态，活细胞数量几乎不变（可能带有一些振荡）。但，一些简单的开始条件，需要很长时间才能稳定下来，并产生令人惊讶的活细胞数量。这些模式被称为寿星（Methuselahs，《旧约·创世纪》中，一位活了 969 年的牧首）。</p>
+<p>生命游戏非常接近于秩序与混沌的边界。若对 CA 的规则进行某种程度的改变，CA 可能会形成永恒的生长，以稳定的速度不断向外生长。另一种可能是，CA 变得非常混乱，以至于生命似乎是随机的，没有形成任何规律，没有保留一丝一毫的秩序，少量的秩序使 CA 具有生命力。生命游戏恰巧落在了两者之间，即属于此前提到的复杂型 CA。规则使其具有很好的不可预测性，有一些漂亮的模式和有趣的现象出现。</p>
+</section>
+<section id="id13">
+<h3>3.2. 生命的范型<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
+<p>一般来说，稳定的生命范型至少有如下三类：</p>
+<ul class="simple">
+<li><p>静物（still-life）：静物形的状是稳定的，除非其他形状与之碰撞，可认为其周期为 1。常见形状有</p>
+<ul>
+<li><p>块（block）：由 4 个细胞组成，类似汉字的”田”；</p></li>
+<li><p>蜂巢（beehive）</p></li>
+<li><p>面包片（loaf）</p></li>
+<li><p>舟（boat）</p></li>
+<li><p>船（ship）</p></li>
+</ul>
+</li>
+<li><p>振荡器（oscillators）：振荡器的形状会随着时间的推移而重复出现。例如，闪烁器（blinker）是一个周期为 2 的振荡器。它由 3 个连续线性细胞（上下或左右）组成，在水平方向和垂直方向之间旋转。</p></li>
+<li><p>飞船（spaceship）：可在生命世界中移动的形状被称为 “飞船”。例如，滑翔机（glider）由 5 个细胞组成，形成一个小箭头形状，周期为 4。</p></li>
+<li><p>炮（gun）是一类特别的范型，它的主体部分会像振荡器一样，周期性地重复出现，也会周期性地发射出飞船。1970 年，自诩为黑客的 Bill Gosper 发现了第一把滑翔机炮（glider gun）。这一发现最终证明了康威的”生命游戏”是通用的，并能像图灵机一样工作。</p></li>
+</ul>
+</section>
+<section id="langton">
+<h3>3.3. Langton 蚂蚁<a class="headerlink" href="#langton" title="Permalink to this heading">#</a></h3>
+<p>Langton 蚂蚁是另一个经典的二维 CA，由克里斯·朗顿（Chris Langton，1948 ∼）于 1986 年提出 <a class="footnote-reference brackets" href="#id17" id="id14">2</a>。平面上的正方形格子被填上黑色或白色。在其中一格正方形内有一只”蚂蚁”。蚂蚁的头部朝向为：上下左右其中一方。蚂蚁的移动规则十分简单：</p>
+<ul class="simple">
+<li><p>若蚂蚁在黑格，右转 <span class="math notranslate nohighlight">\(90°\)</span>，将该格改为白格，并向前移一格；</p></li>
+<li><p>若蚂蚁在白格，左转 <span class="math notranslate nohighlight">\(90°\)</span>，将该格改为黑格，并向前移一格。</p></li>
+</ul>
+<p>规则虽然简单，蚂蚁的行为却十分复杂。刚刚开始时留下的路线都会有接近对称，像是会重复，但不论起始状态如何，蚂蚁经过漫长的混乱活动后，会开辟出一条规则的”高速公路”。</p>
+</section>
+<section id="id15">
+<h3>3.4. <span class="math notranslate nohighlight">\(λ\)</span> 法则<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
+<p>Langton 对 CA 的另一个重要贡献是提出了<span class="math notranslate nohighlight">\(λ\)</span>法则，通过该法则，可对任一个 CA 的可预测性进行分类。
+起初，Langton 做了一个量表；量表的范围在 0 到 1 之间，0 表示固定的、有序的、可预测的。当按小数点往上爬时，刻度的”面积”就从有序变成了所谓的周期性，然后又变成了复杂，最后，在这之上，就是混沌。</p>
+<p>要计算出 CA 的<span class="math notranslate nohighlight">\(λ\)</span>值很容易。它仅仅是一个细胞的新状态所处的规则的分数，用小数表示。即，导致生命的规则越多，<span class="math notranslate nohighlight">\(λ\)</span>值就越大。在 CA 中，棋盘上的细胞越多，平面就越混沌。当棋盘变得更自由时，它就会变得有序。因为 CA 要简化得多，通常每个单元格都有 2 个状态，故通常把死亡看成是”清场”。</p>
+<p>这种<span class="math notranslate nohighlight">\(λ\)</span>值的效果出奇的好。以 Wolfram 的一维 CA 为例。若把细胞的状态算作邻居的话，有 3 个邻居，故有<span class="math notranslate nohighlight">\(2^3 = 8\)</span> 个不同的规则（相比之下，生命游戏是 512 个）。设置背景状态为 0，对于任意表，计算表中非零元素个数。<span class="math notranslate nohighlight">\(λ\)</span>的计算公式如下：</p>
+<div class="math notranslate nohighlight">
+\[
+λ = \frac{s^n -n_q}{s^n} = 1 - \frac{n_q}{s^n}
+\]</div>
+<p>其中，<span class="math notranslate nohighlight">\(s\)</span>为每个细胞的状态个数，<span class="math notranslate nohighlight">\(n\)</span>为邻域集合大小，<span class="math notranslate nohighlight">\(n_q\)</span>为非零元素个数。</p>
+<p>对于<span class="math notranslate nohighlight">\(λ\)</span>讨论结果大致如下：</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(λ ∈ [0, 0.1]\)</span>时，所有细胞被吸引至某种固定状态，此时的 CA 属于固定型；</p></li>
+<li><p><span class="math notranslate nohighlight">\(λ ≈ 0.2\)</span>时，系统在一些固定状态下循环，此时 CA 属于周期型；</p></li>
+<li><p><span class="math notranslate nohighlight">\(λ = 0.3\)</span>时，CA 开始趋向于复杂型；</p></li>
+<li><p><span class="math notranslate nohighlight">\(λ ∈ [0.3, 0.6]\)</span>时，此时 CA 属于复杂型，复杂度随<span class="math notranslate nohighlight">\(λ\)</span>递增；</p></li>
+<li><p><span class="math notranslate nohighlight">\(λ ∈ [0.6, 1.0]\)</span>时，系统复杂结构消失，此时 CA 属于混沌型；</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-right head"><p>000</p></th>
+<th class="text-right head"><p>001</p></th>
+<th class="text-right head"><p>010</p></th>
+<th class="text-right head"><p>011</p></th>
+<th class="text-right head"><p>100</p></th>
+<th class="text-right head"><p>101</p></th>
+<th class="text-right head"><p>110</p></th>
+<th class="text-right head"><p>111</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p>0</p></td>
+<td class="text-right"><p>1</p></td>
+<td class="text-right"><p>1</p></td>
+<td class="text-right"><p>0</p></td>
+<td class="text-right"><p>1</p></td>
+<td class="text-right"><p>1</p></td>
+<td class="text-right"><p>0</p></td>
+<td class="text-right"><p>0</p></td>
+</tr>
+</tbody>
+</table>
+<p>上表有 4 个规则代表生，<span class="math notranslate nohighlight">\(λ = 1 -4/2^3 = 0.5\)</span>。这似乎是个不错的值，使这个 CA 落入复杂领域。</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id16"><span class="brackets"><a class="fn-backref" href="#id9">1</a></span></dt>
+<dd><p>Cook, M. “Universality in Elementary Cellular Automata.” Complex Systems 15, 1-40, 2004. <br></p>
+</dd>
+<dt class="label" id="id17"><span class="brackets"><a class="fn-backref" href="#id14">2</a></span></dt>
+<dd><p>Christopher G Langton (1998). Artificial life: an overview. MIT Press.</p>
+</dd>
+</dl>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./complexity"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="01-%E5%A4%8D%E6%9D%82%E6%80%A7%E6%A6%82%E8%BF%B0.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">复杂性概述</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="03-%E7%9B%B8%E5%8F%98.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">相变</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1. 引言</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.1. 构成</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.2. 空间和邻居</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">1.3. 边界</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ca">2. 简单 CA</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2.1. 零维 CA</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2.2. 初等 CA</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.3. 规则与分类</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">2.4. 一维 CA</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">3. 二维 CA</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">3.1. 生命游戏</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">3.2. 生命的范型</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langton">3.3. Langton 蚂蚁</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">3.4. <span class="math notranslate nohighlight">\(λ\)</span> 法则</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By ivaquero
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

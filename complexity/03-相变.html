@@ -1,0 +1,752 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>相变 &#8212; 生物狗学编程</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'complexity/03-相变';</script>
+    <link rel="canonical" href="https://ivaquero.github.io/blog-bio/complexity/03-相变.html" />
+    <link rel="shortcut icon" href="../_static/doge.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="多主体建模" href="04-%E5%A4%9A%E4%B8%BB%E4%BD%93%E5%BB%BA%E6%A8%A1.html" />
+    <link rel="prev" title="细胞自动机" href="02-%E7%BB%86%E8%83%9E%E8%87%AA%E5%8A%A8%E6%9C%BA.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/doge.png" class="logo__image only-light" alt="生物狗学编程 - Home"/>
+    <script>document.write(`<img src="../_static/doge.png" class="logo__image only-dark" alt="生物狗学编程 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    生物狗学编程
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">综合生命科学</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/01-%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%9F%BA%E7%A1%80.html">生物信息学基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/02-%E5%88%86%E5%AD%90%E7%94%9F%E7%89%A9%E5%AD%A6%E5%9F%BA%E7%A1%80.html">分子生物学基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/03-%E6%BC%94%E5%8C%96%E8%AE%BA%E5%9F%BA%E7%A1%80.html">演化论基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/04-%E7%97%85%E7%90%86%E5%AD%A6%E5%9F%BA%E7%A1%80.html">病理学基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/%E5%9F%BA%E5%9B%A0%E5%B7%A5%E7%A8%8B.html">基因工程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/%E7%B3%96%E7%94%9F%E5%8C%96%E6%B5%8B%E5%AE%9A.html">糖生化测定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/%E8%9B%8B%E7%99%BD%E8%B4%A8%E7%94%9F%E5%8C%96%E6%B5%8B%E5%AE%9A.html">蛋白质生化测定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/%E9%87%8D%E7%BB%84%E9%AB%98%E6%8B%B7%E8%B4%9D%E9%85%B5%E6%AF%8D.html">重组高拷贝酵母</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">统计基础</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/01-%E6%A6%82%E7%8E%87%E4%B8%8E%E5%88%86%E5%B8%83.html">概率与分布</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/02-%E7%BB%9F%E8%AE%A1%E9%87%8F%E4%B8%8E%E9%87%87%E6%A0%B7.html">统计量与抽样</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/03-%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1.html">参数估计</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/04-%E5%8F%82%E6%95%B0%E6%A3%80%E9%AA%8C.html">参数检验</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/05-%E9%9D%9E%E5%8F%82%E6%95%B0%E6%A3%80%E9%AA%8C.html">非参数检验</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/06-%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90.html">回归分析</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">机器学习</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/01-%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E5%BC%95%E8%A8%80.html">统计学习引言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/02-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92.html">线性回归</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/03-%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9.html">模型选择</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/04-%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB.html">线性分类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/05-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D.html">梯度下降</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/06-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E4%BC%98%E5%8C%96.html">梯度下降优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/07-%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB.html">非线性分类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/08-%E5%86%B3%E7%AD%96%E6%A0%91.html">决策树</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/09-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0.html">集成学习</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/10-%E9%99%8D%E7%BB%B4.html">降维</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/11-%E7%A1%AC%E8%81%9A%E7%B1%BB.html">硬聚类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/12-%E8%BD%AF%E8%81%9A%E7%B1%BB.html">软聚类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/13-%E7%94%9F%E5%AD%98%E5%88%86%E6%9E%90.html">生存分析</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 入门</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../python/01-%E7%8E%AF%E5%A2%83%E4%B8%8E%E5%8F%98%E9%87%8F.html">环境与变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/02-%E5%8F%98%E9%87%8F%E8%BF%90%E7%AE%97.html">变量运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/03-%E5%AE%B9%E5%99%A8.html">容器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/04-%E5%AE%B9%E5%99%A8%E8%BF%90%E7%AE%97.html">容器运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/05-%E6%8E%A7%E5%88%B6%E6%B5%81.html">控制流</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/06-%E5%87%BD%E6%95%B0.html">函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/07-%E9%97%AD%E5%8C%85%E4%B8%8E%E8%A3%85%E9%A5%B0%E5%99%A8.html">闭包与装饰器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/08-%E5%86%85%E7%BD%AE%E7%AE%97%E6%B3%95%E6%A8%A1%E5%9D%97.html">内置算法模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/09-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B.html">面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/10-%E6%A8%A1%E7%89%88%E4%B8%8E%E6%A8%A1%E5%BC%8F.html">模版与模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/11-%E9%AD%94%E6%B3%95%E6%96%B9%E6%B3%95.html">魔法方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/12-%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B.html">高级编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/13-%E5%A4%9A%E4%BB%BB%E5%8A%A1.html">多任务</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/14-%E5%BC%82%E6%AD%A5.html">异步</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/15-%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B.html">网络模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/16-%E5%85%83%E7%BC%96%E7%A8%8B.html">元编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/17-%E6%A8%A1%E5%9D%97%E4%B8%8E%E8%B0%83%E8%AF%95.html">模块与调试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/18-%E9%AB%98%E6%80%A7%E8%83%BD%E6%89%A9%E5%B1%95.html">高性能扩展</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">数据分析</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../analysis/clean-pandas.html">Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/clean-pandas2.html">Pandas 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/correlation.html">Correlation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/deviation.html">Deviation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/distribution.html">Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/group.html">Group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/polar.html">Polar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/proportion.html">Proportion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/ranking.html">Ranking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/time-series.html">Time Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/tricks.html">Tricks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">复杂性科学</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01-%E5%A4%8D%E6%9D%82%E6%80%A7%E6%A6%82%E8%BF%B0.html">复杂性概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-%E7%BB%86%E8%83%9E%E8%87%AA%E5%8A%A8%E6%9C%BA.html">细胞自动机</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">相变</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-%E5%A4%9A%E4%B8%BB%E4%BD%93%E5%BB%BA%E6%A8%A1.html">多主体建模</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-%E5%88%86%E5%BD%A2.html">分形</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-%E9%9A%8F%E6%9C%BA%E5%9B%BE.html">随机图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-%E8%8A%82%E7%82%B9%E5%88%86%E6%9E%90.html">节点分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08-%E7%BE%A4%E5%88%86%E6%9E%90.html">群分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09-%E5%85%A8%E7%BD%91%E5%88%86%E6%9E%90.html">全网分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A-%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%9F%BA%E7%A1%80.html">博弈论基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="B-%E7%A4%BE%E4%BC%9A%E5%AD%A6%E5%BB%BA%E6%A8%A1.html">社会学建模</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/complexity/03-相变.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>相变</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1. 扩散</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.1. 渗流</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.2. 林火</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2. 自组织临界</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2.1. 临界系统</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.2. 沙堆</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">2.3. 频谱密度</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">3. 复杂性特征</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">3.1. 分形</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">3.2. 幂律</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">3.3. 重尾分布</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">3.4. 粉红噪声</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">4. 复杂相变</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ising">4.1. Ising 模型</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>相变<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<section id="id2">
+<h2>1. 扩散<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>对于反应-扩散（reaction-diffusion，RD）模型，有两个数组，每种化学物质各一个。根据 <a class="reference external" href="http://www.karlsims.com/rd.html">Sims</a> 的教程，使用一个包含对角线元素的内核。它们的权重较低，因为它们离中心单元更远。对于每一步，计算如下方程：</p>
+<div class="math notranslate nohighlight">
+\[
+ΔA = r_a ∇^2 A - AB^2 + f (1 - A)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+ΔB = r_b ∇^2 B + AB^2 - (k + f) B
+\]</div>
+<p>其中，<span class="math notranslate nohighlight">\(∇^2\)</span>是内核近似的 LaPlace 算子。<span class="math notranslate nohighlight">\(r_a\)</span>和<span class="math notranslate nohighlight">\(r_b\)</span>分别为 A 和 B 的扩散速率，后者通常为前者的一半。<span class="math notranslate nohighlight">\(f\)</span>为进料速率，控制着 A 添加到系统的速度。<span class="math notranslate nohighlight">\(k\)</span>为移除速率，控制 B 从系统中移除的速度。</p>
+<section id="id3">
+<h3>1.1. 渗流<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<p>渗流（percolation）是流体流过半多孔材料的过程。实例包括岩层中的油，纸中的水和微孔中的氢气。渗流模型也用于研究不是严格渗滤的系统，包括流行病和电阻网络。</p>
+<p>渗流模型常常用随机图来表示，但也可用细胞自动机表示。简单的渗流模型的搭建过程如下：</p>
+<ul class="simple">
+<li><p>每个细胞为多孔的概率为<span class="math notranslate nohighlight">\(p\)</span>，且除了顶部那行是湿的外，所有单元均是干的。</p></li>
+<li><p>在每个时间步中，若多孔细胞至少有一个湿的邻居，它会变湿。非多孔细胞保持干燥。</p></li>
+<li><p>模拟运行直至达到不再有细胞改变状态的固定点。</p></li>
+<li><p>若存在从顶部到底部的湿细胞路径，则 CA 具有渗流簇。</p></li>
+</ul>
+<p>临界值附近的行为的快速变化称为相变（phase transition），类似于物理系统中的相变，例如水在冰点处从液体变为固体的方式。在处于或接近临界点时，各种各样的系统展示了一组共同的行为和特征。这些行为被统称为临界现象。</p>
+<p><img alt="phase transition" src="../_images/phase-transition.png" /></p>
+<p>下图点展示了每个渗流簇中的细胞数。拟合这些点的线的斜率大约为 1.85，这表明当<span class="math notranslate nohighlight">\(p\)</span>接近临界值时，渗滤簇实际上是分形的。</p>
+<ul class="simple">
+<li><p>当<span class="math notranslate nohighlight">\(p\)</span>&gt; 临界值时，几乎每个多孔细胞都被填充，因此湿单元的数量仅为<span class="math notranslate nohighlight">\(p*\mathrm{size}^2\)</span>，它的维度为<span class="math notranslate nohighlight">\(2\)</span>。</p></li>
+<li><p>当<span class="math notranslate nohighlight">\(p≪\)</span>临界值时，湿细胞的数量与 CA 的线性大小成比例，因此它的维度为<span class="math notranslate nohighlight">\(1\)</span>。</p></li>
+</ul>
+<p><img alt="fractal percolation" src="../_images/fractal-percolation.png" /></p>
+</section>
+<section id="id4">
+<h3>1.2. 林火<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<p>1990 年，Per Bak（1947∼2002）、Chen 和 Chao Tang（汤超，1958~）提出了一种 CA，它是一种林火的抽象模型 <a class="footnote-reference brackets" href="#id20" id="id5">1</a>。每个细胞处于三种状态之一：空地、树木、着火。这个 CA 参照了常规的渗流模型，其规则是：</p>
+<ul class="simple">
+<li><p>空细胞以概率<span class="math notranslate nohighlight">\(p\)</span>被占用。</p></li>
+<li><p>若任何一个邻居着火，则带有树的细胞就会燃烧。</p></li>
+<li><p>即使没有邻居着火，带有树的细胞自发燃烧，概率为<span class="math notranslate nohighlight">\(f\)</span>。</p></li>
+<li><p>在下一个时间步中，着火的细胞变为空细胞。</p></li>
+</ul>
+<p><img alt="forest fire" src="../_images/forest-fire.png" /></p>
+<p>假设参数<span class="math notranslate nohighlight">\(p = 0.01\)</span>且<span class="math notranslate nohighlight">\(f = 0.001\)</span></p>
+</section>
+</section>
+<section id="id6">
+<h2>2. 自组织临界<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<section id="id7">
+<h3>2.1. 临界系统<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<p>许多临界系统表现出常见的行为：</p>
+<ul class="simple">
+<li><p>分形几何：例如，冷冻的水倾向于形成分形图案，包括雪花和其他晶体结构。分形的特点是自相似性；即，图案的一部分与整体的缩放副本相似。</p></li>
+<li><p>一些物理量的重尾分布：例如，在冷冻的水中，晶体尺寸的分布是幂律分布的。</p></li>
+<li><p>呈现粉红噪声的时间变化。复合信号可分解为它们的频率分量。在粉红噪声中，低频分量比高频分量功率更大。具体而言，频率<span class="math notranslate nohighlight">\(f\)</span>处的功率与<span class="math notranslate nohighlight">\(1 / f\)</span>成正比。</p></li>
+</ul>
+<p>临界系统通常不稳定。例如，为了使水保持部分冷冻状态，需要主动控制温度。若系统接近临界温度，则小型偏差倾向于将系统从一个相位移到另一个相位。许多自然系统表现出典型的临界性行为，但若临界点不稳定，它们本质上不应该是常见的。</p>
+</section>
+<section id="id8">
+<h3>2.2. 沙堆<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<p>沙堆（Sand Pile）由 Per Bak，Chao Tang 和 Kurt Wiesenfeld 于 1987 年提出 <a class="footnote-reference brackets" href="#id21" id="id9">2</a>。它用大量与邻居互动的元素来模拟物理系统，解决了上述疑惑。这种解决方案称为自组织临界（self-organized criticality，SOC），其中，自组织意味着从任何初始状态开始，系统会不断转向临界状态，并停留在那里，无需外部控制。</p>
+<p>沙堆模型是一个二维 CA，每个细胞的状态代表沙堆的部分斜率，拥有 <span class="math notranslate nohighlight">\(5\)</span> 种状态（沙堆有 <span class="math notranslate nohighlight">\(5\)</span> 种高度，或每个格点有 <span class="math notranslate nohighlight">\(1~5\)</span> 粒沙子）。在每个时间步中，检查每个细胞来查看它是否超过临界值<span class="math notranslate nohighlight">\(K\)</span>，通常是<span class="math notranslate nohighlight">\(3\)</span>。若是，则它会”倒塌”并将沙子转移到四个相邻细胞；即，细胞的斜率减少<span class="math notranslate nohighlight">\(4\)</span>，且每个邻居增加<span class="math notranslate nohighlight">\(1\)</span>。在网格的周边，所有细胞保持为斜率<span class="math notranslate nohighlight">\(0\)</span>，故多余的会溢出边缘。</p>
+<p>Bak 等人首先将所有细胞初始化为大于<span class="math notranslate nohighlight">\(K\)</span>的水平，然后运行模型直至稳定。然后他们观察微小扰动的影响；他们随机选择一个细胞，将其值增加<span class="math notranslate nohighlight">\(1\)</span>，然后再次运行模型，直至稳定。</p>
+<p>对于每个扰动，他们测量<span class="math notranslate nohighlight">\(T\)</span>，这是沙堆稳定所需的时间步数，<span class="math notranslate nohighlight">\(S\)</span>是倒塌的细胞总数 <a class="footnote-reference brackets" href="#id22" id="id10">3</a>。大多数情况下，放置一粒沙子不会导致细胞倒塌，因此<span class="math notranslate nohighlight">\(T = 1\)</span>和<span class="math notranslate nohighlight">\(S = 0\)</span>。但偶尔一粒沙子会引起雪崩，影响很大一部分网格。结果表明，<span class="math notranslate nohighlight">\(T\)</span>和<span class="math notranslate nohighlight">\(S\)</span>的分布是重尾的，这支持了系统处于临界状态的断言。这意味着从最初的状态开始，它不需要外部控制，就可向临界状态发展。随着更多沙粒的添加，模型仍处于临界状态。</p>
+<p><img alt="sand pile" src="../_images/sandpile.png" /></p>
+</section>
+<section id="id11">
+<h3>2.3. 频谱密度<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
+<p>频谱分析指任何信号都可分解为一组具有不同音量或功率的频率分量。频谱分析是寻找构成信号的成分和它们的功率的过程，称为其频谱（spectrum）。</p>
+<p>为了计算信号的频谱，可使用快速 Fourier 变换（fast Fourier transform，FFT）。唯一的问题是噪声信号的频谱往往是嘈杂的。但，可通过将一个长信号分成多个段，计算每个段的 FFT，然后计算每个频率的平均功率来使其平滑。</p>
+</section>
+</section>
+<section id="id12">
+<h2>3. 复杂性特征<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h2>
+<section id="id13">
+<h3>3.1. 分形<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
+<p>理解分形（fractal）必须从维度开始。对于简单的几何对象，维度根据缩放行为而定义。例如，若正方形的边长为<span class="math notranslate nohighlight">\(1\)</span>，则其面积为<span class="math notranslate nohighlight">\(1^2\)</span>。其中，指数<span class="math notranslate nohighlight">\(2\)</span>表示正方形是二维的。更一般地，可通过测量一个对象的尺寸（通过一些定义），将对象的维度估计为线性度量的函数。例如，通过测量一维 CA 的面积，将它的维度估计为行数的函数。</p>
+<p>用以下函数来估计这些 CA 的维度，该函数计算每个时间步之后的细胞数。它返回一个元组列表，其中每个元组包含<span class="math notranslate nohighlight">\(i\)</span>和<span class="math notranslate nohighlight">\(i^2\)</span>，用于比较，以及细胞总数。</p>
+<p><img alt="fractal" src="../_images/fractal.png" /></p>
+<ul class="simple">
+<li><p>规则 20（左）每两个时间步产生三个细胞，故<span class="math notranslate nohighlight">\(i\)</span>步后的细胞总数为<span class="math notranslate nohighlight">\(y = 1.5*i\)</span>。两边取对数得<span class="math notranslate nohighlight">\(\log y = \log 1.5 + \log i\)</span>，故在双对数刻度上，线的估计的斜率为 1.01。</p></li>
+<li><p>规则 50（中）在第<span class="math notranslate nohighlight">\(i\)</span>个时间步骤中产生<span class="math notranslate nohighlight">\(i + 1\)</span>个新细胞，因此<span class="math notranslate nohighlight">\(i\)</span>步之后的细胞总数为<span class="math notranslate nohighlight">\(y = i^2 + i\)</span>。若忽略第二项并取两边的对数，有<span class="math notranslate nohighlight">\(\log y ∼ 2 \log i\)</span>，故当<span class="math notranslate nohighlight">\(i\)</span>变大时，预计看到一条斜率为<span class="math notranslate nohighlight">\(2\)</span>的线。事实上，估计的斜率为<span class="math notranslate nohighlight">\(1.97\)</span>。</p></li>
+<li><p>规则 18（右），估计的斜率大约是<span class="math notranslate nohighlight">\(1.57\)</span>，这表明其生成的图案具有”分数维度”；即，它是一个分形。</p></li>
+</ul>
+<p><img alt="fractal test" src="../_images/fractal-test.png" /></p>
+</section>
+<section id="id14">
+<h3>3.2. 幂律<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
+<p>在统计学中，幂律（power-law）是指两个量之间的函数关系，其中一个量的相对变化会导致另一个量的一个幂的相对变化。例如，用正方形的边长来考虑一个正方形的面积，若长度增加一倍，则面积乘以 4 的倍数。</p>
+<p>幂律的一个特性是它们的标度不变性。给定一个关系 <span class="math notranslate nohighlight">\(f(x) = ax- k\)</span>，将参数<span class="math notranslate nohighlight">\(x\)</span>放缩一个常数<span class="math notranslate nohighlight">\(c\)</span>，只会导致函数本身的比例缩放。即</p>
+<div class="math notranslate nohighlight">
+\[
+f(cx) = a(cx)^{-k} = c^{-k} f(x) ∝ f(x)
+\]</div>
+<p>即，用一个常数<span class="math notranslate nohighlight">\(c\)</span>简单地将原始幂律关系乘以常数<span class="math notranslate nohighlight">\(c^{-k}\)</span>。故，<strong>所有的幂律均是等效的</strong>，因为每个定律都只是其他定律的放缩版本。这种行为就是当<span class="math notranslate nohighlight">\(f(x)\)</span>和<span class="math notranslate nohighlight">\(x\)</span>的对数时产生线性关系的原因，而<strong>双对数（log-log）图上的直线通常被称为幂律的特征</strong>。幂律定律的几个著名例子是 Pareto 准则（Pareto principle）、分形体的结构自相似性（self-similarity）和生物系统中的放缩定律（allometry）。</p>
+<blockquote>
+<div><p>双对数图中，直线意味着无标度（scale-free）</p>
+</div></blockquote>
+<p>对于真实数据来说，这种直线性是遵循幂律关系的必要条件，但不是充分条件。事实上，有许多方法可产生有限量的数据来模仿这种签名行为，但在它们的近似极限下，并不是真正的幂律（例如，某些数据的产生过程遵循对数）。</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(k&gt;2\)</span>时，幂律<span class="math notranslate nohighlight">\(x^{-k}\)</span>在<span class="math notranslate nohighlight">\(x ∈ [1, ∞)\)</span>上有一个定义好的均值；</p></li>
+<li><p><span class="math notranslate nohighlight">\(k&gt;3\)</span>时，幂律<span class="math notranslate nohighlight">\(x^{-k}\)</span>的方差才是有限的；</p></li>
+<li><p><span class="math notranslate nohighlight">\(k&gt;1\)</span>时，存在中位数<span class="math notranslate nohighlight">\(m_d\)</span>，且<span class="math notranslate nohighlight">\(m_d=2^{1 /(k-1)} x_{\min}\)</span><a class="footnote-reference brackets" href="#id23" id="id15">4</a></p></li>
+</ul>
+<p>自然界中大多数已确定的幂律都有这样的指数，即均值是很好定义的，但方差不是，这意味着它们能够发生黑天鹅（black swan）行为 <a class="footnote-reference brackets" href="#id24" id="id16">5</a>。这使得基于方差和标准差的传统统计方法在此处应用是不正确的。</p>
+</section>
+<section id="id17">
+<h3>3.3. 重尾分布<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
+<p>在概率论中，重尾分布（Heavy-tailed distributions）是指尾部不受指数约束的概率分布。即，它的尾部比指数分布的尾部更重。在许多应用中，人们关心的是分布的右尾，但一个分布可能有重尾的左尾，也可能两个尾均是重尾。</p>
+<p>重尾分布有三个重要的子类：肥尾分布（fat-tailed distributions）、长尾分布（long-tailed distributions）和亚指数分布（subexponential distributions）。实际上，所有常用的重尾分布都属于亚指数族。</p>
+<p>肥尾分布是指概率密度函数在<span class="math notranslate nohighlight">\(x\)</span>较大的情况下以<span class="math notranslate nohighlight">\(x^{-k}\)</span>为幂的方式归零的分布。由于这样的幂总是被指数分布的概率密度函数所约束，故肥尾分布总是重尾分布。但，有些分布的尾部归零速度比指数函数慢（意味着它们是重尾分布），但比幂快（意味着它们不是肥尾分布）。如对数 - 逻辑和 Pareto 分布亦为肥尾分布。</p>
+</section>
+<section id="id18">
+<h3>3.4. 粉红噪声<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h3>
+<p>为了了解粉红噪声（pink noise），必须了解信号和噪声。</p>
+<ul class="simple">
+<li><p>信号：信号是随时间变化的任何数量。</p></li>
+<li><p>噪声：通常是一种不需要的声音，但在信号处理的情况下，它是一个包含许多频率成分的信号。噪声有很多种。</p>
+<ul>
+<li><p>白噪声：一种信号，它在很宽的频率范围内拥有相同功率的成分。其他种类的噪声在频率和功率之间有不同的关系。</p></li>
+<li><p>红噪声：频率为<span class="math notranslate nohighlight">\(1 / f^2\)</span></p></li>
+</ul>
+</li>
+</ul>
+<p>更一般地，</p>
+<div class="math notranslate nohighlight">
+\[
+P(f) = 1 / f^β
+\]</div>
+<p>对两边取对数得，</p>
+<div class="math notranslate nohighlight">
+\[
+\log P(f) = −β \log f
+\]</div>
+<p>当<span class="math notranslate nohighlight">\(β = 0\)</span>时，该等式描述白噪声; 当<span class="math notranslate nohighlight">\(β = 2\)</span>时，该等式描述红噪声。任何介于 0 和 2 之间的噪声称为噪声。当<span class="math notranslate nohighlight">\(β ≈ 1\)</span>时，称为<span class="math notranslate nohighlight">\(1/f\)</span>噪声。若在双对数刻度上绘制功率与频率的关系，预计有一条斜率为<span class="math notranslate nohighlight">\(β\)</span>的直线。</p>
+</section>
+</section>
+<section id="id19">
+<h2>4. 复杂相变<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h2>
+<section id="ising">
+<h3>4.1. Ising 模型<a class="headerlink" href="#ising" title="Permalink to this heading">#</a></h3>
+<p>Ising 模型的提出（Ising model）是为了解释铁磁物质的相变，即磁铁在加热到一定临界温度以上会出现磁性消失，而降温到临界温度以下又会表现出磁性的现象。这种有磁性、无磁性两相之间的变换，是一种连续相变（也叫二级相变）。</p>
+<p>Ising 模型设铁磁物质是由一堆规则排列的小磁针构成，每个磁针只有上下两个方向（自旋）。相邻的小磁针之间通过能量约束发生相互作用，同时又会由于环境热噪声的干扰而发生磁性的随机变换（上下互变）。涨落的大小由关键的温度参数决定，温度越高，随机涨落干扰越强，小磁针越容易发生无序而剧烈地状态变换，从而让上下两个方向的磁性相互抵消，整个系统消失磁性，若温度很低，则小磁针相对宁静，系统处于能量约束高的状态，大量的小磁针方向一致，铁磁系统展现出磁性。而当系统处于临界温度的时候，Ising 模型表现出一系列幂律行为和自相似现象。</p>
+<p><img alt="ising-model" src="../_images/ising-model.png" /></p>
+<div class="admonition-ising admonition">
+<p class="admonition-title">Ising 模型</p>
+<p>Ising 模型由物理学家 Wilhelm Lenz（1888∼1957）于 1920 年提出，其一维形式由其学生 Ernst Ising（1900∼1998）求解，但，并没有发现相变现象。随后，Lars Onsager（1903∼1976）于 1944 年对二维的 Ising 模型进行了解析求解，并发现了其中的相变现象，从而引起了更多学者的注意。</p>
+</div>
+<p>由于 Ising 模型的高度抽象，可很容易地将它应用到其他领域之中。例如，将每个小磁针比喻为某个村落中的村民，而将小磁针上、下的两种状态比喻成个体所具备的两种政治观点，相邻小磁针之间的相互作用比喻成村民之间观点的影响。环境的温度比喻成每个村民对自己意见不坚持的程度。这样，整个模型就可建模该村落中不同政治见解的动态演化。</p>
+<p>另一方面，若将小磁针比喻成神经元细胞，向上向下的状态比喻成神经元的激活与抑制，小磁针的相互作用比喻成神经元之间的信号传导，则，Ising 模型的变种还可用于建模神经网络系统，从而搭建可适应环境、不断学习的机器，如 Hopfield 网络或 Boltzmann 机。</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id20"><span class="brackets"><a class="fn-backref" href="#id5">1</a></span></dt>
+<dd><p>A forest-fire model and some thoughts on turbulence”. Physics Letters A. Elsevier BV. 147 (5–6): 297–300<br></p>
+</dd>
+<dt class="label" id="id21"><span class="brackets"><a class="fn-backref" href="#id9">2</a></span></dt>
+<dd><p>Self-organized criticality: an explanation of 1/f noise”. Physical Review Letters. 59 (4): 381–384. <br></p>
+</dd>
+<dt class="label" id="id22"><span class="brackets"><a class="fn-backref" href="#id10">3</a></span></dt>
+<dd><p>原始论文使用了 S 的不同定义，但，后来的工作使用了这个定义。<br></p>
+</dd>
+<dt class="label" id="id23"><span class="brackets"><a class="fn-backref" href="#id15">4</a></span></dt>
+<dd><p>Newman, Mark EJ. “Power laws, Pareto distributions and Zipf’s law.” Contemporary physics 46.5 (2005): 323-351. <br></p>
+</dd>
+<dt class="label" id="id24"><span class="brackets"><a class="fn-backref" href="#id16">5</a></span></dt>
+<dd><p>Newman, Mark EJ.; Reggiani, Aura; Nijkamp, Peter (2005). “Power laws, Pareto distributions and Zipf’s law”. Cities. 30 (2005): 323–351</p>
+</dd>
+</dl>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./complexity"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="02-%E7%BB%86%E8%83%9E%E8%87%AA%E5%8A%A8%E6%9C%BA.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">细胞自动机</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="04-%E5%A4%9A%E4%B8%BB%E4%BD%93%E5%BB%BA%E6%A8%A1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">多主体建模</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1. 扩散</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.1. 渗流</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.2. 林火</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2. 自组织临界</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2.1. 临界系统</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.2. 沙堆</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">2.3. 频谱密度</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">3. 复杂性特征</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">3.1. 分形</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">3.2. 幂律</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">3.3. 重尾分布</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">3.4. 粉红噪声</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">4. 复杂相变</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ising">4.1. Ising 模型</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By ivaquero
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1019 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>博弈论基础 &#8212; 生物狗学编程</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'complexity/A-博弈论基础';</script>
+    <link rel="canonical" href="https://ivaquero.github.io/blog-bio/complexity/A-博弈论基础.html" />
+    <link rel="shortcut icon" href="../_static/doge.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="社会学建模" href="B-%E7%A4%BE%E4%BC%9A%E5%AD%A6%E5%BB%BA%E6%A8%A1.html" />
+    <link rel="prev" title="全网分析" href="09-%E5%85%A8%E7%BD%91%E5%88%86%E6%9E%90.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/doge.png" class="logo__image only-light" alt="生物狗学编程 - Home"/>
+    <script>document.write(`<img src="../_static/doge.png" class="logo__image only-dark" alt="生物狗学编程 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    生物狗学编程
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">综合生命科学</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/01-%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%9F%BA%E7%A1%80.html">生物信息学基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/02-%E5%88%86%E5%AD%90%E7%94%9F%E7%89%A9%E5%AD%A6%E5%9F%BA%E7%A1%80.html">分子生物学基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/03-%E6%BC%94%E5%8C%96%E8%AE%BA%E5%9F%BA%E7%A1%80.html">演化论基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/04-%E7%97%85%E7%90%86%E5%AD%A6%E5%9F%BA%E7%A1%80.html">病理学基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/%E5%9F%BA%E5%9B%A0%E5%B7%A5%E7%A8%8B.html">基因工程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/%E7%B3%96%E7%94%9F%E5%8C%96%E6%B5%8B%E5%AE%9A.html">糖生化测定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/%E8%9B%8B%E7%99%BD%E8%B4%A8%E7%94%9F%E5%8C%96%E6%B5%8B%E5%AE%9A.html">蛋白质生化测定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biotechs/%E9%87%8D%E7%BB%84%E9%AB%98%E6%8B%B7%E8%B4%9D%E9%85%B5%E6%AF%8D.html">重组高拷贝酵母</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">统计基础</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/01-%E6%A6%82%E7%8E%87%E4%B8%8E%E5%88%86%E5%B8%83.html">概率与分布</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/02-%E7%BB%9F%E8%AE%A1%E9%87%8F%E4%B8%8E%E9%87%87%E6%A0%B7.html">统计量与抽样</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/03-%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1.html">参数估计</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/04-%E5%8F%82%E6%95%B0%E6%A3%80%E9%AA%8C.html">参数检验</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/05-%E9%9D%9E%E5%8F%82%E6%95%B0%E6%A3%80%E9%AA%8C.html">非参数检验</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-stats/06-%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90.html">回归分析</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">机器学习</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/01-%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E5%BC%95%E8%A8%80.html">统计学习引言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/02-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92.html">线性回归</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/03-%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9.html">模型选择</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/04-%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB.html">线性分类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/05-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D.html">梯度下降</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/06-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E4%BC%98%E5%8C%96.html">梯度下降优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/07-%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB.html">非线性分类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/08-%E5%86%B3%E7%AD%96%E6%A0%91.html">决策树</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/09-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0.html">集成学习</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/10-%E9%99%8D%E7%BB%B4.html">降维</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/11-%E7%A1%AC%E8%81%9A%E7%B1%BB.html">硬聚类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/12-%E8%BD%AF%E8%81%9A%E7%B1%BB.html">软聚类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base-ml/13-%E7%94%9F%E5%AD%98%E5%88%86%E6%9E%90.html">生存分析</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 入门</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../python/01-%E7%8E%AF%E5%A2%83%E4%B8%8E%E5%8F%98%E9%87%8F.html">环境与变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/02-%E5%8F%98%E9%87%8F%E8%BF%90%E7%AE%97.html">变量运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/03-%E5%AE%B9%E5%99%A8.html">容器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/04-%E5%AE%B9%E5%99%A8%E8%BF%90%E7%AE%97.html">容器运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/05-%E6%8E%A7%E5%88%B6%E6%B5%81.html">控制流</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/06-%E5%87%BD%E6%95%B0.html">函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/07-%E9%97%AD%E5%8C%85%E4%B8%8E%E8%A3%85%E9%A5%B0%E5%99%A8.html">闭包与装饰器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/08-%E5%86%85%E7%BD%AE%E7%AE%97%E6%B3%95%E6%A8%A1%E5%9D%97.html">内置算法模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/09-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B.html">面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/10-%E6%A8%A1%E7%89%88%E4%B8%8E%E6%A8%A1%E5%BC%8F.html">模版与模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/11-%E9%AD%94%E6%B3%95%E6%96%B9%E6%B3%95.html">魔法方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/12-%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B.html">高级编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/13-%E5%A4%9A%E4%BB%BB%E5%8A%A1.html">多任务</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/14-%E5%BC%82%E6%AD%A5.html">异步</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/15-%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B.html">网络模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/16-%E5%85%83%E7%BC%96%E7%A8%8B.html">元编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/17-%E6%A8%A1%E5%9D%97%E4%B8%8E%E8%B0%83%E8%AF%95.html">模块与调试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/18-%E9%AB%98%E6%80%A7%E8%83%BD%E6%89%A9%E5%B1%95.html">高性能扩展</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">数据分析</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../analysis/clean-pandas.html">Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/clean-pandas2.html">Pandas 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/correlation.html">Correlation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/deviation.html">Deviation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/distribution.html">Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/group.html">Group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/polar.html">Polar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/proportion.html">Proportion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/ranking.html">Ranking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/time-series.html">Time Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/tricks.html">Tricks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">复杂性科学</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01-%E5%A4%8D%E6%9D%82%E6%80%A7%E6%A6%82%E8%BF%B0.html">复杂性概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-%E7%BB%86%E8%83%9E%E8%87%AA%E5%8A%A8%E6%9C%BA.html">细胞自动机</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-%E7%9B%B8%E5%8F%98.html">相变</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-%E5%A4%9A%E4%B8%BB%E4%BD%93%E5%BB%BA%E6%A8%A1.html">多主体建模</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-%E5%88%86%E5%BD%A2.html">分形</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-%E9%9A%8F%E6%9C%BA%E5%9B%BE.html">随机图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-%E8%8A%82%E7%82%B9%E5%88%86%E6%9E%90.html">节点分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08-%E7%BE%A4%E5%88%86%E6%9E%90.html">群分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09-%E5%85%A8%E7%BD%91%E5%88%86%E6%9E%90.html">全网分析</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">博弈论基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="B-%E7%A4%BE%E4%BC%9A%E5%AD%A6%E5%BB%BA%E6%A8%A1.html">社会学建模</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/complexity/A-博弈论基础.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>博弈论基础</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1. 引言</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.1. 研究特点</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.2. 基本假设</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">1.3. 基本要素</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">1.4. 表述形式</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2. 非合作博弈</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.1. 分类</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">2.2. 均衡</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">2.3. 占优战略</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">2.4. 囚徒困境</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nash">3. Nash 均衡</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">3.1. 概念</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cournot">3.2. Cournot 模型</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">3.3. 零和博弈</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">3.3.1. 纯战略</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">3.3.2. 混合战略</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">3.4. 非零和博弈</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">4. 多元 Nash 均衡</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">4.1. 不结盟</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">4.2. 结盟</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">4.3. 共谋博弈</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">4.4. 物品</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">5. 合作博弈</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pareto">5.1. Pareto 最优</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">5.2. 特征函数式</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shapley">5.3. Shapley 值</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#banzhaf">5.4. Banzhaf 权利力指数</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">5.5. 核与支付</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">6. 动态博弈</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">6.1. 逆向归纳法</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stackelberg">6.2. Stackelberg 模型</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">6.3. 子博弈</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id29">6.4. 嵌入博弈</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id30">6.5. 无限重复博弈</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>博弈论基础<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<section id="id2">
+<h2>1. 引言<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<section id="id3">
+<h3>1.1. 研究特点<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<p>博弈论涉及的决策者至少为两个；</p>
+<ul class="simple">
+<li><p>博弈论中存在信息的不对称，即不同局中人对于有关其他参与人（对手）的特征和行动的知识可能存在不一致；</p></li>
+<li><p>博弈论考虑了其他决策者的决策对自身利益的影响；</p></li>
+<li><p>关键步骤是找出在别人选择既定的情况下，自己的最优反应战略（给自己带来最大收益的战略）；</p></li>
+<li><p>问题解决过程一般包括：发现问题、提出问题（清晰表达）、分析问题、解决问题</p></li>
+</ul>
+</section>
+<section id="id4">
+<h3>1.2. 基本假设<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<p>理性选择范式的基本理论假设：</p>
+<ol class="arabic simple">
+<li><p><strong>个人理性</strong>：个人是自身最大利益的追求者；</p></li>
+<li><p>在特定情境中有不同的行为战略可供选择；</p></li>
+<li><p>人在理智上相信不同的选择会导致不同的结果；</p></li>
+<li><p>人在主观上对不同的选择结果有不同的偏好排列；</p></li>
+</ol>
+</section>
+<section id="id5">
+<h3>1.3. 基本要素<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>局中人（player）：博弈中，独立决策、独立行动并承担决策结果的个人或组织。</p></li>
+<li><p>战略（strategy）：局中人可选择的行动，具有完整性、多样性、不可观察性。</p></li>
+</ul>
+<blockquote>
+<div><p>战略集为有限集合的博弈，称”有限博弈”，反之称”无限博弈”</p>
+</div></blockquote>
+<p>支付函数（payoff function）：局中人选择出战略后，所获得的收益。</p>
+</section>
+<section id="id6">
+<h3>1.4. 表述形式<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>标准式：表格式，表示 2-3 人博弈</p></li>
+<li><p>扩展式：二叉树式，与标准式可互换，多用于动态博弈</p></li>
+<li><p>特征函数式：用于合作博弈</p></li>
+</ul>
+</section>
+</section>
+<section id="id7">
+<h2>2. 非合作博弈<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<section id="id8">
+<h3>2.1. 分类<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p>信息 ∥ 顺序</p></th>
+<th class="text-center head"><p>静态博弈</p></th>
+<th class="text-center head"><p>动态博弈</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><strong>完全信息博弈</strong></p></td>
+<td class="text-center"><p>完全信息静态博弈</p></td>
+<td class="text-center"><p>完全信息动态博弈</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>不完全信息博弈</strong></p></td>
+<td class="text-center"><p>不完全静态信息博弈</p></td>
+<td class="text-center"><p>不完全信息动态博弈</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id9">
+<h3>2.2. 均衡<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
+<p>均衡：所有局中人的最优战略集合，即博弈最可能出现的结果</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p>信息 ∥ 顺序</p></th>
+<th class="text-center head"><p>静态博弈</p></th>
+<th class="text-center head"><p>动态博弈</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><strong>完全信息博弈</strong></p></td>
+<td class="text-center"><p>Nash equilibrium</p></td>
+<td class="text-center"><p>subgame perfect Nash equilibrium</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>不完全信息博弈</strong></p></td>
+<td class="text-center"><p>Bayesian Nash equilibrium</p></td>
+<td class="text-center"><p>perfect Bayesian Nash equilibrium</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id10">
+<h3>2.3. 占优战略<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>占优战略（Dominant Strategy）：指无论其他参与者采取什么战略，某参与者使用该战略的结果都优于其他战略。</p></li>
+<li><p>占优战略均衡：指由博弈中的所有参与者的占优战略组合所构成的均衡。</p></li>
+<li><p>战略弱占优（Weakly Dominant Strategy）：无论其他人采取什么样的战略，这个战略的回报都 ⩾ 其他战略的回报。</p></li>
+<li><p>严格占优战略（Strictly Dominant Strategy）：无论其他人采取什么战略，这个战略的回报都严格&gt; 其他战略的回报。</p></li>
+</ul>
+</section>
+<section id="id11">
+<h3>2.4. 囚徒困境<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
+<p>囚徒困境（prisoner’s dilemma，PD）<a class="footnote-reference brackets" href="#id31" id="id12">1</a> 是博弈论中的一个话题，揭示了人类的动机和行为。简介如下：</p>
+<p>两名犯罪团伙成员被逮捕并囚禁。每个囚犯都被单独监禁，无法与另一方交流。检察官缺乏足够的证据，来证明这两个人的主要指控。他们希望以较轻的指控被判处两年徒刑。同时，检察官为每个囚犯提供商量的余地。每个囚犯都有机会：</p>
+<ol class="arabic simple">
+<li><p>通过证明对方犯罪出卖对方</p></li>
+<li><p>通过保持沉默与另一方合作。</p></li>
+</ol>
+<p>代价是：若 A 和 B 各自背叛对方，每个人都服刑 2 年。若 A 背叛 B 但 B 保持沉默，A 将被释放，B 将被监禁 3 年（反之亦然）。若 A 和 B 都保持沉默，他们两人只会服刑 1 年（较轻的质控）。</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p>B ∥ A</p></th>
+<th class="text-center head"><p>认罪</p></th>
+<th class="text-center head"><p>不认罪</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>认罪</p></td>
+<td class="text-center"><p>2, 2</p></td>
+<td class="text-center"><p>0, 3</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>不认罪</p></td>
+<td class="text-center"><p>3, 0</p></td>
+<td class="text-center"><p>1, 1</p></td>
+</tr>
+</tbody>
+</table>
+<p>不难发现，无论是对两个囚徒个人还是对两个囚徒总体，最佳的结果都不是同时认罪各得到 3 年的惩罚，而是都不认罪各得到 1 年的惩罚，这就形成了所谓”困境”。它反映了一个很深刻的问题</p>
+<ol class="arabic simple">
+<li><p>个体理性与集体理性的冲突；</p></li>
+<li><p>以自我利益为目标的”理性”行为，最终导致了两个囚徒得到相对较劣的收益；</p></li>
+<li><p><strong>个人理性通过市场机制导致社会福利最优的结论并不总是成立的</strong>，换句话说，虽然”看不见的手”是有力的，但不是万能的。</p></li>
+</ol>
+<p>自 20 世纪 50 年代，囚徒困境被首次讨论以来，它一直是社会心理学研究的热门话题。在 20 世纪 70 年代后期，密歇根大学的政治学家 Robert Axelrod 组织了一场比赛来比较囚徒困境的战略。他邀请参与者以计算机程序的形式提交战略，然后相互对抗并保持得分。具体来说，他们玩的是 PD 的迭代版本，其中智能体针对同一对手进行多轮比赛，因此他们的决定可基于历史。在 Axelrod 的比赛中，一个简单的战略出人意料地好，称为”针锋相对”，即 TFT，TFT 在第一轮迭代比赛中总是合作；之后，它会复制上一轮对手所做的任何事情。对手继续合作，TFT 保持合作，若对手任何时候都背叛，下一轮 TFT 背叛，但若对手变回合作，TFT 也会合作。</p>
+</section>
+</section>
+<section id="nash">
+<h2>3. Nash 均衡<a class="headerlink" href="#nash" title="Permalink to this heading">#</a></h2>
+<section id="id13">
+<h3>3.1. 概念<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
+<p>Nash 均衡：又称为非合作博弈均衡，在此均衡点上，每个理性参与者都不会有单独改变战略的冲动，因为局中每个参与者都不可能因为单方面改变自己的战略而增加获益。</p>
+<p>Schelling 点：对于存在多个 Nash 均衡的问题，从各方的文化和经验中找到线索，以该线索为基础选择出的均衡称”Schelling 点”。</p>
+<ul class="simple">
+<li><p>纯战略：要求参与者在每个给定信息情况下只选择一种特定的行动。</p></li>
+<li><p>混合战略：要求参与者在给定信息情况下以某种概率分布随机地选择不同的行动。</p></li>
+</ul>
+</section>
+<section id="cournot">
+<h3>3.2. Cournot 模型<a class="headerlink" href="#cournot" title="Permalink to this heading">#</a></h3>
+<p>设 1 在某个市场有<span class="math notranslate nohighlight">\(n\)</span>个厂商销售完全相同的商品，由于市场容量有限的原因，在一定的价格水平上该市场只能销售有限数量的该种商品。若向市场投放超出前述数量的该种商品，则必须要降价才能将它们全部销售出去，即商品总量越大，”市场出清价格”就越低。</p>
+<p>设 2 这<span class="math notranslate nohighlight">\(n\)</span>个厂商的产量决策是各自独立的且不受任何限制，各厂商在决定自己生产多少时无法知道其他厂商的决定。</p>
+<p>对生产厂商来说，收益就是生产利润（销售收入减去成本 后剩下的余额）。设第<span class="math notranslate nohighlight">\(i\)</span>个厂商的产量为<span class="math notranslate nohighlight">\(q_i(i = 1, 2, ..., n）\)</span>，则<span class="math notranslate nohighlight">\(n\)</span>个厂商的总产量就是</p>
+<div class="math notranslate nohighlight">
+\[
+Q= ∑q_i
+\]</div>
+<p>又已知”市场出清价格”是投放到该市场的该种商品总量的减函数，即</p>
+<div class="math notranslate nohighlight">
+\[
+P(Q) = P(∑q_i)
+\]</div>
+<p>再设第<span class="math notranslate nohighlight">\(i\)</span>个厂商生产每单位产量的成本为固定的<span class="math notranslate nohighlight">\(C\)</span>（假设不变成本为 0），则第<span class="math notranslate nohighlight">\(i\)</span>个厂商的收益就是</p>
+<div class="math notranslate nohighlight">
+\[
+q_i× P(∑q_i) -C× q_i
+\]</div>
+</section>
+<section id="id14">
+<h3>3.3. 零和博弈<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
+<section id="id15">
+<h4>3.3.1. 纯战略<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h4>
+<p><img alt="zero" src="../_images/zero.png" /></p>
+<p>以上<span class="math notranslate nohighlight">\((A_2, B_2)\)</span>被称为鞍点，<span class="math notranslate nohighlight">\(a_{22}\)</span>被成为鞍点元素，其满足</p>
+<div class="math notranslate nohighlight">
+\[
+a_{i2} ⩽ a_{22} ⩽ a_{2 j}(i = 1, 2, 3 . j = 1, 2, 3)
+\]</div>
+<p>此不等式的推广，称”最小与最大定理”，即以最坏的打算，争取最好的结果。</p>
+<p>博弈在纯战略下的战略可不唯一，但博弈的值，即鞍点元素的值是唯一的。</p>
+<blockquote>
+<div><p>纯战略均衡以鞍点值表示</p>
+</div></blockquote>
+</section>
+<section id="id16">
+<h4>3.3.2. 混合战略<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h4>
+<p>当通过最小与最大定理不能得出鞍点值时，则纯战略下不存在最优，此时需要采取混合战略。</p>
+<blockquote>
+<div><p>混合战略均衡以期望表示，即以期望代替原有的元素进行计算</p>
+</div></blockquote>
+<div class="math notranslate nohighlight">
+\[
+\max\min E(x, y) = \min\max E(x, y) = V_G
+\]</div>
+<ul class="simple">
+<li><p>案例</p></li>
+</ul>
+<p>一场敌对的军事行动中，甲方拥有三种进攻性武器<span class="math notranslate nohighlight">\(A_1, A_2, A_3\)</span>，而乙方有三种防御性武器<span class="math notranslate nohighlight">\(B_1, B_2, B_3\)</span>来对付甲方。据平时演习得到的数据，各种武器间对抗时，相互取胜的可能如下：</p>
+<p>A1 对 B1 2:1；A1 对 B2 3:1；A1 对 B3 1:2；
+A2 对 B1 3:7；A2 对 B2 3:2；A2 对 B3 1:3；
+A3 对 B1 3:1；A3 对 B2 1:4；A3 对 B3 2:1；</p>
+<p>将甲方矩阵减去乙方矩阵的对应 元素，得零和对策时甲方的赢得矩阵如下：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+𝑨 = \begin{bmatrix}
+  {1/3}&amp;{1/2}&amp;{-1/3}\\
+  {-2/5}&amp;{1/5}&amp;{-1/2}\\
+  {1/2}&amp;{-3/5}&amp;{1/3}
+\end{bmatrix}
+\end{split}\]</div>
+<p>解得<span class="math notranslate nohighlight">\(x̄ = (0.5283, 0, 0.4717)^{⊤}, ȳ = (0, 0.3774, 0.6226)^{⊤}, u = v= -0.0189\)</span>，故乙方有利。</p>
+</section>
+</section>
+<section id="id17">
+<h3>3.4. 非零和博弈<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
+<p>任何一个给定的二元博弈，必存在混合战略的 Nash 均衡。</p>
+<p><img alt="non-zero" src="../_images/non-zero.png" /></p>
+<p>反复剔除严格劣战略，适用于二元零和博弈、二元非零和博弈。</p>
+<p>由一方采取不同战略的收益期望相等，解得其采取不同战略的概率，从而得其战略组合<span class="math notranslate nohighlight">\(X^{*} = (p, 1 - p), Y^{*} = (q, 1 -q)\)</span>。</p>
+<div class="admonition- admonition">
+<p class="admonition-title">奇数定理</p>
+<p>几乎所有有限战略的博弈存在奇数个 Nash 均衡，包括纯战略和混合战略均衡。</p>
+<p>使用混合战略的博弈，往往是多次重复的无限博弈。</p>
+</div>
+</section>
+</section>
+<section id="id18">
+<h2>4. 多元 Nash 均衡<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h2>
+<section id="id19">
+<h3>4.1. 不结盟<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h3>
+<p>划线法求解，同二元 Nash 均衡。</p>
+<p><img alt="ally-none" src="../_images/ally-none.png" /></p>
+</section>
+<section id="id20">
+<h3>4.2. 结盟<a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>只有符合 Nash 均衡的联盟才是稳定的。</p></li>
+<li><p>大联盟：均衡即三者收益之和最大的组合。</p></li>
+<li><p>部分结盟：均衡需要通过对比每两者之间的 Schelling 点确定。</p></li>
+</ul>
+</section>
+<section id="id21">
+<h3>4.3. 共谋博弈<a class="headerlink" href="#id21" title="Permalink to this heading">#</a></h3>
+<p>抗共谋 Nash 均衡：要求局中人在此战略组合下没有单独偏离的动机，同时也没有合伙偏离的动机，是多元博弈的最终结果。</p>
+</section>
+<section id="id22">
+<h3>4.4. 物品<a class="headerlink" href="#id22" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>私人物品：具有消费排他性、消费竞争性</p></li>
+<li><p>公共物品：具有非排他性、非竞争性。如环保、天气预报。每个人不管是否付费，均可从中获益。</p></li>
+<li><p>俱乐部物品：人为限制在某些消费者范围内消费，超出此范围具有排他性。如有线电视节目、收费高速公路。</p></li>
+<li><p>拟公共物品：具有非排他性、非竞争性，但随着消费者增多，将具有竞争性。如地下水、石油、街道。</p></li>
+<li><p>集体反陷阱：个人对自身利益对追求导致集体对遭殃。</p></li>
+</ul>
+</section>
+</section>
+<section id="id23">
+<h2>5. 合作博弈<a class="headerlink" href="#id23" title="Permalink to this heading">#</a></h2>
+<section id="pareto">
+<h3>5.1. Pareto 最优<a class="headerlink" href="#pareto" title="Permalink to this heading">#</a></h3>
+<p>绝对利己的模式只能保证生命个体的强大，对整个种群的繁衍是不利的。</p>
+</section>
+<section id="id24">
+<h3>5.2. 特征函数式<a class="headerlink" href="#id24" title="Permalink to this heading">#</a></h3>
+<p>在多人合作博弈中，联盟是一个非常重要的概念。设有<span class="math notranslate nohighlight">\(n\)</span>个参与人的集合<span class="math notranslate nohighlight">\(I={1, 2, …, n}\)</span>，对任一子集<span class="math notranslate nohighlight">\(S⊂ I\)</span>，<span class="math notranslate nohighlight">\(S\)</span>称为一个联盟，定义一个实函数<span class="math notranslate nohighlight">\(V(s)\)</span>满足条件：</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(V(ϕ) = 0\)</span>；</p></li>
+<li><p>超可加性（经济协同效应）：当<span class="math notranslate nohighlight">\(S_1∩ S_2= ϕ, S_1 ⊂ I, S_2⊂ I\)</span>时，<span class="math notranslate nohighlight">\(V(S_1∪ S_2) ⩾ V(S_1) + V(S_2)\)</span></p></li>
+</ol>
+<p>把<span class="math notranslate nohighlight">\([I, V]\)</span>称为一个<span class="math notranslate nohighlight">\(n\)</span>人合作博弈，称<span class="math notranslate nohighlight">\(V(s)\)</span>为这个<span class="math notranslate nohighlight">\(n\)</span>人合作博弈的特征函数，其中，<span class="math notranslate nohighlight">\(S\)</span>是<span class="math notranslate nohighlight">\(I\)</span>的任意子集（联盟），<span class="math notranslate nohighlight">\(V(s)\)</span>描述了联盟的效益。</p>
+<p>若用<span class="math notranslate nohighlight">\(φ_i(V(I)), i ∈ I\)</span>表示参与人<span class="math notranslate nohighlight">\(i\)</span>从<span class="math notranslate nohighlight">\(n\)</span>人大联盟合 作 博弈中获得的收益，则<span class="math notranslate nohighlight">\(φ_i(V(I))\)</span>至少应满足：</p>
+<ol class="arabic simple">
+<li><p>个体合理性：<span class="math notranslate nohighlight">\(φ_i(V(I)) ⩾ V（\{i\}）, i ∈ I\)</span>，即合作至少不比单干差；</p></li>
+<li><p>总体合理性：<span class="math notranslate nohighlight">\(∑_{i ∈ I}φ_i(V(I)) = V(I)\)</span>，即将合作博弈<span class="math notranslate nohighlight">\([I, V]\)</span>中获得的收益<span class="math notranslate nohighlight">\(V(I)\)</span>分光。</p></li>
+</ol>
+<p>故，解决<span class="math notranslate nohighlight">\(n\)</span>人合作博弈问题的任务是如何获得一个合理的分配方案</p>
+<div class="math notranslate nohighlight">
+\[
+Φ(V(I)) = (φ_1(V(I)), φ_2(V(I)), …, φ_n(V(I)))
+\]</div>
+<p>在参与人多于两个的情况下，就可能出现部分参与人联合起来追求小团体利益的行为，但其前提条件是参与人在小团体中得到的利益 ⩾ 在大联盟中得到的利益，即存在子集<span class="math notranslate nohighlight">\(S = \{i_1, i_2 …, i_k\}⊂ I\)</span>，相应的总收益为<span class="math notranslate nohighlight">\(V(s)\)</span>，分配方案</p>
+<div class="math notranslate nohighlight">
+\[
+Φ(V(s)) = (φ_{i_1}(V(s)), φ_{i_2}(V(s)), …, φ_{i_k}(V(s)))
+\]</div>
+<p>满足</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+  φ_{i_1}(V(s)) &amp;⩾ φ_{i_1}(V(I)) \\
+  φ_{i_2}(V(s)) &amp;⩾ φ_{i_2}(V(I)) \\
+  &amp; ⋮\\
+  φ_{i_k}(V(s)) &amp;⩾ φ_{i_k}(V(I))
+\end{aligned}
+\end{split}\]</div>
+<p>且其中至少有一个严格不等式成立。</p>
+</section>
+<section id="shapley">
+<h3>5.3. Shapley 值<a class="headerlink" href="#shapley" title="Permalink to this heading">#</a></h3>
+<p>假设<span class="math notranslate nohighlight">\(I = \{1, 2, ⋯, n\}\)</span>，<span class="math notranslate nohighlight">\(n\)</span>个局中人依照随机次序形成联盟且各种次序发生的概率相等，显然这样的联盟共有<span class="math notranslate nohighlight">\(n!\)</span>个。局中人<span class="math notranslate nohighlight">\(i\)</span>与前面<span class="math notranslate nohighlight">\(|S|-1\)</span>个局中人形成联盟<span class="math notranslate nohighlight">\(S\)</span>，由于<span class="math notranslate nohighlight">\(S\{i\}\)</span>中的局中人排列的次序有<span class="math notranslate nohighlight">\((|S|-1)!\)</span>种，而<span class="math notranslate nohighlight">\(I\ S\)</span>中的局中人排列的次序有<span class="math notranslate nohighlight">\((n-|S|)!\)</span>种，故，各种次序发生的概率均为</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{(n-|S|)!(|S|-1)!}{n!}
+\]</div>
+<p>又局中人<span class="math notranslate nohighlight">\(i\)</span>在联盟<span class="math notranslate nohighlight">\(S\)</span>的贡献为<span class="math notranslate nohighlight">\(V(S) - V(S\{i\})\)</span>，从而</p>
+<div class="math notranslate nohighlight">
+\[
+W(|S|) = \frac{(n-|S|)!(|S|-1)!}{n!}, i ∈ S ⊆ I
+\]</div>
+<p>其中，<span class="math notranslate nohighlight">\(|S|\)</span>为集合<span class="math notranslate nohighlight">\(S\)</span>的元素个数。</p>
+<p><span class="math notranslate nohighlight">\(W(|S|)\)</span>可作为局中人<span class="math notranslate nohighlight">\(i\)</span>在联盟<span class="math notranslate nohighlight">\(S\)</span>的贡献的一个加权因子。因此局中人<span class="math notranslate nohighlight">\(i\)</span>对所有他可能参加的联盟所作贡献的期望值就是 Shapley 值。</p>
+<p>对任意<span class="math notranslate nohighlight">\(n\)</span>人合作博弈<span class="math notranslate nohighlight">\([I, V]\)</span>，Shapley 值是惟一存在的，且</p>
+<div class="math notranslate nohighlight">
+\[
+φ_i(V) = ∑_{i ∈ SCL} W(|S|)\bigg[V(s) - V(S\{i\})\bigg], i = 1, 2 ⋯, n
+\]</div>
+<p><img alt="shapley" src="../_images/shapley.png" /></p>
+<p><img alt="shapley-calc" src="../_images/shapley-calc.png" /></p>
+</section>
+<section id="banzhaf">
+<h3>5.4. Banzhaf 权利力指数<a class="headerlink" href="#banzhaf" title="Permalink to this heading">#</a></h3>
+<p>对局中人集合为<span class="math notranslate nohighlight">\(I = \{1, 2, ⋯, n\}\)</span>的投票表决博弈，令特征函数</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+V(s) - V(S\{i\}) =
+\begin{cases}
+  1 &amp;若 S 获胜，其他联盟失败\\
+  {0} &amp; 局中人 j 的权力指数
+\end{cases}
+\end{split}\]</div>
+<p>则局中人<span class="math notranslate nohighlight">\(j\)</span>的权力指数</p>
+<div class="math notranslate nohighlight">
+\[
+c_{j} = ∑_{j ∈ S⊆ I} [V(s) -V(S\{j\})]
+\]</div>
+<p>其相应的权力指数比</p>
+<div class="math notranslate nohighlight">
+\[
+Φ_{j} = \frac{c_{j}}{c_1 + c_2 + …+ c_n}
+\]</div>
+</section>
+<section id="id25">
+<h3>5.5. 核与支付<a class="headerlink" href="#id25" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>核：使所有参与者中的任一个都不能从联盟重组中获益的结构，很多时候是空集。</p></li>
+<li><p>强占优：</p></li>
+<li><p>弱占优：</p></li>
+</ul>
+</section>
+</section>
+<section id="id26">
+<h2>6. 动态博弈<a class="headerlink" href="#id26" title="Permalink to this heading">#</a></h2>
+<section id="id27">
+<h3>6.1. 逆向归纳法<a class="headerlink" href="#id27" title="Permalink to this heading">#</a></h3>
+<p>逆向归纳法：站在未来的立场，确定现实的行动。</p>
+<ol class="arabic simple">
+<li><p>画出博弈树</p></li>
+<li><p>从最后阶段参与人开始考虑</p></li>
+<li><p>考虑次后阶段参与人的决策，制止第一阶段参与人的决策</p></li>
+<li><p>找出均衡路径</p></li>
+</ol>
+</section>
+<section id="stackelberg">
+<h3>6.2. Stackelberg 模型<a class="headerlink" href="#stackelberg" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="id28">
+<h3>6.3. 子博弈<a class="headerlink" href="#id28" title="Permalink to this heading">#</a></h3>
+<p>子博弈包括整个博弈</p>
+<ol class="arabic simple">
+<li><p>解出所有子博弈的均衡收益</p></li>
+<li><p>同同样方法分析简化后的博弈</p></li>
+<li><p>直至博弈不含适当子博弈为止</p></li>
+</ol>
+</section>
+<section id="id29">
+<h3>6.4. 嵌入博弈<a class="headerlink" href="#id29" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="id30">
+<h3>6.5. 无限重复博弈<a class="headerlink" href="#id30" title="Permalink to this heading">#</a></h3>
+<p>有限重复博弈，其均衡同一次性博弈</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id31"><span class="brackets"><a class="fn-backref" href="#id12">1</a></span></dt>
+<dd><p><a class="reference external" href="http://en.wikipedia.org/wiki/Prisoner's_dilemma">http://en.wikipedia.org/wiki/Prisoner’s_dilemma</a></p>
+</dd>
+</dl>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./complexity"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="09-%E5%85%A8%E7%BD%91%E5%88%86%E6%9E%90.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">全网分析</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="B-%E7%A4%BE%E4%BC%9A%E5%AD%A6%E5%BB%BA%E6%A8%A1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">社会学建模</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1. 引言</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.1. 研究特点</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.2. 基本假设</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">1.3. 基本要素</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">1.4. 表述形式</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2. 非合作博弈</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.1. 分类</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">2.2. 均衡</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">2.3. 占优战略</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">2.4. 囚徒困境</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nash">3. Nash 均衡</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">3.1. 概念</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cournot">3.2. Cournot 模型</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">3.3. 零和博弈</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">3.3.1. 纯战略</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">3.3.2. 混合战略</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">3.4. 非零和博弈</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">4. 多元 Nash 均衡</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">4.1. 不结盟</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">4.2. 结盟</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">4.3. 共谋博弈</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">4.4. 物品</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">5. 合作博弈</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pareto">5.1. Pareto 最优</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">5.2. 特征函数式</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shapley">5.3. Shapley 值</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#banzhaf">5.4. Banzhaf 权利力指数</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">5.5. 核与支付</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">6. 动态博弈</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">6.1. 逆向归纳法</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stackelberg">6.2. Stackelberg 模型</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">6.3. 子博弈</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id29">6.4. 嵌入博弈</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id30">6.5. 无限重复博弈</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By ivaquero
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
