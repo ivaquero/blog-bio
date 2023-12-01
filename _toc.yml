@@ -70,3 +70,16 @@ parts:
       - file: analysis/ranking
       - file: analysis/time-series
       - file: analysis/tricks
+  - caption: 复杂性科学
+    chapters:
+      - file: complexity/01-复杂性概述.md
+      - file: complexity/02-细胞自动机.md
+      - file: complexity/03-相变.md
+      - file: complexity/04-多主体建模.md
+      - file: complexity/05-分形.md
+      - file: complexity/06-随机图.md
+      - file: complexity/07-节点分析.md
+      - file: complexity/08-群分析.md
+      - file: complexity/09-全网分析.md
+      - file: complexity/A-博弈论基础.md
+      - file: complexity/B-社会学建模.md
