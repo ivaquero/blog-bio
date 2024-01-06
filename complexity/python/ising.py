@@ -1,14 +1,16 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
+rng = np.random.default_rng(1337)
+
 
 def init_grid(size):
-    return 2 * np.random.randint(2, size=(size, size)) - 1
+    return 2 * rng.integers(2, size=(size, size)) - 1
 
 
 def wolff_algorithm(grid, temperature):
     L = len(grid)
-    i, j = np.random.randint(0, L, size=2)
+    i, j = rng.integers(0, L, size=2)
 
     cluster = {(i, j)}
     to_flip = {(i, j)}
@@ -26,7 +28,7 @@ def wolff_algorithm(grid, temperature):
             if (
                 neighbor not in cluster
                 and grid[neighbor] == grid[i, j]
-                and np.random.rand() < 1 - np.exp(-2 / temperature)
+                and rng.random() < 1 - np.exp(-2 / temperature)
             ):
                 to_flip.add(neighbor)
                 cluster.add(neighbor)
