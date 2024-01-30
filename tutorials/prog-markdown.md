@@ -2,7 +2,7 @@
 title: 搭建 Markdown 强大写作环境（VSCode）
 zhihu-url: https://zhuanlan.zhihu.com/p/139140492
 zhihu-title-image: images/vscode/md-preview.png
-zhihu-tags: Markdown, Markdown 编辑器, Visual Studio Code
+zhihu-tags: Markdown,Visual Studio Code
 ---
 
 # 搭建 Markdown 强大写作环境（VSCode）
@@ -23,7 +23,7 @@ VSCode 默认是支持 Markdown 的，但还是有必装下面 3 个插件提高
 
 - Markdown All in One
 - mardownlint
-- Markdown Preview Mermaid Support
+- Markdown Kroki
 
 ### 2.1. Markdown All in One
 
@@ -42,11 +42,9 @@ VSCode 默认是支持 Markdown 的，但还是有必装下面 3 个插件提高
 
 ![markdownlint](images/vscode/md-lint.png)
 
-### 2.3. Markdown Preview Mermaid Support
+### 2.3. Markdown Kroki
 
-很多时候，写文档难免需要绘制一些用于说明的插图，如流程图、甘特图等，这个时候，若另开一个应用画图，再导入文档，则略显繁琐。前文提到的 MPE 扩展支持的 mermaid.js 可轻松解决这一难题。简单说，mermaid.js 就是一个 Markdown 的绘图工具包
-
-Markdown Preview Mermaid Support 支持 mermaid 预览。
+很多时候，写文档难免需要绘制一些用于说明的插图，如流程图、甘特图等，这个时候，若另开一个应用画图，再导入文档，则略显繁琐。Markdown Kroki 支持包括 mermaid，PlantUML 等在内的多种文本绘图。
 
 ![mermaid](images/vscode/md-mermaid.png)
 
@@ -82,7 +80,7 @@ Markdown Preview Mermaid Support 支持 mermaid 预览。
 
 ### 3.4. WYSIWYG 模式
 
-Typora 往往被当作 markdown 的首选，这很大程度上得益于所见即所得（WYSIWYG）模式，如今 VSCode 社区也提供了相应的，虽然还不够成熟，但已经迈出了重要的一步。个人推荐微软出品的基于 notebook 的扩展 Markdown Notebook。
+Typora 往往被当作 Markdown 的首选，这很大程度上得益于所见即所得（WYSIWYG）模式，如今 VSCode 社区也提供了相应的，虽然还不够成熟，但已经迈出了重要的一步。个人推荐微软出品的基于 notebook 的扩展 Markdown Notebook。
 
 ![wysiwyg](images/vscode/md-wysiwyg.png)
 
@@ -90,7 +88,13 @@ Typora 往往被当作 markdown 的首选，这很大程度上得益于所见即
 
 ## 4. 输出扩展
 
-### 4.1. 导出
+### 4.1. Markdown PDF
+
+写完了 Markdown 文档，往往要导出为 PDF，这时候可以使用 Markdown PDF 扩展来完成。
+
+![pdf](images/vscode/md-pdf.png)
+
+### 4.2. Pandoc
 
 Pandoc 是文档格式领域的瑞士军刀，几乎实现了常见文档格式所有变换，像 .docx，.md，.html，.pdf 这些格式更是不在话下。
 
@@ -124,7 +128,7 @@ brew install pandoc
 
 ![pandoc](images/vscode/pandoc.png)
 
-### 4.2. 知乎发布
+### 4.3. 知乎发布
 
 WPL/s 继承于 Zhihu On VSCode，可用于 Markdown 在知乎上一键发布，尤其适合存在**大量图片和代码块**的帖子，当然也在 VSCode 里**看帖摸鱼**。
 

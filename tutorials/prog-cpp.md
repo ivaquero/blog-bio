@@ -46,7 +46,7 @@ zhihu-tags: Visual Studio Code, C++, C / C++
 
 ### 2.2. CMake Highlight
 
-相比于 CMake 相关的其他扩展，CMake Highlight 轻量好用，高亮和补全都有了，只是不能构建。若仅使用 VSCode 编辑 CMakeLists.txt，此扩展是最佳选择。
+相比于 CMake 相关的其他扩展，CMake Highlight 轻量好用，高亮和补全都有了，只是不能构建。可以用它取代 CMake Tools 绑定的 CMake（许久未更新）。
 
 ### 2.3. cmake-format
 
