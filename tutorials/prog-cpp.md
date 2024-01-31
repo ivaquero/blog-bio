@@ -9,6 +9,8 @@ zhihu-tags: Visual Studio Code, C++, C / C++
 
 ## 1. C++
 
+### 1.1. C/C++
+
 首先，安装官方的 C/C++ 扩展，其主要提供基础支持，其最关键的功能是链接的跳转。
 
 ![cpp](images/vscode/cpp.png)
@@ -31,6 +33,48 @@ zhihu-tags: Visual Studio Code, C++, C / C++
   "C_Cpp.clang_format_fallbackStyle": "LLVM",
   "C_Cpp.clang_format_sortIncludes": true,
   "C_Cpp.intelliSenseEngine": "Disabled"
+}
+```
+
+### 1.2. clangd
+
+clangd 扩展由 LLVM 团队维护，提供了非常智能的补全，和代码格式化，以及语法检查。是官方 C/C++ 扩展外的另一个选择。
+
+关于 clangd 的详细介绍，相见其官网 [clangd](https://clangd.llvm.org/)，此扩展使用需要保证系统内安装有 clangd，新版 macOS 已经内置，对于没有 clangd 的
+
+macOS/Linux 用户
+
+```bash
+brew install llvm
+```
+
+Windows 用户
+
+```powershell
+scoop install clangd
+```
+
+基本配置如下
+
+```json
+{
+  "clangd.arguments": [
+    "--all-scopes-completion",
+    "--background-index",
+    "--clang-tidy-checks=cppcoreguidelines-*,performance-*,bugprone-*,portability-*,modernize-*",
+    "--clang-tidy",
+    "--compile-commands-dir=.vscode",
+    "--completion-style=detailed",
+    "--function-arg-placeholders=false",
+    "--header-insertion-decorators",
+    "--header-insertion=iwyu",
+    "--log=verbose",
+    "--pch-storage=memory",
+    "--query-driver=/usr/bin/clang++",
+    "-std=c++11",
+    "-j=12"
+  ],
+  "clangd.detectExtensionConflicts": false
 }
 ```
 
