@@ -2,7 +2,7 @@
 title: Markdown 基本语法
 zhihu-url: https://zhuanlan.zhihu.com/p/139141155
 zhihu-title-image: images/vscode/md-preview.png
-zhihu-tags: Markdown, Markdown 语法, Visual Studio Code
+zhihu-tags: Markdown, Visual Studio Code
 ---
 
 # Markdown 基本语法
@@ -87,10 +87,10 @@ _这是倾斜的文字_
 > 图片 title 是图片的标题，当鼠标移到图片上时显示的内容。title 可加可不加
 
 ```markdown
-![知乎](https://pic2.zhimg.com/80/v2-48bbd284deacef0b5896427e660b2a51_1440w.png '知乎')
+![知乎](https://pic2.zhimg.com/80/v2-48bbd284deacef0b5896427e660b2a51_1440w.png "知乎")
 ```
 
-![知乎](https://pic2.zhimg.com/80/v2-48bbd284deacef0b5896427e660b2a51_1440w.png '知乎')
+![知乎](https://pic2.zhimg.com/80/v2-48bbd284deacef0b5896427e660b2a51_1440w.png "知乎")
 
 ### 2.2. 超链接
 
@@ -230,7 +230,7 @@ $$
 x = \frac{-b ± \sqrt{b^2 - 4ac}}{2a}
 $$
 
-## 5. 扩展格式
+## 5. 扩展语法
 
 基于 markdown-it。
 
@@ -282,8 +282,8 @@ KBrO~3~
 🏃
 🎿
 
-### 5.5. 绘图
+### 5.5. 文本绘图
 
-Markdown 支持绘图插件，目前比较流行的有 Mermaid.js 和 ditta。其中，Mermaid.js 是完全 Markdown 风格的语言，可与 Markdown 文档做到无缝衔接。
+Markdown 支持文本绘图，目前比较流行的有 Mermaid.js 和 PlantUML。其中，Mermaid.js 是完全 Markdown 风格的语言，可与 Markdown 文档做到无缝衔接。
 
 作为极简主义的代表作之一，Markdown 未来的生态会越来越丰富。
