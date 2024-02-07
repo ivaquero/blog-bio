@@ -7,9 +7,39 @@ zhihu-tags: Visual Studio Code, C / C++
 
 # 搭建 Doxygen 注释编写环境（VSCode）
 
-## 1. VSCode 扩展
+## 1. 需要安装的软件
 
-### 1.1. 安装与触发
+### 1.1. Doxygen GUI
+
+macOS 用户使用
+
+```bash
+brew install --cask doxygen
+```
+
+Windows 用户使用
+
+```powershell
+scoop install ivaquero/scoopet/doxygen-gui
+```
+
+### 1.2. GraphViz
+
+macOS 用户使用
+
+```bash
+brew install graphviz
+```
+
+Windows 用户使用
+
+```powershell
+scoop install graphviz
+```
+
+## 2. VSCode 扩展
+
+### 2.1. 安装与触发
 
 ```json
 {
@@ -19,7 +49,7 @@ zhihu-tags: Visual Studio Code, C / C++
 }
 ```
 
-### 1.2. 自定义样式
+### 2.2. 自定义样式
 
 ```json
 {
@@ -40,16 +70,4 @@ zhihu-tags: Visual Studio Code, C / C++
 }
 ```
 
-## 2. GUI
-
-macOS 用户使用
-
-```bash
-brew install --cask doxygen
-```
-
-Windows 用户使用
-
-```powershell
-scoop install doxygen
-```
+## Doxygen GUI

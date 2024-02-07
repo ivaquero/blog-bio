@@ -40,16 +40,15 @@ Invoke-Expression (&starship init powershell)
 因为涉及到字体和 Windows-Terminal，这里推荐使用 Scoop 安装（见 Scoop 篇的介绍）：
 
 ```powershell
-scoop install oh-my-posh
 scoop install ivaquero/scoopet/firacode-nf
 ```
 
 ### 1.2. 使用 Linux 命令
 
-安装 `gow`，其可将 Powershell 的命令替换成对应的 Bash 命令
+安装 `busybox`，其可将 Powershell 的命令替换成对应的 Bash 命令
 
 ```powershell
-scoop install gow
+scoop install busybox
 ```
 
 ## 2. Windows-Terminal
