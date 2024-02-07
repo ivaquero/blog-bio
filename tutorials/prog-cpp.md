@@ -1,13 +1,13 @@
 ---
-title: 搭建 C++ 轻量级编写环境（VSCode）
+title: 搭建 C/C++ 轻量级编写环境（VSCode）
 zhihu-url: https://zhuanlan.zhihu.com/p/493323612
 zhihu-title-image: images/vscode/cpp.png
-zhihu-tags: Visual Studio Code, C++, C / C++
+zhihu-tags: Visual Studio Code, C / C++
 ---
 
-# 搭建 C++ 轻量级编写环境（VSCode）
+# 搭建 C/C++ 轻量级编写环境（VSCode）
 
-## 1. C++
+## 1. C/C++
 
 ### 1.1. C/C++
 
