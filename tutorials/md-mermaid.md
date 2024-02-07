@@ -2,7 +2,7 @@
 title: Markdown 绘图（Mermaid）
 zhihu-url: https://zhuanlan.zhihu.com/p/139166407
 zhihu-title-image: images/vscode/md-mermaid.png
-zhihu-tags: Markdown, Markdown 语法, Visual Studio Code
+zhihu-tags: Markdown, Visual Studio Code
 ---
 
 # Markdown 绘图

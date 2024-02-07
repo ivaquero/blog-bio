@@ -1,4 +1,3 @@
-
 # 搭建 Windows 统一开发环境（Scoop）
 
 ## 包管理器
@@ -49,11 +48,13 @@ irm get.scoop.sh -outfile 'install.ps1'
 > **Scoop** 将默认把所有用户安装的 App 和 **Scoop** 本身置于`c:\users\user_name\scoop`
 
 ### 步骤 3：更新 Scoop
+
 ```shellscript
 scoop update
 ```
 
 国内镜像
+
 ```powershell
 iwr -useb gitee.com/glsnames/scoop-installer/raw/master/bin/install.ps1 | iex
 scoop config SCOOP_REPO 'https://gitee.com/glsnames/scoop-installer'
@@ -291,6 +292,3 @@ certutil -hashfile [file] sha1
 ![Scoop script](images/cmd/scoop-manifest2.png)
 
 祝愿感兴趣的朋友早日拥有自己的 bucket，方便自己，也方便他人。
-
-
-

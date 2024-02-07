@@ -94,7 +94,7 @@ scoop install clangd
 
 ### 2.3. cmake-format
 
-cmake-format 是一个 Python 包，用于格式化 CMake 文件。使用其在 VSCode 扩展需要首先安装，并在`settings.json`中指定`cmakeFormat.exePath`。
+cmake-format 是一个 Python 包，用于格式化 CMake 文件。使用其在 VSCode 扩展需要首先安装`clang-format`，并在`settings.json`中指定`cmakeFormat.exePath`。
 
 ## 3. Debugger
 

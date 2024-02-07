@@ -48,13 +48,13 @@ VSCode 默认是支持 Markdown 的，但还是有必装下面 3 个插件提高
 
 ![mermaid](images/vscode/md-mermaid.png)
 
-> mermaid 语法介绍，可参考本专栏姊妹篇[Markdown 绘图]。
+> mermaid 语法介绍，可参考本专栏姊妹篇[Markdown 绘图](https://zhuanlan.zhihu.com/p/139166407)。
 
 ## 3. 编辑扩展
 
 ### 3.1. 表格编辑
 
-安装 MdTableEditor 扩展，火箭提升表格编辑效率
+安装 MdTableEditor 扩展，火箭提升表格编辑效率。
 
 ![md-table](images/vscode/md-table.png)
 
