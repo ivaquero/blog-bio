@@ -40,4 +40,4 @@ source ~/.cargo/env
 
 在 VSCode 扩展商店，搜索并安装 rust-analyzer
 
-![rust](images/vscode/rust.png)
+![rust](images/vscode/vscode-rust.png)

@@ -13,7 +13,7 @@ zhihu-tags: Visual Studio Code, C / C++
 
 首先，安装官方的 C/C++ 扩展，其主要提供基础支持，其最关键的功能是链接的跳转。
 
-![cpp](images/vscode/cpp.png)
+![cpp](images/vscode/vscode-cpp.png)
 
 安装完毕后，"ctrl"+", " 进入配置，点击右上角的图标，打开配置的 json 文件
 
@@ -82,7 +82,7 @@ scoop install clangd
 
 对 C++ 工程来说，CMake 常常是其必不可少的一部分。常用 CMake 扩展有如下 4 个
 
-![cmake](images/vscode/cpp-cmake.png)
+![cmake](images/vscode/vscode-cmake.png)
 
 ### 2.1. CMake Tools (&& CMake)
 

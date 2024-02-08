@@ -159,7 +159,7 @@ VSCode 是首选，安装官方扩展的同时，还需安装 Jupyter 相关包
 mamba install jupyter_contrib_nbextensions
 ```
 
-![python](images/vscode/python.png)
+![python](images/vscode/vscode-python.png)
 
 对于 linter 的提示信息，推荐选择 `mypy`。
 
@@ -167,7 +167,7 @@ mamba install jupyter_contrib_nbextensions
 
 另外，推荐尝试官方新推出的 Python Environment Manager
 
-![conda](images/vscode/conda-manager.png)
+![conda](images/vscode/vscode-conda.png)
 
 这个扩展可以实现类似 PyCharm 环境管理的功能
 
@@ -291,4 +291,4 @@ export BROWSER="/mnt/c/'program files (x86)'/microsoft/edge/application/msedge.e
 
 使用 `source` 刷新后，就可愉快地使用 Linux 版的 Python 了。
 
-![JupyterLab](images/jupyter/python.png)
+![JupyterLab](images/jupyter/jupyter-python.png)

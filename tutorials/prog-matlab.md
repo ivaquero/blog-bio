@@ -15,20 +15,20 @@ zhihu-tags: Visual Studio Code, MATLAB, Jupyter Notebook
 
 在 VSCode 中的扩展商店里搜索并安装 MATLAB 官方扩展
 
-![MATLAB](images/vscode/matlab.png)
+![MATLAB](images/vscode/vscode-matlab.png)
 
 安装完毕后，"ctrl"+", " 打开配置，并在搜索框中输入"json"，打开配置的 .json 文件。
 
-![settings](images/vscode/settings.png)
+![settings](images/vscode/vscode-settings.png)
 
 对 macOS 加入如下配置：
 
 ```json
 {
   "[matlab]": {
-        "editor.defaultFormatter": "MathWorks.language-matlab"
-    },
-    "MATLAB.installPath": "/Applications/MATLAB_R2022b_Beta.app"
+    "editor.defaultFormatter": "MathWorks.language-matlab"
+  },
+  "MATLAB.installPath": "/Applications/MATLAB_R2022b_Beta.app"
 }
 ```
 
@@ -37,9 +37,9 @@ zhihu-tags: Visual Studio Code, MATLAB, Jupyter Notebook
 ```json
 {
   "[matlab]": {
-        "editor.defaultFormatter": "MathWorks.language-matlab"
-    },
-    "MATLAB.installPath": "c:\\program files\\polyspace\\r2019a\\bin\\matlab.exe"
+    "editor.defaultFormatter": "MathWorks.language-matlab"
+  },
+  "MATLAB.installPath": "c:\\program files\\polyspace\\r2019a\\bin\\matlab.exe"
 }
 ```
 
@@ -47,7 +47,7 @@ zhihu-tags: Visual Studio Code, MATLAB, Jupyter Notebook
 
 在 VSCode 中的扩展商店里搜索并安装 Code Runner
 
-![code runner](images/vscode/coderunner.png)
+![code runner](images/vscode/vscode-runner.png)
 
 同样，安装完毕后，打开配置的 .json 文件。
 
@@ -65,7 +65,7 @@ zhihu-tags: Visual Studio Code, MATLAB, Jupyter Notebook
 
 对于脚本运行，点击右上角的右箭头。
 
-![matlab2](images/vscode/matlab2.png)
+![matlab2](images/vscode/vscode-matlab2.png)
 
 ## JupyterLab 调用 MATLAB
 
@@ -75,4 +75,4 @@ zhihu-tags: Visual Studio Code, MATLAB, Jupyter Notebook
 conda install matlab_kernel
 ```
 
-![jupyter-kernel](images/jupyter/matlab.png)
+![jupyter-kernel](images/jupyter/jupyter-matlab.png)

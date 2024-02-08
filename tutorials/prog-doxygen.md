@@ -39,7 +39,11 @@ scoop install graphviz
 
 ## 2. VSCode 扩展
 
-### 2.1. 安装与触发
+在扩展商店里搜索并安装 `Doxygen Documentation Generator`
+
+![vscode-doxygen](images/vscode/vscode-doxygen.png)
+
+### 2.1. 触发
 
 ```json
 {
@@ -70,4 +74,4 @@ scoop install graphviz
 }
 ```
 
-## Doxygen GUI
+## 3. 工作流

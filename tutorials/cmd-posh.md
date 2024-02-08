@@ -169,7 +169,7 @@ Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
 
 ### 4.1. 整合 VSCode
 
-![settings](images/vscode/settings.png)
+![settings](images/vscode/vscode-settings.png)
 
 回到 VSCode，"ctrl"+"," 进入配置，点击右上角的图标，打开配置的 json 文件，加入如下配置
 

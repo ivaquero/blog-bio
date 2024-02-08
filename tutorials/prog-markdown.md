@@ -34,19 +34,19 @@ VSCode 默认是支持 Markdown 的，但还是有必装下面 3 个插件提高
 - 自动格式化表格
 - LaTeX 数学公式支持
 
-![Markdown All in One](images/vscode/md-allinone.png)
+![Markdown All in One](images/vscode/vscode-md.png)
 
 ### 2.2. markdownlint
 
 这是个功能强大的 Markdown 语法检查器，可以帮助你书写出规范的文档，同时避免书写错误导致文档无法渲染。个人观点，认为这个也是必装扩展。
 
-![markdownlint](images/vscode/md-lint.png)
+![markdownlint](images/vscode/vscode-mdlint.png)
 
 ### 2.3. Markdown Kroki
 
 很多时候，写文档难免需要绘制一些用于说明的插图，如流程图、甘特图等，这个时候，若另开一个应用画图，再导入文档，则略显繁琐。Markdown Kroki 支持包括 mermaid，PlantUML，graphviz 等在内的多种文本绘图，不过这个扩展需要联网。
 
-![mermaid](images/vscode/md-mermaid.png)
+![mermaid](images/vscode/vscode-mdkroki.png)
 
 > mermaid 语法介绍，可参考本专栏姊妹篇[Markdown 绘图](https://zhuanlan.zhihu.com/p/139166407)。
 
@@ -62,7 +62,7 @@ VSCode 默认是支持 Markdown 的，但还是有必装下面 3 个插件提高
 
 虽然有 mermaid，但有时候我们总会需要绘制一些复杂的图形。这时，可以使用 VSCode 商店里大名鼎鼎的 [Draw.io](https://app.diagrams.net/) 的内嵌扩展，安装完毕后三连：➡️ 新建 .drawio 文件 ➡️ 傻瓜绘图 ➡️ 导出为需要的格式。
 
-![draw.io](images/vscode/drawio.png)
+![draw.io](images/vscode/vscode-drawio.png)
 
 ### 3.3. 字数统计
 
@@ -92,7 +92,7 @@ Typora 往往被当作 Markdown 的首选，这很大程度上得益于所见即
 
 写完了 Markdown 文档，往往要导出为 PDF，这时候可以使用 Markdown PDF 扩展来完成。
 
-![pdf](images/vscode/md-pdf.png)
+![pdf](images/vscode/vscode-mdpdf.png)
 
 ### 4.2. Pandoc
 
@@ -126,7 +126,7 @@ brew install pandoc
 }
 ```
 
-![pandoc](images/vscode/pandoc.png)
+![pandoc](images/vscode/vscode-pandoc.png)
 
 ### 4.3. 知乎发布
 

@@ -49,11 +49,11 @@ conda install r-ggplot2
 
 在 VSCode 中的扩展商店里搜索并安装 R 扩展
 
-![R](images/vscode/r1.png)
+![R](images/vscode/vscode-r.png)
 
 安装完毕后，"ctrl"+", " 进入配置，点击右上角的图标，打开配置的 json 文件
 
-![settings](images/vscode/settings.png)
+![settings](images/vscode/vscode-settings.png)
 
 对 macOS 加入如下配置：
 
@@ -120,7 +120,7 @@ conda install r-ggplot2
 ]
 ```
 
-![keybinding](images/vscode/r2.png)
+![keybinding](images/vscode/vscode-keybinding.png)
 
 ### 2.4. 运行效果
 
@@ -155,4 +155,4 @@ conda install -c conda-forge jupyterlab-variableinspector
 
 ### 3.3. 运行效果
 
-![jupyterlab](images/jupyter/r.png)
+![jupyterlab](images/jupyter/jupyter-r.png)

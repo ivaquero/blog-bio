@@ -13,7 +13,7 @@ zhihu-tags: Markdown, Visual Studio Code
 
 - Markdown Preview Mermaid Support
 
-![mermaid](images/vscode/md-mermaid.png)
+![mermaid](images/vscode/vscode-mdkroki.png)
 
 ## 1. 基础类
 
