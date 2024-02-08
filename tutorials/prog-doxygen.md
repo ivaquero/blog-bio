@@ -172,4 +172,10 @@ doxygen -g
 
 此时会生成一个 `Doxyfile` 文件，打开后在其中修改对应项即可。这种配置方式比 GUI 更简洁、更灵活，更重要的是可以直接复制，减少了重复劳动。
 
+Doxyfile 可以安装相应扩展，实现语法高亮
+
+![vscode-doxyfile](images/vscode/vscode-doxyfile.png)
+
+效果如图
+
 ![doxyfile](images/vscode/doxyfile.png)
