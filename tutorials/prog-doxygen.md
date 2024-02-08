@@ -1,11 +1,11 @@
 ---
-title: 搭建 Doxygen 编写环境（VSCode）
+title: 搭建 Doxygen 便捷编写环境（VSCode）
 zhihu-url: https://zhuanlan.zhihu.com/p/681843334
 zhihu-title-image: images/vscode/doxygen.png
 zhihu-tags: Visual Studio Code, C / C++
 ---
 
-# 搭建 Doxygen 注释编写环境（VSCode）
+# 搭建 Doxygen 便捷编写环境（VSCode）
 
 Doxygen 是一个由 C++ 编写的、开源的、跨平台的文档生成系统。最初主要用于生成 C++ 库的 API 文档，但目前又添加了对 C、C#、Java、Python、Fortran、PHP 等语言的支持。其从源代码中提取注释，生成文档，其导出格式包括 HTML、LaTeX、PDF、CHM 等。
 
