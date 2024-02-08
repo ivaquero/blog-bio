@@ -161,3 +161,15 @@ scoop install graphviz
 ### 3.3. 最终生成
 
 在 `Run` 标签中点击 `Run doxygen`。
+
+### 命令行操作
+
+相比于 GUI，命令行操作要简单的多，`cd` 到项目路径下，然后执行命令
+
+```bash
+doxygen -g
+```
+
+此时会生成一个 `Doxyfile` 文件，打开后在其中修改对应项即可。这种配置方式比 GUI 更简洁、更灵活，更重要的是可以直接复制，减少了重复劳动。
+
+![doxyfile](images/vscode/doxyfile.png)
