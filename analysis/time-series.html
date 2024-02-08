@@ -19,15 +19,15 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
@@ -38,9 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -78,10 +78,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -122,11 +121,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -452,7 +454,7 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="time-series">
 <h1>Time Series<a class="headerlink" href="#time-series" title="Permalink to this heading">#</a></h1>
@@ -463,6 +465,18 @@ document.write(`
 <span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/py/n14256yd5r5ddms88x9bvsv40000gn/T/ipykernel_54078/886444550.py:5: DeprecationWarning: 
+Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
+(to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
+but was not found to be installed on your system.
+If this would cause problems for you,
+please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
+        
+  import pandas as pd
 </pre></div>
 </div>
 </div>
@@ -603,7 +617,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/60b7a2e0e45a4b713efc2fb71f6781b5108a9003c21cf7f70de8dacc7c258740.png" src="../_images/60b7a2e0e45a4b713efc2fb71f6781b5108a9003c21cf7f70de8dacc7c258740.png" />
+<img alt="../_images/58d3a92e6c13a02d1027e5124efd847fcad397b763ed69fb65fe4a8fecdb640d.png" src="../_images/58d3a92e6c13a02d1027e5124efd847fcad397b763ed69fb65fe4a8fecdb640d.png" />
 </div>
 </div>
 </section>
@@ -661,7 +675,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7d0248dd30c16b4a8425aaf99fb32ec1687ed32b4a53dc19f09164587cea1ac4.png" src="../_images/7d0248dd30c16b4a8425aaf99fb32ec1687ed32b4a53dc19f09164587cea1ac4.png" />
+<img alt="../_images/2c9d119c232fbfb37f4e747b41be85b46d5e9004ca956c2cbd6ccf64617d93b1.png" src="../_images/2c9d119c232fbfb37f4e747b41be85b46d5e9004ca956c2cbd6ccf64617d93b1.png" />
 </div>
 </div>
 </section>
@@ -765,7 +779,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/55c60dead6f40ba8f02406fd8f0feb6113054daddafa20659944c26b986afc7b.png" src="../_images/55c60dead6f40ba8f02406fd8f0feb6113054daddafa20659944c26b986afc7b.png" />
+<img alt="../_images/2b3fcd45e0c459e9f0c7cbcb75a28eae6331b3884c083a749458e683cf636ca8.png" src="../_images/2b3fcd45e0c459e9f0c7cbcb75a28eae6331b3884c083a749458e683cf636ca8.png" />
 </div>
 </div>
 </section>
@@ -868,7 +882,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/afab4817af962ac6dc680cd4592f2cccaeaaffdaba1f87b727fcd2df67eeb6a1.png" src="../_images/afab4817af962ac6dc680cd4592f2cccaeaaffdaba1f87b727fcd2df67eeb6a1.png" />
+<img alt="../_images/bc9b2bb87576b3ad8df8d60dcaf07df340a59f049a667ace9ff8c82767527a1f.png" src="../_images/bc9b2bb87576b3ad8df8d60dcaf07df340a59f049a667ace9ff8c82767527a1f.png" />
 </div>
 </div>
 </section>
@@ -986,7 +1000,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6d7fa91ec357639226f003b25a51df6ac22edb315e2c08505ddc48cd35e90847.png" src="../_images/6d7fa91ec357639226f003b25a51df6ac22edb315e2c08505ddc48cd35e90847.png" />
+<img alt="../_images/69a79c5ad842247c5e7410dfa5e8248f0c86f5d3115fe7f64dce7e8df6b4622e.png" src="../_images/69a79c5ad842247c5e7410dfa5e8248f0c86f5d3115fe7f64dce7e8df6b4622e.png" />
 </div>
 </div>
 </section>
@@ -1095,7 +1109,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/11c28ab354294195632b079c8e791530ec05b605e627d66eb4c77b241c6bd500.png" src="../_images/11c28ab354294195632b079c8e791530ec05b605e627d66eb4c77b241c6bd500.png" />
+<img alt="../_images/f261bb6424d035c953c7a499ccc612bee51956bdd259ac6d05875835fdc79088.png" src="../_images/f261bb6424d035c953c7a499ccc612bee51956bdd259ac6d05875835fdc79088.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1208,7 +1222,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fafd6098e34197f4b211f2db6020708ee7f2b510561b871bc0a50f0fb6d92f94.png" src="../_images/fafd6098e34197f4b211f2db6020708ee7f2b510561b871bc0a50f0fb6d92f94.png" />
+<img alt="../_images/a8cb1cd5f07debd6cc102e3ca2895c006a23af2a180133cb42b96e2bdae40575.png" src="../_images/a8cb1cd5f07debd6cc102e3ca2895c006a23af2a180133cb42b96e2bdae40575.png" />
 </div>
 </div>
 </section>
@@ -1279,7 +1293,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/796d6b5e7280062fe546670011e796b76b143d33f50a066289a4164242a8e692.png" src="../_images/796d6b5e7280062fe546670011e796b76b143d33f50a066289a4164242a8e692.png" />
+<img alt="../_images/8b9c5f877af361e61e806abb8ccd285bafd1786f0403d2ab9db0bce5bbe5d018.png" src="../_images/8b9c5f877af361e61e806abb8ccd285bafd1786f0403d2ab9db0bce5bbe5d018.png" />
 </div>
 </div>
 </section>
@@ -1293,7 +1307,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/py/n14256yd5r5ddms88x9bvsv40000gn/T/ipykernel_65561/1398973000.py:1: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/py/n14256yd5r5ddms88x9bvsv40000gn/T/ipykernel_54078/1398973000.py:1: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
   visitors = pd.read_csv(&quot;data/night_visitors.csv&quot;, parse_dates=[&quot;yearmon&quot;])
 </pre></div>
 </div>
@@ -1435,7 +1449,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6af887f7d240c4d5dd76d2be0b21f5970f06160dee9e4371847cd806f60c1066.png" src="../_images/6af887f7d240c4d5dd76d2be0b21f5970f06160dee9e4371847cd806f60c1066.png" />
+<img alt="../_images/1fd3fc554f8b78f7cc98a3769f74493d2418879cb56af92bed467b5d6d9dcfee.png" src="../_images/1fd3fc554f8b78f7cc98a3769f74493d2418879cb56af92bed467b5d6d9dcfee.png" />
 </div>
 </div>
 </section>
@@ -1488,7 +1502,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8dde9cfaf8714fe09aec7f037ff840f391ec511f37f4a060219d9be5b938b603.png" src="../_images/8dde9cfaf8714fe09aec7f037ff840f391ec511f37f4a060219d9be5b938b603.png" />
+<img alt="../_images/b0010cc0d149c2cf32614310c88bd52037a1b739ce1b0fe1d7b3f9bbbd3b2218.png" src="../_images/b0010cc0d149c2cf32614310c88bd52037a1b739ce1b0fe1d7b3f9bbbd3b2218.png" />
 </div>
 </div>
 </section>
@@ -1550,6 +1564,7 @@ document.write(`
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1614,8 +1629,8 @@ By ivaquero
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

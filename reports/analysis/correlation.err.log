@@ -4,7 +4,7 @@ Traceback (most recent call last):
   File "/Users/integzz/.conda/envs/dox/lib/python3.11/site-packages/nbclient/client.py", line 1305, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/integzz/.conda/envs/dox/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 173, in wrapped
+  File "/Users/integzz/.conda/envs/dox/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
     return loop.run_until_complete(inner)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/integzz/.conda/envs/dox/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
@@ -26,6 +26,16 @@ import seaborn as sns
 
 ------------------
 
+----- stderr -----
+/var/folders/py/n14256yd5r5ddms88x9bvsv40000gn/T/ipykernel_53828/3806970935.py:2: DeprecationWarning: 
+Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
+(to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
+but was not found to be installed on your system.
+If this would cause problems for you,
+please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
+        
+  import pandas as pd
+------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
