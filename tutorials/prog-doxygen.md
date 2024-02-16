@@ -75,10 +75,6 @@ scoop install graphviz
 
 ![vscode-doxygen](images/vscode/vscode-doxygen.png)
 
-- C/C++
-
-![vscode-cpp](images/vscode/vscode-cpp.png)
-
 ### 2.1. 触发
 
 在 `settings.json` 设定触发快捷键
@@ -92,14 +88,15 @@ scoop install graphviz
 
 ![doxygen](images/vscode/doxygen.png)
 
+- 在 `#include` 行前插入 `///`，触发文件头注释
+- 在函数名前插入 `///`，触发函数注释
+
 ### 2.2. 自定义样式
 
 当然，默认样式通常并不能满足我们的需求，所以我们可以进行如下自定义
 
 ```json
 {
-  // 函数注释样式
-  "C_Cpp.doxygen.generatedStyle": "/*!",
   // 起始行样式
   "doxdocgen.c.firstLine": "/*!",
   // 模版文件样式
@@ -121,10 +118,7 @@ scoop install graphviz
 
 ![doxygen](images/vscode/doxygen2.png)
 
-这里值得注意的有 2 点
-
-- `C_Cpp.doxygen.generatedStyle` 决定函数注释的样式
-- `{indent:15}` 决定对其他内容的缩进
+> `{indent:15}` 决定对其他内容的缩进，用于对齐
 
 ## 3. 文档生成
 
@@ -162,7 +156,7 @@ scoop install graphviz
 
 在 `Run` 标签中点击 `Run doxygen`。
 
-### 命令行操作
+### 3.4. 命令行操作
 
 相比于 GUI，命令行操作要简单的多，`cd` 到项目路径下，然后执行命令
 
@@ -175,6 +169,16 @@ doxygen -g
 Doxyfile 可以安装相应扩展，实现语法高亮
 
 ![vscode-doxyfile](images/vscode/vscode-doxyfile.png)
+
+```ini
+DOXYFILE_ENCODING      = UTF-8
+PROJECT_NAME           = "My Project"
+OUTPUT_DIRECTORY       = docs
+CREATE_SUBDIRS         = NO
+ALLOW_UNICODE_NAMES    = YES
+OUTPUT_LANGUAGE        = Chinese
+BRIEF_MEMBER_DESC      = YES
+```
 
 效果如图
 
