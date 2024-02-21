@@ -467,14 +467,13 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="kn">from</span> <span class="nn">plotnine</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">from</span> <span class="nn">plotnine</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/py/n14256yd5r5ddms88x9bvsv40000gn/T/ipykernel_53828/3806970935.py:2: DeprecationWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/py/n14256yd5r5ddms88x9bvsv40000gn/T/ipykernel_76600/4179420466.py:2: DeprecationWarning: 
 Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
 (to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
 but was not found to be installed on your system.
@@ -487,10 +486,9 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">plotnine</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 
 <span class="ne">ModuleNotFoundError</span>: No module named &#39;plotnine&#39;
 </pre></div>
@@ -635,36 +633,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">integzz</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">blog</span><span class="o">-</span><span class="n">bio</span><span class="o">/</span><span class="n">analysis</span><span class="o">/</span><span class="n">correlation</span><span class="o">.</span><span class="n">ipynb</span> <span class="n">Cell</span> <span class="mi">5</span> <span class="n">line</span> <span class="mi">1</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/integzz/Documents/blog-bio/analysis/correlation.ipynb#W4sZmlsZQ%3D%3D?line=0&#39;</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">mpg_select</span> <span class="o">=</span> <span class="n">mpg</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;cyl in [4, 8]&quot;</span><span class="p">)</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/integzz/Documents/blog-bio/analysis/correlation.ipynb#W4sZmlsZQ%3D%3D?line=2&#39;</span><span class="o">&gt;</span><span class="mi">3</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="p">(</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/integzz/Documents/blog-bio/analysis/correlation.ipynb#W4sZmlsZQ%3D%3D?line=3&#39;</span><span class="o">&gt;</span><span class="mi">4</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>     <span class="n">ggplot</span><span class="p">(</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/integzz/Documents/blog-bio/analysis/correlation.ipynb#W4sZmlsZQ%3D%3D?line=4&#39;</span><span class="o">&gt;</span><span class="mi">5</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>         <span class="n">mpg_select</span><span class="p">,</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/integzz/Documents/blog-bio/analysis/correlation.ipynb#W4sZmlsZQ%3D%3D?line=5&#39;</span><span class="o">&gt;</span><span class="mi">6</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>         <span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;displ&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;hwy&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;cyl&quot;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;cyl&quot;</span><span class="p">),</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/integzz/Documents/blog-bio/analysis/correlation.ipynb#W4sZmlsZQ%3D%3D?line=6&#39;</span><span class="o">&gt;</span><span class="mi">7</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>     <span class="p">)</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/integzz/Documents/blog-bio/analysis/correlation.ipynb#W4sZmlsZQ%3D%3D?line=7&#39;</span><span class="o">&gt;</span><span class="mi">8</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>     <span class="o">+</span> <span class="n">geom_point</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/integzz/Documents/blog-bio/analysis/correlation.ipynb#W4sZmlsZQ%3D%3D?line=8&#39;</span><span class="o">&gt;</span><span class="mi">9</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>     <span class="o">+</span> <span class="n">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;lm&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/integzz/Documents/blog-bio/analysis/correlation.ipynb#W4sZmlsZQ%3D%3D?line=9&#39;</span><span class="o">&gt;</span><span class="mi">10</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>     <span class="o">+</span> <span class="n">facet_wrap</span><span class="p">(</span><span class="s2">&quot;cyl&quot;</span><span class="p">)</span>
-     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/integzz/Documents/blog-bio/analysis/correlation.ipynb#W4sZmlsZQ%3D%3D?line=10&#39;</span><span class="o">&gt;</span><span class="mi">11</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>     <span class="o">+</span> <span class="n">lims</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">y</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">))</span>
-     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/integzz/Documents/blog-bio/analysis/correlation.ipynb#W4sZmlsZQ%3D%3D?line=11&#39;</span><span class="o">&gt;</span><span class="mi">12</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>     <span class="o">+</span> <span class="n">labs</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Scatterplot with line of best fit grouped by number of cylinders&quot;</span><span class="p">)</span>
-     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/integzz/Documents/blog-bio/analysis/correlation.ipynb#W4sZmlsZQ%3D%3D?line=12&#39;</span><span class="o">&gt;</span><span class="mi">13</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>     <span class="o">+</span> <span class="n">theme</span><span class="p">(</span><span class="n">plot_title</span><span class="o">=</span><span class="n">element_text</span><span class="p">(</span><span class="n">hjust</span><span class="o">=</span><span class="mf">0.5</span><span class="p">),</span> <span class="n">legend_position</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
-<span class="o">---&gt;</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/integzz/Documents/blog-bio/analysis/correlation.ipynb#W4sZmlsZQ%3D%3D?line=13&#39;</span><span class="o">&gt;</span><span class="mi">14</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>     <span class="o">+</span> <span class="n">scale_color_gradient</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="s2">&quot;#E69F00&quot;</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="s2">&quot;#56B4E9&quot;</span><span class="p">)</span>
-     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/integzz/Documents/blog-bio/analysis/correlation.ipynb#W4sZmlsZQ%3D%3D?line=14&#39;</span><span class="o">&gt;</span><span class="mi">15</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>     <span class="o">+</span> <span class="n">scale_fill_gradient</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="s2">&quot;#E69F00&quot;</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="s2">&quot;#56B4E9&quot;</span><span class="p">)</span>
-     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/integzz/Documents/blog-bio/analysis/correlation.ipynb#W4sZmlsZQ%3D%3D?line=15&#39;</span><span class="o">&gt;</span><span class="mi">16</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="p">)</span>
-
-<span class="nn">File ~/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/scales/scale_color.py:189,</span> in <span class="ni">scale_color_gradient.__init__</span><span class="nt">(self, low, high, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">186</span> <span class="kn">from</span> <span class="nn">mizani.palettes</span> <span class="kn">import</span> <span class="n">gradient_n_pal</span>
-<span class="g g-Whitespace">    </span><span class="mi">188</span> <span class="c1"># TODO: fix types in mizani</span>
-<span class="ne">--&gt; </span><span class="mi">189</span> <span class="bp">self</span><span class="o">.</span><span class="n">palette</span> <span class="o">=</span> <span class="n">gradient_n_pal</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">190</span>     <span class="p">[</span><span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;gradient&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">191</span> <span class="p">)</span>  <span class="c1"># pyright: ignore</span>
-<span class="g g-Whitespace">    </span><span class="mi">192</span> <span class="n">scale_continuous</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="ne">TypeError</span>: gradient_n_pal.__init__() got an unexpected keyword argument &#39;name&#39;
-</pre></div>
-</div>
+<img alt="../_images/037783e3a8ea68daf2c4f2b4fc720b9c170497bd51d3ef9ebb27f943437d7ea3.png" src="../_images/037783e3a8ea68daf2c4f2b4fc720b9c170497bd51d3ef9ebb27f943437d7ea3.png" />
 </div>
 </div>
 </section>
@@ -684,10 +653,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a3985c515a803007e3e3e082626d5759cef084f73aa4f704dfcfcd8ee201e1d8.png" src="../_images/a3985c515a803007e3e3e082626d5759cef084f73aa4f704dfcfcd8ee201e1d8.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure Size: (640 x 480)&gt;
-</pre></div>
-</div>
+<img alt="../_images/3b4c216638d7e5d522e0736c1acac051590715a34d2d9e44b965403dae2c8e41.png" src="../_images/3b4c216638d7e5d522e0736c1acac051590715a34d2d9e44b965403dae2c8e41.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -702,10 +668,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9a5d3bb79e07e4646b6d079aa8bbae78e19ee4d18bf464add0c5689eade94e3c.png" src="../_images/9a5d3bb79e07e4646b6d079aa8bbae78e19ee4d18bf464add0c5689eade94e3c.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure Size: (640 x 480)&gt;
-</pre></div>
-</div>
+<img alt="../_images/f6c34146b184ab51690ca5f773fe695bd95455423b636d48e252a352eb142aa1.png" src="../_images/f6c34146b184ab51690ca5f773fe695bd95455423b636d48e252a352eb142aa1.png" />
 </div>
 </div>
 </section>
@@ -846,7 +809,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6d326eb9a49b57c7ede17e6d90ac3dba91cd7a1b4c9d11825c94949aff6e2784.png" src="../_images/6d326eb9a49b57c7ede17e6d90ac3dba91cd7a1b4c9d11825c94949aff6e2784.png" />
+<img alt="../_images/685ce2b69210edb8e3973e27d159d0995cad8bd14754051d07bf03f371249785.png" src="../_images/685ce2b69210edb8e3973e27d159d0995cad8bd14754051d07bf03f371249785.png" />
 </div>
 </div>
 <section id="ggplot2-version">
@@ -862,10 +825,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/de2d2d12fed462412d4b5ad72a9bcb029187a31d2a63f69cf17ce02b0a26455b.png" src="../_images/de2d2d12fed462412d4b5ad72a9bcb029187a31d2a63f69cf17ce02b0a26455b.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure Size: (640 x 480)&gt;
-</pre></div>
-</div>
+<img alt="../_images/61598cee06b12bb5905b7a999fe0503cb7fd868aaf57d8c3adaf42eae3cb7b77.png" src="../_images/61598cee06b12bb5905b7a999fe0503cb7fd868aaf57d8c3adaf42eae3cb7b77.png" />
 </div>
 </div>
 </section>
@@ -1003,7 +963,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
     <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;RdYlGn&quot;</span><span class="p">,</span>
     <span class="n">center</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
     <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">ax</span><span class="o">=</span><span class="n">ax</span>
+    <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Correlogram of mtcars&quot;</span><span class="p">)</span>
@@ -1012,14 +972,18 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/aaeb9075d24ea51e107dd7f21eacf234216c3bc8df6d3ecae08e842dcfe0f041.png" src="../_images/aaeb9075d24ea51e107dd7f21eacf234216c3bc8df6d3ecae08e842dcfe0f041.png" />
+<img alt="../_images/43ac95bb3f05fbb26f94bc1ad99a3e9995ea38f5df0f82cda22b8df941284d9c.png" src="../_images/43ac95bb3f05fbb26f94bc1ad99a3e9995ea38f5df0f82cda22b8df941284d9c.png" />
 </div>
 </div>
 <section id="id1">
 <h3>ggplot2 version<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">corr_matrix2</span> <span class="o">=</span> <span class="n">corr_matrix</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="o">=</span><span class="s2">&quot;index&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">corr_matrix2</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">corr_matrix</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="o">=</span><span class="s2">&quot;index&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="p">)</span>
 <span class="n">corr_matrix2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1115,10 +1079,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/886c67a2cbb1b437ec200cdeef704dd41b44c494414ce984e9d5d1926f8c5c81.png" src="../_images/886c67a2cbb1b437ec200cdeef704dd41b44c494414ce984e9d5d1926f8c5c81.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure Size: (640 x 480)&gt;
-</pre></div>
-</div>
+<img alt="../_images/320fefc57f80716e38499aa43f1f4275fc423734795c87c8a1334ad4c6328f38.png" src="../_images/320fefc57f80716e38499aa43f1f4275fc423734795c87c8a1334ad4c6328f38.png" />
 </div>
 </div>
 </section>
@@ -1142,7 +1103,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f8ed975fd52d2f7e0ed460bed9be9df00578ea56aadbe96c55204b9133fdfed1.png" src="../_images/f8ed975fd52d2f7e0ed460bed9be9df00578ea56aadbe96c55204b9133fdfed1.png" />
+<img alt="../_images/dd0e5d5129a13fd74776cd42bfa2eff075869941ebe9d6954172ceec64e070da.png" src="../_images/dd0e5d5129a13fd74776cd42bfa2eff075869941ebe9d6954172ceec64e070da.png" />
 </div>
 </div>
 <section id="id2">

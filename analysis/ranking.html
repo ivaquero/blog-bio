@@ -462,13 +462,12 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
 <span class="kn">from</span> <span class="nn">plotnine</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/py/n14256yd5r5ddms88x9bvsv40000gn/T/ipykernel_54071/3178228489.py:3: DeprecationWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/py/n14256yd5r5ddms88x9bvsv40000gn/T/ipykernel_77012/1109453179.py:3: DeprecationWarning: 
 Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
 (to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
 but was not found to be installed on your system.
@@ -480,10 +479,10 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">plotnine</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">plotnine</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="ne">ModuleNotFoundError</span>: No module named &#39;plotnine&#39;
 </pre></div>
@@ -608,17 +607,12 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpg_group</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="n">mpg</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s2">&quot;cty&quot;</span><span class="p">,</span> <span class="s2">&quot;manufacturer&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;manufacturer&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s2">&quot;cty&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">})</span>
-<span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpg_group</span> <span class="o">=</span> <span class="n">mpg</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s2">&quot;cty&quot;</span><span class="p">,</span> <span class="s2">&quot;manufacturer&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;manufacturer&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s2">&quot;city&quot;</span><span class="p">)</span>
 <span class="n">mpg_group</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/py/n14256yd5r5ddms88x9bvsv40000gn/T/ipykernel_98764/3775193559.py:2: FutureWarning: The provided callable &lt;function mean at 0x1055696c0&gt; is currently using SeriesGroupBy.mean. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string &quot;mean&quot; instead.
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -671,8 +665,8 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpg_group</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;cty&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">mpg_group</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpg_group</span> <span class="o">=</span> <span class="n">mpg_group</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;cty&quot;</span><span class="p">)</span>
+<span class="n">mpg_group</span> <span class="o">=</span> <span class="n">mpg_group</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 <span class="n">mpg_group</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -763,7 +757,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f7471756a6cadd1d8915d790300da5c8ac72aa19e1d995310f33541a9f94026f.png" src="../_images/f7471756a6cadd1d8915d790300da5c8ac72aa19e1d995310f33541a9f94026f.png" />
+<img alt="../_images/8f3bccbf63cadb1d1d95748d49d19944237112d723cfb3fcffa41b2c596160d9.png" src="../_images/8f3bccbf63cadb1d1d95748d49d19944237112d723cfb3fcffa41b2c596160d9.png" />
 </div>
 </div>
 <section id="ggplot2-version">
@@ -791,16 +785,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/integzz/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/utils.py:289: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-/Users/integzz/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/utils.py:289: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-/Users/integzz/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/utils.py:289: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-/Users/integzz/.conda/envs/kaggle/lib/python3.11/site-packages/mizani/scale.py:256: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-</pre></div>
-</div>
-<img alt="../_images/5086fb4ab90e6d597abea3839ca81fe9dd47cb576e4c2b0c4cfc6fea27048556.png" src="../_images/5086fb4ab90e6d597abea3839ca81fe9dd47cb576e4c2b0c4cfc6fea27048556.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure Size: (640 x 480)&gt;
-</pre></div>
-</div>
+<img alt="../_images/1866ca31b2ab0983ad7447795d810588f65e22c5c0a66b9fbfab307e019b1388.png" src="../_images/1866ca31b2ab0983ad7447795d810588f65e22c5c0a66b9fbfab307e019b1388.png" />
 </div>
 </div>
 </section>
@@ -1013,17 +998,17 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/py/n14256yd5r5ddms88x9bvsv40000gn/T/ipykernel_98764/4045730432.py:3: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/py/n14256yd5r5ddms88x9bvsv40000gn/T/ipykernel_74399/1178036945.py:3: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
 </pre></div>
 </div>
-<img alt="../_images/162e6e9b0f47770a406afff01f393c564f6d6df4472219203d44d0c6c437a112.png" src="../_images/162e6e9b0f47770a406afff01f393c564f6d6df4472219203d44d0c6c437a112.png" />
+<img alt="../_images/8dc1f8e1d4d6179d54c3c54d5d280481c2d3884c19fbd40e012f8d04343f9004.png" src="../_images/8dc1f8e1d4d6179d54c3c54d5d280481c2d3884c19fbd40e012f8d04343f9004.png" />
 </div>
 </div>
 <section id="id1">
 <h3>ggplot2 version<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdp</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">gdp</span><span class="p">[</span><span class="s2">&quot;1957&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">gdp</span><span class="p">[</span><span class="s2">&quot;1952&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdp</span><span class="p">[</span><span class="s2">&quot;class&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">gdp</span><span class="p">[</span><span class="s2">&quot;1957&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">gdp</span><span class="p">[</span><span class="s2">&quot;1952&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1056,14 +1041,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/integzz/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/utils.py:289: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-/Users/integzz/.conda/envs/kaggle/lib/python3.11/site-packages/mizani/scale.py:256: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-</pre></div>
-</div>
-<img alt="../_images/c8eec31704af82cfe0d9ef8711c6c53bfb56d68892b9e99e6308d70fef0f63c7.png" src="../_images/c8eec31704af82cfe0d9ef8711c6c53bfb56d68892b9e99e6308d70fef0f63c7.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure Size: (640 x 480)&gt;
-</pre></div>
-</div>
+<img alt="../_images/83f3d72ea7c17fc3e8b8f3a891ad22f452734228c3b6bf25a29334e40e68c9af.png" src="../_images/83f3d72ea7c17fc3e8b8f3a891ad22f452734228c3b6bf25a29334e40e68c9af.png" />
 </div>
 </div>
 </section>

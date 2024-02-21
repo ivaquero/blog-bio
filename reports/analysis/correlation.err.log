@@ -7,7 +7,7 @@ Traceback (most recent call last):
   File "/Users/integzz/.conda/envs/dox/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
     return loop.run_until_complete(inner)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/integzz/.conda/envs/dox/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+  File "/Users/integzz/.conda/envs/dox/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
     return future.result()
            ^^^^^^^^^^^^^^^
   File "/Users/integzz/.conda/envs/dox/lib/python3.11/site-packages/nbclient/client.py", line 705, in async_execute
@@ -20,14 +20,12 @@ nbclient.exceptions.CellExecutionError: An error occurred while executing the fo
 ------------------
 import matplotlib.pyplot as plt
 import pandas as pd
-
-from plotnine import *
 import seaborn as sns
-
+from plotnine import *
 ------------------
 
 ----- stderr -----
-/var/folders/py/n14256yd5r5ddms88x9bvsv40000gn/T/ipykernel_53828/3806970935.py:2: DeprecationWarning: 
+/var/folders/py/n14256yd5r5ddms88x9bvsv40000gn/T/ipykernel_76600/4179420466.py:2: DeprecationWarning: 
 Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
 (to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
 but was not found to be installed on your system.
@@ -40,10 +38,9 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
 Cell [0;32mIn[1], line 4[0m
-[1;32m      1[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m [38;5;28;01mas[39;00m [38;5;21;01mplt[39;00m
 [1;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01mpandas[39;00m [38;5;28;01mas[39;00m [38;5;21;01mpd[39;00m
+[1;32m      3[0m [38;5;28;01mimport[39;00m [38;5;21;01mseaborn[39;00m [38;5;28;01mas[39;00m [38;5;21;01msns[39;00m
 [0;32m----> 4[0m [38;5;28;01mfrom[39;00m [38;5;21;01mplotnine[39;00m [38;5;28;01mimport[39;00m [38;5;241m*[39m
-[1;32m      5[0m [38;5;28;01mimport[39;00m [38;5;21;01mseaborn[39;00m [38;5;28;01mas[39;00m [38;5;21;01msns[39;00m
 
 [0;31mModuleNotFoundError[0m: No module named 'plotnine'
 

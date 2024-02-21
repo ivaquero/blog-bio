@@ -468,16 +468,15 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-
 <span class="kn">from</span> <span class="nn">plotnine</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/py/n14256yd5r5ddms88x9bvsv40000gn/T/ipykernel_53991/630661901.py:2: DeprecationWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/py/n14256yd5r5ddms88x9bvsv40000gn/T/ipykernel_76720/617284724.py:3: DeprecationWarning: 
 Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
 (to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
 but was not found to be installed on your system.
@@ -489,10 +488,10 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">plotnine</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">plotnine</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="ne">ModuleNotFoundError</span>: No module named &#39;plotnine&#39;
 </pre></div>
@@ -504,7 +503,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpg</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/mpg.csv&quot;</span><span class="p">)</span>
-<span class="n">mpg</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;types&quot;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">mpg</span> <span class="o">=</span> <span class="n">mpg</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;types&quot;</span><span class="p">})</span>
 <span class="n">mpg</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -634,7 +633,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/88658cd297b62efccb904290642ee3423bf728cc5cea46f3559eb64948a15f25.png" src="../_images/88658cd297b62efccb904290642ee3423bf728cc5cea46f3559eb64948a15f25.png" />
+<img alt="../_images/dd8fb7820b1a7b2a3b7fa1deadd25914f2cb3b780ce4173d497b0bfee4132f29.png" src="../_images/dd8fb7820b1a7b2a3b7fa1deadd25914f2cb3b780ce4173d497b0bfee4132f29.png" />
 </div>
 </div>
 <section id="ggplot2-version">
@@ -674,7 +673,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/27d290e4e1f2da8fe559e5250045145b57bf4d76e7dc3bbd077516afa4dbd1fb.png" src="../_images/27d290e4e1f2da8fe559e5250045145b57bf4d76e7dc3bbd077516afa4dbd1fb.png" />
+<img alt="../_images/81ad7581808a644586abc7ef94008dc56769ee180fe01c8e004c35d190e12f03.png" src="../_images/81ad7581808a644586abc7ef94008dc56769ee180fe01c8e004c35d190e12f03.png" />
 </div>
 </div>
 <section id="id1">
@@ -690,7 +689,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
         <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Density plot&quot;</span><span class="p">,</span>
         <span class="n">subtitle</span><span class="o">=</span><span class="s2">&quot;City Mileage Grouped by Types&quot;</span><span class="p">,</span>
         <span class="n">x</span><span class="o">=</span><span class="s2">&quot;City Mileage&quot;</span><span class="p">,</span>
-        <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;Density&quot;</span><span class="p">,</span>
+        <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Density&quot;</span><span class="p">,</span>
         <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;# types&quot;</span><span class="p">,</span>
     <span class="p">)</span>
 <span class="p">)</span>
@@ -698,15 +697,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/integzz/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/utils.py:1183: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-/Users/integzz/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/utils.py:289: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-/Users/integzz/.conda/envs/kaggle/lib/python3.11/site-packages/mizani/scale.py:256: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-</pre></div>
-</div>
-<img alt="../_images/f2cfabddd8ee2e7da266563ebf554e0f806c2ffa2edca062da52de45bfb128f1.png" src="../_images/f2cfabddd8ee2e7da266563ebf554e0f806c2ffa2edca062da52de45bfb128f1.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure Size: (640 x 480)&gt;
-</pre></div>
-</div>
+<img alt="../_images/5aa95ada64b61dc495744350c731c8f9d4e73d9c2ac6c414b2ad7cd5a4e5f6ff.png" src="../_images/5aa95ada64b61dc495744350c731c8f9d4e73d9c2ac6c414b2ad7cd5a4e5f6ff.png" />
 </div>
 </div>
 </section>
@@ -723,7 +714,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
         <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span>
             <span class="n">x</span><span class="p">,</span>
             <span class="n">medians_dict</span><span class="p">[</span><span class="n">xticklabel</span><span class="p">]</span> <span class="o">*</span> <span class="mf">1.01</span><span class="p">,</span>
-            <span class="sa">f</span><span class="s2">&quot;#obs : </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">n_ob</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="sa">f</span><span class="s2">&quot;#obs : </span><span class="si">{</span><span class="n">n_ob</span><span class="si">!s}</span><span class="s2">&quot;</span><span class="p">,</span>
             <span class="n">horizontalalignment</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span>
             <span class="n">fontdict</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;medium&quot;</span><span class="p">},</span>
             <span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
@@ -741,7 +732,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b0f73601c533e0da34fa60b36faf7e7b8782bc82fa418deb4ac53bff5bb85724.png" src="../_images/b0f73601c533e0da34fa60b36faf7e7b8782bc82fa418deb4ac53bff5bb85724.png" />
+<img alt="../_images/e600788cc2620b9012f9162e08b853bfdef725971d7a0200719ca11eccaf4170.png" src="../_images/e600788cc2620b9012f9162e08b853bfdef725971d7a0200719ca11eccaf4170.png" />
 </div>
 </div>
 <section id="id2">
@@ -762,23 +753,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/integzz/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/utils.py:1183: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-/Users/integzz/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/utils.py:289: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-/Users/integzz/.conda/envs/kaggle/lib/python3.11/site-packages/mizani/scale.py:256: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-/Users/integzz/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/stats/stat_boxplot.py:100: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-/Users/integzz/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/stats/stat_boxplot.py:100: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-/Users/integzz/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/stats/stat_boxplot.py:100: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-/Users/integzz/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/stats/stat_boxplot.py:100: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-/Users/integzz/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/stats/stat_boxplot.py:100: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-/Users/integzz/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/stats/stat_boxplot.py:100: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-/Users/integzz/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/stats/stat_boxplot.py:100: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-/Users/integzz/.conda/envs/kaggle/lib/python3.11/site-packages/mizani/scale.py:256: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-</pre></div>
-</div>
-<img alt="../_images/0f376ae3d9c0b4ab967c9a5b445ba8d1f22174c033bcfe7918b6b33cb854acf1.png" src="../_images/0f376ae3d9c0b4ab967c9a5b445ba8d1f22174c033bcfe7918b6b33cb854acf1.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure Size: (640 x 480)&gt;
-</pre></div>
-</div>
+<img alt="../_images/be8a0c478f6f6cc4aee184afb335a94230c56ad7fed816690c613df8ba318058.png" src="../_images/be8a0c478f6f6cc4aee184afb335a94230c56ad7fed816690c613df8ba318058.png" />
 </div>
 </div>
 </section>
@@ -885,7 +860,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9cb89e072f6ac27849d6dc8cbd293a048a50fabe1fec1cdb506052e7cc00ffaf.png" src="../_images/9cb89e072f6ac27849d6dc8cbd293a048a50fabe1fec1cdb506052e7cc00ffaf.png" />
+<img alt="../_images/a16673e424ab69c40fbf66e4e524787400e295b7f891c0b4a38056ba13b14328.png" src="../_images/a16673e424ab69c40fbf66e4e524787400e295b7f891c0b4a38056ba13b14328.png" />
 </div>
 </div>
 <section id="id3">

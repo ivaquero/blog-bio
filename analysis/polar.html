@@ -462,7 +462,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/py/n14256yd5r5ddms88x9bvsv40000gn/T/ipykernel_54057/3673065328.py:3: DeprecationWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/py/n14256yd5r5ddms88x9bvsv40000gn/T/ipykernel_76903/347984750.py:3: DeprecationWarning: 
 Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
 (to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
 but was not found to be installed on your system.
@@ -480,13 +480,15 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;item </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">51</span><span class="p">)],</span>
-    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">50</span><span class="p">),</span>
-    <span class="s2">&quot;group&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="p">[</span><span class="s2">&quot;B&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">20</span> <span class="o">+</span> <span class="p">[</span><span class="s2">&quot;C&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">12</span> <span class="o">+</span> <span class="p">[</span><span class="s2">&quot;D&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">8</span>
-<span class="p">})</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;item </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">51</span><span class="p">)],</span>
+        <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">50</span><span class="p">),</span>
+        <span class="s2">&quot;group&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="p">[</span><span class="s2">&quot;B&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">20</span> <span class="o">+</span> <span class="p">[</span><span class="s2">&quot;C&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">12</span> <span class="o">+</span> <span class="p">[</span><span class="s2">&quot;D&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">8</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">)</span>
 
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -551,21 +553,17 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_sorted</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;group&quot;</span><span class="p">])</span>
-    <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s2">&quot;value&quot;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_sorted</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;group&quot;</span><span class="p">])</span>
+    <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s2">&quot;value&quot;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span> <span class="n">include_groups</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="p">)</span>
 
-<span class="n">df_sorted</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="n">data_sorted</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/py/n14256yd5r5ddms88x9bvsv40000gn/T/ipykernel_54057/350477024.py:3: DeprecationWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
-  .apply(lambda x: x.sort_values([&quot;value&quot;], ascending=False))
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -586,7 +584,6 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
       <th></th>
       <th>name</th>
       <th>value</th>
-      <th>group</th>
     </tr>
   </thead>
   <tbody>
@@ -594,31 +591,26 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
       <th>0</th>
       <td>item 5</td>
       <td>93</td>
-      <td>A</td>
     </tr>
     <tr>
       <th>1</th>
       <td>item 2</td>
       <td>77</td>
-      <td>A</td>
     </tr>
     <tr>
       <th>2</th>
       <td>item 3</td>
       <td>71</td>
-      <td>A</td>
     </tr>
     <tr>
       <th>3</th>
       <td>item 9</td>
       <td>53</td>
-      <td>A</td>
     </tr>
     <tr>
       <th>4</th>
       <td>item 7</td>
       <td>47</td>
-      <td>A</td>
     </tr>
   </tbody>
 </table>
@@ -630,7 +622,6 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 
 
 <span class="k">def</span> <span class="nf">get_label_rotation</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="n">offset</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="s2">&quot;left&quot;</span><span class="p">]]:</span>
-
     <span class="n">rotation</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">rad2deg</span><span class="p">(</span><span class="n">angle</span> <span class="o">+</span> <span class="n">offset</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">angle</span> <span class="o">&lt;=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">:</span>
         <span class="n">alignment</span> <span class="o">=</span> <span class="s2">&quot;right&quot;</span>
@@ -645,14 +636,11 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_labels</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">angles</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">offset</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-
     <span class="c1"># This is the space between the end of the bar and the label</span>
     <span class="n">padding</span> <span class="o">=</span> <span class="mi">4</span>
 
     <span class="c1"># Iterate over angles, values, and labels, to add all of them.</span>
-    <span class="k">for</span> <span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">angles</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">labels</span><span class="p">):</span>
-        <span class="n">angle</span> <span class="o">=</span> <span class="n">angle</span>
-
+    <span class="k">for</span> <span class="n">angle</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">angles</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">labels</span><span class="p">):</span>
         <span class="c1"># Obtain text rotation and alignment</span>
         <span class="n">rotation</span><span class="p">,</span> <span class="n">alignment</span> <span class="o">=</span> <span class="n">get_label_rotation</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="n">offset</span><span class="p">)</span>
 
@@ -673,9 +661,9 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">OFFSET</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span>
 
-<span class="n">GROUP</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;group&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">array</span>
-<span class="n">VALUES</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">array</span>
-<span class="n">LABELS</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">array</span>
+<span class="n">GROUP</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;group&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">array</span>
+<span class="n">VALUES</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">array</span>
+<span class="n">LABELS</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">array</span>
 
 <span class="c1"># Add three empty bars to the end of each group</span>
 <span class="n">PAD</span> <span class="o">=</span> <span class="mi">3</span>
@@ -708,7 +696,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/82ca77fa256112da06350551398d6ad7bf0ca50e318c42765be11b17d2fcb0fa.png" src="../_images/82ca77fa256112da06350551398d6ad7bf0ca50e318c42765be11b17d2fcb0fa.png" />
+<img alt="../_images/99d65ddbcdcb56b9e635d3b4fd3c5765818cd7e6217d7e2078bc5067dc6b0447.png" src="../_images/99d65ddbcdcb56b9e635d3b4fd3c5765818cd7e6217d7e2078bc5067dc6b0447.png" />
 </div>
 </div>
 </section>
@@ -747,7 +735,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x800 with 0 Axes&gt;
 </pre></div>
 </div>
-<img alt="../_images/7ee769a43a605efe9a2c8a2019fa106d57e4b5cc54b03a0f580a1b9e75d982b0.png" src="../_images/7ee769a43a605efe9a2c8a2019fa106d57e4b5cc54b03a0f580a1b9e75d982b0.png" />
+<img alt="../_images/38e0811fea22b8c7dabd6d7e84b54ad136e051f4d3e6e16e213dede3d5eba7ee.png" src="../_images/38e0811fea22b8c7dabd6d7e84b54ad136e051f4d3e6e16e213dede3d5eba7ee.png" />
 </div>
 </div>
 </section>
@@ -767,7 +755,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2679d6926b6454dd02b4e684d1dbab15956e0480855fc5f8c3ba54d9cad56867.png" src="../_images/2679d6926b6454dd02b4e684d1dbab15956e0480855fc5f8c3ba54d9cad56867.png" />
+<img alt="../_images/18c04a9f16088ae42d88f895b78aee997e4af9ba0600c9c46527753e237ea452.png" src="../_images/18c04a9f16088ae42d88f895b78aee997e4af9ba0600c9c46527753e237ea452.png" />
 </div>
 </div>
 </section>
@@ -775,7 +763,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 <h2>Radar<a class="headerlink" href="#radar" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
     <span class="p">{</span>
         <span class="s2">&quot;group&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">],</span>
         <span class="s2">&quot;var1&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">38</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
@@ -786,7 +774,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
     <span class="p">}</span>
 <span class="p">)</span>
 
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -860,7 +848,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;group&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">array</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;group&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">array</span>
 </pre></div>
 </div>
 </div>
@@ -875,7 +863,7 @@ Length: 5, dtype: object
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># number of variable</span>
-<span class="n">categories</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="n">categories</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
 <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">categories</span><span class="p">)</span>
 
 <span class="n">angles</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span> <span class="o">/</span> <span class="n">N</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span>
@@ -895,8 +883,8 @@ Length: 5, dtype: object
 
 <span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">get_yticklabels</span><span class="p">(),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;grey&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">ind</span><span class="p">,</span> <span class="n">cat</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">group</span><span class="p">):</span>
-    <span class="n">values</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;group&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">array</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">ind</span><span class="p">,</span> <span class="n">cat</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">group</span><span class="p">):</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;group&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">array</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
     <span class="n">values</span> <span class="o">+=</span> <span class="n">values</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">angles</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;group </span><span class="si">{</span><span class="n">cat</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">angles</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
@@ -907,7 +895,7 @@ Length: 5, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4c138fb139204e37f7d6e1467481e1b62c2cf7a55938540590af19b8bd862441.png" src="../_images/4c138fb139204e37f7d6e1467481e1b62c2cf7a55938540590af19b8bd862441.png" />
+<img alt="../_images/deb1f114d76efd3890d62c9506711f713de94db076e660ea61b7c717a83e3c35.png" src="../_images/deb1f114d76efd3890d62c9506711f713de94db076e660ea61b7c717a83e3c35.png" />
 </div>
 </div>
 </section>

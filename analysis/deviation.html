@@ -466,13 +466,12 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
 <span class="kn">from</span> <span class="nn">plotnine</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/py/n14256yd5r5ddms88x9bvsv40000gn/T/ipykernel_53908/3178228489.py:3: DeprecationWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/py/n14256yd5r5ddms88x9bvsv40000gn/T/ipykernel_76615/1109453179.py:3: DeprecationWarning: 
 Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
 (to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
 but was not found to be installed on your system.
@@ -484,10 +483,10 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">plotnine</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">plotnine</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="ne">ModuleNotFoundError</span>: No module named &#39;plotnine&#39;
 </pre></div>
@@ -773,7 +772,13 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 
-<span class="n">bar</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">mtcars_sorted</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">mtcars_sorted</span><span class="o">.</span><span class="n">mpg_z</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">mtcars_sorted</span><span class="o">.</span><span class="n">types</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">bar</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">mtcars_sorted</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+    <span class="n">width</span><span class="o">=</span><span class="n">mtcars_sorted</span><span class="o">.</span><span class="n">mpg_z</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="n">mtcars_sorted</span><span class="o">.</span><span class="n">types</span><span class="p">,</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span>
+    <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+<span class="p">)</span>
 
 <span class="n">ax</span><span class="o">.</span><span class="n">bar_label</span><span class="p">(</span><span class="n">container</span><span class="o">=</span><span class="n">bar</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%0.2g</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">label_type</span><span class="o">=</span><span class="s2">&quot;edge&quot;</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 
@@ -792,7 +797,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9eb42d0ace5e821e26cf86a1131ad5534253f9f0ba00ac27dce58f45045477bb.png" src="../_images/9eb42d0ace5e821e26cf86a1131ad5534253f9f0ba00ac27dce58f45045477bb.png" />
+<img alt="../_images/e41365e36301967f1b64b2a93dd70aecb25d4ef1834348a0e0b63799d43f8ed8.png" src="../_images/e41365e36301967f1b64b2a93dd70aecb25d4ef1834348a0e0b63799d43f8ed8.png" />
 </div>
 </div>
 <section id="ggplot2-version">
@@ -820,6 +825,9 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 <span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/a98a195c7abb61f8ea8cc893d25b9002dc7f59a651710905097e0fba878e113e.png" src="../_images/a98a195c7abb61f8ea8cc893d25b9002dc7f59a651710905097e0fba878e113e.png" />
 </div>
 </div>
 </section>
@@ -877,7 +885,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c6ceaea267e1889d36750d52e9ce72c87ff80d32db3fcf7667542e6351287e63.png" src="../_images/c6ceaea267e1889d36750d52e9ce72c87ff80d32db3fcf7667542e6351287e63.png" />
+<img alt="../_images/b1bfcef49ce19572b45c69b10aeab6db8edeb746c2d7068b5b68a98b9f68a649.png" src="../_images/b1bfcef49ce19572b45c69b10aeab6db8edeb746c2d7068b5b68a98b9f68a649.png" />
 </div>
 </div>
 <section id="id1">
@@ -911,6 +919,9 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/9493296f01f6ac4884ec8ef91fb43730bdcf001ef71fb519f9ccf8036b0ec779.png" src="../_images/9493296f01f6ac4884ec8ef91fb43730bdcf001ef71fb519f9ccf8036b0ec779.png" />
+</div>
 </div>
 </section>
 </section>
@@ -920,7 +931,9 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 
-<span class="n">scat</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">mtcars_sorted</span><span class="o">.</span><span class="n">mpg_z</span><span class="p">,</span> <span class="n">mtcars_sorted</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">450</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">mtcars</span><span class="o">.</span><span class="n">types</span><span class="p">)</span>
+<span class="n">scat</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+    <span class="n">mtcars_sorted</span><span class="o">.</span><span class="n">mpg_z</span><span class="p">,</span> <span class="n">mtcars_sorted</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">450</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">mtcars</span><span class="o">.</span><span class="n">types</span>
+<span class="p">)</span>
 
 <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">text</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">mtcars_sorted</span><span class="o">.</span><span class="n">mpg_z</span><span class="p">,</span> <span class="n">mtcars_sorted</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">mtcars_sorted</span><span class="o">.</span><span class="n">mpg_z</span><span class="p">):</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span>
@@ -949,7 +962,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c1978a74cffc4f90156fd15bebc89db270541a0a6c33f00691e5dd594939362d.png" src="../_images/c1978a74cffc4f90156fd15bebc89db270541a0a6c33f00691e5dd594939362d.png" />
+<img alt="../_images/d069b9504ad582890eb279bf96db8bf31d898c27afdd115a61c51f03ce18e6d3.png" src="../_images/d069b9504ad582890eb279bf96db8bf31d898c27afdd115a61c51f03ce18e6d3.png" />
 </div>
 </div>
 <section id="id2">
@@ -981,6 +994,9 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 <span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/0e7820136506e229d47ba9b461abbf760afd55b4254599bb59e7897a3390deab.png" src="../_images/0e7820136506e229d47ba9b461abbf760afd55b4254599bb59e7897a3390deab.png" />
 </div>
 </div>
 </section>

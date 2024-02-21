@@ -456,16 +456,16 @@ document.write(`
 <h1>Group<a class="headerlink" href="#group" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">patches</span>
-<span class="kn">from</span> <span class="nn">scipy.spatial</span> <span class="kn">import</span> <span class="n">ConvexHull</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">patches</span>
+<span class="kn">from</span> <span class="nn">scipy.spatial</span> <span class="kn">import</span> <span class="n">ConvexHull</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/py/n14256yd5r5ddms88x9bvsv40000gn/T/ipykernel_54037/979438186.py:5: DeprecationWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/py/n14256yd5r5ddms88x9bvsv40000gn/T/ipykernel_76792/983540916.py:3: DeprecationWarning: 
 Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
 (to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
 but was not found to be installed on your system.
@@ -598,14 +598,14 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpg_group</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">mpg</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s2">&quot;cty&quot;</span><span class="p">,</span> <span class="s2">&quot;manufacturer&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;manufacturer&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s2">&quot;cty&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">})</span>
 <span class="p">)</span>
-<span class="n">mpg_group</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;cty&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">mpg_group</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">mpg_group</span> <span class="o">=</span> <span class="n">mpg_group</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;cty&quot;</span><span class="p">)</span>
+<span class="n">mpg_group</span> <span class="o">=</span> <span class="n">mpg_group</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 <span class="n">mpg_group</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/py/n14256yd5r5ddms88x9bvsv40000gn/T/ipykernel_54037/1191042407.py:2: FutureWarning: The provided callable &lt;function mean at 0x105d393a0&gt; is currently using SeriesGroupBy.mean. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string &quot;mean&quot; instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/py/n14256yd5r5ddms88x9bvsv40000gn/T/ipykernel_76792/3182780464.py:2: FutureWarning: The provided callable &lt;function mean at 0x11204ae80&gt; is currently using SeriesGroupBy.mean. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string &quot;mean&quot; instead.
   mpg.loc[:, [&quot;cty&quot;, &quot;manufacturer&quot;]].groupby(&quot;manufacturer&quot;).agg({&quot;cty&quot;: np.mean})
 </pre></div>
 </div>
@@ -700,7 +700,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7988ef1777233916f14e6dd40385faecbb8d16ee67fd639f124fb18083f39824.png" src="../_images/7988ef1777233916f14e6dd40385faecbb8d16ee67fd639f124fb18083f39824.png" />
+<img alt="../_images/f9d460dade35b5b30c4eefa350245853736d2a6fa0594ee2a2519385cdb8b0e6.png" src="../_images/f9d460dade35b5b30c4eefa350245853736d2a6fa0594ee2a2519385cdb8b0e6.png" />
 </div>
 </div>
 </section>
@@ -809,7 +809,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/82b2f697a2696406d9182879da50aafa7d050d1c2663cd4441d46c91acd64841.png" src="../_images/82b2f697a2696406d9182879da50aafa7d050d1c2663cd4441d46c91acd64841.png" />
+<img alt="../_images/03cae6e83d92d44198d672790588937df723147f0eb6100dc5fca2000ce761ed.png" src="../_images/03cae6e83d92d44198d672790588937df723147f0eb6100dc5fca2000ce761ed.png" />
 </div>
 </div>
 </section>
@@ -1205,7 +1205,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/bb045e9915fe97940bf4f3ad7d21f9cb0e839acde370e09f5f3deefc6b304ef5.png" src="../_images/bb045e9915fe97940bf4f3ad7d21f9cb0e839acde370e09f5f3deefc6b304ef5.png" />
+<img alt="../_images/201657232067a4203b20894bd3e4f7e39aace750f419fa83180ba1695c0b17d7.png" src="../_images/201657232067a4203b20894bd3e4f7e39aace750f419fa83180ba1695c0b17d7.png" />
 </div>
 </div>
 </section>
@@ -1346,7 +1346,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mtcars</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;cars&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mtcars</span> <span class="o">=</span> <span class="n">mtcars</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;cars&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 
@@ -1361,7 +1361,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7d84605b02168ef4a386a4e2b1af06e8fff653f6a4b009c2b4f8a319126111e0.png" src="../_images/7d84605b02168ef4a386a4e2b1af06e8fff653f6a4b009c2b4f8a319126111e0.png" />
+<img alt="../_images/ba44c2be819239bcd5aa86888a18bf02402545b972a82b5e7938bd3352f42c9d.png" src="../_images/ba44c2be819239bcd5aa86888a18bf02402545b972a82b5e7938bd3352f42c9d.png" />
 </div>
 </div>
 </section>
@@ -1501,7 +1501,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4ca4b3a54290c993a68cd2fd4132d501b0ce391fd295bc122daaf779e9dbe683.png" src="../_images/4ca4b3a54290c993a68cd2fd4132d501b0ce391fd295bc122daaf779e9dbe683.png" />
+<img alt="../_images/d34a0b27279949864cb53de47f18e5f1dd4444d2f84969b59878816976fb93db.png" src="../_images/d34a0b27279949864cb53de47f18e5f1dd4444d2f84969b59878816976fb93db.png" />
 </div>
 </div>
 </section>

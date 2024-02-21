@@ -460,16 +460,16 @@ document.write(`
 <h1>Time Series<a class="headerlink" href="#time-series" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dateutil.parser</span> <span class="kn">import</span> <span class="n">parse</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">dateutil.parser</span> <span class="kn">import</span> <span class="n">parse</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/py/n14256yd5r5ddms88x9bvsv40000gn/T/ipykernel_54078/886444550.py:5: DeprecationWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/py/n14256yd5r5ddms88x9bvsv40000gn/T/ipykernel_77051/2442656817.py:4: DeprecationWarning: 
 Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
 (to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
 but was not found to be installed on your system.
@@ -547,10 +547,10 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">traffic</span> <span class="o">=</span> <span class="n">passengers</span><span class="o">.</span><span class="n">value</span>
 <span class="n">doublediff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">traffic</span><span class="p">)))</span>
-<span class="n">peak_locations</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">doublediff</span> <span class="o">==</span> <span class="o">-</span><span class="mi">2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">peak_locations</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">doublediff</span> <span class="o">==</span> <span class="o">-</span><span class="mi">2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># noqa: PLR2004</span>
 
 <span class="n">doublediff2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">traffic</span><span class="p">)))</span>
-<span class="n">trough_locations</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">doublediff2</span> <span class="o">==</span> <span class="o">-</span><span class="mi">2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">trough_locations</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">doublediff2</span> <span class="o">==</span> <span class="o">-</span><span class="mi">2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># noqa: PLR2004</span>
 </pre></div>
 </div>
 </div>
@@ -617,7 +617,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/58d3a92e6c13a02d1027e5124efd847fcad397b763ed69fb65fe4a8fecdb640d.png" src="../_images/58d3a92e6c13a02d1027e5124efd847fcad397b763ed69fb65fe4a8fecdb640d.png" />
+<img alt="../_images/215155abe6d207119544c10b05b79ab2e5e4265c3feb859a4c79d2d76d47ad08.png" src="../_images/215155abe6d207119544c10b05b79ab2e5e4265c3feb859a4c79d2d76d47ad08.png" />
 </div>
 </div>
 </section>
@@ -675,7 +675,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2c9d119c232fbfb37f4e747b41be85b46d5e9004ca956c2cbd6ccf64617d93b1.png" src="../_images/2c9d119c232fbfb37f4e747b41be85b46d5e9004ca956c2cbd6ccf64617d93b1.png" />
+<img alt="../_images/340971c627d02f95121b85deb835c0c0db1ad02a7ca3be49feaa47e73bf0c65d.png" src="../_images/340971c627d02f95121b85deb835c0c0db1ad02a7ca3be49feaa47e73bf0c65d.png" />
 </div>
 </div>
 </section>
@@ -683,7 +683,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 <h2>Cross Correlation<a class="headerlink" href="#cross-correlation" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.tsa.stattools</span> <span class="k">as</span> <span class="nn">stattools</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">statsmodels.tsa</span> <span class="kn">import</span> <span class="n">stattools</span>
 </pre></div>
 </div>
 </div>
@@ -779,7 +779,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2b3fcd45e0c459e9f0c7cbcb75a28eae6331b3884c083a749458e683cf636ca8.png" src="../_images/2b3fcd45e0c459e9f0c7cbcb75a28eae6331b3884c083a749458e683cf636ca8.png" />
+<img alt="../_images/ac135ef7fd371319160e20ef4e58ec9f308b60026c2f861e18647c8d5d439b98.png" src="../_images/ac135ef7fd371319160e20ef4e58ec9f308b60026c2f861e18647c8d5d439b98.png" />
 </div>
 </div>
 </section>
@@ -857,7 +857,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">date</span> <span class="o">=</span> <span class="n">passengers</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">]</span>
 <span class="n">dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">date</span><span class="p">)</span>
 
-<span class="n">passengers</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">dates</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">passengers</span> <span class="o">=</span> <span class="n">passengers</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">dates</span><span class="p">)</span>
 
 <span class="n">result</span> <span class="o">=</span> <span class="n">seasonal_decompose</span><span class="p">(</span><span class="n">passengers</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">],</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;multiplicative&quot;</span><span class="p">)</span>
 </pre></div>
@@ -882,7 +882,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/bc9b2bb87576b3ad8df8d60dcaf07df340a59f049a667ace9ff8c82767527a1f.png" src="../_images/bc9b2bb87576b3ad8df8d60dcaf07df340a59f049a667ace9ff8c82767527a1f.png" />
+<img alt="../_images/907162909c6d43ebf63d678d667f66b7a2252bb51c66593eb5494da3f4272b05.png" src="../_images/907162909c6d43ebf63d678d667f66b7a2252bb51c66593eb5494da3f4272b05.png" />
 </div>
 </div>
 </section>
@@ -1000,7 +1000,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/69a79c5ad842247c5e7410dfa5e8248f0c86f5d3115fe7f64dce7e8df6b4622e.png" src="../_images/69a79c5ad842247c5e7410dfa5e8248f0c86f5d3115fe7f64dce7e8df6b4622e.png" />
+<img alt="../_images/f424891d32a20bdfc0b578435346021e89254bc0c280e18825c2079a27bbbf3d.png" src="../_images/f424891d32a20bdfc0b578435346021e89254bc0c280e18825c2079a27bbbf3d.png" />
 </div>
 </div>
 </section>
@@ -1109,7 +1109,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f261bb6424d035c953c7a499ccc612bee51956bdd259ac6d05875835fdc79088.png" src="../_images/f261bb6424d035c953c7a499ccc612bee51956bdd259ac6d05875835fdc79088.png" />
+<img alt="../_images/a7104305b2af43685d925243a55b2611eb3283ed823db1f0601a50539858bb71.png" src="../_images/a7104305b2af43685d925243a55b2611eb3283ed823db1f0601a50539858bb71.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1222,7 +1222,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a8cb1cd5f07debd6cc102e3ca2895c006a23af2a180133cb42b96e2bdae40575.png" src="../_images/a8cb1cd5f07debd6cc102e3ca2895c006a23af2a180133cb42b96e2bdae40575.png" />
+<img alt="../_images/3627f0cbb2e8ebc8f2a4321709153187c2f4f3b9828b39a5397865f59d0e0ded.png" src="../_images/3627f0cbb2e8ebc8f2a4321709153187c2f4f3b9828b39a5397865f59d0e0ded.png" />
 </div>
 </div>
 </section>
@@ -1270,7 +1270,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 <span class="p">)</span>
 
 <span class="n">xtickvals</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">m</span><span class="p">)[:</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">m</span><span class="p">)[:</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">y</span><span class="si">!s}</span><span class="s2">&quot;</span>
     <span class="k">for</span> <span class="n">y</span><span class="p">,</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">economics</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">economics</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month_name</span><span class="p">())</span>
 <span class="p">]</span>
 
@@ -1293,7 +1293,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8b9c5f877af361e61e806abb8ccd285bafd1786f0403d2ab9db0bce5bbe5d018.png" src="../_images/8b9c5f877af361e61e806abb8ccd285bafd1786f0403d2ab9db0bce5bbe5d018.png" />
+<img alt="../_images/f194cebd84b31d5701c697373514b86a195c87b69e76d02679db27bd1245b757.png" src="../_images/f194cebd84b31d5701c697373514b86a195c87b69e76d02679db27bd1245b757.png" />
 </div>
 </div>
 </section>
@@ -1307,7 +1307,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/py/n14256yd5r5ddms88x9bvsv40000gn/T/ipykernel_54078/1398973000.py:1: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/py/n14256yd5r5ddms88x9bvsv40000gn/T/ipykernel_77051/1439259366.py:1: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
   visitors = pd.read_csv(&quot;data/night_visitors.csv&quot;, parse_dates=[&quot;yearmon&quot;])
 </pre></div>
 </div>
@@ -1449,7 +1449,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1fd3fc554f8b78f7cc98a3769f74493d2418879cb56af92bed467b5d6d9dcfee.png" src="../_images/1fd3fc554f8b78f7cc98a3769f74493d2418879cb56af92bed467b5d6d9dcfee.png" />
+<img alt="../_images/03241dec34277be34ce8dfe3ac79367a173654e0e8d202765b10598a7896a5ef.png" src="../_images/03241dec34277be34ce8dfe3ac79367a173654e0e8d202765b10598a7896a5ef.png" />
 </div>
 </div>
 </section>
@@ -1502,7 +1502,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b0010cc0d149c2cf32614310c88bd52037a1b739ce1b0fe1d7b3f9bbbd3b2218.png" src="../_images/b0010cc0d149c2cf32614310c88bd52037a1b739ce1b0fe1d7b3f9bbbd3b2218.png" />
+<img alt="../_images/c0b8ac28f04aea17e7dd9f237fdcdbb18eb1db7abdc98a86aaf59120b908c87b.png" src="../_images/c0b8ac28f04aea17e7dd9f237fdcdbb18eb1db7abdc98a86aaf59120b908c87b.png" />
 </div>
 </div>
 </section>
