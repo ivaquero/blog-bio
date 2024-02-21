@@ -8,9 +8,9 @@ from sklearn.preprocessing import (
     StandardScaler,
 )
 
-np.random.seed(42)
-height = np.random.normal(loc=175, scale=5, size=1000).reshape(-1, 1)
-weight = np.random.normal(loc=60, scale=10, size=1000).reshape(-1, 1)
+rng = np.random.default_rng(42)
+height = rng.normal(loc=175, scale=5, size=1000).reshape(-1, 1)
+weight = rng.normal(loc=60, scale=10, size=1000).reshape(-1, 1)
 
 test_arr = np.concatenate((height, weight), axis=1)
 
