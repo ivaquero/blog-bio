@@ -1,0 +1,9 @@
+[files]
+extend-exclude = ["*.typ"]
+
+[default.extend-words]
+MAPE = "MAPE"
+NEES = "NEES"
+Tung = "Tung"
+nd = "nd"
+github = "GitHub"
