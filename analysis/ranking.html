@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -443,10 +443,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lollipop">Lollipop</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slope">Slope</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ggplot2-version">ggplot2 version</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slope">Slope</a></li>
 </ul>
             </nav>
         </div>
@@ -719,42 +716,6 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">mpg_group</span><span class="p">[</span><span class="s2">&quot;manufacturer&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">mpg_group</span><span class="p">[</span><span class="s2">&quot;cty&quot;</span><span class="p">]</span>
-
-<span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-
-<span class="n">markerline</span><span class="p">,</span> <span class="n">stemlines</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">stemlines</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s2">&quot;firebrick&quot;</span><span class="p">)</span>
-<span class="n">markerline</span><span class="o">.</span><span class="n">set_markerfacecolor</span><span class="p">(</span><span class="s2">&quot;firebrick&quot;</span><span class="p">)</span>
-<span class="n">markerline</span><span class="o">.</span><span class="n">set_markeredgecolor</span><span class="p">(</span><span class="s2">&quot;firebrick&quot;</span><span class="p">)</span>
-
-<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span>
-    <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;Miles Per Gallon&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Lollipop Chart for Highway Mileage&quot;</span>
-<span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">get_xticklabels</span><span class="p">(),</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">mpg_group</span><span class="o">.</span><span class="n">itertuples</span><span class="p">():</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span>
-        <span class="n">row</span><span class="o">.</span><span class="n">Index</span><span class="p">,</span>
-        <span class="n">row</span><span class="o">.</span><span class="n">cty</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">,</span>
-        <span class="n">s</span><span class="o">=</span><span class="nb">round</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">cty</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
-        <span class="n">horizontalalignment</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span>
-        <span class="n">verticalalignment</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">,</span>
-        <span class="n">fontsize</span><span class="o">=</span><span class="s2">&quot;small&quot;</span><span class="p">,</span>
-    <span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/8f3bccbf63cadb1d1d95748d49d19944237112d723cfb3fcffa41b2c596160d9.png" src="../_images/8f3bccbf63cadb1d1d95748d49d19944237112d723cfb3fcffa41b2c596160d9.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
     <span class="n">ggplot</span><span class="p">(</span><span class="n">mpg_group</span><span class="p">,</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;manufacturer&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;cty&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;cty&quot;</span><span class="p">))</span>
     <span class="o">+</span> <span class="n">geom_point</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;firebrick&quot;</span><span class="p">)</span>
@@ -988,14 +949,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/py/n14256yd5r5ddms88x9bvsv40000gn/T/ipykernel_21319/1178036945.py:3: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/py/n14256yd5r5ddms88x9bvsv40000gn/T/ipykernel_76314/1178036945.py:3: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
 </pre></div>
 </div>
 <img alt="../_images/8dc1f8e1d4d6179d54c3c54d5d280481c2d3884c19fbd40e012f8d04343f9004.png" src="../_images/8dc1f8e1d4d6179d54c3c54d5d280481c2d3884c19fbd40e012f8d04343f9004.png" />
 </div>
 </div>
-<section id="ggplot2-version">
-<h3>ggplot2 version<a class="headerlink" href="#ggplot2-version" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdp</span><span class="p">[</span><span class="s2">&quot;class&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">gdp</span><span class="p">[</span><span class="s2">&quot;1957&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">gdp</span><span class="p">[</span><span class="s2">&quot;1952&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">)</span>
@@ -1020,7 +979,7 @@ document.write(`
         <span class="n">panel_background</span><span class="o">=</span><span class="n">element_blank</span><span class="p">(),</span>
         <span class="n">panel_grid</span><span class="o">=</span><span class="n">element_blank</span><span class="p">(),</span>
         <span class="n">axis_ticks</span><span class="o">=</span><span class="n">element_blank</span><span class="p">(),</span>
-        <span class="n">axis_text_x</span><span class="o">=</span><span class="n">element_blank</span><span class="p">(),</span>
+        <span class="c1"># axis_text_x=element_blank(),</span>
         <span class="n">panel_border</span><span class="o">=</span><span class="n">element_blank</span><span class="p">(),</span>
         <span class="n">legend_position</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span>
     <span class="p">)</span>
@@ -1031,207 +990,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="nn">File ~/.conda/envs/kaggle/lib/python3.11/site-packages/IPython/core/formatters.py:925,</span> in <span class="ni">IPythonDisplayFormatter.__call__</span><span class="nt">(self, obj)</span>
-<span class="g g-Whitespace">    </span><span class="mi">923</span> <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">924</span> <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">925</span>     <span class="n">method</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">926</span>     <span class="k">return</span> <span class="kc">True</span>
-
-<span class="nn">File ~/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/ggplot.py:141,</span> in <span class="ni">ggplot._ipython_display_</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">134</span> <span class="k">def</span> <span class="nf">_ipython_display_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">135</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">136</span><span class="sd">     Display plot in the output of the cell</span>
-<span class="g g-Whitespace">    </span><span class="mi">137</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">138</span><span class="sd">     This method will always be called when a ggplot object is the</span>
-<span class="g g-Whitespace">    </span><span class="mi">139</span><span class="sd">     last in the cell.</span>
-<span class="g g-Whitespace">    </span><span class="mi">140</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">141</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_display</span><span class="p">()</span>
-
-<span class="nn">File ~/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/ggplot.py:175,</span> in <span class="ni">ggplot._display</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">172</span>     <span class="n">save_format</span> <span class="o">=</span> <span class="s2">&quot;png&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">174</span> <span class="n">buf</span> <span class="o">=</span> <span class="n">BytesIO</span><span class="p">()</span>
-<span class="ne">--&gt; </span><span class="mi">175</span> <span class="bp">self</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="n">save_format</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">176</span> <span class="n">display_func</span> <span class="o">=</span> <span class="n">get_display_function</span><span class="p">(</span><span class="nb">format</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">177</span> <span class="n">display_func</span><span class="p">(</span><span class="n">buf</span><span class="o">.</span><span class="n">getvalue</span><span class="p">())</span>
-
-<span class="nn">File ~/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/ggplot.py:661,</span> in <span class="ni">ggplot.save</span><span class="nt">(self, filename, format, path, width, height, units, dpi, limitsize, verbose, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">613</span> <span class="k">def</span> <span class="nf">save</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">614</span>     <span class="bp">self</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">615</span>     <span class="n">filename</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">|</span> <span class="n">BytesIO</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">624</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">625</span> <span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">626</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">627</span><span class="sd">     Save a ggplot object as an image file</span>
-<span class="g g-Whitespace">    </span><span class="mi">628</span><span class="sd"> </span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">659</span><span class="sd">         Additional arguments to pass to matplotlib `savefig()`.</span>
-<span class="g g-Whitespace">    </span><span class="mi">660</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">661</span>     <span class="n">sv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">save_helper</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">662</span>         <span class="n">filename</span><span class="o">=</span><span class="n">filename</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">663</span>         <span class="nb">format</span><span class="o">=</span><span class="nb">format</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">664</span>         <span class="n">path</span><span class="o">=</span><span class="n">path</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">665</span>         <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">666</span>         <span class="n">height</span><span class="o">=</span><span class="n">height</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">667</span>         <span class="n">units</span><span class="o">=</span><span class="n">units</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">668</span>         <span class="n">dpi</span><span class="o">=</span><span class="n">dpi</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">669</span>         <span class="n">limitsize</span><span class="o">=</span><span class="n">limitsize</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">670</span>         <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">671</span>         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">672</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">673</span>     <span class="n">sv</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="o">**</span><span class="n">sv</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/ggplot.py:610,</span> in <span class="ni">ggplot.save_helper</span><span class="nt">(self, filename, format, path, width, height, units, dpi, limitsize, verbose, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">607</span> <span class="k">if</span> <span class="n">dpi</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">608</span>     <span class="bp">self</span><span class="o">.</span><span class="n">theme</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">theme</span> <span class="o">+</span> <span class="n">theme</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="n">dpi</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">610</span> <span class="n">figure</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">611</span> <span class="k">return</span> <span class="n">mpl_save_view</span><span class="p">(</span><span class="n">figure</span><span class="p">,</span> <span class="n">fig_kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/ggplot.py:281,</span> in <span class="ni">ggplot.draw</span><span class="nt">(self, show)</span>
-<span class="g g-Whitespace">    </span><span class="mi">279</span> <span class="bp">self</span><span class="o">.</span><span class="n">_draw_layers</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">280</span> <span class="bp">self</span><span class="o">.</span><span class="n">_draw_panel_borders</span><span class="p">()</span>
-<span class="ne">--&gt; </span><span class="mi">281</span> <span class="bp">self</span><span class="o">.</span><span class="n">_draw_breaks_and_labels</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">282</span> <span class="bp">self</span><span class="o">.</span><span class="n">guides</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">283</span> <span class="bp">self</span><span class="o">.</span><span class="n">_draw_figure_texts</span><span class="p">()</span>
-
-<span class="nn">File ~/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/ggplot.py:458,</span> in <span class="ni">ggplot._draw_breaks_and_labels</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">456</span> <span class="n">ax</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">axs</span><span class="p">[</span><span class="n">pidx</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">457</span> <span class="n">panel_params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">panel_params</span><span class="p">[</span><span class="n">pidx</span><span class="p">]</span>
-<span class="ne">--&gt; </span><span class="mi">458</span> <span class="bp">self</span><span class="o">.</span><span class="n">facet</span><span class="o">.</span><span class="n">set_limits_breaks_and_labels</span><span class="p">(</span><span class="n">panel_params</span><span class="p">,</span> <span class="n">ax</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">460</span> <span class="c1"># Remove unnecessary ticks and labels</span>
-<span class="g g-Whitespace">    </span><span class="mi">461</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">layout_info</span><span class="o">.</span><span class="n">axis_x</span><span class="p">:</span>
-
-<span class="nn">File ~/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/facets/facet.py:350,</span> in <span class="ni">facet.set_limits_breaks_and_labels</span><span class="nt">(self, panel_params, ax)</span>
-<span class="g g-Whitespace">    </span><span class="mi">347</span> <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">MyFixedFormatter</span><span class="p">(</span><span class="n">panel_params</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">labels</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">349</span> <span class="n">margin</span> <span class="o">=</span> <span class="n">theme</span><span class="o">.</span><span class="n">getp</span><span class="p">((</span><span class="s2">&quot;axis_text_x&quot;</span><span class="p">,</span> <span class="s2">&quot;margin&quot;</span><span class="p">))</span>
-<span class="ne">--&gt; </span><span class="mi">350</span> <span class="n">pad_x</span> <span class="o">=</span> <span class="n">margin</span><span class="o">.</span><span class="n">get_as</span><span class="p">(</span><span class="s2">&quot;t&quot;</span><span class="p">,</span> <span class="s2">&quot;pt&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">352</span> <span class="n">margin</span> <span class="o">=</span> <span class="n">theme</span><span class="o">.</span><span class="n">getp</span><span class="p">((</span><span class="s2">&quot;axis_text_y&quot;</span><span class="p">,</span> <span class="s2">&quot;margin&quot;</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">353</span> <span class="n">pad_y</span> <span class="o">=</span> <span class="n">margin</span><span class="o">.</span><span class="n">get_as</span><span class="p">(</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="s2">&quot;pt&quot;</span><span class="p">)</span>
-
-<span class="ne">AttributeError</span>: &#39;NoneType&#39; object has no attribute &#39;get_as&#39;
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/integzz/.conda/envs/kaggle/lib/python3.11/site-packages/IPython/lib/pretty.py:779: FutureWarning: Using repr(plot) to draw and show the plot figure is deprecated and will be removed in a future version. Use plot.show().
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="nn">File ~/.conda/envs/kaggle/lib/python3.11/site-packages/IPython/core/formatters.py:711,</span> in <span class="ni">PlainTextFormatter.__call__</span><span class="nt">(self, obj)</span>
-<span class="g g-Whitespace">    </span><span class="mi">704</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">705</span> <span class="n">printer</span> <span class="o">=</span> <span class="n">pretty</span><span class="o">.</span><span class="n">RepresentationPrinter</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">706</span>     <span class="bp">self</span><span class="o">.</span><span class="n">max_width</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">newline</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">707</span>     <span class="n">max_seq_length</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_seq_length</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">708</span>     <span class="n">singleton_pprinters</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">singleton_printers</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">709</span>     <span class="n">type_pprinters</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">type_printers</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">710</span>     <span class="n">deferred_pprinters</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">deferred_printers</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">711</span> <span class="n">printer</span><span class="o">.</span><span class="n">pretty</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">712</span> <span class="n">printer</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">713</span> <span class="k">return</span> <span class="n">stream</span><span class="o">.</span><span class="n">getvalue</span><span class="p">()</span>
-
-<span class="nn">File ~/.conda/envs/kaggle/lib/python3.11/site-packages/IPython/lib/pretty.py:411,</span> in <span class="ni">RepresentationPrinter.pretty</span><span class="nt">(self, obj)</span>
-<span class="g g-Whitespace">    </span><span class="mi">408</span>                         <span class="k">return</span> <span class="n">meth</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">409</span>                 <span class="k">if</span> <span class="bp">cls</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">object</span> \
-<span class="g g-Whitespace">    </span><span class="mi">410</span>                         <span class="ow">and</span> <span class="nb">callable</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;__repr__&#39;</span><span class="p">)):</span>
-<span class="ne">--&gt; </span><span class="mi">411</span>                     <span class="k">return</span> <span class="n">_repr_pprint</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">413</span>     <span class="k">return</span> <span class="n">_default_pprint</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">414</span> <span class="k">finally</span><span class="p">:</span>
-
-<span class="nn">File ~/.conda/envs/kaggle/lib/python3.11/site-packages/IPython/lib/pretty.py:779,</span> in <span class="ni">_repr_pprint</span><span class="nt">(obj, p, cycle)</span>
-<span class="g g-Whitespace">    </span><span class="mi">777</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;A pprint that just redirects to the normal repr function.&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">778</span> <span class="c1"># Find newlines and replace them with p.break_()</span>
-<span class="ne">--&gt; </span><span class="mi">779</span> <span class="n">output</span> <span class="o">=</span> <span class="nb">repr</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">780</span> <span class="n">lines</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">781</span> <span class="k">with</span> <span class="n">p</span><span class="o">.</span><span class="n">group</span><span class="p">():</span>
-
-<span class="nn">File ~/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/ggplot.py:131,</span> in <span class="ni">ggplot.__repr__</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">125</span> <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">126</span>     <span class="s2">&quot;Using repr(plot) to draw and show the plot figure is &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">127</span>     <span class="s2">&quot;deprecated and will be removed in a future version. &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">128</span>     <span class="s2">&quot;Use plot.show().&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">129</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span> <span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">FutureWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">131</span> <span class="bp">self</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">132</span> <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;&lt;Figure Size: (</span><span class="si">{</span><span class="n">W</span><span class="si">}</span><span class="s2"> x </span><span class="si">{</span><span class="n">H</span><span class="si">}</span><span class="s2">)&gt;&quot;</span>
-
-<span class="nn">File ~/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/ggplot.py:150,</span> in <span class="ni">ggplot.show</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">143</span> <span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">144</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">145</span><span class="sd">     Show plot using the matplotlib backend set by the user</span>
-<span class="g g-Whitespace">    </span><span class="mi">146</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">147</span><span class="sd">     Users should prefer this method instead of printing or repring</span>
-<span class="g g-Whitespace">    </span><span class="mi">148</span><span class="sd">     the object.</span>
-<span class="g g-Whitespace">    </span><span class="mi">149</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">150</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_display</span><span class="p">()</span> <span class="k">if</span> <span class="n">is_inline_backend</span><span class="p">()</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="nn">File ~/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/ggplot.py:175,</span> in <span class="ni">ggplot._display</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">172</span>     <span class="n">save_format</span> <span class="o">=</span> <span class="s2">&quot;png&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">174</span> <span class="n">buf</span> <span class="o">=</span> <span class="n">BytesIO</span><span class="p">()</span>
-<span class="ne">--&gt; </span><span class="mi">175</span> <span class="bp">self</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="n">save_format</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">176</span> <span class="n">display_func</span> <span class="o">=</span> <span class="n">get_display_function</span><span class="p">(</span><span class="nb">format</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">177</span> <span class="n">display_func</span><span class="p">(</span><span class="n">buf</span><span class="o">.</span><span class="n">getvalue</span><span class="p">())</span>
-
-<span class="nn">File ~/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/ggplot.py:661,</span> in <span class="ni">ggplot.save</span><span class="nt">(self, filename, format, path, width, height, units, dpi, limitsize, verbose, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">613</span> <span class="k">def</span> <span class="nf">save</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">614</span>     <span class="bp">self</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">615</span>     <span class="n">filename</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">|</span> <span class="n">BytesIO</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">624</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">625</span> <span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">626</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">627</span><span class="sd">     Save a ggplot object as an image file</span>
-<span class="g g-Whitespace">    </span><span class="mi">628</span><span class="sd"> </span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">659</span><span class="sd">         Additional arguments to pass to matplotlib `savefig()`.</span>
-<span class="g g-Whitespace">    </span><span class="mi">660</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">661</span>     <span class="n">sv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">save_helper</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">662</span>         <span class="n">filename</span><span class="o">=</span><span class="n">filename</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">663</span>         <span class="nb">format</span><span class="o">=</span><span class="nb">format</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">664</span>         <span class="n">path</span><span class="o">=</span><span class="n">path</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">665</span>         <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">666</span>         <span class="n">height</span><span class="o">=</span><span class="n">height</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">667</span>         <span class="n">units</span><span class="o">=</span><span class="n">units</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">668</span>         <span class="n">dpi</span><span class="o">=</span><span class="n">dpi</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">669</span>         <span class="n">limitsize</span><span class="o">=</span><span class="n">limitsize</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">670</span>         <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">671</span>         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">672</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">673</span>     <span class="n">sv</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="o">**</span><span class="n">sv</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/ggplot.py:610,</span> in <span class="ni">ggplot.save_helper</span><span class="nt">(self, filename, format, path, width, height, units, dpi, limitsize, verbose, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">607</span> <span class="k">if</span> <span class="n">dpi</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">608</span>     <span class="bp">self</span><span class="o">.</span><span class="n">theme</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">theme</span> <span class="o">+</span> <span class="n">theme</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="n">dpi</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">610</span> <span class="n">figure</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">611</span> <span class="k">return</span> <span class="n">mpl_save_view</span><span class="p">(</span><span class="n">figure</span><span class="p">,</span> <span class="n">fig_kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/ggplot.py:281,</span> in <span class="ni">ggplot.draw</span><span class="nt">(self, show)</span>
-<span class="g g-Whitespace">    </span><span class="mi">279</span> <span class="bp">self</span><span class="o">.</span><span class="n">_draw_layers</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">280</span> <span class="bp">self</span><span class="o">.</span><span class="n">_draw_panel_borders</span><span class="p">()</span>
-<span class="ne">--&gt; </span><span class="mi">281</span> <span class="bp">self</span><span class="o">.</span><span class="n">_draw_breaks_and_labels</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">282</span> <span class="bp">self</span><span class="o">.</span><span class="n">guides</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">283</span> <span class="bp">self</span><span class="o">.</span><span class="n">_draw_figure_texts</span><span class="p">()</span>
-
-<span class="nn">File ~/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/ggplot.py:458,</span> in <span class="ni">ggplot._draw_breaks_and_labels</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">456</span> <span class="n">ax</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">axs</span><span class="p">[</span><span class="n">pidx</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">457</span> <span class="n">panel_params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">panel_params</span><span class="p">[</span><span class="n">pidx</span><span class="p">]</span>
-<span class="ne">--&gt; </span><span class="mi">458</span> <span class="bp">self</span><span class="o">.</span><span class="n">facet</span><span class="o">.</span><span class="n">set_limits_breaks_and_labels</span><span class="p">(</span><span class="n">panel_params</span><span class="p">,</span> <span class="n">ax</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">460</span> <span class="c1"># Remove unnecessary ticks and labels</span>
-<span class="g g-Whitespace">    </span><span class="mi">461</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">layout_info</span><span class="o">.</span><span class="n">axis_x</span><span class="p">:</span>
-
-<span class="nn">File ~/.conda/envs/kaggle/lib/python3.11/site-packages/plotnine/facets/facet.py:350,</span> in <span class="ni">facet.set_limits_breaks_and_labels</span><span class="nt">(self, panel_params, ax)</span>
-<span class="g g-Whitespace">    </span><span class="mi">347</span> <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">MyFixedFormatter</span><span class="p">(</span><span class="n">panel_params</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">labels</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">349</span> <span class="n">margin</span> <span class="o">=</span> <span class="n">theme</span><span class="o">.</span><span class="n">getp</span><span class="p">((</span><span class="s2">&quot;axis_text_x&quot;</span><span class="p">,</span> <span class="s2">&quot;margin&quot;</span><span class="p">))</span>
-<span class="ne">--&gt; </span><span class="mi">350</span> <span class="n">pad_x</span> <span class="o">=</span> <span class="n">margin</span><span class="o">.</span><span class="n">get_as</span><span class="p">(</span><span class="s2">&quot;t&quot;</span><span class="p">,</span> <span class="s2">&quot;pt&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">352</span> <span class="n">margin</span> <span class="o">=</span> <span class="n">theme</span><span class="o">.</span><span class="n">getp</span><span class="p">((</span><span class="s2">&quot;axis_text_y&quot;</span><span class="p">,</span> <span class="s2">&quot;margin&quot;</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">353</span> <span class="n">pad_y</span> <span class="o">=</span> <span class="n">margin</span><span class="o">.</span><span class="n">get_as</span><span class="p">(</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="s2">&quot;pt&quot;</span><span class="p">)</span>
-
-<span class="ne">AttributeError</span>: &#39;NoneType&#39; object has no attribute &#39;get_as&#39;
-</pre></div>
+<img alt="../_images/879ba1d984eeb68f36b5f5cf8ae8f8a550cd7a025277a27852fed58f5bb2e60c.png" src="../_images/879ba1d984eeb68f36b5f5cf8ae8f8a550cd7a025277a27852fed58f5bb2e60c.png" />
 </div>
 </div>
-</div>
-</section>
 </section>
 </section>
 
@@ -1300,10 +1061,7 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lollipop">Lollipop</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slope">Slope</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ggplot2-version">ggplot2 version</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slope">Slope</a></li>
 </ul>
   </nav></div>
 
