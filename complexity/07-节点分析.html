@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>节点分析 &#8212; 生物狗学编程</title>
   
@@ -29,44 +28,40 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'complexity/07-节点分析';</script>
     <link rel="canonical" href="https://ivaquero.github.io/blog-bio/complexity/07-节点分析.html" />
-    <link rel="shortcut icon" href="../_static/doge.png"/>
+    <link rel="icon" href="../_static/doge.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="群分析" href="08-%E7%BE%A4%E5%88%86%E6%9E%90.html" />
@@ -164,7 +159,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -443,18 +449,18 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>节点分析<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<h1>节点分析<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <section id="id2">
-<h2>1. 自我网络<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>1. 自我网络<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <section id="id3">
-<h3>1.1. 简介<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>1.1. 简介<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>自我网络（ego-network）是以特定的行为者为中心的网络。通过改变感兴趣的行为者，可在整个网络中的不同区域巡航。</p>
 <p>网络上的所有信息都来自于焦点行为者。完全网络分析主要集中在密度、间距和聚类之间的结构属性上，而以自我网络分析则更多地关注行为人的关系内容，也就是关系的多重性，即关系有多少层。</p>
 <p>自我网络的规模可从该网络所拥有的分身（alter），即行为者及与自我有关系的其他实体的数量来理解。这些分身形成一个所谓的 组件（component），在这个组件中，自我与分身的关系密度很高。同一个组件的分身相互关联、共享某种属性、具有共同的从属关系或共同发生。了解一个组件的结构，有助于理解和分析自我周围的环境。</p>
 <p>在自我网络中，可能有不止一个附属于自我的成分，每个成分都有其大小和密度。即使自我可与许多成分发生关系（多样性），自我的关系依然集中在这些组件上，使其他成分没有突出的地位（层级）。</p>
 </section>
 <section id="id4">
-<h3>1.2. 二分图<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3>1.2. 二分图<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>二分图是一类图<span class="math notranslate nohighlight">\((n, m)\)</span>，其中<span class="math notranslate nohighlight">\(n\)</span>是顶点的集合，m 为边的集合，且<span class="math notranslate nohighlight">\(n\)</span>可分成两个不相交的集合<span class="math notranslate nohighlight">\(u\)</span>和<span class="math notranslate nohighlight">\(v\)</span>，<span class="math notranslate nohighlight">\(m\)</span>中的任意一条边的一个顶点属于集合<span class="math notranslate nohighlight">\(u\)</span>，另一顶点属于集合<span class="math notranslate nohighlight">\(v\)</span>。故，二分图可表示为：<span class="math notranslate nohighlight">\(G= (u, v, m)\)</span>。</p>
 <ul class="simple">
 <li><p>当两集合元素个数相等，该二分图称为平衡二分图（balanced bipartite graph）。</p></li>
@@ -462,7 +468,7 @@ document.write(`
 </ul>
 </section>
 <section id="id5">
-<h3>1.3. 社交网络<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<h3>1.3. 社交网络<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
@@ -489,9 +495,9 @@ document.write(`
 </section>
 </section>
 <section id="id6">
-<h2>2. 中心度<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<h2>2. 中心度<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
 <section id="id7">
-<h3>2.1. 度中心度<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<h3>2.1. 度中心度<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <p>度中心度（degree centrality）是对直接连接到其他节点的数量的度量。这意味着，相邻节点的数量越多，节点就越重要，因为它独立于其他行为者，可到达网络的大部分区域。这是一个局部的度量标准。</p>
 <p>以社会化网络为例，在社会化网络中，节点度分布遵循幂律分布（power-law distribution），即极少数节点的连接数量极多。</p>
 <p>一个节点<span class="math notranslate nohighlight">\(i\)</span>的度中心度<span class="math notranslate nohighlight">\(d(i)\)</span>可表述为：</p>
@@ -541,7 +547,7 @@ d(i) = ∑m_{ij}
 </div>
 </section>
 <section id="id8">
-<h3>2.2. 近中心度<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<h3>2.2. 近中心度<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <p>近中心度（closeness centrality）是一个节点与网络中所有其他节点的地测距离之和。它计算了从一个行为体到网络中其他行为体的路径长度。</p>
 <p>若该行为体与网络中其余的行为体集相对接近，则该行为体就会很重要。近中心度的数学表示方法<span class="math notranslate nohighlight">\(C(i)\)</span>如下：</p>
 <div class="math notranslate nohighlight">
@@ -552,7 +558,7 @@ C(i) = ∑d_{ij}
 <p>由于近中心度是基于最短路径计算，故，当它应用于大型网络时，其可行性会受到质疑，因为其产生的结果几乎没有什么变化，这使得区分节点之间的差异性更加困难。在信息网络（information network）中，近中心度揭示了信息从一个节点流向网络中其他节点所需的时间。高得分的节点通常与网络中其他节点之间的路径较短。</p>
 </section>
 <section id="id9">
-<h3>2.3. 间中心度<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
+<h3>2.3. 间中心度<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
 <p>间中心度（betweenness centrality）可描述为一个行为体作为不同网络之间的联系，其重要性有多大。它代表了一个行为体需要通过某个行为体到达另一个行为体的次数。具有高中心度的节点之间的节点控制着信息的流动，因为它们在其他行为者或行为者群体之间形成了重要的桥梁。节点<span class="math notranslate nohighlight">\(i\)</span>之间中心度计算方法如下：</p>
 <div class="math notranslate nohighlight">
 \[
@@ -562,7 +568,7 @@ b(i) = ∑_{j, k} \frac{g_{j i k}}{g_{j k}}
 <p><img alt="betweenness centrality" src="../_images/centrality-betweenness.png" /></p>
 </section>
 <section id="id10">
-<h3>2.4. 特征向量中心度<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<h3>2.4. 特征向量中心度<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
 <p>特征向量中心度描述了一个人在全局网络结构的中心度。它度量一个节点与连接良好的节点的连接程度。它通过取邻接矩阵（adjacency matrix）的主特征向量来计算。</p>
 <p>PageRank 是特征向量中心度量的一个变体，计算出了通过考虑用户访问这个页面的概率，来考虑一个网页的重要性。基于超链接的排名算法。根据 PageRank 算法，页面的重要性决定了页面的重要性 被链接到的页面的排名。若一个页面的反向链接的排名之和高，则该页面被赋予高排名。否则，该页面被分配为低排名。</p>
 <p>对于具有邻接矩阵<span class="math notranslate nohighlight">\(𝑨\)</span>的定向网络<span class="math notranslate nohighlight">\(G\)</span>，页面<span class="math notranslate nohighlight">\(u\)</span>的 PageRank 得分由其传入邻居的得分迭代确定：</p>
@@ -578,9 +584,9 @@ PR(u) = \frac{1 - α}{N} + α∑A_{vu} PR(v) / d_{out}(v)
 </section>
 </section>
 <section id="id11">
-<h2>3. 其他度量<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h2>
+<h2>3. 其他度量<a class="headerlink" href="#id11" title="Link to this heading">#</a></h2>
 <section id="id12">
-<h3>3.1. 离心度<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
+<h3>3.1. 离心度<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
 <p>离心度（eccentricity）是指从给定节点到一个网络中所有其他节点的最大距离。有别于全网度量（如直径和密度），离心度是一种流行的基于路径的度量标准，它可根据网络中每个节点的直接和间接连接给每个节点赋值。即，需要计算出节点<span class="math notranslate nohighlight">\(u\)</span>与其他所有节点之间的地测距离，并选择最大值。</p>
 <div class="math notranslate nohighlight">
 \[
@@ -592,7 +598,7 @@ E(u) = \max_{v ∈ V} d(u, v)
 <p>上图是一个有 8 个节点和 8 条边的图。可看到，最大离心度，也就是网络直径为 4。还可看到，节点 D 的离心度为 2，即，距离 D 最远的节点都在 2 跳之外。节点 D 传播的信息可用最少的步数通过节点 E 和 B，到达图中最远的节点。但，节点 A 的离心度为 4，这意味着信息需要经过至少 3 个节点（B、D、E）和 4 条边才能到达最远的节点。</p>
 </section>
 <section id="id13">
-<h3>3.2. 桥节点<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
+<h3>3.2. 桥节点<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
 <p>1973 年，Granovetter 写了一篇题为《弱联系的力量（The Strength of the Weak Ties）》的文章，强调了桥节点（bridge）在社交网络对信息传播的重要性。Granovetter 的主要论点是，因为人们的朋友也有可能是朋友，与其他不相识的人连接的人更有可能建立起连接不相识的群体的网桥。桥节点的意义在于，它们减少了节点之间的总距离，从而加快了整个网络的信息传播速度。</p>
 <p>确定网络桥接，虽然往往更具挑战性，但有时更重要。桥是连接两个独立群体的纽带，而这些纽带的锚就是桥节点。担任桥梁的人可能具有特殊的性格特征，如他们愿意听取他人的新想法。这里对桥节点的定义如下：</p>
 <div class="math notranslate nohighlight">
@@ -605,14 +611,14 @@ B_i = \frac{∑_{j=1}^{k}\bigg[C-C_{ij}'\bigg]}{k} + \frac{∑_{j=1}^l\bigg[C-C_
 <p>尽管如此，这两种措施之间仍然存在一定的相关性，以至于当网络结构均匀时，它们可能会识别出相同的节点。在上图中，位于网络顶部的 B 是桥接节点，而 D 和 E 是桥接节点。这两种情况的区别在于，节点 B 只有两条链路，若删除了这两条链路中的任何一条，则在距离上的均值就会比其他节点大。而节点 D 和 E 之间的距离值较高，且几乎相等。</p>
 </section>
 <section id="id14">
-<h3>3.3. 多联性<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
+<h3>3.3. 多联性<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
 <p>边可有强度（strength）。这可表现为关系的强度，也可表现为边包含多少不同类型的内容。只有一个维度的边被称为”单联”（uniplex），而有一个以上维度的边被称为”多联”（multiplex）。通常情况下，多联比单联更强。</p>
 </section>
 </section>
 <section id="id15">
-<h2>4. 度量的选择<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h2>
+<h2>4. 度量的选择<a class="headerlink" href="#id15" title="Link to this heading">#</a></h2>
 <section id="id16">
-<h3>4.1. 用途<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
+<h3>4.1. 用途<a class="headerlink" href="#id16" title="Link to this heading">#</a></h3>
 <p>以下是对每项度量用途的简单总结。</p>
 <ol class="arabic simple">
 <li><p>度中心度是度量人气的标准。它决定了节点能够快速传播信息到局部地区。</p></li>
@@ -622,7 +628,7 @@ B_i = \frac{∑_{j=1}^{k}\bigg[C-C_{ij}'\bigg]}{k} + \frac{∑_{j=1}^l\bigg[C-C_
 </ol>
 </section>
 <section id="id17">
-<h3>4.2. 复杂度<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
+<h3>4.2. 复杂度<a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
 <p>关于这三个中心度，度中心度相对来说是比较直接和快速的，只需要经过节点就可计算出连接的边数。另一方面，度和近中心度则需要实现最小跨度树，而最小跨度树又实现了 Kruskal 算法，其运行时复杂度约为<span class="math notranslate nohighlight">\(O(m\log m)\)</span>，其中<span class="math notranslate nohighlight">\(m\)</span>为边数。</p>
 <p>对于特征向量中心度量。且由于算法必须通过每个节点的邻居来迭代计算加权度。算法需要<span class="math notranslate nohighlight">\(O(n*d̄)\)</span>的运算量。其中，<span class="math notranslate nohighlight">\(n\)</span>为节点个数，<span class="math notranslate nohighlight">\(d̄\)</span>为平均度。这使得该算法的计算复杂度非常昂贵，特别是对于非常大的网络来说。</p>
 </section>

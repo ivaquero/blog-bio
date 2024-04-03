@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>控制流 &#8212; 生物狗学编程</title>
   
@@ -29,42 +28,38 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'python/05-控制流';</script>
     <link rel="canonical" href="https://ivaquero.github.io/blog-bio/python/05-控制流.html" />
-    <link rel="shortcut icon" href="../_static/doge.png"/>
+    <link rel="icon" href="../_static/doge.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="函数" href="06-%E5%87%BD%E6%95%B0.html" />
@@ -162,7 +157,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -444,11 +450,11 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>控制流<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<h1>控制流<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <section id="id2">
-<h2>1. 条件控制<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>1. 条件控制<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <section id="if-elif-else">
-<h3>1.1. <code class="docutils literal notranslate"><span class="pre">if...elif...else...</span></code><a class="headerlink" href="#if-elif-else" title="Permalink to this heading">#</a></h3>
+<h3>1.1. <code class="docutils literal notranslate"><span class="pre">if...elif...else...</span></code><a class="headerlink" href="#if-elif-else" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Bob&quot;</span>
 <span class="n">age</span> <span class="o">=</span> <span class="mi">30</span>
 
@@ -462,7 +468,7 @@ document.write(`
 </div>
 </section>
 <section id="id3">
-<h3>1.2. 赋值表达式<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>1.2. 赋值表达式<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>赋值表达式，也称为海象运算符，是 Python 3.8 中引入的一种新的语法，以解决语言中一个长期存在的问题，即可能导致代码重复。一般的赋值语句写成 <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">b</span></code> ，读作 “a 等于 b”，而这些赋值写成 <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">:=</span> <span class="pre">b</span></code> ，读作 “a walrus b”。</p>
 <p>赋值表达式主要用于简化带有条件判断的循环，如 <code class="docutils literal notranslate"><span class="pre">while...do</span></code> 和 <code class="docutils literal notranslate"><span class="pre">while...if...break</span></code> 。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">20</span>
@@ -487,7 +493,7 @@ document.write(`
 </div>
 </section>
 <section id="while">
-<h3>1.3. <code class="docutils literal notranslate"><span class="pre">while</span></code><a class="headerlink" href="#while" title="Permalink to this heading">#</a></h3>
+<h3>1.3. <code class="docutils literal notranslate"><span class="pre">while</span></code><a class="headerlink" href="#while" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="p">(</span><span class="n">spam</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, world.&quot;</span><span class="p">)</span>
     <span class="n">spam</span> <span class="o">=</span> <span class="n">spam</span> <span class="o">+</span> <span class="mi">1</span>
@@ -495,7 +501,7 @@ document.write(`
 </div>
 </section>
 <section id="while-break">
-<h3>1.4. <code class="docutils literal notranslate"><span class="pre">while...break...</span></code><a class="headerlink" href="#while-break" title="Permalink to this heading">#</a></h3>
+<h3>1.4. <code class="docutils literal notranslate"><span class="pre">while...break...</span></code><a class="headerlink" href="#while-break" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Please type your name.&quot;</span><span class="p">)</span>
     <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
@@ -506,7 +512,7 @@ document.write(`
 </div>
 </section>
 <section id="while-if-continue">
-<h3>1.5. <code class="docutils literal notranslate"><span class="pre">while...if...continue...</span></code><a class="headerlink" href="#while-if-continue" title="Permalink to this heading">#</a></h3>
+<h3>1.5. <code class="docutils literal notranslate"><span class="pre">while...if...continue...</span></code><a class="headerlink" href="#while-if-continue" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Who are you?&quot;</span><span class="p">)</span>
     <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
@@ -523,20 +529,20 @@ document.write(`
 </section>
 </section>
 <section id="id4">
-<h2>2. 迭代<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<h2>2. 迭代<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <section id="id5">
-<h3>2.1. 迭代器<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<h3>2.1. 迭代器<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>迭代器（Iterator）：⼀个可记住遍历的位置的对象，迭代器从容器的第 1 个元素开始访问，直到所有元素被访问完结束，只能往前，不会后退。</p>
 <ul class="simple">
 <li><p>凡是可作⽤于 <code class="docutils literal notranslate"><span class="pre">for</span></code> 的对象均是可迭代类型类型（Iterable）</p></li>
 <li><p>可迭代类型不一定是迭代器，需使用 <code class="docutils literal notranslate"><span class="pre">iter()</span></code> 进行转化</p></li>
 <li><p>凡是可作⽤于 <code class="docutils literal notranslate"><span class="pre">next()</span></code> 的对象均是迭代器类型</p></li>
 </ul>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p></p></th>
-<th class="text-center head"><p>可迭代类型</p></th>
-<th class="text-center head"><p>不可迭代类型</p></th>
+<tr class="row-odd"><th class="head text-center"><p></p></th>
+<th class="head text-center"><p>可迭代类型</p></th>
+<th class="head text-center"><p>不可迭代类型</p></th>
 </tr>
 </thead>
 <tbody>
@@ -567,7 +573,7 @@ document.write(`
 </div>
 </section>
 <section id="id6">
-<h3>2.2. 反向迭代<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<h3>2.2. 反向迭代<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -580,7 +586,7 @@ document.write(`
 </div>
 </section>
 <section id="id7">
-<h3>2.3. 索引范围迭代<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<h3>2.3. 索引范围迭代<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
@@ -589,7 +595,7 @@ document.write(`
 </div>
 </section>
 <section id="id8">
-<h3>2.4. 索引 - 值迭代<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<h3>2.4. 索引 - 值迭代<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <p>将索引作为 <code class="docutils literal notranslate"><span class="pre">key</span></code> ，元素作为 <code class="docutils literal notranslate"><span class="pre">value</span></code> ，创建一个生成器，本身不能被打印，需要变换为列表。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a list of strings: mutants</span>
 <span class="n">mutants</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;charles xavier&quot;</span><span class="p">,</span> <span class="s2">&quot;bobby drake&quot;</span><span class="p">,</span> <span class="s2">&quot;kurt wagner&quot;</span><span class="p">,</span> <span class="s2">&quot;max eisenhardt&quot;</span><span class="p">]</span>
@@ -619,7 +625,7 @@ document.write(`
 </div>
 </section>
 <section id="id9">
-<h3>2.5. 并行迭代<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
+<h3>2.5. 并行迭代<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">zip(x,</span> <span class="pre">y=[])</span></code> 可用于并行迭代多个迭代器，将 <code class="docutils literal notranslate"><span class="pre">x</span></code> ， <code class="docutils literal notranslate"><span class="pre">y</span></code> 中对应索引元素配对生成一个列表。它创建了一个产生元组的懒惰生成器，因此它可用于无限长的输入。</p>
 <ul class="simple">
 <li><p>当存在不同长度的迭代器， <code class="docutils literal notranslate"><span class="pre">zip()</span></code> 将其输出默默截断为最短迭代器。</p></li>
@@ -638,7 +644,7 @@ document.write(`
 </section>
 </section>
 <section id="id10">
-<h2>3. 生成器<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
+<h2>3. 生成器<a class="headerlink" href="#id10" title="Link to this heading">#</a></h2>
 <p>一边循环一边计算的机制，称为生成器（generator），其保存的是算法，生成器是迭代器的一种特殊类型</p>
 <ul class="simple">
 <li><p>生成器可记住上一次返回时在函数体中的位置，迭代的参数均是第一次调用时保留的，节约内存。</p></li>
@@ -647,7 +653,7 @@ document.write(`
 <li><p>生成器的运算可通过使用 <code class="docutils literal notranslate"><span class="pre">next()</span></code> 获取，其等价于调用方法 <code class="docutils literal notranslate"><span class="pre">generator.__next__()</span></code> 。</p></li>
 </ul>
 <section id="id11">
-<h3>3.1. 生成式 → 生成器<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
+<h3>3.1. 生成式 → 生成器<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
 <p>生成式（comprehensions）: 循环生成四大容器，其本质是一种生成器</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 多重循环</span>
 <span class="p">[</span><span class="n">m</span> <span class="o">+</span> <span class="n">n</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="s2">&quot;ABC&quot;</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="s2">&quot;XYZ&quot;</span><span class="p">]</span>
@@ -692,7 +698,7 @@ document.write(`
 </div>
 </section>
 <section id="id12">
-<h3>3.2. 多生成器<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
+<h3>3.2. 多生成器<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
 <p>通过 <code class="docutils literal notranslate"><span class="pre">yield</span> <span class="pre">from</span></code> 表达式，可将多个嵌套的生成器组合成一个组合生成器。它提供了比手动迭代嵌套生成器更好的性能。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">timeit</span> <span class="kn">import</span> <span class="n">timeit</span>
 
@@ -720,7 +726,7 @@ document.write(`
 </div>
 </section>
 <section id="id13">
-<h3>3.3. 自定义生成器<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
+<h3>3.3. 自定义生成器<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
 <p>当读取的文件过大时，直接使用生成器会返回空值，但不会返回异常。此时，可使用 <code class="docutils literal notranslate"><span class="pre">__iter__()</span></code> 方法。下例中， <code class="docutils literal notranslate"><span class="pre">normalize</span></code> 中的 <code class="docutils literal notranslate"><span class="pre">sum()</span></code> 调用了 <code class="docutils literal notranslate"><span class="pre">ReadVisits.__iter__</span></code> 来分配一个新的迭代器对象。对数字进行标准化的 <code class="docutils literal notranslate"><span class="pre">for</span></code> 循环也调用 <code class="docutils literal notranslate"><span class="pre">__iter__</span></code> 来分配第二个迭代器对象。这些迭代器中的每个都将独立地被推进和耗尽，以确保每个独特的迭代都能看到所有的输入数据值。这种方法唯一的缺点是它会多次读取输入数据。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">normalize</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
     <span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
@@ -760,7 +766,7 @@ document.write(`
 </div>
 </section>
 <section id="id14">
-<h3>3.4. 注入数据<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
+<h3>3.4. 注入数据<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">yield</span></code> 表达式为生成器函数提供了一种简单的方式来产生一系列可迭代的输出值。但，这个通道似乎是单向的。在生成器运行的过程中，没有直接明显的方法可同时将数据流入和流出生成器。Python 生成器支持 <code class="docutils literal notranslate"><span class="pre">send()</span></code> 方法，它将 <code class="docutils literal notranslate"><span class="pre">yield</span></code> 表达式升级为双向通道。 <code class="docutils literal notranslate"><span class="pre">send()</span></code> 方法可用于在生成器输出的同时向它提供流式输入。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gen</span><span class="p">():</span>
     <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
@@ -819,9 +825,9 @@ document.write(`
 </section>
 </section>
 <section id="id15">
-<h2>4. 技巧<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h2>
+<h2>4. 技巧<a class="headerlink" href="#id15" title="Link to this heading">#</a></h2>
 <section id="id16">
-<h3>4.1. 无穷<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
+<h3>4.1. 无穷<a class="headerlink" href="#id16" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># A. 根据年龄升序排序，没有提供年龄放在最后边</span>
 <span class="n">users</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;tom&quot;</span><span class="p">:</span> <span class="mi">19</span><span class="p">,</span> <span class="s2">&quot;jenny&quot;</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span> <span class="s2">&quot;jack&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;andrew&quot;</span><span class="p">:</span> <span class="mi">43</span><span class="p">}</span>
 <span class="nb">sorted</span><span class="p">(</span><span class="n">users</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">user</span><span class="p">:</span> <span class="n">users</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">user</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">))</span>

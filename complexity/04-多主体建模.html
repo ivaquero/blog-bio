@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>多主体建模 &#8212; 生物狗学编程</title>
   
@@ -29,44 +28,40 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'complexity/04-多主体建模';</script>
     <link rel="canonical" href="https://ivaquero.github.io/blog-bio/complexity/04-多主体建模.html" />
-    <link rel="shortcut icon" href="../_static/doge.png"/>
+    <link rel="icon" href="../_static/doge.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="分形" href="05-%E5%88%86%E5%BD%A2.html" />
@@ -164,7 +159,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -442,11 +448,11 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>多主体建模<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<h1>多主体建模<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <section id="id2">
-<h2>1. 多角色聚类<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>1. 多角色聚类<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <section id="id3">
-<h3>1.1. 英雄与懦夫<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>1.1. 英雄与懦夫<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>英雄与懦夫（Heroes and Cowards）这个游戏的起源很难确定。在 20 世纪 80 年代和 90 年代，意大利一个叫 Fratelli 剧团的剧团将这个游戏作为一种即兴活动。1999 年在马萨诸塞州剑桥市举行的”拥抱复杂性”会议上，弗拉泰利剧团与参会人员一起进行了这个游戏，这似乎是有记录的第一个公开游戏实例。</p>
 <p>玩这个游戏，需要一群人。游戏开始时，要求每个人挑选一个人做他们的”朋友”和另一个人做他们的”敌人”。游戏有两个阶段。</p>
 <ul class="simple">
@@ -455,7 +461,7 @@ document.write(`
 </ul>
 </section>
 <section id="id4">
-<h3>1.2. 聚会<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3>1.2. 聚会<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>一个鸡尾酒会现场，人们三五成群地闲聊，于是产生如下场景：</p>
 <ul class="simple">
 <li><p>若一个组中的异性比例过多，由于尴尬，人们会转向另一组；</p></li>
@@ -474,16 +480,16 @@ document.write(`
 </ul>
 </section>
 <section id="id5">
-<h3>1.3. 谢林模型<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<h3>1.3. 谢林模型<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>1971 年，谢林（Thomas C. Schelling，1921∼2016）发表了《Dynamic Models of Segregation》，该模型提出了种族隔离的简单模型。谢林模型的世界是一个网格；每个细胞代表一栋房子。房屋被两种主体占用，标记为红色和蓝色，数量大致相同。大约 10% 的房屋是空的。</p>
 <p>在任何时候，主体可能会高兴或不高兴，这取决于领域中的其他主体，每个房屋的邻居是八个相邻细胞的集合。在一个版本的模型中，若主体至少有两个像他们一样的邻居，主体会高兴，但若是一个或零，他们就会不高兴。模拟的过程是，随机选择一个主体并检查他们是否高兴。若是这样，没有任何事情发生。若不是，主体随机选择其中一个未占用的细胞并移动。</p>
 <p>模拟的过程是，随机选择一个主体并检查他们是否高兴。若是这样，没有任何事情发生。若不是，主体随机选择其中一个未占用的细胞并移动。很快，会出现相似主体的群落。随着时间的推移，这些群落会不断聚合，直到有少量的大型群落，且大多数主体生活在同质社区中。</p>
 <p>若不知道这个过程，只看到结果，你可能会认为主体是种族主义者，但实际上他们都会在一个混合的社区感到非常高兴。由于他们不愿意数量过大，故在最坏的情况下，他们可能被认为是排外的。当然，这些主体是真实人物的过度简化，故这些描述可能根本不恰当。种族主义是一个复杂的人类问题；很难想象这样简单的模型可揭示它。但实际上，它提供了一个强有力论据，有关系统及其各部分之间关系的：若你观察真实城市的隔离，你不能总结为，个人的种族主义是直接原因，或，城市居民是种族主义者。当然必须牢记这个论述的局限性：谢林模型证明了隔离的一个可能原因，但没有提到实际原因。</p>
 </section>
 <section id="id6">
-<h3>1.4. 帕累托分布<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
-<p>帕累托分布是是一种幂律分布，用于描述社会、科学、地球物理、精算和许多其他类型的可观察现象。其最初被帕累托（Vilfredo Pareto，1848∼1923）用于描述社会中的财富分布 <a class="footnote-reference brackets" href="#id21" id="id7">1</a>，它拟合了一小部分人掌握了很大一部分财富的趋势。</p>
-<p>现在，帕累托分布已经成为人们所熟知的帕累托原理（Pareto principle），即”80-20 法则”（80-20 rule）。该法则指出，一个社会 80% 的财富是由 20% 的人口所掌握的。通过实证观察发现，80-20 的分布符合多种情况，包括自然现象 <a class="footnote-reference brackets" href="#id22" id="id8">2</a> 和人类活动 <a class="footnote-reference brackets" href="#id23" id="id9">3</a>。但不应该把帕累托分布与帕累托原则混为一谈，因为前者只对特定的幂<span class="math notranslate nohighlight">\(k\)</span>（<span class="math notranslate nohighlight">\(k = \log₄ 5 ≈ 1.16\)</span>）产生这一结果，而<span class="math notranslate nohighlight">\(k\)</span>是可变的。</p>
+<h3>1.4. 帕累托分布<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p>帕累托分布是是一种幂律分布，用于描述社会、科学、地球物理、精算和许多其他类型的可观察现象。其最初被帕累托（Vilfredo Pareto，1848∼1923）用于描述社会中的财富分布 <a class="footnote-reference brackets" href="#id21" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>，它拟合了一小部分人掌握了很大一部分财富的趋势。</p>
+<p>现在，帕累托分布已经成为人们所熟知的帕累托原理（Pareto principle），即”80-20 法则”（80-20 rule）。该法则指出，一个社会 80% 的财富是由 20% 的人口所掌握的。通过实证观察发现，80-20 的分布符合多种情况，包括自然现象 <a class="footnote-reference brackets" href="#id22" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> 和人类活动 <a class="footnote-reference brackets" href="#id23" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>。但不应该把帕累托分布与帕累托原则混为一谈，因为前者只对特定的幂<span class="math notranslate nohighlight">\(k\)</span>（<span class="math notranslate nohighlight">\(k = \log₄ 5 ≈ 1.16\)</span>）产生这一结果，而<span class="math notranslate nohighlight">\(k\)</span>是可变的。</p>
 <p>Pareto 分布遵循幂律分布，其 PDF 为</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -501,13 +507,13 @@ f_{X}(x) =
 </section>
 </section>
 <section id="id10">
-<h2>2. 多行为竞争<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
+<h2>2. 多行为竞争<a class="headerlink" href="#id10" title="Link to this heading">#</a></h2>
 <section id="id11">
-<h3>2.1. 糖域<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
+<h3>2.1. 糖域<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
 <p>1996 年，Joshua M. Epstein 和 Robert Axtell 提出了糖域（SugarScape），这是一个人造社会的主体模型，旨在支持经济学和其他社会科学的相关实验。糖域是一款多功能的模型，适用于各种主题。</p>
 <p>糖域最简单的形式是一个简单的经济模型，展现财富的转移过程。主体在二维网格上移动，收集和累积代表经济财富的”糖”。网格的一些部分比其他部分产生更多的糖，且一些主体比其他人更容易找到它。这个糖域的版本常用于探索和解释财富的分布，特别是不平等的趋势。在糖域的网格中，每个细胞都有一个容量，这是它可容纳的最大糖量。在原始状态中，有<span class="math notranslate nohighlight">\(2\)</span>个高糖区域，容量为<span class="math notranslate nohighlight">\(4\)</span>，周围是同心环，容量分别为<span class="math notranslate nohighlight">\(3, 2, 1\)</span>。</p>
 <section id="id12">
-<h4>2.1.1. 迭代<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h4>
+<h4>2.1.1. 迭代<a class="headerlink" href="#id12" title="Link to this heading">#</a></h4>
 <p>现在有随机放置的<span class="math notranslate nohighlight">\(400\)</span>个主体。每个主体有 3 个随机选择的属性：</p>
 <ul class="simple">
 <li><p>糖：每个主体最开始都有先天的糖分，从<span class="math notranslate nohighlight">\(5\)</span>到<span class="math notranslate nohighlight">\(25\)</span>之间均匀选择。</p></li>
@@ -527,10 +533,10 @@ f_{X}(x) =
 </section>
 </section>
 <section id="id13">
-<h2>3. 多行为排布<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h2>
+<h2>3. 多行为排布<a class="headerlink" href="#id13" title="Link to this heading">#</a></h2>
 <section id="id14">
-<h3>3.1. 鸟群<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
-<p>鸟群（Boids）是由 Craig W. Reynolds（1953~）于 1986 年开发的人工生命程序，模拟鸟类的成群行为 <a class="footnote-reference brackets" href="#id24" id="id15">4</a>。与大多数人工生命模拟一样，Boids 的复杂性来自于单个代理，遵守一套简单的规则：</p>
+<h3>3.1. 鸟群<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
+<p>鸟群（Boids）是由 Craig W. Reynolds（1953~）于 1986 年开发的人工生命程序，模拟鸟类的成群行为 <a class="footnote-reference brackets" href="#id24" id="id15" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>。与大多数人工生命模拟一样，Boids 的复杂性来自于单个代理，遵守一套简单的规则：</p>
 <ul class="simple">
 <li><p>凝聚（cohesion）：向着局部鸟群的平均位置（重心）方向移动；</p></li>
 <li><p>对齐（alignment）：向着局部鸟群的平均方向行驶；</p></li>
@@ -583,9 +589,9 @@ P(t + 1) = P(t) + V(t)
 </section>
 </section>
 <section id="id16">
-<h2>4. 背景知识<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h2>
+<h2>4. 背景知识<a class="headerlink" href="#id16" title="Link to this heading">#</a></h2>
 <section id="id17">
-<h3>4.1. 相关术语<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
+<h3>4.1. 相关术语<a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>杠杆点（leverage point）：复杂系统可能以最少的努力从一种制度（regime）转移到另一种制度的位置。</p></li>
 <li><p>引爆点（tipping point）：一个输入中的微小变化会对结果产生巨大影响的位置。</p></li>
@@ -594,31 +600,37 @@ P(t + 1) = P(t) + V(t)
 </ul>
 </section>
 <section id="id18">
-<h3>4.2. 洛伦兹曲线<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h3>
+<h3>4.2. 洛伦兹曲线<a class="headerlink" href="#id18" title="Link to this heading">#</a></h3>
 <p>在经济学中，洛伦兹曲线（Lorenz curve）是收入或财富分配的图形化表示。它是由美国经济学家洛伦兹（Max O. Lorenz，1876∼1959）在 1905 年提出的，它经常被用于表示收入分配，在这里，它显示的是对于最底层的 X% 的家庭来说，他们所拥有的收入占总收入的百分比 y% 是多少。它还可用于表示资产的分布情况。</p>
 <p><img alt="gini" src="../_images/gini.png" /></p>
-<p>这个概念在描述生态学中的个体大小不平等方面很有用 <a class="footnote-reference brackets" href="#id25" id="id19">5</a>，在生物多样性的研究中也很有用，在生物多样性的研究中，将物种的累积比例与个体的累积比例作图。它在商业建模中亦为有用的 <a class="footnote-reference brackets" href="#id26" id="id20">6</a>：例如，在消费金融中，用于度量风险评分最差的 X% 的人的实际拖欠比例 Y%。</p>
+<p>这个概念在描述生态学中的个体大小不平等方面很有用 <a class="footnote-reference brackets" href="#id25" id="id19" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a>，在生物多样性的研究中也很有用，在生物多样性的研究中，将物种的累积比例与个体的累积比例作图。它在商业建模中亦为有用的 <a class="footnote-reference brackets" href="#id26" id="id20" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a>：例如，在消费金融中，用于度量风险评分最差的 X% 的人的实际拖欠比例 Y%。</p>
 <hr class="footnotes docutils" />
-<dl class="footnote brackets">
-<dt class="label" id="id21"><span class="brackets"><a class="fn-backref" href="#id7">1</a></span></dt>
-<dd><p>Pareto, Vilfredo (1898). “Cours d’économie politique”. Journal of Political Economy. 6. <br></p>
-</dd>
-<dt class="label" id="id22"><span class="brackets"><a class="fn-backref" href="#id8">2</a></span></dt>
-<dd><p>VAN MONTFORT, M.A.J. (1986). “The Generalized Pareto distribution applied to rainfall depths”. Hydrological Sciences Journal. 31 (2): 151-162. <br></p>
-</dd>
-<dt class="label" id="id23"><span class="brackets"><a class="fn-backref" href="#id9">3</a></span></dt>
-<dd><p>Oancea, Bogdan (2017). “Income inequality in Romania: The exponential-Pareto distribution”. Physica A: Statistical Mechanics and Its Applications. 469: 486-498. <br></p>
-</dd>
-<dt class="label" id="id24"><span class="brackets"><a class="fn-backref" href="#id15">4</a></span></dt>
-<dd><p>Reynolds, Craig W. (1987). “Flocks, herds, and schools: A distributed behavioral model”. Proceedings of the 14th Annual Conference on Computer Graphics and Interactive Techniques (SIGGRAPH’87). ACM. 21 (4): 25-34. <br></p>
-</dd>
-<dt class="label" id="id25"><span class="brackets"><a class="fn-backref" href="#id19">5</a></span></dt>
-<dd><p>Damgaard, Christian; Jacob Weiner (2000). “Describing inequality in plant size or fecundity”. Ecology. 81 (4): 1139-1142. <br></p>
-</dd>
-<dt class="label" id="id26"><span class="brackets"><a class="fn-backref" href="#id20">6</a></span></dt>
-<dd><p>Wittebolle, Lieven; et al. (2009). “Initial community evenness favours functionality under selective stress”. Nature. 458 (7238): 623-6 26.</p>
-</dd>
-</dl>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id21" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">1</a><span class="fn-bracket">]</span></span>
+<p>Pareto, Vilfredo (1898). “Cours d’économie politique”. Journal of Political Economy. 6. <br></p>
+</aside>
+<aside class="footnote brackets" id="id22" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">2</a><span class="fn-bracket">]</span></span>
+<p>VAN MONTFORT, M.A.J. (1986). “The Generalized Pareto distribution applied to rainfall depths”. Hydrological Sciences Journal. 31 (2): 151-162. <br></p>
+</aside>
+<aside class="footnote brackets" id="id23" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">3</a><span class="fn-bracket">]</span></span>
+<p>Oancea, Bogdan (2017). “Income inequality in Romania: The exponential-Pareto distribution”. Physica A: Statistical Mechanics and Its Applications. 469: 486-498. <br></p>
+</aside>
+<aside class="footnote brackets" id="id24" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id15">4</a><span class="fn-bracket">]</span></span>
+<p>Reynolds, Craig W. (1987). “Flocks, herds, and schools: A distributed behavioral model”. Proceedings of the 14th Annual Conference on Computer Graphics and Interactive Techniques (SIGGRAPH’87). ACM. 21 (4): 25-34. <br></p>
+</aside>
+<aside class="footnote brackets" id="id25" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id19">5</a><span class="fn-bracket">]</span></span>
+<p>Damgaard, Christian; Jacob Weiner (2000). “Describing inequality in plant size or fecundity”. Ecology. 81 (4): 1139-1142. <br></p>
+</aside>
+<aside class="footnote brackets" id="id26" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id20">6</a><span class="fn-bracket">]</span></span>
+<p>Wittebolle, Lieven; et al. (2009). “Initial community evenness favours functionality under selective stress”. Nature. 458 (7238): 623-6 26.</p>
+</aside>
+</aside>
 </section>
 </section>
 </section>

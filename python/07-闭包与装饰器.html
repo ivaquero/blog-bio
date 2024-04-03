@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>闭包与装饰器 &#8212; 生物狗学编程</title>
   
@@ -29,42 +28,38 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'python/07-闭包与装饰器';</script>
     <link rel="canonical" href="https://ivaquero.github.io/blog-bio/python/07-闭包与装饰器.html" />
-    <link rel="shortcut icon" href="../_static/doge.png"/>
+    <link rel="icon" href="../_static/doge.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="内置算法模块" href="08-%E5%86%85%E7%BD%AE%E7%AE%97%E6%B3%95%E6%A8%A1%E5%9D%97.html" />
@@ -162,7 +157,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -433,9 +439,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>闭包与装饰器<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<h1>闭包与装饰器<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <section id="id2">
-<h2>1. 闭包<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>1. 闭包<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>闭包（closure）指内部函数对外部函数变量的引用。其局部优化了变量，原来需要类对象完成的工作，闭包也可完成。但此处也有一些陷阱：</p>
 <ul class="simple">
 <li><p>闭包引用了外部函数的局部变量，外部函数的局部变量没有及时释放，消耗内存</p></li>
@@ -459,7 +465,7 @@ document.write(`
 </pre></div>
 </div>
 <section id="nonlocal">
-<h3>1.1. <code class="docutils literal notranslate"><span class="pre">nonlocal</span></code><a class="headerlink" href="#nonlocal" title="Permalink to this heading">#</a></h3>
+<h3>1.1. <code class="docutils literal notranslate"><span class="pre">nonlocal</span></code><a class="headerlink" href="#nonlocal" title="Link to this heading">#</a></h3>
 <p>默认情况下，闭包不能通过赋值变量来影响包围的作用域。此时可使用 <code class="docutils literal notranslate"><span class="pre">nonlocal</span></code> 来指示闭包何时修改其包围作用域中的变量。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
 <span class="n">group</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">}</span>
@@ -489,13 +495,13 @@ document.write(`
 </section>
 </section>
 <section id="id3">
-<h2>2. 常规装饰器<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2>2. 常规装饰器<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <p>装饰器（decorator）：一种在代码运行期间动态增加功能的方式，本质上是一个返回函数的高阶函数。</p>
 <blockquote>
 <div><p>代码要遵循开放封闭原则，已经实现的功能代码不允许被修改，但可被扩展。</p>
 </div></blockquote>
 <section id="id4">
-<h3>2.1. 调用顺序<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3>2.1. 调用顺序<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 定义功能函数，此处往往需要闭包</span>
 <span class="k">def</span> <span class="nf">Bold</span><span class="p">(</span><span class="n">fn</span><span class="p">):</span>
 
@@ -532,7 +538,7 @@ document.write(`
 </div>
 </section>
 <section id="id5">
-<h3>2.2. 返回值<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<h3>2.2. 返回值<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>当装饰器内部函数没有 <code class="docutils literal notranslate"><span class="pre">return</span></code> 时，被装饰函数无法得到返回值；当装饰器内部函数有 <code class="docutils literal notranslate"><span class="pre">return</span></code> ，被装饰函数无 <code class="docutils literal notranslate"><span class="pre">return</span></code> 时，装饰器默认返回 <code class="docutils literal notranslate"><span class="pre">None</span></code> 。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">ctime</span><span class="p">,</span> <span class="n">sleep</span>
 
@@ -558,7 +564,7 @@ document.write(`
 </div>
 </section>
 <section id="id6">
-<h3>2.3. 参数<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<h3>2.3. 参数<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <p>装饰器的内部函数，需要接收与被装饰函数等量的参数，为灵活起见，内部函数定义时常使用可变参数和关键字参数。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">perf_counter</span>
 
@@ -607,9 +613,9 @@ document.write(`
 </section>
 </section>
 <section id="id7">
-<h2>3. 改进<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<h2>3. 改进<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
 <section id="id8">
-<h3>3.1. 副作用<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<h3>3.1. 副作用<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <p>使用装饰器时，被装饰后的函数其实已经是另外一个函数了，不支持关键字参数，而且遮盖了被装饰函数
 的 <code class="docutils literal notranslate"><span class="pre">__name__</span></code> 和 <code class="docutils literal notranslate"><span class="pre">__doc__</span></code> 属性。<code class="docutils literal notranslate"><span class="pre">functools.wraps</span></code> 可消除这样的副作用，不影响装饰器功能。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
@@ -640,7 +646,7 @@ document.write(`
 </div>
 </section>
 <section id="id9">
-<h3>3.3. 参数化<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
+<h3>3.3. 参数化<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 
 <span class="n">DEFAULT_FMT</span> <span class="o">=</span> <span class="s1">&#39;[</span><span class="si">{elapsed:0.8f}</span><span class="s1">s] </span><span class="si">{func.__name__}</span><span class="s1">(</span><span class="si">{arg_str}</span><span class="s1">) -&gt; </span><span class="si">{result}</span><span class="s1">&#39;</span>
@@ -690,7 +696,7 @@ document.write(`
 </div>
 </section>
 <section id="id10">
-<h3>3.4. 局部重载<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<h3>3.4. 局部重载<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">html</span>
 
 

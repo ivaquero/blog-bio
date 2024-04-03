@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>统计量与抽样 &#8212; 生物狗学编程</title>
   
@@ -29,44 +28,40 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'base-stats/02-统计量与采样';</script>
     <link rel="canonical" href="https://ivaquero.github.io/blog-bio/base-stats/02-统计量与采样.html" />
-    <link rel="shortcut icon" href="../_static/doge.png"/>
+    <link rel="icon" href="../_static/doge.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="参数估计" href="03-%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1.html" />
@@ -164,7 +159,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -508,20 +514,20 @@ document.write(`
 </details>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>统计量与抽样<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<h1>统计量与抽样<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <section id="id2">
-<h2>1. 统计量<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>1. 统计量<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>在数据的统计分析中，往往需要利用几个选定的样本（sample），得出其所来自的总体（population）的结论。正确的研究设计应该确保样本数据能够代表总体。</p>
 <p>总体与样本之间的主要区别在于如何将观测结果分配到数据集中。</p>
 <p><img alt="statistic" src="../_images/statistic.png" /></p>
 <section id="id3">
-<h3>1.1. 集中程度<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
-<table class="colwidths-auto table">
+<h3>1.1. 集中程度<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>术语</p></th>
-<th class="text-center head"><p>英文</p></th>
-<th class="text-center head"><p>定义</p></th>
-<th class="text-center head"><p>适用</p></th>
+<tr class="row-odd"><th class="head text-center"><p>术语</p></th>
+<th class="head text-center"><p>英文</p></th>
+<th class="head text-center"><p>定义</p></th>
+<th class="head text-center"><p>适用</p></th>
 </tr>
 </thead>
 <tbody>
@@ -554,9 +560,9 @@ document.write(`
 </table>
 </section>
 <section id="id4">
-<h3>1.2. 离散程度<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3>1.2. 离散程度<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <section id="id5">
-<h4>1.2.1. 极差、分位数<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h4>
+<h4>1.2.1. 极差、分位数<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>极差（range）：最大值 - 最小值；</p></li>
 <li><p>分位数（percentile）：多由箱线图表示，简单概括为<span class="math notranslate nohighlight">\(5\)</span>线<span class="math notranslate nohighlight">\(n\)</span>点，由上到下依次为：</p></li>
@@ -579,7 +585,7 @@ document.write(`
 </div></blockquote>
 </section>
 <section id="id6">
-<h4>1.2.2. 标准差、变异系数<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h4>
+<h4>1.2.2. 标准差、变异系数<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>方差（variance）：也叫平均平方偏差（mean square deviation）</p></li>
 </ul>
@@ -607,7 +613,7 @@ document.write(`
 </section>
 </section>
 <section id="id7">
-<h3>1.3. 期望<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<h3>1.3. 期望<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <p>期望值是该变量总体输出值的均值</p>
 <ul class="simple">
 <li><p>对离散型分布</p></li>
@@ -631,7 +637,7 @@ document.write(`
 </ol>
 </section>
 <section id="id8">
-<h3>1.4. 方差<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<h3>1.4. 方差<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <p>设<span class="math notranslate nohighlight">\(X\)</span>为随机变量，若存在</p>
 <div class="math notranslate nohighlight">
 \[
@@ -664,7 +670,7 @@ D(X) = ∫_{-∞}^{∞}[x - 𝔼[X]]f(x) dx
 </ol>
 </section>
 <section id="id9">
-<h3>1.5. 协方差<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
+<h3>1.5. 协方差<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
 <p>设<span class="math notranslate nohighlight">\(X\)</span>、<span class="math notranslate nohighlight">\(Y\)</span>为随机变量，若存在</p>
 <div class="math notranslate nohighlight">
 \[
@@ -692,9 +698,9 @@ Cov(β) = D(XX^{⊤})^{-1}
 </section>
 </section>
 <section id="id10">
-<h2>2. 大数定律<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
+<h2>2. 大数定律<a class="headerlink" href="#id10" title="Link to this heading">#</a></h2>
 <section id="chebyshev">
-<h3>2.1. Chebyshev 不等式<a class="headerlink" href="#chebyshev" title="Permalink to this heading">#</a></h3>
+<h3>2.1. Chebyshev 不等式<a class="headerlink" href="#chebyshev" title="Link to this heading">#</a></h3>
 <p>设随机变量 <span class="math notranslate nohighlight">\(X\)</span> 的 <span class="math notranslate nohighlight">\(𝔼[X] = μ, D(X) = σ^2\)</span>，则<span class="math notranslate nohighlight">\(∀ϵ ∈ ℤ\)</span>，存在</p>
 <div class="math notranslate nohighlight">
 \[
@@ -715,7 +721,7 @@ P\{|X - μ| ⩽ ϵσ\}⩾ 1 - \frac{1}{ϵ^2}
 </ol>
 </section>
 <section id="id11">
-<h3>2.2. 几乎确信收敛<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
+<h3>2.2. 几乎确信收敛<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
 <p>当<span class="math notranslate nohighlight">\(n → ∞\)</span>，在函数<span class="math notranslate nohighlight">\(P\)</span>下，<span class="math notranslate nohighlight">\(X_n(ω)\)</span>不收敛到<span class="math notranslate nohighlight">\(x₀(ω)\)</span>的概率为 0</p>
 <div class="math notranslate nohighlight">
 \[
@@ -728,7 +734,7 @@ X_n → x_0
 \]</div>
 </section>
 <section id="kolmogorov">
-<h3>2.3. Kolmogorov 大数定律<a class="headerlink" href="#kolmogorov" title="Permalink to this heading">#</a></h3>
+<h3>2.3. Kolmogorov 大数定律<a class="headerlink" href="#kolmogorov" title="Link to this heading">#</a></h3>
 <p>也称强大数定律（Strong Law of Large Numbers，SLLN）。</p>
 <p>设<span class="math notranslate nohighlight">\(X_{i} ∼ i.i.d.\)</span>，且期望值<span class="math notranslate nohighlight">\(𝔼[X_{i}] = μ(k = 1, 2, ⋯)\)</span>，则</p>
 <div class="math notranslate nohighlight">
@@ -737,7 +743,7 @@ P\bigg\{\lim_{n → ∞} \frac{1}{n} ∑X_{i} = μ\bigg\} = 1
 \]</div>
 </section>
 <section id="id12">
-<h3>2.3. 依概率收敛<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
+<h3>2.3. 依概率收敛<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
 <p>设<span class="math notranslate nohighlight">\(X_2, X_2, ⋯\)</span>是随机变量序列，若<span class="math notranslate nohighlight">\(∀ϵ\)</span>，有</p>
 <div class="math notranslate nohighlight">
 \[
@@ -750,7 +756,7 @@ X_n \stackrel{p}{→} x_0
 \]</div>
 </section>
 <section id="wiener-khinchin">
-<h3>2.5. Wiener-Khinchin 大数定律<a class="headerlink" href="#wiener-khinchin" title="Permalink to this heading">#</a></h3>
+<h3>2.5. Wiener-Khinchin 大数定律<a class="headerlink" href="#wiener-khinchin" title="Link to this heading">#</a></h3>
 <p>也称弱大数定律（Weak Law of Large Numbers，WLLN）。定律指出：用算术均值来近似实际真值是合理的。</p>
 <p>设<span class="math notranslate nohighlight">\(X_{i} ∼ i.i.d.\)</span>，期望值<span class="math notranslate nohighlight">\(𝔼[X_{i}] = μ(i = 1, 2, ⋯)\)</span>，则<span class="math notranslate nohighlight">\(∀ϵ ∈ ℤ\)</span>，存在</p>
 <div class="math notranslate nohighlight">
@@ -761,9 +767,9 @@ X_n \stackrel{p}{→} x_0
 </section>
 </section>
 <section id="clt">
-<h2>3. 中心极限定理（CLT）<a class="headerlink" href="#clt" title="Permalink to this heading">#</a></h2>
+<h2>3. 中心极限定理（CLT）<a class="headerlink" href="#clt" title="Link to this heading">#</a></h2>
 <section id="id13">
-<h3>3.1. 依分布收敛<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
+<h3>3.1. 依分布收敛<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
 <p>当<span class="math notranslate nohighlight">\(X_n\)</span>依分布收敛到<span class="math notranslate nohighlight">\(x_0\)</span>，即<span class="math notranslate nohighlight">\(X_n\)</span>的 CDF 越来越接近<span class="math notranslate nohighlight">\(x_0\)</span>的 CDF（随机变量的 PDF 并不总存在）。<span class="math notranslate nohighlight">\(\{X_n\}\)</span>和<span class="math notranslate nohighlight">\(\{x_0\}\)</span>是 CDF 分别为<span class="math notranslate nohighlight">\(\{F_n(⋅)\}\)</span>和<span class="math notranslate nohighlight">\(\{F_0(⋅)\}\)</span>的随机变量序列，若在<span class="math notranslate nohighlight">\(F_0(x)\)</span>连续处，<span class="math notranslate nohighlight">\(∀x ∈ ℝ\)</span>，有</p>
 <div class="math notranslate nohighlight">
 \[
@@ -776,7 +782,7 @@ X_{n}\stackrel{d}{→} x_0
 \]</div>
 </section>
 <section id="id14">
-<h3>3.2. 独立同分布定理<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
+<h3>3.2. 独立同分布定理<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
 <p><span class="math notranslate nohighlight">\(n\)</span>个独立同分布随机变量之和近似于高斯分布。</p>
 <p>当抽样次数足够大（<span class="math notranslate nohighlight">\(n ⩾ 30\)</span>）便有以上性质，这样的总体可看做正态总体。</p>
 <div class="cell tag_hide-input docutils container">
@@ -789,7 +795,8 @@ X_{n}\stackrel{d}{→} x_0
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_data</span> <span class="o">=</span> <span class="mi">100000</span>
 <span class="n">n_bins</span> <span class="o">=</span> <span class="mi">50</span>
 
-<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">n_data</span><span class="p">)</span>
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">n_data</span><span class="p">)</span>
 <span class="n">avg2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">n_data</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">avg10</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">n_data</span> <span class="o">//</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
@@ -808,12 +815,12 @@ X_{n}\stackrel{d}{→} x_0
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/612876bbaa69dedda3bf7670a5353560eef0e312eaa7b698c1b2ee39d3f081a6.png" src="../_images/612876bbaa69dedda3bf7670a5353560eef0e312eaa7b698c1b2ee39d3f081a6.png" />
+<img alt="../_images/57d93dce57a150e9df83b12eb1785ffadd86692e12fc21e28a5a01d89ad41dd5.png" src="../_images/57d93dce57a150e9df83b12eb1785ffadd86692e12fc21e28a5a01d89ad41dd5.png" />
 </div>
 </div>
 </section>
 <section id="de-moivre-laplace">
-<h3>3.3. De Moivre-LaPlace 定理<a class="headerlink" href="#de-moivre-laplace" title="Permalink to this heading">#</a></h3>
+<h3>3.3. De Moivre-LaPlace 定理<a class="headerlink" href="#de-moivre-laplace" title="Link to this heading">#</a></h3>
 <p>设随机变量<span class="math notranslate nohighlight">\(X_1, X_2, ⋯, X_n\ i.i.d. ∼ B(n, p)\)</span>，则<span class="math notranslate nohighlight">\(∀ϵ ∈ ℤ\)</span>，存在</p>
 <div class="math notranslate nohighlight">
 \[
@@ -823,9 +830,9 @@ X_{n}\stackrel{d}{→} x_0
 </section>
 </section>
 <section id="id15">
-<h2>4. 抽样分布<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h2>
+<h2>4. 抽样分布<a class="headerlink" href="#id15" title="Link to this heading">#</a></h2>
 <section id="id16">
-<h3>4.1. 标准正态分布<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
+<h3>4.1. 标准正态分布<a class="headerlink" href="#id16" title="Link to this heading">#</a></h3>
 <p>对正态分布，当<span class="math notranslate nohighlight">\(μ = 0, σ = 1\)</span></p>
 <div class="math notranslate nohighlight">
 \[
@@ -908,7 +915,7 @@ Z = \frac{X̂ - μ}{σ/\sqrt{n}} ∼ 𝒩(0, 1)
 </ol>
 </section>
 <section id="id17">
-<h3>4.2. 抽样均值<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
+<h3>4.2. 抽样均值<a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>抽样均值</p></li>
 </ul>
@@ -937,8 +944,7 @@ Z = \frac{X̂ - μ}{σ/\sqrt{n}} ∼ 𝒩(0, 1)
 <span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="mi">5</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="mi">5</span>
 
 <span class="n">std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">sem</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">sem</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -966,13 +972,13 @@ Z = \frac{X̂ - μ}{σ/\sqrt{n}} ∼ 𝒩(0, 1)
 <span class="n">ax</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="mi">35</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">sem</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">sem</span><span class="p">,</span> <span class="o">**</span><span class="n">arrow</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="mi">35</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">sem</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span> <span class="o">*</span> <span class="n">sem</span><span class="p">,</span> <span class="o">**</span><span class="n">arrow</span><span class="p">)</span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="s2">&quot; ± SD&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;medium&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">35</span><span class="p">,</span> <span class="mf">5.2</span><span class="p">,</span> <span class="s2">&quot; ± SEM&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;medium&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="s2">&quot; ± SD&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s2">&quot;medium&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">35</span><span class="p">,</span> <span class="mf">5.2</span><span class="p">,</span> <span class="s2">&quot; ± SEM&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s2">&quot;medium&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
     <span class="n">text</span><span class="o">=</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span>
     <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">70</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span>
     <span class="n">xycoords</span><span class="o">=</span><span class="s2">&quot;data&quot;</span><span class="p">,</span>
-    <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;medium&#39;</span><span class="p">,</span>
+    <span class="n">fontsize</span><span class="o">=</span><span class="s2">&quot;medium&quot;</span><span class="p">,</span>
     <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">),</span>
     <span class="n">textcoords</span><span class="o">=</span><span class="s2">&quot;data&quot;</span><span class="p">,</span>
     <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.05</span><span class="p">),</span>
@@ -984,12 +990,12 @@ Z = \frac{X̂ - μ}{σ/\sqrt{n}} ∼ 𝒩(0, 1)
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/95b88eea12bc423e59e00f5026d21738e10f65d8a9609b7f717909c87faa858b.png" src="../_images/95b88eea12bc423e59e00f5026d21738e10f65d8a9609b7f717909c87faa858b.png" />
+<img alt="../_images/06a5dcbf38e0aa7a0b7d475748037f8784f5f563f978f42904f73cbc93da7cc0.png" src="../_images/06a5dcbf38e0aa7a0b7d475748037f8784f5f563f978f42904f73cbc93da7cc0.png" />
 </div>
 </div>
 </section>
 <section id="id18">
-<h3>4.3. 独立分布之和<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h3>
+<h3>4.3. 独立分布之和<a class="headerlink" href="#id18" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[
 l(y) = ∫_{-∞}^{∞}f(x, y-x) dx
@@ -1004,7 +1010,7 @@ l(y) = ∫_{-∞}^{∞}f(x, y-x) dx
 \end{aligned}
 \end{split}\]</div>
 <section id="id19">
-<h4>4.3.1. <span class="math notranslate nohighlight">\(χ^2\)</span>分布<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h4>
+<h4>4.3.1. <span class="math notranslate nohighlight">\(χ^2\)</span>分布<a class="headerlink" href="#id19" title="Link to this heading">#</a></h4>
 <p><span class="math notranslate nohighlight">\(χ^2\)</span>分布用于描述高斯分布数据间的相关性（独立性）。</p>
 <p>若<span class="math notranslate nohighlight">\(∀X_{i} ∼ iid.\ 𝒩(0, σ^2)\)</span>的随机变量，则</p>
 <div class="math notranslate nohighlight">
@@ -1064,13 +1070,13 @@ Y = ∑X_{i}^2 ∼ χ^2(n)
 </section>
 </section>
 <section id="id20">
-<h3>4.4. 独立分布之商<a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h3>
+<h3>4.4. 独立分布之商<a class="headerlink" href="#id20" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[
 l(y) = ∫₀^{∞} x_1 f_1(x_1)f_2(x_1, y) dx_1
 \]</div>
 <section id="t">
-<h4>4.4.1. <span class="math notranslate nohighlight">\(t\)</span>分布<a class="headerlink" href="#t" title="Permalink to this heading">#</a></h4>
+<h4>4.4.1. <span class="math notranslate nohighlight">\(t\)</span>分布<a class="headerlink" href="#t" title="Link to this heading">#</a></h4>
 <p><span class="math notranslate nohighlight">\(t\)</span>分布，又称学生 <span class="math notranslate nohighlight">\(t\)</span>分布，是来自正态总体的样本均值的分布。通常用于小样本数，当总体均值及标准差未知时。<span class="math notranslate nohighlight">\(t\)</span>分布的实质是，用样本方差<span class="math notranslate nohighlight">\(S\)</span>估计总体方差<span class="math notranslate nohighlight">\(σ\)</span>，也就是用标准误差（sem）代替 <em>Z</em> 统计量中的标准差。</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1141,7 +1147,7 @@ h(t) = \frac{Γ[(n + 1)/2]}{\sqrt{π n}Γ(n/2)}\bigg(1 + \dfrac{t^2}{n}\bigg)^{-
 </ol>
 </section>
 <section id="f">
-<h4>4.4.2. <em>F</em> 分布<a class="headerlink" href="#f" title="Permalink to this heading">#</a></h4>
+<h4>4.4.2. <em>F</em> 分布<a class="headerlink" href="#f" title="Link to this heading">#</a></h4>
 <p><em>F</em> 分布用于比较两组高斯分布数据的可变性，并确定方差分析的临界值，即判断两个总体是否有相同的方差。</p>
 <p>当<span class="math notranslate nohighlight">\(X_{i} ∼ χ^2(i)\)</span>，则</p>
 <div class="math notranslate nohighlight">
@@ -1211,14 +1217,14 @@ h(t) = \frac{Γ[(n + 1)/2]}{\sqrt{π n}Γ(n/2)}\bigg(1 + \dfrac{t^2}{n}\bigg)^{-
 </section>
 </section>
 <section id="id21">
-<h3>4.5. 小结<a class="headerlink" href="#id21" title="Permalink to this heading">#</a></h3>
+<h3>4.5. 小结<a class="headerlink" href="#id21" title="Link to this heading">#</a></h3>
 <p>抽样分布的前提设是总体相互独立</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>样本分布</p></th>
-<th class="text-center head"><p>总体分布</p></th>
-<th class="text-center head"><p>偏离量分布</p></th>
-<th class="text-center head"><p>统计量</p></th>
+<tr class="row-odd"><th class="head text-center"><p>样本分布</p></th>
+<th class="head text-center"><p>总体分布</p></th>
+<th class="head text-center"><p>偏离量分布</p></th>
+<th class="head text-center"><p>统计量</p></th>
 </tr>
 </thead>
 <tbody>

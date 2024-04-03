@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>线性回归 &#8212; 生物狗学编程</title>
   
@@ -29,44 +28,40 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'base-ml/02-线性回归';</script>
     <link rel="canonical" href="https://ivaquero.github.io/blog-bio/base-ml/02-线性回归.html" />
-    <link rel="shortcut icon" href="../_static/doge.png"/>
+    <link rel="icon" href="../_static/doge.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="模型选择" href="03-%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9.html" />
@@ -164,7 +159,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -430,11 +436,11 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>线性回归<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<h1>线性回归<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <section id="id2">
-<h2>1. 线性回归<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>1. 线性回归<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <section id="id3">
-<h3>1.1. 简单线性回归<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>1.1. 简单线性回归<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>广义上的线性回归，包括线性回归和多项式回归，其目的是找到一条直线或曲线，并以最小的误差来拟合数据，回归的核心就是寻找<strong>误差的最小值</strong>。</p>
 <blockquote>
 <div><p>回归分析的前提是，<span class="math notranslate nohighlight">\(𝑿_i\)</span>相互独立，<span class="math notranslate nohighlight">\(𝒀\)</span>服从高斯分布</p>
@@ -456,7 +462,7 @@ ŷ = \hat{θ}_0 + \hat{θ}_1 x
 \]</div>
 </section>
 <section id="id4">
-<h3>1.2. 多元线性回归<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3>1.2. 多元线性回归<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>设有<span class="math notranslate nohighlight">\(p\)</span>个不同的预测器，则多元线性回归模型为：</p>
 <div class="math notranslate nohighlight">
 \[
@@ -469,7 +475,7 @@ ŷ = \hat{θ}_0 + ∑_{i=1}^p \hat{θ}_i x_i
 \]</div>
 </section>
 <section id="id5">
-<h3>1.3. 模型语言<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<h3>1.3. 模型语言<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>对线性模型回归模型</p>
 <div class="math notranslate nohighlight">
 \[
@@ -483,10 +489,10 @@ ŷ = \hat{θ}_0 + ∑_{i=1}^p \hat{θ}_i x_i
 <li><p><span class="math notranslate nohighlight">\(θ\)</span>为参数向量，也称效应量（effects），只要参数向量是线性的，模型就保持线性。</p></li>
 <li><p><span class="math notranslate nohighlight">\(ϵ_i\)</span>为残差、误差项或噪音（noise），误差项和回归量之间的关系，例如它们是否相关，是制定线性回归模型的关键步骤。</p></li>
 </ul>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>Operator</p></th>
-<th class="text-center head"><p>Meaning</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Operator</p></th>
+<th class="head text-center"><p>Meaning</p></th>
 </tr>
 </thead>
 <tbody>
@@ -515,15 +521,15 @@ ŷ = \hat{θ}_0 + ∑_{i=1}^p \hat{θ}_i x_i
 </table>
 </section>
 <section id="id6">
-<h3>1.4. 运算复杂度<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<h3>1.4. 运算复杂度<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <p>规范方程需要计算的<span class="math notranslate nohighlight">\(𝑿^{⊤}𝑿\)</span>的逆是一个<span class="math notranslate nohighlight">\((n + 1) × (n + 1)\)</span>的矩阵，其运算复杂度为<span class="math notranslate nohighlight">\(O(n^{2.4})\)</span>∼<span class="math notranslate nohighlight">\(O(n^3)\)</span>，即，若特征<span class="math notranslate nohighlight">\(n\)</span>加倍，则运算时间将乘以<span class="math notranslate nohighlight">\(2^{2.4}∼2^3\)</span>倍。</p>
 <p>相比较之下，SVD 的运算复杂度只有<span class="math notranslate nohighlight">\(O(n^2)\)</span>。从积极的一面来看，两者均与训练集中的实例数（它们为<span class="math notranslate nohighlight">\(O(m)\)</span>）呈线性关系，故，只要它们适合内存，它们就可有效地处理大型训练集。</p>
 </section>
 </section>
 <section id="id7">
-<h2>2. 模型检验<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<h2>2. 模型检验<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
 <section id="id8">
-<h3>2.1. 估计系数<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<h3>2.1. 估计系数<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <p>在做出预测之前，需要根据数据集估计系数。令</p>
 <div class="math notranslate nohighlight">
 \[

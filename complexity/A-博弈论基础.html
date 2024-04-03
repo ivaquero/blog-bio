@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>博弈论基础 &#8212; 生物狗学编程</title>
   
@@ -29,44 +28,40 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'complexity/A-博弈论基础';</script>
     <link rel="canonical" href="https://ivaquero.github.io/blog-bio/complexity/A-博弈论基础.html" />
-    <link rel="shortcut icon" href="../_static/doge.png"/>
+    <link rel="icon" href="../_static/doge.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="社会学建模" href="B-%E7%A4%BE%E4%BC%9A%E5%AD%A6%E5%BB%BA%E6%A8%A1.html" />
@@ -164,7 +159,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -467,11 +473,11 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>博弈论基础<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<h1>博弈论基础<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <section id="id2">
-<h2>1. 引言<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>1. 引言<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <section id="id3">
-<h3>1.1. 研究特点<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>1.1. 研究特点<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>博弈论涉及的决策者至少为两个；</p>
 <ul class="simple">
 <li><p>博弈论中存在信息的不对称，即不同局中人对于有关其他参与人（对手）的特征和行动的知识可能存在不一致；</p></li>
@@ -481,7 +487,7 @@ document.write(`
 </ul>
 </section>
 <section id="id4">
-<h3>1.2. 基本假设<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3>1.2. 基本假设<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>理性选择范式的基本理论假设：</p>
 <ol class="arabic simple">
 <li><p><strong>个人理性</strong>：个人是自身最大利益的追求者；</p></li>
@@ -491,7 +497,7 @@ document.write(`
 </ol>
 </section>
 <section id="id5">
-<h3>1.3. 基本要素<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<h3>1.3. 基本要素<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>局中人（player）：博弈中，独立决策、独立行动并承担决策结果的个人或组织。</p></li>
 <li><p>战略（strategy）：局中人可选择的行动，具有完整性、多样性、不可观察性。</p></li>
@@ -502,7 +508,7 @@ document.write(`
 <p>支付函数（payoff function）：局中人选择出战略后，所获得的收益。</p>
 </section>
 <section id="id6">
-<h3>1.4. 表述形式<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<h3>1.4. 表述形式<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>标准式：表格式，表示 2-3 人博弈</p></li>
 <li><p>扩展式：二叉树式，与标准式可互换，多用于动态博弈</p></li>
@@ -511,14 +517,14 @@ document.write(`
 </section>
 </section>
 <section id="id7">
-<h2>2. 非合作博弈<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<h2>2. 非合作博弈<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
 <section id="id8">
-<h3>2.1. 分类<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
-<table class="colwidths-auto table">
+<h3>2.1. 分类<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>信息 ∥ 顺序</p></th>
-<th class="text-center head"><p>静态博弈</p></th>
-<th class="text-center head"><p>动态博弈</p></th>
+<tr class="row-odd"><th class="head text-center"><p>信息 ∥ 顺序</p></th>
+<th class="head text-center"><p>静态博弈</p></th>
+<th class="head text-center"><p>动态博弈</p></th>
 </tr>
 </thead>
 <tbody>
@@ -534,13 +540,13 @@ document.write(`
 </table>
 </section>
 <section id="id9">
-<h3>2.2. 均衡<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
+<h3>2.2. 均衡<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
 <p>均衡：所有局中人的最优战略集合，即博弈最可能出现的结果</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>信息 ∥ 顺序</p></th>
-<th class="text-center head"><p>静态博弈</p></th>
-<th class="text-center head"><p>动态博弈</p></th>
+<tr class="row-odd"><th class="head text-center"><p>信息 ∥ 顺序</p></th>
+<th class="head text-center"><p>静态博弈</p></th>
+<th class="head text-center"><p>动态博弈</p></th>
 </tr>
 </thead>
 <tbody>
@@ -556,7 +562,7 @@ document.write(`
 </table>
 </section>
 <section id="id10">
-<h3>2.3. 占优战略<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<h3>2.3. 占优战略<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>占优战略（Dominant Strategy）：指无论其他参与者采取什么战略，某参与者使用该战略的结果都优于其他战略。</p></li>
 <li><p>占优战略均衡：指由博弈中的所有参与者的占优战略组合所构成的均衡。</p></li>
@@ -565,19 +571,19 @@ document.write(`
 </ul>
 </section>
 <section id="id11">
-<h3>2.4. 囚徒困境<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
-<p>囚徒困境（prisoner’s dilemma，PD）<a class="footnote-reference brackets" href="#id31" id="id12">1</a> 是博弈论中的一个话题，揭示了人类的动机和行为。简介如下：</p>
+<h3>2.4. 囚徒困境<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<p>囚徒困境（prisoner’s dilemma，PD）<a class="footnote-reference brackets" href="#id31" id="id12" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> 是博弈论中的一个话题，揭示了人类的动机和行为。简介如下：</p>
 <p>两名犯罪团伙成员被逮捕并囚禁。每个囚犯都被单独监禁，无法与另一方交流。检察官缺乏足够的证据，来证明这两个人的主要指控。他们希望以较轻的指控被判处两年徒刑。同时，检察官为每个囚犯提供商量的余地。每个囚犯都有机会：</p>
 <ol class="arabic simple">
 <li><p>通过证明对方犯罪出卖对方</p></li>
 <li><p>通过保持沉默与另一方合作。</p></li>
 </ol>
 <p>代价是：若 A 和 B 各自背叛对方，每个人都服刑 2 年。若 A 背叛 B 但 B 保持沉默，A 将被释放，B 将被监禁 3 年（反之亦然）。若 A 和 B 都保持沉默，他们两人只会服刑 1 年（较轻的质控）。</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>B ∥ A</p></th>
-<th class="text-center head"><p>认罪</p></th>
-<th class="text-center head"><p>不认罪</p></th>
+<tr class="row-odd"><th class="head text-center"><p>B ∥ A</p></th>
+<th class="head text-center"><p>认罪</p></th>
+<th class="head text-center"><p>不认罪</p></th>
 </tr>
 </thead>
 <tbody>
@@ -601,9 +607,9 @@ document.write(`
 </section>
 </section>
 <section id="nash">
-<h2>3. Nash 均衡<a class="headerlink" href="#nash" title="Permalink to this heading">#</a></h2>
+<h2>3. Nash 均衡<a class="headerlink" href="#nash" title="Link to this heading">#</a></h2>
 <section id="id13">
-<h3>3.1. 概念<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
+<h3>3.1. 概念<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
 <p>Nash 均衡：又称为非合作博弈均衡，在此均衡点上，每个理性参与者都不会有单独改变战略的冲动，因为局中每个参与者都不可能因为单方面改变自己的战略而增加获益。</p>
 <p>Schelling 点：对于存在多个 Nash 均衡的问题，从各方的文化和经验中找到线索，以该线索为基础选择出的均衡称”Schelling 点”。</p>
 <ul class="simple">
@@ -612,7 +618,7 @@ document.write(`
 </ul>
 </section>
 <section id="cournot">
-<h3>3.2. Cournot 模型<a class="headerlink" href="#cournot" title="Permalink to this heading">#</a></h3>
+<h3>3.2. Cournot 模型<a class="headerlink" href="#cournot" title="Link to this heading">#</a></h3>
 <p>设 1 在某个市场有<span class="math notranslate nohighlight">\(n\)</span>个厂商销售完全相同的商品，由于市场容量有限的原因，在一定的价格水平上该市场只能销售有限数量的该种商品。若向市场投放超出前述数量的该种商品，则必须要降价才能将它们全部销售出去，即商品总量越大，”市场出清价格”就越低。</p>
 <p>设 2 这<span class="math notranslate nohighlight">\(n\)</span>个厂商的产量决策是各自独立的且不受任何限制，各厂商在决定自己生产多少时无法知道其他厂商的决定。</p>
 <p>对生产厂商来说，收益就是生产利润（销售收入减去成本 后剩下的余额）。设第<span class="math notranslate nohighlight">\(i\)</span>个厂商的产量为<span class="math notranslate nohighlight">\(q_i(i = 1, 2, ..., n）\)</span>，则<span class="math notranslate nohighlight">\(n\)</span>个厂商的总产量就是</p>
@@ -632,9 +638,9 @@ q_i× P(∑q_i) -C× q_i
 \]</div>
 </section>
 <section id="id14">
-<h3>3.3. 零和博弈<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
+<h3>3.3. 零和博弈<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
 <section id="id15">
-<h4>3.3.1. 纯战略<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h4>
+<h4>3.3.1. 纯战略<a class="headerlink" href="#id15" title="Link to this heading">#</a></h4>
 <p><img alt="zero" src="../_images/zero.png" /></p>
 <p>以上<span class="math notranslate nohighlight">\((A_2, B_2)\)</span>被称为鞍点，<span class="math notranslate nohighlight">\(a_{22}\)</span>被成为鞍点元素，其满足</p>
 <div class="math notranslate nohighlight">
@@ -648,7 +654,7 @@ a_{i2} ⩽ a_{22} ⩽ a_{2 j}(i = 1, 2, 3 . j = 1, 2, 3)
 </div></blockquote>
 </section>
 <section id="id16">
-<h4>3.3.2. 混合战略<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h4>
+<h4>3.3.2. 混合战略<a class="headerlink" href="#id16" title="Link to this heading">#</a></h4>
 <p>当通过最小与最大定理不能得出鞍点值时，则纯战略下不存在最优，此时需要采取混合战略。</p>
 <blockquote>
 <div><p>混合战略均衡以期望表示，即以期望代替原有的元素进行计算</p>
@@ -677,7 +683,7 @@ A3 对 B1 3:1；A3 对 B2 1:4；A3 对 B3 2:1；</p>
 </section>
 </section>
 <section id="id17">
-<h3>3.4. 非零和博弈<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
+<h3>3.4. 非零和博弈<a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
 <p>任何一个给定的二元博弈，必存在混合战略的 Nash 均衡。</p>
 <p><img alt="non-zero" src="../_images/non-zero.png" /></p>
 <p>反复剔除严格劣战略，适用于二元零和博弈、二元非零和博弈。</p>
@@ -690,14 +696,14 @@ A3 对 B1 3:1；A3 对 B2 1:4；A3 对 B3 2:1；</p>
 </section>
 </section>
 <section id="id18">
-<h2>4. 多元 Nash 均衡<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h2>
+<h2>4. 多元 Nash 均衡<a class="headerlink" href="#id18" title="Link to this heading">#</a></h2>
 <section id="id19">
-<h3>4.1. 不结盟<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h3>
+<h3>4.1. 不结盟<a class="headerlink" href="#id19" title="Link to this heading">#</a></h3>
 <p>划线法求解，同二元 Nash 均衡。</p>
 <p><img alt="ally-none" src="../_images/ally-none.png" /></p>
 </section>
 <section id="id20">
-<h3>4.2. 结盟<a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h3>
+<h3>4.2. 结盟<a class="headerlink" href="#id20" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>只有符合 Nash 均衡的联盟才是稳定的。</p></li>
 <li><p>大联盟：均衡即三者收益之和最大的组合。</p></li>
@@ -705,11 +711,11 @@ A3 对 B1 3:1；A3 对 B2 1:4；A3 对 B3 2:1；</p>
 </ul>
 </section>
 <section id="id21">
-<h3>4.3. 共谋博弈<a class="headerlink" href="#id21" title="Permalink to this heading">#</a></h3>
+<h3>4.3. 共谋博弈<a class="headerlink" href="#id21" title="Link to this heading">#</a></h3>
 <p>抗共谋 Nash 均衡：要求局中人在此战略组合下没有单独偏离的动机，同时也没有合伙偏离的动机，是多元博弈的最终结果。</p>
 </section>
 <section id="id22">
-<h3>4.4. 物品<a class="headerlink" href="#id22" title="Permalink to this heading">#</a></h3>
+<h3>4.4. 物品<a class="headerlink" href="#id22" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>私人物品：具有消费排他性、消费竞争性</p></li>
 <li><p>公共物品：具有非排他性、非竞争性。如环保、天气预报。每个人不管是否付费，均可从中获益。</p></li>
@@ -720,13 +726,13 @@ A3 对 B1 3:1；A3 对 B2 1:4；A3 对 B3 2:1；</p>
 </section>
 </section>
 <section id="id23">
-<h2>5. 合作博弈<a class="headerlink" href="#id23" title="Permalink to this heading">#</a></h2>
+<h2>5. 合作博弈<a class="headerlink" href="#id23" title="Link to this heading">#</a></h2>
 <section id="pareto">
-<h3>5.1. Pareto 最优<a class="headerlink" href="#pareto" title="Permalink to this heading">#</a></h3>
+<h3>5.1. Pareto 最优<a class="headerlink" href="#pareto" title="Link to this heading">#</a></h3>
 <p>绝对利己的模式只能保证生命个体的强大，对整个种群的繁衍是不利的。</p>
 </section>
 <section id="id24">
-<h3>5.2. 特征函数式<a class="headerlink" href="#id24" title="Permalink to this heading">#</a></h3>
+<h3>5.2. 特征函数式<a class="headerlink" href="#id24" title="Link to this heading">#</a></h3>
 <p>在多人合作博弈中，联盟是一个非常重要的概念。设有<span class="math notranslate nohighlight">\(n\)</span>个参与人的集合<span class="math notranslate nohighlight">\(I={1, 2, …, n}\)</span>，对任一子集<span class="math notranslate nohighlight">\(S⊂ I\)</span>，<span class="math notranslate nohighlight">\(S\)</span>称为一个联盟，定义一个实函数<span class="math notranslate nohighlight">\(V(s)\)</span>满足条件：</p>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(V(ϕ) = 0\)</span>；</p></li>
@@ -761,7 +767,7 @@ A3 对 B1 3:1；A3 对 B2 1:4；A3 对 B3 2:1；</p>
 <p>且其中至少有一个严格不等式成立。</p>
 </section>
 <section id="shapley">
-<h3>5.3. Shapley 值<a class="headerlink" href="#shapley" title="Permalink to this heading">#</a></h3>
+<h3>5.3. Shapley 值<a class="headerlink" href="#shapley" title="Link to this heading">#</a></h3>
 <p>假设<span class="math notranslate nohighlight">\(I = \{1, 2, ⋯, n\}\)</span>，<span class="math notranslate nohighlight">\(n\)</span>个局中人依照随机次序形成联盟且各种次序发生的概率相等，显然这样的联盟共有<span class="math notranslate nohighlight">\(n!\)</span>个。局中人<span class="math notranslate nohighlight">\(i\)</span>与前面<span class="math notranslate nohighlight">\(|S|-1\)</span>个局中人形成联盟<span class="math notranslate nohighlight">\(S\)</span>，由于<span class="math notranslate nohighlight">\(S\{i\}\)</span>中的局中人排列的次序有<span class="math notranslate nohighlight">\((|S|-1)!\)</span>种，而<span class="math notranslate nohighlight">\(I\ S\)</span>中的局中人排列的次序有<span class="math notranslate nohighlight">\((n-|S|)!\)</span>种，故，各种次序发生的概率均为</p>
 <div class="math notranslate nohighlight">
 \[
@@ -783,7 +789,7 @@ W(|S|) = \frac{(n-|S|)!(|S|-1)!}{n!}, i ∈ S ⊆ I
 <p><img alt="shapley-calc" src="../_images/shapley-calc.png" /></p>
 </section>
 <section id="banzhaf">
-<h3>5.4. Banzhaf 权利力指数<a class="headerlink" href="#banzhaf" title="Permalink to this heading">#</a></h3>
+<h3>5.4. Banzhaf 权利力指数<a class="headerlink" href="#banzhaf" title="Link to this heading">#</a></h3>
 <p>对局中人集合为<span class="math notranslate nohighlight">\(I = \{1, 2, ⋯, n\}\)</span>的投票表决博弈，令特征函数</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -805,7 +811,7 @@ c_{j} = ∑_{j ∈ S⊆ I} [V(s) -V(S\{j\})]
 \]</div>
 </section>
 <section id="id25">
-<h3>5.5. 核与支付<a class="headerlink" href="#id25" title="Permalink to this heading">#</a></h3>
+<h3>5.5. 核与支付<a class="headerlink" href="#id25" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>核：使所有参与者中的任一个都不能从联盟重组中获益的结构，很多时候是空集。</p></li>
 <li><p>强占优：</p></li>
@@ -814,9 +820,9 @@ c_{j} = ∑_{j ∈ S⊆ I} [V(s) -V(S\{j\})]
 </section>
 </section>
 <section id="id26">
-<h2>6. 动态博弈<a class="headerlink" href="#id26" title="Permalink to this heading">#</a></h2>
+<h2>6. 动态博弈<a class="headerlink" href="#id26" title="Link to this heading">#</a></h2>
 <section id="id27">
-<h3>6.1. 逆向归纳法<a class="headerlink" href="#id27" title="Permalink to this heading">#</a></h3>
+<h3>6.1. 逆向归纳法<a class="headerlink" href="#id27" title="Link to this heading">#</a></h3>
 <p>逆向归纳法：站在未来的立场，确定现实的行动。</p>
 <ol class="arabic simple">
 <li><p>画出博弈树</p></li>
@@ -826,10 +832,10 @@ c_{j} = ∑_{j ∈ S⊆ I} [V(s) -V(S\{j\})]
 </ol>
 </section>
 <section id="stackelberg">
-<h3>6.2. Stackelberg 模型<a class="headerlink" href="#stackelberg" title="Permalink to this heading">#</a></h3>
+<h3>6.2. Stackelberg 模型<a class="headerlink" href="#stackelberg" title="Link to this heading">#</a></h3>
 </section>
 <section id="id28">
-<h3>6.3. 子博弈<a class="headerlink" href="#id28" title="Permalink to this heading">#</a></h3>
+<h3>6.3. 子博弈<a class="headerlink" href="#id28" title="Link to this heading">#</a></h3>
 <p>子博弈包括整个博弈</p>
 <ol class="arabic simple">
 <li><p>解出所有子博弈的均衡收益</p></li>
@@ -838,17 +844,18 @@ c_{j} = ∑_{j ∈ S⊆ I} [V(s) -V(S\{j\})]
 </ol>
 </section>
 <section id="id29">
-<h3>6.4. 嵌入博弈<a class="headerlink" href="#id29" title="Permalink to this heading">#</a></h3>
+<h3>6.4. 嵌入博弈<a class="headerlink" href="#id29" title="Link to this heading">#</a></h3>
 </section>
 <section id="id30">
-<h3>6.5. 无限重复博弈<a class="headerlink" href="#id30" title="Permalink to this heading">#</a></h3>
+<h3>6.5. 无限重复博弈<a class="headerlink" href="#id30" title="Link to this heading">#</a></h3>
 <p>有限重复博弈，其均衡同一次性博弈</p>
 <hr class="footnotes docutils" />
-<dl class="footnote brackets">
-<dt class="label" id="id31"><span class="brackets"><a class="fn-backref" href="#id12">1</a></span></dt>
-<dd><p><a class="reference external" href="http://en.wikipedia.org/wiki/Prisoner's_dilemma">http://en.wikipedia.org/wiki/Prisoner’s_dilemma</a></p>
-</dd>
-</dl>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id31" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id12">1</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="http://en.wikipedia.org/wiki/Prisoner's_dilemma">http://en.wikipedia.org/wiki/Prisoner’s_dilemma</a></p>
+</aside>
+</aside>
 </section>
 </section>
 </section>

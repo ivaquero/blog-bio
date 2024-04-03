@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>统计学习引言 &#8212; 生物狗学编程</title>
   
@@ -29,44 +28,40 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'base-ml/01-统计学习引言';</script>
     <link rel="canonical" href="https://ivaquero.github.io/blog-bio/base-ml/01-统计学习引言.html" />
-    <link rel="shortcut icon" href="../_static/doge.png"/>
+    <link rel="icon" href="../_static/doge.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="线性回归" href="02-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92.html" />
@@ -164,7 +159,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -442,9 +448,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>统计学习引言<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<h1>统计学习引言<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <section id="id2">
-<h2>1. 统计学习简史<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>1. 统计学习简史<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>假设检验和统计建模之间的方法存在很大差异。通过假设检验，人们通常会从零假设开始。根据问题和数据，然后选择适当的统计检验以及所需的显着性水平，并接受或拒绝零假设。</p>
 <p>相反，统计建模通常涉及对数据的更具交互性的分析。一开始是对数据进行目视检查，寻找相关性和/或关系。基于该第一次检查，选择可描述数据的统计模型。</p>
 <p>在统计建模的基础上衍生出的统计学习（Statistical Learning）成为现代数据分析的理论基础，其发展历程如下：</p>
@@ -461,10 +467,10 @@ document.write(`
 </ul>
 </section>
 <section id="id3">
-<h2>2. 机器学习的内容<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2>2. 机器学习的内容<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <p>机器学习是一个试图使计算机在无需明确编程的情况下即可获得学习能力的研究领域（Arthur Samuel, 1959）。</p>
 <section id="id4">
-<h3>2.1. 监督程度<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3>2.1. 监督程度<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>依照受到监督的程度，机器学习可被划分为</p>
 <ul class="simple">
 <li><p>监督（supervised）</p></li>
@@ -476,7 +482,7 @@ document.write(`
 <p>典型的监督学习包括</p>
 <ul class="simple">
 <li><p>分类（classification）：将一组特征分为不同的类（class）</p></li>
-<li><p>回归（regression）<a class="footnote-reference brackets" href="#id19" id="id5">1</a>：利用特征，来预测一个目标（target）的数值</p></li>
+<li><p>回归（regression）<a class="footnote-reference brackets" href="#id19" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>：利用特征，来预测一个目标（target）的数值</p></li>
 </ul>
 <p>非监督学习目前多用于探索性数据分析（exploratory data analysis，EDA），主要任务如下：</p>
 <ul class="simple">
@@ -489,22 +495,22 @@ document.write(`
 <p>强化学习与前三者有极大的不同。算法中的学习单元被称为代理（agent），其可观察环境，选择并执行动作，并获得回馈（rewards）或惩罚（penalties）。然后，它必须自己了解什么是最好的战略，这里称为方针（policy），以便随着时间的推移获得最大的回馈。方针定义代理在给定情况下应选择的操作。</p>
 </section>
 <section id="id6">
-<h3>2.2. 训练方式<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<h3>2.2. 训练方式<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <p>在批处理学习（batch learning）中，系统无法进行持续学习，只能使用所有可用数据对其进行训练。通常，这将花费大量时间和计算资源，因此通常是脱机完成的，故也叫离线学习（offline learning）。当然，这种模式仅适用于其现有数据。幸运的是，培训，评估和启动机器学习系统的整个过程可相当容易地实现自动化，故，即使是批处理学习系统也可适应变化。只需更新数据并根据需要从头开始训练系统的新版本。该解决方案很简单，且通常可很好地工作，但，使用全套数据进行培训可能会花费很多小时。</p>
 <p>在线学习（online learning）可通过逐个或小批量（mini-batches）的分组形式依次填鸭（feed）数据实例来逐步训练系统。每个学习步骤既快速又便宜，因此系统可在到达时即时了解新数据。在线学习算法还可用于在无法容纳在一台机器的主存储器中的庞大数据集上训练系统，这被称为核外学习（out-of-core learning）。该算法将加载部分数据，对该数据进行训练，然后重复该过程，直到对所有数据运行为止。</p>
 <p>在线学习系统的一个重要参数是它们适应变化的数据的速度：这称为学习率（learning rate）。若设置较高的学习率，则系统将迅速适应新数据，但也往往会很快忘记旧数据。相反，若将学习率设置得较低，则系统将具有更大的惯性，但对新数据中的噪声或离群值的敏感性也将降低。</p>
 <p>在线学习面临的一大挑战是，若将不良数据输入系统，系统的性能将逐渐下降。若是实时系统，客户会注意到。为了降低这种风险，若发现性能下降，则需要密切监视系统并立即关闭学习功能（并可能恢复到以前的工作状态），还需要异常检测算法监视输入数据并对异常数据做出反应。</p>
 </section>
 <section id="id7">
-<h3>2.3. 泛化模式<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<h3>2.3. 泛化模式<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <p>大多数机器学习任务都与做出预测有关。这意味着，给定许多训练实例，系统需要能够对（从未有过的）实例做出良好的预测。即对训练数据的表现进行度量是不够的，真正的目标是在新实例上也表现良好。</p>
 <p>实例学习（instance-based learning）通过学习实例并记忆，然后通过使用相似性度量将其与学习的实例（或其中的一部分）进行比较，将其推广到新的案例。而通过对现有实例建立模型，然后使用该模型进行预测的技术被称为模型学习（model-based learning），对模型的度量可定义拟合函数（fitness function），也可定义成本函数（cost function）。</p>
 </section>
 </section>
 <section id="id8">
-<h2>3. 挑战<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
+<h2>3. 挑战<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
 <section id="id9">
-<h3>3.1. 数据质量<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
+<h3>3.1. 数据质量<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
 <p>使用代表要概括的案例的训练集至关重要。这通常比听起来要难：若样本太小，则会产生采样噪声（sampling noise）；但，若采样方法有缺陷，则即使非常大的样本也可能不具代表性（representative）。这称为采样偏差（sampling bias）。此外高质量的数据还需要：</p>
 <ul class="simple">
 <li><p>去除非相关数据，这个过程也叫特征工程（feature engineering）</p></li>
@@ -512,7 +518,7 @@ document.write(`
 </ul>
 </section>
 <section id="id10">
-<h3>3.2. 拟合程度<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<h3>3.2. 拟合程度<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
 <p>在训练数据上表现良好的模型，但泛化效果不一定好，对于模型的评价需要兼顾以下几个方面：</p>
 <ol class="arabic simple">
 <li><p>训练误差：模型在训练数据集上表现出的误差</p></li>
@@ -548,7 +554,7 @@ document.write(`
 <p>这种解决方案通常效果很好。但，若验证集太小，则模型评估将不精确，可能最终会错误地选择次优模型。相反，若验证集太大，则剩余训练集将比完整训练集小得多。解决此问题的一种方法是使用许多小型验证集执行重复的交叉验证（cross-validation）。在对其余数据进行训练后，每个模型对每个验证集评估一次。通过对模型的所有评估求均值，可更准确地度量模型的性能。但，这有一个缺点：训练时间会随着验证集的大小翻倍。</p>
 </section>
 <section id="id11">
-<h3>3.3. 数据错配<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
+<h3>3.3. 数据错配<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
 <p>在某些情况下，很容易获得大量用于训练的数据，但，这些数据可能无法完全代表将用于生产中的数据。在这种情况下，要记住的最重要规则是，验证集和测试集必须尽可能代表希望在生产中使用的数据。一个战略是对其进行洗牌和将一半放入验证集中，将一半放入测试集中（确保两个集中都没有重复或接近重复的结果），但，这样的话，若结果不理想，将无法知道这是因为模型过度拟合了训练集，还是因为目标结果和模型之间的不匹配。</p>
 <p>一个解决方案是，在取出验证集的训练集中再取出一部分数据，作为开发集（train-dev set）。在训练模型后，使用开发集对其进行评估。</p>
 <ul class="simple">
@@ -557,16 +563,16 @@ document.write(`
 </ul>
 </section>
 <section id="id12">
-<h3>3.4. 没有免费的午餐<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
-<p>David Wolpert 在 1996 年发表的一篇著名论文 <a class="footnote-reference brackets" href="#id20" id="id13">2</a> 中证明，若您对数据绝对不做任何设，则没有理由比其他模型更喜欢一种模型。这称为无免费午餐（No Free Lunch，NFL）定理。对于某些数据集，最佳模型是线性模型，而对于其他数据集，它是神经网络。没有任何一种模型可保证先验地（a priori）工作更好。要确定哪种模型最好，唯一的方法就是对它们全部进行评估。由于这是不可能的，因此在实践中您对数据做出一些合理的设，并仅评估一些合理的模型。</p>
+<h3>3.4. 没有免费的午餐<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
+<p>David Wolpert 在 1996 年发表的一篇著名论文 <a class="footnote-reference brackets" href="#id20" id="id13" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> 中证明，若您对数据绝对不做任何设，则没有理由比其他模型更喜欢一种模型。这称为无免费午餐（No Free Lunch，NFL）定理。对于某些数据集，最佳模型是线性模型，而对于其他数据集，它是神经网络。没有任何一种模型可保证先验地（a priori）工作更好。要确定哪种模型最好，唯一的方法就是对它们全部进行评估。由于这是不可能的，因此在实践中您对数据做出一些合理的设，并仅评估一些合理的模型。</p>
 </section>
 </section>
 <section id="id14">
-<h2>4. 概率与模型<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h2>
+<h2>4. 概率与模型<a class="headerlink" href="#id14" title="Link to this heading">#</a></h2>
 <p>假设我们有训练数据<span class="math notranslate nohighlight">\((X,Y)\)</span>，<span class="math notranslate nohighlight">\(X\)</span>是特征集合，<span class="math notranslate nohighlight">\(Y\)</span>是标签集合。这时来了一个新的样本<span class="math notranslate nohighlight">\(x\)</span>，想要预测它的类别<span class="math notranslate nohighlight">\(y\)</span>，即求得最大的条件概率<span class="math notranslate nohighlight">\(P(y ∣ x)\)</span>作为新样本的分类。</p>
 <p>在建模时有判别式和生成式两种手段，其中，前者学习类别的边界，后者描述每种类别的分布。</p>
 <section id="id15">
-<h3>4.1. 判别式模型<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
+<h3>4.1. 判别式模型<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>由数据直接学习决策函数 <span class="math notranslate nohighlight">\(Y = f(X)\)</span>或条件概率<span class="math notranslate nohighlight">\(P(Y ∣ X)\)</span></p></li>
 <li><p>优势</p>
@@ -583,7 +589,7 @@ document.write(`
 </ul>
 </section>
 <section id="id16">
-<h3>4.2. 生成式模型<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
+<h3>4.2. 生成式模型<a class="headerlink" href="#id16" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>关注 X 和 Y 如何同时出现</p></li>
 <li><p>由数据学习联合概率密度分布函数 <span class="math notranslate nohighlight">\(P(x, y) = P(y) * p(x ∣ y)\)</span></p></li>
@@ -605,9 +611,9 @@ document.write(`
 </section>
 </section>
 <section id="id17">
-<h2>5. 约定<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h2>
+<h2>5. 约定<a class="headerlink" href="#id17" title="Link to this heading">#</a></h2>
 <section id="id18">
-<h3>5.1. 术语<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h3>
+<h3>5.1. 术语<a class="headerlink" href="#id18" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>估计器（estimator）：可基于数据集估算某些参数的对象。</p></li>
 <li><p>变换器（transformer）：可变换数据集的估算器。</p></li>
@@ -616,14 +622,16 @@ document.write(`
 <li><p>信号（signal）：输入到机器学习系统的一条信息，参照克劳德·香农（Claude Shannon，1916∼2001）的信息论。</p></li>
 </ul>
 <hr class="footnotes docutils" />
-<dl class="footnote brackets">
-<dt class="label" id="id19"><span class="brackets"><a class="fn-backref" href="#id5">1</a></span></dt>
-<dd><p>Regression 源自 Francis Galton 在研究高个子的孩子往往比父母矮的事实时引入的一个统计术语。他称这种现象为回归均值（regression to the mean）。此后将该名称被他用于其分析变量之间相关性的方法。</p>
-</dd>
-<dt class="label" id="id20"><span class="brackets"><a class="fn-backref" href="#id13">2</a></span></dt>
-<dd><p>David Wolpert, “The Lack of A Priori Distinctions Between Learning Algorithms”, Neural Computation 8, no. 7 (1996): 1341-1390.</p>
-</dd>
-</dl>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id19" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">1</a><span class="fn-bracket">]</span></span>
+<p>Regression 源自 Francis Galton 在研究高个子的孩子往往比父母矮的事实时引入的一个统计术语。他称这种现象为回归均值（regression to the mean）。此后将该名称被他用于其分析变量之间相关性的方法。</p>
+</aside>
+<aside class="footnote brackets" id="id20" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id13">2</a><span class="fn-bracket">]</span></span>
+<p>David Wolpert, “The Lack of A Priori Distinctions Between Learning Algorithms”, Neural Computation 8, no. 7 (1996): 1341-1390.</p>
+</aside>
+</aside>
 </section>
 </section>
 </section>

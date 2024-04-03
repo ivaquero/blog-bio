@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>元编程 &#8212; 生物狗学编程</title>
   
@@ -29,42 +28,38 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'python/16-元编程';</script>
     <link rel="canonical" href="https://ivaquero.github.io/blog-bio/python/16-元编程.html" />
-    <link rel="shortcut icon" href="../_static/doge.png"/>
+    <link rel="icon" href="../_static/doge.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="模块与调试" href="17-%E6%A8%A1%E5%9D%97%E4%B8%8E%E8%B0%83%E8%AF%95.html" />
@@ -162,7 +157,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -432,9 +438,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>元编程<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<h1>元编程<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <section id="id2">
-<h2>1. 描述符<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>1. 描述符<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>使用描述符（descriptor）是一种特殊的类，可以类的形式定义实例的属性。<code class="docutils literal notranslate"><span class="pre">&#64;property</span></code> 负责把一个方法变成属性调用，可对属性赋值时做必要的检查，并保证代码的清晰短⼩，同时将⽅法变换为只读，并重新实现⼀个属性的设置和读取⽅法，可做边界判定。</p>
 <p>虽然内置的 <code class="docutils literal notranslate"><span class="pre">property</span></code> 经常用作装饰器，但它其实是一个类。<code class="docutils literal notranslate"><span class="pre">property</span></code> 都是类属性，但是 <code class="docutils literal notranslate"><span class="pre">property</span></code> 管理的其实是实例属性的存取。</p>
 <ul class="simple">
@@ -449,7 +455,7 @@ document.write(`
 <li><p>仅有 <code class="docutils literal notranslate"><span class="pre">__get__</span></code> 方法的描述符可以实现高效缓存</p></li>
 </ul>
 <section id="id3">
-<h3>1.1. 属性验证<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>1.1. 属性验证<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>被装饰的读值方法有个 <code class="docutils literal notranslate"><span class="pre">.setter</span></code> 属性，这个属性也是装饰器；这个装饰器把读值方法和设值方法绑定在一起。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">LineItem</span><span class="p">:</span>
 
@@ -475,7 +481,7 @@ document.write(`
 </div>
 </section>
 <section id="id4">
-<h3>1.2. 属性删除<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3>1.2. 属性删除<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>定义特性时，可以使用 <code class="docutils literal notranslate"><span class="pre">&#64;my_propety.deleter</span></code> 装饰器包装一个方法，负责删除特性管理的
 属性。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BlackKnight</span><span class="p">:</span>
@@ -520,9 +526,9 @@ document.write(`
 </section>
 </section>
 <section id="id5">
-<h2>2. 手动实现<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<h2>2. 手动实现<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <section id="id6">
-<h3>2.1. 基本结构<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<h3>2.1. 基本结构<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Quantity</span><span class="p">:</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">storage_name</span><span class="p">):</span>
@@ -556,7 +562,7 @@ document.write(`
 </div>
 </section>
 <section id="id7">
-<h3>2.2. 自动获取属性名称<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<h3>2.2. 自动获取属性名称<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Quantity</span><span class="p">:</span>
     <span class="n">__counter</span> <span class="o">=</span> <span class="mi">0</span>
 
@@ -599,10 +605,10 @@ document.write(`
 </section>
 </section>
 <section id="id8">
-<h2>3. 元类<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
+<h2>3. 元类<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
 <p>Python 中，一切皆是对象，类也不例外，可对其赋值、拷贝、添加属性，甚至作为参数传递（如打印）。</p>
 <section id="type">
-<h3>3.1. <code class="docutils literal notranslate"><span class="pre">type</span></code><a class="headerlink" href="#type" title="Permalink to this heading">#</a></h3>
+<h3>3.1. <code class="docutils literal notranslate"><span class="pre">type</span></code><a class="headerlink" href="#type" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">type()</span></code> 可被用于创建类，<code class="docutils literal notranslate"><span class="pre">type('className',</span> <span class="pre">(parentClassName1,</span> <span class="pre">parentClassName2),</span> <span class="pre">{'attr':</span> <span class="pre">value})</span></code>，生成的类被称为元类（metaclass）。</p>
 <p>Python 在创建类时，会自动创建 <code class="docutils literal notranslate"><span class="pre">__metaclass__</span></code> 属性。类中有 <code class="docutils literal notranslate"><span class="pre">__metaclass__</span></code> 时，Python 会通过 XXX 创建类（对象），若没有，则继续向上寻找。按照默认习惯，元类的类名总是以 <code class="docutils literal notranslate"><span class="pre">Metaclass</span></code> 结尾，以便清楚地表示这是一个元类。</p>
 <blockquote>
@@ -630,7 +636,7 @@ document.write(`
 </section>
 </section>
 <section id="id9">
-<h2>4. 类元编程<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
+<h2>4. 类元编程<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
 </section>
 </section>
 

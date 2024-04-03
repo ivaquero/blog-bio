@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>梯度下降 &#8212; 生物狗学编程</title>
   
@@ -29,44 +28,40 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'base-ml/05-梯度下降';</script>
     <link rel="canonical" href="https://ivaquero.github.io/blog-bio/base-ml/05-梯度下降.html" />
-    <link rel="shortcut icon" href="../_static/doge.png"/>
+    <link rel="icon" href="../_static/doge.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="梯度下降优化" href="06-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E4%BC%98%E5%8C%96.html" />
@@ -164,7 +159,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -431,11 +437,11 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>梯度下降<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<h1>梯度下降<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <section id="id2">
-<h2>1. 梯度<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>1. 梯度<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <section id="id3">
-<h3>1.1. 定义<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>1.1. 定义<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>梯度（gradient）是一个向量，表示某一函数在该点处的方向导数沿着该方向取得最大值，即函数在该点处沿着该方向（此梯度的方向）变化最快，变化率最大（此梯度的模）。</p>
 <div class="math notranslate nohighlight">
 \[
@@ -454,7 +460,7 @@ document.write(`
 </div>
 </section>
 <section id="id4">
-<h3>1.2. 应用<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3>1.2. 应用<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>梯度下降（Gradient Descent）是一种通用的优化算法，能够找到针对各种问题的最佳解决方案。其一般思想是迭代调整参数以最小化成本函数。具体地说，梯度下降首先用随机值填充<span class="math notranslate nohighlight">\(β\)</span>，这称为随机初始化（random initialization）。然后逐步改善它，一次迈出一步，每一步都试图降低成本函数，如 MSE，直到算法收敛到最小。</p>
 <p><img alt="gradient descent" src="../_images/gradient-descent.png" /></p>
 <p>梯度下降中的一个重要参数是步长，由超参数学习速率（learning rate）确定。若学习速率太小，则该算法将不得不经过多次迭代才能收敛，这将需要很长时间。另一方面，若学习速率太大，可能会跳过最小值，使算法随着值越来越大而发散。</p>
@@ -462,9 +468,9 @@ document.write(`
 </section>
 </section>
 <section id="id5">
-<h2>2. 原始版本<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<h2>2. 原始版本<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <section id="id6">
-<h3>2.1. 全梯度下降<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<h3>2.1. 全梯度下降<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <p>要实全梯度下降（Full-batch Gradient Descent，FGD），需要针对每个模型参数<span class="math notranslate nohighlight">\(β_{j}\)</span>计算成本函数的梯度：</p>
 <div class="math notranslate nohighlight">
 \[
@@ -492,7 +498,7 @@ document.write(`
 <p><img alt="FGD" src="../_images/fgd.png" /></p>
 </section>
 <section id="id7">
-<h3>2.2. 随机梯度下降<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<h3>2.2. 随机梯度下降<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <p>与 FGD 相反，随机梯度下降（Stochastic Gradient Descent，SGD）在每一步中从训练集中选择一个随机实例，并仅基于该单个实例来计算梯度。显然，一次处理单个实例使该算法更快，因为它每次迭代需要处理的数据很少。由于每次迭代仅需要在内存中存储一个实例，因此还可在庞大的训练集上进行训练。另一方面，由于它的随机性，该算法的规则性比 FGD 的规则性要低得多：与其逐渐降低直到达到最小值，不如逐渐降低成本函数，仅平均地降低。随着时间的流逝，它最终将非常接近最小值，但，一旦到达最小值，它将继续反弹，永不停下来。故，一旦算法停止运行，最终参数值将是良好的，但不是最佳的。</p>
 <p>当成本函数非常不规则时，这实际上可帮助算法跳出局部最小值，故，与梯度下降相比，SGD 更有可能找到全局最小值。故，随机性可逃避局部最优，但，坏消息是它也可能意味着算法永远都不能满足最小值。解决这一难题的一种方法是<strong>逐渐降低学习速率</strong>。步骤从大开始，然后变得越来越小，从而使算法能够稳定在全局最小值。此过程类似于模拟退火（simulated annealing）。</p>
 <p>SGD 已成功应用于文本分类和自然语言处理中经常遇到的大规模稀疏机器学习问题。考虑到数据稀疏，常见 SGD 分类器可轻松解决超过<span class="math notranslate nohighlight">\(10^5\)</span>个训练实例和<span class="math notranslate nohighlight">\(10^5\)</span>个以上特征的问题。</p>
@@ -503,7 +509,7 @@ document.write(`
 </div></blockquote>
 </section>
 <section id="id8">
-<h3>2.3. 注意事项<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<h3>2.3. 注意事项<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>前处理</p>
 <ul>
@@ -525,7 +531,7 @@ document.write(`
 </section>
 </section>
 <section id="id9">
-<h2>3. 反向传播<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
+<h2>3. 反向传播<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
 </section>
 </section>
 

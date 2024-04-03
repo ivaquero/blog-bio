@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>网络模型 &#8212; 生物狗学编程</title>
   
@@ -29,44 +28,40 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'python/15-网络模型';</script>
     <link rel="canonical" href="https://ivaquero.github.io/blog-bio/python/15-网络模型.html" />
-    <link rel="shortcut icon" href="../_static/doge.png"/>
+    <link rel="icon" href="../_static/doge.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="元编程" href="16-%E5%85%83%E7%BC%96%E7%A8%8B.html" />
@@ -164,7 +159,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -457,11 +463,11 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>网络模型<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<h1>网络模型<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <section id="osi">
-<h2>1. OSI 模型<a class="headerlink" href="#osi" title="Permalink to this heading">#</a></h2>
+<h2>1. OSI 模型<a class="headerlink" href="#osi" title="Link to this heading">#</a></h2>
 <section id="id2">
-<h3>1.1. 简介<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<h3>1.1. 简介<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>OSI 模型：开放式通信系统互联参考模型（Open Systems Interconnection Reference Model, OSI/RM），是国际标准化组织（ISO）提出的一个试图使各种计算机在世界范围内互连为网络的标准框架。</p>
 <p>OSI 模型将网络结构抽象为 7 层：</p>
 <ul class="simple">
@@ -476,19 +482,19 @@ document.write(`
 <p><img alt="structure" src="../_images/structure.png" /></p>
 </section>
 <section id="tcp-ip">
-<h3>1.2. TCP/IP 协议族<a class="headerlink" href="#tcp-ip" title="Permalink to this heading">#</a></h3>
+<h3>1.2. TCP/IP 协议族<a class="headerlink" href="#tcp-ip" title="Link to this heading">#</a></h3>
 <p>TCP/IP 协议：互联网协议包含了上百种协议标准，但，最重要的两个协议是 TCP 和 IP 协议，故，大家把互联网的协议简称 TCP/IP 协议；</p>
 <p>TCP/IP 模型：将 OSI 模型简化为<strong>四层</strong>；</p>
 <p><img alt="structure3" src="../_images/structure3.png" /></p>
 </section>
 <section id="id3">
-<h3>1.3. 协议<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>1.3. 协议<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p><img alt="structure2" src="../_images/structure2.png" /></p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>协议</p></th>
-<th class="text-center head"><p></p></th>
-<th class="text-center head"><p>层级</p></th>
+<tr class="row-odd"><th class="head text-center"><p>协议</p></th>
+<th class="head text-center"><p></p></th>
+<th class="head text-center"><p>层级</p></th>
 </tr>
 </thead>
 <tbody>
@@ -552,12 +558,12 @@ document.write(`
 <li><p>网络层：ICMP 和 IGMP 必须通过 IP 才能和链路层通信，ICMP 可直接与应用层通信，ARP 和 RARP 只与链路层通信的协议；</p></li>
 </ul>
 <section id="id4">
-<h4>链路层<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h4>
+<h4>链路层<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
 <p><img alt="protocol-frame" src="../_images/protocol-frame.png" /></p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>类型</p></th>
-<th class="text-center head"><p>协议</p></th>
+<tr class="row-odd"><th class="head text-center"><p>类型</p></th>
+<th class="head text-center"><p>协议</p></th>
 </tr>
 </thead>
 <tbody>
@@ -575,29 +581,29 @@ document.write(`
 <p><img alt="arp" src="../_images/arp.png" /></p>
 </section>
 <section id="id5">
-<h4>网络层和传输层<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h4>
+<h4>网络层和传输层<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
 <p><img alt="protocol-packet" src="../_images/tcp.png" /></p>
 </section>
 </section>
 </section>
 <section id="id6">
-<h2>2. 网络地址<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<h2>2. 网络地址<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
 <section id="ipv4">
-<h3>2.1. IPv4<a class="headerlink" href="#ipv4" title="Permalink to this heading">#</a></h3>
+<h3>2.1. IPv4<a class="headerlink" href="#ipv4" title="Link to this heading">#</a></h3>
 <p>IPv4 地址（逻辑地址）: 用于在网络中标记一台电脑的一串数字，在本地局域网上是惟一的；</p>
 <ul class="simple">
 <li><p>IPv4 地址均由 4 个 4 字节，即 32 个二进制数组成，每类 IPv4 地址的最小值用于显示网络区段，最大值用于广播，这两个值往往不会进行分配</p></li>
 <li><p>A 类 IPv4 地址中的<strong>127.0.0.1 – 127.255.255.255</strong>用于回路测试；</p></li>
 <li><p><strong>127.0.0.1</strong>可代表本机 IPv4 地址，用 <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1</span></code> 就可测试本机中配置的 Web 服务器；</p></li>
 </ul>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>类别</p></th>
-<th class="text-center head"><p>网络地址占用字节</p></th>
-<th class="text-center head"><p>主机地址占用字节</p></th>
-<th class="text-center head"><p>IP 地址范围</p></th>
-<th class="text-center head"><p>可用网络个数</p></th>
-<th class="text-center head"><p>每个网络能容纳主机</p></th>
+<tr class="row-odd"><th class="head text-center"><p>类别</p></th>
+<th class="head text-center"><p>网络地址占用字节</p></th>
+<th class="head text-center"><p>主机地址占用字节</p></th>
+<th class="head text-center"><p>IP 地址范围</p></th>
+<th class="head text-center"><p>可用网络个数</p></th>
+<th class="head text-center"><p>每个网络能容纳主机</p></th>
 </tr>
 </thead>
 <tbody>
@@ -647,13 +653,13 @@ document.write(`
 </table>
 </section>
 <section id="ip">
-<h3>2.2. 私有 IP<a class="headerlink" href="#ip" title="Permalink to this heading">#</a></h3>
+<h3>2.2. 私有 IP<a class="headerlink" href="#ip" title="Link to this heading">#</a></h3>
 <p>私有 IP：国际规定有一部分 IPv4 地址是用于我们的局域网使用，不在公网中使用的 IP 地址；</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>类别</p></th>
-<th class="text-center head"><p>起始 IP 段</p></th>
-<th class="text-center head"><p>终止 IP 段</p></th>
+<tr class="row-odd"><th class="head text-center"><p>类别</p></th>
+<th class="head text-center"><p>起始 IP 段</p></th>
+<th class="head text-center"><p>终止 IP 段</p></th>
 </tr>
 </thead>
 <tbody>
@@ -673,13 +679,13 @@ document.write(`
 </table>
 </section>
 <section id="id7">
-<h3>2.3. 子网掩码<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<h3>2.3. 子网掩码<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <p>子网掩码不能单独存在，它必须结合 IP 地址一起使用。子网掩码只有一个作用，就是将某个 IP 地址划分成网络地址和主机地址，只有通过子网掩码，才能表明一台主机所在的子网与其他子网的关系，使网络正常工作。</p>
 <p>与 IP 地址相同，子网掩码的长度亦为 32 位，左边是网络位，用二进制数字 1 表示，右边是主机位，用二进制数字 0 表示。子网掩码与 IPv4 地址进行按位与操作，可得到 IPv4 地址所在的网络段（末位为 0）</p>
 <p>若一个网络的规模不超过 254 台电脑，使用 255.255.255.0 作为子网掩码就可了，若在一所大学具有 1500 多台电脑，这种规模的局域网可使用 255.255.0.0；</p>
 </section>
 <section id="mac">
-<h3>2.4. MAC 地址<a class="headerlink" href="#mac" title="Permalink to this heading">#</a></h3>
+<h3>2.4. MAC 地址<a class="headerlink" href="#mac" title="Link to this heading">#</a></h3>
 <p>MAC 地址（硬件地址）：由 6 个字节组成，前 3 个表示网卡许可，后 3 个是网卡产品序列号；</p>
 <ul class="simple">
 <li><p>ping 命令会先调用 ARP（包含目标 IP 地址），通过交换机将 ARP 广播发送给其连接的所有设备，然后返回网关的 MAC 地址，然后请求方 PC 调用 ICMP 向目的 PC 发送消息；</p></li>
@@ -697,9 +703,9 @@ nslookup<span class="w"> </span>baidu.com
 </section>
 </section>
 <section id="socket">
-<h2>3. Socket<a class="headerlink" href="#socket" title="Permalink to this heading">#</a></h2>
+<h2>3. Socket<a class="headerlink" href="#socket" title="Link to this heading">#</a></h2>
 <section id="id8">
-<h3>3.1. 创建、修改<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<h3>3.1. 创建、修改<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <p>Socket（套接字）是进程间通信的一种方式，它能实现不同主机间的进程间通信，用于解决传输层以下的通信；</p>
 <p><img alt="tcp" src="../_images/tcp.png" /></p>
 <p>Socket = IP address + Protocol + Port</p>
@@ -733,7 +739,7 @@ nslookup<span class="w"> </span>baidu.com
 </ul>
 </section>
 <section id="id9">
-<h3>3.2. 端口<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
+<h3>3.2. 端口<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
 <p>计算机通过 IP + 端口号区分不同网络服务。</p>
 <ul class="simple">
 <li><p>端口号只有整数，范围是从 0 到 65535，Linux 共拥有 65536 (<span class="math notranslate nohighlight">\(2^{16}\)</span>) 个端口</p></li>
@@ -742,11 +748,11 @@ nslookup<span class="w"> </span>baidu.com
 <li><p>动态端口：端口号为 1023-65535 的端口，动态分配给相应服务</p></li>
 <li><p>查看端口状态：netstat –an</p></li>
 </ul>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>Protocol</p></th>
-<th class="text-center head"><p>Port</p></th>
-<th class="text-center head"><p>Socket</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Protocol</p></th>
+<th class="head text-center"><p>Port</p></th>
+<th class="head text-center"><p>Socket</p></th>
 </tr>
 </thead>
 <tbody>
@@ -783,7 +789,7 @@ nslookup<span class="w"> </span>baidu.com
 </section>
 </section>
 <section id="udp">
-<h2>4. UDP<a class="headerlink" href="#udp" title="Permalink to this heading">#</a></h2>
+<h2>4. UDP<a class="headerlink" href="#udp" title="Link to this heading">#</a></h2>
 <p>UDP 是一个<strong>面向数据包</strong>的、<strong>无连接</strong>的通信协议，一般用于多点通信和实时的数据业务</p>
 <ul class="simple">
 <li><p>UDP 不提供可靠性，它只是把应用程序传给 IP 的数据报（datagram）发送出去，每个数据报能否到达目的地、到达目的地的时间、内容的正确性均是不能被保证的</p></li>
@@ -791,19 +797,19 @@ nslookup<span class="w"> </span>baidu.com
 <li><p>UDP 传输数据时有大小限制，每个被传输的数据报必须 <strong>&lt; 64 kB</strong></p></li>
 </ul>
 <section id="id10">
-<h3>4.1. 服务端<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<h3>4.1. 服务端<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
 <p>一般情况下，为了让其他的客户端能够正确发送到此进程，服务器端需要绑定端口，而客户端一般不需要绑定，而是让操作系统随机分配，这样就不会因为需要绑定的端口被占用而导致程序无法运行；</p>
 </section>
 <section id="id11">
-<h3>4.2. 广播<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
+<h3>4.2. 广播<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
 <p>通过 UDP 进行广播，需要使用 <code class="docutils literal notranslate"><span class="pre">socket.socket(.setsockopt(s.SOL_SOCKET,</span> <span class="pre">s.SO_BROADCAST,</span> <span class="pre">1)</span></code> 修改 UDP 套接字参数；</p>
 <p>每类 IPv4 地址最小值用于显示网络区段，最大值用于广播，即末位为 255，C 类地址广播地址多为 192.168.1.255；</p>
 </section>
 </section>
 <section id="tcp">
-<h2>5. TCP 原理<a class="headerlink" href="#tcp" title="Permalink to this heading">#</a></h2>
+<h2>5. TCP 原理<a class="headerlink" href="#tcp" title="Link to this heading">#</a></h2>
 <section id="id12">
-<h3>5.1. 握手和挥手<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
+<h3>5.1. 握手和挥手<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
 <p>TCP 模型中，在通信开始前，一定要先建立相关的链接，才能发送数据，类似于生活中”打电话”；</p>
 <ul class="simple">
 <li><p>SYN（synchronous）：TCP/IP 建立连接时使用的握手信号；</p></li>
@@ -831,14 +837,14 @@ nslookup<span class="w"> </span>baidu.com
 </ul>
 </section>
 <section id="id13">
-<h3>5.2. 监听的队列长度<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
+<h3>5.2. 监听的队列长度<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">listen()</span></code> 中的参数表示已经建立链接和半链接的总数，若当前已建立链接数和半链接数以达到设定值，则新客户端就不会连接成功，而是等待服务器；</p>
 <blockquote>
 <div><p>Linux 中，无论 <code class="docutils literal notranslate"><span class="pre">listen()</span></code> 中的参数为多少，系统会自动给定 1 个值；</p>
 </div></blockquote>
 </section>
 <section id="id14">
-<h3>5.3. 短链接<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
+<h3>5.3. 短链接<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
 <p>短链接多用于网站，一般只会在 client/server 间传递一次读写操作</p>
 <ol class="arabic simple">
 <li><p>client 向 server 发起连接请求</p></li>
@@ -849,7 +855,7 @@ nslookup<span class="w"> </span>baidu.com
 </ol>
 </section>
 <section id="id15">
-<h3>5.4. 长链接<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
+<h3>5.4. 长链接<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
 <p>长链接多用于视频、游戏等，是在短链接基础上</p>
 <ul class="simple">
 <li><p>一次读写完成，连接不关闭</p></li>
@@ -859,10 +865,10 @@ nslookup<span class="w"> </span>baidu.com
 </section>
 </section>
 <section id="id16">
-<h2>6. TCP 服务器<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h2>
+<h2>6. TCP 服务器<a class="headerlink" href="#id16" title="Link to this heading">#</a></h2>
 <p>单进程服务器同一时刻只能为一个客户进行服务，多线程往往用于代替多进程服务器；</p>
 <section id="id17">
-<h3>6.1. 非阻塞版<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
+<h3>6.1. 非阻塞版<a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
 <p>当服务器为一个客户端服务时，而另外的客户端发起了 connect，只要服务器 listen 的队列有空闲的位置，就会为这个新客户端进行连接，但当服务器为这个新客户端服务时，可能一次性把所有数据接收完毕</p>
 <ul class="simple">
 <li><p>非阻塞模式下，accept 时，恰巧没有客户端 connect，则 accept 会产生一个异常，故需要 try 来进行处理</p></li>

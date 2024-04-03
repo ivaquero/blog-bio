@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>复杂性概述 &#8212; 生物狗学编程</title>
   
@@ -29,42 +28,38 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'complexity/01-复杂性概述';</script>
     <link rel="canonical" href="https://ivaquero.github.io/blog-bio/complexity/01-复杂性概述.html" />
-    <link rel="shortcut icon" href="../_static/doge.png"/>
+    <link rel="icon" href="../_static/doge.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="细胞自动机" href="02-%E7%BB%86%E8%83%9E%E8%87%AA%E5%8A%A8%E6%9C%BA.html" />
@@ -162,7 +157,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -431,11 +437,11 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>复杂性概述<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<h1>复杂性概述<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <section id="id2">
-<h2>1. 三论<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>1. 三论<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <section id="id3">
-<h3>1.1. 广义系统论<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>1.1. 广义系统论<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>提出人：贝塔朗菲（Ludwig von Bertalanffy，1901∼1972）</p>
 <p>提出时间：1937 年</p>
 <p>主要内容：</p>
@@ -448,33 +454,33 @@ document.write(`
 </ul>
 </section>
 <section id="id4">
-<h3>1.2. 控制论<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3>1.2. 控制论<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>提出人：维纳（Norbert Wiener，1894∼1964）</p>
 <p>提出时间：1948 年</p>
 <p>主要内容：</p>
 </section>
 <section id="id5">
-<h3>1.3. 信息论<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<h3>1.3. 信息论<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>提出人：香农（Claude Elwood Shannon，1916∼2001）</p>
 <p>提出时间：1948∼1949 年</p>
 <p>主要内容：</p>
 </section>
 <section id="id6">
-<h3>2.1. 耗散结构理论<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<h3>2.1. 耗散结构理论<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <p>提出人：香农（Claude Elwood Shannon，1916∼2001）</p>
 <p>提出时间：1948∼1949 年</p>
 </section>
 <section id="id7">
-<h3>2.2. 协同论<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<h3>2.2. 协同论<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 </section>
 <section id="id8">
-<h3>2.3. 突变论<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<h3>2.3. 突变论<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 </section>
 </section>
 <section id="id9">
-<h2>3. 观念的变换<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
+<h2>3. 观念的变换<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
 <section id="id10">
-<h3>3.1. 模型的轴线<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<h3>3.1. 模型的轴线<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
 <div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>graph LR
 
 A(常规); Z(复杂);
@@ -497,7 +503,7 @@ G1(频率学派) --&gt; G2(学派学派)
 </div>
 </section>
 <section id="id11">
-<h3>3.2. 思维的轴线<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
+<h3>3.2. 思维的轴线<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
 <div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>graph LR
 
 A(常规); Z(复杂);

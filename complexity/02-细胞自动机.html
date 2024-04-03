@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>细胞自动机 &#8212; 生物狗学编程</title>
   
@@ -29,44 +28,40 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'complexity/02-细胞自动机';</script>
     <link rel="canonical" href="https://ivaquero.github.io/blog-bio/complexity/02-细胞自动机.html" />
-    <link rel="shortcut icon" href="../_static/doge.png"/>
+    <link rel="icon" href="../_static/doge.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="相变" href="03-%E7%9B%B8%E5%8F%98.html" />
@@ -164,7 +159,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -439,11 +445,11 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>细胞自动机<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<h1>细胞自动机<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <section id="id2">
-<h2>1. 引言<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>1. 引言<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <section id="id3">
-<h3>1.1. 构成<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>1.1. 构成<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>细胞自动机（cellular automata，CA）是一个描述世界的模型，带有非常简单的物理。由冯·诺伊曼（John von Neumann，1903∼1957）和乌拉姆（Stanisław Marcin Ulam，1909∼1984）于 20 世纪 40 年代提出。</p>
 <p>标准 CA 是一个由”细胞”、“细胞状态”、”邻域”和”状态更新规则”构成的四元组，数学上，可表示为</p>
 <div class="math notranslate nohighlight">
@@ -460,7 +466,7 @@ document.write(`
 </ul>
 </section>
 <section id="id4">
-<h3>1.2. 空间和邻居<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3>1.2. 空间和邻居<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>细胞：细胞自动机最基本的组成部分。细胞分布在离散的 Euclidean 空间位置上，每个时刻有着离散的状态，如 <span class="math notranslate nohighlight">\(\{0, 1\}\)</span> 等。</p></li>
 <li><p>细胞空间：细胞所分布在 Euclidean 空间上的网格点的集合。最常见的为二维细胞空间，通常可按三角形、四边形和六边形三种网格排列。</p></li>
@@ -470,7 +476,7 @@ document.write(`
 <p><img alt="neighbor" src="../_images/neighbor.png" /></p>
 </section>
 <section id="id5">
-<h3>1.3. 边界<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<h3>1.3. 边界<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>边界条件：实际模拟细胞自动机的演化时不可能处理无限网络，系统必须是有边界的。处理边界格点时，可为边界的信息进行编码，由此选择不同的演化规则。另一种方法是在边界处扩展，以满足边界有与内部类似的邻居。</p></li>
 <li><p>周期型边界：周期型是指相对边界连接起来的细胞空间。这种空间与无限空间最为接近，进行理论探讨时，常以此类空间作为实验进行模拟。</p></li>
@@ -482,9 +488,9 @@ document.write(`
 </section>
 </section>
 <section id="ca">
-<h2>2. 简单 CA<a class="headerlink" href="#ca" title="Permalink to this heading">#</a></h2>
+<h2>2. 简单 CA<a class="headerlink" href="#ca" title="Link to this heading">#</a></h2>
 <section id="id6">
-<h3>2.1. 零维 CA<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<h3>2.1. 零维 CA<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <p>考虑带有单个细胞的 CA（也称零维 CA，不涉及空间）。细胞状态是用变 量<span class="math notranslate nohighlight">\(x_i\)</span>表示的整数，其中下标<span class="math notranslate nohighlight">\(i\)</span>表示<span class="math notranslate nohighlight">\(x_i\)</span>是时间步骤<span class="math notranslate nohighlight">\(i\)</span>期间的系统状态。作为初始条件，<span class="math notranslate nohighlight">\(x_0 = 0\)</span>。制定一个规则</p>
 <div class="math notranslate nohighlight">
 \[
@@ -500,7 +506,7 @@ x_i = (x_{i-1} + 1)≡ 2
 <p>大多数 CA 是确定性的，这意味着规则没有任何随机元素；给定相同的初始状态，它们总是产生相同的结果。也有不确定性的 CA，但这里不涉及它们。</p>
 </section>
 <section id="id7">
-<h3>2.2. 初等 CA<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<h3>2.2. 初等 CA<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <p>初等 CA（elementry cellular automata）是状态集<span class="math notranslate nohighlight">\(S\)</span>只有两个元素，即状态个数<span class="math notranslate nohighlight">\(k =2\)</span>，邻居半径<span class="math notranslate nohighlight">\(r = 1\)</span>的一维 CA。其邻居个数为<span class="math notranslate nohighlight">\(N =2\)</span>。这样的局部规则的映射函数可写为如下形式：</p>
 <div class="math notranslate nohighlight">
 \[
@@ -512,7 +518,7 @@ S_i^{t + 1} = f(S_{i-1}^t, S_i^t, S_{i+ 1}^t)
 </div></blockquote>
 </section>
 <section id="id8">
-<h3>2.3. 规则与分类<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<h3>2.3. 规则与分类<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <p>沃尔夫勒姆（Stephen Wolfram，1959∼）在《一种新科学（A New Kind of Science）》和几篇从 80 年代中期开始的论文中根据 CA 呈现的范型（pattern）对 CA 进行了分类。按复杂性分类排序：</p>
 <ul class="simple">
 <li><p>I 类（homogenous）：自任何初始状态开始，经过一定时间运行后，细胞空间趋于一个空间平稳的构形，这里空间平稳即指每个细胞处于固定状态。不随时间变化而变化。</p></li>
@@ -520,10 +526,10 @@ S_i^{t + 1} = f(S_{i-1}^t, S_i^t, S_{i+ 1}^t)
 <li><p>III 类（chaotic）：自任何初始状态开始，经过一定时间运行后，细胞自动机表现出混沌的非周期行为，所生成的结构的统计特征不再变化，通常表现为分形分维特征。可用于产生随机数。</p></li>
 <li><p>IV（complex）：出现复杂的局部结构，或说是局部的混沌，其中有些会不断地传播。</p></li>
 </ul>
-<p>2004 年，Wolfram 的研究助理 Matthew Cook 证明了初等 CA 中的规则 110 是通用的 <a class="footnote-reference brackets" href="#id16" id="id9">1</a>，即，任何计算机可完成的任何计算都可由该 CA 完成。</p>
+<p>2004 年，Wolfram 的研究助理 Matthew Cook 证明了初等 CA 中的规则 110 是通用的 <a class="footnote-reference brackets" href="#id16" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>，即，任何计算机可完成的任何计算都可由该 CA 完成。</p>
 </section>
 <section id="id10">
-<h3>2.4. 一维 CA<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<h3>2.4. 一维 CA<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
 <p>在一维 CA 中，有三种自然范型：</p>
 <ul class="simple">
 <li><p>有限序列：数量有限的细胞排成一排。除第一个和最后一个之外的所有细胞都有两个邻居。</p></li>
@@ -533,9 +539,9 @@ S_i^{t + 1} = f(S_{i-1}^t, S_i^t, S_{i+ 1}^t)
 </section>
 </section>
 <section id="id11">
-<h2>3. 二维 CA<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h2>
+<h2>3. 二维 CA<a class="headerlink" href="#id11" title="Link to this heading">#</a></h2>
 <section id="id12">
-<h3>3.1. 生命游戏<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
+<h3>3.1. 生命游戏<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
 <p>约翰·康威（John Horton Conway，1937∼2020）的生命游戏（GoL，1970）是一种使用 Moore 邻域的二维 CA，遵循简单的规则并产生令人惊讶的复杂行为。就像 Wolfram 的规则 110 一样，事实证明 GoL 是 Turing 完备的；即，至少在理论上它可计算任何可计算的函数。</p>
 <p>在二维 CA 的所有可能规则中，大多数产生简单的行为：大多数初始条件快速稳定或无限增长。通过避免无趣的 CA，Conway 也避免了 Wolfram 的一类（固定）和二类（周期）行为，且可能还有三类（混沌）。</p>
 <p>在 GoL 中，每个单元格的下一个状态取决于其当前状态和活动邻居的数量。这种规则可概括为 DSRO（Death, Survival, Reproduction, Overpopulation）。</p>
@@ -545,11 +551,11 @@ S_i^{t + 1} = f(S_{i-1}^t, S_i^t, S_{i+ 1}^t)
 <li><p>若细胞的生前邻居数量 ⩾ R 且 ⩽ O，则细胞复活。</p></li>
 </ul>
 <p>当 DSRO = (2, 3, 3, 3)，若一个细胞是活的，若它有两个或三个活动邻居就会生存，否则就会死亡。若一个细胞是死的，它将保持死亡，除非它恰好有三个邻居。</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>当前状态</p></th>
-<th class="text-center head"><p>邻居数量</p></th>
-<th class="text-center head"><p>下一个状态</p></th>
+<tr class="row-odd"><th class="head text-center"><p>当前状态</p></th>
+<th class="head text-center"><p>邻居数量</p></th>
+<th class="head text-center"><p>下一个状态</p></th>
 </tr>
 </thead>
 <tbody>
@@ -575,7 +581,7 @@ S_i^{t + 1} = f(S_{i-1}^t, S_i^t, S_{i+ 1}^t)
 <p>生命游戏非常接近于秩序与混沌的边界。若对 CA 的规则进行某种程度的改变，CA 可能会形成永恒的生长，以稳定的速度不断向外生长。另一种可能是，CA 变得非常混乱，以至于生命似乎是随机的，没有形成任何规律，没有保留一丝一毫的秩序，少量的秩序使 CA 具有生命力。生命游戏恰巧落在了两者之间，即属于此前提到的复杂型 CA。规则使其具有很好的不可预测性，有一些漂亮的模式和有趣的现象出现。</p>
 </section>
 <section id="id13">
-<h3>3.2. 生命的范型<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
+<h3>3.2. 生命的范型<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
 <p>一般来说，稳定的生命范型至少有如下三类：</p>
 <ul class="simple">
 <li><p>静物（still-life）：静物形的状是稳定的，除非其他形状与之碰撞，可认为其周期为 1。常见形状有</p>
@@ -593,8 +599,8 @@ S_i^{t + 1} = f(S_{i-1}^t, S_i^t, S_{i+ 1}^t)
 </ul>
 </section>
 <section id="langton">
-<h3>3.3. Langton 蚂蚁<a class="headerlink" href="#langton" title="Permalink to this heading">#</a></h3>
-<p>Langton 蚂蚁是另一个经典的二维 CA，由克里斯·朗顿（Chris Langton，1948 ∼）于 1986 年提出 <a class="footnote-reference brackets" href="#id17" id="id14">2</a>。平面上的正方形格子被填上黑色或白色。在其中一格正方形内有一只”蚂蚁”。蚂蚁的头部朝向为：上下左右其中一方。蚂蚁的移动规则十分简单：</p>
+<h3>3.3. Langton 蚂蚁<a class="headerlink" href="#langton" title="Link to this heading">#</a></h3>
+<p>Langton 蚂蚁是另一个经典的二维 CA，由克里斯·朗顿（Chris Langton，1948 ∼）于 1986 年提出 <a class="footnote-reference brackets" href="#id17" id="id14" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>。平面上的正方形格子被填上黑色或白色。在其中一格正方形内有一只”蚂蚁”。蚂蚁的头部朝向为：上下左右其中一方。蚂蚁的移动规则十分简单：</p>
 <ul class="simple">
 <li><p>若蚂蚁在黑格，右转 <span class="math notranslate nohighlight">\(90°\)</span>，将该格改为白格，并向前移一格；</p></li>
 <li><p>若蚂蚁在白格，左转 <span class="math notranslate nohighlight">\(90°\)</span>，将该格改为黑格，并向前移一格。</p></li>
@@ -602,7 +608,7 @@ S_i^{t + 1} = f(S_{i-1}^t, S_i^t, S_{i+ 1}^t)
 <p>规则虽然简单，蚂蚁的行为却十分复杂。刚刚开始时留下的路线都会有接近对称，像是会重复，但不论起始状态如何，蚂蚁经过漫长的混乱活动后，会开辟出一条规则的”高速公路”。</p>
 </section>
 <section id="id15">
-<h3>3.4. <span class="math notranslate nohighlight">\(λ\)</span> 法则<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
+<h3>3.4. <span class="math notranslate nohighlight">\(λ\)</span> 法则<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
 <p>Langton 对 CA 的另一个重要贡献是提出了<span class="math notranslate nohighlight">\(λ\)</span>法则，通过该法则，可对任一个 CA 的可预测性进行分类。
 起初，Langton 做了一个量表；量表的范围在 0 到 1 之间，0 表示固定的、有序的、可预测的。当按小数点往上爬时，刻度的”面积”就从有序变成了所谓的周期性，然后又变成了复杂，最后，在这之上，就是混沌。</p>
 <p>要计算出 CA 的<span class="math notranslate nohighlight">\(λ\)</span>值很容易。它仅仅是一个细胞的新状态所处的规则的分数，用小数表示。即，导致生命的规则越多，<span class="math notranslate nohighlight">\(λ\)</span>值就越大。在 CA 中，棋盘上的细胞越多，平面就越混沌。当棋盘变得更自由时，它就会变得有序。因为 CA 要简化得多，通常每个单元格都有 2 个状态，故通常把死亡看成是”清场”。</p>
@@ -620,16 +626,16 @@ S_i^{t + 1} = f(S_{i-1}^t, S_i^t, S_{i+ 1}^t)
 <li><p><span class="math notranslate nohighlight">\(λ ∈ [0.3, 0.6]\)</span>时，此时 CA 属于复杂型，复杂度随<span class="math notranslate nohighlight">\(λ\)</span>递增；</p></li>
 <li><p><span class="math notranslate nohighlight">\(λ ∈ [0.6, 1.0]\)</span>时，系统复杂结构消失，此时 CA 属于混沌型；</p></li>
 </ul>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-right head"><p>000</p></th>
-<th class="text-right head"><p>001</p></th>
-<th class="text-right head"><p>010</p></th>
-<th class="text-right head"><p>011</p></th>
-<th class="text-right head"><p>100</p></th>
-<th class="text-right head"><p>101</p></th>
-<th class="text-right head"><p>110</p></th>
-<th class="text-right head"><p>111</p></th>
+<tr class="row-odd"><th class="head text-right"><p>000</p></th>
+<th class="head text-right"><p>001</p></th>
+<th class="head text-right"><p>010</p></th>
+<th class="head text-right"><p>011</p></th>
+<th class="head text-right"><p>100</p></th>
+<th class="head text-right"><p>101</p></th>
+<th class="head text-right"><p>110</p></th>
+<th class="head text-right"><p>111</p></th>
 </tr>
 </thead>
 <tbody>
@@ -646,14 +652,16 @@ S_i^{t + 1} = f(S_{i-1}^t, S_i^t, S_{i+ 1}^t)
 </table>
 <p>上表有 4 个规则代表生，<span class="math notranslate nohighlight">\(λ = 1 -4/2^3 = 0.5\)</span>。这似乎是个不错的值，使这个 CA 落入复杂领域。</p>
 <hr class="footnotes docutils" />
-<dl class="footnote brackets">
-<dt class="label" id="id16"><span class="brackets"><a class="fn-backref" href="#id9">1</a></span></dt>
-<dd><p>Cook, M. “Universality in Elementary Cellular Automata.” Complex Systems 15, 1-40, 2004. <br></p>
-</dd>
-<dt class="label" id="id17"><span class="brackets"><a class="fn-backref" href="#id14">2</a></span></dt>
-<dd><p>Christopher G Langton (1998). Artificial life: an overview. MIT Press.</p>
-</dd>
-</dl>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id16" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">1</a><span class="fn-bracket">]</span></span>
+<p>Cook, M. “Universality in Elementary Cellular Automata.” Complex Systems 15, 1-40, 2004. <br></p>
+</aside>
+<aside class="footnote brackets" id="id17" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id14">2</a><span class="fn-bracket">]</span></span>
+<p>Christopher G Langton (1998). Artificial life: an overview. MIT Press.</p>
+</aside>
+</aside>
 </section>
 </section>
 </section>

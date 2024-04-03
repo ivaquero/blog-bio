@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>分形 &#8212; 生物狗学编程</title>
   
@@ -29,44 +28,40 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'complexity/05-分形';</script>
     <link rel="canonical" href="https://ivaquero.github.io/blog-bio/complexity/05-分形.html" />
-    <link rel="shortcut icon" href="../_static/doge.png"/>
+    <link rel="icon" href="../_static/doge.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="随机图" href="06-%E9%9A%8F%E6%9C%BA%E5%9B%BE.html" />
@@ -164,7 +159,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -445,14 +451,14 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>分形<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<h1>分形<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <section id="id2">
-<h2>1. 分形的构建<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>1. 分形的构建<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p><strong>分形</strong>：分形是指在放大镜下显示出自相似性的物体，可用简单的图案（以不断缩小的比例重复的图像）来构建。虽然 Julia 集和 Mandelbrot 集不是真正的分形，但它们确实具有分形结构。</p>
 <p>自然界中的许多物体在不同的标度上都显示出这种自相似性，例如，菜花、蕨类植物、树木、山脉、云朵，甚至血管网络都有一些分形结构。这些物体不能用线条、平面和球体的几何结构来描述。而是需要分形几何。</p>
 <section id="id3">
-<h3>1.1. 牛顿分形<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
-<p>众所周知，在数值分析中 <a class="footnote-reference brackets" href="#id20" id="id4">1</a>，可用牛顿法，或牛顿 - 拉弗逊法（Newton-Raphson）来求方程<span class="math notranslate nohighlight">\(f(z) = 0\)</span>的根，利用迭代公式</p>
+<h3>1.1. 牛顿分形<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>众所周知，在数值分析中 <a class="footnote-reference brackets" href="#id20" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>，可用牛顿法，或牛顿 - 拉弗逊法（Newton-Raphson）来求方程<span class="math notranslate nohighlight">\(f(z) = 0\)</span>的根，利用迭代公式</p>
 <div class="math notranslate nohighlight">
 \[
 z_{n+1} =z_n - \frac{f(z_n)}{f^{′}(z_n)}
@@ -460,7 +466,7 @@ z_{n+1} =z_n - \frac{f(z_n)}{f^{′}(z_n)}
 <p><strong>牛顿分形</strong>：牛顿分形是子午函数（meromorphic function），<span class="math notranslate nohighlight">\(z_{n+1} = f(z_n)\)</span>的 Julia 集，并表明数值方法对其初始起点的选择可非常敏感。</p>
 </section>
 <section id="id5">
-<h3>1.2. 康德分形<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<h3>1.2. 康德分形<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p><strong>康德集</strong>：康德分形是 Georg Cantor 在 1870 年首先考虑的。它的构造是在每个构造阶段去掉一条线段的中间三分之一。因此在第 0 阶段，有一个单位长度的线段。在第 1 阶段，去掉中间的三分之一，留下两个长度各为 1/3 的线段。在第 2 阶段，将有 4 个长度各为 1/9 的线段。不难看出，在第<span class="math notranslate nohighlight">\(k\)</span>个阶段，将有<span class="math notranslate nohighlight">\(N = 2^{k}\)</span>段，每段长度为<span class="math notranslate nohighlight">\(l=3^{-k}\)</span>。</p>
 <p><img alt="cantor fractal" src="../_images/cantor-fractal.png" /></p>
 <p>若这个过程一直持续到无穷大，则</p>
@@ -487,7 +493,7 @@ z_{n+1} =z_n - \frac{f(z_n)}{f^{′}(z_n)}
 <p>其中，小数点后的下划线代表一个循环小数。不难看出，康德集可通过三元分数只由 0 和 2 组成的点来确定。</p>
 </section>
 <section id="koch">
-<h3>1.3. Koch 分形<a class="headerlink" href="#koch" title="Permalink to this heading">#</a></h3>
+<h3>1.3. Koch 分形<a class="headerlink" href="#koch" title="Link to this heading">#</a></h3>
 <p><strong>Koch 曲线</strong>：Helge von Koch 在 1904 年首次想象出 Koch 曲线。它是由四条长度各为<span class="math notranslate nohighlight">\(1/3\)</span>的线段组成的图案代替了一条单位线段。这里，在第<span class="math notranslate nohighlight">\(k\)</span>阶段，有<span class="math notranslate nohighlight">\(N =4^{k}\)</span>条线段，每条线段的长度为<span class="math notranslate nohighlight">\(l=3^{-k}\)</span>。因此对于构造到无穷大的数学分形来说</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -528,7 +534,7 @@ P_k = 4 × \bigg(\frac{5}3\bigg)^{k}
 </section>
 </section>
 <section id="id6">
-<h2>2. 迭代函数系统<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<h2>2. 迭代函数系统<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
 <p><strong>迭代函数系统（iterated function system）</strong>：一个迭代函数系统（IFS）是一个有限集<span class="math notranslate nohighlight">\(T_1, T_2, T_3, …\)</span>。</p>
 <p>ℝ^2 的仿射线性变换的<span class="math notranslate nohighlight">\(T_n\)</span>，其中</p>
 <div class="math notranslate nohighlight">
@@ -537,7 +543,7 @@ T_{j}(x, y) = (a_{j} x + b_{j} y + c_{j}, d_{j} x +e_{j} y +f_{j})
 \]</div>
 <p>双曲迭代函数系统（hyperbolic iterated function system）是一个亦为收缩的仿射线性变换的集合。</p>
 <section id="id7">
-<h3>2.1. 谢尔宾斯基三角形<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<h3>2.1. 谢尔宾斯基三角形<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <p><strong>谢尔宾斯基三角形</strong>：由 Wacław Sierpiński 在 1915 年提出。这个分形可通过多种方式来构建。</p>
 <p>一种方法是用骰子玩一个所谓的混沌游戏。考虑一个顶点为 A，B，C 的等边三角形。混沌游戏的规则非常简单。从三角形内部某处的初始点<span class="math notranslate nohighlight">\(x_0\)</span>开始。</p>
 <ul class="simple">
@@ -555,7 +561,7 @@ T_{j}(x, y) = (a_{j} x + b_{j} y + c_{j}, d_{j} x +e_{j} y +f_{j})
 <p><img alt="sierpiński triangle" src="../_images/sierpinski-triangle.png" /></p>
 </section>
 <section id="barnsley">
-<h3>2.2. Barnsley 的蕨类<a class="headerlink" href="#barnsley" title="Permalink to this heading">#</a></h3>
+<h3>2.2. Barnsley 的蕨类<a class="headerlink" href="#barnsley" title="Link to this heading">#</a></h3>
 <p>IFS 遵循基本规则，就像用于生成谢尔宾斯基三角形的混沌游戏一样。混沌游戏的规则可被概括为允许更大的自由度，具体如下。</p>
 <ol class="arabic simple">
 <li><p>创建两个或多个非线性变换。</p></li>
@@ -568,17 +574,17 @@ T_{j}(x, y) = (a_{j} x + b_{j} y + c_{j}, d_{j} x +e_{j} y +f_{j})
 <p><img alt="barnsley's fern" src="../_images/barnsleys-fern.png" /></p>
 </section>
 <section id="id8">
-<h3>2.3. 皮亚诺曲线<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
-<p>在几何学中，皮亚诺曲线（Peano curve）是第一个被发现的空间填充曲线的例子，由皮亚诺（Giuseppe Peano，1858~1932）在 1890 年发现 <a class="footnote-reference brackets" href="#id21" id="id9">2</a>。皮亚诺曲线是一个从单位区间铺满单位正方形的满射的连续函数。</p>
+<h3>2.3. 皮亚诺曲线<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<p>在几何学中，皮亚诺曲线（Peano curve）是第一个被发现的空间填充曲线的例子，由皮亚诺（Giuseppe Peano，1858~1932）在 1890 年发现 <a class="footnote-reference brackets" href="#id21" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>。皮亚诺曲线是一个从单位区间铺满单位正方形的满射的连续函数。</p>
 <p><img alt="Peano curve" src="../_images/peano-curve.png" /></p>
 <p>希尔伯特曲线（Hilbert curve）是皮亚诺曲线的一个变体。</p>
 <p><img alt="Hilbert curve" src="../_images/hilbert-curve.png" /></p>
 </section>
 </section>
 <section id="id10">
-<h2>3. 维度计算<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
+<h2>3. 维度计算<a class="headerlink" href="#id10" title="Link to this heading">#</a></h2>
 <section id="hausdorff">
-<h3>3.1. Hausdorff 指数<a class="headerlink" href="#hausdorff" title="Permalink to this heading">#</a></h3>
+<h3>3.1. Hausdorff 指数<a class="headerlink" href="#hausdorff" title="Link to this heading">#</a></h3>
 <p><strong>Hausdorff 指数</strong>：自相似分形的分形维度<span class="math notranslate nohighlight">\(D_f\)</span>由以下公式给出</p>
 <div class="math notranslate nohighlight">
 \[
@@ -598,8 +604,8 @@ D_f = \frac{\ln 3}{\ln 2} ≈ 1.5850
 \]</div>
 </section>
 <section id="id11">
-<h3>3.2. 框格计数<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
-<p><strong>框格计数维度</strong>：到目前为止，计算出的分形维度均是针对现实世界中不可能存在的设分形对象。Mandelbrot<a class="footnote-reference brackets" href="#id22" id="id12">3</a> 展示了分形是如何出现在整个科学和自然界中的。树木、云、岩石以及前面章节中生成的分形都可显示出某种类型的缩放和自相似性。其表明，这些物体在一定的标度范围内服从方程所描述的幂律。通过用不同大小的框格覆盖物体，并统计包含物体的框格数量，就可估计出一个所谓的框格计数维度，它相当于分形维度。Mandelbrot 将分形维度定义为</p>
+<h3>3.2. 框格计数<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<p><strong>框格计数维度</strong>：到目前为止，计算出的分形维度均是针对现实世界中不可能存在的设分形对象。Mandelbrot<a class="footnote-reference brackets" href="#id22" id="id12" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> 展示了分形是如何出现在整个科学和自然界中的。树木、云、岩石以及前面章节中生成的分形都可显示出某种类型的缩放和自相似性。其表明，这些物体在一定的标度范围内服从方程所描述的幂律。通过用不同大小的框格覆盖物体，并统计包含物体的框格数量，就可估计出一个所谓的框格计数维度，它相当于分形维度。Mandelbrot 将分形维度定义为</p>
 <div class="math notranslate nohighlight">
 \[
 D_f = \lim_{l → 0} \frac{\ln N(l)}{- \ln l}
@@ -607,15 +613,15 @@ D_f = \lim_{l → 0} \frac{\ln N(l)}{- \ln l}
 <p>其中，长度为<span class="math notranslate nohighlight">\(l\)</span>的<span class="math notranslate nohighlight">\(N(l)\)</span>个框格覆盖了分形对象。这些框格不一定是正方形的。</p>
 <p><strong>例</strong>：用框格计数法说明该 Koch 曲线服从上式给出的幂律，从而估计出框格的尺寸。</p>
 <p><img alt="box counting" src="../_images/box-counting.png" /></p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p></p></th>
-<th class="text-center head"><p></p></th>
-<th class="text-center head"><p></p></th>
-<th class="text-center head"><p></p></th>
-<th class="text-center head"><p></p></th>
-<th class="text-center head"><p></p></th>
-<th class="text-center head"><p></p></th>
+<tr class="row-odd"><th class="head text-center"><p></p></th>
+<th class="head text-center"><p></p></th>
+<th class="head text-center"><p></p></th>
+<th class="head text-center"><p></p></th>
+<th class="head text-center"><p></p></th>
+<th class="head text-center"><p></p></th>
+<th class="head text-center"><p></p></th>
 </tr>
 </thead>
 <tbody>
@@ -658,10 +664,10 @@ D_f = \lim_{l → 0} \frac{\ln N(l)}{- \ln l}
 </section>
 </section>
 <section id="id13">
-<h2>4. 多分形<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h2>
+<h2>4. 多分形<a class="headerlink" href="#id13" title="Link to this heading">#</a></h2>
 <p>不幸的是，在现实世界中，分形并不是齐次的；很少有一个相同的图案在所有标度上重复。两个物体可能具有相同的分形维度，但看起来却完全不同。人们发现，现实世界的分形是异质的；即，有一种非均匀性拥有丰富的标度和自相似性，可从点到点的变化。还需要指出的是，物理分形总是存在某种缩放限制。这些比较复杂的物体被称为多分形（multifractal）。</p>
 <section id="id14">
-<h3>4.1. 广义维度<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
+<h3>4.1. 广义维度<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
 <p>令<span class="math notranslate nohighlight">\(μ\)</span>是一个定义在对象<span class="math notranslate nohighlight">\(S⊂ d\)</span>上的自相似概率度量，其中，<span class="math notranslate nohighlight">\(μ(B)\)</span>是由击中框格<span class="math notranslate nohighlight">\(B_i(l)\)</span>中对象的概率确定的概率度量，<span class="math notranslate nohighlight">\(N∝ 1/l^2\)</span>是网格中框格的数量。</p>
 <p>广义分形维度<span class="math notranslate nohighlight">\(D_q\)</span>，或说，奇点谱<span class="math notranslate nohighlight">\(f(α)\)</span>可使用框格计数。首先，考虑广义分形维度。用大小为<span class="math notranslate nohighlight">\(l\)</span>的框格网格<span class="math notranslate nohighlight">\((B_i(l))^n_{i=1}\)</span>来覆盖对象<span class="math notranslate nohighlight">\(S\)</span>。第<span class="math notranslate nohighlight">\(q\)</span>个矩（或分区函数）<span class="math notranslate nohighlight">\(Z_q\)</span>的定义为</p>
 <div class="math notranslate nohighlight">
@@ -714,7 +720,7 @@ D_1 = \lim_{l → 0} \frac{∑_{i=1}^{N} p_i \ln(p_i)}{-\ln(l)}
 <p>这被称为信息维度（information dimension）。这给出了形态如何随着<span class="math notranslate nohighlight">\(l → 0\)</span>而增加的指标。<span class="math notranslate nohighlight">\(D_2\)</span>被称为相关维度，表示每个框格中的点对之间的相关性。广义维度<span class="math notranslate nohighlight">\(D_3, D₄, …\)</span>与每个框中点的三倍、四倍等之间的相关性有关。</p>
 </section>
 <section id="id15">
-<h3>4.2. 维度谱<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
+<h3>4.2. 维度谱<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
 <p>考虑维度谱<span class="math notranslate nohighlight">\(f(α)\)</span>。<span class="math notranslate nohighlight">\(s\)</span>类线段的权重<span class="math notranslate nohighlight">\(p_s\)</span>随框格的大小<span class="math notranslate nohighlight">\(l\)</span>而变化，</p>
 <div class="math notranslate nohighlight">
 \[
@@ -750,7 +756,7 @@ f(α) = ∞_{-∞&lt;q&lt;∞}(τ(q) + αq)
 <li><p>计算不同<span class="math notranslate nohighlight">\(l\)</span>值的分割函数<span class="math notranslate nohighlight">\(Z_q\)</span>。</p></li>
 <li><p>检查<span class="math notranslate nohighlight">\(Z_q\)</span>对<span class="math notranslate nohighlight">\(l\)</span>的双对数图是否为直线。若是，则<span class="math notranslate nohighlight">\(τ(q)\)</span>是指数<span class="math notranslate nohighlight">\(q\)</span>所对应的直线的斜率。</p></li>
 </ol>
-<p>综上，<span class="math notranslate nohighlight">\(τ(q)\)</span>和<span class="math notranslate nohighlight">\(D_q\)</span>可由上式得到，<span class="math notranslate nohighlight">\(f(α)\)</span>值可按上述方法确定，也可利用表达式计算 <a class="footnote-reference brackets" href="#id23" id="id16">4</a>。</p>
+<p>综上，<span class="math notranslate nohighlight">\(τ(q)\)</span>和<span class="math notranslate nohighlight">\(D_q\)</span>可由上式得到，<span class="math notranslate nohighlight">\(f(α)\)</span>值可按上述方法确定，也可利用表达式计算 <a class="footnote-reference brackets" href="#id23" id="id16" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>。</p>
 <div class="math notranslate nohighlight">
 \[
 f(q) = \lim_{l → 0} \frac{∑_{i=1}^{N} μ_i(q, l) \ln μ_i(q, l)}{\ln l}
@@ -769,16 +775,16 @@ f(q) = \lim_{l → 0} \frac{∑_{i=1}^{N} μ_i(q, l) \ln μ_i(q, l)}{\ln l}
 </section>
 </section>
 <section id="id17">
-<h2>5. 其他标度<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h2>
+<h2>5. 其他标度<a class="headerlink" href="#id17" title="Link to this heading">#</a></h2>
 <section id="id18">
-<h3>5.1. 克莱伯定律<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h3>
+<h3>5.1. 克莱伯定律<a class="headerlink" href="#id18" title="Link to this heading">#</a></h3>
 <p>克莱伯定律（Kleiber’s law）是以瑞士农业生物学家（Max Kleiber，1893~1976）在 20 世纪 30 年代初的生物学工作而命名的，是指对绝大多数动物而言，生物的代谢率与动物质量的<span class="math notranslate nohighlight">\(3/4\)</span>次幂相当。符号化地讲：若<span class="math notranslate nohighlight">\(q_0\)</span>是生物的代谢率，<span class="math notranslate nohighlight">\(M\)</span>是生物的质量，则</p>
 <div class="math notranslate nohighlight">
 \[
 q_0 ∼ cM^{\frac{3}{4}}
 \]</div>
 <p>克莱伯定律中的指数<span class="math notranslate nohighlight">\(c\)</span>的确切值还不清楚，部分原因是目前还没有完全令人满意的理论解释。</p>
-<p>英国物理学家 Goeffrey Brian West（1940∼）扩大验证了克莱伯定律 <a class="footnote-reference brackets" href="#id24" id="id19">5</a>，发现后者适用范围跨度 20 个数量级，但不同物种的<span class="math notranslate nohighlight">\(q_0\)</span>对应着不同的系数。</p>
+<p>英国物理学家 Goeffrey Brian West（1940∼）扩大验证了克莱伯定律 <a class="footnote-reference brackets" href="#id24" id="id19" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a>，发现后者适用范围跨度 20 个数量级，但不同物种的<span class="math notranslate nohighlight">\(q_0\)</span>对应着不同的系数。</p>
 <p>生物体的特征时间</p>
 <div class="math notranslate nohighlight">
 \[
@@ -795,23 +801,28 @@ f= c_2 M^{-1/4}
 T f= c_1 M^{1/4} c_2 M^{-1/4} = c_1 c_2 ≈ 1.5 * 10⁹
 \]</div>
 <hr class="footnotes docutils" />
-<dl class="footnote brackets">
-<dt class="label" id="id20"><span class="brackets"><a class="fn-backref" href="#id4">1</a></span></dt>
-<dd><p>A. Kharab and R.B. Guenther, An Introduction to Numerical Methods: A MATLAB Approach, 3rd Ed., CRC Press, Florida, 2011. <br></p>
-</dd>
-<dt class="label" id="id21"><span class="brackets"><a class="fn-backref" href="#id9">2</a></span></dt>
-<dd><p>Peano, G. (1890), “Sur une courbe, qui remplit toute une aire plane”, Mathematische Annalen, 36 (1): 157-160. <br></p>
-</dd>
-<dt class="label" id="id22"><span class="brackets"><a class="fn-backref" href="#id12">3</a></span></dt>
-<dd><p>B.B. Mandelbrot, The Fractal Geometry of Nature, W.H. Freeman and Co., New York, 1983. <br></p>
-</dd>
-<dt class="label" id="id23"><span class="brackets"><a class="fn-backref" href="#id16">4</a></span></dt>
-<dd><p>A.B. Chhabra, C. Meneveau, R.V. Jensen, and K.R. Sreenivasan, Direct determination of the f(α) singularity spectrum and its application to fully developed turbulence, Phys. Rev. A 40-9, (1989), 5284-5294. <br></p>
-</dd>
-<dt class="label" id="id24"><span class="brackets"><a class="fn-backref" href="#id19">5</a></span></dt>
-<dd><p>West, G. B.; Brown, J. H.; Enquist, B. J. (1997). “A General Model for the Origin of Allometric Scaling Laws in Biology”. Science. 276 (5309): 122-126.</p>
-</dd>
-</dl>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id20" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">1</a><span class="fn-bracket">]</span></span>
+<p>A. Kharab and R.B. Guenther, An Introduction to Numerical Methods: A MATLAB Approach, 3rd Ed., CRC Press, Florida, 2011. <br></p>
+</aside>
+<aside class="footnote brackets" id="id21" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">2</a><span class="fn-bracket">]</span></span>
+<p>Peano, G. (1890), “Sur une courbe, qui remplit toute une aire plane”, Mathematische Annalen, 36 (1): 157-160. <br></p>
+</aside>
+<aside class="footnote brackets" id="id22" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id12">3</a><span class="fn-bracket">]</span></span>
+<p>B.B. Mandelbrot, The Fractal Geometry of Nature, W.H. Freeman and Co., New York, 1983. <br></p>
+</aside>
+<aside class="footnote brackets" id="id23" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id16">4</a><span class="fn-bracket">]</span></span>
+<p>A.B. Chhabra, C. Meneveau, R.V. Jensen, and K.R. Sreenivasan, Direct determination of the f(α) singularity spectrum and its application to fully developed turbulence, Phys. Rev. A 40-9, (1989), 5284-5294. <br></p>
+</aside>
+<aside class="footnote brackets" id="id24" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id19">5</a><span class="fn-bracket">]</span></span>
+<p>West, G. B.; Brown, J. H.; Enquist, B. J. (1997). “A General Model for the Origin of Allometric Scaling Laws in Biology”. Science. 276 (5309): 122-126.</p>
+</aside>
+</aside>
 </section>
 </section>
 </section>

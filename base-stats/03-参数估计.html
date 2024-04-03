@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>参数估计 &#8212; 生物狗学编程</title>
   
@@ -29,44 +28,40 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'base-stats/03-参数估计';</script>
     <link rel="canonical" href="https://ivaquero.github.io/blog-bio/base-stats/03-参数估计.html" />
-    <link rel="shortcut icon" href="../_static/doge.png"/>
+    <link rel="icon" href="../_static/doge.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="参数检验" href="04-%E5%8F%82%E6%95%B0%E6%A3%80%E9%AA%8C.html" />
@@ -164,7 +159,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -473,7 +479,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>参数估计<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<h1>参数估计<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -491,9 +497,9 @@ document.write(`
 </details>
 </div>
 <section id="id2">
-<h2>1. 点估计<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>1. 点估计<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <section id="id3">
-<h3>1.1. 矩估计<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>1.1. 矩估计<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>即经验分布函数的矩。</p>
 <ul class="simple">
 <li><p>原点矩</p></li>
@@ -519,7 +525,7 @@ a_m = ∫_{-∞}^{∞} x^{m} f(x;θ_1, ⋯, θ_{k}) dx
 \]</div>
 </section>
 <section id="id4">
-<h3>1.2. 最大似然估计<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3>1.2. 最大似然估计<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>由样本分布估计总体分布</p>
 <div class="math notranslate nohighlight">
 \[
@@ -538,7 +544,7 @@ L(x_1, ⋯, x_n; θ_1, ⋯, θ_n) = \underset{θ_1, ⋯, θ_n}{\mathrm{argmax}}\
 <p>得极值点</p>
 </section>
 <section id="id5">
-<h3>1.3. 点估计评判<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<h3>1.3. 点估计评判<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>无偏性</p></li>
 </ul>
@@ -563,9 +569,9 @@ E_θ[\hat{θ}(x_1, ⋯, x_n) -θ]^2 = D_θ(\hat{θ}) + [E_θ(\hat{θ} - θ)]^2
 </section>
 </section>
 <section id="id6">
-<h2>2. 区间估计<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<h2>2. 区间估计<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
 <section id="id7">
-<h3>2.1. 概念<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<h3>2.1. 概念<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <p>对统计量<span class="math notranslate nohighlight">\(\hat{θ}_1(x_1, ⋯, x_n) ⩽ \hat{θ}(x_1, ⋯, x_n)\)</span></p>
 <p>要求</p>
 <ol class="arabic simple">
@@ -575,7 +581,7 @@ E_θ[\hat{θ}(x_1, ⋯, x_n) -θ]^2 = D_θ(\hat{θ}) + [E_θ(\hat{θ} - θ)]^2
 <p>由于<span class="math notranslate nohighlight">\(1^{∘}, 2^{∘}\)</span>在一定成都上相互矛盾，Neymann 提出<strong>定义</strong>：给定一个很小的数<span class="math notranslate nohighlight">\(α &gt; 0\)</span>，对<span class="math notranslate nohighlight">\(∀θ, P_θ = 1 - α\)</span>，即区间估计的置信系数为<span class="math notranslate nohighlight">\(1 - α\)</span></p>
 </section>
 <section id="id8">
-<h3>2.2. 枢轴变量法<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<h3>2.2. 枢轴变量法<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <p>设<span class="math notranslate nohighlight">\(X_{i}\)</span>为<span class="math notranslate nohighlight">\(𝒩(μ, σ^2)\)</span>的样本，<span class="math notranslate nohighlight">\(σ^2\)</span>已知，则</p>
 <div class="math notranslate nohighlight">
 \[
@@ -595,24 +601,24 @@ P(-μ_{α/2} ⩽ X ⩽ u_{α/2}) = Φ(u_{α/2}) - Φ(-u_{α/2})
 </section>
 </section>
 <section id="id9">
-<h2>3. 假设检验<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
+<h2>3. 假设检验<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
 <section id="id10">
-<h3>3.1. 参数<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<h3>3.1. 参数<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
 <p>假设检验可分为参数检验和非参数检验。</p>
 <p>参数检验设数据可由一个或多个参数定义的分布很好地描述，在大多数情况下由高斯分布定义。对于给定的数据集，然后确定该分布的最优拟合参数及其置信区间并进行解释。但，这种方法仅在给定数据集实际上与所选分布很好地接近时才有效。若不是，参数检验的结果可能完全错误。在那种情况下，必须使用不太敏感的非参数检验。</p>
 </section>
 <section id="p">
-<h3>3.2. 零分布、p 值<a class="headerlink" href="#p" title="Permalink to this heading">#</a></h3>
+<h3>3.2. 零分布、p 值<a class="headerlink" href="#p" title="Link to this heading">#</a></h3>
 <p>零分布（null distribution）是两总体样本的均值的差值分布，设检验中首先认为样本均符合此分布，这样的设称为零假设（null hypothesis），记做 H₀，定义另一个与零假设完全相反的备择设（alternative hypothesis），记做 Hₐ。</p>
 <ul class="simple">
 <li><p>H₀ 的条件下，出现极端的样本的概率即为 p-value，当其小于一定水平，即 p-value ⩽ α，说明此前假设的”意外”确实有别于整体，则可拒绝零假设</p></li>
 <li><p>等号总是出现在零假设中</p></li>
 </ul>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>样本</p></th>
-<th class="text-center head"><p>双尾</p></th>
-<th class="text-center head"><p>单尾</p></th>
+<tr class="row-odd"><th class="head text-center"><p>样本</p></th>
+<th class="head text-center"><p>双尾</p></th>
+<th class="head text-center"><p>单尾</p></th>
 </tr>
 </thead>
 <tbody>
@@ -632,7 +638,7 @@ P(-μ_{α/2} ⩽ X ⩽ u_{α/2}) = Φ(u_{α/2}) - Φ(-u_{α/2})
 </table>
 </section>
 <section id="id11">
-<h3>3.3. 错误、检验力<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
+<h3>3.3. 错误、检验力<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>错误 I：假阳性错误，即在 H₀ 为真时，接受 Hₐ，错误 I 概率 <span class="math notranslate nohighlight">\(α\)</span>又称为显著性水平</p></li>
 <li><p>错误 II：假阴性错误，即在 Hₐ 为真时，接受 H₀，错误 II 概率为<span class="math notranslate nohighlight">\(β = P(Z ⩽ Z₀ + z_α)\)</span></p></li>
@@ -658,11 +664,11 @@ Z_{β} = \frac{\sqrt{n}δ}{σ} - Z_{α}
 \]</div>
 <p>其中，δ 为容许误差，<span class="math notranslate nohighlight">\(Z_{β}\)</span>为规范分布的单侧临界值。</p>
 <p><img alt="error-type" src="../_images/errors.png" /></p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>名词</p></th>
-<th class="text-center head"><p>意义</p></th>
-<th class="text-center head"><p>表示</p></th>
+<tr class="row-odd"><th class="head text-center"><p>名词</p></th>
+<th class="head text-center"><p>意义</p></th>
+<th class="head text-center"><p>表示</p></th>
 </tr>
 </thead>
 <tbody>
@@ -698,10 +704,10 @@ Z_{β} = \frac{\sqrt{n}δ}{σ} - Z_{α}
 </section>
 </section>
 <section id="id12">
-<h2>4. 效应量<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h2>
+<h2>4. 效应量<a class="headerlink" href="#id12" title="Link to this heading">#</a></h2>
 <p>效应量（effect size）是指由于因素引起的差别，是度量处理效应大小的指标。是所研究的效应相对于样本方差 <span class="math notranslate nohighlight">\(σ\)</span> 的大小。与显著性检验不同，这些指标不受样本容量影响。它表示不同处理下的总体均值之间差异的大小，可在不同研究之间进行比较。均值差异、方差分析解释比例、回归分析解释比例需要用效应量描述。当样本容量大到显著时，有必要报告效应量大小。</p>
 <section id="cohens-d">
-<h3>4.1. Cohen’s <em>d</em><a class="headerlink" href="#cohens-d" title="Permalink to this heading">#</a></h3>
+<h3>4.1. Cohen’s <em>d</em><a class="headerlink" href="#cohens-d" title="Link to this heading">#</a></h3>
 <p>Jacob Cohen（1932∼1998）定义了 <em>d</em> 值和两个总体的并合标准偏差（pooled standard deviation，<span class="math notranslate nohighlight">\(S_p^2\)</span>）</p>
 <div class="math notranslate nohighlight">
 \[
@@ -719,10 +725,10 @@ S_p^2 = \frac{∑_{i=1}^{k} (n_{i} -1)S_{i}^2}{∑_{n - 1}^{k} (n_{i} -1)}
 d = \frac{D}{σ}
 \]</div>
 <p>2009 年，Shlomo S. Sawilowsky（1954∼）在 Cohen 的基础上，完善了对 <em>d</em> 值效应的描述。</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>Effect size</p></th>
-<th class="text-center head"><p>Cohen’s d</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Effect size</p></th>
+<th class="head text-center"><p>Cohen’s d</p></th>
 </tr>
 </thead>
 <tbody>
@@ -748,7 +754,7 @@ d = \frac{D}{σ}
 </table>
 </section>
 <section id="id13">
-<h3>4.2. 比例<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
+<h3>4.2. 比例<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
 <p>对于比例，效应量<span class="math notranslate nohighlight">\(d\)</span>为</p>
 <div class="math notranslate nohighlight">
 \[
@@ -789,7 +795,7 @@ samples number: 22.99320544620549
 </div>
 </section>
 <section id="id14">
-<h3>4.3. 样本量<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
+<h3>4.3. 样本量<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
 <p>设从中抽取样本的总体的均值为<span class="math notranslate nohighlight">\(X̂\)</span>且标准差为 σ，而实际总体的均值为<span class="math notranslate nohighlight">\(μ = X̂ + D\)</span>且标准差相同，则最小样本数量</p>
 <div class="math notranslate nohighlight">
 \[

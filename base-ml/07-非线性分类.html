@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>非线性分类 &#8212; 生物狗学编程</title>
   
@@ -29,44 +28,40 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'base-ml/07-非线性分类';</script>
     <link rel="canonical" href="https://ivaquero.github.io/blog-bio/base-ml/07-非线性分类.html" />
-    <link rel="shortcut icon" href="../_static/doge.png"/>
+    <link rel="icon" href="../_static/doge.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="决策树" href="08-%E5%86%B3%E7%AD%96%E6%A0%91.html" />
@@ -164,7 +159,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -449,11 +455,11 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>非线性分类<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<h1>非线性分类<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <section id="id2">
-<h2>1. 多项式回归<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>1. 多项式回归<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <section id="id3">
-<h3>1.1. 模型推导<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>1.1. 模型推导<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>当数据关系不是线性的，可尝试多项式回归（polynomial regression）来进行拟合，简单说，就是将线性模型推广至如下多项式形式</p>
 <div class="math notranslate nohighlight">
 \[
@@ -462,7 +468,7 @@ y_i = β_0 + ∑_{j=1}^d β_{j} x_i^j + ϵ_i
 <p>其中，通常选择<span class="math notranslate nohighlight">\(d&lt;4\)</span>。</p>
 </section>
 <section id="id4">
-<h3>1.2. 阶梯函数<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3>1.2. 阶梯函数<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>在线性模型中使用特征变量的多项式形式作为预测器可得到<span class="math notranslate nohighlight">\(X\)</span>在取值空间全局皆非线性的拟合函数。若不希望得到全局的模型，可使用阶梯拟合（step fitting）。这里，把<span class="math notranslate nohighlight">\(X\)</span>的取值范围分成一些区间，每个区间拟合不同的常数，这相当于将一个连续的变量变换成一个有序的分类变量。即在<span class="math notranslate nohighlight">\(X\)</span>取值空间上创建分割点<span class="math notranslate nohighlight">\(c_1, c_2, …, c_k\)</span>，构造<span class="math notranslate nohighlight">\(K + 1\)</span>个新变量：</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -487,7 +493,7 @@ y_i = β_0 + ∑_{j=1}^k β_{j} C_{j}(x_i) + ϵ_i
 </ul>
 </section>
 <section id="id5">
-<h3>1.3. 基函数<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<h3>1.3. 基函数<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>阶梯函数实际上是一类特殊的基函数（basis function）方法。其基本原理是对变量<span class="math notranslate nohighlight">\(X\)</span>的函数或变换<span class="math notranslate nohighlight">\(b_1(X), b_2(X), …, b_k(X)\)</span>进行建模：</p>
 <div class="math notranslate nohighlight">
 \[
@@ -497,9 +503,9 @@ y_i = β_0 + ∑_{j=1}^k β_{j} b_{j}(x_i) + ϵ_i
 </section>
 </section>
 <section id="id6">
-<h2>2. 样条<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<h2>2. 样条<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
 <section id="id7">
-<h3>2.1. 回归样条<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<h3>2.1. 回归样条<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <p>样条（spline）是一类光滑的基函数。对于如下分段多项式，其系数<span class="math notranslate nohighlight">\(β_{j}\)</span>在不同区域内变化的临界点被称为结（knot）。在对如下三次多项式的拟合中，为了消除阶跃，需要使在 <code class="docutils literal notranslate"><span class="pre">Age=50</span></code> 处的一阶导数，二阶导数均是连续的，而每次施加的约束都会有效释放 1 个自由度，减少模型的复杂性，这样的样条通常被称为三次样条（cubic spline）。一般情况下，与<span class="math notranslate nohighlight">\(K\)</span>个结点一同使用的三次样条会产生<span class="math notranslate nohighlight">\(K+4\)</span>个自由度。</p>
 <p><img alt="splines" src="../_images/splines.png" /></p>
 <p>但，保证多项式本身和其前<span class="math notranslate nohighlight">\(d-1\)</span>阶导数均是连续的条件下拟合<span class="math notranslate nohighlight">\(d\)</span>阶分段多项式很多时候并不轻松。使用基函数表示回归样条，并通过选择合适的基函数<span class="math notranslate nohighlight">\(b_1, b_2, …, b_{K+3}\)</span>，一个有<span class="math notranslate nohighlight">\(K\)</span>个结点的三次样条函数可表示如下</p>
@@ -520,7 +526,7 @@ h(x, ξ) = (x -ξ)₊^3 =
 <p>对于结点个数和位置的选择，通常使用交叉验证的方法：先移除一部分数据，然后用其余的数据来拟合样条函数，接着用拟合得到的样条函数来对移除的那部分数据做预测。不断重复直到所有数据都被移除过一次，最后计算整体交叉验证<span class="math notranslate nohighlight">\(\mathrm{RSS}\)</span>，选择<span class="math notranslate nohighlight">\(\mathrm{RSS}\)</span>最小的样条函数对应的<span class="math notranslate nohighlight">\(K\)</span>。</p>
 </section>
 <section id="id8">
-<h3>2.2. 光滑样条<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<h3>2.2. 光滑样条<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <p>为了对给定数据拟合光滑曲线，需要找到一个函数<span class="math notranslate nohighlight">\(g(x)\)</span>，使<span class="math notranslate nohighlight">\(\mathrm{RSS} = ∑(y_i - g(x_i))^2\)</span>最小。但，若不对<span class="math notranslate nohighlight">\(g(x)\)</span>添加任何约束条件，只要选择<span class="math notranslate nohighlight">\(g(x)\)</span>在每个<span class="math notranslate nohighlight">\(y_i\)</span>处插值，就能得到一个取值为 0 的<span class="math notranslate nohighlight">\(\mathrm{RSS}\)</span>。为避免这一点，可引入惩罚项</p>
 <div class="math notranslate nohighlight">
 \[
@@ -549,7 +555,7 @@ d f_{λ} = ∑\{S_{λ}\}_{ii}
 <p>这里的<span class="math notranslate nohighlight">\(ĝ_{λ}^{-i}(x_i)\)</span>指光滑样条在<span class="math notranslate nohighlight">\(x_i\)</span>的拟合值，其计算过程使用的是剔除实例<span class="math notranslate nohighlight">\((x_i, y_i)\)</span>外的所有训练实例。相反地，<span class="math notranslate nohighlight">\(ĝ_{λ}(x_i)\)</span>指的是光滑样条用所有的训练数据拟合的结果。</p>
 </section>
 <section id="id9">
-<h3>2.3. 局部回归<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
+<h3>2.3. 局部回归<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
 <p>局部回归是对一个目标点拟合时，仅使用其附近的训练实例的一种方法。其算法如下</p>
 <div class="admonition- admonition">
 <p class="admonition-title">步骤</p>
@@ -565,7 +571,7 @@ d f_{λ} = ∑\{S_{λ}\}_{ii}
 </section>
 </section>
 <section id="id10">
-<h2>3. 最近邻<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
+<h2>3. 最近邻<a class="headerlink" href="#id10" title="Link to this heading">#</a></h2>
 <p>最近邻方法（Nearest Neighbor）背后的原理是找到距离新点最近的预定义数量的训练样本，并从这些预测标签中预测标签。样本的数量可是用户定义的常数（<em>k</em>-最近邻学习），或基于点的局部密度（基于半径的近邻学习）而变化。通常，距离可是任何度量标准。基于近邻的方法被称为非泛化机器学习方法，也叫消极学习（lazy learning）。因为它们只是”记住”其所有训练数据（可能变换为快速索引结构，例如<strong>Ball Tree</strong>或<strong>KD Tree</strong>）。</p>
 <p>最近邻学习不是在整个样本空间上一次性地估计目标函数，而是针对每个待测样本作出局部的目标函数逼近。当目标函数很复杂，但它可用不太复杂的局部函数来逼近，这样做有非常明显的优势。作为一种非参数方法，它通常在决策边界非常不规则的分类情况下是成功的。</p>
 <p>最近邻学习的思想非常简单：给定待测样本，首先基于某种近邻索引方法找出训练集中与其最靠近 的<span class="math notranslate nohighlight">\(k\)</span>个样本，然后基于这<span class="math notranslate nohighlight">\(k\)</span>个样本的后验概率来预测 待测样本的类标记。具体算法分为两个阶段</p>
@@ -583,17 +589,17 @@ d f_{λ} = ∑\{S_{λ}\}_{ii}
 <div><p>关于最近邻算法，若两个邻居具有相同的距离但不同的标签，结果将取决于训练数据的排序。</p>
 </div></blockquote>
 <section id="id11">
-<h3>3.1. 最近邻分类<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
+<h3>3.1. 最近邻分类<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">KNeighborsClassifier</span></code> 中的 <span class="math notranslate nohighlight">\(k\)</span>-近邻分类是最常用的技术。<span class="math notranslate nohighlight">\(k\)</span>的最佳选择高度依赖于数据：通常，较大的<span class="math notranslate nohighlight">\(k\)</span>会抑制噪声的影响，但会使分类边界变得不则明显。</p>
 <p>在数据未被均匀采样的情况下，<code class="docutils literal notranslate"><span class="pre">RadiusNeighborsClassifier</span></code> 中基于半径的最近邻分类可能是更好的选择。用户指定固定半径<span class="math notranslate nohighlight">\(r\)</span>，使得较稀疏的邻域中的点使用较少的最近邻进行分类。对于高维参数空间，由于所谓的”维度诅咒”，该方法变得不则有效。</p>
 <p>基本近邻分类使用<strong>均匀权重</strong>：即，分配给查询点的值是从最近邻的简单多数投票计算的。在某些情况下，最好对最近邻进行加权，以使较近的最近邻对拟合做出更多贡献。</p>
 </section>
 <section id="id12">
-<h3>3.2. 最近邻回归<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
+<h3>3.2. 最近邻回归<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
 <p>基于近邻的回归可用于数据标签是连续的而不是离散的变量的情况。分配给查询点的标签是根据其最近邻居的标签的均值计算的。</p>
 </section>
 <section id="id13">
-<h3>3.3. 距离索引<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
+<h3>3.3. 距离索引<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
 <p>最近邻学习的所有计算几乎都花费在索引近邻问题上。故，如何有效地索引近邻样本，以减少分类时所需计算是一个重要的实践问题。</p>
 <p>目前，使用最多的近邻索引方法就是通过计算待测样本与每个训练样本之间的距离，然后基于距离排序，选择距离最短的<span class="math notranslate nohighlight">\(K\)</span>个训练样本作为待测样本的最近邻样本。因此如何度量样本点之间的距离就变得非常重要了。</p>
 <p>为度量样本点之间的距离，学者们提出了许多经典的距离度量函数。根据样本点的数据类型划分，主要有</p>
@@ -604,7 +610,7 @@ d f_{λ} = ∑\{S_{λ}\}_{ii}
 </ul>
 </section>
 <section id="id14">
-<h3>3.4. 树型索引<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
+<h3>3.4. 树型索引<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>KD Tree</p></li>
 </ul>
@@ -617,9 +623,9 @@ d f_{λ} = ∑\{S_{λ}\}_{ii}
 </section>
 </section>
 <section id="id15">
-<h2>4. 最近邻改进<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h2>
+<h2>4. 最近邻改进<a class="headerlink" href="#id15" title="Link to this heading">#</a></h2>
 <section id="id16">
-<h3>4.1. 维度 &amp; 邻域<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
+<h3>4.1. 维度 &amp; 邻域<a class="headerlink" href="#id16" title="Link to this heading">#</a></h3>
 <p>前面讲到的许多学习方法，如决策树学习，只测试部分属性就可作出判断，而最近邻学习中样本间的距离是根据样本的所有属性来计算的。若目标函数仅依赖于很多属性中的几个时，样本间的距离会被大量不相关的属性所支配，从而导致相关属性 的值很接近的样本相距很远。</p>
 <p>解决维度诅咒的常用方法主要包括</p>
 <ul class="simple">
@@ -639,12 +645,12 @@ d f_{λ} = ∑\{S_{λ}\}_{ii}
 </ul>
 </section>
 <section id="id17">
-<h3>4.2. 最近质心法<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
+<h3>4.2. 最近质心法<a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">NearestCentroid</span></code> 分类器通过其成员的质心来表示每个类。实际上，这使得它类似于 <code class="docutils literal notranslate"><span class="pre">sklearn.KMeans</span></code> 算法的标签更新阶段。它也没有选择的参数，使其成为一个很好的基线分类器。但，它确实受到非凸类以及类具有完全不同的方差的影响，因为设所有维度都存在相等的方差。</p>
 <p><code class="docutils literal notranslate"><span class="pre">NearestCentroid</span></code> 分类器具有 <code class="docutils literal notranslate"><span class="pre">shrink_threshold</span></code> 参数，该参数实现最近的缩小的质心分类器。实际上，每个质心的每个要素的值除以该要素的类内方差。然后通过 <code class="docutils literal notranslate"><span class="pre">shrink_threshold</span></code> 减小特征值。最值得注意的是，若特定特征值过零，则将其设置为零。实际上，这会消除该功能影响分类。这很有用。例如，用于删除噪音特征。</p>
 </section>
 <section id="id18">
-<h3>4.3. 后验 &amp; 偏置<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h3>
+<h3>4.3. 后验 &amp; 偏置<a class="headerlink" href="#id18" title="Link to this heading">#</a></h3>
 <p>给定待测样本的<span class="math notranslate nohighlight">\(k\)</span>个最近邻样本，估计其后验概率的常用方法包括</p>
 <ul class="simple">
 <li><p>投票法</p></li>
@@ -664,9 +670,9 @@ d f_{λ} = ∑\{S_{λ}\}_{ii}
 </section>
 </section>
 <section id="id19">
-<h2>5. 核函数<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h2>
+<h2>5. 核函数<a class="headerlink" href="#id19" title="Link to this heading">#</a></h2>
 <section id="hermitan">
-<h3>5.1. Hermitan 矩阵<a class="headerlink" href="#hermitan" title="Permalink to this heading">#</a></h3>
+<h3>5.1. Hermitan 矩阵<a class="headerlink" href="#hermitan" title="Link to this heading">#</a></h3>
 <p>若一个矩阵的共轭转置矩阵和自己相等，即</p>
 <div class="math notranslate nohighlight">
 \[
@@ -676,7 +682,7 @@ d f_{λ} = ∑\{S_{λ}\}_{ii}
 <p>若矩阵<span class="math notranslate nohighlight">\(𝑨\)</span>是实矩阵，则满足<span class="math notranslate nohighlight">\(𝑨^{⊤} = 𝑨\)</span>的矩阵即为 Hermitan 矩阵。</p>
 </section>
 <section id="rayleigh">
-<h3>5.2. Rayleigh 商<a class="headerlink" href="#rayleigh" title="Permalink to this heading">#</a></h3>
+<h3>5.2. Rayleigh 商<a class="headerlink" href="#rayleigh" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[
 R(𝑨, 𝒙) = \frac{𝒙^{H} 𝑨𝒙}{𝒙^{H} 𝒙} ∈ [λ_{\min}, λ_{\max}]

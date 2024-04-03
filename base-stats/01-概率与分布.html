@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>概率与分布 &#8212; 生物狗学编程</title>
   
@@ -29,44 +28,40 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'base-stats/01-概率与分布';</script>
     <link rel="canonical" href="https://ivaquero.github.io/blog-bio/base-stats/01-概率与分布.html" />
-    <link rel="shortcut icon" href="../_static/doge.png"/>
+    <link rel="icon" href="../_static/doge.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="统计量与抽样" href="02-%E7%BB%9F%E8%AE%A1%E9%87%8F%E4%B8%8E%E9%87%87%E6%A0%B7.html" />
@@ -164,7 +159,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -477,7 +483,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>概率与分布<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<h1>概率与分布<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -496,9 +502,9 @@ document.write(`
 </details>
 </div>
 <section id="id2">
-<h2>1. 条件概率<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>1. 条件概率<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <section id="id3">
-<h3>1.1. 定义<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>1.1. 定义<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>古典概率</p>
 <ul>
@@ -516,7 +522,7 @@ document.write(`
 </ul>
 </section>
 <section id="id4">
-<h3>1.2. 事件的运算<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3>1.2. 事件的运算<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>在概率论中，考虑一个样本空间 Ω，它是所有可能结果<span class="math notranslate nohighlight">\(ω\)</span>的集合，以及它的子集的集合<span class="math notranslate nohighlight">\(F\)</span>，其结构为 σ 代数，其元素称为事件（event）。</p>
 <ul class="simple">
 <li><p>有限可加性</p></li>
@@ -550,7 +556,7 @@ P(A ∪ B) = P(A) +P(B) -P(AB)
 \end{split}\]</div>
 </section>
 <section id="id5">
-<h3>1.3. 全概率公式<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<h3>1.3. 全概率公式<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>完备事件群：任意两事件互斥，所有事件的并集是整个样本空间（必然事件）</p></li>
 <li><p>全概率公式：对完备事件组<span class="math notranslate nohighlight">\(B_{i}\)</span>，若事件都有正概率，则对任一事件<span class="math notranslate nohighlight">\(𝑨\)</span>都有如下公式成立</p></li>
@@ -562,9 +568,9 @@ P(A) = P(Aω) = P(∑_{1}^{n}AB_{i}) = ∑_{1}^{n}{P(AB_{i})} = ∑_{1}^{n}{P(B_
 </section>
 </section>
 <section id="id6">
-<h2>2. 随机分布<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<h2>2. 随机分布<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
 <section id="id7">
-<h3>2.1. 随机变量<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<h3>2.1. 随机变量<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>随机变量</p></li>
 </ul>
@@ -579,7 +585,7 @@ X: ω ∈ Ω ↦ x ∈ ℝ
 <p>若一个随机变量<span class="math notranslate nohighlight">\(X\)</span>在<span class="math notranslate nohighlight">\(ℝ\)</span>的一个子集中取值，其取值个数可度量，则说它是离散的。</p>
 </section>
 <section id="id8">
-<h3>2.2. 分布函数<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<h3>2.2. 分布函数<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>概率质量函数（Probability Mass Function，PMF）：离散随机变量在各特定取值上的概率。</p></li>
 <li><p>概率密度函数（Probability Density Function，PDF）：连续随机变量的 PMF。</p></li>
@@ -653,9 +659,9 @@ P(a ⩽ x ⩽ b) = ∫_a^b\mathrm{PDF}(x) dx = \mathrm{CDF}(b) - \mathrm{CDF}(a)
 </section>
 </section>
 <section id="id9">
-<h2>3. 常见离散分布<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
+<h2>3. 常见离散分布<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
 <section id="id10">
-<h3>3.1. 二项分布<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<h3>3.1. 二项分布<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
 <p>设试验 <em>E</em> 只有 2 种可能结果 A 和 Ā，则称 <em>E</em> 为 Bernoulli 试验，将此试验独立重复<span class="math notranslate nohighlight">\(n\)</span>次，即为<span class="math notranslate nohighlight">\(n\)</span>重 Bernoulli 试验（如放回抽样），其结果的发生概率服从 Bernoulli 分布，也叫 0-1 分布。</p>
 <p>将后者的试验结果<span class="math notranslate nohighlight">\(X\)</span>扩展为 ℤ，则其中一个结果<span class="math notranslate nohighlight">\(k (k ∈ ℤ)\)</span>的发生概率<span class="math notranslate nohighlight">\(P\{X = k\}\)</span>服从二项分布</p>
 <div class="math notranslate nohighlight">
@@ -726,7 +732,7 @@ P(X = k) = \binom{n}{k}p^{k}(1 - p)^{n - k}, k ∈ ℕ
 </div>
 </section>
 <section id="id11">
-<h3>3.2. 超几何分布<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
+<h3>3.2. 超几何分布<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
 <p>一批产品共<span class="math notranslate nohighlight">\(N\)</span>个，其中废品<span class="math notranslate nohighlight">\(M(⩽ N)\)</span>个。随机抽取<span class="math notranslate nohighlight">\(n\)</span>个，含<span class="math notranslate nohighlight">\(m\)</span>个废品的概率服从超几何分布，相当于不放回抽样的二项分布</p>
 <div class="math notranslate nohighlight">
 \[
@@ -765,7 +771,7 @@ P(X = m) = \binom{N - M}{n - m} \binom{M}{m}/\binom{N}{n}
 </div>
 </section>
 <section id="id12">
-<h3>3.3. 几何分布<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
+<h3>3.3. 几何分布<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
 <p>在<span class="math notranslate nohighlight">\(n\)</span>次 Bernoulli 试验中，第<span class="math notranslate nohighlight">\(k+1\)</span>次才第一次成功的机率服从几何分布，记作<span class="math notranslate nohighlight">\(X ∼ G(p)\)</span>，也可以理解成连续失败<span class="math notranslate nohighlight">\(k\)</span>次的概率分布。</p>
 <div class="math notranslate nohighlight">
 \[
@@ -808,7 +814,7 @@ G = ∑_{i=0}^{n} r^{i} = \frac{1 - r^{n + 1}}{1 - r},\ r ≠ 1
 </div>
 </section>
 <section id="id13">
-<h3>3.4. 负二项分布<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
+<h3>3.4. 负二项分布<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
 <p>已知合格率为<span class="math notranslate nohighlight">\(p\)</span>时，进行<span class="math notranslate nohighlight">\(n\)</span>次实验，抽到合格品<span class="math notranslate nohighlight">\(r\)</span>个，服从分布负二项分布，即重复<span class="math notranslate nohighlight">\(n\)</span>次的几何分布</p>
 <div class="math notranslate nohighlight">
 \[
@@ -849,7 +855,7 @@ P(X = k) = \binom{k + r - 1}{r - 1}p^{r}(1 - p)^{k}
 </div></blockquote>
 </section>
 <section id="poisson">
-<h3>3.5. Poisson 分布<a class="headerlink" href="#poisson" title="Permalink to this heading">#</a></h3>
+<h3>3.5. Poisson 分布<a class="headerlink" href="#poisson" title="Link to this heading">#</a></h3>
 <p>Poisson 分布用于描述单位时间内随机事件发生的次数。将时间切分为<span class="math notranslate nohighlight">\(n\)</span>个时段，设某事件的总发生次数为<span class="math notranslate nohighlight">\(λ\)</span>，则一个时段内该事件发生的概率为<span class="math notranslate nohighlight">\(p= λ/n\)</span>，代入二项分布，</p>
 <div class="math notranslate nohighlight">
 \[
@@ -898,13 +904,13 @@ P(X = k) = e^{-λ}⋅\frac{λ^{k}}{k!}, k ∈ ℕ
 </div>
 </section>
 <section id="id14">
-<h3>3.6. 小结<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
-<table class="colwidths-auto table">
+<h3>3.6. 小结<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>离散分布</p></th>
-<th class="text-center head"><p>表示</p></th>
-<th class="text-center head"><p>结果取值</p></th>
-<th class="text-center head"><p>常见情况</p></th>
+<tr class="row-odd"><th class="head text-center"><p>离散分布</p></th>
+<th class="head text-center"><p>表示</p></th>
+<th class="head text-center"><p>结果取值</p></th>
+<th class="head text-center"><p>常见情况</p></th>
 </tr>
 </thead>
 <tbody>
@@ -939,9 +945,9 @@ P(X = k) = e^{-λ}⋅\frac{λ^{k}}{k!}, k ∈ ℕ
 </section>
 </section>
 <section id="id15">
-<h2>4. 常见连续分布<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h2>
+<h2>4. 常见连续分布<a class="headerlink" href="#id15" title="Link to this heading">#</a></h2>
 <section id="id16">
-<h3>4.1. 指数分布<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
+<h3>4.1. 指数分布<a class="headerlink" href="#id16" title="Link to this heading">#</a></h3>
 <p>指数分布表示 Poisson 过程中的事件的时间间隔。可以看作是逆 Poisson 分布。</p>
 <blockquote>
 <div><p>逆分布（inverse distribution）是随机变量的倒数服从的分布。</p>
@@ -996,7 +1002,7 @@ f(x, λ) =
 \]</div>
 </section>
 <section id="gaussian">
-<h3>4.2. Gaussian 分布<a class="headerlink" href="#gaussian" title="Permalink to this heading">#</a></h3>
+<h3>4.2. Gaussian 分布<a class="headerlink" href="#gaussian" title="Link to this heading">#</a></h3>
 <p>Gaussian 分布或 Gaussian 分布是所有分布函数中最重要的。这是由于所有分布函数的均值在足够大的样本数下都近似于 Gaussian 分布。</p>
 <p>概率密度函数</p>
 <div class="math notranslate nohighlight">
@@ -1041,7 +1047,7 @@ f(x) = \frac{1}{\sqrt{2π} σ} e^{-\frac{(x - μ)^2}{2 σ^2}}
 </div>
 </section>
 <section id="id17">
-<h3>4.3. 对数 Gaussian 分布<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
+<h3>4.3. 对数 Gaussian 分布<a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
 <p>数据的对数正态变换通常用于将高偏度分布变换为 Gaussian 分布。</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1078,7 +1084,7 @@ f(x, s) = \frac{1}{s x \sqrt{2π}} \exp{\bigg(-\frac{\log^2(x)}{2 s^2}\bigg)}
 </div>
 </section>
 <section id="id18">
-<h3>4.4. 均匀分布<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h3>
+<h3>4.4. 均匀分布<a class="headerlink" href="#id18" title="Link to this heading">#</a></h3>
 <p>概率密度函数</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
