@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -41,8 +41,10 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
@@ -461,8 +463,7 @@ document.write(`
 <h1>Distribution<a class="headerlink" href="#distribution" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">plotnine</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
@@ -471,10 +472,10 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">plotnine</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">plotnine</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="ne">ModuleNotFoundError</span>: No module named &#39;plotnine&#39;
 </pre></div>
@@ -611,7 +612,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/66aa6af926d0f0d215ce0b0bd0c7d23254377eb53b3fe02784c3e465158d6cbf.png" src="../_images/66aa6af926d0f0d215ce0b0bd0c7d23254377eb53b3fe02784c3e465158d6cbf.png" />
+<a class="reference internal image-reference" href="../_images/66aa6af926d0f0d215ce0b0bd0c7d23254377eb53b3fe02784c3e465158d6cbf.png"><img alt="../_images/66aa6af926d0f0d215ce0b0bd0c7d23254377eb53b3fe02784c3e465158d6cbf.png" src="../_images/66aa6af926d0f0d215ce0b0bd0c7d23254377eb53b3fe02784c3e465158d6cbf.png" style="width: 640px; height: 480px;" /></a>
 </div>
 </div>
 </section>
@@ -643,7 +644,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5fb2033a29c3bfcc8183a8694f8342f7a07308f1ba49315e15873776d4553aa5.png" src="../_images/5fb2033a29c3bfcc8183a8694f8342f7a07308f1ba49315e15873776d4553aa5.png" />
+<a class="reference internal image-reference" href="../_images/5fb2033a29c3bfcc8183a8694f8342f7a07308f1ba49315e15873776d4553aa5.png"><img alt="../_images/5fb2033a29c3bfcc8183a8694f8342f7a07308f1ba49315e15873776d4553aa5.png" src="../_images/5fb2033a29c3bfcc8183a8694f8342f7a07308f1ba49315e15873776d4553aa5.png" style="width: 640px; height: 480px;" /></a>
 </div>
 </div>
 </section>
@@ -665,7 +666,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/be8a0c478f6f6cc4aee184afb335a94230c56ad7fed816690c613df8ba318058.png" src="../_images/be8a0c478f6f6cc4aee184afb335a94230c56ad7fed816690c613df8ba318058.png" />
+<a class="reference internal image-reference" href="../_images/be8a0c478f6f6cc4aee184afb335a94230c56ad7fed816690c613df8ba318058.png"><img alt="../_images/be8a0c478f6f6cc4aee184afb335a94230c56ad7fed816690c613df8ba318058.png" src="../_images/be8a0c478f6f6cc4aee184afb335a94230c56ad7fed816690c613df8ba318058.png" style="width: 640px; height: 480px;" /></a>
 </div>
 </div>
 </section>
@@ -754,7 +755,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/15a7d60de0e3699f13fab12faa310d7e44f0e2f66d39d5826f7412ef9383a457.png" src="../_images/15a7d60de0e3699f13fab12faa310d7e44f0e2f66d39d5826f7412ef9383a457.png" />
+<a class="reference internal image-reference" href="../_images/15a7d60de0e3699f13fab12faa310d7e44f0e2f66d39d5826f7412ef9383a457.png"><img alt="../_images/15a7d60de0e3699f13fab12faa310d7e44f0e2f66d39d5826f7412ef9383a457.png" src="../_images/15a7d60de0e3699f13fab12faa310d7e44f0e2f66d39d5826f7412ef9383a457.png" style="width: 640px; height: 480px;" /></a>
 </div>
 </div>
 </section>
