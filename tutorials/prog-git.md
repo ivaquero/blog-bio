@@ -1,7 +1,7 @@
 ---
 title: 搭建便捷 Git 文件管理环境（VSCode）
-zhihu-title-image: images/git.excalidraw.png
 zhihu-tags: Visual Studio Code, Git
+zhihu-title-image: images/git.excalidraw.png
 zhihu-url: https://zhuanlan.zhihu.com/p/694181464
 ---
 
