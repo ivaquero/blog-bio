@@ -53,11 +53,10 @@ mamba deactivate
 
 ### 1.3. 安装相关库
 
-安装格式化工具（formatter）：`yapf`
-安装代码检查器（linter）：`mypy`：
+安装统一的格式化器（formatter）+ 检查器（linter）：`ruff`
 
 ```bash
-mamba install yapf mypy
+mamba install ruff
 ```
 
 ## 2. Conda 的使用
@@ -161,11 +160,33 @@ mamba install jupyter_contrib_nbextensions
 
 ![python](images/vscode/vscode-python.png)
 
-对于 linter 的提示信息，推荐选择 `mypy`。
+安装强大的统一格式化器 + 检测器扩展 `ruff`。
 
-- 自动补全：Visual Studio IntelliCode
+![alt text](images/vscode/vscode-python-ruff.png)
 
-另外，推荐尝试官方新推出的 Python Environment Manager
+相关配置如下
+
+```json
+{
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "never",
+      "source.organizeImports": "explicit"
+    }
+  },
+  "python.terminal.activateEnvInCurrentTerminal": true,
+  "python.terminal.executeInFileDir": true,
+  "python.testing.autoTestDiscoverOnSaveEnabled": false,
+  "autoDocstring.docstringFormat": "numpy",
+  "ruff.lint.args": [
+    "--select=F,I,R,PERF,PD,TCH,TID,SIM,RET,Q,PYI,PIE,C4"
+  ],
+}
+```
+
+另外，可以尝试官方新推出的 Python Environment Manager
 
 ![conda](images/vscode/vscode-conda.png)
 

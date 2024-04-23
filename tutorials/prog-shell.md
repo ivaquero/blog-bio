@@ -6,6 +6,29 @@ zhihu-tags: Shell
 
 # Shell 速成
 
+## 1. VSCode 安装扩展
+
+- ShellCheck（检查器）
+- shell-format（格式化器）
+
+相关配置如下
+
+```json
+{
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format",
+    "editor.formatOnSave": true
+  },
+  "shellcheck.exclude": [
+    "SC1090",
+    "SC2154",
+    "SC2034"
+  ]
+}
+```
+
+其中，`shellcheck.exclude` 表示忽略的检查规则。
+
 ## 1. 变量
 
 ### 1.1. 内置命令
