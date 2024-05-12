@@ -57,11 +57,10 @@ sudo vi /etc/apt/sources.list
 Ubuntu
 
 ```bash
-deb http://mirrors.ustc.edu.cn/ubuntu/ trusty main restricted universe multiverse
-deb http://mirrors.ustc.edu.cn/ubuntu/ trusty-security main restricted universe multiverse
-deb http://mirrors.ustc.edu.cn/ubuntu/ trusty-updates main restricted universe multiverse
-deb http://mirrors.ustc.edu.cn/ubuntu/ trusty-proposed main restricted universe multiverse
-deb http://mirrors.ustc.edu.cn/ubuntu/ trusty-backports main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-security main restricted universe multiverse
 ```
 
 Kali
