@@ -1,19 +1,19 @@
 ---
 title: 搭建 Typst 舒适写作环境（VSCode）
 zhihu-url: https://zhuanlan.zhihu.com/p/642509853
-zhihu-title-image: images/vscode/typst2.png
+zhihu-title-image: images/vscode/typst.png
 zhihu-tags: Visual Studio Code, Rust, 排版软件
 ---
 
 # 搭建 Typst 舒适写作环境
 
-Typst 是一个 Rust 编写的新一代排版软件，是当下 LaTeX 最有力的竞争者。
+Typst 是一个 Rust 编写的新一代排版软件，是当下 LaTeX 最有力的竞争者。其环境配置非常简单。
 
 ## 1. 主要扩展
 
 在 VSCode 中的扩展商店里搜索并安装如下扩展
 
-- Typst LSP
+- Tinymist Typst
 - Typst Preview
 
 ![typst](images/vscode/vscode-typst.png)
@@ -36,4 +36,32 @@ Typst 写 LaTeX 公式时，有时不如 Markdown 那么方便，这时可以使
 
 ## 3. 效果
 
-![typst2](images/vscode/typst.png)
+![typst-unicode](images/vscode/typst.png)
+
+## 4. 格式化
+
+Typst Preview 的作者开发了一个 Typst 十分易用的格式化器，[typstyle](https://github.com/Enter-tainer/typstyle)，其在 Tinymist Typst 有集成接口。
+
+对 macOS/Linux 用户，可以使用 Homebrew 安装
+
+```bash
+brew tap brewforge/extras
+brew install typstyle
+```
+
+Rust 用户，可以使用 cargo 安装
+
+```bash
+cargo install typstyle
+```
+
+然后，在`settings.json`中，加入
+
+```json
+{
+    "[typst]": {
+        "editor.defaultFormatter": "myriad-dreamin.tinymist"
+    },
+    "tinymist.formatterMode": "typstyle"
+}
+```
