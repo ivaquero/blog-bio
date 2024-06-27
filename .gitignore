@@ -238,5 +238,4 @@ test/
 test.*
 
 .obsidian
-
 _build
