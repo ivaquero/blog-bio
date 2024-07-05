@@ -29,7 +29,7 @@ scoop install doxygen
 
 ### 1.2. Doxygen GUI
 
-如果不习惯命令行配置，可以使用 Doxygen 的官方 GUI
+若不习惯命令行配置，可以使用 Doxygen 的官方 GUI
 
 Debian/Ubuntu 用户使用
 
