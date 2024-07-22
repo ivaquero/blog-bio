@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Correlation &#8212; 科研狗学编程</title>
+    <title>相关 &#8212; 科研狗学编程</title>
   
   
   
@@ -52,7 +52,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -62,8 +62,8 @@
     <link rel="icon" href="../_static/doge.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Deviation" href="deviation.html" />
-    <link rel="prev" title="Pandas 2" href="clean-pandas2.html" />
+    <link rel="next" title="偏离" href="deviation.html" />
+    <link rel="prev" title="Pandas 清洗和预处理" href="clean-pandas2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -202,19 +202,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../python/17-%E6%A8%A1%E5%9D%97%E4%B8%8E%E8%B0%83%E8%AF%95.html">模块与调试</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python/18-%E9%AB%98%E6%80%A7%E8%83%BD%E6%89%A9%E5%B1%95.html">高性能扩展</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">数据分析</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 数据分析</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="clean-pandas.html">Pandas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="clean-pandas2.html">Pandas 2</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Correlation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="deviation.html">Deviation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="distribution.html">Distribution</a></li>
-<li class="toctree-l1"><a class="reference internal" href="group.html">Group</a></li>
-<li class="toctree-l1"><a class="reference internal" href="polar.html">Polar</a></li>
-<li class="toctree-l1"><a class="reference internal" href="proportion.html">Proportion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ranking.html">Ranking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="time-series.html">Time Series</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tricks.html">Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clean-pandas.html">Pandas 读写和过滤</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clean-pandas2.html">Pandas 清洗和预处理</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">相关</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deviation.html">偏离</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distribution.html">分布</a></li>
+<li class="toctree-l1"><a class="reference internal" href="group.html">分组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polar.html">极坐标</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proportion.html">占比</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ranking.html">排序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="time-series.html">时间序列</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tricks.html">技巧</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">统计基础</span></p>
 <ul class="nav bd-sidenav">
@@ -435,7 +435,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Correlation</h1>
+    <h1>相关</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -461,23 +461,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="correlation">
-<h1>Correlation<a class="headerlink" href="#correlation" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>相关<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">plotnine</span> <span class="kn">import</span> <span class="o">*</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">plotnine</span> <span class="kn">import</span> <span class="o">*</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;plotnine&#39;
 </pre></div>
 </div>
 </div>
@@ -640,7 +629,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/b65af8fbc0bf9ba1c9fae7d576e474047d9da5666b1360a72064d4ef7125a7e8.png"><img alt="../_images/b65af8fbc0bf9ba1c9fae7d576e474047d9da5666b1360a72064d4ef7125a7e8.png" src="../_images/b65af8fbc0bf9ba1c9fae7d576e474047d9da5666b1360a72064d4ef7125a7e8.png" style="width: 640px; height: 480px;" /></a>
+<a class="reference internal image-reference" href="../_images/3369668f94e2606bad1600c30e6858214783f0b3e253338ba9f511c4d881a8c0.png"><img alt="../_images/3369668f94e2606bad1600c30e6858214783f0b3e253338ba9f511c4d881a8c0.png" src="../_images/3369668f94e2606bad1600c30e6858214783f0b3e253338ba9f511c4d881a8c0.png" style="width: 640px; height: 480px;" /></a>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1084,7 +1073,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Pandas 2</p>
+        <p class="prev-next-title">Pandas 清洗和预处理</p>
       </div>
     </a>
     <a class="right-next"
@@ -1092,7 +1081,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Deviation</p>
+        <p class="prev-next-title">偏离</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
