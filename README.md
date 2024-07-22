@@ -1,4 +1,4 @@
-# 生物狗学编程
+# 科研狗学编程
 
 ![code size](https://img.shields.io/github/languages/code-size/ivaquero/blog-bio.svg)
 ![repo size](https://img.shields.io/github/repo-size/ivaquero/blog-bio.svg)
