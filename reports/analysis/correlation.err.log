@@ -19,28 +19,7 @@ Traceback (most recent call last):
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
 import pandas as pd
-from plotnine import (
-    aes,
-    coord_fixed,
-    coord_flip,
-    element_text,
-    facet_wrap,
-    geom_boxplot,
-    geom_count,
-    geom_jitter,
-    geom_point,
-    geom_smooth,
-    geom_text,
-    geom_tile,
-    ggplot,
-    labs,
-    lims,
-    scale_color_gradient,
-    scale_fill_gradient,
-    scale_x_discrete,
-    scale_y_discrete,
-    theme,
-)
+from plotnine import *
 ------------------
 
 
@@ -48,28 +27,7 @@ from plotnine import (
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
 Cell [0;32mIn[1], line 2[0m
 [1;32m      1[0m [38;5;28;01mimport[39;00m [38;5;21;01mpandas[39;00m [38;5;28;01mas[39;00m [38;5;21;01mpd[39;00m
-[0;32m----> 2[0m [38;5;28;01mfrom[39;00m [38;5;21;01mplotnine[39;00m [38;5;28;01mimport[39;00m (
-[1;32m      3[0m     aes,
-[1;32m      4[0m     coord_fixed,
-[1;32m      5[0m     coord_flip,
-[1;32m      6[0m     element_text,
-[1;32m      7[0m     facet_wrap,
-[1;32m      8[0m     geom_boxplot,
-[1;32m      9[0m     geom_count,
-[1;32m     10[0m     geom_jitter,
-[1;32m     11[0m     geom_point,
-[1;32m     12[0m     geom_smooth,
-[1;32m     13[0m     geom_text,
-[1;32m     14[0m     geom_tile,
-[1;32m     15[0m     ggplot,
-[1;32m     16[0m     labs,
-[1;32m     17[0m     lims,
-[1;32m     18[0m     scale_color_gradient,
-[1;32m     19[0m     scale_fill_gradient,
-[1;32m     20[0m     scale_x_discrete,
-[1;32m     21[0m     scale_y_discrete,
-[1;32m     22[0m     theme,
-[1;32m     23[0m )
+[0;32m----> 2[0m [38;5;28;01mfrom[39;00m [38;5;21;01mplotnine[39;00m [38;5;28;01mimport[39;00m [38;5;241m*[39m
 
 [0;31mModuleNotFoundError[0m: No module named 'plotnine'
 

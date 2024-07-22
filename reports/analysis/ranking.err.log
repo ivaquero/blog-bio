@@ -21,22 +21,7 @@ nbclient.exceptions.CellExecutionError: An error occurred while executing the fo
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-from plotnine import (
-    aes,
-    element_blank,
-    element_text,
-    geom_point,
-    geom_segment,
-    geom_text,
-    geom_vline,
-    ggplot,
-    labs,
-    scale_color_manual,
-    scale_x_discrete,
-    theme,
-    xlim,
-    ylim,
-)
+from plotnine import *
 ------------------
 
 
@@ -45,22 +30,7 @@ from plotnine import (
 Cell [0;32mIn[1], line 4[0m
 [1;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
 [1;32m      3[0m [38;5;28;01mimport[39;00m [38;5;21;01mpandas[39;00m [38;5;28;01mas[39;00m [38;5;21;01mpd[39;00m
-[0;32m----> 4[0m [38;5;28;01mfrom[39;00m [38;5;21;01mplotnine[39;00m [38;5;28;01mimport[39;00m (
-[1;32m      5[0m     aes,
-[1;32m      6[0m     element_blank,
-[1;32m      7[0m     element_text,
-[1;32m      8[0m     geom_point,
-[1;32m      9[0m     geom_segment,
-[1;32m     10[0m     geom_text,
-[1;32m     11[0m     geom_vline,
-[1;32m     12[0m     ggplot,
-[1;32m     13[0m     labs,
-[1;32m     14[0m     scale_color_manual,
-[1;32m     15[0m     scale_x_discrete,
-[1;32m     16[0m     theme,
-[1;32m     17[0m     xlim,
-[1;32m     18[0m     ylim,
-[1;32m     19[0m )
+[0;32m----> 4[0m [38;5;28;01mfrom[39;00m [38;5;21;01mplotnine[39;00m [38;5;28;01mimport[39;00m [38;5;241m*[39m
 
 [0;31mModuleNotFoundError[0m: No module named 'plotnine'
 
