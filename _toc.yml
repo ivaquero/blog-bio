@@ -24,7 +24,7 @@ parts:
       - file: python/16-元编程
       - file: python/17-模块与调试
       - file: python/18-高性能扩展
-  - caption: 数据分析
+  - caption: Python 数据分析
     chapters:
       - file: analysis/clean-pandas
       - file: analysis/clean-pandas2
