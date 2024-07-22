@@ -1,35 +1,75 @@
 Traceback (most recent call last):
-  File "/Users/integzz/.conda/envs/dox/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+  File "/Users/integzz/.conda/envs/dox/lib/python3.12/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
-  File "/Users/integzz/.conda/envs/dox/lib/python3.11/site-packages/nbclient/client.py", line 1314, in execute
+  File "/Users/integzz/.conda/envs/dox/lib/python3.12/site-packages/nbclient/client.py", line 1314, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/integzz/.conda/envs/dox/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+  File "/Users/integzz/.conda/envs/dox/lib/python3.12/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
     return loop.run_until_complete(inner)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/integzz/.conda/envs/dox/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+  File "/Users/integzz/.conda/envs/dox/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
     return future.result()
            ^^^^^^^^^^^^^^^
-  File "/Users/integzz/.conda/envs/dox/lib/python3.11/site-packages/nbclient/client.py", line 709, in async_execute
+  File "/Users/integzz/.conda/envs/dox/lib/python3.12/site-packages/nbclient/client.py", line 709, in async_execute
     await self.async_execute_cell(
-  File "/Users/integzz/.conda/envs/dox/lib/python3.11/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+  File "/Users/integzz/.conda/envs/dox/lib/python3.12/site-packages/nbclient/client.py", line 1062, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/Users/integzz/.conda/envs/dox/lib/python3.11/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+  File "/Users/integzz/.conda/envs/dox/lib/python3.12/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import matplotlib.pyplot as plt
 import pandas as pd
-from plotnine import *
+from plotnine import (
+    aes,
+    coord_fixed,
+    coord_flip,
+    element_text,
+    facet_wrap,
+    geom_boxplot,
+    geom_count,
+    geom_jitter,
+    geom_point,
+    geom_smooth,
+    geom_text,
+    geom_tile,
+    ggplot,
+    labs,
+    lims,
+    scale_color_gradient,
+    scale_fill_gradient,
+    scale_x_discrete,
+    scale_y_discrete,
+    theme,
+)
 ------------------
 
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [0;32mIn[1], line 3[0m
-[1;32m      1[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m [38;5;28;01mas[39;00m [38;5;21;01mplt[39;00m
-[1;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01mpandas[39;00m [38;5;28;01mas[39;00m [38;5;21;01mpd[39;00m
-[0;32m----> 3[0m [38;5;28;01mfrom[39;00m [38;5;21;01mplotnine[39;00m [38;5;28;01mimport[39;00m [38;5;241m*[39m
+Cell [0;32mIn[1], line 2[0m
+[1;32m      1[0m [38;5;28;01mimport[39;00m [38;5;21;01mpandas[39;00m [38;5;28;01mas[39;00m [38;5;21;01mpd[39;00m
+[0;32m----> 2[0m [38;5;28;01mfrom[39;00m [38;5;21;01mplotnine[39;00m [38;5;28;01mimport[39;00m (
+[1;32m      3[0m     aes,
+[1;32m      4[0m     coord_fixed,
+[1;32m      5[0m     coord_flip,
+[1;32m      6[0m     element_text,
+[1;32m      7[0m     facet_wrap,
+[1;32m      8[0m     geom_boxplot,
+[1;32m      9[0m     geom_count,
+[1;32m     10[0m     geom_jitter,
+[1;32m     11[0m     geom_point,
+[1;32m     12[0m     geom_smooth,
+[1;32m     13[0m     geom_text,
+[1;32m     14[0m     geom_tile,
+[1;32m     15[0m     ggplot,
+[1;32m     16[0m     labs,
+[1;32m     17[0m     lims,
+[1;32m     18[0m     scale_color_gradient,
+[1;32m     19[0m     scale_fill_gradient,
+[1;32m     20[0m     scale_x_discrete,
+[1;32m     21[0m     scale_y_discrete,
+[1;32m     22[0m     theme,
+[1;32m     23[0m )
 
 [0;31mModuleNotFoundError[0m: No module named 'plotnine'
 
