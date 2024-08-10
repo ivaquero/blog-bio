@@ -1,0 +1,73 @@
+#######################################################################################
+# Book settings
+title: 科研狗学编程
+author: ivaquero
+copyright: "2023"
+logo: doge.png
+exclude_patterns: [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints"]
+only_build_toc_files: true
+
+#######################################################################################
+# Execution settings
+execute:
+  execute_notebooks: auto # Whether to execute notebooks at build time. Must be one of ("auto", "force", "cache", "off")
+  timeout: 30
+  allow_errors: false
+  stderr_output: show
+
+#######################################################################################
+# Parse and render settings
+parse:
+  myst_enable_extensions:
+    - amsmath
+    - colon_fence
+    # - deflist
+    - dollarmath
+    - html_admonition
+    - html_image
+    - linkify
+    - replacements
+    - smartquotes
+    - substitution
+    - tasklist
+  myst_url_schemes: [mailto, http, https]
+  myst_dmath_double_inline: true
+
+#######################################################################################
+# HTML-specific settings
+html:
+  favicon: doge.png
+  baseurl: "https://ivaquero.github.io/blog-bio/"
+  extra_footer: "" # Will be displayed underneath the footer.
+  home_page_in_navbar: true # Whether to include your home page in the left Navigation Bar
+  navbar_number_sections: false # Add a number to each section in your left navbar
+  use_edit_page_button: false # Whether to add an "edit this page" button to pages. If `true`, repository information in repository: must be filled in
+  use_issues_button: false # Whether to add an "open an issue" button
+  use_repository_button: false # Whether to add a link to your repository button
+  use_multitoc_numbering: true # Continuous numbering across parts/chapters
+
+  comments:
+    hypothesis: false
+    utterances: false
+  announcement: ""
+
+#######################################################################################
+# LaTeX-specific settings
+latex:
+  latex_engine: xelatex
+  use_jupyterbook_latex: true
+
+#######################################################################################
+# Repository and book settings
+# repository:
+#   url: https://ivaquero.github.io/blog-bio/  # The URL to your book's repository
+#   path_to_book: ""  # A path to your book's folder, relative to the repository root.
+#   branch: gh_page  # Which branch of the repository should be used when creating links
+
+#######################################################################################
+# Launch button settings
+launch_buttons:
+  notebook_interface: jupyterlab # The interface interactive links will activate ["classic", "jupyterlab"]
+  colab_url: "https://colab.research.google.com" # The URL of Google Colab (https://colab.research.google.com)
+  binderhub_url: ""
+  thebe: false
