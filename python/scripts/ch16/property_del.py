@@ -1,6 +1,6 @@
 class BlackKnight:
     def __init__(self):
-        self.members = ["an arm", "another arm", "a leg", "another leg"]
+        self.members = ['an arm', 'another arm', 'a leg', 'another leg']
         self.phrases = [
             "'Tis but a scratch.",
             "It's just a flesh wound.",
@@ -10,12 +10,12 @@ class BlackKnight:
 
     @property
     def member(self):
-        print("next member is:")
+        print('next member is:')
         return self.members[0]
 
     @member.deleter
     def member(self):
-        print(f"BLACK KNIGHT (loses {self.members.pop(0)})\n-- {self.phrases.pop(0)}")
+        print(f'BLACK KNIGHT (loses {self.members.pop(0)})\n-- {self.phrases.pop(0)}')
 
 
 knight = BlackKnight()

@@ -1,37 +1,58 @@
 [tool.ruff]
     fix = true
-    fix-only = true
+    show-fixes = true
     target-version = "py38"
+
+    fixable = ["ALL"]
+    include = ["*.py"]
     extend-include = ["*.ipynb"]
 
 [tool.ruff.format]
-    # Enable reformatting of code snippets in docstrings.
     docstring-code-format = true
-    # Format all docstring code snippets with a line length of 60.
     docstring-code-line-length = 60
-    # Use `\n` line endings for all files
+    indent-style = "space"
     line-ending = "lf"
-    # Prefer single quotes over double quotes.
     quote-style = "single"
     skip-magic-trailing-comma = true
+    exclude = ["*.pyi"]
 
 [tool.ruff.lint]
     # On top of the default `select` (`E4`, E7`, `E9`, and `F`), enable flake8-bugbear (`B`) and flake8-quotes (`Q`).
-    extend-select = [
+    select = [
+        "A",
+        "ASYNC",
+        "B",
         "C4",
+        "COM",
+        "DTZ",
+        "EM",
+        "EXE",
         "F",
+        "FA",
+        "FBT",
+        "FIX",
         "I",
+        "ICN",
+        "ISC",
+        "N",
+        "NPY",
         "PD",
         "PERF",
         "PIE",
         "PYI",
         "R",
         "RET",
+        "S",
         "SIM",
         "TCH",
         "TID",
+        "TRIO",
+        "UP",
+        "W",
+        "YTT",
     ]
-    fixable = ["F"]
+    ignore = ["F403", "F405", "NPY002"]
+
 [tool.ruff.lint.isort]
     case-sensitive = true
     combine-as-imports = true

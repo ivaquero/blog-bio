@@ -16,4 +16,4 @@ class LineItem:
         if value > 0:
             self.__weight = value
         else:
-            raise ValueError("value must be > 0")
+            raise ValueError('value must be > 0')

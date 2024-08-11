@@ -3,15 +3,15 @@ import itertools
 
 
 async def spin(msg: str):  # <1>
-    for char in itertools.cycle(r"\|/-"):
-        status = f"\r{char} {msg}"
-        print(status, flush=True, end="")
+    for char in itertools.cycle(r'\|/-'):
+        status = f'\r{char} {msg}'
+        print(status, flush=True, end='')
         try:
             await asyncio.sleep(0.1)  # <2>
         except asyncio.CancelledError:  # <3>
             break
-        blanks = " " * len(status)
-        print(f"\r{blanks}\r", end="")
+        blanks = ' ' * len(status)
+        print(f'\r{blanks}\r', end='')
 
 
 async def slow():
@@ -20,8 +20,8 @@ async def slow():
 
 
 async def supervisor():
-    spinner = asyncio.create_task(spin("thinking!"))
-    print(f"spinner object: {spinner}")
+    spinner = asyncio.create_task(spin('thinking!'))
+    print(f'spinner object: {spinner}')
     result = await slow()
     spinner.cancel()
     return result
@@ -29,8 +29,8 @@ async def supervisor():
 
 def main():
     result = asyncio.run(supervisor())
-    print(f"Answer: {result}")
+    print(f'Answer: {result}')
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

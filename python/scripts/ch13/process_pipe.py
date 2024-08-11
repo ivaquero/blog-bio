@@ -1,12 +1,13 @@
+from subprocess import PIPE
+from subprocess import Popen
 import os
-from subprocess import PIPE, Popen
 
 
 def run_encrypt(data):
     env = os.environ.copy()
-    env["password"] = "zf7ShyBhZOraQDdE/FiZpm/m/8f9X+M1"
+    env['password'] = 'zf7ShyBhZOraQDdE/FiZpm/m/8f9X+M1'
     proc = Popen(
-        ["openssl", "enc", "-pbkdf2", "-pass", "env:password"],
+        ['openssl', 'enc', '-pbkdf2', '-pass', 'env:password'],
         env=env,
         stdin=PIPE,
         stdout=PIPE,

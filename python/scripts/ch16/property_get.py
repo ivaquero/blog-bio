@@ -5,7 +5,7 @@ class Quantity:
         cls = self.__class__
         prefix = cls.__name__
         index = cls.__counter
-        self.storage_name = f"_{prefix}#{index}"
+        self.storage_name = f'_{prefix}#{index}'
         cls.__counter += 1
 
     def __get__(self, instance):
@@ -15,7 +15,7 @@ class Quantity:
         if value > 0:
             setattr(instance, self.storage_name, value)
         else:
-            raise ValueError("value must be > 0")
+            raise ValueError('value must be > 0')
 
 
 class LineItem:
@@ -31,7 +31,7 @@ class LineItem:
         return self.weight * self.price
 
 
-coconuts = LineItem("Brazilian coconut", 20, 17.95)
+coconuts = LineItem('Brazilian coconut', 20, 17.95)
 print(coconuts.weight, coconuts.price)  # (20, 17.95)
-print(getattr(coconuts, "_Quantity#0"))  # 20
-print(getattr(coconuts, "_Quantity#1"))  # 17.95
+print(getattr(coconuts, '_Quantity#0'))  # 20
+print(getattr(coconuts, '_Quantity#1'))  # 17.95

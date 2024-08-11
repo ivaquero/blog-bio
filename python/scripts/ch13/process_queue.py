@@ -1,27 +1,28 @@
+from multiprocessing import Process
+from multiprocessing import Queue
 import os
 import random
 import time
-from multiprocessing import Process, Queue
 
 
 # 写数据进程执行的代码：
 def write(q):
-    print(f"Process to write: {os.getpid()}")
-    for value in ["A", "B", "C"]:
-        print(f"Put {value} to queue...")
+    print(f'Process to write: {os.getpid()}')
+    for value in ['A', 'B', 'C']:
+        print(f'Put {value} to queue...')
         q.put(value)
         time.sleep(random.random())
 
 
 # 读数据进程执行的代码：
 def read(q):
-    print(f"Process to read: {os.getpid()}")
+    print(f'Process to read: {os.getpid()}')
     while True:
         value = q.get(True)
-        print(f"Get {value} from queue.")
+        print(f'Get {value} from queue.')
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     # 父进程创建 Queue，并传给各个子进程：
     q = Queue()
     pw = Process(target=write, args=(q,))

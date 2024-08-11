@@ -1,4 +1,5 @@
-from threading import Lock, Thread
+from threading import Lock
+from threading import Thread
 
 
 def worker(sensor_index, how_many, counter):
@@ -7,7 +8,7 @@ def worker(sensor_index, how_many, counter):
         counter.increment(1)
 
 
-def threadRun():
+def thread_run():
     for i in range(5):
         thread = Thread(target=worker, args=(i, how_many, counter))
         threads.append(thread)
@@ -17,7 +18,7 @@ def threadRun():
 
     expected = how_many * 5
     found = counter.count
-    print(f"Counter should be {expected}, got {found}")
+    print(f'Counter should be {expected}, got {found}')
 
 
 how_many = 10**5
@@ -33,7 +34,7 @@ class Counter:
 
 
 counter = Counter()
-threadRun()
+thread_run()
 
 
 class LockingCounter:
@@ -47,4 +48,4 @@ class LockingCounter:
 
 
 counter = LockingCounter()
-threadRun()
+thread_run()
