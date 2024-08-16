@@ -1,6 +1,7 @@
 import functools
 import unicodedata
 
+
 nfc = functools.partial(unicodedata.normalize, 'NFC')
 s1 = 'café'
 s2 = 'cafe\u0301'

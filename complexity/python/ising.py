@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
+
 rng = np.random.default_rng(1337)
 
 
@@ -64,8 +65,8 @@ print(len(history))
 _, ax = plt.subplots(figsize=(8, 4))
 ax.scatter(range(num_steps), history)
 ax.set(
-    xlabel="Monte Carlo Steps",
-    ylabel="Magnetization",
-    title=f"Wolff Algorithm - {grid_size}x{grid_size} Ising Model at T={temperature}",
+    xlabel='Monte Carlo Steps',
+    ylabel='Magnetization',
+    title=f'Wolff Algorithm - {grid_size}x{grid_size} Ising Model at T={temperature}',
 )
 plt.show()
