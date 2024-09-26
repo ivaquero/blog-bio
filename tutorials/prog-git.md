@@ -22,7 +22,7 @@ zhihu-url: https://zhuanlan.zhihu.com/p/694181464
   - 克隆仓库：`git clone`
   - 拉取文件：`git pull`
 
-![git](images/git.excalidraw.png)
+![Git](images/git.excalidraw.png)
 
 ### 1.2. 分支操作
 
@@ -92,11 +92,6 @@ VSCode 内置的 Git 工具已经足够好用，其涵盖了 Git 相关的绝大
 
 ![vscode-git](images/vscode/vscode-git.png)
 
-当然，一些扩展仍可令其如虎添翼。
+当然，一些扩展也很有用，如 Conventional Commits 等。
 
-安装扩展
-
-- Git History
-- Conventional Commits
-
-![git-history](images/vscode/vscode-git-history.png)
+> GitLens 很强大，但是给我感觉有点笨重，对精简度日的我来说，实在不愿意因其功能而损失编辑器的性能，所以不推荐。
