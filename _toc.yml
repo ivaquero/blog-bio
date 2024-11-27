@@ -1,0 +1,85 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: README
+parts:
+  - caption: Python 入门
+    chapters:
+      - file: python/01-环境与变量
+      - file: python/02-变量运算
+      - file: python/03-容器
+      - file: python/04-容器运算
+      - file: python/05-控制流
+      - file: python/06-函数
+      - file: python/07-闭包与装饰器
+      - file: python/08-内置算法模块
+      - file: python/09-面向对象编程
+      - file: python/10-模版与模式
+      - file: python/11-魔法方法
+      - file: python/12-高级编程
+      - file: python/13-多任务
+      - file: python/14-异步
+      - file: python/15-网络模型
+      - file: python/16-元编程
+      - file: python/17-模块与调试
+      - file: python/18-高性能扩展
+  - caption: Python 数据分析
+    chapters:
+      - file: analysis/clean-pandas
+      - file: analysis/clean-pandas2
+      - file: analysis/correlation
+      - file: analysis/deviation
+      - file: analysis/distribution
+      - file: analysis/group
+      - file: analysis/polar
+      - file: analysis/proportion
+      - file: analysis/ranking
+      - file: analysis/time-series
+      - file: analysis/tricks
+  - caption: 统计基础
+    chapters:
+      - file: base-stats/01-概率与分布
+      - file: base-stats/02-统计量与采样
+      - file: base-stats/03-参数估计
+      - file: base-stats/04-参数检验
+      - file: base-stats/05-非参数检验
+      - file: base-stats/06-回归分析
+  - caption: 机器学习
+    chapters:
+      - file: base-ml/01-统计学习引言
+      - file: base-ml/02-线性回归
+      - file: base-ml/03-模型选择
+      - file: base-ml/04-线性分类
+      - file: base-ml/05-梯度下降
+      - file: base-ml/06-梯度下降优化
+      - file: base-ml/07-非线性分类
+      - file: base-ml/08-决策树
+      - file: base-ml/09-集成学习
+      - file: base-ml/10-降维
+      - file: base-ml/11-硬聚类
+      - file: base-ml/12-软聚类
+      - file: base-ml/13-生存分析
+  - caption: 综合生命科学
+    chapters:
+      - file: biotechs/01-生物信息学基础
+      - file: biotechs/02-分子生物学基础
+      - file: biotechs/03-演化论基础
+      - file: biotechs/04-病理学基础
+      - file: biotechs/基因工程
+      - file: biotechs/糖生化测定
+      - file: biotechs/蛋白质生化测定
+      - file: biotechs/重组高拷贝酵母
+  - caption: 复杂性科学
+    chapters:
+      - file: complexity/01-复杂性概述.md
+      - file: complexity/02-细胞自动机.md
+      - file: complexity/03-相变.md
+      - file: complexity/04-多主体建模.md
+      - file: complexity/05-分形.md
+      - file: complexity/06-随机图.md
+      - file: complexity/07-节点分析.md
+      - file: complexity/08-群分析.md
+      - file: complexity/09-全网分析.md
+      - file: complexity/A-博弈论基础.md
+      - file: complexity/B-社会学建模.md
