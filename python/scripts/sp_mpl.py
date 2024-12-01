@@ -1,16 +1,14 @@
-from typing import List
-
 import requests
 from bs4 import BeautifulSoup
 
 
 # get codes as a list
-def getCodes(url, start=1, end=2) -> List:
+def getCodes(url, start=1, end=2) -> list:
     req = requests.get(url)
     soup = BeautifulSoup(req.text, "lxml")
     # flag = '</code></pre></div>.?<pre><code class="python language-python">'
 
-    all_codes: List = []
+    all_codes: list = []
 
     for _ in range(start, end):
         selector = "div[class='collapseomatic_content']"

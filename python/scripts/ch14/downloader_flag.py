@@ -8,7 +8,28 @@ from pathlib import Path
 
 DownloadStatus = Enum("DownloadStatus", "OK NOT_FOUND ERROR")
 
-POP20_CC = ("CN IN US ID BR PK NG BD RU JP " "MX PH VN ET EG DE IR TR CD FR").split()
+POP20_CC = [
+    "CN",
+    "IN",
+    "US",
+    "ID",
+    "BR",
+    "PK",
+    "NG",
+    "BD",
+    "RU",
+    "JP",
+    "MX",
+    "PH",
+    "VN",
+    "ET",
+    "EG",
+    "DE",
+    "IR",
+    "TR",
+    "CD",
+    "FR",
+]
 
 DEFAULT_CONCUR_REQ = 1
 MAX_CONCUR_REQ = 1
@@ -76,7 +97,7 @@ def expand_cc_args(
                 codes.add(cc)
             else:
                 raise ValueError(
-                    "*** Usage error: each CC argument " "must be A to Z or AA to ZZ."
+                    "*** Usage error: each CC argument must be A to Z or AA to ZZ."
                 )
     return sorted(codes)[:limit]
 
@@ -123,7 +144,7 @@ def process_args(default_concur_req):
         "--server",
         metavar="LABEL",
         default=DEFAULT_SERVER,
-        help=f"Server to hit; one of {server_options} " f"(default={DEFAULT_SERVER})",
+        help=f"Server to hit; one of {server_options} (default={DEFAULT_SERVER})",
     )
     parser.add_argument(
         "-v", "--verbose", action="store_true", help="output detailed progress info"
@@ -141,7 +162,7 @@ def process_args(default_concur_req):
         sys.exit(2)  # command line usage error
     args.server = args.server.upper()
     if args.server not in SERVERS:
-        print(f"*** Usage error: --server LABEL " f"must be one of {server_options}")
+        print(f"*** Usage error: --server LABEL must be one of {server_options}")
         parser.print_usage()
         sys.exit(2)  # command line usage error
     try:
