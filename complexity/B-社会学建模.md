@@ -35,7 +35,7 @@ $$
 $$
 \begin{gather}
 \begin{aligned}
-    \bigg(\frac{A}{A + B}\bigg)' &= \frac{(A + B) A' - A(A + B)'}{(A + B)^2} \\
+    \big(\frac{A}{A + B}\big)' &= \frac{(A + B) A' - A(A + B)'}{(A + B)^2} \\
     &= \frac{AA' + B A' - AA' - AB'}{(A + B)^2}
 \end{aligned}
 \end{gather}
