@@ -46,7 +46,7 @@ brew install --cask doxygen
 Windows 用户使用
 
 ```powershell
-scoop install Scoopforge/Extras-CN/doxygen-gui
+scoop install scoopforge/extras-cn/doxygen-gui
 ```
 
 ### 1.3. Graphviz

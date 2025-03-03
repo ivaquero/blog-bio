@@ -21,13 +21,13 @@ zhihu-tags: Visual Studio Code, Julia（编程语言）, Jupyter Notebook
 # mac
 brew install --cask julia
 # linux
-brew install ivaquero/chinese/julia-linux
+brew install brewforge/chinese/julia-linux
 ```
 
 对 Windows 用户，有 Scoop
 
 ```powershell
-scoop install Scoopforge/Extras-CN/julia-cn
+scoop install scoopforge/extras-cn/julia-cn
 ```
 
 ### 1.1. 源

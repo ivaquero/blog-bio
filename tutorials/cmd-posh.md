@@ -40,7 +40,7 @@ Invoke-Expression (&starship init powershell)
 因为涉及到字体和 Windows-Terminal，这里推荐使用 Scoop 安装（见 Scoop 篇的介绍）：
 
 ```powershell
-scoop install Scoopforge/Extras-CN/firacode-nf
+scoop install scoopforge/extras-cn/firacode-nf
 ```
 
 ### 1.2. 使用 Linux 命令

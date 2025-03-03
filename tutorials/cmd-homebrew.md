@@ -81,46 +81,38 @@ brew doctor
 brew --cache
 ```
 
-### Cask 的加载
+### Tap 的加载
 
-Cask 可看作是 Homebrew 的软件源，是其外在延申。Homebrew 的官方 Cask 包含了大量的基于图形用户界面（GUI）的软件，有大量的维护者，故一般常用软件，无论中英文，都可在其中找到。Cask 使用 `brew tap` 命令进行加载。
+Tap 可看作是 Homebrew 的软件源，是其外在延申。Homebrew 的官方 Tap 包含了大量的基于图形用户界面（GUI）的软件，有大量的维护者，故一般常用软件，无论中英文，都可在其中找到。Tap 使用 `brew tap` 命令进行加载。
 
 ```bash
 # 官方源
 brew tap homebrew/homebrew-cask
-# 字体
-brew tap homebrew/cask-fonts
-# 过往版本
-brew tap homebrew/cask-versions
-# 驱动
-brew tap homebrew/cask-drivers
-# java 环境
-brew tap adoptopenjdk/openjdk
-# 生物相关（支持 linux）
-brew tap brewsci/bio
-# Linux GUI 程序
-brew tap ivaquro/linux
+# 官方未收录的中文软件
+brew tap brewforge/chinese
+# 官方未收录的国际软件
+brew tap brewforge/extras
 ```
 
 欲查询安装脚本的详细信息，可前往 [Homebrew Formulae](https://formulae.brew.sh/)
 
-Homebrew 允许用户建立自己的 Cask，如添加我建立的 Cask [homebrew-chinese](https://github.com/ivaquero/homebrew-chinese)：
+Homebrew 允许用户建立自己的 Tap，如添加我建立的 [homebrew-chinese](https://github.com/brewforge/homebrew-chinese)：
 
 ```bash
-brew tap ivaquero/chinese
+brew tap brewforge/chinese
 ```
 
 > 这个库收录了一些官方库里没有的国产软件，如每日英语听力、每日法语听力、每日西语听力，WPS 国内版，和开源软件的国内镜像版本，如 Mambaforge。
 
-|      App 名       |     Cask 名     | 原创 | 自动更新 |
-| :---------------: | :-------------: | :--: | :------: |
-|  M3U8-Downloader  | m3u8-downloader |  √   |    √     |
-| Mambaforge 清华源 |  mambaforge-cn  |  √   |    √     |
-| WPS Office 国内版 |  wpsoffice-cn   |  √   |    √     |
-|   每日法语听力    |     ting-fr     |  √   |    √     |
-|   每日英语听力    |     ting-en     |  √   |    √     |
-|   每日西语听力    |     ting-es     |  √   |    √     |
-|     西语助手      |    eshelper     |  √   |    √     |
+|      App 名       |     Cask 名     | 原创  | 自动更新 |
+| :---------------: | :-------------: | :---: | :------: |
+|  M3U8-Downloader  | m3u8-downloader |   √   |    √     |
+| Mambaforge 清华源 |  mambaforge-cn  |   √   |    √     |
+| WPS Office 国内版 |  wpsoffice-cn   |   √   |    √     |
+|   每日法语听力    |     ting-fr     |   √   |    √     |
+|   每日英语听力    |     ting-en     |   √   |    √     |
+|   每日西语听力    |     ting-es     |   √   |    √     |
+|     西语助手      |    eshelper     |   √   |    √     |
 
 ### Cask 的使用
 
