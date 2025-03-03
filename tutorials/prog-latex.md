@@ -55,7 +55,7 @@ brew install basictex
 
 ```powershell
 # 使用 TeXLive
-scoop bucket add scoopet https://github.com/ivaquero/scoopet
+scoop bucket add extras-plus https://github.com/Scoopforge/Extras-Plus
 scoop install texlive
 # 使用 MikTeX
 scoop install latex

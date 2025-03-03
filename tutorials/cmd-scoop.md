@@ -105,32 +105,33 @@ scoop bucket add extras
 scoop update
 ```
 
-git 下载若使用 Scoop 原生的下载协议可能比较慢，建议使用如下迂回方案：
+Git 下载若使用 Scoop 原生的下载协议可能比较慢，建议使用如下迂回方案：
 
 - 用第三方下载器，如 Motrix 下载；
 - 然后将文件复制到 `pathtoscoop/cache`；
-- 输入 scoop install git，此时会产生一个扩展名为.download 的文件；
-- 输入 scoop uninstall git；
+- 输入 `scoop install git`，此时会产生一个扩展名为 `.download` 的文件；
+- 输入 `scoop uninstall git`；
 - 重命名自己下载的文件名为 3 中的文件名，但取代 .download 文件；
-- 输入 scoop install git；
+- 输入 `scoop install git`；
 
-### 可选步骤：添加我创建并维护的 scoopet 库（专注服务科研）
+### 可选步骤：添加 Scoopforge 扩展库
 
 ```powershell
-scoop bucket add scoopet https://github.com/ivaquro/scoopet
+scoop bucket add main-plus https://github.com/Scoopforge/Main-Plus
+scoop bucket add extras-cn https://github.com/Scoopforge/Extras-CN
+scoop bucket add extras-plus https://github.com/Scoopforge/Extras-Plus
 scoop update
 ```
 
-scoopet 库包含的安装脚本分为如下四类：
+Scoopforge 扩展库收录了 Scoop 官方仓库没有的软件。由于后者的维护常常滞后，新软件收录慢，Scoopforge 是一个很好的备选，其仓库设置如下
 
-- 科研工具：如 miniconda（国内镜像），julia（国内镜像），copytranslator，gephi，geogebra，mendeley
-- 开发辅助：如 cyberduck，virtualbox，vmware
-- 日常办公：如 WPS（国内版），百度网盘，灵格斯词霸
-- 社交休闲：如 you-get，网易云音乐，微信
+- [Main-Plus](https://github.com/Scoopforge/Main-Plus)：命令行软件
+- [Extras-Plus](https://github.com/Scoopforge/Extras-Plus)：默认语言为英文的图形化软件
+- [Extras-CN](https://github.com/Scoopforge/Extras-CN)：默认语言为中文的图形化软件
 
-> 详情见 [README_CN](https://github.com/ivaquro/scoopet/blob/master/README_CN.md)
+> 详情见 [Extras-CN](https://github.com/Scoopforge/Extras-CN)
 
-![scoopet](images/cmd/scoop2.png)
+![Extras-CN](images/cmd/scoop2.png)
 
 ### 步骤 4：安装 App
 
@@ -238,14 +239,14 @@ scoop config proxy [username:password@]host:port
 
 Scoop bucket 的创建的关键步骤有如下两个：
 
-- 创建 git 仓库
+- 创建 Git 仓库
 - 编写脚本
 
-> 大家均是成年人了，github 这个同性交友网站的使用在这里就不做赘述了。
+> 大家均是成年人了，GitHub 这个同性交友网站的使用在这里就不做赘述了。
 
 ### bucket
 
-推荐 fork 我的仓库 [Scoopet](https://github.com/ivaquero/scoopet)
+推荐 fork 我的仓库 [Scoopet](https://github.com/Scoopforge/Extras-CN)
 
 或者这个仓库，[](https://github.com/Ash258/GenericBucket)。
 

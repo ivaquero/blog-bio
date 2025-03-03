@@ -27,7 +27,7 @@ brew install ivaquero/chinese/julia-linux
 对 Windows 用户，有 Scoop
 
 ```powershell
-scoop install ivaquero/scoopet/julia-cn
+scoop install Scoopforge/Extras-CN/julia-cn
 ```
 
 ### 1.1. 源
