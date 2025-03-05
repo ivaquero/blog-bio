@@ -64,6 +64,14 @@
 
 ### 2.1. 生成，类型
 
+- `numpy.random`
+  - `rand()`：均匀分布
+  - `randn()`：标准
+  - `randint()`：随机生成整数
+  - `normal()`
+  - `binomial()`
+  - `seed()`
+  - `permutation()`, `shuffle()`
 - generation
   - `zeros()`, `zeros_like()`
   - `ones()`, `ones_like()`
@@ -75,14 +83,6 @@
   - repetition
     - `repeat()`
     - `tile()`
-- numpy.random
-  - `rand()`：均匀分布
-  - `randn()`：标准
-  - `randint()`：随机生成整数
-  - `normal()`
-  - `binomial()`
-  - `seed()`
-  - `permutation()`, `shuffle()`
 - types
   - `array()`
   - `asarray()`
@@ -91,9 +91,9 @@
 
 ### 2.2. 查询，索引
 
-- indeces
+- indexes
   - `take()`, `put()`
-- inquery
+- inquiry
   - `where(cond, xarr, yarr)`：x if condition else y
   - `searchsorted()`
   - `isnan()`
@@ -105,7 +105,7 @@
   - `sort()`
   - `argsort()`
   - `lexsort()`
-- ndarray
+- self.method
   - `dtype`
   - `shape`
   - `ndim`
@@ -124,6 +124,12 @@
 
 ### 2.4. 计算
 
+- `numpy.linalg`
+  - `inv()`, `pinv()`
+  - `qr()`, `svd()`
+  - `eig()`, `eigvals()`
+  - `trace()`, `det()`
+  - `solve()`, `lstsq()`
 - computation
   - `dot()`：内积，矩阵乘法
   - `power()`
@@ -139,12 +145,6 @@
   - `interset1d()`, `union1d()`
   - `in1d()`
   - `setdiff1d()`, `setxor()`
-- numpy.linalg
-  - `inv()`, `pinv()`
-  - `qr()`, `svd()`
-  - `eig()`, `eigvals()`
-  - `trace()`, `det()`
-  - `solve()`, `lstsq()`
 
 ## 3. Pandas
 
@@ -180,7 +180,7 @@
   - `df[[*col_name]]`
   - `df.loc[col_name]` , `df.loc[:, col_name]`
   - `df.iloc[ind]`, `df.iloc[:, ind]`
-- inquery
+- inquiry
   - `isin()`, `notin()`
 
 ### 3.3. 归纳，清洗
@@ -202,7 +202,7 @@
   - `series.replace()`
   - `series.map(func)`
   - `drop()`
-- colums
+- columns
   - `rename()`
 - strings
   - `series.str.func()`
@@ -218,7 +218,7 @@
 - hierarchical indexing
   - `stack()`, `unstack()`
   - `swaplevel()`
-- connectioin
+- connection
   - `concat()`：stack dataframes
   - `append()`: stack dataframes vertically
   - `join()`：merge by the index
@@ -235,7 +235,7 @@
 
 ### 3.5. 分类数据
 
-- categorial data
+- categorical data
   - `Categorical()`
   - `get_dummies()`
 
@@ -440,7 +440,7 @@ from scipy.stats import norm
 # 定类
 ## skew 以 [0, 0.5, 1.0, inf] 为节点
 pd.Series(data).skew()
-## kurt 以 [-inf, -1, -0.5, 0, 0.5, 1.0, inf] 为节点
+## kurtosis 以 [-inf, -1, -0.5, 0, 0.5, 1.0, inf] 为节点
 pd.Series(data).kurt()
 ```
 
@@ -464,7 +464,7 @@ _, ax = plt.subplots()
 ### 9.1. 基于特征选择
 
 ```python
-from sklearn.feature_selection import VarianceThreshold, SelectKBest, multual_info_classif, multual_info_regression, SelectFromModel, RFE
+from sklearn.feature_selection import VarianceThreshold, SelectKBest, mutual_info_classif, mutual_info_regression, SelectFromModel, RFE
 
 # 方差过滤
 VarianceThreshold(threshold=0.0).fit_transform(X, y)
@@ -474,13 +474,13 @@ SelectKBest(chi2, k).fit_transform(X, y)
 # F 检验（不存在显著的线性关系）
 SelectKBest(f_classif, k).fit_transform(X, y)
 # 互信息
-SelectKBest(multual_info_classif, k).fit_transform(X, y)
-SelectKBest(multual_info_regression, k).fit_transform(X, y)
+SelectKBest(mutual_info_classif, k).fit_transform(X, y)
+SelectKBest(mutual_info_regression, k).fit_transform(X, y)
 
 # 嵌入法：精确度模型本身，是过滤法的进阶版。
-SelectFromModel(model, threshold=0.01).fit_transfrom(X, y)
+SelectFromModel(model, threshold=0.01).fit_transform(X, y)
 # 包装法
-RFE(sklearn.SVM.SVC(), k).fit_transfrom(X, y)
+RFE(sklearn.SVM.SVC(), k).fit_transform(X, y)
 ```
 
 ### 9.2. 基于特征转换
