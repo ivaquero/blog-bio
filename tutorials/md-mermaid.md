@@ -41,12 +41,12 @@ graph TB
   end
 ```
 
-| 用词 |   含义   |
-| :--: | :------: |
-|  TB  | 从上到下 |
-|  BT  | 从下到上 |
-|  RL  | 从右到左 |
-|  LR  | 从左到右 |
+| 用词  |   含义   |
+| :---: | :------: |
+|  TB   | 从上到下 |
+|  BT   | 从下到上 |
+|  RL   | 从右到左 |
+|  LR   | 从左到右 |
 
 - 节点定义
 
@@ -328,9 +328,3 @@ Mermaid.js 内置了 3 种主题（"default"，"forest"，"dark"），安装 Mar
   "markdown-preview-enhanced.mermaidTheme": "forest"
 }
 ```
-
-## 6. 前景
-
-目前，mermaid.js 支持的图型不断扩展，希望以后能成为 Markdown 中的 TikZ 吧。
-
-更多详情，可关注其 [官方文档](https://mermaid-js.github.io/mermaid/)。

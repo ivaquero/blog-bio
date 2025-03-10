@@ -13,22 +13,22 @@ zhihu-tags: Visual Studio Code, Python, Jupyter Notebook
 
 Conda 是服务于 Python 和 R 的多语言包管理器，其解决了 Python 原生包管理器 Pip 的依赖冲突问题，极大地方便了 Python 环境的管理。Mamba 基于 Conda，是后者的升级版，默认进行并行下载，效率比 Conda 更上一个台阶。
 
-这里推荐安装 Mambaforge，基于 Mamba 的最小安装版本，只包含环境管理功能。
+这里推荐安装 Miniforge，基于 Mamba 的最小安装版本，只包含环境管理功能。
 
 对 Windows 用户，使用 Scoop
 
 ```powershell
-scoop install mambaforge
+scoop install miniforge
 # 或国内镜像
-scoop install scoopforge/extras-cn/mambaforge-cn
+scoop install scoopforge/extras-cn/miniforge-cn
 ```
 
 对 macOS 用户，有 Homebrew
 
 ```bash
-brew install mambaforge
+brew install miniforge
 # 或国内镜像
-brew install brewforge/chinese/mambaforge-cn
+brew install brewforge/chinese/miniforge-cn
 ```
 
 ### 1.2. 创建环境
@@ -200,7 +200,7 @@ mamba install jupyterlab
 
 ## 4. WSL2
 
-Windows 下的 Python 环境经常会给人带来一系列的困扰，如，时隐时现的各种因为环境变量导致的奇怪报错，Conda 库更新不到最新的版本，还有诸如 xgboost 等库压根儿就不提供 Win 版等。现在，WSL2（Windows Subsystem Linux 2）的出现，让我们有了一种新的选择。WSL2 是一个 Windows 的内置虚拟机，可运行 Linux 环境，一旦有了 Linux 环境，后面的配置不必多说。
+Windows 下的 Python 环境经常会给人带来一系列的困扰，如，时隐时现的各种因为环境变量导致的奇怪报错，Conda 库更新不到最新的版本，还有诸如 XGBoost 等库压根儿就不提供 Win 版等。现在，WSL2（Windows Subsystem Linux 2）的出现，让我们有了一种新的选择。WSL2 是一个 Windows 的内置虚拟机，可运行 Linux 环境，一旦有了 Linux 环境，后面的配置不必多说。
 
 ### 4.1. 安装 WSL2
 

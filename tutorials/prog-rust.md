@@ -30,7 +30,7 @@ scoop install rustup
 rustup-init
 ```
 
-- 启动 carge
+- 启动 cargo
 
 ```bash
 source ~/.cargo/env

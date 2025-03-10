@@ -102,12 +102,12 @@ Homebrew 允许用户建立自己的 Tap，如添加我建立的 [homebrew-chine
 brew tap brewforge/chinese
 ```
 
-> 这个库收录了一些官方库里没有的国产软件，如每日英语听力、每日法语听力、每日西语听力，WPS 国内版，和开源软件的国内镜像版本，如 Mambaforge。
+> 这个库收录了一些官方库里没有的国产软件，如每日英语听力、每日法语听力、每日西语听力，WPS 国内版，和开源软件的国内镜像版本，如 Miniforge。
 
 |      App 名       |     Cask 名     | 原创  | 自动更新 |
 | :---------------: | :-------------: | :---: | :------: |
 |  M3U8-Downloader  | m3u8-downloader |   √   |    √     |
-| Mambaforge 清华源 | `mambaforge-cn` |   √   |    √     |
+| Miniforge 清华源  | `miniforge-cn`  |   √   |    √     |
 | WPS Office 国内版 | `wpsoffice-cn`  |   √   |    √     |
 |   每日法语听力    |    `ting-fr`    |   √   |    √     |
 |   每日英语听力    |    `ting-en`    |   √   |    √     |

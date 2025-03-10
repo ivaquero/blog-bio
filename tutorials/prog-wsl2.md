@@ -149,7 +149,7 @@ sudo apt remove --purge python3
 scoop install vcxsrv
 ```
 
-安装完毕之后打开防火墙配置，勾选所有的 Xserver 连接。
+安装完毕之后打开防火墙配置，勾选所有的 XServer 连接。
 
 ![Fire Wall](images/wsl2/vcxsrv.png)
 

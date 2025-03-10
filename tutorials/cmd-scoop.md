@@ -246,9 +246,7 @@ Scoop bucket 的创建的关键步骤有如下两个：
 
 ### bucket
 
-推荐 fork 我的仓库 [Scoopet](https://github.com/scoopforge/extras-cn)
-
-或者这个仓库，[](https://github.com/Ash258/GenericBucket)。
+推荐 fork 仓库 [scoopforge](https://github.com/scoopforge/extras-cn)
 
 其他文件基本不用改动，将自定义的脚本放在 bucket 文件夹里面就行。
 

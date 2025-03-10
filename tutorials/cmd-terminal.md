@@ -158,11 +158,11 @@ font:
 
 Alacritty 不支持多窗口（需要等待下一个版本，即 0.11.0）或多标签（未来也不会），所以需要开启终端复用器（multiplexer）来配合。
 
-由于 TMux 基于 C，不支持 Windows，而且开发者明确表示未来也不会支持，这里我们选用基于 Rust 的 Zellij。
+由于 tmux 基于 C，不支持 Windows，而且开发者明确表示未来也不会支持，这里我们选用基于 Rust 的 Zellij。
 
-> 最新版本的 Zellij 已经整合了 TMux 的键位，消除了迁移的顾虑。
+> 最新版本的 Zellij 已经整合了 tmux 的键位，消除了迁移的顾虑。
 
-虽然 Zellij 目前也不支持 Windows，但 Windows 的 PR 已经提上日程。另外，Zellij 的配置也明显比 TMux 简单，也不需要记忆那么多快捷键。
+虽然 Zellij 目前也不支持 Windows，但 Windows 的 PR 已经提上日程。另外，Zellij 的配置也明显比 tmux 简单，也不需要记忆那么多快捷键。
 
 **需要强调的是**，Alacritty 目前已经可以将 `command / ctrl + C` 复制的内容直接传给系统剪切板，不必再为终端复用器的 copy 模式烦心了，但其他终端模拟器或多或少都还有点问题。
 

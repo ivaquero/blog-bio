@@ -49,9 +49,9 @@ Windows 用户使用
 scoop install scoopforge/extras-cn/doxygen-gui
 ```
 
-### 1.3. Graphviz
+### 1.3. graphviz
 
-Graphviz 是一个由 AT&T 实验室启动的开源图形可视化软件，它能够从简单的文本文件描述中生成复杂的图形和网络。它使用一种名为 DOT 的描述语言来定义图形。
+graphviz 是一个由 AT&T 实验室启动的开源图形可视化软件，它能够从简单的文本文件描述中生成复杂的图形和网络。它使用一种名为 DOT 的描述语言来定义图形。
 
 要使用 Doxygen 生成依赖图、继承图以及协作图，必须先安装 graphviz。
 

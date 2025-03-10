@@ -140,9 +140,9 @@ installkernel("Julia", "--depwarn=no")
 
 ```bash
 # mac-arm
-ENV["JUPYTER"]="/opt/homebrew/Caskroom/mambaforge/base/bin/jupyter"
+ENV["JUPYTER"]="/opt/homebrew/Caskroom/miniforge/base/bin/jupyter"
 # mac-intel
-ENV["JUPYTER"]="/usr/local/Caskroom/mambaforge/base/bin/jupyter"
+ENV["JUPYTER"]="/usr/local/Caskroom/miniforge/base/bin/jupyter"
 # windows
 ENV["JUPYTER"]="c:\\scoop\\apps\\miniconda\\current\\Scripts\\jupyter.EXE"
 # linux
@@ -157,7 +157,7 @@ ENV["JUPYTER"]="~/miniconda3/base/bin/jupyter"
 
 ```julia
 # mac-arm
-ENV["PYTHON"] = "/opt/homebrew/Caskroom/mambaforge/base/bin/python"
+ENV["PYTHON"] = "/opt/homebrew/Caskroom/miniforge/base/bin/python"
 # mac-intel
 ENV["PYTHON"] = "/usr/local/Caskroom/miniconda/base/bin/python"
 # windows
