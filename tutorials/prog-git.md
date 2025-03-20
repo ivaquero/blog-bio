@@ -63,6 +63,14 @@ git commit -m ${commit message}
 git push
 ```
 
+压缩某提交后的所有提交
+
+```bash
+git reset --soft [commit-hash]
+git commit -m ${commit message}
+git push
+```
+
 ### 2.2. 仓库
 
 - 发布分支
