@@ -29,9 +29,62 @@ pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain
 - 将 `ucrt64\bin` 目录添加到环境变量 `PATH` 中
 - 重启计算机（不可或缺）
 
-### 1.2. clangd
+### 1.2. C/C++
 
-clangd 扩展由 LLVM 团队维护，提供了非常智能的补全，和代码格式化，以及语法检查。相比于官方 C/C++ 扩展，个人更偏爱 clangd。
+官方 C/C++ 扩展是必装的，虽然有些笨重，还有各种瑕疵，但是其集成了不少非常实用的工具链的接口。
+
+![cpp](images/vscode/vscode-cpp.png)
+
+安装完毕后，"ctrl"+", " 进入配置，点击右上角的图标，打开配置的 json 文件
+
+基本配置如下
+
+```json
+{
+  "C_Cpp.default.compilerArgs": [
+    "-g",
+    "${file}",
+    "-std=c++20",
+    "-o",
+    "${fileDirname}/${fileBasenameNoExtension}"
+  ],
+  "C_Cpp.default.cppStandard": "c++20",
+  "C_Cpp.autocompleteAddParentheses": true,
+  "C_Cpp.clang_format_fallbackStyle": "LLVM",
+  "C_Cpp.clang_format_sortIncludes": true,
+  "C_Cpp.intelliSenseEngine": "Disabled"
+}
+```
+
+`c_cpp_properties.json`：用于使用 VSCode 自带的代码提示工具，如 IntelliSense
+
+```json
+{
+    "configurations": [
+        {
+            "name": "GCC",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "windowsSdkVersion": "10.0.22000.0",
+            "compilerPath": "C:\\Scoop\\apps\\msys2\\current\\ucrt64\\bin\\g++.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-gcc-x64"
+        }
+    ],
+    "version": 4
+}
+```
+
+### 1.3. clangd
+
+clangd 扩展由 LLVM 团队维护，提供了非常智能的补全，和代码格式化，以及语法检查。相比于官方 C/C++ 扩展，其提示更快更准。
 
 关于 clangd 的详细介绍，相见其官网 [clangd](https://clangd.llvm.org/)，此扩展使用需要保证系统内安装有 clangd，新版 macOS 已经内置，对于没有 clangd 的
 
@@ -100,59 +153,6 @@ Diagnostics:
       readability-identifier-naming.VariableCase: camelCase
 
   Suppress: [-Wdeprecated-declarations]
-```
-
-### 1.3. C/C++
-
-官方 C/C++ 扩展可以作为辅助备选。
-
-![cpp](images/vscode/vscode-cpp.png)
-
-安装完毕后，"ctrl"+", " 进入配置，点击右上角的图标，打开配置的 json 文件
-
-基本配置如下
-
-```json
-{
-  "C_Cpp.default.compilerArgs": [
-    "-g",
-    "${file}",
-    "-std=c++20",
-    "-o",
-    "${fileDirname}/${fileBasenameNoExtension}"
-  ],
-  "C_Cpp.default.cppStandard": "c++20",
-  "C_Cpp.autocompleteAddParentheses": true,
-  "C_Cpp.clang_format_fallbackStyle": "LLVM",
-  "C_Cpp.clang_format_sortIncludes": true,
-  "C_Cpp.intelliSenseEngine": "Disabled"
-}
-```
-
-`c_cpp_properties.json`：用于使用 VSCode 自带的代码提示工具，如 IntelliSense
-
-```json
-{
-    "configurations": [
-        {
-            "name": "GCC",
-            "includePath": [
-                "${workspaceFolder}/**"
-            ],
-            "defines": [
-                "_DEBUG",
-                "UNICODE",
-                "_UNICODE"
-            ],
-            "windowsSdkVersion": "10.0.22000.0",
-            "compilerPath": "C:\\Scoop\\apps\\msys2\\current\\ucrt64\\bin\\g++.exe",
-            "cStandard": "c17",
-            "cppStandard": "c++17",
-            "intelliSenseMode": "windows-gcc-x64"
-        }
-    ],
-    "version": 4
-}
 ```
 
 ## 2. 编译
