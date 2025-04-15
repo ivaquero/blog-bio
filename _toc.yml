@@ -62,14 +62,9 @@ parts:
       - file: base-ml/13-生存分析
   - caption: 综合生命科学
     chapters:
-      - file: biotechs/01-生物信息学基础
-      - file: biotechs/02-分子生物学基础
-      - file: biotechs/03-演化论基础
-      - file: biotechs/04-病理学基础
-      - file: biotechs/基因工程
-      - file: biotechs/糖生化测定
-      - file: biotechs/蛋白质生化测定
-      - file: biotechs/重组高拷贝酵母
+      - file: biotechs/01-分子生物学基础
+      - file: biotechs/02-演化论基础
+      - file: biotechs/03-病理学基础
   - caption: 复杂性科学
     chapters:
       - file: complexity/01-复杂性概述.md
