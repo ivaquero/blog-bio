@@ -59,7 +59,10 @@ parts:
       - file: base-ml/10-降维
       - file: base-ml/11-硬聚类
       - file: base-ml/12-软聚类
-      - file: base-ml/13-生存分析
+  - caption: 数据库
+    chapters:
+      - file: sql/SQL-01-库管理
+      - file: sql/SQL-02-表操作
   - caption: 综合生命科学
     chapters:
       - file: biotechs/01-分子生物学基础
