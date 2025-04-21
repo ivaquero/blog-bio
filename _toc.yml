@@ -45,6 +45,10 @@ parts:
       - file: base-stats/04-参数检验
       - file: base-stats/05-非参数检验
       - file: base-stats/06-回归分析
+      - file: base-stats/07-非线性分类
+      - file: base-stats/08-集成学习
+      - file: base-stats/09-降维
+      - file: base-stats/10-硬聚类
   - caption: 数据库
     chapters:
       - file: sql/SQL-01-库管理
