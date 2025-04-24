@@ -1,3 +1,7 @@
+*
+!*.*
+!*/
+
 ### JupyterNotebooks ###
 # gitignore template for Jupyter Notebooks
 # website: http://jupyter.org/
@@ -23,3 +27,4 @@ ipython_config.py
 .obsidian
 articles
 test.*
+mindmap.png
