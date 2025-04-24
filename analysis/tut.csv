@@ -1,0 +1,12 @@
+ID,Layer,Node,Support
+Z,0,Spark RDD,RDD编程综合实例
+A,1,创建RDD,运行实例
+B,1,RDD转换操作,无
+A1,2,分布式文件创建,无
+A2,2,本地文件创建,Python文件操作
+A3,2,并行集合（列表）创建,Python列表
+B1,2,Filter,Filter实例
+B2,2,Map,Map实例
+B3,2,Flatmap,Flatmap实例
+B4,2,groupbykey,groupbykey实例
+B5,2,reducebykey,reducebykey实例

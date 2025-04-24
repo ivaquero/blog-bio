@@ -194,8 +194,6 @@ LIMIT 5 OFFSET 5;
 
 # 联表操作
 
-![sql-join](images/sql-join.png)
-
 ## JOIN
 
 JOIN 后的 WHERE 用 AND 代替
