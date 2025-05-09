@@ -47,7 +47,6 @@ parts:
       - file: base-stats/06-回归分析
       - file: base-stats/07-最近邻
       - file: base-stats/08-降维
-      - file: base-stats/09-硬聚类
   - caption: 数据库
     chapters:
       - file: sql/SQL-01-库管理
