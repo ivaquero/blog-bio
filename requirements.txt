@@ -4,6 +4,7 @@ numpy
 pandas
 plotnine
 polars
+pyarrow
 scipy
 statsmodels
 sympy
