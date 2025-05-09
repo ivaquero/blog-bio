@@ -6,5 +6,6 @@ plotnine
 polars
 pyarrow
 scipy
+seaborn
 statsmodels
 sympy
