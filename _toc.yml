@@ -26,8 +26,8 @@ parts:
       - file: python/18-高性能扩展
   - caption: Python 数据分析
     chapters:
-      - file: analysis/clean-pandas
-      - file: analysis/clean-pandas2
+      - file: analysis/clean-polars
+      - file: analysis/clean-polars2
       - file: analysis/correlation
       - file: analysis/deviation
       - file: analysis/distribution
@@ -45,21 +45,12 @@ parts:
       - file: base-stats/04-参数检验
       - file: base-stats/05-非参数检验
       - file: base-stats/06-回归分析
-  - caption: 机器学习
+      - file: base-stats/07-最近邻
+      - file: base-stats/08-降维
+  - caption: 数据库
     chapters:
-      - file: base-ml/01-统计学习引言
-      - file: base-ml/02-线性回归
-      - file: base-ml/03-模型选择
-      - file: base-ml/04-线性分类
-      - file: base-ml/05-梯度下降
-      - file: base-ml/06-梯度下降优化
-      - file: base-ml/07-非线性分类
-      - file: base-ml/08-决策树
-      - file: base-ml/09-集成学习
-      - file: base-ml/10-降维
-      - file: base-ml/11-硬聚类
-      - file: base-ml/12-软聚类
-      - file: base-ml/13-生存分析
+      - file: sql/SQL-01-库管理
+      - file: sql/SQL-02-表操作
   - caption: 综合生命科学
     chapters:
       - file: biotechs/01-分子生物学基础

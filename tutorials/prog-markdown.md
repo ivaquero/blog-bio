@@ -46,9 +46,7 @@ VSCode 默认是支持 Markdown 的，但还是有必装下面 3 个插件提高
 
 很多时候，写文档难免需要绘制一些用于说明的插图，如流程图、甘特图等，这个时候，若另开一个应用画图，再导入文档，则略显繁琐。Markdown Kroki 支持包括 mermaid，PlantUML，graphviz 等在内的多种文本绘图，不过这个扩展需要联网。
 
-![mermaid](images/vscode/vscode-mdkroki.png)
-
-> mermaid 语法介绍，可参考本专栏姊妹篇[Markdown 绘图](https://zhuanlan.zhihu.com/p/139166407)。
+![kroki](images/vscode/vscode-mdkroki.png)
 
 ## 3. 编辑扩展
 

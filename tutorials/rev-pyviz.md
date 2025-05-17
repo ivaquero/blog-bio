@@ -30,15 +30,7 @@ Yellowbrick 是服务 Scikit-Learn 的可视化库，不过随着后者和 Panda
 
 CartoPy 几乎是地理和气象分析的必须了解的可视化库。WordCloud 字如其名，用于生成词云。
 
-此外，也是 SciPy 生态的默认绘图后端，使用 Matplotlib 的主流计算库包括
-
-- Pandas
-- SciPy
-  - StatsModels
-  - Scikit-Learn
-- NetWorkX
-
-Matplotlib 有着非常优秀的底层设计，可以用于大地理、大气、天文、声音等各种数据的可视化，其中不少对于基于数据框的可视化库，如 ggplot2 来说会相当麻烦。然而，由于创始人 John Hunter 英年早逝（40 余岁），其开发经历过一段群龙无首的时期，留下了一堆混乱的 API。不过最近两年，获得了充足经费支持的 Matplotlib，已经开始重新整理规范了开发，有了更加灵活的布局方法。
+此外，Matplotlib 也是 SciPy 生态的默认绘图后端。Matplotlib 有着非常优秀的底层设计，可以用于大地理、大气、天文、声音等各种数据的可视化，其中不少对于基于数据框的可视化库，如 ggplot2 来说会相当麻烦。然而，由于创始人 John Hunter 英年早逝（40 余岁），其开发经历过一段群龙无首的时期，留下了一堆混乱的 API。不过最近两年，获得了充足经费支持的 Matplotlib，已经开始重新整理规范了开发，有了更加灵活的布局方法。
 
 ## 2. HoloViz
 

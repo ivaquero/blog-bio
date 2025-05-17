@@ -48,7 +48,6 @@
         "I",    # import sorting
         "ISC",  # string concatenation
         "NPY",  # numpy specific rules
-        "PD",   # pandas-vet
         "PERF", # perflint
         "RUF",  # ruff
         "S",    # security
@@ -81,6 +80,5 @@
 [tool.ruff.lint.isort]
     case-sensitive = true
     combine-as-imports = true
-    force-single-line = true
     force-wrap-aliases = true
     order-by-type = true

@@ -17,9 +17,11 @@
     }
 </style>
 
-# 规范
+# SQL-02-表操作
 
-## 执行顺序
+## 规范
+
+### 执行顺序
 
 <div class="box">
     <div class="left">
@@ -38,15 +40,15 @@
     </div>
 </div>
 
-## 优化原则
+### 优化原则
 
 - 最大化利用索引；
 - 尽可能避免全表扫描；
 - 减少无效数据的查询；
 
-# 字段
+## 字段
 
-## DISTINCT
+### DISTINCT
 
 ``` sql
 -- 一般情况下，仅使用 DISTINCT 处理单个字段，否则容易引起歧义
@@ -55,7 +57,7 @@ SELECT  COUNT(DISTINCT s_id)
 FROM student;
 ```
 
-## AS
+### AS
 
 ``` sql
 --  AS 可以用于创建新列
@@ -66,12 +68,12 @@ JOIN boxoffice
 ON movies.id = boxoffice.movie_id;
 ```
 
-# 范围
+## 范围
 
 - 查询条件尽量不用 `<>
     ` 或者 `!=`
 
-## WHERE
+### WHERE
 
 ``` sql
 -- 全表扫描
@@ -80,7 +82,7 @@ SELECT * FROM T WHERE score/10 = 9
 SELECT * FROM T WHERE score = 10*9
 ```
 
-## LIKE
+### LIKE
 
     尽量在字段后面使用模糊查询，即 `%` 不出现在字段前。
 
@@ -110,7 +112,7 @@ FROM Persons
 WHERE City LIKE '[!ALN]%'
 ```
 
-## IN / NOT IN
+### IN / NOT IN
 
 ``` sql
 SELECT name, population
@@ -137,7 +139,7 @@ FROM B
 WHERE B.id = A.id);
 ```
 
-## OR
+### OR
 
     尽量避免使用 `OR`，会导致数据库引擎放弃索引进行全表扫描，可以用
 `UNION` 代替 `OR`。
@@ -148,7 +150,7 @@ SELECT * FROM t WHERE id = 1
 SELECT * FROM t WHERE id = 3
 ```
 
-## NULL
+### NULL
 
     尽量避免进行 `NULL` 值的判断，会导致数据库引擎放弃索引进行全表扫描。
 
@@ -158,9 +160,9 @@ SELECT * FROM t WHERE id = 3
 SELECT * FROM t WHERE score = 0
 ```
 
-# 排序
+## 排序
 
-## ORDER...BY
+### ORDER...BY
 
     `ORDER BY` 条件要与 `WHERE` 中条件一致，否则 `ORDER BY`
 不会利用索引进行排序。
@@ -173,7 +175,7 @@ SELECT * FROM t where age >
  0 order by age;
 ```
 
-## LIMIT
+### LIMIT
 
 ``` sql
 -- 前 5 行
@@ -182,7 +184,7 @@ SELECT * FROM 表 LIMIT 5;
 SELECT * FROM 表 LIMIT 4, 5;
 ```
 
-## OFFSET
+### OFFSET
 
 ``` sql
 -- 从第 5 行后的第 5 行
@@ -192,11 +194,9 @@ ORDER BY Title ASC
 LIMIT 5 OFFSET 5;
 ```
 
-# 联表操作
+## 联表操作
 
-![sql-join](images/sql-join.png)
-
-## JOIN
+### JOIN
 
 JOIN 后的 WHERE 用 AND 代替
 
@@ -242,9 +242,9 @@ WHERE region = 'North America' OR region IS NULL
 ORDER BY region;
 ```
 
-## ANTIJOIN
+### ANTIJOIN
 
-## CROSS JOIN
+### CROSS JOIN
 
 求 Cartesian 积
 
@@ -257,9 +257,9 @@ CROSS JOIN languages AS l
 WHERE c.name LIKE 'Hyder%';
 ```
 
-# 集合操作
+## 集合操作
 
-## UNION
+### UNION
 
 - `UNION` 查询中的每个 `SELECT` 语句必须有相同数量的列
 - 若不希望消除重复的行，请使用 `UNION ALL` 而不是 `UNION`
@@ -280,7 +280,7 @@ WHERE subject = 'chemistry'
 AND yr = 1984
 ```
 
-## UNION ALL
+### UNION ALL
 
 ``` sql
 -- UNION ALL：取并集，不处理重合部分
@@ -291,14 +291,14 @@ SELECT  s_name
 FROM B
 ```
 
-## INTERSECT / EXCEPT
+### INTERSECT / EXCEPT
 
 - `INTERSECT`：取交集
 - `EXCEPT`：取补集
 
-# 分组、聚合
+## 分组、聚合
 
-## GROUP...BY...
+### GROUP...BY...
 
 `GROUP BY` 必须在 `WHERE` 之后，`ORDER BY` 之前；
 
@@ -314,7 +314,7 @@ GROUP BY  num
 ORDER BY nid DESC
 ```
 
-## HAVING
+### HAVING
 
 `GROUP BY` 之后，`ORDER BY` 之前
 
@@ -327,7 +327,7 @@ HAVING MAX(id) >
  10
 ```
 
-## 聚合
+### 聚合
 
 - `COUNT(\*)`：计算包含 NULL 和非 NULL 值的行，即：所有行。
 - `COUNT(column)`：返回不包含 NULL 值的行数。
@@ -344,7 +344,7 @@ FROM world
 WHERE continent = 'Europe'
 ```
 
-## 嵌套聚合
+### 嵌套聚合
 
 ``` sql
 SELECT  countries.name AS country
@@ -357,9 +357,9 @@ ORDER BY cities_num DESC, country
 LIMIT 9;
 ```
 
-# 其他函数
+## 其他函数
 
-## 排序
+### 排序
 
 - `DENSE_RANK()`：有 tie 时，tie 为同一位次
 
@@ -369,9 +369,9 @@ SELECT  score
 FROM Scores;
 ```
 
-# 条件
+## 条件
 
-## CASE...WHEN...
+### CASE...WHEN...
 
 ``` sql
 SELECT  name
@@ -386,7 +386,7 @@ FROM countries;
 WHERE year = 2015;
 ```
 
-## COALESCE
+### COALESCE
 
 ``` sql
 -- COALESCE takes any number of arguments and returns the first not-null value
@@ -397,7 +397,7 @@ FROM msp
 WHERE name LIKE 'C%';
 ```
 
-## ALL
+### ALL
 
 ``` sql
 -- 自比较需要限定其范围
@@ -414,7 +414,7 @@ AND population >
  0 )
 ```
 
-## NULLIF
+### NULLIF
 
 ``` sql
 -- NULLIF returns NULL if the two arguments are equal
@@ -426,7 +426,7 @@ FROM msp
 WHERE name LIKE 'C%';
 ```
 
-# 增、改、删
+## 增、改、删
 
 1. 增：`INSERT INTO`
 2. 删：`DELETE FROM`
@@ -434,7 +434,7 @@ WHERE name LIKE 'C%';
 4. 查：`SELECT...FROM`
 5. 备份：`SELECT INTO...(IN...) FROM`
 
-## 增加
+### 增加
 
 ``` sql
 INSERT INTO mytable
@@ -451,7 +451,7 @@ VALUES
   (1, 9.9, 283742034 / 1000000);
 ```
 
-## 更新
+### 更新
 
 ``` sql
 Update t1 SET TIME=NOW() WHERE col1=1 AND @now: = NOW();
@@ -459,12 +459,12 @@ Update t1 SET TIME=NOW() WHERE col1=1 AND @now: = NOW();
 SELECT @now;
 ```
 
-# 自定义函数
+## 自定义函数
 
 - 创建：`CREATE FUNCTION [func]([arg1, arg2]) RETURNS [type] BEGIN RETURN ([query]) END`
 - 删除：`DROP FUNCTION IF EXISTS [func]`
 
-## 创建函数
+### 创建函数
 
 ``` sql
 CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT BEGIN
@@ -477,7 +477,7 @@ ORDER BY salary DESC
 LIMIT 1 OFFSET n ); END
 ```
 
-## `:=`
+### `:=`
 
 - 用户变量赋值有两种方式：用 `=`，和用 `:=`，其区别在于使用 `set` 命令对用户变量进行赋值时，两种方式都可使用
 - 当使用 `SELECT` 语句对用户变量进行赋值时，只能使用 `:=` 方式，因为在 `SELECT` 语句中，`=` 被看作是比较操作符（用于判断，返回 Boolean）
