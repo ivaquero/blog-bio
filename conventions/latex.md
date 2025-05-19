@@ -193,12 +193,12 @@ $$
 - Prefer `mathrm{}` to `{\rm }` or `\mathop{}` or `\operatorname{}`
 
 $$
-θ_\mathrm{MLE} = \underset{θ}{\mathrm{argmax}}∑_{i=1}^{N}\log p(x_i ∣ θ)
+θ_\mathrm{MLE} = \underset{θ}{\mathrm{argmax}}\sum_{i=1}^{N}\log p(x_i ∣ θ)
 $$
 
 ```latex
 $$
-θ_\mathrm{MLE} = \underset{θ}{\mathrm{argmax}}∑_{i=1}^{N}\log p(x_i ∣ θ)
+θ_\mathrm{MLE} = \underset{θ}{\mathrm{argmax}}\sum_{i=1}^{N}\log p(x_i ∣ θ)
 $$
 ```
 
