@@ -31,7 +31,6 @@
         "B",    # flake8-bugbear
         "C4",   # flake8-comprehensions
         "EM",   # flake8-errmsg
-        "EXE",  # flake8-executable
         "FA",   # flake8-future-annotations
         "G",    # flake8-logging-format
         "INT",  # flake8-gettext
