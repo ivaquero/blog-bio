@@ -1,7 +1,7 @@
 version: 2
 updates:
   - package-ecosystem: github-actions
-    directory: '/workflows'
+    directory: '/.github/workflows'
     schedule:
       interval: monthly
   - package-ecosystem: pip
