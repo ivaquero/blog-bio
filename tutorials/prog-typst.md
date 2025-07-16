@@ -42,25 +42,29 @@ Typst Preview 的作者开发了一个 Typst 十分易用的格式化器，[typs
 对 macOS/Linux 用户，可以使用 Homebrew 安装
 
 ```bash
-brew tap brewforge/extras
 brew install typstyle
 ```
 
-Rust 用户，可以使用 cargo 安装
+Windows 用户，可以使用 Scoop 安装
 
 ```bash
-cargo install typstyle
+scoop bucket add main-plus https://github.com/Scoopforge/Main-Plus
+scoop install typstyle
 ```
 
 然后，在`settings.json`中，加入
 
 ```json
 {
-     "[typst]": {
-    "editor.defaultFormatter": "myriad-dreamin.tinymist"
+  "[typst]": {
+    "editor.defaultFormatter": "myriad-dreamin.tinymist",
+    "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?"
   },
+  "tinymist.completion.triggerOnSnippetPlaceholders": true,
   "tinymist.exportPdf": "onDocumentHasTitle",
   "tinymist.formatterMode": "typstyle",
+  "tinymist.lint.enabled": true,
+  "tinymist.outputPath": "$root/articles/$name",
   "tinymist.preview.cursorIndicator": true,
 }
 ```
