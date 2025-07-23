@@ -292,7 +292,7 @@ mamba install jupyterlab
 vi ~/.jupyter/jupyter_notebook_config.py
 ```
 
-若没有，由如下命令生成
+若无，由如下命令生成
 
 ```bash
 jupyter notebook --generate-config

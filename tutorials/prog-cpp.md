@@ -88,7 +88,7 @@ clangd 扩展由 LLVM 团队维护，提供了非常智能的补全，和代码�
 
 关于 clangd 的详细介绍，相见其官网 [clangd](https://clangd.llvm.org/)，此扩展使用需要保证系统内安装有 clangd，新版 macOS 已经内置，对于没有 clangd 的
 
-> 网上有说，安装整个 LLVM；事实上，如果没有交叉编译的需求，大可不必。
+> 网上有说，安装整个 LLVM；事实上，若无交叉编译的需求，大可不必。
 
 macOS/Linux 用户
 
