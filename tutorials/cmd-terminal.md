@@ -331,7 +331,7 @@ Windows 用户
 scoop install nu
 ```
 
-[nushell](https://www.nushell.sh/)
+[nushell](https://nushell.sh/)
 
 鉴于当下，Zellij 目前拒绝支持 Windows，Alacritty 对用户的要求响应很慢，可以使用 WezTerm 取代 Alacritty + Zellij，以统一三大平台配置。
 
