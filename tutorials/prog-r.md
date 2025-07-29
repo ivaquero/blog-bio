@@ -33,7 +33,7 @@ VSCode 的文件浏览（explorer）和大纲（outline）以及整个工作区�
 conda install r-languageserver radian
 ```
 
-因为本配置主要针对需要同时使用 R 的 Python 用户，因此具体 conda 是个什么东西，这里就不赘述了，具体介绍见 [Anaconda](https://www.anaconda.com)。
+因为本配置主要针对需要同时使用 R 的 Python 用户，因此具体 conda 是个什么东西，这里就不赘述了，具体介绍见 [Anaconda](https://anaconda.com)。
 
 推荐安装其中的 Miniconda 版本，[Miniconda 的清华镜像](https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/)
 

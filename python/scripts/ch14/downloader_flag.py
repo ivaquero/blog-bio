@@ -35,7 +35,7 @@ DEFAULT_CONCUR_REQ = 1
 MAX_CONCUR_REQ = 1
 
 SERVERS = {
-    "REMOTE": "https://www.fluentpython.com/data/flags",
+    "REMOTE": "https://fluentpython.com/data/flags",
     "LOCAL": "http://localhost:8000/flags",
     "DELAY": "http://localhost:8001/flags",
     "ERROR": "http://localhost:8002/flags",
