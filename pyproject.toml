@@ -1,5 +1,5 @@
 [project]
-    requires-python = ">=3.10"
+    requires-python = ">=3.11"
 
 [tool.pixi.project]
     name = "blog-bio"
@@ -9,7 +9,7 @@
 [tool.ruff]
     fix = true
     fix-only = true
-    target-version = "py310"
+    target-version = "py311"
     line-length = 88
 
 [tool.ruff.format]
