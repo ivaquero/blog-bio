@@ -1,11 +1,6 @@
 [project]
     requires-python = ">=3.11"
 
-[tool.pixi.project]
-    name = "blog-bio"
-    channels = ["conda-forge"]
-    platforms = ["linux-64", "osx-arm64", "osx-64", "win-64"]
-
 [tool.ruff]
     fix = true
     fix-only = true
