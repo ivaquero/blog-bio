@@ -58,7 +58,7 @@ brew install basictex
 scoop bucket add extras-plus https://github.com/Scoopforge/Extras-Plus
 scoop install texlive
 # 使用 MikTeX
-scoop install latex
+scoop install miktex
 ```
 
 也可以选择较为现代的 `tectonic` 编译器，安装方式如上面类似
@@ -153,24 +153,26 @@ scoop install tectonic
 
 ### 3.2. 格式化
 
-安装 `latexindent.pl` 对 LaTeX 公式格式化
+安装 `tex-fmt` 对 LaTeX 公式格式化
 
 macOS/Linux 用户使用 Homebrew
 
 ```bash
-brew install latexindent
+brew install tex-fmt
 ```
 
 Windows 用户使用 Scoop
 
 ```powershell
-scoop install latexindent
+scoop install tex-fmt
 ```
 
 在 `settings.json` 中，加入
 
 ```json
-{ "latex-workshop.latexindent.path": "latexindent" }
+{
+  "latex-workshop.formatting.latex": "tex-fmt",
+}
 ```
 
 ## 4. 辅助扩展
@@ -230,9 +232,7 @@ LaTeX 的用户里，不少人均是使用它进行英文写作的，这时就�
 
 ### 5.1. 基本操作
 
-对于 MikTeX 用户，不需要特别对包进行管理，当在文档中导入未安装的包时，LaTeX 会自动弹出窗口，询问是否安装。
-
-对于 TeXLive 用户，需要使用包管理器 tlmgr 对 LaTeX 包进行管理。
+对于 MikTeX 用户，不需要特别对包进行管理，当在文档中导入未安装的包时，LaTeX 会自动弹出窗口，询问是否安装。而对于 TeXLive 用户，需要使用包管理器 tlmgr 对 LaTeX 包进行管理。
 
 ```bash
 # 升级自身
