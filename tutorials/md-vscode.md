@@ -12,9 +12,9 @@ zhihu-tags: Markdown,Visual Studio Code
 Markdown 是一种易于读写的轻量级的标记语言，编写出的作品简洁美观，近年来受到了越来越多的追捧，被广泛地用于日常写作，乃至电子书发表。与此同时，一系列优秀 Markdown 编辑器应运而生。其中较为著名的免费应用有
 
 - 闭源：Obsidian、Typora
-- 开源：Zettlr
+- 开源：Zettlr、妙言
 
-VSCode 是当下最流行的代码编辑器，拥有丰富的扩展，搞定 Markdown 自然不在话下。与上面提到的编辑器相比，VSCode 的明显优势有：
+VSCode 是当下最流行的代码编辑器，拥有丰富的扩展，搞定 Markdown 自然不在话下。与上面提到的编辑器相比，VSCode 的明显优势有
 
 - 集成的布局：大纲（outline）、工作区（workspace）；
 - 强大的补全：LaTeX 公式；

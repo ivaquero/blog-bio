@@ -20,9 +20,6 @@ Markdown 是一种轻量级的标记语言（markup language），由 John Grube
 
 ### 1.1. 标题
 
-- 在想要设置为标题的文字前面加#来表示
-- 1 个 `#` 是一级标题，2 个 `#` 是二级标题，以此类推。一般最多支持五级标题。
-
 ```markdown
 # 这是一级标题
 
@@ -90,12 +87,12 @@ Markdown 是一种轻量级的标记语言（markup language），由 John Grube
 ### 2.1. 行内代码
 
 ```markdown
-`代码内容`
+这是`行内代码`。
 ```
 
-`代码内容`
+这是`行内代码`。
 
-### 2.2. 代码块
+### 2.2. 块级代码
 
 ```python
 import functools
@@ -110,17 +107,15 @@ if __name__ == "__main__":
     print(fibonacci(4))
 ```
 
-### 2.3. 公式
-
-- 行内
+### 2.3. 行内公式
 
 ```markdown
-$Γ(n) = (n-1)! \enspace \forall n \in \mathbb N$
+这是行内公式 $\Gamma(n) = (n-1)! \quad ∀ n ∈ \mathbb{N}$。
 ```
 
-$Γ(n) = (n-1)! \enspace ∀ n ∈ ℕ$
+这是行内公式 $\Gamma(n) = (n-1)! \quad ∀ n ∈ \mathbb{N}$。
 
-- 块级
+### 2.4. 块级公式
 
 ```markdown
 $$
@@ -134,14 +129,8 @@ $$ x = \frac{-b ± \sqrt{b^2 - 4ac}}{2a} $$
 
 ### 3.1. 无序列表
 
-- 无序列表用 `-`
-
 ```markdown
 - 列表内容
-
-* 列表内容
-
-+ 列表内容
 ```
 
 ### 3.2. 有序列表
@@ -192,9 +181,17 @@ $$ x = \frac{-b ± \sqrt{b^2 - 4ac}}{2a} $$
 - `:--`：表示文字居左
 - `--:`：表示文字居右
 
-## 5. 外部链接
+## 5. 链接
 
-### 5.1. 图片
+### 5.1. 跳转
+
+```markdown
+[跳转到通用格式](#1-通用格式)
+```
+
+[跳转到通用格式](#1-通用格式)
+
+### 5.2. 图片
 
 ![图片 alt](图片地址 ''图片 title'')
 
@@ -207,7 +204,7 @@ $$ x = \frac{-b ± \sqrt{b^2 - 4ac}}{2a} $$
 
 ![知乎](https://pic2.zhimg.com/80/v2-48bbd284deacef0b5896427e660b2a51_1440w.png "知乎")
 
-### 5.2. 超链接
+### 5.3. 超链接
 
 ```markdown
 [百度](http:/baidu.com)
@@ -215,13 +212,11 @@ $$ x = \frac{-b ± \sqrt{b^2 - 4ac}}{2a} $$
 
 [百度](http:/baidu.com)
 
-## 6. HTML
-
-## 7. 扩展语法
+## 6. 扩展语法
 
 基于 markdown-it。
 
-### 7.1. 复选框
+### 6.1. 复选框
 
 ```markdown
 - [ ]
@@ -231,7 +226,19 @@ $$ x = \frac{-b ± \sqrt{b^2 - 4ac}}{2a} $$
 - [ ]
 - [x]
 
-### 7.2. 高亮
+### 6.2. 脚注
+
+```markdown
+2004 年，Wolfram 的研究助理 Matthew Cook 证明了初等 CA 中的规则 110 是通用的 [^1]，即，任何计算机可完成的任何计算都可由该 CA 完成。
+
+[^1]: Cook, M. "Universality in Elementary Cellular Automata." Complex Systems 15, 1-40, 2004.
+```
+
+2004 年，Wolfram 的研究助理 Matthew Cook 证明了初等 CA 中的规则 110 是通用的 [^1]，即，任何计算机可完成的任何计算都可由该 CA 完成。
+
+[^1]: Cook, M. "Universality in Elementary Cellular Automata." Complex Systems 15, 1-40, 2004.
+
+### 6.3. 高亮
 
 ```markdown
 ==高亮==
@@ -239,7 +246,7 @@ $$ x = \frac{-b ± \sqrt{b^2 - 4ac}}{2a} $$
 
 ==高亮==
 
-### 7.3. 上、下标
+### 6.4. 上、下标
 
 ```markdown
 OH^-^
@@ -249,7 +256,7 @@ KBrO~3~
 OH^-^
 KBrO~3~
 
-### 7.4. 表情
+### 6.5. 表情
 
 目前，大多数的 Markdown 编辑器都支持了 emoji，其基本格式为，`:` 英文单词 `:`，如
 
@@ -269,8 +276,20 @@ KBrO~3~
 🏃
 🎿
 
-### 7.5. 文本绘图
+### 6.6. 文本绘图
 
 Markdown 支持文本绘图，目前比较流行的有 Mermaid.js 和 PlantUML。其中，Mermaid.js 是完全 Markdown 风格的语言，可与 Markdown 文档做到无缝衔接。
 
 作为极简主义的代表作之一，Markdown 未来的生态会越来越丰富。
+
+## 7. 对接前端
+
+### 7.1. HTML
+
+### 7.2. JavaScript
+
+- 示意图
+  - [mermaid.js](https://mermaid.js.org/intro/)
+- 幻灯片
+  - [slidev.js](https://sli.dev/resources/theme-gallery)
+  - [reveal.js](https://revealjs.com/)
