@@ -2,7 +2,7 @@
     "type": "MySQLNotebook",
     "version": "1.0",
     "caption": "DB Notebook",
-    "content": "-- https://techbeamers.com/sql-query-questions-answers-for-practice/\nDROP DATABASE Worker;\nCREATE DATABASE Worker;\nUSE Worker;\nCREATE TABLE Worker (\n    WORKER_ID INT NOT NULL PRIMARY KEY,\n    FIRST_NAME CHAR(25),\n    LAST_NAME CHAR(25),\n    SALARY INT,\n    JOINING_DATE DATETIME,\n    DEPARTMENT CHAR(25)\n);\nINSERT INTO Worker (WORKER_ID, FIRST_NAME, LAST_NAME, SALARY, JOINING_DATE, DEPARTMENT) VALUES\n    (1, 'Monika', 'Arora', 100000, '2021-02-20 09:00:00', 'HR'),\n    (2, 'Niharika', 'Verma', 80000, '2021-06-11 09:00:00', 'Admin'),\n    (3, 'Vishal', 'Singhal', 300000, '2021-02-20 09:00:00', 'HR'),\n    (4, 'Amitabh', 'Singh', 500000, '2021-02-20 09:00:00', 'Admin'),\n    (5, 'Vivek', 'Bhati', 500000, '2021-06-11 09:00:00', 'Admin'),\n    (6, 'Vipul', 'Diwan', 200000, '2021-06-11 09:00:00', 'Account'),\n    (7, 'Satish', 'Kumar', 75000, '2021-01-20 09:00:00', 'Account'),\n    (8, 'Geetika', 'Chauhan', 90000, '2021-04-11 09:00:00', 'Admin');\nCREATE TABLE Bonus (\n    WORKER_REF_ID INT,\n    BONUS_AMOUNT INT,\n    BONUS_DATE DATETIME,\n    FOREIGN KEY (WORKER_REF_ID) REFERENCES Worker(WORKER_ID) ON DELETE CASCADE\n);\nINSERT INTO Bonus (WORKER_REF_ID, BONUS_AMOUNT, BONUS_DATE) VALUES\n    (1, 5000, '2023-02-20'),\n    (2, 3000, '2023-06-11'),\n    (3, 4000, '2023-02-20'),\n    (1, 4500, '2023-02-20'),\n    (2, 3500, '2023-06-11');\nCREATE TABLE Title (\n    WORKER_REF_ID INT,\n    WORKER_TITLE CHAR(25),\n    AFFECTED_FROM DATETIME,\n    FOREIGN KEY (WORKER_REF_ID) REFERENCES Worker(WORKER_ID) ON DELETE CASCADE\n);\nINSERT INTO Title (WORKER_REF_ID, WORKER_TITLE, AFFECTED_FROM) VALUES\n    (1, 'Manager', '2023-02-20 00:00:00'),\n    (2, 'Executive', '2023-06-11 00:00:00'),\n    (8, 'Executive', '2023-06-11 00:00:00'),\n    (5, 'Manager', '2023-06-11 00:00:00'),\n    (4, 'Asst. Manager', '2023-06-11 00:00:00'),\n    (7, 'Executive', '2023-06-11 00:00:00'),\n    (6, 'Lead', '2023-06-11 00:00:00'),\n    (3, 'Lead', '2023-06-11 00:00:00');\n-- 1. Write SQL Query to Display FIRST_NAME with Alias WORKER_NAME.\nSelect FIRST_NAME AS WORKER_NAME from Worker;\n-- 2. Write SQL Query to Display FIRST_NAME in Upper Case from the Worker Table.\nSelect upper(FIRST_NAME) from Worker;\n-- 3. Write SQL Query to Display Unique DEPARTMENT Values from the Worker Table.\nSelect distinct DEPARTMENT from Worker;\n-- 4. Write SQL Query to Display the First 3 Chars of FIRST_NAME from the Worker Table.\nSelect substring(FIRST_NAME,1,3) from Worker;\n-- 5. Write SQL Query to Find the Position of Alphabet ‘a’ in the FIRST_NAME Column.\nSELECT INSTR(FIRST_NAME, 'a') FROM Worker WHERE FIRST_NAME = 'Amitabh';\n",
+    "content": "-- https://techbeamers.com/sql-query-questions-answers-for-practice/\nDROP DATABASE Company;\nCREATE DATABASE Company;\nUSE Company;\nCREATE TABLE Worker (\n    WORKER_ID INT NOT NULL PRIMARY KEY,\n    FIRST_NAME CHAR(25),\n    LAST_NAME CHAR(25),\n    SALARY INT,\n    JOINING_DATE DATETIME,\n    DEPARTMENT CHAR(25)\n);\nINSERT INTO Worker (WORKER_ID, FIRST_NAME, LAST_NAME, SALARY, JOINING_DATE, DEPARTMENT) VALUES\n    (1, 'Monika', 'Arora', 100000, '2021-02-20 09:00:00', 'HR'),\n    (2, 'Niharika', 'Verma', 80000, '2021-06-11 09:00:00', 'Admin'),\n    (3, 'Vishal', 'Singhal', 300000, '2021-02-20 09:00:00', 'HR'),\n    (4, 'Amitabh', 'Singh', 500000, '2021-02-20 09:00:00', 'Admin'),\n    (5, 'Vivek', 'Bhati', 500000, '2021-06-11 09:00:00', 'Admin'),\n    (6, 'Vipul', 'Diwan', 200000, '2021-06-11 09:00:00', 'Account'),\n    (7, 'Satish', 'Kumar', 75000, '2021-01-20 09:00:00', 'Account'),\n    (8, 'Geetika', 'Chauhan', 90000, '2021-04-11 09:00:00', 'Admin');\nCREATE TABLE Bonus (\n    WORKER_REF_ID INT,\n    BONUS_AMOUNT INT,\n    BONUS_DATE DATETIME,\n    FOREIGN KEY (WORKER_REF_ID) REFERENCES Worker(WORKER_ID) ON DELETE CASCADE\n);\nINSERT INTO Bonus (WORKER_REF_ID, BONUS_AMOUNT, BONUS_DATE) VALUES\n    (1, 5000, '2023-02-20'),\n    (2, 3000, '2023-06-11'),\n    (3, 4000, '2023-02-20'),\n    (1, 4500, '2023-02-20'),\n    (2, 3500, '2023-06-11');\nCREATE TABLE Title (\n    WORKER_REF_ID INT,\n    WORKER_TITLE CHAR(25),\n    AFFECTED_FROM DATETIME,\n    FOREIGN KEY (WORKER_REF_ID) REFERENCES Worker(WORKER_ID) ON DELETE CASCADE\n);\nINSERT INTO Title (WORKER_REF_ID, WORKER_TITLE, AFFECTED_FROM) VALUES\n    (1, 'Manager', '2023-02-20 00:00:00'),\n    (2, 'Executive', '2023-06-11 00:00:00'),\n    (8, 'Executive', '2023-06-11 00:00:00'),\n    (5, 'Manager', '2023-06-11 00:00:00'),\n    (4, 'Asst. Manager', '2023-06-11 00:00:00'),\n    (7, 'Executive', '2023-06-11 00:00:00'),\n    (6, 'Lead', '2023-06-11 00:00:00'),\n    (3, 'Lead', '2023-06-11 00:00:00');\n-- 1. Write SQL Query to Display FIRST_NAME with Alias WORKER_NAME.\nSelect FIRST_NAME AS WORKER_NAME from Worker;\n-- 2. Write SQL Query to Display FIRST_NAME in Upper Case from the Worker Table.\nSelect upper(FIRST_NAME) from Worker;\n-- 3. Write SQL Query to Display Unique DEPARTMENT Values from the Worker Table.\nSelect distinct DEPARTMENT from Worker;\n-- 4. Write SQL Query to Display the First 3 Chars of FIRST_NAME from the Worker Table.\nSelect substring(FIRST_NAME,1,3) from Worker;\n-- 5. Write SQL Query to Find the Position of Alphabet ‘a’ in the FIRST_NAME Column.\nSELECT INSTR(FIRST_NAME, 'a') FROM Worker WHERE FIRST_NAME = 'Amitabh';\n",
     "options": {
         "tabSize": 4,
         "insertSpaces": true,
@@ -15,12 +15,12 @@
             {
                 "inSelectionMode": false,
                 "selectionStart": {
-                    "lineNumber": 3,
-                    "column": 24
+                    "lineNumber": 4,
+                    "column": 1
                 },
                 "position": {
-                    "lineNumber": 3,
-                    "column": 24
+                    "lineNumber": 4,
+                    "column": 1
                 }
             }
         ],
@@ -30,7 +30,7 @@
                 "lineNumber": 1,
                 "column": 1
             },
-            "firstPositionDeltaTop": 0
+            "firstPositionDeltaTop": -16
         },
         "contributionsState": {
             "editor.contrib.folding": {},
@@ -41,7 +41,7 @@
         {
             "state": {
                 "start": 1,
-                "end": 3,
+                "end": 2,
                 "language": "mysql",
                 "result": {
                     "type": "text",
@@ -67,7 +67,7 @@
                         "delimiter": ";",
                         "span": {
                             "start": 0,
-                            "length": 90
+                            "length": 91
                         },
                         "contentStart": 70,
                         "state": 0
@@ -75,11 +75,11 @@
                     {
                         "delimiter": ";",
                         "span": {
-                            "start": 90,
-                            "length": 24
+                            "start": 91,
+                            "length": 0
                         },
-                        "contentStart": 91,
-                        "state": 0
+                        "contentStart": 90,
+                        "state": 3
                     }
                 ]
             },
@@ -87,7 +87,7 @@
         },
         {
             "state": {
-                "start": 4,
+                "start": 3,
                 "end": 4,
                 "language": "mysql",
                 "result": {
@@ -96,21 +96,36 @@
                         {
                             "type": 2,
                             "index": 0,
-                            "resultId": "69f96557-aee5-4632-cc1f-836a56c71766",
-                            "content": "OK, 0 records retrieved in 0.694ms"
+                            "resultId": "427680ad-9f7b-475c-a484-4e042da9e06f",
+                            "content": "OK, 1 row affected in 2.098ms"
+                        },
+                        {
+                            "type": 2,
+                            "index": 1,
+                            "resultId": "235ff672-1ea2-4013-859e-597e6fe34e6b",
+                            "content": "OK, 0 records retrieved in 0.464ms"
                         }
                     ]
                 },
-                "currentHeight": 31.5,
+                "currentHeight": 55,
                 "currentSet": 1,
                 "statements": [
                     {
                         "delimiter": ";",
                         "span": {
                             "start": 0,
-                            "length": 11
+                            "length": 24
                         },
                         "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 24,
+                            "length": 13
+                        },
+                        "contentStart": 25,
                         "state": 0
                     }
                 ]
@@ -238,7 +253,7 @@
                         }
                     ]
                 },
-                "currentHeight": 31.76953125,
+                "currentHeight": 28,
                 "currentSet": 1,
                 "statements": [
                     {
@@ -326,7 +341,7 @@
                 "result": {
                     "type": "resultIds",
                     "list": [
-                        "63ccd237-3a3c-4e85-acdc-41c54a9347c4"
+                        "5125ae5d-71a8-4d85-bcf6-81cfd7dffca5"
                     ]
                 },
                 "currentHeight": 36,
@@ -345,8 +360,8 @@
             },
             "data": [
                 {
-                    "tabId": "04aa05f5-3cc8-4436-8159-01c0875aec8c",
-                    "resultId": "63ccd237-3a3c-4e85-acdc-41c54a9347c4",
+                    "tabId": "4ec86d67-a47b-4ffe-bf2a-3bca274fdad0",
+                    "resultId": "5125ae5d-71a8-4d85-bcf6-81cfd7dffca5",
                     "rows": [
                         {
                             "0": "Monika"
@@ -414,7 +429,7 @@
                 "result": {
                     "type": "resultIds",
                     "list": [
-                        "44ea7c63-2aa9-4afa-dfb9-f90ce59dd6f1"
+                        "47b5a911-0724-4be6-f2d8-5615e3c0dadb"
                     ]
                 },
                 "currentHeight": 36,
@@ -433,8 +448,8 @@
             },
             "data": [
                 {
-                    "tabId": "04aa05f5-3cc8-4436-8159-01c0875aec8c",
-                    "resultId": "44ea7c63-2aa9-4afa-dfb9-f90ce59dd6f1",
+                    "tabId": "4ec86d67-a47b-4ffe-bf2a-3bca274fdad0",
+                    "resultId": "47b5a911-0724-4be6-f2d8-5615e3c0dadb",
                     "rows": [
                         {
                             "0": "MONIKA"
@@ -502,7 +517,7 @@
                 "result": {
                     "type": "resultIds",
                     "list": [
-                        "e3b4b56d-d7e1-41cd-9cb7-161b34dd8ae5"
+                        "9c3ca202-7afa-4907-f8f3-7df569d75f37"
                     ]
                 },
                 "currentHeight": 36,
@@ -521,8 +536,8 @@
             },
             "data": [
                 {
-                    "tabId": "04aa05f5-3cc8-4436-8159-01c0875aec8c",
-                    "resultId": "e3b4b56d-d7e1-41cd-9cb7-161b34dd8ae5",
+                    "tabId": "4ec86d67-a47b-4ffe-bf2a-3bca274fdad0",
+                    "resultId": "9c3ca202-7afa-4907-f8f3-7df569d75f37",
                     "rows": [
                         {
                             "0": "HR"
@@ -575,7 +590,7 @@
                 "result": {
                     "type": "resultIds",
                     "list": [
-                        "0001abea-5906-414e-b0ee-52bb468a0b56"
+                        "8415148c-906d-4d99-eb1d-7663cf1250d6"
                     ]
                 },
                 "currentHeight": 36,
@@ -594,8 +609,8 @@
             },
             "data": [
                 {
-                    "tabId": "04aa05f5-3cc8-4436-8159-01c0875aec8c",
-                    "resultId": "0001abea-5906-414e-b0ee-52bb468a0b56",
+                    "tabId": "4ec86d67-a47b-4ffe-bf2a-3bca274fdad0",
+                    "resultId": "8415148c-906d-4d99-eb1d-7663cf1250d6",
                     "rows": [
                         {
                             "0": "Mon"
@@ -663,7 +678,7 @@
                 "result": {
                     "type": "resultIds",
                     "list": [
-                        "00e7fe06-3d0d-4d58-d45c-10b890f367f9"
+                        "dba52d2a-dea5-4cd0-e91e-5d6b1b5fb526"
                     ]
                 },
                 "currentHeight": 36,
@@ -682,8 +697,8 @@
             },
             "data": [
                 {
-                    "tabId": "04aa05f5-3cc8-4436-8159-01c0875aec8c",
-                    "resultId": "00e7fe06-3d0d-4d58-d45c-10b890f367f9",
+                    "tabId": "4ec86d67-a47b-4ffe-bf2a-3bca274fdad0",
+                    "resultId": "dba52d2a-dea5-4cd0-e91e-5d6b1b5fb526",
                     "rows": [
                         {
                             "0": 1
