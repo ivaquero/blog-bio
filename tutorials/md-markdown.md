@@ -63,10 +63,6 @@ Markdown 是一种轻量级的标记语言（markup language），由 John Grube
 ```markdown
 ---
 ---
-
----
-
----
 ```
 
 ---
@@ -132,6 +128,8 @@ $$ x = \frac{-b ± \sqrt{b^2 - 4ac}}{2a} $$
 ```markdown
 - 列表内容
 ```
+
+- 无序列表
 
 ### 3.2. 有序列表
 
