@@ -212,7 +212,7 @@ Windows 下的 Python 环境经常会给人带来一系列的困扰，如，时�
 
 ![Ubuntu](images/wsl2/app.png)
 
-由于版本问题，好多人的的子系统还停留在 WSL，而不是 WSL2。对于升级，输入如下命令
+由于版本问题，好多人的的子系统还停留在 WSL，而非 WSL2。对于升级，输入如下命令
 
 ```powershell
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart

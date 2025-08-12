@@ -255,7 +255,7 @@ WHERE c.name LIKE 'Hyder%';
 ### 6.1. UNION
 
 - `UNION` 查询中的每个 `SELECT` 语句必须有相同数量的列
-- 若不希望消除重复的行，请使用 `UNION ALL` 而不是 `UNION`
+- 若不希望消除重复的行，请使用 `UNION ALL` 而非 `UNION`
 
 ```sql
 -- UNION：取并集，重合部分合并

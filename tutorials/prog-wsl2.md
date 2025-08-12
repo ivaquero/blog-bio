@@ -210,7 +210,7 @@ startxfce4
 
 ### 3.1. 升级
 
-由于版本问题，好多人的的子系统还停留在 WSL，而不是 WSL2，由于后者实质上是一个虚拟机。故要启动虚拟化：
+由于版本问题，好多人的的子系统还停留在 WSL，而非 WSL2，由于后者实质上是一个虚拟机。故要启动虚拟化：
 
 ```powershell
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart

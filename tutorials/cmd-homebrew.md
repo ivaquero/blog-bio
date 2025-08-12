@@ -18,7 +18,7 @@ Homebrew 同样适用于 Linux，也就是说，在 Windows Subsystem Linux（WS
 1. 不需要额外添加各种源
 2. 可管理服务
 3. 不需要频繁使用管理员权限
-4. 更重要的是命令简洁统一。如 `apt-get install` 是安装，卸载却变成了 `apt-get remove`，而不是 `apt-get uninstall`，反直觉。
+4. 更重要的是命令简洁统一。如 `apt-get install` 是安装，卸载却变成了 `apt-get remove`，而非 `apt-get uninstall`，反直觉。
 
 > 详细介绍，可前往 [Homebrew 官网](https://brew.sh/)
 
@@ -104,15 +104,15 @@ brew tap brewforge/chinese
 
 > 这个库收录了一些官方库里没有的国产软件，如每日英语听力、每日法语听力、每日西语听力，WPS 国内版，和开源软件的国内镜像版本，如 Miniforge。
 
-|      App 名       |     Cask 名     | 原创  | 自动更新 |
-| :---------------: | :-------------: | :---: | :------: |
-|  M3U8-Downloader  | m3u8-downloader |   √   |    √     |
-| Miniforge 清华源  | `miniforge-cn`  |   √   |    √     |
-| WPS Office 国内版 | `wpsoffice-cn`  |   √   |    √     |
-|   每日法语听力    |    `ting-fr`    |   √   |    √     |
-|   每日英语听力    |    `ting-en`    |   √   |    √     |
-|   每日西语听力    |    `ting-es`    |   √   |    √     |
-|     西语助手      |   `eshelper`    |   √   |    √     |
+|      App 名       |     Cask 名     | 原创 | 自动更新 |
+|:-----------------:|:---------------:|:----:|:--------:|
+|  M3U8-Downloader  | m3u8-downloader |  √   |    √     |
+| Miniforge 清华源  | `miniforge-cn`  |  √   |    √     |
+| WPS Office 国内版 | `wpsoffice-cn`  |  √   |    √     |
+|   每日法语听力    |    `ting-fr`    |  √   |    √     |
+|   每日英语听力    |    `ting-en`    |  √   |    √     |
+|   每日西语听力    |    `ting-es`    |  √   |    √     |
+|     西语助手      |   `eshelper`    |  √   |    √     |
 
 ### Cask 的使用
 
