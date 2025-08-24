@@ -25,24 +25,36 @@ VSCode 的文件浏览（explorer）和大纲（outline）以及整个工作区�
 
 ![rmarkdown](images/vscode/rmd.png)
 
-### 2.1. conda 相关库
+### 2.1. 安装相关包
+
+创建环境
+
+```bash
+# 基本格式
+mamba create -n [env_name] [python= version]
+# 例子
+mamba create -n my_python python=3.12
+```
 
 进入 conda 环境，安装 "r-languageserver" 和 "radian"：
 
 ```bash
-conda install r-languageserver radian
+# 进入
+mamba active my_python
+# 安装
+mamba install r-languageserver radian
 ```
 
-因为本配置主要针对需要同时使用 R 的 Python 用户，因此具体 conda 是个什么东西，这里就不赘述了，具体介绍见 [Anaconda](https://anaconda.com)。
+因为本配置主要针对需要同时使用 R 的 Python 用户，因此具体 mamba 是个什么东西，这里就不赘述了，具体介绍见 [mamba](https://github.com/mamba-org/mamba)。
 
-推荐安装其中的 Miniconda 版本，[Miniconda 的清华镜像](https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/)
+推荐安装其中的 Miniforge 版本，[Miniforge 的清华镜像](https://mirrors.tuna.tsinghua.edu.cn/github-release/conda-forge/miniforge/)
 
 对于 R 的第三方包的安装，命令格式如下
 
 ```bash
-conda install r-[package]
+mamba install r-[package]
 # 如，安装 ggplot2
-conda install r-ggplot2
+mamba install r-ggplot2
 ```
 
 ### 2.2. VSCode 扩展
@@ -130,12 +142,12 @@ conda install r-ggplot2
 
 JupyterLab 是一个非常友好的交互环境，通过安装扩展，可方便地进行变量查看，弥补了上文提到的 VSCode 当下的两点不足。
 
-### 3.1. conda 相关库
+### 3.1. 安装相关包
 
 进入 conda 环境，安装 `r-irkernel`：
 
 ```bash
-conda install r-irkernel
+mamba install r-irkernel
 ```
 
 若安装完毕，但仍不显示 kernel，则需要在命令行中进入 R，键入如下命令：
@@ -150,7 +162,7 @@ IRkernel::installspec()
 
 ```bash
 # 变量查看器
-conda install -c conda-forge jupyterlab-variableinspector
+mamba install -c conda-forge jupyterlab-variableinspector
 ```
 
 ### 3.3. 运行效果

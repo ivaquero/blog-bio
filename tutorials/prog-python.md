@@ -35,11 +35,11 @@ brew install brewforge/chinese/miniforge-cn
 
 接下来，需要创建虚拟环境，也就是自己的工作区，可简单理解为系统登录时的用户。基本命令需指定**环境名称**和**Python 版本**：
 
-```powershell
+```bash
 # 基本格式
 mamba create -n [env_name] [python= version]
 # 例子
-mamba create -n my_python python=3.9
+mamba create -n my_python python=3.12
 ```
 
 安装完毕后，进入环境：
@@ -49,14 +49,6 @@ mamba create -n my_python python=3.9
 mamba active my_python
 # 退出
 mamba deactivate
-```
-
-### 1.3. 安装相关库
-
-安装统一的格式化器（formatter）+ 检查器（linter）：`ruff`
-
-```bash
-mamba install ruff
 ```
 
 ## 2. Conda 的使用
@@ -138,16 +130,6 @@ channels:
   - https://mirrors.ustc.edu.cn/anaconda/cloud/msys2/
 ```
 
-### 2.5. 报错
-
-```powershell
-## The input line is too long
-pip install pywinpath
-pywinpath
-## Intel MKL FATAL ERROR: Cannot load mkl_intel_thread.dll.
-set CONDA_DLL_SEARCH_MODIFICATION_ENABLE = 1
-```
-
 ## 3. VSCode & Jupyter
 
 ### 3.1. VSCode
@@ -155,12 +137,20 @@ set CONDA_DLL_SEARCH_MODIFICATION_ENABLE = 1
 VSCode 是首选，安装官方扩展的同时，还需安装 Jupyter 相关包
 
 ```bash
-mamba install jupyter_contrib_nbextensions
+mamba install ipykernel
 ```
 
 ![python](images/vscode/vscode-python.png)
 
-安装强大的统一格式化器 + 检测器扩展 `ruff`。
+### 1.3. 安装相关库
+
+安装统一的格式化器（formatter）+ 检查器（linter）：`ruff`
+
+```bash
+mamba install ruff
+```
+
+以及扩展
 
 ![alt text](images/vscode/vscode-python-ruff.png)
 
@@ -170,20 +160,98 @@ mamba install jupyter_contrib_nbextensions
 {
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff",
-    "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
       "source.fixAll": "never",
       "source.organizeImports": "explicit"
-    }
+    },
   },
-  "python.terminal.activateEnvInCurrentTerminal": true,
-  "python.terminal.executeInFileDir": true,
-  "python.testing.autoTestDiscoverOnSaveEnabled": false,
-  "autoDocstring.docstringFormat": "numpy",
-  "ruff.lint.args": [
-    "--select=F,I,R,PERF,PD,TCH,TID,SIM,RET,Q,PYI,PIE,C4"
-  ],
+  "python.analysis.supportAllPythonDocuments": true,
+  "python.terminal.shellIntegration.enabled": true,
+  "ruff.configuration": "pyproject.toml",
 }
+```
+
+其中，项目根目录下的 `pyproject.toml` 可采用如下编写
+
+```toml
+[project]
+    requires-python = ">=3.11"
+
+[tool.ruff]
+    fix = true
+    fix-only = true
+    target-version = "py311"
+    line-length = 88
+
+[tool.ruff.format]
+    # Enable reformatting of code snippets in docstrings
+    docstring-code-format = true
+    # Format all docstring code snippets with a line length of 60
+    docstring-code-line-length = 60
+    # Use `\n` line endings for all files
+    line-ending = "lf"
+    # Prefer single quotes over double quotes
+    quote-style = "double"
+    skip-magic-trailing-comma = true
+
+[tool.ruff.lint]
+    extend-select = [
+        "E",    # pycodestyle errors
+        "W",    # pycodestyle warnings
+        "F",    # pyflakes
+        "B",    # flake8-bugbear
+        "C4",   # flake8-comprehensions
+        "EM",   # flake8-errmsg
+        "FA",   # flake8-future-annotations
+        "G",    # flake8-logging-format
+        "INT",  # flake8-gettext
+        "PIE",  # flake8-pie
+        "PT",   # flake8-pytest-style
+        "PYI",  # flake8-pyi
+        "Q",    # flake8-quotes
+        "RET",  # flake8-return
+        "RSE",  # flake8-raise
+        "SLOT", # flake8-slots
+        "T10",  # flake8-debugger
+        "YTT",  # flake8-2020
+        "DTZ",  # naive datetime
+        "I",    # import sorting
+        "ISC",  # string concatenation
+        "NPY",  # numpy specific rules
+        "PERF", # perflint
+        "RUF",  # ruff
+        "S",    # security
+        "SIM",  # simplify
+        "T10",  # debugger
+        "TCH",  # type-checking imports
+        "TID",  # tidy imports
+        "UP",   # upgrade
+    ]
+    fixable = ["ALL"]
+    ignore = [
+        "B905",   # `zip()` without an explicit `strict=` parameter
+        "EM101",  # exception must not use a string literal
+        "EM102",  # exception must not use an f-string literal
+        "ISC001", # conflicts with formatter
+        "NPY002", # replace legacy `np.random.random`
+        "E501",   # line too long
+        "E741",
+        "F403",
+        "F405",
+        "RUF001", # string contains ambiguous character (such as greek letters)
+        "RUF002", # docstring contains ambiguous character (such as greek letters)
+        "RUF003",
+    ]
+    unfixable = []
+
+[tool.ruff.lint.pydocstyle]
+    convention = "numpy"
+
+[tool.ruff.lint.isort]
+    case-sensitive = true
+    combine-as-imports = true
+    force-wrap-aliases = true
+    order-by-type = true
 ```
 
 另外，可以尝试官方新推出的 Python Environment Manager
@@ -272,8 +340,8 @@ sudo adduser username
 - 下载安装
 
 ```bash
-wget -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-latest-Linux-x86_64.sh
-bash Miniconda3-latest-Linux-x86_64.sh
+wget -c https://mirrors.tuna.tsinghua.edu.cn/github-release/conda-forge/miniforge/LatestRelease/Miniforge3-25.3.1-0-Linux-x86_64.sh
+bash Miniforge3-25.3.1-0-Linux-x86_64.sh
 ```
 
 有关 Conda 的具体使用，这里不再赘述。
