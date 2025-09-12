@@ -51,13 +51,13 @@ zhihu-url: https://zhuanlan.zhihu.com/p/694181464
 
 - 撤回上一个提交
 
-```bash
+```sh
 git reset --soft HEAD^
 ```
 
 - 压缩前 N 个提交
 
-```bash
+```sh
 git reset --soft HEAD~N
 git commit -m ${commit message}
 git push
@@ -65,7 +65,7 @@ git push
 
 压缩某提交后的所有提交
 
-```bash
+```sh
 git reset --soft [commit-hash]
 git commit -m ${commit message}
 git push
@@ -75,13 +75,13 @@ git push
 
 - 发布分支
 
-```bash
+```sh
 git push --set-upstream origin ${main-branch}
 ```
 
 - 同步 fork 仓库与源仓库
 
-```bash
+```sh
 git pull upstream ${main-branch}
 git push origin ${main-branch}
 ```
@@ -90,7 +90,7 @@ git push origin ${main-branch}
 
 - 批量删除分支
 
-```bash
+```sh
 git branch -D $(git branch --list '${branch-pattern}')
 ```
 

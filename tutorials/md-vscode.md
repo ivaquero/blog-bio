@@ -150,7 +150,7 @@ scoop install pandoc
 
 对 macOS 用户，有 Homebrew
 
-```bash
+```sh
 brew install pandoc
 ```
 

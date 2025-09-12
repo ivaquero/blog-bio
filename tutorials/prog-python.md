@@ -25,7 +25,7 @@ scoop install scoopforge/extras-cn/miniforge-cn
 
 对 macOS 用户，有 Homebrew
 
-```bash
+```sh
 brew install miniforge
 # 或国内镜像
 brew install brewforge/chinese/miniforge-cn
@@ -35,7 +35,7 @@ brew install brewforge/chinese/miniforge-cn
 
 接下来，需要创建虚拟环境，也就是自己的工作区，可简单理解为系统登录时的用户。基本命令需指定**环境名称**和**Python 版本**：
 
-```bash
+```sh
 # 基本格式
 mamba create -n [env_name] [python= version]
 # 例子
@@ -44,7 +44,7 @@ mamba create -n my_python python=3.12
 
 安装完毕后，进入环境：
 
-```bash
+```sh
 # 进入
 mamba active my_python
 # 退出
@@ -57,7 +57,7 @@ mamba deactivate
 
 mamba 常用操作可使用命令 `mamba -h` 和 `mamba config -h` 查看，这里列出几个常用命令：
 
-```bash
+```sh
 # 创建
 mamba create -n [env_name]
 # 删除
@@ -72,7 +72,7 @@ mamba info
 
 ### 2.2. 包管理
 
-```bash
+```sh
 # 安装
 mamba install [package_name]
 # 删除
@@ -136,7 +136,7 @@ channels:
 
 VSCode 是首选，安装官方扩展的同时，还需安装 Jupyter 相关包
 
-```bash
+```sh
 mamba install ipykernel
 ```
 
@@ -146,7 +146,7 @@ mamba install ipykernel
 
 安装统一的格式化器（formatter）+ 检查器（linter）：`ruff`
 
-```bash
+```sh
 mamba install ruff
 ```
 
@@ -262,7 +262,7 @@ mamba install ruff
 
 ### 3.2. JupyterLab
 
-```bash
+```sh
 mamba install jupyterlab
 ```
 
@@ -325,13 +325,13 @@ wslconfig /u Ubuntu-20.04
 
 输入以下命令，为 root 用户设置密码。
 
-```bash
+```sh
 sudo passwd root
 ```
 
 当然，你也可使用如下命令，创建新用户
 
-```bash
+```sh
 sudo adduser username
 ```
 
@@ -339,7 +339,7 @@ sudo adduser username
 
 - 下载安装
 
-```bash
+```sh
 wget -c https://mirrors.tuna.tsinghua.edu.cn/github-release/conda-forge/miniforge/LatestRelease/Miniforge3-25.3.1-0-Linux-x86_64.sh
 bash Miniforge3-25.3.1-0-Linux-x86_64.sh
 ```
@@ -356,13 +356,13 @@ mamba install jupyterlab
 
 关键是第二步，让 Jupyter 自动打开宿主浏览器。打开配置文件 `jupyter_notebook_config.py`。
 
-```bash
+```sh
 vi ~/.jupyter/jupyter_notebook_config.py
 ```
 
 若无，由如下命令生成
 
-```bash
+```sh
 jupyter notebook --generate-config
 ```
 
@@ -374,7 +374,7 @@ c.NotebookApp.use_redirect_file = False
 
 退回到主界面，在 `~/.bashrc` 或 `~/.zshrc` 文件末尾添加，指定默认浏览器地址，其中，`/mnt/` 之后的部分是你默认浏览器的在 Windows 上的地址
 
-```bash
+```sh
 export BROWSER="/mnt/c/'program files (x86)'/microsoft/edge/application/msedge.exe"
 ```
 

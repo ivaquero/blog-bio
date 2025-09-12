@@ -36,13 +36,13 @@ dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux 
 
 输入以下命令，为 root 用户设置密码。
 
-```bash
+```sh
 sudo passwd root
 ```
 
 当然，你也可使用如下命令，创建新用户
 
-```bash
+```sh
 sudo adduser username
 ```
 
@@ -50,13 +50,13 @@ sudo adduser username
 
 打开 `sources.list`：
 
-```bash
+```sh
 sudo vi /etc/apt/sources.list
 ```
 
 Ubuntu
 
-```bash
+```sh
 deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy main restricted universe multiverse
 deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse
 deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse
@@ -65,13 +65,13 @@ deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-security main restricted 
 
 Kali
 
-```bash
+```sh
 deb https://mirrors.ustc.edu.cn/kali kali-rolling main non-free contrib
 ```
 
 更新：
 
-```bash
+```sh
 sudo apt update && sudo apt update -y && sudo apt upgrade -y
 # 清理缓存
 sudo apt -y clean && sudo apt -y autoclean && sudo apt -y autoremove
@@ -85,14 +85,14 @@ Powershell 中，管理员执行如下命令
 New-NetFirewallRule -DisplayName "WSL" -Direction Inbound  -InterfaceAlias "vEthernet (WSL)"  -Action Allow
 ```
 
-```bash
+```sh
 ip route | grep default | awk '{print $3}'
 sudo vi /etc/wsl.conf
 [network]
 generateResolvConf = false
 ```
 
-```bash
+```sh
 sudo vi /etc/resolv.conf
 nameserver 8.8.8.8
 ```
@@ -103,7 +103,7 @@ nameserver 8.8.8.8
 
 安装 Homebrew
 
-```bash
+```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
 
@@ -135,7 +135,7 @@ wslconfig /u Ubuntu-20.04
 
 删除多余的包
 
-```bash
+```sh
 sudo apt remove --purge python3
 ```
 
@@ -163,13 +163,13 @@ scoop install vcxsrv
 
 进入 WSL2，安装 xfce4
 
-```bash
+```sh
 sudo apt install xfce4
 ```
 
 打开 `/etc/resolve.conf`，添加如下语句
 
-```bash
+```sh
 [network]
 generateResolvConf = false
 ```
@@ -184,7 +184,7 @@ ipconfig
 
 回到 WSL2，将如下语句，添加至 `~/.bashrc` 或 `~/.zshrc` 末尾
 
-```bash
+```sh
 export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
 export LIBGL_ALWAYS_INDIRECT=1
 ```
@@ -193,14 +193,14 @@ export LIBGL_ALWAYS_INDIRECT=1
 
 重启 bash 或 zsh
 
-```bash
+```sh
 # source ~/.bashrc
 # source ~/.zshrc
 ```
 
 保持 XLaunch 开启，启动 xfce4
 
-```bash
+```sh
 startxfce4
 ```
 
@@ -220,7 +220,7 @@ wsl --set-version kali-linux 2
 
 安装完成后，在 Kali Linux 下，输入如下命令，安装默认工具集
 
-```bash
+```sh
 sudo apt update && sudo apt upgrade
 sudo apt install -y kali-linux-default
 ```
@@ -229,7 +229,7 @@ sudo apt install -y kali-linux-default
 
 当然你也可以选择安装完整工具集
 
-```bash
+```sh
 sudo apt install -y kali-linux-large
 ```
 
@@ -237,13 +237,13 @@ sudo apt install -y kali-linux-large
 
 当然为了更好的体验 Kali，我们可以安装官方推荐的 GUI —— Win-KeX。输入如下命令，进行安装。
 
-```bash
+```sh
 sudo apt install -y kali-win-kex
 ```
 
 安装完毕后，可使用如下命令启动
 
-```bash
+```sh
 # 启动
 cd ~
 kex
@@ -257,7 +257,7 @@ kex --win -s
 
 Win-KeX 还提供了无缝模式
 
-```bash
+```sh
 # 无缝模式
 kex --sl -s
 ```

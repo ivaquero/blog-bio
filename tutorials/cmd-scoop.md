@@ -38,7 +38,7 @@ Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 ### 步骤 2：自定义 Scoop 安装目录
 
-```shellscript
+```powershell
 irm get.scoop.sh -outfile 'install.ps1'
 .\install.ps1 -ScoopDir 'Scoop_Path' -ScoopGlobalDir 'GlobalScoop_Path' -Proxy 'http://<ip:port>'
 # 如
@@ -49,7 +49,7 @@ irm get.scoop.sh -outfile 'install.ps1'
 
 ### 步骤 3：更新 Scoop
 
-```shellscript
+```powershell
 scoop update
 ```
 

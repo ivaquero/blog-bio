@@ -71,7 +71,7 @@ zhihu-tags: Visual Studio Code, MATLAB, Jupyter Notebook
 
 ### 安装 Kernel
 
-```bash
+```sh
 conda install matlab_kernel
 ```
 

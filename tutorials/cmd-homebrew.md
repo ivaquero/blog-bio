@@ -26,7 +26,7 @@ Homebrew 同样适用于 Linux，也就是说，在 Windows Subsystem Linux（WS
 
 Homebrew 需要在 macOS 上预先安装 Xcode 命令行工具。
 
-```bash
+```sh
 xcode-select --install
 ```
 
@@ -34,19 +34,19 @@ xcode-select --install
 
 安装 Homebrew
 
-```bash
+```sh
 curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh/bin/bash -c | sh
 ```
 
 国内源
 
-```bash
+```sh
 curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh | sh
 ```
 
 卸载方法类似：
 
-```bash
+```sh
 curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall | sh
 ```
 
@@ -54,7 +54,7 @@ curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall |
 
 ### 基本操作
 
-```bash
+```sh
 # 安装
 brew install [package_name]
 # 卸载
@@ -85,7 +85,7 @@ brew --cache
 
 Tap 可看作是 Homebrew 的软件源，是其外在延申。Homebrew 的官方 Tap 包含了大量的基于图形用户界面（GUI）的软件，有大量的维护者，故一般常用软件，无论中英文，都可在其中找到。Tap 使用 `brew tap` 命令进行加载。
 
-```bash
+```sh
 # 官方源
 brew tap homebrew/homebrew-cask
 # 官方未收录的中文软件
@@ -98,7 +98,7 @@ brew tap brewforge/extras
 
 Homebrew 允许用户建立自己的 Tap，如添加我建立的 [homebrew-chinese](https://github.com/brewforge/homebrew-chinese)：
 
-```bash
+```sh
 brew tap brewforge/chinese
 ```
 
@@ -125,7 +125,7 @@ Cask 的使用与 Homebrew 本身大同小异，只需将 `brew` 变为 `brew --
 
 Homebrew 绑定了 Services 工具包，可非常便捷地管理系统服务：
 
-```bash
+```sh
 # 开启
 brew services start mysql
 # 停止
@@ -142,7 +142,7 @@ brew services list
 
 对于更新失败等一般报错，使用自带的重置功能：
 
-```bash
+```sh
 # 一般报错
 brew update-reset && brew update
 # Error: parent directory is world writable but not sticky
@@ -151,7 +151,7 @@ sudo chmod +t /private/tmp/
 
 对于复杂报错，进入 Homebrew 所在目录，强制重置：
 
-```bash
+```sh
 cd /usr/local/Homebrew
 sudo git reset --hard
 sudo git clean -df

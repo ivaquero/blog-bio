@@ -15,7 +15,7 @@ Starship 是由 Rust 编写的命令行主题，简单高效、容易配置（�
 
 使用 Scoop 安装
 
-```bash
+```sh
 scoop install starship
 ```
 

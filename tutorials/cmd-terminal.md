@@ -23,13 +23,13 @@ macOS/Linux 用户使用 Homebrew
 
 打开 `~/.zshrc`，添加：
 
-```bash
+```sh
 eval "$(starship init zsh)"
 ```
 
 Windows 用户使用 Scoop
 
-```bash
+```sh
 scoop install starship
 ```
 
@@ -51,7 +51,7 @@ Alacritty 使用 Rust 编写，是一款极简主义风格的跨平台终端模�
 
 macOS/Linux 用户使用 Homebrew
 
-```bash
+```sh
 brew install alacritty
 ```
 
@@ -121,7 +121,7 @@ scrolling:
 
 macOS/Linux 用户使用 Homebrew
 
-```bash
+```sh
 brew tap homebrew/cask-fonts
 brew install font-fira-code-nerd-font
 ```
@@ -168,7 +168,7 @@ Alacritty 不支持多窗口（需要等待下一个版本，即 0.11.0）或多
 
 macOS/Linux 用户使用 Homebrew
 
-```bash
+```sh
 brew install zellij
 ```
 
@@ -189,7 +189,7 @@ scroll_buffer_size: 10000 # 缓冲大小
 
 Zellij 支持自定义启动布局，将布局文件存在 `~/.config/zellij/layouts` 下，使用如下命令启动即可
 
-```bash
+```sh
 zellij --layout [layout-name]
 ```
 
@@ -298,7 +298,7 @@ Rust 规避了 C++ 项目的弊病，同时保证了良好的跨平台性质，�
 
 macOS / Linux 用户
 
-```bash
+```sh
 brew install helix
 ```
 
@@ -321,7 +321,7 @@ scoop install helix
 
 macOS / Linux 用户
 
-```bash
+```sh
 brew install nushell
 ```
 

@@ -41,13 +41,13 @@ Typst Preview 的作者开发了一个 Typst 十分易用的格式化器，[typs
 
 对 macOS/Linux 用户，可以使用 Homebrew 安装
 
-```bash
+```sh
 brew install typstyle
 ```
 
 Windows 用户，可以使用 Scoop 安装
 
-```bash
+```sh
 scoop bucket add main-plus https://github.com/Scoopforge/Main-Plus
 scoop install typstyle
 ```

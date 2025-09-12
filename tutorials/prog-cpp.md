@@ -21,7 +21,7 @@ scoop install msys2
 
 - 进入 MSYS2 终端，执行如下命令
 
-```bash
+```sh
 pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain
 ```
 
@@ -92,7 +92,7 @@ clangd 扩展由 LLVM 团队维护，提供了非常智能的补全，和代码�
 
 macOS/Linux 用户
 
-```bash
+```sh
 brew install clangd
 ```
 

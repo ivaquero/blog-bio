@@ -29,7 +29,7 @@ VSCode 的文件浏览（explorer）和大纲（outline）以及整个工作区�
 
 创建环境
 
-```bash
+```sh
 # 基本格式
 mamba create -n [env_name] [python= version]
 # 例子
@@ -38,7 +38,7 @@ mamba create -n my_python python=3.12
 
 进入 conda 环境，安装 "r-languageserver" 和 "radian"：
 
-```bash
+```sh
 # 进入
 mamba active my_python
 # 安装
@@ -51,7 +51,7 @@ mamba install r-languageserver radian
 
 对于 R 的第三方包的安装，命令格式如下
 
-```bash
+```sh
 mamba install r-[package]
 # 如，安装 ggplot2
 mamba install r-ggplot2
@@ -146,13 +146,13 @@ JupyterLab 是一个非常友好的交互环境，通过安装扩展，可方便
 
 进入 conda 环境，安装 `r-irkernel`：
 
-```bash
+```sh
 mamba install r-irkernel
 ```
 
 若安装完毕，但仍不显示 kernel，则需要在命令行中进入 R，键入如下命令：
 
-```bash
+```sh
 IRkernel::installspec()
 ```
 
@@ -160,7 +160,7 @@ IRkernel::installspec()
 
 通过如下命令安装 JupyterLab 扩展
 
-```bash
+```sh
 # 变量查看器
 mamba install -c conda-forge jupyterlab-variableinspector
 ```
