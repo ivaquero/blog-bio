@@ -119,7 +119,13 @@ x = \frac{-b ± \sqrt{b^2 - 4ac}}{2a}
 $$
 ```
 
-$$ x = \frac{-b ± \sqrt{b^2 - 4ac}}{2a} $$
+$$
+x = \frac{-b ± \sqrt{b^2 - 4ac}}{2a}
+$$
+
+$$
+\int_{0}^{\infty} x^2 dx
+$$
 
 ## 3. 列表
 
