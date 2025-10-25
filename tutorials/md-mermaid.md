@@ -225,44 +225,40 @@ erDiagram
   CUSTOMER}|..|{DELIVERY-ADDRESS : uses
 ```
 
-### 2.4. Git 图
+### 2.4. GitGraph
 
 ```markdown
-gitGraph:
-options
-{
-"nodeSpacing": 150,
-"nodeRadius": 10
-}
-end
-commit
-branch newbranch
-checkout newbranch
-commit
-commit
-checkout master
-commit
-commit
-merge newbranch
+---
+title: Git diagram
+---
+gitGraph
+   commit
+   commit
+   branch develop
+   checkout develop
+   commit
+   commit
+   checkout main
+   merge develop
+   commit
+   commit
 ```
 
 ```mermaid
-gitGraph:
-options
-  {
-  "nodeSpacing": 150,
-  "nodeRadius": 10
- }
-end
-commit
-branch newbranch
-checkout newbranch
-commit
-commit
-checkout master
-commit
-commit
-merge newbranch
+---
+title: Git diagram
+---
+gitGraph
+   commit
+   commit
+   branch develop
+   checkout develop
+   commit
+   commit
+   checkout main
+   merge develop
+   commit
+   commit
 ```
 
 ## 3. 统计类
