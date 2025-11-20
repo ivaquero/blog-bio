@@ -30,7 +30,7 @@ jobs:
       # (optional) Cache your executed notebooks between runs
       # if you have config:
       # execute:
-      #   execute_notebooks: cache
+      # execute_notebooks: cache
       - name: cache executed notebooks
         uses: actions/cache@v4
         with:
@@ -40,13 +40,14 @@ jobs:
       # Build the book
       - name: Build the book
         run: |
+          cd ..
           jupyter-book build .
 
       # Upload the book's HTML as an artifact
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: '_build/html'
+          path: "_build/html"
 
       # Deploy the book's HTML to GitHub Pages
       - name: Deploy to GitHub Pages
