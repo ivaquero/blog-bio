@@ -22,7 +22,7 @@ zhihu-url: https://zhuanlan.zhihu.com/p/694181464
   - 克隆仓库：`git clone`
   - 拉取文件：`git pull`
 
-![Git](images/git.excalidraw.png)
+![Git](images/git.png)
 
 ### 1.2. 分支操作
 

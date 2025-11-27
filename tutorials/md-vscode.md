@@ -22,7 +22,7 @@ VSCode 是当下最流行的代码编辑器，拥有丰富的扩展，搞定 Mar
 
 ## 2. 语法扩展
 
-VSCode 默认是支持 Markdown 的，但还是有必装下面 3 个插件提高写作效率。
+VSCode 默认是支持 Markdown 的，但还是有必要安装下面的扩展提高写作效率。
 
 - Markdown All in One
 - markdownlint
