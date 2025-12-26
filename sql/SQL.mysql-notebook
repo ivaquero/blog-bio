@@ -1,0 +1,763 @@
+{
+    "type": "MySQLNotebook",
+    "version": "1.0",
+    "caption": "DB Notebook",
+    "content": "-- https://techbeamers.com/sql-query-questions-answers-for-practice/\nDROP DATABASE Company;\nCREATE DATABASE Company;\nUSE Company;\nCREATE TABLE Worker (\n    WORKER_ID INT NOT NULL PRIMARY KEY,\n    FIRST_NAME CHAR(25),\n    LAST_NAME CHAR(25),\n    SALARY INT,\n    JOINING_DATE DATETIME,\n    DEPARTMENT CHAR(25)\n);\nINSERT INTO Worker (WORKER_ID, FIRST_NAME, LAST_NAME, SALARY, JOINING_DATE, DEPARTMENT) VALUES\n    (1, 'Monika', 'Arora', 100000, '2021-02-20 09:00:00', 'HR'),\n    (2, 'Niharika', 'Verma', 80000, '2021-06-11 09:00:00', 'Admin'),\n    (3, 'Vishal', 'Singhal', 300000, '2021-02-20 09:00:00', 'HR'),\n    (4, 'Amitabh', 'Singh', 500000, '2021-02-20 09:00:00', 'Admin'),\n    (5, 'Vivek', 'Bhati', 500000, '2021-06-11 09:00:00', 'Admin'),\n    (6, 'Vipul', 'Diwan', 200000, '2021-06-11 09:00:00', 'Account'),\n    (7, 'Satish', 'Kumar', 75000, '2021-01-20 09:00:00', 'Account'),\n    (8, 'Geetika', 'Chauhan', 90000, '2021-04-11 09:00:00', 'Admin');\nCREATE TABLE Bonus (\n    WORKER_REF_ID INT,\n    BONUS_AMOUNT INT,\n    BONUS_DATE DATETIME,\n    FOREIGN KEY (WORKER_REF_ID) REFERENCES Worker(WORKER_ID) ON DELETE CASCADE\n);\nINSERT INTO Bonus (WORKER_REF_ID, BONUS_AMOUNT, BONUS_DATE) VALUES\n    (1, 5000, '2023-02-20'),\n    (2, 3000, '2023-06-11'),\n    (3, 4000, '2023-02-20'),\n    (1, 4500, '2023-02-20'),\n    (2, 3500, '2023-06-11');\nCREATE TABLE Title (\n    WORKER_REF_ID INT,\n    WORKER_TITLE CHAR(25),\n    AFFECTED_FROM DATETIME,\n    FOREIGN KEY (WORKER_REF_ID) REFERENCES Worker(WORKER_ID) ON DELETE CASCADE\n);\nINSERT INTO Title (WORKER_REF_ID, WORKER_TITLE, AFFECTED_FROM) VALUES\n    (1, 'Manager', '2023-02-20 00:00:00'),\n    (2, 'Executive', '2023-06-11 00:00:00'),\n    (8, 'Executive', '2023-06-11 00:00:00'),\n    (5, 'Manager', '2023-06-11 00:00:00'),\n    (4, 'Asst. Manager', '2023-06-11 00:00:00'),\n    (7, 'Executive', '2023-06-11 00:00:00'),\n    (6, 'Lead', '2023-06-11 00:00:00'),\n    (3, 'Lead', '2023-06-11 00:00:00');\n-- 1. Write SQL Query to Display FIRST_NAME with Alias WORKER_NAME.\nSelect FIRST_NAME AS WORKER_NAME from Worker;\n-- 2. Write SQL Query to Display FIRST_NAME in Upper Case from the Worker Table.\nSelect upper(FIRST_NAME) from Worker;\n-- 3. Write SQL Query to Display Unique DEPARTMENT Values from the Worker Table.\nSelect distinct DEPARTMENT from Worker;\n-- 4. Write SQL Query to Display the First 3 Chars of FIRST_NAME from the Worker Table.\nSelect substring(FIRST_NAME,1,3) from Worker;\n-- 5. Write SQL Query to Find the Position of Alphabet ‘a’ in the FIRST_NAME Column.\nSELECT INSTR(FIRST_NAME, 'a') FROM Worker WHERE FIRST_NAME = 'Amitabh';\n",
+    "options": {
+        "tabSize": 4,
+        "insertSpaces": true,
+        "indentSize": 4,
+        "defaultEOL": "LF",
+        "trimAutoWhitespace": true
+    },
+    "viewState": {
+        "cursorState": [
+            {
+                "inSelectionMode": false,
+                "selectionStart": {
+                    "lineNumber": 4,
+                    "column": 1
+                },
+                "position": {
+                    "lineNumber": 4,
+                    "column": 1
+                }
+            }
+        ],
+        "viewState": {
+            "scrollLeft": 0,
+            "firstPosition": {
+                "lineNumber": 29,
+                "column": 1
+            },
+            "firstPositionDeltaTop": -21
+        },
+        "contributionsState": {
+            "editor.contrib.folding": {},
+            "editor.contrib.wordHighlighter": false
+        }
+    },
+    "contexts": [
+        {
+            "state": {
+                "start": 1,
+                "end": 2,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "index": 0,
+                            "resultId": "e516fda8-e694-4fce-e80d-39b988445c8e",
+                            "content": "OK, 3 rows affected in 15.452ms"
+                        },
+                        {
+                            "type": 2,
+                            "index": 1,
+                            "resultId": "10b9cf73-1d21-41db-e831-56178b74549a",
+                            "content": "OK, 1 row affected in 1.638ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 91
+                        },
+                        "contentStart": 70,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 91,
+                            "length": 0
+                        },
+                        "contentStart": 90,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 3,
+                "end": 4,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "index": 0,
+                            "resultId": "427680ad-9f7b-475c-a484-4e042da9e06f",
+                            "content": "OK, 1 row affected in 2.098ms"
+                        },
+                        {
+                            "type": 2,
+                            "index": 1,
+                            "resultId": "235ff672-1ea2-4013-859e-597e6fe34e6b",
+                            "content": "OK, 0 records retrieved in 0.464ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 24
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 24,
+                            "length": 13
+                        },
+                        "contentStart": 25,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 5,
+                "end": 12,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "index": 0,
+                            "resultId": "db28173d-9c14-42cb-e553-163c58dd2077",
+                            "content": "OK, 0 records retrieved in 6.401ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 180
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 13,
+                "end": 21,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "index": 0,
+                            "resultId": "bac7a2b0-7d9e-4e4e-fda0-cae26e1c60d0",
+                            "content": "OK, 8 rows affected in 4.622ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 639
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 639,
+                            "length": 0
+                        },
+                        "contentStart": 638,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 22,
+                "end": 27,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "index": 0,
+                            "resultId": "06cb10b8-3785-470c-9c90-88c9126c697f",
+                            "content": "OK, 0 records retrieved in 9.161ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 172
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 28,
+                "end": 33,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "index": 0,
+                            "resultId": "4b45d0bb-ad1b-4394-9188-8ef5e710e349",
+                            "content": "OK, 5 rows affected in 8.933ms"
+                        }
+                    ]
+                },
+                "currentHeight": 32,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 211
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 34,
+                "end": 39,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "index": 0,
+                            "resultId": "3b7ce6c4-8abb-4413-fce7-ce723c45dbc0",
+                            "content": "OK, 0 records retrieved in 9.171ms"
+                        }
+                    ]
+                },
+                "currentHeight": 32,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 180
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 40,
+                "end": 48,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "index": 0,
+                            "resultId": "1c9f9fe4-cd5a-4574-8d2b-c2e8963b7be6",
+                            "content": "OK, 8 rows affected in 3.153ms"
+                        }
+                    ]
+                },
+                "currentHeight": 32,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 419
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 49,
+                "end": 50,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "4bd1f79b-59bf-4540-eec4-6e9a0b0b054d"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 113
+                        },
+                        "contentStart": 68,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "e75757a9-5ffc-4e0b-f3eb-16dacf4c8656",
+                    "resultId": "4bd1f79b-59bf-4540-eec4-6e9a0b0b054d",
+                    "rows": [
+                        {
+                            "0": "Monika"
+                        },
+                        {
+                            "0": "Niharika"
+                        },
+                        {
+                            "0": "Vishal"
+                        },
+                        {
+                            "0": "Amitabh"
+                        },
+                        {
+                            "0": "Vivek"
+                        },
+                        {
+                            "0": "Vipul"
+                        },
+                        {
+                            "0": "Satish"
+                        },
+                        {
+                            "0": "Geetika"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "WORKER_NAME",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 8 records retrieved in 0.989ms"
+                    },
+                    "totalRowCount": 8,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "-- Write SQL Query to Display FIRST_NAME with Alias WORKER_NAME.\nSelect FIRST_NAME AS WORKER_NAME from Worker",
+                    "updatable": false,
+                    "fullTableName": "Worker"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 51,
+                "end": 52,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "5f542a35-e7f2-4f3b-c2a5-b39717ef513f"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 118
+                        },
+                        "contentStart": 81,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "e75757a9-5ffc-4e0b-f3eb-16dacf4c8656",
+                    "resultId": "5f542a35-e7f2-4f3b-c2a5-b39717ef513f",
+                    "rows": [
+                        {
+                            "0": "MONIKA"
+                        },
+                        {
+                            "0": "NIHARIKA"
+                        },
+                        {
+                            "0": "VISHAL"
+                        },
+                        {
+                            "0": "AMITABH"
+                        },
+                        {
+                            "0": "VIVEK"
+                        },
+                        {
+                            "0": "VIPUL"
+                        },
+                        {
+                            "0": "SATISH"
+                        },
+                        {
+                            "0": "GEETIKA"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "upper(FIRST_NAME)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 8 records retrieved in 0.616ms"
+                    },
+                    "totalRowCount": 8,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "-- 2. Write SQL Query to Display FIRST_NAME in Upper Case from the Worker Table.\nSelect upper(FIRST_NAME) from Worker",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 53,
+                "end": 54,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "ae7a4318-590f-4fac-95db-288fb5603ab6"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 120
+                        },
+                        "contentStart": 81,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "e75757a9-5ffc-4e0b-f3eb-16dacf4c8656",
+                    "resultId": "ae7a4318-590f-4fac-95db-288fb5603ab6",
+                    "rows": [
+                        {
+                            "0": "HR"
+                        },
+                        {
+                            "0": "Admin"
+                        },
+                        {
+                            "0": "Account"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "DEPARTMENT",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 3 records retrieved in 0.808ms"
+                    },
+                    "totalRowCount": 3,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "-- 3. Write SQL Query to Display Unique DEPARTMENT Values from the Worker Table.\nSelect distinct DEPARTMENT from Worker",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 55,
+                "end": 56,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "eabedd13-cb0e-4a0a-cfa5-c49f35517cbe"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 133
+                        },
+                        "contentStart": 88,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "e75757a9-5ffc-4e0b-f3eb-16dacf4c8656",
+                    "resultId": "eabedd13-cb0e-4a0a-cfa5-c49f35517cbe",
+                    "rows": [
+                        {
+                            "0": "Mon"
+                        },
+                        {
+                            "0": "Nih"
+                        },
+                        {
+                            "0": "Vis"
+                        },
+                        {
+                            "0": "Ami"
+                        },
+                        {
+                            "0": "Viv"
+                        },
+                        {
+                            "0": "Vip"
+                        },
+                        {
+                            "0": "Sat"
+                        },
+                        {
+                            "0": "Gee"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "substring(FIRST_NAME,1,3)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 8 records retrieved in 1.403ms"
+                    },
+                    "totalRowCount": 8,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "-- 4. Write SQL Query to Display the First 3 Chars of FIRST_NAME from the Worker Table.\nSelect substring(FIRST_NAME,1,3) from Worker",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 57,
+                "end": 58,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "c4ef57fc-f31b-44b2-df14-fe54f04a91a3"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 156
+                        },
+                        "contentStart": 85,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "e75757a9-5ffc-4e0b-f3eb-16dacf4c8656",
+                    "resultId": "c4ef57fc-f31b-44b2-df14-fe54f04a91a3",
+                    "rows": [
+                        {
+                            "0": 1
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "INSTR(FIRST_NAME, 'a')",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 0.683ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "-- 5. Write SQL Query to Find the Position of Alphabet ‘a’ in the FIRST_NAME Column.\nSELECT INSTR(FIRST_NAME, 'a') FROM Worker WHERE FIRST_NAME = 'Amitabh'",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 59,
+                "end": 59,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        }
+    ]
+}

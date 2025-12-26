@@ -17,7 +17,7 @@ zhihu-tags: Visual Studio Code, Julia（编程语言）, Jupyter Notebook
 
 对 macOS/Linux 用户，有 Homebrew
 
-```bash
+```sh
 # mac
 brew install --cask julia
 # linux
@@ -51,7 +51,7 @@ Julia 团队，曾经力推基于 Atom 的 Juno IDE，但目前已表示弃坑�
 
 在扩展商店，搜索并安装 Julia 扩展即可
 
-![VSCode Julia](images/vscode/vscode-julia.png)
+![VSCode Julia](images/vscode-julia.png)
 
 安装完毕后，"ctrl"+", " 进入配置，点击右上角的图标，打开配置的 json 文件。
 
@@ -85,13 +85,13 @@ Julia 团队，曾经力推基于 Atom 的 Juno IDE，但目前已表示弃坑�
 
 在 VSCode 中调用 Julia，推荐安装包 `Revise.jl` 。返回 Julia 命令行，进入包管理器
 
-```bash
+```sh
 pkg> add Revise
 ```
 
 安装 OhMyREPL，高亮终端
 
-```bash
+```sh
 pkg> add OhMyREPL
 ```
 
@@ -109,7 +109,7 @@ end
 
 之后便可编写 Julia 代码。
 
-![vscode](images/vscode/julia.png)
+![vscode](images/julia.png)
 
 安装
 
@@ -121,7 +121,7 @@ Jupyter 是 Julia、Python、R 三种语言缩写的集合，后两者的第三�
 
 安装 `IJulia.jl`
 
-```bash
+```sh
 pkg> add IJulia
 ```
 
@@ -132,13 +132,13 @@ using IJulia
 installkernel("Julia", "--depwarn=no")
 ```
 
-![julia](images/jupyter/jupyter-julia.png)
+![julia](images/jupyter-julia.png)
 
 ### 3.2. Jupyter
 
 自定义 Jupyter 路径，同样在`startup.jl`中，添加
 
-```bash
+```sh
 # mac-arm
 ENV["JUPYTER"]="/opt/homebrew/Caskroom/miniforge/base/bin/jupyter"
 # mac-intel
@@ -168,7 +168,7 @@ ENV["PYTHON"] = "~/miniconda3/base/bin/python"
 
 ### 4.2. Julia 包管理
 
-```bash
+```sh
 # 添加
 pkg> add [Package]
 # 删除

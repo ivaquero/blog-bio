@@ -13,7 +13,7 @@ zhihu-tags: Markdown, Visual Studio Code
 
 - Markdown Preview Mermaid Support
 
-![mermaid](images/vscode/vscode-mdkroki.png)
+![mermaid](images/vscode-mdkroki.png)
 
 ## 1. 基础类
 
@@ -41,18 +41,18 @@ graph TB
   end
 ```
 
-| 用词  |   含义   |
-| :---: | :------: |
-|  TB   | 从上到下 |
-|  BT   | 从下到上 |
-|  RL   | 从右到左 |
-|  LR   | 从左到右 |
+| 用词 |   含义   |
+|:----:|:--------:|
+|  TB  | 从上到下 |
+|  BT  | 从下到上 |
+|  RL  | 从右到左 |
+|  LR  | 从左到右 |
 
 - 节点定义
 
 |    表述    |      说明      |
-| :--------: | :------------: |
-|  id[文字]  |    矩形节点    |
+|:----------:|:--------------:|
+| id\[文字\] |    矩形节点    |
 |  id(文字)  |  圆角矩形节点  |
 | id((文字)) |    圆形节点    |
 |  id>文字]  | 右向旗帜状节点 |
@@ -61,7 +61,7 @@ graph TB
 - 节点连线
 
 |   表述   |      说明      |
-| :------: | :------------: |
+|:--------:|:--------------:|
 |    >     |  添加尾部箭头  |
 |    -     | 不添加尾部箭头 |
 |    --    |      单线      |
@@ -225,44 +225,40 @@ erDiagram
   CUSTOMER}|..|{DELIVERY-ADDRESS : uses
 ```
 
-### 2.4. Git 图
+### 2.4. GitGraph
 
 ```markdown
-gitGraph:
-options
-{
-"nodeSpacing": 150,
-"nodeRadius": 10
-}
-end
-commit
-branch newbranch
-checkout newbranch
-commit
-commit
-checkout master
-commit
-commit
-merge newbranch
+---
+title: Git diagram
+---
+gitGraph
+   commit
+   commit
+   branch develop
+   checkout develop
+   commit
+   commit
+   checkout main
+   merge develop
+   commit
+   commit
 ```
 
 ```mermaid
-gitGraph:
-options
-  {
-  "nodeSpacing": 150,
-  "nodeRadius": 10
- }
-end
-commit
-branch newbranch
-checkout newbranch
-commit
-commit
-checkout master
-commit
-commit
-merge newbranch
+---
+title: Git diagram
+---
+gitGraph
+   commit
+   commit
+   branch develop
+   checkout develop
+   commit
+   commit
+   checkout main
+   merge develop
+   commit
+   commit
 ```
 
 ## 3. 统计类
@@ -315,16 +311,4 @@ journey
   section Go home
     Go downstairs: 5: Me
     Sit down: 3: Me
-```
-
-## 5. 主题
-
-Mermaid.js 内置了 3 种主题（"default"，"forest"，"dark"），安装 Markdown Preview Enhanced 扩展后
-
-"ctrl"+", " 进入配置，点击右上角的图标，打开配置的 json 文件，加入如下配置：
-
-```json
-{
-  "markdown-preview-enhanced.mermaidTheme": "forest"
-}
 ```
