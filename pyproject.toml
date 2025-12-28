@@ -1,15 +1,10 @@
 [project]
-    requires-python = ">=3.10"
-
-[tool.pixi.project]
-    name = "blog-bio"
-    channels = ["conda-forge"]
-    platforms = ["linux-64", "osx-arm64", "osx-64", "win-64"]
+    requires-python = ">=3.11"
 
 [tool.ruff]
     fix = true
     fix-only = true
-    target-version = "py310"
+    target-version = "py311"
     line-length = 88
 
 [tool.ruff.format]

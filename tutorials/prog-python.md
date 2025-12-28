@@ -1,19 +1,35 @@
 ---
-title: 搭建 Python 轻量级编写环境（VSCode | JupyterLab）
+title: 搭建 Python 轻量级编写环境（VSCode）
 zhihu-url: https://zhuanlan.zhihu.com/p/147336202
-zhihu-title-image: images/vscode/jupyter.png
-zhihu-tags: Visual Studio Code, Python, Jupyter Notebook
+zhihu-title-image: images/vscode/vscode-python.png
+zhihu-tags: Visual Studio Code, Python
 ---
 
 # 搭建 Python 轻量级编写环境
 
-## 1. 安装 Python
+## 1. 安装运行时
 
-### 1.1. Conda / Mamba
+### 1.1. Conda -> Mamba
 
-Conda 是服务于 Python 和 R 的多语言包管理器，其解决了 Python 原生包管理器 Pip 的依赖冲突问题，极大地方便了 Python 环境的管理。Mamba 基于 Conda，是后者的升级版，默认进行并行下载，效率比 Conda 更上一个台阶。
+Conda 是服务于 Python 和 R 的多语言包管理器，其解决了 Python 原生包管理器 Pip 的依赖冲突问题，极大地方便了 Python 环境的管理。Mamba 是 Conda 的 C++ 版本，默认并行下载，效率比 Conda 更上一个台阶。
 
-这里推荐安装 Miniforge，基于 Mamba 的最小安装版本，只包含环境管理功能。
+这里推荐安装 Miniforge，基于 Mamba 的最小安装版本，只包含环境管理功能。前往[清华源](https://mirrors.tuna.tsinghua.edu.cn/)，进入[对应页面](https://mirrors.tuna.tsinghua.edu.cn/github-release/conda-forge/miniforge/LatestRelease/)，下载安装程序。
+
+### 1.2. 手动安装
+
+- 对 Windows 用户
+
+下载 [Windows 系统安装包](https://mirrors.tuna.tsinghua.edu.cn/github-release/conda-forge/miniforge/LatestRelease/Miniforge3-Windows-x86_64.exe)，安装一路向下，不要做任何改动，直至安装完成。
+
+- 对 macOS 用户
+
+下载 [MacOS 系统安装包](https://mirrors.tuna.tsinghua.edu.cn/github-release/conda-forge/miniforge/LatestRelease/Miniforge3-MacOSX-arm64.sh)，然后到对应路径，输入
+
+```sh
+sh Miniforge3-MacOSX-arm64.sh
+```
+
+### 1.3. 包管理器安装
 
 对 Windows 用户，使用 Scoop
 
@@ -25,90 +41,47 @@ scoop install scoopforge/extras-cn/miniforge-cn
 
 对 macOS 用户，有 Homebrew
 
-```bash
+```sh
 brew install miniforge
 # 或国内镜像
 brew install brewforge/chinese/miniforge-cn
 ```
 
-### 1.2. 创建环境
+## 2. 管理环境
 
-接下来，需要创建虚拟环境，也就是自己的工作区，可简单理解为系统登录时的用户。基本命令需指定**环境名称**和**Python 版本**：
+### 2.1. 配置文件
 
-```powershell
-# 基本格式
-mamba create -n [env_name] [python= version]
-# 例子
-mamba create -n my_python python=3.9
-```
-
-安装完毕后，进入环境：
-
-```bash
-# 进入
-mamba active my_python
-# 退出
-mamba deactivate
-```
-
-### 1.3. 安装相关库
-
-安装统一的格式化器（formatter）+ 检查器（linter）：`ruff`
-
-```bash
-mamba install ruff
-```
-
-## 2. Conda 的使用
-
-### 2.1. 环境管理
-
-mamba 常用操作可使用命令 `mamba -h` 和 `mamba config -h` 查看，这里列出几个常用命令：
-
-```bash
-# 创建
-mamba create -n [env_name]
-# 删除
-mamba env remove -n [env_name]
-# 参照配置文件更新
-mamba env update --file [file.yml]
-# 环境列表
-mamba env list
-# mamba 信息
-mamba info
-```
-
-### 2.2. 包管理
-
-```bash
-# 安装
-mamba install [package_name]
-# 删除
-mamba uninstall [package_name]
-# 更新
-mamba update [package_name]
-# 更新所有包
-mamba update --all
-# 搜索
-mamba search [package_name]
-# 已安装列表
-mamba list
-```
-
-### 2.3. 配置文件
-
-mamba 会生成配置文件 `.condarc`。其位置如下：
+mamba 配置文件为 `.condarc`。其位置如下：
 
 - Windows：`~\.condarc`
 - macOS 和 Linux：`~/.condarc`
 
-其文件结构如下：
+打开对应终端环境
+
+- Windows 用户：Miniforge Prompt
+- MacOS 用户：终端（Terminal）
+
+输入
+
+```sh
+code .condarc
+```
+
+在 `.condarc` 中写入
 
 ```yaml
 # 频道
 channels:
   - conda-forge
-  - biconda
+# 使用镜像
+custom_channels:
+  conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+
+# 地址
+envs_dirs:
+  - ~/.conda/envs
+pkgs_dirs:
+  - ~/.conda/pkgs
 
 # 将 pip 作为 Python 的依赖
 add_pip_as_python_dependency: true
@@ -126,43 +99,83 @@ rollback_enabled: true
 remote_max_retries: 3
 ```
 
-### 2.4. 镜像
+### 2.2. 常用环境操作
 
-为了加快速度，国内往往需要使用镜像，修改 channels 如下
+mamba 常用操作可使用命令 `mamba -h` 和 `mamba config -h` 查看，这里列出几个常用命令：
 
-```yaml
-channels:
-  # 中科大镜像
-  - https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge/
-  - https://mirrors.ustc.edu.cn/anaconda/cloud/bioconda/
-  - https://mirrors.ustc.edu.cn/anaconda/cloud/msys2/
+```sh
+# 创建
+mamba create -n [env_name]
+# 删除
+mamba env remove -n [env_name]
+# 参照配置文件更新
+mamba env update --file [file.yml]
+# 环境列表
+mamba env list
+# mamba 信息
+mamba info
 ```
 
-### 2.5. 报错
+### 2.3. 创建环境
 
-```powershell
-## The input line is too long
-pip install pywinpath
-pywinpath
-## Intel MKL FATAL ERROR: Cannot load mkl_intel_thread.dll.
-set CONDA_DLL_SEARCH_MODIFICATION_ENABLE = 1
+接下来，需要创建虚拟环境，也就是自己的工作区，可简单理解为系统登录时的用户。基本命令需指定**环境名称**和**Python 版本**：
+
+```sh
+# 基本格式
+mamba create -n [env_name] [python= version]
+# 例子
+mamba create -n my_python python=3.12
 ```
 
-## 3. VSCode & Jupyter
+安装完毕后，进入环境：
 
-### 3.1. VSCode
-
-VSCode 是首选，安装官方扩展的同时，还需安装 Jupyter 相关包
-
-```bash
-mamba install jupyter_contrib_nbextensions
+```sh
+# 进入
+mamba active my_python
+# 退出
+mamba deactivate
 ```
 
-![python](images/vscode/vscode-python.png)
+## 3. 包管理
 
-安装强大的统一格式化器 + 检测器扩展 `ruff`。
+### 3.1. 常用包操作
 
-![alt text](images/vscode/vscode-python-ruff.png)
+```sh
+# 安装
+mamba install [package_name]
+# 删除
+mamba uninstall [package_name]
+# 更新
+mamba update [package_name]
+# 更新所有包
+mamba update --all
+# 搜索
+mamba search [package_name]
+# 已安装列表
+mamba list
+```
+
+### 3.2. 安装包
+
+为使用 VSCode 的 Jupyter，还需要安装 `ipykernel`
+
+```sh
+mamba install ipykernel
+```
+
+## 4. VSCode
+
+### 4.1. 安装扩展
+
+- Python
+- Jupyter
+- Ruff
+
+![python](images/vscode-python.png)
+
+扩展安装完毕，新建 `.ipynb` 文件，即可开启 Python 之旅。
+
+### 4.2. 配置扩展
 
 相关配置如下
 
@@ -170,146 +183,96 @@ mamba install jupyter_contrib_nbextensions
 {
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff",
-    "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-      "source.fixAll": "never",
+      "source.fixAll": "explicit",
       "source.organizeImports": "explicit"
     }
   },
-  "python.terminal.activateEnvInCurrentTerminal": true,
-  "python.terminal.executeInFileDir": true,
-  "python.testing.autoTestDiscoverOnSaveEnabled": false,
-  "autoDocstring.docstringFormat": "numpy",
-  "ruff.lint.args": [
-    "--select=F,I,R,PERF,PD,TCH,TID,SIM,RET,Q,PYI,PIE,C4"
-  ],
+  "ruff.configuration": "pyproject.toml",
 }
 ```
 
-另外，可以尝试官方新推出的 Python Environment Manager
+## 5. 项目管理
 
-![conda](images/vscode/vscode-conda.png)
+项目根目录下的 `pyproject.toml` 可采用如下编写
 
-这个扩展可以实现类似 PyCharm 环境管理的功能
+```toml
+[project]
+    requires-python = ">=3.11"
 
-### 3.2. JupyterLab
+[tool.ruff]
+    fix = true
+    fix-only = true
+    target-version = "py311"
+    line-length = 88
 
-```bash
-mamba install jupyterlab
+[tool.ruff.format]
+    # Enable reformatting of code snippets in docstrings
+    docstring-code-format = true
+    # Format all docstring code snippets with a line length of 60
+    docstring-code-line-length = 60
+    # Use `\n` line endings for all files
+    line-ending = "lf"
+    # Prefer single quotes over double quotes
+    quote-style = "double"
+    skip-magic-trailing-comma = true
+
+[tool.ruff.lint]
+    extend-select = [
+        "E",    # pycodestyle errors
+        "W",    # pycodestyle warnings
+        "F",    # pyflakes
+        "B",    # flake8-bugbear
+        "C4",   # flake8-comprehensions
+        "EM",   # flake8-errmsg
+        "FA",   # flake8-future-annotations
+        "G",    # flake8-logging-format
+        "INT",  # flake8-gettext
+        "PIE",  # flake8-pie
+        "PT",   # flake8-pytest-style
+        "PYI",  # flake8-pyi
+        "Q",    # flake8-quotes
+        "RET",  # flake8-return
+        "RSE",  # flake8-raise
+        "SLOT", # flake8-slots
+        "T10",  # flake8-debugger
+        "YTT",  # flake8-2020
+        "DTZ",  # naive datetime
+        "I",    # import sorting
+        "ISC",  # string concatenation
+        "NPY",  # numpy specific rules
+        "PERF", # perflint
+        "RUF",  # ruff
+        "S",    # security
+        "SIM",  # simplify
+        "T10",  # debugger
+        "TCH",  # type-checking imports
+        "TID",  # tidy imports
+        "UP",   # upgrade
+    ]
+    fixable = ["ALL"]
+    ignore = [
+        "B905",   # `zip()` without an explicit `strict=` parameter
+        "EM101",  # exception must not use a string literal
+        "EM102",  # exception must not use an f-string literal
+        "ISC001", # conflicts with formatter
+        "NPY002", # replace legacy `np.random.random`
+        "E501",   # line too long
+        "E741",
+        "F403",
+        "F405",
+        "RUF001", # string contains ambiguous character (such as greek letters)
+        "RUF002", # docstring contains ambiguous character (such as greek letters)
+        "RUF003",
+    ]
+    unfixable = []
+
+[tool.ruff.lint.pydocstyle]
+    convention = "numpy"
+
+[tool.ruff.lint.isort]
+    case-sensitive = true
+    combine-as-imports = true
+    force-wrap-aliases = true
+    order-by-type = true
 ```
-
-## 4. WSL2
-
-Windows 下的 Python 环境经常会给人带来一系列的困扰，如，时隐时现的各种因为环境变量导致的奇怪报错，Conda 库更新不到最新的版本，还有诸如 XGBoost 等库压根儿就不提供 Win 版等。现在，WSL2（Windows Subsystem Linux 2）的出现，让我们有了一种新的选择。WSL2 是一个 Windows 的内置虚拟机，可运行 Linux 环境，一旦有了 Linux 环境，后面的配置不必多说。
-
-### 4.1. 安装 WSL2
-
-在控制面板 -> 程序和功能 -> Windows 功能窗口中勾选适用于 Linux 的 Windows 子系统 功能，点击确定，并按照提示重启电脑。
-
-![WSL2](images/wsl2/wsl2.png)
-
-在 Windows 应用商店搜索 WSL，选择自己想要的 Linux 发行版，点击下载安装即可。这里选择的是 Ubuntu 20.04。
-
-![Ubuntu](images/wsl2/app.png)
-
-由于版本问题，好多人的的子系统还停留在 WSL，而不是 WSL2。对于升级，输入如下命令
-
-```powershell
-dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
-wsl --set-version Ubuntu-20.04 2
-```
-
-中间需要下载一个 [WSL2-kernel](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi)
-
-若之前没有用过 WSL，则首先需要安装 Windows 10 的 WSL 功能：
-
-```powershell
-dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
-```
-
-这部分详情见 [WSL2](https://docs.microsoft.com/en-us/windows/wsl/wsl2-kernel)
-
-### 4.2. 调试 Linux
-
-- 版本
-
-安装完成后，使用微软自家的 Windows-Terminal 打开一个 Ubuntu 标签，待其初始化完成。通过如下命令查看版本
-
-```powershell
-wsl -l -v
-```
-
-![WSL2 version](images/wsl2/version.png)
-
-- 设置 WSL2 为默认版本
-
-```powershell
-wsl --set-default-version 2
-```
-
-- 卸载
-
-```powershell
-wslconfig /u Ubuntu-20.04
-```
-
-- 初始化
-
-输入以下命令，为 root 用户设置密码。
-
-```bash
-sudo passwd root
-```
-
-当然，你也可使用如下命令，创建新用户
-
-```bash
-sudo adduser username
-```
-
-### 4.3. Miniconda
-
-- 下载安装
-
-```bash
-wget -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-latest-Linux-x86_64.sh
-bash Miniconda3-latest-Linux-x86_64.sh
-```
-
-有关 Conda 的具体使用，这里不再赘述。
-
-### 4.4. Jupyter
-
-这里可以选择安装 JupyterLab
-
-```python
-mamba install jupyterlab
-```
-
-关键是第二步，让 Jupyter 自动打开宿主浏览器。打开配置文件 `jupyter_notebook_config.py`。
-
-```bash
-vi ~/.jupyter/jupyter_notebook_config.py
-```
-
-若没有，由如下命令生成
-
-```bash
-jupyter notebook --generate-config
-```
-
-修改下面这如下一行
-
-```python
-c.NotebookApp.use_redirect_file = False
-```
-
-退回到主界面，在 `~/.bashrc` 或 `~/.zshrc` 文件末尾添加，指定默认浏览器地址，其中，`/mnt/` 之后的部分是你默认浏览器的在 Windows 上的地址
-
-```bash
-export BROWSER="/mnt/c/'program files (x86)'/microsoft/edge/application/msedge.exe"
-```
-
-使用 `source` 刷新后，就可愉快地使用 Linux 版的 Python 了。
-
-![JupyterLab](images/jupyter/jupyter-python.png)

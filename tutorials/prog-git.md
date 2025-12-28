@@ -22,7 +22,7 @@ zhihu-url: https://zhuanlan.zhihu.com/p/694181464
   - 克隆仓库：`git clone`
   - 拉取文件：`git pull`
 
-![Git](images/git.excalidraw.png)
+![Git](images/git.png)
 
 ### 1.2. 分支操作
 
@@ -51,13 +51,13 @@ zhihu-url: https://zhuanlan.zhihu.com/p/694181464
 
 - 撤回上一个提交
 
-```bash
+```sh
 git reset --soft HEAD^
 ```
 
 - 压缩前 N 个提交
 
-```bash
+```sh
 git reset --soft HEAD~N
 git commit -m ${commit message}
 git push
@@ -65,7 +65,7 @@ git push
 
 压缩某提交后的所有提交
 
-```bash
+```sh
 git reset --soft [commit-hash]
 git commit -m ${commit message}
 git push
@@ -75,13 +75,13 @@ git push
 
 - 发布分支
 
-```bash
+```sh
 git push --set-upstream origin ${main-branch}
 ```
 
 - 同步 fork 仓库与源仓库
 
-```bash
+```sh
 git pull upstream ${main-branch}
 git push origin ${main-branch}
 ```
@@ -90,7 +90,7 @@ git push origin ${main-branch}
 
 - 批量删除分支
 
-```bash
+```sh
 git branch -D $(git branch --list '${branch-pattern}')
 ```
 
@@ -98,7 +98,7 @@ git branch -D $(git branch --list '${branch-pattern}')
 
 VSCode 内置的 Git 工具已经足够好用，其涵盖了 Git 相关的绝大多数命令。
 
-![vscode-git](images/vscode/vscode-git.png)
+![vscode-git](images/vscode-git.png)
 
 当然，一些扩展也很有用，如 Conventional Commits 等。
 

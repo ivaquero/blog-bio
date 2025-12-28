@@ -17,7 +17,7 @@ Doxygen 简化了另行编写文档带来的重复性劳动，将代码和文档
 
 macOS 及 Linux 用户使用
 
-```bash
+```sh
 brew install doxygen
 ```
 
@@ -33,13 +33,13 @@ scoop install doxygen
 
 Debian/Ubuntu 用户使用
 
-```bash
+```sh
 sudo apt-get install doxygen-gui
 ```
 
 macOS 用户使用
 
-```bash
+```sh
 brew install --cask doxygen
 ```
 
@@ -57,7 +57,7 @@ graphviz 是一个由 AT&T 实验室启动的开源图形可视化软件，它�
 
 macOS 及 Linux 用户使用
 
-```bash
+```sh
 brew install graphviz
 ```
 
@@ -73,7 +73,7 @@ scoop install graphviz
 
 - Doxygen Documentation Generator
 
-![vscode-doxygen](images/vscode/vscode-doxygen.png)
+![vscode-doxygen](images/vscode-doxygen.png)
 
 ### 2.1. 触发
 
@@ -86,7 +86,7 @@ scoop install graphviz
 }
 ```
 
-![doxygen](images/vscode/doxygen.png)
+![doxygen](images/doxygen.png)
 
 - 在 `#include` 行前插入 `///`，触发文件头注释
 - 在函数名前插入 `///`，触发函数注释
@@ -116,7 +116,7 @@ scoop install graphviz
 }
 ```
 
-![doxygen](images/vscode/doxygen2.png)
+![doxygen](images/doxygen2.png)
 
 > `{indent:15}` 决定对其他内容的缩进，用于对齐
 
@@ -126,7 +126,7 @@ scoop install graphviz
 
 打开 Doxygen GUI，填写对应路径，然后点击 Next
 
-![doxygen-gui](images/vscode/doxygen-gui.png)
+![doxygen-gui](images/doxygen-gui.png)
 
 然后，在 `Wizard` 标签中进行选择
 
@@ -137,7 +137,7 @@ scoop install graphviz
     - 不选择
 - Diagrams：选择 `use dot tool from the Graphviz package`，后全部勾选
 
-![doxygen-gui](images/vscode/doxygen-gui2.png)
+![doxygen-gui](images/doxygen-gui2.png)
 
 ### 3.2. 高级设置
 
@@ -150,7 +150,7 @@ scoop install graphviz
   - `HAVE_DOT`：勾选
   - `CALL_GRAPH`：勾选（生成调用关系图）
 
-![doxygen-gui](images/vscode/doxygen-gui3.png)
+![doxygen-gui](images/doxygen-gui3.png)
 
 ### 3.3. 最终生成
 
@@ -160,7 +160,7 @@ scoop install graphviz
 
 相比于 GUI，命令行操作要简单的多，`cd` 到项目路径下，然后执行命令
 
-```bash
+```sh
 doxygen -g
 ```
 
@@ -168,7 +168,7 @@ doxygen -g
 
 Doxyfile 可以安装相应扩展，实现语法高亮
 
-![vscode-doxyfile](images/vscode/vscode-doxyfile.png)
+![vscode-doxyfile](images/vscode-doxyfile.png)
 
 ```ini
 DOXYFILE_ENCODING      = UTF-8
@@ -182,4 +182,4 @@ BRIEF_MEMBER_DESC      = YES
 
 效果如图
 
-![doxyfile](images/vscode/doxyfile.png)
+![doxyfile](images/doxyfile.png)

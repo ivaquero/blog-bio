@@ -4,8 +4,7 @@
 
 ### 1.1. E-R 模型
 
-一个数据库就是一个完整的业务单元，可包含多张表，数据被存储在表中。当前物理的数据库均是按照
-E-R 模型（entry-relationship model）进行设计的
+一个数据库就是一个完整的业务单元，可包含多张表，数据被存储在表中。当前物理的数据库均是按照 E-R 模型（entry-relationship model）进行设计的
 
 1. 一个实体（entry）变换为数据库中的一个表，相当于一个对象
 2. 关系用于描述实体间的对应规则，包括一对一、一对多、多对多
@@ -33,36 +32,36 @@ form，NF）:
 
 ### 2.1. 用户设置
 
-``` sql
+```sql
 -- 创建用户
-reate user '用户名'@'IP 地址' identified by '密码';
+create user '用户名'@'IP 地址' identified by '密码';
 -- 删除用户
-rop user '用户名'@'IP 地址';
+drop user '用户名'@'IP 地址';
 -- 修改用户
-ename user '用户名'@'IP 地址'; to '新用户名'@'IP 地址';
+rename user '用户名'@'IP 地址'; to '新用户名'@'IP 地址';
 -- 修改密码
-et password for '用户名'@'IP 地址'=password('新密码')
+set password for '用户名'@'IP 地址'=password('新密码')
 ```
 
 ### 2.2. 用户权限设置
 
-``` sql
+```sql
 -- 查看权限
-how grants for '用户'@'IP 地址'
+show grants for '用户'@'IP 地址'
 -- 授权
-rant 权限 on 数据库. 表 to '用户'@'IP 地址'
+grant 权限 on 数据库. 表 to '用户'@'IP 地址'
 -- 取消权限
-evoke 权限 on 数据库. 表 from '用户'@'IP 地址'
+revoke 权限 on 数据库. 表 from '用户'@'IP 地址'
 
 -- 备注
 - 数据库中的所有数据库名.*
--- 指定数据库中的某张表数据库名. 表
--- 指定数据库中的存储过程数据库名. 存储过程
+-- 指定数据库中的某张表数据库名。表
+-- 指定数据库中的存储过程数据库名。存储过程
 -- 所有数据库
 .*
 -- 用户只能在改 IP 下才能访问用户名@IP 地址
--- 用户只能在改 IP 段下才能访问 (通配符%表示任意)用户名@192.168.1.%
--- 用户可再任意 IP 下访问 (默认 IP 地址为%)用户名@%
+-- 用户只能在改 IP 段下才能访问 (通配符%表示任意) 用户名@192.168.1.%
+-- 用户可再任意 IP 下访问 (默认 IP 地址为%) 用户名@%
 ```
 
 ### 2.3. 库的管理
@@ -73,7 +72,7 @@ evoke 权限 on 数据库. 表 from '用户'@'IP 地址'
  备份
  回复
 
-``` sql
+```sql
 CREATE DATABASE school DEFAULT CHARACTER SET = 'utf8mb4';
 ```
 
@@ -91,7 +90,7 @@ CREATE DATABASE school DEFAULT CHARACTER SET = 'utf8mb4';
  复合键：将多个列作为一个索引键，一般用于复合索引
 
 |      对象       |            定义             |
-| :-------------: | :-------------------------: |
+|:---------------:|:---------------------------:|
 | `AUTOINCREMENT` | 字段的值由 SQL 系统负责维护 |
 |    `UNIQUE`     |                             |
 |   `NOT` NULL    |                             |
@@ -156,7 +155,7 @@ CREATE DATABASE school DEFAULT CHARACTER SET = 'utf8mb4';
 
 ### 5.1. 创建
 
-``` sql
+```sql
 CREATE TABLE multi_tbl(
   food_id SMALLINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
   food_name VARCHAR(20) NOT NULL,
@@ -166,7 +165,7 @@ CREATE TABLE multi_tbl(
 
 ### 5.2. 修改
 
-``` sql
+```sql
 ALTER TABLE mytable ADD COLUMN [column] [DataType] [OptionalTableConstraint] DEFAULT default_value;
 ```
 

@@ -18,5 +18,6 @@
 
 .obsidian
 articles
+mermaid-images
 test.*
-mindmap.png
+*.pdf

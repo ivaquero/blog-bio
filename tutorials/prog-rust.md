@@ -12,7 +12,7 @@ zhihu-tags: Visual Studio Code, Rust
 
 macOS/Linux 用户，使用 Homebrew
 
-```bash
+```sh
 brew install rustup-init
 ```
 
@@ -26,13 +26,13 @@ scoop install rustup
 
 - 使用 rustup 自动配置
 
-```bash
+```sh
 rustup-init
 ```
 
 - 启动 cargo
 
-```bash
+```sh
 source ~/.cargo/env
 ```
 
@@ -40,4 +40,4 @@ source ~/.cargo/env
 
 在 VSCode 扩展商店，搜索并安装 rust-analyzer
 
-![rust](images/vscode/vscode-rust.png)
+![rust](images/vscode-rust.png)

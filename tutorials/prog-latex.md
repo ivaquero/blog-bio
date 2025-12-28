@@ -47,7 +47,7 @@ TeX 语言本身只有 300 个命令，晦涩难懂。一个简单的符号可�
 
 对 macOS 和 Linux 用户，有 Homebrew
 
-```bash
+```sh
 brew install basictex
 ```
 
@@ -58,14 +58,14 @@ brew install basictex
 scoop bucket add extras-plus https://github.com/Scoopforge/Extras-Plus
 scoop install texlive
 # 使用 MikTeX
-scoop install latex
+scoop install miktex
 ```
 
 也可以选择较为现代的 `tectonic` 编译器，安装方式如上面类似
 
 对 macOS 和 Linux 用户，有 Homebrew
 
-```bash
+```sh
 brew install tectonic
 ```
 
@@ -79,13 +79,13 @@ scoop install tectonic
 
 `LaTeX Workshop` 基本上没什么可说的，使用 VSCode 写 LaTeX 的都会使用这个扩展，可认为是必备。
 
-![LaTeX](images/vscode/vscode-latex.png)
+![LaTeX](images/vscode-latex.png)
 
 ### 3.1. 编译策略
 
 安装完毕后，"ctrl"+", " 打开配置，并在搜索框中输入"json"，打开配置的 .json 文件。
 
-![settings](images/vscode/vscode-settings.png)
+![settings](images/vscode-settings.png)
 
 加入如下配置：
 
@@ -153,24 +153,26 @@ scoop install tectonic
 
 ### 3.2. 格式化
 
-安装 `latexindent.pl` 对 LaTeX 公式格式化
+安装 `tex-fmt` 对 LaTeX 公式格式化
 
 macOS/Linux 用户使用 Homebrew
 
-```bash
-brew install latexindent
+```sh
+brew install tex-fmt
 ```
 
 Windows 用户使用 Scoop
 
 ```powershell
-scoop install latexindent
+scoop install tex-fmt
 ```
 
 在 `settings.json` 中，加入
 
 ```json
-{ "latex-workshop.latexindent.path": "latexindent" }
+{
+  "latex-workshop.formatting.latex": "tex-fmt",
+}
 ```
 
 ## 4. 辅助扩展
@@ -187,7 +189,7 @@ LaTeX 的用户里，不少人均是使用它进行英文写作的，这时就�
 
 简单说这相当于整合了一个 Grammarly。
 
-![ltex](images/vscode/vscode-ltex.png)
+![ltex](images/vscode-ltex.png)
 
 其配置如下：
 
@@ -224,17 +226,15 @@ LaTeX 的用户里，不少人均是使用它进行英文写作的，这时就�
 
 推荐使用 Git 作为论文的版本管理器，不过这带来一个新的问题，LaTeX 编译过程中会产生一系列过程文件，而这些并没有必要同步 Git 仓库。这里可以安装扩展 `.gitignore` Generator，在根目录下建立一个 `.gitignore` 文件，把过程文件包含进去来避免不必要的同步。
 
-![.gitignore](images/vscode/latex2.png)
+![.gitignore](images/latex2.png)
 
 ## 5. 宏包管理
 
 ### 5.1. 基本操作
 
-对于 MikTeX 用户，不需要特别对包进行管理，当在文档中导入未安装的包时，LaTeX 会自动弹出窗口，询问是否安装。
+对于 MikTeX 用户，不需要特别对包进行管理，当在文档中导入未安装的包时，LaTeX 会自动弹出窗口，询问是否安装。而对于 TeXLive 用户，需要使用包管理器 tlmgr 对 LaTeX 包进行管理。
 
-对于 TeXLive 用户，需要使用包管理器 tlmgr 对 LaTeX 包进行管理。
-
-```bash
+```sh
 # 升级自身
 sudo tlmgr update --self
 # 升级所有包
@@ -245,7 +245,7 @@ sudo tlmgr list --only-installed
 
 ### 5.2. 推荐
 
-```bash
+```sh
 # 中文支持
 sudo tlmgr install ctex latexmk
 # 化学 & 电子
@@ -264,7 +264,7 @@ sudo tlmgr install ulem xcolor environ letltxmacro enumitem stringenc trimspaces
 
 需要安装 pandoc-crossref
 
-```bash
+```sh
 brew install pandoc-crossref
 # 或
 scoop install pandoc-crossref
@@ -272,7 +272,7 @@ scoop install pandoc-crossref
 
 在命令行键入
 
-```bash
+```sh
 pandoc input.tex -o output.docx -w docx --reference-doc [ref.docx] --pdf-engine xelatex --filter pandoc-crossref --bibliography=[ref.bib]
 ```
 

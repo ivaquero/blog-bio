@@ -77,28 +77,9 @@ Altair 有着非常优雅的语法，然而，由于其基于的 Vega-Lite 又�
 仪表盘（Dashboard）是各个交互可视化库的最重要的应用场景。可以看出，Dash 作为曾经一枝独秀的王者，热度上已经基本被 Streamlit 追平。
 
 |            | Panel | Streamlit | Dash  |
-| :--------: | :---: | :-------: | :---: |
+|:----------:|:-----:|:---------:|:-----:|
 |  Stars ⭐   | 0.9k  |    14k    | 14.2k |
 | Matplotlib |   ✓   |     ✓     |       |
 |   Bokeh    | 默认  |     ✓     |       |
 |   Altair   |   ✓   |   默认    |       |
 |   Plotly   |   ✓   |     ✓     | 默认  |
-
-### 5.2. 数据框
-
-探索性数据分析（EDA），是数据分析自动化的重要组成部分，近两年的社区里出现了多个 EDA 工具，各有受众。
-
-|            | Pandas 整合 |     EDA 工具     |
-| :--------: | :---------: | :--------------: |
-| Matplotlib |  默认后端   | Pandas-Profiling |
-|   Bokeh    |      ✓      |     DataPrep     |
-|   Altair   |  + pdVega   |     Lux-API      |
-|   Plotly   | + cufflinks |     SweetViz     |
-
-## 6. 其他
-
-还有一些较为流行，但不属于上述生态的可视化库，因为没有形成生态，而且我本人没有亲自试用过（PyEcharts 除外），这里就不再评价了。
-
-- PyEcharts (⭐10.8k)
-- VisPy (⭐2.6k)
-- PyGAL (⭐2.3k)
