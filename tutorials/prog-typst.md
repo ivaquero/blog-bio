@@ -25,12 +25,12 @@ Windows 用户，可以使用 Scoop 安装
 scoop install typst git
 ```
 
-> Scoop 安装采用如下命令
->
-> ```powershell
-> irm get.scoop.sh -outfile 'install.ps1'
-> .\install.ps1 -ScoopDir 'C:\Scoop' -NoProxy
-> ```
+Scoop 安装采用如下命令
+
+```powershell
+irm get.scoop.sh -outfile 'install.ps1'
+.\install.ps1 -ScoopDir 'C:\Scoop' -NoProxy
+```
 
 ### 1.2. 第三方库
 

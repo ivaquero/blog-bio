@@ -7,7 +7,7 @@ zhihu-tags: Visual Studio Code, C / C++
 
 # 搭建 C/C++ 轻量级编程环境（VSCode）
 
-## 1.  工具链
+## 1. 工具链
 
 工具链是整个编程环境的核心，在 MacOS/Linux 上，系统内置了库文件，但是在 Windows 上，库文件需要自行下载，所以这里只介绍 Windows 上的库文件下载。我们这里选择的微软官方推荐的 MSYS2。
 
