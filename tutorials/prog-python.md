@@ -246,7 +246,6 @@ mamba install ipykernel
         "S",    # security
         "SIM",  # simplify
         "T10",  # debugger
-        "TCH",  # type-checking imports
         "TID",  # tidy imports
         "UP",   # upgrade
     ]
