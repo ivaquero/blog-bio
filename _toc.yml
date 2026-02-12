@@ -26,8 +26,8 @@ parts:
       - file: python/18-高性能扩展
   - caption: Python 数据分析
     chapters:
-      - file: analysis/clean-polars
-      - file: analysis/clean-polars2
+      - file: analysis/clean-pandas
+      - file: analysis/clean-pandas2
       - file: analysis/correlation
       - file: analysis/deviation
       - file: analysis/distribution

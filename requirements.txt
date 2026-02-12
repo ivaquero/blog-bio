@@ -3,7 +3,6 @@ matplotlib
 numpy
 pandas
 plotnine
-polars
 pyarrow
 scipy
 statsmodels
