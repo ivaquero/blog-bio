@@ -11,8 +11,7 @@ docstring-code-format = true
 docstring-code-line-length = 60
 # Use `\n` line endings for all files
 line-ending = "lf"
-# Prefer single quotes over double quotes
-quote-style = "double"
+
 skip-magic-trailing-comma = true
 
 [tool.ruff.lint]

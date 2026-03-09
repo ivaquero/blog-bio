@@ -198,7 +198,7 @@ mamba install ipykernel
 
 ```toml
 [project]
-    requires-python = ">=3.11"
+    requires-python = ">=3.12"
 
 [tool.ruff]
     fix = true
@@ -213,8 +213,7 @@ mamba install ipykernel
     docstring-code-line-length = 60
     # Use `\n` line endings for all files
     line-ending = "lf"
-    # Prefer single quotes over double quotes
-    quote-style = "double"
+
     skip-magic-trailing-comma = true
 
 [tool.ruff.lint]
