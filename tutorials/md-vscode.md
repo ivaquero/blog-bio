@@ -25,7 +25,7 @@ VSCode 是当下最流行的代码编辑器，拥有丰富的扩展，搞定 Mar
 VSCode 默认是支持 Markdown 的，但还是有必要安装下面的扩展提高写作效率。
 
 - Markdown All in One
-- markdownlint
+- rumdl
 - Markdown Kroki
 
 ### 2.1. Markdown All in One
@@ -60,25 +60,18 @@ VSCode 默认是支持 Markdown 的，但还是有必要安装下面的扩展提
 }
 ```
 
-### 2.2. markdownlint
+### 2.2. rumdl
 
-markdownlint 是个功能强大的 Markdown 语法检查器（linter）和格式化器（formatter），可以帮助你书写出规范的文档，同时避免书写错误导致文档无法渲染。个人观点，认为这个也是必装扩展。
-
-![markdownlint](images/vscode-mdlint.png)
+rumdl 是个功能强大的 Markdown 语法检查器（linter）和格式化器（formatter），可以帮助你书写出规范的文档，同时避免书写错误导致文档无法渲染。个人观点，认为这个也是必装扩展。
 
 ```json
 {
-   "markdownlint.config": {
-    "MD003": false,
-    "MD024": false,
-    "MD025": false,
-    "MD026": false,
-    "MD029": false,
-    "MD033": false,
-    "MD037": false,
-    "MD041": false,
-    "MD042": false
-  },
+   "rumdl.rules.disable": [
+    "MD013",
+    "MD025",
+    "MD029",
+    "MD033"
+  ],
 }
 ```
 
